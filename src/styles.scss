@@ -247,9 +247,8 @@ h3 {
   text-wrap: balance;
 }
 
-// Not the calligraphy titles (the site's name on the home page), which keep Aref Ruqaa in every
-// language.
-html[lang='ar'] :is(h1, h2, h3):not(.calligraphy) {
+// Not the calligraphy or Qur'an-script titles, which keep their own font in every language.
+html[lang='ar'] :is(h1, h2, h3):not(.calligraphy, .quran) {
   font-family: var(--font-display-ar);
   font-weight: 700;
   line-height: 1.6;
@@ -275,12 +274,17 @@ p {
 
 // The gradient is clipped to the text, but only paints inside the element's box. Arabic letters,
 // swashes and vowel marks often reach past that box, so pad the box to cover the full glyphs.
+// Most of all below them: Amiri Quran's deepest letters go 0.68em under the baseline, while a
+// line height of 1.6 ends the line there after 0.21em. The negative bottom margin takes back what
+// the extra padding adds, so the layout is as with 0.12em; pages that set a margin on a gold
+// element leave its margin-block-end alone.
 .gold-text {
   background: var(--gold-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  padding: 0.12em 0.25em;
+  padding: 0.12em 0.25em 0.5em;
+  margin-block-end: -0.38em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
@@ -297,6 +301,26 @@ p {
   font-family: var(--font-quran);
   font-weight: 400;
   line-height: 2.3;
+}
+
+// «اللّٰه» in a title stands a little above the words around it. Moved with top rather than a
+// transform: gold-text's clipped background drops transformed text.
+.allah {
+  position: relative;
+  top: -0.08em;
+}
+
+// "Allah" in an English title: gold and larger, like «اللّٰه» in the Arabic one. The padding covers
+// the italic letters' lean on both sides; the negative margins keep the spaces around it as before.
+.allah-en {
+  margin-inline: -0.15em;
+  padding: 0 0.15em;
+  font-size: 1.3em;
+}
+
+// «اعرف» before «اللّٰه» in the site's name: smaller, so the name of Allah stands out.
+.know {
+  font-size: 0.42em;
 }
 
 .eyebrow {

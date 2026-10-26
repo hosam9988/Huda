@@ -58,7 +58,7 @@ main {
 
   // In the Qur'an's script like the page titles, a little larger for its lighter weight. gold-text
   // shows only the ink inside the box, so the line height keeps the letters whole.
-  span {
+  > span {
     font-size: 1.75rem;
     line-height: 1.6;
     white-space: nowrap;
@@ -99,7 +99,7 @@ nav {
   text-align: center;
 
   .verse {
-    margin: 0;
+    margin-block-start: 0;
     font-size: clamp(1.25rem, 4.6vw, 1.7rem);
   }
 
@@ -167,9 +167,9 @@ nav {
     svg {
       inline-size: 1.9rem;
     }
-    // As wide as the old calligraphy at 1.2rem, so the bar needs no more room than before.
-    span {
-      font-size: 1.05rem;
+    // With «اعرف» at 0.42em this is no wider than the old logo, and keeps «اعرف» readable.
+    > span {
+      font-size: 1.6rem;
     }
   }
   // Keep the two sections, the colours and the language; the links sit closer together.

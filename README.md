@@ -102,6 +102,13 @@ npm run check:content  # checks public/data/ayat.json and names.json
 npm run build          # production build in dist/huda/browser
 ```
 
+After changing styles, check that no text is cut off or touches something it shouldn't: with
+`npm start` running, paste [`scripts/check-layout.js`](scripts/check-layout.js) into the browser's
+console and run `await __audit.sweep(await __audit.routes(), 'ar 390'); __audit.summary()`. It
+visits every page and lists each problem with the page and element; an empty list is a pass. Run
+it in both languages, at a phone width and a desktop width. Amiri Quran's marks and letters reach
+far above and below its line, which is what it catches most.
+
 ## Deploying
 
 Every push to `main` checks the content, builds the app and publishes it to GitHub Pages
@@ -212,6 +219,7 @@ public/data/ayat.json          the signs
 public/data/names.json         the names
 public/images/                 the images
 scripts/check-content.mjs      the content checker
+scripts/check-layout.js        the layout check, run in the browser
 ```
 
 Built with Angular 22.

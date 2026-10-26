@@ -92,7 +92,7 @@
 // In the Qur'an's script like the site's other titles; set larger because it has a single,
 // lighter weight.
 .title {
-  margin: 0.4rem 0 0;
+  margin-block-start: 0.4rem;
   font-size: clamp(3.8rem, 12vw, 6.4rem);
   line-height: 1.8;
 }
@@ -110,11 +110,12 @@
   padding-inline-start: 1.1rem;
   border-inline-start: 2px solid var(--gold);
 
+  // At 2.1 the marks of one line touched the letters of the next on narrow phones.
   .quran {
     margin: 0;
     color: var(--verse);
     font-size: clamp(1.35rem, 3.4vw, 1.75rem);
-    line-height: 2.1;
+    line-height: 2.3;
   }
 
   cite {

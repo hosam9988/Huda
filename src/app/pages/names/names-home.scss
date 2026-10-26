@@ -61,9 +61,20 @@
 // In the Qur'an's script with nothing above it, like the names' own titles; set larger because the
 // script has a single, lighter weight.
 .title {
-  margin: 0;
+  margin-block-start: 0;
   font-size: clamp(3.8rem, 12vw, 7rem);
   line-height: 1.8;
+}
+
+// «أسماء» and «الحسنى» smaller than «اللّٰه» between them, so the name of Allah stands out.
+.beside {
+  font-size: 0.6em;
+}
+
+// «الحسنى» hangs below the line («ح», «ى») where «أسماء» rises above it: lifted so the two sit level.
+.lifted {
+  position: relative;
+  top: -0.2em;
 }
 
 .title-en {
@@ -135,7 +146,7 @@
 }
 
 .today-name {
-  margin: 0;
+  margin-block-start: 0;
   font-size: clamp(2.6rem, 8vw, 3.6rem);
   line-height: 2;
 }

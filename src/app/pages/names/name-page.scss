@@ -43,6 +43,7 @@
   // The band stays dark in the light page colours too, so the ornament keeps the night gold.
   --gold: #d9b45a;
   --gold-light: #f0d68e;
+  --name-size: clamp(4.6rem, 17vw, 8.25rem);
 
   position: relative;
   isolation: isolate;
@@ -83,17 +84,19 @@
   }
 }
 
-// About one and a half times its old size. Amiri Quran's marks reach far above and below the
-// letters, and gold-text clips the ink to the box, so the line height leaves them room.
+// About one and a half times its old size. The line height leaves room above the letters for
+// Amiri Quran's marks; gold-text's padding covers the letters that reach below the line.
 .name {
-  margin: 0;
-  font-size: clamp(4.6rem, 17vw, 8.25rem);
+  margin-block-start: 0;
+  font-size: var(--name-size);
   line-height: 1.8;
 }
 
-// The site's gold rule and star, framing the name from below.
+// The site's gold rule and star, framing the name from below. The deepest letters reach 0.25 of
+// the name's size below its box, so the ornament starts a little further down. This margin adds
+// to the name's own, gold-text's -0.38em.
 .name-ornament {
-  margin-block: -0.75rem 0.6rem;
+  margin-block: calc(var(--name-size) * 0.3) 0.6rem;
 }
 
 .translit {
@@ -154,15 +157,16 @@
 }
 
 // The paragraph being read aloud.
-.reading {
+.reading:not(.gold-text) {
   border-radius: 8px;
   background: rgb(var(--accent-rgb) / 9%);
   box-shadow: 0 0 0 0.5rem rgb(var(--accent-rgb) / 9%);
 }
 
-.hero .reading {
-  background: rgb(240 214 142 / 12%);
-  box-shadow: 0 0 0 0.4rem rgb(240 214 142 / 12%);
+// The name, while its meaning is read: a glow around its letters. A background would take the
+// place of the gold gradient that paints them, and the name would disappear.
+.reading.gold-text {
+  filter: drop-shadow(0 0 0.12em rgb(240 214 142 / 60%));
 }
 
 // A verse or hadith.
@@ -176,11 +180,12 @@
     linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
 
+  // At 2.2 the marks of one line touched the letters of the next in some verses.
   blockquote {
     margin: 0.4rem 0 0.6rem;
     color: var(--verse);
     font-size: 1.6em;
-    line-height: 2.2;
+    line-height: 2.3;
   }
 
   &.hadith blockquote {

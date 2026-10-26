@@ -76,7 +76,7 @@
 // In the Qur'an's script, like the names' titles. It has a single, lighter weight, so it is set
 // larger; the line height leaves room above the letters for the marks on «الله».
 .title {
-  margin: 0;
+  margin-block-start: 0;
   font-size: clamp(4.6rem, 16vw, 8.5rem);
   line-height: 1.8;
 }

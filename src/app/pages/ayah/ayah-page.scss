@@ -221,11 +221,12 @@ h1 {
     linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
 
+  // At 2.2 the marks of one line touched the letters of the next in some verses.
   blockquote {
     margin: 0.5rem 0 0.75rem;
     color: var(--verse);
     font-size: 1.7em;
-    line-height: 2.2;
+    line-height: 2.3;
   }
 
   &.hadith blockquote {
