@@ -350,7 +350,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     methodBandText: 'Only established science, and an honest note on the limits of every link we draw. Read about our method.',
     nextBandTitle: 'What next?',
     nextBandText: 'If these signs have touched your heart, here is your next step.',
-    waqfNote: 'This project is a waqf (an endowment for the sake of God) and is non-profit.',
+    waqfNote: 'This project is a waqf (an endowment for the sake of Allah) and is non-profit.',
     illustrativeImage: 'Illustrative image',
     imagesNote: 'The images on this site are illustrations, not real photographs of the phenomena described.',
     minutes: (n) => `${n} min`,
@@ -403,7 +403,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     versesSkipped: 'Computer voice; Qur’an verses are skipped.',
     portal: {
       intro:
-        'Two paths to knowing God: His signs in the universe and in ourselves, and the Beautiful Names by which He made Himself known. Start with either.',
+        'Two paths to knowing Allah: His signs in the universe and in ourselves, and the Beautiful Names by which He made Himself known. Start with either.',
       signsTitle: 'Signs in the Qur’an and Sunnah',
       signsBlurb:
         'Signs the Qur’an and Sunnah spoke of fourteen centuries ago, on which science has since shed light — with their evidence and sources.',
@@ -416,7 +416,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     names: {
       title: 'The Beautiful Names of Allah',
       intro:
-        'God made Himself known to us through His Beautiful Names. Here you can read each name in a few minutes: what it means, its evidence from the Qur’an and Sunnah, what it does in your life, and a supplication with it.',
+        'Allah made Himself known to us through His Beautiful Names. Here you can read each name in a few minutes: what it means, its evidence from the Qur’an and Sunnah, what it does in your life, and a supplication with it.',
       nameOfTheDay: 'Name of the day',
       readName: 'Read about this name',
       search: 'Search for a name: Ar-Rahman, Ar-Razzaq…',

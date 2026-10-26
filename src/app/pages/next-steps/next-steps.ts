@@ -21,7 +21,7 @@ const TEXT = {
   seekerTitle: { ar: 'إن لم تكن مسلمًا', en: 'If you are not a Muslim' } as Localized,
   seekerIntro: {
     ar: 'الإسلام في كلمات: أن تؤمن بإلهٍ واحدٍ خالقٍ لا شريك له، وأن محمدًا ﷺ عبده ورسوله وخاتم الأنبياء، وأن القرآن كلام الله. وكلمة «الله» هي اسم الإله الواحد بالعربية، يقولها العرب المسيحيون أيضًا.',
-    en: 'Islam in a few words: to believe in One God, the Creator, who has no partner; that Muhammad ﷺ is His servant and messenger, the last of the prophets; and that the Qur’an is the word of God. “Allah” is simply the Arabic word for the One God; Arab Christians use it too.',
+    en: 'Islam in a few words: to believe in Allah, the One Creator, who has no partner; that Muhammad ﷺ is His servant and messenger, the last of the prophets; and that the Qur’an is the word of Allah. “Allah” is the Arabic name of the One Creator; Arab Christians call Him by it too.',
   } as Localized,
   believerTitle: { ar: 'وإن كنت مسلمًا', en: 'And if you are a Muslim' } as Localized,
   believerText: {
@@ -31,7 +31,7 @@ const TEXT = {
   shahadaTitle: { ar: 'الشهادتان', en: 'The declaration of faith' } as Localized,
   shahadaMeaning: {
     ar: 'لا معبود بحقٍّ إلا الله، ومحمدٌ رسولُ الله. من قالها صادقًا مؤمنًا بمعناها دخل في الإسلام، ولا يحتاج ذلك إلى طقوسٍ أو وسيط؛ ويُستحب أن ينطق بها أمام بعض المسلمين في مسجد ليعينوه على ما بعدها.',
-    en: '“I bear witness that there is no god but God, and I bear witness that Muhammad is the messenger of God.” Whoever says it sincerely, believing its meaning, has become a Muslim. No ceremony or intermediary is needed, though it is good to say it before a few Muslims at a mosque, who can help with what comes next.',
+    en: '“I bear witness that there is no deity but Allah, and I bear witness that Muhammad is the messenger of Allah.” Whoever says it sincerely, believing its meaning, has become a Muslim. No ceremony or intermediary is needed, though it is good to say it before a few Muslims at a mosque, who can help with what comes next.',
   } as Localized,
 };
 

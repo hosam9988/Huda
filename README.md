@@ -126,7 +126,9 @@ deploy, set the repo's **Settings → Pages → Source** to **GitHub Actions**.
 
 The content is in two files under `public/data/`. Run `npm run check:content` after editing either:
 it reports any missing translation, source, field, image or part of a name's page, a sign's hadith
-not cited from al-Bukhari or Muslim, and a name's hadith from another collection without its grading.
+not cited from al-Bukhari or Muslim, a name's hadith from another collection without its grading,
+and any "God" in the English outside a verse's translation. The site's English says "Allah", and
+"deity" for «إله»; the English of every verse is Saheeh International's, cut to the part shown.
 
 ### The signs: [`ayat.json`](public/data/ayat.json)
 

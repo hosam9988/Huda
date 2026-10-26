@@ -4,6 +4,8 @@
 // stops must run 1, 2, 3…
 // A written name needs a meaning, one to three evidences, its impact and a du'a; a hadith from
 // outside the two Sahihs needs its grading.
+// The English says "Allah", never "God", and "deity" for «إله»: only a Qur'an verse's translation,
+// copied from Saheeh International, keeps "God" where Saheeh has it.
 import { existsSync, readFileSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
@@ -112,6 +114,25 @@ names.forEach((n, i) => {
   c.evidence?.forEach((e, j) => nameText(e, `${at} evidence[${j}]`));
   nameText(c.dua, `${at} dua`);
 });
+
+// Every English text but a verse's translation (Saheeh International's wording), the references and
+// the sources' own titles.
+const GOD = /\b(God|gods?)\b/;
+const allah = (node, where) => {
+  if (Array.isArray(node)) return node.forEach((x, i) => allah(x, `${where}[${i}]`));
+  if (!node || typeof node !== 'object') return;
+  for (const [key, value] of Object.entries(node)) {
+    if (key === 'ref' || key === 'sources') continue;
+    if (node.kind === 'quran' && (key === 'translation' || key === 'meaning')) continue;
+    if (typeof value !== 'string') allah(value, `${where} ${key}`);
+    else if ((key === 'en' || key === 'gloss') && GOD.test(value)) {
+      errors.push(`${where} ${key}: says "${GOD.exec(value)[0]}"; write "Allah" ("deity" for «إله»)`);
+    }
+  }
+};
+content.categories.forEach((c) => allah(c, `field "${c.id}"`));
+content.ayat.forEach((a) => allah(a, `sign "${a.slug}"`));
+names.forEach((n) => allah(n, `name "${n.slug}"`));
 
 if (errors.length) {
   console.error(`${errors.length} problem(s) in public/data:\n- ${errors.join('\n- ')}`);

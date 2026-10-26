@@ -34,8 +34,8 @@ const PRINCIPLES: Principle[] = [
   {
     title: { ar: 'نصوصٌ موثّقة', en: 'Verified texts' },
     text: {
-      ar: 'نُقلت الآيات بنصها من المصحف برواية حفص عن عاصم، ولم تُكتب من الذاكرة. وأحاديث قسم الإعجاز كلها من الصحيحين، بأرقامها. وفي قسم الأسماء الحسنى نذكر ما في الصحيحين، وما صحّحه أو حسّنه أهل العلم من غيرهما مع ذكر الحكم ومن قاله، وتركنا ما اختُلف في ثبوته.',
-      en: 'Every verse is copied from the text of the Mushaf (the reading of Hafs from ‘Asim), never typed from memory. Every hadith in the Signs section is from the two Sahihs, al-Bukhari and Muslim, with its number. In the Beautiful Names section we also cite hadith from other collections that scholars graded sahih or hasan, giving the grading and who gave it, and we left out any whose authenticity is disputed.',
+      ar: 'نُقلت الآيات بنصها من المصحف برواية حفص عن عاصم، ولم تُكتب من الذاكرة، وترجمتها الإنجليزية ترجمة «صحيح إنترناشونال» (Saheeh International). وأحاديث قسم الإعجاز كلها من الصحيحين، بأرقامها. وفي قسم الأسماء الحسنى نذكر ما في الصحيحين، وما صحّحه أو حسّنه أهل العلم من غيرهما مع ذكر الحكم ومن قاله، وتركنا ما اختُلف في ثبوته.',
+      en: 'Every verse is copied from the text of the Mushaf (the reading of Hafs from ‘Asim), never typed from memory, and its English translation is Saheeh International’s. Every hadith in the Signs section is from the two Sahihs, al-Bukhari and Muslim, with its number. In the Beautiful Names section we also cite hadith from other collections that scholars graded sahih or hasan, giving the grading and who gave it, and we left out any whose authenticity is disputed.',
     },
   },
   {
@@ -63,7 +63,7 @@ const PRINCIPLES: Principle[] = [
     title: { ar: 'إن أخطأنا فالخطأ منا', en: 'If we are wrong, the mistake is ours' },
     text: {
       ar: 'صدق القرآن لا يتوقف على فهمنا. فإن تبيّن خطأ ربطٍ من هذه الروابط، فالخطأ في فهمنا نحن، لا في كلام الله.',
-      en: 'The truth of the Qur’an does not depend on our understanding. If one of these links turns out to be mistaken, the mistake is in our understanding, not in the word of God.',
+      en: 'The truth of the Qur’an does not depend on our understanding. If one of these links turns out to be mistaken, the mistake is in our understanding, not in the word of Allah.',
     },
   },
 ];
