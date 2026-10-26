@@ -8,6 +8,8 @@
 //   lines-collide     glyphs of two lines of the same Qur'an-script block touching
 //   runs-into         glyphs on an ornament, button, field or panel the text isn't part of
 //   invisible-text    transparent letters that no text-clipped background paints
+//   gold-layer        a positioned, transformed or filtered word inside gold text: Safari
+//                     leaves it out of the gold, so it vanishes there (Chrome doesn't)
 //
 //   await __audit.sweep(await __audit.routes(), 'ar 390'); __audit.summary()
 //
@@ -125,6 +127,17 @@
         painted = isClipText(cs) && (cs.backgroundImage !== 'none' || !/,\s*0\)$/.test(cs.backgroundColor));
       }
       if (!painted) add('invisible-text', w.el, w, {});
+    }
+    // Safari paints the gold only into text without a paint layer of its own: a positioned,
+    // transformed, filtered or translucent word inside gold text stays transparent there. Raise a
+    // word with vertical-align instead.
+    for (const g of document.querySelectorAll('*')) {
+      if (!isClipText(gcs(g))) continue;
+      for (const d of g.querySelectorAll('*')) {
+        const cs = gcs(d);
+        const layered = cs.position !== 'static' || cs.transform !== 'none' || cs.filter !== 'none' || +cs.opacity < 1 || cs.mixBlendMode !== 'normal' || cs.isolation === 'isolate' || cs.willChange !== 'auto';
+        if (layered) add('gold-layer', d, { word: d.textContent.trim() }, {});
+      }
     }
     for (const w of words) {
       // Gold text: the gradient only paints inside the element's own box.

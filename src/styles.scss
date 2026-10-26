@@ -303,16 +303,22 @@ p {
   line-height: 2.3;
 }
 
-// «اللّٰه» in a title stands a little above the words around it. Moved with top rather than a
-// transform: gold-text's clipped background drops transformed text.
+// «اللّٰه» in a title stands a little above the words around it. Raised with vertical-align, never
+// with position or a transform: Safari paints gold-text's gradient only into text without a paint
+// layer of its own, so a positioned word inside gold text vanishes there. The zero line height
+// keeps the raised word from making its line taller.
 .allah {
-  position: relative;
-  top: -0.08em;
+  vertical-align: 0.08em;
+  line-height: 0;
 }
 
-// "Allah" in an English title: gold and larger, like «اللّٰه» in the Arabic one. The padding covers
-// the italic letters' lean on both sides; the negative margins keep the spaces around it as before.
+// "Allah" in an English title: gold, larger and raised, like «اللّٰه» in the Arabic one. It is a
+// gold element itself, not a word inside one, so Safari paints it although top moves it; top
+// keeps its line as tall as before. The padding covers the italic letters' lean on both sides;
+// the negative margins keep the spaces around it as they were.
 .allah-en {
+  position: relative;
+  top: -0.08em;
   margin-inline: -0.15em;
   padding: 0 0.15em;
   font-size: 1.3em;

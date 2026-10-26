@@ -71,10 +71,11 @@
   font-size: 0.6em;
 }
 
-// «الحسنى» hangs below the line («ح», «ى») where «أسماء» rises above it: lifted so the two sit level.
+// «الحسنى» hangs below the line («ح», «ى») where «أسماء» rises above it: raised so the two sit
+// level. With vertical-align like «اللّٰه», since Safari leaves positioned words out of the gold.
 .lifted {
-  position: relative;
-  top: -0.2em;
+  vertical-align: 0.2em;
+  line-height: 0;
 }
 
 .title-en {
