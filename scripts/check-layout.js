@@ -1,6 +1,6 @@
-// Layout check: finds text that is cut off or runs into something, on every page of the site.
-// Run it in the browser's console on any page of `npm start`. For every visible word it works out
-// where the glyphs really paint, and reports:
+// Layout check: finds text that is cut off or runs into something, and images out of shape, on
+// every page of the site. Run it in the browser's console on any page of `npm start`. For every
+// visible word it works out where the glyphs really paint, and reports:
 //   gold-clipped      ink outside the box of a gold (background-clip: text) element, so invisible
 //   overflow-clipped  ink outside an overflow: hidden or clip ancestor
 //   off-screen        ink past the edge of the screen
@@ -10,6 +10,9 @@
 //   invisible-text    transparent letters that no text-clipped background paints
 //   gold-layer        a positioned, transformed or filtered word inside gold text: Safari
 //                     leaves it out of the gold, so it vanishes there (Chrome doesn't)
+//   image-ratio       an image that doesn't keep the aspect-ratio its CSS asks for (a height
+//                     attribute wins over aspect-ratio unless the CSS height is auto)
+//   image-stretched   an image that fills its box out of its own proportions
 //
 //   await __audit.sweep(await __audit.routes(), 'ar 390'); __audit.summary()
 //
@@ -183,6 +186,21 @@
         if (s.e.contains(w.el) || w.el.contains(s.e)) continue;
         const px = A.inRect(w, { left: s.r.left, right: s.r.right, top: s.r.top - 0.5, bottom: s.r.bottom + 0.5 });
         if (px >= 2) add('runs-into', w.block, w, { px }, desc(s.e));
+      }
+    }
+    // Images: the box must keep the aspect ratio the CSS gives it, and an image that fills its box
+    // (no object-fit) must keep its own.
+    for (const img of document.querySelectorAll('img')) {
+      const r = img.getBoundingClientRect();
+      if (r.width < 2 || r.height < 2) continue;
+      const cs = gcs(img);
+      const ratio = r.width / r.height;
+      const css = /^([\d.]+)(?:\s*\/\s*([\d.]+))?$/.exec(cs.aspectRatio);
+      const src = { word: (img.getAttribute('src') || '').split('/').pop() };
+      const size = { w: r.width, h: r.height };
+      if (css && Math.abs(ratio / (css[1] / (css[2] || 1)) - 1) > 0.02) add('image-ratio', img, src, size, 'wants ' + cs.aspectRatio);
+      if (cs.objectFit === 'fill' && img.complete && img.naturalWidth && Math.abs(ratio / (img.naturalWidth / img.naturalHeight) - 1) > 0.02) {
+        add('image-stretched', img, src, size, `is ${img.naturalWidth}×${img.naturalHeight}`);
       }
     }
     if (document.documentElement.scrollWidth > vw + 1) issues.push({ type: 'page-scrolls-sideways', el: 'html', word: '', over: { by: document.documentElement.scrollWidth - vw } });

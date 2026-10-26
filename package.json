@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "check:content": "node scripts/check-content.mjs"
+    "check:content": "node scripts/check-content.mjs",
+    "check:safari": "node scripts/check-safari.mjs"
   },
   "private": true,
   "packageManager": "npm@12.1.0",
@@ -25,6 +26,7 @@
     "@angular/build": "^22.2.4",
     "@angular/cli": "^22.2.4",
     "@angular/compiler-cli": "^22.2.0",
+    "playwright": "^1.64.1",
     "prettier": "^3.8.1",
     "typescript": "~6.0.2"
   }

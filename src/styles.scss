@@ -223,8 +223,12 @@ a {
   text-decoration: none;
 }
 
+// The width and height attributes only give an image its shape while it loads. Its height follows
+// its width, and the aspect-ratio a page sets, never the attribute's pixels: without auto here,
+// height="400" beat aspect-ratio: 1 and a thumbnail 88px wide stood 400px tall.
 img {
   max-inline-size: 100%;
+  block-size: auto;
 }
 
 ::selection {

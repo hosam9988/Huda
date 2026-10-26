@@ -102,12 +102,18 @@ npm run check:content  # checks public/data/ayat.json and names.json
 npm run build          # production build in dist/huda/browser
 ```
 
-After changing styles, check that no text is cut off or touches something it shouldn't: with
-`npm start` running, paste [`scripts/check-layout.js`](scripts/check-layout.js) into the browser's
-console and run `await __audit.sweep(await __audit.routes(), 'ar 390'); __audit.summary()`. It
-visits every page and lists each problem with the page and element; an empty list is a pass. Run
-it in both languages, at a phone width and a desktop width. Amiri Quran's marks and letters reach
-far above and below its line, which is what it catches most.
+After changing styles, check that no text is cut off or touches something it shouldn't, and that
+no image is out of shape: with `npm start` running, paste
+[`scripts/check-layout.js`](scripts/check-layout.js) into the browser's console and run
+`await __audit.sweep(await __audit.routes(), 'ar 390'); __audit.summary()`. It visits every page
+and lists each problem with the page and element; an empty list is a pass. Run it in both
+languages, at a phone width and a desktop width. Amiri Quran's marks and letters reach far above
+and below its line, which is what it catches most.
+
+Safari, on every iPhone, paints the gold titles and sizes some images differently from Chrome, so
+they are also checked in WebKit, Safari's engine: run `npx playwright install webkit` once, then
+`npm run check:safari` while `npm start` is running. Another copy of the site, such as the live
+one, can be checked with `npm run check:safari -- <its address>`.
 
 ## Deploying
 
@@ -220,6 +226,7 @@ public/data/names.json         the names
 public/images/                 the images
 scripts/check-content.mjs      the content checker
 scripts/check-layout.js        the layout check, run in the browser
+scripts/check-safari.mjs       the gold titles in Safari's engine
 ```
 
 Built with Angular 22.
