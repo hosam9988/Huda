@@ -1,0 +1,326 @@
+.status {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding-block: 3rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+// How far down the page the reader is, under the site header.
+.reading-bar {
+  position: fixed;
+  inset-inline: 0;
+  top: calc(4.25rem + env(safe-area-inset-top));
+  z-index: 11;
+  block-size: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--science));
+  transform-origin: left;
+  transition: transform 0.12s linear;
+}
+
+:host-context([dir='rtl']) .reading-bar {
+  transform-origin: right;
+  background: linear-gradient(-90deg, var(--gold), var(--science));
+}
+
+@media (max-width: 560px) {
+  .reading-bar {
+    top: calc(3.75rem + env(safe-area-inset-top));
+  }
+}
+
+.name-page {
+  --scale: 1;
+}
+
+// ---------- The name ----------
+
+// A night band in every page colour, over the section's geometric pattern.
+.hero {
+  --verse: #f0d68e;
+  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
+  // The band stays dark in the light page colours too, so the ornament keeps the night gold.
+  --gold: #d9b45a;
+  --gold-light: #f0d68e;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3rem);
+  background: #05070f;
+  color: #f4f1e8;
+  text-align: center;
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(5 7 15 / 70%), rgb(5 7 15 / 85%) 70%, rgb(var(--bg-rgb)) 100%);
+  }
+}
+
+.hero-text {
+  animation: rise 0.8s var(--ease) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+}
+
+// About one and a half times its old size. Amiri Quran's marks reach far above and below the
+// letters, and gold-text clips the ink to the box, so the line height leaves them room.
+.name {
+  margin: 0;
+  font-size: clamp(4.6rem, 17vw, 8.25rem);
+  line-height: 1.8;
+}
+
+// The site's gold rule and star, framing the name from below.
+.name-ornament {
+  margin-block: -0.75rem 0.6rem;
+}
+
+.translit {
+  margin: 0;
+  color: #f0d68e;
+  font-family: var(--font-display-en);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.number {
+  margin-inline-start: 0.5em;
+  opacity: 0.7;
+}
+
+.meaning {
+  max-inline-size: 36rem;
+  margin: 0.5rem auto 0;
+  font-size: clamp(1.1rem, 2.6vw, 1.3rem);
+  opacity: 0.92;
+}
+
+// ---------- Reading column ----------
+
+.column {
+  max-inline-size: calc(var(--reading-width) + 2rem);
+  font-size: calc(1em * var(--scale));
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 1.25rem;
+  border-block-end: 1px solid var(--line);
+  font-size: 1rem;
+
+  app-read-aloud {
+    flex: 1;
+  }
+}
+
+.size {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.block {
+  padding-block-start: 2.5rem;
+
+  > h2.eyebrow {
+    display: block;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+  }
+}
+
+// The paragraph being read aloud.
+.reading {
+  border-radius: 8px;
+  background: rgb(var(--accent-rgb) / 9%);
+  box-shadow: 0 0 0 0.5rem rgb(var(--accent-rgb) / 9%);
+}
+
+.hero .reading {
+  background: rgb(240 214 142 / 12%);
+  box-shadow: 0 0 0 0.4rem rgb(240 214 142 / 12%);
+}
+
+// A verse or hadith.
+.text-card {
+  margin: 0 0 1.1rem;
+  padding: clamp(1.1rem, 4vw, 1.75rem);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(var(--accent-rgb) / 12%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
+  text-align: center;
+
+  blockquote {
+    margin: 0.4rem 0 0.6rem;
+    color: var(--verse);
+    font-size: 1.6em;
+    line-height: 2.2;
+  }
+
+  &.hadith blockquote {
+    color: var(--hadith);
+    font-family: var(--font-body-ar);
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 2;
+  }
+}
+
+.text-label {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.translation {
+  max-inline-size: 36rem;
+  margin: 0 auto 0.5rem;
+  font-style: italic;
+}
+
+.ref {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.grading {
+  color: var(--science);
+}
+
+// The explanation stands apart from the text it explains.
+.explanation {
+  margin: 0.9rem 0 0;
+  padding-block-start: 0.9rem;
+  border-block-start: 1px solid var(--line);
+  text-align: start;
+}
+
+.impact {
+  margin-block-start: 2.5rem;
+  text-align: center;
+
+  h2 {
+    margin: 0.9rem 0 0.4rem;
+    color: var(--gold-light);
+    font-size: 1.45em;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+// Where the explanations come from, said on every page.
+.source {
+  margin: 2rem 0 0;
+  padding: 1rem 1.25rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+// ---------- Onward ----------
+
+.finish {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  margin-block: 2.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+.done-line {
+  margin: 0;
+  color: var(--science);
+}
+
+.onward {
+  font-size: 1rem;
+}
+
+.next-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  color: inherit;
+  text-align: center;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+}
+
+.next-name {
+  font-size: 2.4rem;
+  line-height: 2;
+}
+
+.next-meaning {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.prev-next {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 1.25rem 0 0;
+  font-size: 0.95rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .toolbar {
+    justify-content: space-between;
+
+    // Listen and its hint get a row of their own, under the text size and share buttons.
+    app-read-aloud {
+      order: 3;
+      flex-basis: 100%;
+    }
+  }
+}

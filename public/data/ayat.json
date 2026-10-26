@@ -1,0 +1,2769 @@
+{
+  "categories": [
+    {
+      "id": "cosmos",
+      "title": {
+        "ar": "الكون والفلك",
+        "en": "The Cosmos"
+      },
+      "blurb": {
+        "ar": "من بداية الكون وتمدده إلى أفلاك الشمس والقمر.",
+        "en": "From the beginning and expansion of the universe to the orbits of the sun and moon."
+      },
+      "art": "expansion"
+    },
+    {
+      "id": "earth",
+      "title": {
+        "ar": "الأرض والسماء",
+        "en": "Earth and Sky"
+      },
+      "blurb": {
+        "ar": "جبالٌ لها جذور، وسحبٌ كالجبال، وهواءٌ يرقّ كلما صعدنا.",
+        "en": "Mountains with roots, clouds like mountains, and air that thins as we climb."
+      },
+      "art": "mountains"
+    },
+    {
+      "id": "seas",
+      "title": {
+        "ar": "البحار والمياه",
+        "en": "Seas and Water"
+      },
+      "blurb": {
+        "ar": "ظلمات الأعماق، والحواجز بين البحار، والماء أصل الحياة.",
+        "en": "The darkness of the deep, barriers between seas, and water as the root of life."
+      },
+      "art": "deep-darkness"
+    },
+    {
+      "id": "human",
+      "title": {
+        "ar": "خلق الإنسان",
+        "en": "The Human Being"
+      },
+      "blurb": {
+        "ar": "من أطوار الجنين إلى الجلد وأطراف الأصابع.",
+        "en": "From the stages of the embryo to the skin and the fingertips."
+      },
+      "art": "fingerprint"
+    },
+    {
+      "id": "health",
+      "title": {
+        "ar": "الصحة في السنة",
+        "en": "Health in the Sunnah"
+      },
+      "blurb": {
+        "ar": "الحجر الصحي، ونظافة اليدين والآنية، والعسل.",
+        "en": "Quarantine, clean hands and covered vessels, and honey."
+      },
+      "art": "honey"
+    },
+    {
+      "id": "prophecies",
+      "title": {
+        "ar": "نبوءاتٌ تحققت",
+        "en": "Prophecies Fulfilled"
+      },
+      "blurb": {
+        "ar": "أخبارٌ عن المستقبل جاءت كما قيلت.",
+        "en": "News of the future that came true as foretold."
+      },
+      "art": "buildings"
+    },
+    {
+      "id": "preservation",
+      "title": {
+        "ar": "حفظ القرآن",
+        "en": "Preserving the Qur’an"
+      },
+      "blurb": {
+        "ar": "نصٌّ لم يتبدل منذ أربعة عشر قرنًا.",
+        "en": "A text unchanged for fourteen centuries."
+      },
+      "art": "manuscript"
+    }
+  ],
+  "ayat": [
+    {
+      "slug": "expanding-universe",
+      "category": "cosmos",
+      "journey": 1,
+      "art": "expansion",
+      "title": {
+        "ar": "السماء التي تتسع",
+        "en": "A Heaven That Keeps Expanding"
+      },
+      "hook": {
+        "ar": "هل الكون ثابتٌ منذ الأزل، أم أنه يتسع في هذه اللحظة؟",
+        "en": "Has the universe always been fixed in place — or is it growing right now?"
+      },
+      "summary": {
+        "ar": "آيةٌ تقول ﴿وَإِنَّا لَمُوسِعُونَ﴾، وعلمٌ اكتشف في القرن العشرين أن المجرات تتباعد وأن الكون يتمدد.",
+        "en": "A verse says “and indeed We are expanding it”; in the twentieth century science found that galaxies are rushing apart as the universe expands."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "وَٱلسَّمَآءَ بَنَيۡنَٰهَا بِأَيۡيْدٖ وَإِنَّا لَمُوسِعُونَ",
+          "meaning": {
+            "ar": "«بِأَيْيدٍ»: بقوة. «لَمُوسِعُونَ»: من الإيساع، أي نجعلها واسعة ونزيد في سعتها؛ وقال كثير من المفسرين: لقادرون ذوو سعة.",
+            "en": "“And the heaven — We built it with strength, and indeed We are expanding it.”"
+          },
+          "ref": {
+            "ar": "الذاريات: ٤٧",
+            "en": "Adh-Dhariyat 51:47"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "ظل الناس قرونًا طويلة يتصورون السماء قبةً ثابتة، والنجوم مصابيح معلقة فيها لا تتغير، وعلى هذا التصور قام علم الفلك من بطليموس حتى العصور الوسطى.",
+          "en": "For many centuries people pictured the sky as a fixed dome, with the stars as unchanging lamps hung inside it. Astronomy from Ptolemy to the Middle Ages was built on that picture."
+        },
+        {
+          "ar": "وحتى أوائل القرن العشرين كان كثير من العلماء — ومنهم أينشتاين نفسه — يرون أن الكون في جملته ساكن، لا يتمدد ولا ينكمش.",
+          "en": "Even in the early twentieth century many scientists — Einstein among them — believed the universe as a whole was static, neither growing nor shrinking."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في عام ١٩٢٧ استنتج العالم البلجيكي جورج لوميتر من معادلات النسبية أن الكون يتمدد. وفي عام ١٩٢٩ نشر الفلكي الأمريكي إدوين هابل قياساته التي أظهرت أن المجرات البعيدة تبتعد عنا، وأنه كلما زاد بُعد المجرة زادت سرعة ابتعادها.",
+          "en": "In 1927 the Belgian physicist Georges Lemaître concluded from the equations of relativity that the universe is expanding. In 1929 the American astronomer Edwin Hubble published measurements showing that distant galaxies are moving away from us — and that the farther a galaxy is, the faster it recedes."
+        },
+        {
+          "ar": "وليس المعنى أن المجرات تندفع في فضاءٍ قائم من قبل، بل إن المكان نفسه بينها يتسع. ثم اكتشف الفلكيون عام ١٩٩٨ أن هذا التوسع يتسارع، ونال مكتشفوه جائزة نوبل في الفيزياء عام ٢٠١١.",
+          "en": "It is not that galaxies fly through space that was already there: space itself is stretching between them. In 1998 astronomers found that the expansion is speeding up, a discovery that won the 2011 Nobel Prize in Physics."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "أكثر من ١٣٠٠ عام",
+          "en": "1,300+ years"
+        },
+        "label": {
+          "ar": "بين نزول الآية واكتشاف تمدد الكون",
+          "en": "between the verse and the discovery that the universe is expanding"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الذاريات المكية",
+            "en": "The Qur’an is revealed, including the Meccan surah Adh-Dhariyat"
+          }
+        },
+        {
+          "year": "1917",
+          "text": {
+            "ar": "أينشتاين يضيف «الثابت الكوني» إلى معادلاته ليبقى الكون ساكنًا",
+            "en": "Einstein adds a “cosmological constant” to keep his universe static"
+          }
+        },
+        {
+          "year": "1927",
+          "text": {
+            "ar": "لوميتر يقترح أن الكون يتمدد",
+            "en": "Lemaître proposes that the universe is expanding"
+          }
+        },
+        {
+          "year": "1929",
+          "text": {
+            "ar": "هابل يقيس تباعد المجرات",
+            "en": "Hubble measures the galaxies receding"
+          }
+        },
+        {
+          "year": "1998",
+          "text": {
+            "ar": "اكتشاف أن التوسع يتسارع (نوبل ٢٠١١)",
+            "en": "The expansion is found to be accelerating (Nobel Prize 2011)"
+          }
+        },
+        {
+          "year": "2018",
+          "text": {
+            "ar": "الاتحاد الفلكي الدولي يوصي بتسميته «قانون هابل-لوميتر»",
+            "en": "The International Astronomical Union recommends the name “Hubble–Lemaître law”"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "في ليلةٍ صافية تبدو السماء ساكنة لا تتحرك، ولم يكن عند أحدٍ في القرن السابع ما يوحي بغير ذلك. ومع هذا جاءت الكلمة: ﴿وَإِنَّا لَمُوسِعُونَ﴾ — بصيغة اسم الفاعل الدالة على الاستمرار.",
+        "en": "On a clear night the sky looks perfectly still, and nobody in the seventh century had any reason to think otherwise. Yet the word came: “and indeed We are expanding it” — in an Arabic form that signals something ongoing."
+      },
+      "caution": {
+        "ar": "فسّر كثير من المفسرين الأوائل «لَمُوسِعُونَ» بمعنى: لقادرون وذوو سعة، وهو معنى صحيح في اللغة. وحمل الآية على تمدد الكون فهمٌ معاصر تحتمله اللغة أيضًا — فالإيساع هو الجعل واسعًا — لكنه ليس التفسير الوحيد، ولا نقول إن الآية تشرح نظرية الانفجار العظيم بتفاصيلها.",
+        "en": "Many early commentators read mūsi‘ūn as “We are able, possessed of vastness”, which is a valid meaning in Arabic. Reading it as the expansion of the universe is a modern understanding that the language also allows — the root means “to make wide” — but it is not the only interpretation, and we do not claim the verse sets out Big Bang cosmology in detail."
+      },
+      "didYouKnow": {
+        "ar": "الضوء القادم من أبعد المجرات التي رصدها تلسكوب جيمس ويب الفضائي انطلق منها قبل أكثر من ١٣ مليار سنة، حين كان الكون أصغر بكثير مما هو اليوم.",
+        "en": "Light from the most distant galaxies seen by the James Webb Space Telescope set out more than 13 billion years ago, when the universe was far smaller than it is now."
+      },
+      "sources": [
+        {
+          "title": "A Relation Between Distance and Radial Velocity Among Extra-Galactic Nebulae (E. Hubble)",
+          "publisher": "Proceedings of the National Academy of Sciences",
+          "year": "1929",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC522427/",
+          "kind": "journal"
+        },
+        {
+          "title": "Discovering a Runaway Universe",
+          "publisher": "NASA Science (Hubble)",
+          "url": "https://science.nasa.gov/mission/hubble/science/science-highlights/discovering-a-runaway-universe/",
+          "kind": "agency"
+        },
+        {
+          "title": "Mystery of the missing text solved (M. Livio, on Lemaître 1927)",
+          "publisher": "Nature",
+          "year": "2011",
+          "url": "https://doi.org/10.1038/479171a",
+          "kind": "journal"
+        },
+        {
+          "title": "Hubble Law or Hubble–Lemaître Law? The IAU Resolution (H. Kragh)",
+          "publisher": "arXiv",
+          "year": "2018",
+          "url": "https://arxiv.org/abs/1809.02557",
+          "kind": "preprint"
+        }
+      ]
+    },
+    {
+      "slug": "joined-then-split",
+      "category": "cosmos",
+      "art": "big-bang",
+      "title": {
+        "ar": "كانتا رتقًا ففتقناهما",
+        "en": "Joined, Then Split Apart"
+      },
+      "hook": {
+        "ar": "هل كان للكون بداية؟ وهل كانت السماوات والأرض شيئًا واحدًا؟",
+        "en": "Did the universe have a beginning? Were the heavens and the earth once a single whole?"
+      },
+      "summary": {
+        "ar": "آيةٌ تذكر أن السماوات والأرض كانتا كتلةً واحدة ففُصلتا، وعلمٌ يقول إن الكون كله بدأ من حالةٍ واحدة بالغة الكثافة.",
+        "en": "A verse says the heavens and the earth were one joined mass that was split apart; cosmology says the whole universe began from a single, extremely dense state."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "أَوَلَمۡ يَرَ ٱلَّذِينَ كَفَرُوٓاْ أَنَّ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ كَانَتَا رَتۡقٗا فَفَتَقۡنَٰهُمَاۖ وَجَعَلۡنَا مِنَ ٱلۡمَآءِ كُلَّ شَيۡءٍ حَيٍّۚ أَفَلَا يُؤۡمِنُونَ",
+          "meaning": {
+            "ar": "«رَتْقًا»: ملتصقتين متصلتين لا فرجة بينهما. «فَفَتَقْنَاهُمَا»: فصلنا بينهما. وقال بعض السلف: كانت السماء لا تمطر والأرض لا تنبت، ففتق هذه بالمطر وهذه بالنبات.",
+            "en": "“Have those who disbelieve not seen that the heavens and the earth were joined together, and We split them apart, and We made from water every living thing? Will they not then believe?”"
+          },
+          "ref": {
+            "ar": "الأنبياء: ٣٠",
+            "en": "Al-Anbiya 21:30"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان الرأي السائد عند فلاسفة الإغريق — ومنهم أرسطو — أن العالم قديمٌ أزلي لا بداية له، وبقي هذا التصور حاضرًا في الفكر قرونًا طويلة.",
+          "en": "The dominant view among Greek philosophers, Aristotle among them, was that the world is eternal, with no beginning — a view that lingered for many centuries."
+        },
+        {
+          "ar": "وحتى منتصف القرن العشرين دافع بعض كبار الفلكيين عن «نظرية الحالة الثابتة» التي ترى أن الكون لا بداية له.",
+          "en": "As late as the mid-twentieth century some leading astronomers defended the “steady state” theory, in which the universe has no beginning."
+        }
+      ],
+      "now": [
+        {
+          "ar": "يقول علم الكونيات اليوم إن الكون بدأ قبل نحو ١٣٫٨ مليار سنة من حالةٍ بالغة الحرارة والكثافة، كانت فيها مادته وطاقته مجتمعة، ثم أخذ يتمدد ويبرد: فتكونت الذرات، ثم النجوم والمجرات، ثم الكواكب ومنها الأرض.",
+          "en": "Cosmology today holds that the universe began about 13.8 billion years ago in an extremely hot, dense state, with all its matter and energy together. It then expanded and cooled: atoms formed, then stars and galaxies, then planets, among them the Earth."
+        },
+        {
+          "ar": "وفي عام ١٩٦٥ رصد أرنو بنزياس وروبرت ويلسون «إشعاع الخلفية الكونية الميكروي»، وهو بقيةٌ من ضوء تلك البداية تملأ الكون كله، فكان من أقوى الأدلة على أن للكون بداية. ثم قاست الأقمار الصناعية — ومنها «بلانك» — هذا الإشعاع بدقة مذهلة.",
+          "en": "In 1965 Arno Penzias and Robert Wilson detected the cosmic microwave background, an afterglow of that beginning that fills the whole universe — one of the strongest pieces of evidence that the universe had a beginning. Satellites such as Planck have since mapped it with astonishing precision."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١٣٫٨ مليار سنة",
+          "en": "13.8 billion years"
+        },
+        "label": {
+          "ar": "عمر الكون كما تقدّره قياسات ناسا ووكالة الفضاء الأوروبية",
+          "en": "the age of the universe, as measured by NASA and the European Space Agency"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الأنبياء المكية",
+            "en": "The Qur’an is revealed, including the Meccan surah Al-Anbiya"
+          }
+        },
+        {
+          "year": "1931",
+          "text": {
+            "ar": "لوميتر في مجلة نيتشر: الكون بدأ من «ذرةٍ أولى» واحدة",
+            "en": "Lemaître in Nature: the universe began from a single “primeval atom”"
+          }
+        },
+        {
+          "year": "1965",
+          "text": {
+            "ar": "رصد إشعاع الخلفية الكونية",
+            "en": "The cosmic microwave background is detected"
+          }
+        },
+        {
+          "year": "2013",
+          "text": {
+            "ar": "القمر الصناعي «بلانك» يقيس عمر الكون: ١٣٫٨٢ مليار سنة",
+            "en": "The Planck satellite measures the universe’s age: 13.82 billion years"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "بين فلسفةٍ تقول بعالمٍ أزلي، وعلمٍ وصل بعد قرون إلى أن للكون بداية، جاء سؤال القرآن لمن ينكر: ﴿أَوَلَمۡ يَرَ ٱلَّذِينَ كَفَرُوٓاْ﴾ — كأنه يدعوهم أن ينظروا فيروا.",
+        "en": "Between a philosophy of an eternal world and a science that arrived centuries later at a universe with a beginning, the Qur’an asks the one who denies: “Have they not seen…?” — as if inviting them to look, and see."
+      },
+      "caution": {
+        "ar": "للمفسرين في «الرتق والفتق» أقوال: منها أن السماوات والأرض كانتا ملتصقتين ففُصلتا، ومنها أن السماء كانت لا تمطر والأرض لا تنبت. والأول قريبٌ مما يقوله علم الكونيات عن البداية الواحدة، لكن الآية لا تصف «انفجارًا»، و«الانفجار العظيم» ليس انفجارًا من نقطةٍ في فضاءٍ قائم، والنظرية تصف تطور الكون بعد بدايته لا ما قبلها. فالربط فهمٌ محتمل، لا نصٌّ قاطع.",
+        "en": "Commentators gave several readings of “joined, then split”: that the heavens and earth were stuck together and then separated, or that the sky gave no rain and the earth no plants until God opened them. The first sits close to what cosmology says about a single beginning, but the verse does not describe an “explosion”; nor is the Big Bang an explosion from a point in existing space, and the theory describes how the universe developed after its beginning, not what came before. The link is a possible reading, not a definitive one."
+      },
+      "didYouKnow": {
+        "ar": "جزءٌ صغير من «التشويش» الذي كانت تُظهره أجهزة التلفاز القديمة بين القنوات مصدره إشعاع الخلفية الكونية، أي بقايا ضوء بداية الكون.",
+        "en": "A small part of the “snow” on old analogue televisions between channels came from the cosmic microwave background — leftover light from the universe’s beginning."
+      },
+      "sources": [
+        {
+          "title": "Cosmic History",
+          "publisher": "NASA Science",
+          "url": "https://science.nasa.gov/universe/overview/",
+          "kind": "agency"
+        },
+        {
+          "title": "Planck reveals an almost perfect Universe",
+          "publisher": "European Space Agency",
+          "year": "2013",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe",
+          "kind": "agency"
+        },
+        {
+          "title": "WMAP Overview",
+          "publisher": "NASA",
+          "url": "https://science.nasa.gov/mission/wmap/wmap-overview/",
+          "kind": "agency"
+        },
+        {
+          "title": "The Beginning of the World from the Point of View of Quantum Theory (G. Lemaître)",
+          "publisher": "Nature",
+          "year": "1931",
+          "url": "https://doi.org/10.1038/127706b0",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "slug": "each-in-an-orbit",
+      "category": "cosmos",
+      "art": "orbits",
+      "title": {
+        "ar": "كلٌّ في فلكٍ يسبحون",
+        "en": "Each Swimming in an Orbit"
+      },
+      "hook": {
+        "ar": "نرى الشمس تشرق وتغرب، لكن هل تتحرك الشمس نفسها في الفضاء؟",
+        "en": "We watch the sun rise and set — but does the sun itself move through space?"
+      },
+      "summary": {
+        "ar": "آيةٌ تصف الشمس والقمر بأن كلًّا منهما يسبح في فلك، وعلمٌ وجد أن الشمس نفسها تدور حول مركز مجرتنا.",
+        "en": "A verse says the sun and the moon each swim in an orbit; astronomy found that the sun itself circles the centre of our galaxy."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "وَهُوَ ٱلَّذِي خَلَقَ ٱلَّيۡلَ وَٱلنَّهَارَ وَٱلشَّمۡسَ وَٱلۡقَمَرَۖ كُلّٞ فِي فَلَكٖ يَسۡبَحُونَ",
+          "meaning": {
+            "ar": "«فَلَكٍ»: مدارٌ مستدير. «يَسْبَحُونَ»: يجرون ويسيرون في انسياب، كما يسبح السابح في الماء.",
+            "en": "“And it is He who created the night and the day, and the sun and the moon — each swimming in an orbit.”"
+          },
+          "ref": {
+            "ar": "الأنبياء: ٣٣",
+            "en": "Al-Anbiya 21:33"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "جعل الفلك القديم الأرض ساكنةً في مركز الكون، والشمس والقمر والكواكب تدور حولها محمولةً على أفلاكٍ صلبة شفافة.",
+          "en": "Ancient astronomy placed a motionless Earth at the centre of the universe, with the sun, moon and planets carried round it on solid, transparent spheres."
+        },
+        {
+          "ar": "ثم جاء كوبرنيكوس في القرن السادس عشر فجعل الشمس في المركز، وظنها كثيرون بعده ثابتةً لا تتحرك.",
+          "en": "In the sixteenth century Copernicus moved the sun to the centre — and for a long time afterwards many took it to be fixed in place."
+        }
+      ],
+      "now": [
+        {
+          "ar": "نعلم اليوم أن القمر يدور حول الأرض، وأن الأرض تدور حول الشمس، وأن الشمس ليست ساكنة: فهي تحمل المجموعة الشمسية كلها في مدارٍ حول مركز مجرة درب التبانة بسرعة تقارب ٧٢٠ ألف كيلومتر في الساعة، وتتم دورتها في نحو ٢٣٠ مليون سنة.",
+          "en": "We now know the moon orbits the Earth and the Earth orbits the sun — and the sun is not still: it carries the whole solar system round the centre of the Milky Way at about 720,000 kilometres an hour, completing one circuit in about 230 million years."
+        },
+        {
+          "ar": "وكل جرمٍ في الكون — من الأقمار إلى المجرات — يتحرك في مدارٍ أو مسارٍ تحكمه الجاذبية؛ لا شيء ساكنٌ على الحقيقة.",
+          "en": "Every body in the universe, from moons to galaxies, moves along an orbit or path governed by gravity; nothing is truly at rest."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٢٣٠ مليون سنة",
+          "en": "230 million years"
+        },
+        "label": {
+          "ar": "مدة دورةٍ واحدة للشمس حول مركز المجرة",
+          "en": "for the sun to complete one orbit of the galaxy’s centre"
+        }
+      },
+      "timeline": [
+        {
+          "year": "c. 150",
+          "text": {
+            "ar": "بطليموس: الأرض ساكنة في المركز والشمس تدور حولها",
+            "en": "Ptolemy: the Earth stands still at the centre and the sun circles it"
+          }
+        },
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الأنبياء",
+            "en": "The Qur’an is revealed, including surah Al-Anbiya"
+          }
+        },
+        {
+          "year": "1543",
+          "text": {
+            "ar": "كوبرنيكوس يجعل الشمس في المركز",
+            "en": "Copernicus places the sun at the centre"
+          }
+        },
+        {
+          "year": "1609",
+          "text": {
+            "ar": "كبلر: المدارات إهليلجية لا دوائر",
+            "en": "Kepler: orbits are ellipses, not circles"
+          }
+        },
+        {
+          "year": "1927",
+          "text": {
+            "ar": "أورت يثبت دوران المجرة، والشمس معها",
+            "en": "Oort shows that the galaxy — and the sun with it — is rotating"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "لم تقل الآية إن الشمس ثابتة، ولا إنها وحدها التي تدور، بل جمعت الشمس والقمر في وصفٍ واحد: كلٌّ يسبح في فلكه.",
+        "en": "The verse does not say the sun is fixed, nor that only one of them moves; it gathers sun and moon in one description: each swims in its own orbit."
+      },
+      "caution": {
+        "ar": "الفلك القديم نفسه كان يجعل للشمس فلكًا تدور فيه حول الأرض، فالآية وحدها لا تحدد ما الذي تدور حوله الشمس، والربط بدورانها حول مركز المجرة فهمٌ معاصر. ووجه التأمل أن عبارتها بقيت صادقةً بعد أن تغيرت صورة الكون كلها: كلٌّ — الشمس والقمر — يسبح في فلك.",
+        "en": "Ancient astronomy also gave the sun an orbit — around the Earth — so the verse alone does not say what the sun circles, and linking it to the galaxy is a modern reading. What is worth pondering is that its wording has stayed true even after our whole picture of the cosmos changed: each, sun and moon, swims in an orbit."
+      },
+      "didYouKnow": {
+        "ar": "وأنت تقرأ هذه الصفحة، تقطع مع الأرض والشمس في رحلتهما حول المجرة نحو ٧٢٠ ألف كيلومتر كل ساعة.",
+        "en": "While you read this page, you are travelling with the Earth and the sun around the galaxy at about 720,000 kilometres every hour."
+      },
+      "sources": [
+        {
+          "title": "Sun: Facts",
+          "publisher": "NASA Science",
+          "url": "https://science.nasa.gov/sun/facts/",
+          "kind": "agency"
+        },
+        {
+          "title": "Moon Facts",
+          "publisher": "NASA Science",
+          "url": "https://science.nasa.gov/moon/facts/",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "iron-sent-down",
+      "category": "cosmos",
+      "art": "iron",
+      "title": {
+        "ar": "وأنزلنا الحديد",
+        "en": "And We Sent Down Iron"
+      },
+      "hook": {
+        "ar": "من أين جاء الحديد الذي في الأرض، بل الذي يجري في دمك؟",
+        "en": "Where did the iron in the Earth — and in your blood — come from?"
+      },
+      "summary": {
+        "ar": "آيةٌ تقول إن الحديد «أُنزل»، وعلمٌ وجد أن الحديد يُصنع في قلوب النجوم ويتناثر في الفضاء حين تنفجر.",
+        "en": "A verse says iron was “sent down”; science found that iron is forged inside stars and scattered through space when they explode."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "لَقَدۡ أَرۡسَلۡنَا رُسُلَنَا بِٱلۡبَيِّنَٰتِ وَأَنزَلۡنَا مَعَهُمُ ٱلۡكِتَٰبَ وَٱلۡمِيزَانَ لِيَقُومَ ٱلنَّاسُ بِٱلۡقِسۡطِۖ وَأَنزَلۡنَا ٱلۡحَدِيدَ فِيهِ بَأۡسٞ شَدِيدٞ وَمَنَٰفِعُ لِلنَّاسِ وَلِيَعۡلَمَ ٱللَّهُ مَن يَنصُرُهُۥ وَرُسُلَهُۥ بِٱلۡغَيۡبِۚ إِنَّ ٱللَّهَ قَوِيٌّ عَزِيزٞ",
+          "meaning": {
+            "ar": "«وَأَنْزَلْنَا الْحَدِيدَ»: خلقناه وأعطيناه الناس نعمةً منا. «بَأْسٌ شَدِيدٌ»: قوةٌ في الحرب والسلاح. «وَمَنَافِعُ لِلنَّاسِ»: في معايشهم وصناعاتهم.",
+            "en": "“We sent Our messengers with clear proofs, and sent down with them the Book and the Balance, so that people would uphold justice. And We sent down iron, in which there is great strength and benefits for people — and so that God may know who supports Him and His messengers, though unseen. God is truly Strong, Almighty.”"
+          },
+          "ref": {
+            "ar": "الحديد: ٢٥",
+            "en": "Al-Hadid 57:25"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "عرف العرب الحديد معدنًا يُستخرج من الأرض وتُصنع منه السيوف والدروع والأدوات، ولم يكن عند أحدٍ تصورٌ عن أصل العناصر نفسها: كيف تكونت، ومن أين جاءت.",
+          "en": "The Arabs knew iron as a metal dug from the ground and forged into swords, armour and tools. Nobody had any idea where the elements themselves came from, or how they formed."
+        }
+      ],
+      "now": [
+        {
+          "ar": "بيّنت الفيزياء الفلكية في القرن العشرين أن أخف العناصر — كالهيدروجين والهيليوم — تكونت في بداية الكون، أما العناصر الأثقل فتُصنع داخل النجوم بالاندماج النووي. والحديد نهاية هذا الطريق: فالنجوم الضخمة تصنع العناصر حتى الحديد، ثم ينهار قلبها وتنفجر انفجارًا هائلًا يسمى «المستعر الأعظم» (السوبرنوفا).",
+          "en": "Twentieth-century astrophysics showed that the lightest elements, hydrogen and helium, formed at the beginning of the universe, while heavier elements are forged inside stars by nuclear fusion. Iron is the end of that road: the largest stars build elements up to iron, then their cores collapse and they explode as supernovae."
+        },
+        {
+          "ar": "تنثر هذه الانفجارات الحديد في الفضاء، ومن هذا الغبار النجمي تكونت المجموعة الشمسية والأرض قبل نحو ٤٫٦ مليار سنة. فكل ذرة حديدٍ في الأرض — وفي الهيموغلوبين الذي يحمل الأكسجين في دمك — صُنعت في نجمٍ قبل أن تولد الشمس. بل وجد العلماء في رواسب قاع المحيطات حديدًا مشعًّا وصل إلى الأرض من انفجاراتٍ نجمية قريبة قبل بضعة ملايين من السنين.",
+          "en": "These explosions scatter iron through space, and from that star-dust the solar system and the Earth formed about 4.6 billion years ago. Every atom of iron on Earth — including the iron in the haemoglobin that carries oxygen in your blood — was made in a star before the sun was born. Scientists have even found, in deep-sea sediments, radioactive iron that reached Earth from nearby stellar explosions a few million years ago."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "حديد-٦٠",
+          "en": "Iron-60"
+        },
+        "label": {
+          "ar": "حديدٌ مشع وصل إلى الأرض من انفجارات نجمية قبل ١٫٥–٣٫٢ مليون سنة، ووُجد في قاع المحيطات",
+          "en": "radioactive iron that reached Earth from stellar explosions 1.5–3.2 million years ago, found on the ocean floor"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الحديد",
+            "en": "The Qur’an is revealed, including surah Al-Hadid"
+          }
+        },
+        {
+          "year": "1957",
+          "text": {
+            "ar": "بحث «B²FH» الشهير يشرح كيف تصنع النجوم العناصر",
+            "en": "The famous “B²FH” paper explains how stars forge the elements"
+          }
+        },
+        {
+          "year": "2009",
+          "text": {
+            "ar": "تلسكوب «تشاندرا» يرصد الحديد يندفع من بقايا المستعر الأعظم «كاسيوبيا A»",
+            "en": "The Chandra telescope maps iron rushing out of the Cassiopeia A supernova remnant"
+          }
+        },
+        {
+          "year": "2016",
+          "text": {
+            "ar": "مجلة نيتشر: حديد-٦٠ من انفجارات نجمية في رواسب قاع المحيطات",
+            "en": "Nature: iron-60 from stellar explosions found in deep-sea sediments"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "لم يقل القرآن إن الحديد «أُخرج» من الأرض كما يبدو لمن يراه يُستخرج من المناجم، بل قال: ﴿وَأَنزَلۡنَا ٱلۡحَدِيدَ﴾. ثم جاء العلم ليقول إن الحديد لم يُصنع في الأرض أصلًا.",
+        "en": "The Qur’an did not say iron was “brought out” of the earth, as it seems to anyone watching a mine. It said: “We sent down iron.” Science later found that iron was not made on Earth at all."
+      },
+      "caution": {
+        "ar": "جاء «الإنزال» في القرآن بمعنى الخلق والإعطاء، كقوله تعالى: ﴿وَأَنزَلَ لَكُم مِّنَ ٱلۡأَنۡعَٰمِ ثَمَٰنِيَةَ أَزۡوَٰجٖ﴾ [الزمر: ٦]، وبهذا فسّر كثير من المفسرين الآية. فحمل «الإنزال» على قدوم الحديد من الفضاء فهمٌ معاصر محتمل، لا تفسيرٌ قطعي. ثم إن حديد الأرض دخل في تكوينها منذ نشأت المجموعة الشمسية، وما يصل من الفضاء اليوم قليلٌ جدًا؛ والحديد ليس وحده القادم من النجوم، فكل العناصر الأثقل من الهيليوم تقريبًا صُنعت فيها. وقد عرف القدماء أيضًا حديد النيازك الساقط من السماء.",
+        "en": "The Qur’an sometimes uses “sending down” for creating and bestowing, as in “He sent down for you eight kinds of livestock” (Az-Zumar 39:6), and many commentators read this verse that way. Taking it as iron arriving from space is a possible modern reading, not a definitive one. Earth’s iron was built in when the solar system formed; what arrives from space today is a mere trace. Nor is iron unique: nearly every element heavier than helium was made in stars. And people in antiquity already knew iron from meteorites that fell from the sky."
+      },
+      "didYouKnow": {
+        "ar": "في جسم الإنسان البالغ نحو ٣ إلى ٤ غرامات من الحديد، معظمها في الهيموغلوبين الذي يحمل الأكسجين في الدم.",
+        "en": "An adult human body holds about 3 to 4 grams of iron, most of it in the haemoglobin that carries oxygen in the blood."
+      },
+      "sources": [
+        {
+          "title": "Stars",
+          "publisher": "NASA Science",
+          "url": "https://science.nasa.gov/universe/stars/",
+          "kind": "agency"
+        },
+        {
+          "title": "Nucleosynthesis",
+          "publisher": "NASA Cosmicopia",
+          "url": "https://cosmicopia.gsfc.nasa.gov/nucleo.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Iron ‘Fingerprints’ Point Astronomers to Supernova Suspects",
+          "publisher": "NASA",
+          "year": "2014",
+          "url": "https://www.nasa.gov/universe/iron-fingerprints-point-astronomers-to-supernova-suspects/",
+          "kind": "agency"
+        },
+        {
+          "title": "Recent near-Earth supernovae probed by global deposition of interstellar radioactive ⁶⁰Fe (Wallner et al.)",
+          "publisher": "Nature",
+          "year": "2016",
+          "url": "https://doi.org/10.1038/nature17196",
+          "kind": "journal"
+        },
+        {
+          "title": "Cassiopeia A: 3-D Model",
+          "publisher": "NASA Chandra X-ray Observatory",
+          "year": "2009",
+          "url": "https://chandra.harvard.edu/photo/2009/casa2/",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "mountains-as-pegs",
+      "category": "earth",
+      "art": "mountains",
+      "title": {
+        "ar": "والجبال أوتادًا",
+        "en": "Mountains as Pegs"
+      },
+      "hook": {
+        "ar": "ما نراه من الجبل قمته فقط. فماذا يختبئ تحته؟",
+        "en": "What we see of a mountain is only its top. What lies hidden beneath it?"
+      },
+      "summary": {
+        "ar": "آيةٌ تصف الجبال بالأوتاد، وعلمٌ اكتشف أن للجبال «جذورًا» من القشرة الأرضية تمتد في العمق أضعاف ارتفاعها.",
+        "en": "A verse calls mountains “pegs”; geology found that mountains have crustal “roots” reaching many times deeper than their height."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "أَلَمۡ نَجۡعَلِ ٱلۡأَرۡضَ مِهَٰدٗا ۝٦ وَٱلۡجِبَالَ أَوۡتَادٗا",
+          "meaning": {
+            "ar": "«مِهَادًا»: فراشًا ممهدًا مستقرًا. «أَوْتَادًا»: جمع وتد، وهو ما يُثبَّت في الأرض فيغيب أكثره فيها ويظهر طرفه، وتُشد به الخيمة.",
+            "en": "“Have We not made the earth a resting place, and the mountains as pegs?”"
+          },
+          "ref": {
+            "ar": "النبأ: ٦–٧",
+            "en": "An-Naba 78:6–7"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان الجبل في تصور الناس كتلةً عظيمة جاثمة على سطح الأرض، كل ما فيها هو ما تراه العين من سفحه إلى قمته.",
+          "en": "To people of old, a mountain was a huge mass sitting on the surface of the earth — all of it visible, from its foot to its peak."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في منتصف القرن التاسع عشر لاحظ المسّاحون البريطانيون في الهند أن جبال الهيمالايا تجذب خيط الشاقول أقل مما يُتوقع من كتلتها الظاهرة. ففسّر الفلكي جورج إيري ذلك عام ١٨٥٥ بأن الجبال تطفو على طبقةٍ أكثف منها، ولها «جذور» من صخور القشرة الأخف تمتد إلى أسفل، كما يغوص معظم جبل الجليد تحت الماء. ويُعرف هذا اليوم بمبدأ «التوازن الأيزوستاتي».",
+          "en": "In the mid-nineteenth century British surveyors in India noticed that the Himalayas pulled their plumb lines less than the mountains’ visible mass should. In 1855 the astronomer George Airy explained it: mountains float on a denser layer beneath them and have “roots” of lighter crustal rock reaching downwards, much as most of an iceberg lies under water. This is now known as isostasy."
+        },
+        {
+          "ar": "وأكدت الدراسات الزلزالية ذلك: فالقشرة الأرضية تحت الهيمالايا يبلغ سمكها نحو ٧٥ كيلومترًا، أي ضعف متوسطها. فالجبل الذي يرتفع بضعة كيلومترات يمتد تحته جذرٌ أعمق بكثير، كالوتد الذي يغيب معظمه في الأرض.",
+          "en": "Seismic studies confirmed it: the crust under the Himalayas is about 75 km thick, twice the average. A mountain rising a few kilometres has a root reaching far deeper — like a peg, most of which is hidden in the ground."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٧٥ كم",
+          "en": "75 km"
+        },
+        "label": {
+          "ar": "سمك القشرة الأرضية تحت الهيمالايا تقريبًا، ضعف متوسطها",
+          "en": "the thickness of the crust beneath the Himalayas — twice the average"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة النبأ المكية",
+            "en": "The Qur’an is revealed, including the Meccan surah An-Naba"
+          }
+        },
+        {
+          "year": "1855",
+          "text": {
+            "ar": "إيري وبرات يفسّران لغز الشاقول في الهيمالايا",
+            "en": "Airy and Pratt explain the Himalayan plumb-line puzzle"
+          }
+        },
+        {
+          "year": "1889",
+          "text": {
+            "ar": "دتون يسمّي المبدأ «الأيزوستازي»",
+            "en": "Dutton names the principle “isostasy”"
+          }
+        },
+        {
+          "year": "1964",
+          "text": {
+            "ar": "هيئة المسح الجيولوجي الأمريكية تلخص ما كشفته الدراسات الزلزالية عن سمك القشرة",
+            "en": "The US Geological Survey summarises what seismic studies reveal about crustal thickness"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "اختار القرآن من بين كل ما يمكن أن يُشبَّه به الجبل كلمةً واحدة: الوتد — شيءٌ ظاهره قليل وباطنه عميق، وعمله التثبيت.",
+        "en": "Of all the things a mountain could be likened to, the Qur’an chose one word: a peg — something with little showing and much hidden, whose job is to hold firm."
+      },
+      "caution": {
+        "ar": "يصحّ أن للجبال جذورًا عميقة، وهذا ما يجعل تشبيهها بالأوتاد لافتًا. أما ما يُشاع في كتب الإعجاز من أن الجبال «تمنع الزلازل» فلا يصح علميًا؛ فالسلاسل الجبلية النشطة من أكثر مناطق الأرض زلازل. فنقتصر على ما ثبت: للجبال جذورٌ تمتد في العمق.",
+        "en": "Mountains really do have deep roots, which is what makes the image of pegs striking. But the claim, common in popular books, that mountains “prevent earthquakes” is not scientifically correct — active mountain belts are among the most earthquake-prone places on Earth. We limit ourselves to what is established: mountains have roots that reach deep."
+      },
+      "didYouKnow": {
+        "ar": "يرتفع جبل إيفرست نحو ٨٨٥٠ مترًا فوق سطح البحر، لكن القشرة الأرضية تحته تمتد إلى عمقٍ يقارب ثمانية أضعاف ذلك.",
+        "en": "Mount Everest rises about 8,850 m above sea level, but the crust beneath it reaches roughly eight times as deep."
+      },
+      "sources": [
+        {
+          "title": "Continental/Continental: The Himalayas",
+          "publisher": "Geological Society of London",
+          "url": "https://www.geolsoc.org.uk/Plate-Tectonics/Chap3-Plate-Margins/Convergent/Continental-Collision.html",
+          "kind": "university"
+        },
+        {
+          "title": "What is isostasy?",
+          "publisher": "Hong Kong Observatory",
+          "url": "https://www.hko.gov.hk/en/education/earth-science/general/00343-what-is-isostasy.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Continental Crust (L. C. Pakiser)",
+          "publisher": "U.S. Geological Survey",
+          "year": "1964",
+          "url": "https://pubs.usgs.gov/misc/tl/0020",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "mountains-of-hail",
+      "category": "earth",
+      "art": "clouds",
+      "title": {
+        "ar": "جبالٌ في السماء فيها بَرَد",
+        "en": "Mountains in the Sky, Full of Hail"
+      },
+      "hook": {
+        "ar": "كيف تتكوّن قطع الجليد — البَرَد — في سماءٍ قد يكون الجو تحتها حارًّا؟",
+        "en": "How do lumps of ice — hail — form in a sky that may be hot at ground level?"
+      },
+      "summary": {
+        "ar": "آيةٌ تصف مراحل تكوّن السحاب الركامي والجبال السحابية التي ينزل منها البرد، وعلم أرصادٍ حديث يصف المراحل نفسها.",
+        "en": "A verse describes, stage by stage, how heaped clouds form and the cloud-mountains hail falls from; modern meteorology describes the same stages."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "أَلَمۡ تَرَ أَنَّ ٱللَّهَ يُزۡجِي سَحَابٗا ثُمَّ يُؤَلِّفُ بَيۡنَهُۥ ثُمَّ يَجۡعَلُهُۥ رُكَامٗا فَتَرَى ٱلۡوَدۡقَ يَخۡرُجُ مِنۡ خِلَٰلِهِۦ وَيُنَزِّلُ مِنَ ٱلسَّمَآءِ مِن جِبَالٖ فِيهَا مِنۢ بَرَدٖ فَيُصِيبُ بِهِۦ مَن يَشَآءُ وَيَصۡرِفُهُۥ عَن مَّن يَشَآءُۖ يَكَادُ سَنَا بَرۡقِهِۦ يَذۡهَبُ بِٱلۡأَبۡصَٰرِ",
+          "meaning": {
+            "ar": "«يُزْجِي»: يسوق برفق. «يُؤَلِّفُ بَيْنَهُ»: يجمع قطعه. «رُكَامًا»: متراكبًا بعضه فوق بعض. «الْوَدْقَ»: المطر. «مِنْ جِبَالٍ فِيهَا مِنْ بَرَدٍ»: من سحابٍ عظيمٍ كالجبال فيه برد.",
+            "en": "“Have you not seen that God drives the clouds, then joins them together, then piles them up in layers, so that you see the rain come out from within them? And He sends down from the sky, from mountains in it, hail — striking with it whom He wills and turning it from whom He wills. The flash of its lightning almost takes away the sight.”"
+          },
+          "ref": {
+            "ar": "النور: ٤٣",
+            "en": "An-Nur 24:43"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان الناس يرون السحاب والمطر والبرد، لكن لم يكن لأحدٍ أن يرى ما يحدث داخل السحابة، ولا أن يعرف كيف يتكوّن الجليد في جوف عاصفةٍ صيفية.",
+          "en": "People saw clouds, rain and hail, but nobody could see inside a cloud, or know how ice could form inside a summer storm."
+        }
+      ],
+      "now": [
+        {
+          "ar": "يشرح علم الأرصاد أن سحب «الركام المزني» (Cumulonimbus) تبدأ بسحبٍ صغيرة تسوقها الرياح، ثم تندمج قطعها، ثم تحملها التيارات الصاعدة إلى أعلى فتتراكم طبقةً فوق طبقة حتى تصير أبراجًا قد تبلغ قممها نحو ٢٠ كيلومترًا. ويعرّفها الأطلس الدولي للسحب التابع للمنظمة العالمية للأرصاد الجوية بأنها سحابةٌ كثيفة ممتدة رأسيًا «على هيئة جبلٍ أو أبراجٍ ضخمة».",
+          "en": "Meteorology explains that cumulonimbus storm clouds begin as small clouds driven by the wind; the pieces merge, and strong updraughts lift them, heaping layer on layer until they become towers whose tops can reach about 20 km. The World Meteorological Organization’s International Cloud Atlas defines this cloud as dense and towering, “in the form of a mountain or huge towers”."
+        },
+        {
+          "ar": "وفي أعالي هذه السحب الشاهقة تكون الحرارة تحت الصفر بكثير، فتتجمد قطرات الماء، وتصعد وتهبط مع التيارات حتى تكبر حبات البرد ثم تسقط. وهذه السحب نفسها هي التي يتولّد فيها البرق.",
+          "en": "High in these towering clouds it is far below freezing, so droplets freeze and are carried up and down by the currents until hailstones grow heavy enough to fall. The same clouds are where lightning is born."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "~٢٠ كم",
+          "en": "~20 km"
+        },
+        "label": {
+          "ar": "ارتفاعٌ قد تبلغه قمم سحب الركام المزني، أعلى من جبل إيفرست بكثير",
+          "en": "the height cumulonimbus tops can reach — far higher than Mount Everest"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة النور",
+            "en": "The Qur’an is revealed, including surah An-Nur"
+          }
+        },
+        {
+          "year": "1803",
+          "text": {
+            "ar": "لوك هوارد يصنف السحب ويضع أسماءها المعروفة اليوم",
+            "en": "Luke Howard classifies clouds and gives them the names still used today"
+          }
+        },
+        {
+          "year": "1984",
+          "text": {
+            "ar": "دراسة لناسا عن كيفية اندماج السحب وتآلفها",
+            "en": "A NASA study on how clouds interact and merge"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "يسوق، ثم يؤلّف، ثم يجعله ركامًا، ثم ينزل المطر، ثم البرد من جبالٍ في السماء، ثم البرق: ترتيبٌ في آيةٍ واحدة يوافق ما تصفه كتب الأرصاد اليوم.",
+        "en": "Drives, then joins, then heaps up; then rain, then hail from mountains in the sky, then lightning: one verse, in an order that matches what meteorology textbooks describe today."
+      },
+      "caution": {
+        "ar": "يمكن لمن يراقب السماء طويلًا أن يرى السحب تتجمع وتتراكم وتبدو كالجبال، فليست تفاصيل الآية كلها مما يخفى على العين المجردة. ووجه التأمل في دقة الوصف وترتيبه واجتماعه في آيةٍ واحدة. وللمفسرين قولٌ آخر في «جبال» أنها جبالٌ من بردٍ على الحقيقة.",
+        "en": "Someone who watches the sky closely can see clouds gather, pile up and look like mountains, so not every detail of the verse was beyond the naked eye. What is striking is the precision and order of the description, all in one verse. Some commentators also took the “mountains” to be literal mountains of hail."
+      },
+      "didYouKnow": {
+        "ar": "أكبر حبة بَرَد سُجّلت في الولايات المتحدة سقطت في ولاية داكوتا الجنوبية عام ٢٠١٠، وبلغ قطرها نحو ٢٠ سنتيمترًا.",
+        "en": "The largest hailstone on record in the United States fell in South Dakota in 2010; it was about 20 cm (8 inches) across."
+      },
+      "sources": [
+        {
+          "title": "Cumulonimbus (Cb)",
+          "publisher": "World Meteorological Organization — International Cloud Atlas",
+          "url": "https://cloudatlas.wmo.int/en/cumulonimbus-cb.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Cloud Development",
+          "publisher": "U.S. National Weather Service",
+          "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/clouds/cloud_development/clouds.htm",
+          "kind": "agency"
+        },
+        {
+          "title": "Severe Weather 101: Hail",
+          "publisher": "NOAA National Severe Storms Laboratory",
+          "url": "https://www.nssl.noaa.gov/education/svrwx101/hail/",
+          "kind": "agency"
+        },
+        {
+          "title": "Severe Weather 101: Thunderstorm Types",
+          "publisher": "NOAA National Severe Storms Laboratory",
+          "url": "https://www.nssl.noaa.gov/education/svrwx101/thunderstorms/types/",
+          "kind": "agency"
+        },
+        {
+          "title": "Cloud interactions and merging (Tao & Simpson)",
+          "publisher": "Journal of the Atmospheric Sciences (NASA NTRS)",
+          "year": "1984",
+          "url": "https://ntrs.nasa.gov/citations/19850039006",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "slug": "climbing-into-the-sky",
+      "category": "earth",
+      "art": "altitude",
+      "title": {
+        "ar": "كأنما يصّعّد في السماء",
+        "en": "As Though Climbing into the Sky"
+      },
+      "hook": {
+        "ar": "لماذا يضيق صدر من يصعد إلى الأعالي؟",
+        "en": "Why does the chest feel tight as you climb high?"
+      },
+      "summary": {
+        "ar": "آيةٌ تشبّه ضيق الصدر بحال من يصعد في السماء، وعلمٌ عرف بعد قرون أن الهواء يرقّ في الأعالي فيضيق التنفس.",
+        "en": "A verse likens a constricted chest to someone climbing into the sky; centuries later science found that the air thins with height and breathing grows hard."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "فَمَن يُرِدِ ٱللَّهُ أَن يَهۡدِيَهُۥ يَشۡرَحۡ صَدۡرَهُۥ لِلۡإِسۡلَٰمِۖ وَمَن يُرِدۡ أَن يُضِلَّهُۥ يَجۡعَلۡ صَدۡرَهُۥ ضَيِّقًا حَرَجٗا كَأَنَّمَا يَصَّعَّدُ فِي ٱلسَّمَآءِۚ كَذَٰلِكَ يَجۡعَلُ ٱللَّهُ ٱلرِّجۡسَ عَلَى ٱلَّذِينَ لَا يُؤۡمِنُونَ",
+          "meaning": {
+            "ar": "«ضَيِّقًا حَرَجًا»: شديد الضيق. «يَصَّعَّدُ»: يتكلّف الصعود ويشق عليه. شبّه حال من لا يقبل الهدى بمن يتكلّف الصعود إلى السماء فيضيق صدره.",
+            "en": "“Whomever God wills to guide, He opens his heart to Islam; and whomever He wills to leave astray, He makes his chest tight and constricted, as though he were climbing up into the sky. Thus God lays defilement on those who do not believe.”"
+          },
+          "ref": {
+            "ar": "الأنعام: ١٢٥",
+            "en": "Al-An‘am 6:125"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "لم يكن الناس يعرفون أن للهواء وزنًا وضغطًا، ولا أنه يرقّ كلما ارتفعنا. ولم يصعد أحدٌ إلى السماء، ولا عرف أحدٌ ما يحدث للجسم في الأعالي الشاهقة.",
+          "en": "People did not know that air has weight and pressure, or that it thins as you go up. Nobody had risen into the sky, or knew what happens to the body at great heights."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في القرن السابع عشر أثبت تورشيلي وباسكال أن للهواء ضغطًا يقلّ مع الارتفاع؛ ففي عام ١٦٤٨ حُمل مقياس الضغط إلى قمة جبل «بوي دو دوم» في فرنسا فانخفض عموده.",
+          "en": "In the seventeenth century Torricelli and Pascal showed that air has pressure, and that it falls with height: in 1648 a barometer carried up the Puy de Dôme in France showed its column drop."
+        },
+        {
+          "ar": "وفي عام ١٨٧٨ نشر الفرنسي بول بير أبحاثه التي بيّنت أن ضيق التنفس وأعراض المرتفعات سببها نقص الأكسجين. واليوم تذكر مراكز مكافحة الأمراض الأمريكية أن الأكسجين الذي نستنشقه على ارتفاع ٣٠٥٠ مترًا لا يتجاوز ٦٩٪ مما هو عند سطح البحر، فيتسارع التنفس ويشعر الإنسان بضيقٍ في صدره.",
+          "en": "In 1878 the Frenchman Paul Bert published research showing that breathlessness and altitude sickness are caused by lack of oxygen. Today the US Centers for Disease Control notes that at 3,050 m the oxygen we breathe in is only 69% of its sea-level value: breathing speeds up, and the chest feels tight."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٦٩٪",
+          "en": "69%"
+        },
+        "label": {
+          "ar": "ما يبقى من ضغط الأكسجين المستنشق على ارتفاع ٣٠٥٠ مترًا، مقارنةً بسطح البحر",
+          "en": "of sea-level inhaled oxygen pressure remains at 3,050 metres"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الأنعام",
+            "en": "The Qur’an is revealed, including surah Al-An‘am"
+          }
+        },
+        {
+          "year": "1590",
+          "text": {
+            "ar": "الرحالة الإسباني خوسيه دي أكوستا يصف دوار المرتفعات في جبال الأنديز",
+            "en": "The Spanish traveller José de Acosta describes altitude sickness in the Andes"
+          }
+        },
+        {
+          "year": "1648",
+          "text": {
+            "ar": "تجربة جبل بوي دو دوم: الضغط يقلّ مع الارتفاع",
+            "en": "The Puy de Dôme experiment: pressure falls with height"
+          }
+        },
+        {
+          "year": "1878",
+          "text": {
+            "ar": "بول بير يربط أعراض المرتفعات بنقص الأكسجين",
+            "en": "Paul Bert links altitude sickness to lack of oxygen"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "اختار القرآن تشبيهًا لم يجرّبه أحدٌ من سامعيه: الصعود في السماء. ثم عرف الناس بعد أكثر من ألف عام أن الصدر يضيق فعلًا كلما ارتفع الإنسان.",
+        "en": "The Qur’an chose an image none of its first listeners had experienced: climbing into the sky. More than a thousand years later, people learned that the chest really does tighten the higher one climbs."
+      },
+      "caution": {
+        "ar": "الآية تشبيهٌ لحال القلب الذي يرفض الهدى، وليست في المقام الأول وصفًا علميًا. وفسّرها بعض المفسرين بمن يتكلّف ما لا يطيق، كمن يحاول الصعود إلى السماء. كما أن ضيق النفس على الجبال العالية تجربةٌ عرفها سكانها والمسافرون إليها قبل أن يفسّرها العلم. فدقة التشبيه لافتة، دون أن نجعل الآية درسًا في فسيولوجيا التنفس.",
+        "en": "The verse is a simile for a heart that refuses guidance, not primarily a scientific statement. Some commentators explained it as someone attempting the impossible, like trying to climb into the sky. Breathlessness on high mountains was also known to people who lived on or travelled through them long before science explained it. The aptness of the image is striking — without turning the verse into a lesson in respiratory physiology."
+      },
+      "didYouKnow": {
+        "ar": "سبق الفرنسي دينيس جوردانيه بول بير إلى ربط أعراض المرتفعات بنقص الأكسجين في الدم في ستينيات القرن التاسع عشر، بعد ملاحظاته على سكان مرتفعات المكسيك.",
+        "en": "Before Paul Bert, the French doctor Denis Jourdanet linked altitude illness to low oxygen in the blood in the 1860s, after observing people living in Mexico’s highlands."
+      },
+      "sources": [
+        {
+          "title": "High-Altitude Travel and Altitude Illness",
+          "publisher": "CDC Yellow Book",
+          "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Acute mountain sickness",
+          "publisher": "MedlinePlus (U.S. National Library of Medicine)",
+          "url": "https://medlineplus.gov/ency/article/000133.htm",
+          "kind": "agency"
+        },
+        {
+          "title": "Denis Jourdanet: the physiologist who discovered the role of low blood oxygen at high altitude",
+          "publisher": "American Physiological Society (via Newswise)",
+          "year": "2013",
+          "url": "https://www.newswise.com/articles/denis-jordanet-the-physiologist-who-discovered-the-role-of-low-blood-oxygen-at-high-altitude",
+          "kind": "news"
+        }
+      ]
+    },
+    {
+      "slug": "barrier-between-seas",
+      "category": "seas",
+      "art": "seas-barrier",
+      "title": {
+        "ar": "بينهما برزخٌ لا يبغيان",
+        "en": "A Barrier Neither Transgresses"
+      },
+      "hook": {
+        "ar": "حين يلتقي نهرٌ عذب ببحرٍ مالح، أو بحرٌ ببحر، لماذا لا يذوبان فورًا في ماءٍ واحد؟",
+        "en": "When a fresh river meets a salty sea, or one sea meets another, why don’t they blend at once into a single water?"
+      },
+      "summary": {
+        "ar": "آياتٌ تصف التقاء البحرين وبينهما حاجز، وعلم بحارٍ وجد أن المسطحات المائية تلتقي عبر حدودٍ ومناطق انتقالية تحفظ لكلٍّ منها خصائصه.",
+        "en": "Verses describe two seas meeting with a barrier between them; oceanography found that bodies of water meet across boundaries and transition zones that keep each one’s character."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "مَرَجَ ٱلۡبَحۡرَيۡنِ يَلۡتَقِيَانِ ۝١٩ بَيۡنَهُمَا بَرۡزَخٞ لَّا يَبۡغِيَانِ",
+          "meaning": {
+            "ar": "«مَرَجَ»: أرسل وخلّى. «بَرْزَخٌ»: حاجز. «لَا يَبْغِيَانِ»: لا يطغى أحدهما على الآخر فيُذهب خصائصه.",
+            "en": "“He released the two seas, meeting side by side; between them is a barrier which neither of them transgresses.”"
+          },
+          "ref": {
+            "ar": "الرحمن: ١٩–٢٠",
+            "en": "Ar-Rahman 55:19–20"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "وَهُوَ ٱلَّذِي مَرَجَ ٱلۡبَحۡرَيۡنِ هَٰذَا عَذۡبٞ فُرَاتٞ وَهَٰذَا مِلۡحٌ أُجَاجٞ وَجَعَلَ بَيۡنَهُمَا بَرۡزَخٗا وَحِجۡرٗا مَّحۡجُورٗا",
+          "meaning": {
+            "ar": "«عَذْبٌ فُرَاتٌ»: حلوٌ شديد العذوبة. «مِلْحٌ أُجَاجٌ»: شديد الملوحة. «حِجْرًا مَحْجُورًا»: حاجزًا مانعًا.",
+            "en": "“And it is He who released the two bodies of water — this one sweet and fresh, that one salty and bitter — and placed between them a barrier and a firm partition.”"
+          },
+          "ref": {
+            "ar": "الفرقان: ٥٣",
+            "en": "Al-Furqan 25:53"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان البحارة يعرفون أن ماء النهر غير ماء البحر، لكن لم يكن لأحدٍ وسيلةٌ لقياس الملوحة والحرارة والكثافة في الأعماق، ولا لرؤية ما يحدث تحت السطح حيث يلتقي الماءان.",
+          "en": "Sailors knew river water differs from sea water, but nobody could measure saltiness, temperature and density at depth, or see what happens below the surface where two waters meet."
+        }
+      ],
+      "now": [
+        {
+          "ar": "مع تطور علم المحيطات صار العلماء يقيسون خصائص الماء على أعماقٍ مختلفة، فوجدوا أن المياه المختلفة في الملوحة والحرارة تختلف في الكثافة، فلا تختلط بسرعة، بل يفصل بينها حدٌّ أو منطقةٌ انتقالية تتغير عبرها الخصائص تغيرًا حادًا.",
+          "en": "As oceanography developed, scientists began measuring water at different depths. They found that waters differing in saltiness and temperature differ in density, so they do not mix quickly; between them lies a boundary or transition zone where the properties change sharply."
+        },
+        {
+          "ar": "ففي مصبّات الأنهار من نوع «الإسفين الملحي» ينزلق الماء العذب فوق الماء المالح، ويفصل بينهما حدٌّ واضح، وتصف الإدارة الوطنية الأمريكية للمحيطات الاختلاط عنده بأنه «طفيف عمومًا». وفي مضيق جبل طارق يدخل ماء المحيط الأطلسي الأقل ملوحة من الأعلى، ويخرج ماء البحر المتوسط الأشد ملوحة من الأسفل، ويفصل بينهما حدٌّ في الكثافة على عمق نحو ١٠٠ متر.",
+          "en": "In “salt-wedge” estuaries, fresh river water slides over the salt water with a clear boundary between them, where NOAA describes the mixing as “generally slight”. In the Strait of Gibraltar, fresher Atlantic water flows in at the top while saltier Mediterranean water flows out beneath it, separated by a density boundary about 100 metres down."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١٠٠ م",
+          "en": "100 m"
+        },
+        "label": {
+          "ar": "عمق الحد الفاصل تقريبًا بين ماء الأطلسي الداخل وماء المتوسط الخارج في مضيق جبل طارق",
+          "en": "the depth of the boundary between incoming Atlantic water and outgoing Mediterranean water at Gibraltar"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورتا الرحمن والفرقان",
+            "en": "The Qur’an is revealed, including surahs Ar-Rahman and Al-Furqan"
+          }
+        },
+        {
+          "year": "1681",
+          "text": {
+            "ar": "الإيطالي لويجي مارسيلي يثبت وجود تيارين متعاكسين في مضيق البوسفور، أحدهما فوق الآخر",
+            "en": "The Italian Luigi Marsigli shows two opposing currents in the Bosporus, one above the other"
+          }
+        },
+        {
+          "year": "1872–1876",
+          "text": {
+            "ar": "رحلة السفينة «تشالنجر» تؤسس علم المحيطات الحديث",
+            "en": "The HMS Challenger expedition founds modern oceanography"
+          }
+        },
+        {
+          "year": "2004",
+          "text": {
+            "ar": "صور الأقمار الصناعية لناسا تُظهر الأمواج الداخلية على حدّ الطبقتين في جبل طارق",
+            "en": "NASA satellite images show internal waves on the boundary between the layers at Gibraltar"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "بحران يلتقيان فعلًا، ومع ذلك لا يطغى أحدهما على الآخر: لقاءٌ دون ذوبان. وصفٌ دقيق لما لم يكن يُرى من فوق سطح الماء.",
+        "en": "Two seas that truly meet, yet neither overruns the other: meeting without dissolving. A precise description of something that could not be seen from the surface."
+      },
+      "caution": {
+        "ar": "الماءان يختلطان في الحقيقة اختلاطًا بطيئًا عند الالتقاء، و«البرزخ» ليس جدارًا صلبًا بل حدٌّ ومنطقةٌ انتقالية؛ وهذا لا يعارض الآية، فالمعنى أن أحدهما لا يطغى على الآخر فيذهب بخصائصه. وما ينتشر من صور «التقاء محيطين في خليج ألاسكا» ليس دقيقًا، فهو التقاء مياهٍ ذائبة من الأنهار الجليدية محمّلة بالطمي بمياه المحيط. وكذلك القصة المتداولة عن «اكتشاف جاك كوستو» للحاجز في جبل طارق لا مصدر لها.",
+        "en": "In reality the two waters do mix slowly where they meet; the “barrier” is not a solid wall but a boundary and transition zone. That does not contradict the verse, whose meaning is that neither overwhelms the other and strips it of its character. The viral photos said to show “two oceans meeting in the Gulf of Alaska” are misleading: they show silt-laden glacial meltwater meeting ocean water. Likewise, the popular story that Jacques Cousteau “discovered” the barrier at Gibraltar has no source."
+      },
+      "didYouKnow": {
+        "ar": "في عام ١٦٨١ أثبت مارسيلي التيارين المتعاكسين في البوسفور بتجربةٍ بسيطة: صنع حوضًا فيه ماءان مختلفا الكثافة يفصل بينهما حاجز، فلما فتح فيه ثقبين جرى الماء الثقيل من الأسفل والخفيف من الأعلى في اتجاهين متعاكسين.",
+        "en": "In 1681 Marsigli demonstrated the Bosporus’s opposing currents with a simple experiment: a tank holding two waters of different density separated by a partition. When he opened holes in it, the heavy water flowed one way along the bottom and the light water the other way along the top."
+      },
+      "sources": [
+        {
+          "title": "Classifying Estuaries: By Water Circulation",
+          "publisher": "NOAA National Ocean Service",
+          "url": "https://oceanservice.noaa.gov/education/tutorial_estuaries/est05_circulation.html",
+          "kind": "agency"
+        },
+        {
+          "title": "What is an estuary?",
+          "publisher": "NOAA National Ocean Service",
+          "url": "https://oceanservice.noaa.gov/facts/estuary.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Solitons, Strait of Gibraltar",
+          "publisher": "NASA Earth Observatory",
+          "year": "2004",
+          "url": "https://science.nasa.gov/earth/earth-observatory/solitons-strait-of-gibraltar-4585/",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "darkness-of-the-deep",
+      "category": "seas",
+      "journey": 2,
+      "art": "deep-darkness",
+      "title": {
+        "ar": "ظلماتٌ بعضها فوق بعض",
+        "en": "Darknesses, One Above Another"
+      },
+      "hook": {
+        "ar": "ما الذي يراه غوّاصٌ في أعماق البحر؟ ومن وصفه قبل أن يغوص إليها أحد؟",
+        "en": "What would a diver see in the depths of the sea — and who could describe it before anyone had been there?"
+      },
+      "summary": {
+        "ar": "آيةٌ تصف ظلمات البحر العميق، وموجًا من فوقه موج، وعلمٌ وجد أن الضوء يتلاشى طبقةً بعد طبقة، وأن في أعماق البحر أمواجًا داخلية لا تكاد تُرى من السطح.",
+        "en": "A verse describes the darkness of a deep sea, with waves above waves; science found that light fades layer by layer, and that deep seas carry internal waves that barely show at the surface."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "أَوۡ كَظُلُمَٰتٖ فِي بَحۡرٖ لُّجِّيّٖ يَغۡشَىٰهُ مَوۡجٞ مِّن فَوۡقِهِۦ مَوۡجٞ مِّن فَوۡقِهِۦ سَحَابٞۚ ظُلُمَٰتُۢ بَعۡضُهَا فَوۡقَ بَعۡضٍ إِذَآ أَخۡرَجَ يَدَهُۥ لَمۡ يَكَدۡ يَرَىٰهَاۗ وَمَن لَّمۡ يَجۡعَلِ ٱللَّهُ لَهُۥ نُورٗا فَمَا لَهُۥ مِن نُّورٍ",
+          "meaning": {
+            "ar": "«لُجِّيٍّ»: عميقٍ كثير الماء. «يَغْشَاهُ»: يغطيه. «مَوْجٌ مِنْ فَوْقِهِ مَوْجٌ»: موجٌ تعلوه أمواج. «لَمْ يَكَدْ يَرَاهَا»: لم يقارب رؤيتها من شدة الظلمة.",
+            "en": "“Or like darknesses in a deep sea, covered by waves, above which are waves, above which are clouds — darknesses, one above another. When one puts out his hand, he can hardly see it. And whoever God gives no light, has no light.”"
+          },
+          "ref": {
+            "ar": "النور: ٤٠",
+            "en": "An-Nur 24:40"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "لم يكن عند الناس في القرن السابع وسيلةٌ للغوص إلا بحبس النفس لعشرات قليلة من الأمتار، كما يفعل الغواصون على اللؤلؤ، وكانت أعماق البحر وما فيها غيبًا كاملًا. وعاش النبي ﷺ في بيئةٍ صحراوية، ولم يُعرف أنه ركب البحر قط.",
+          "en": "In the seventh century nobody could dive except on a single breath, a few tens of metres at most, as pearl divers did; the deep sea and its contents were entirely unknown. The Prophet ﷺ lived in a desert land and is not known ever to have travelled by sea."
+        }
+      ],
+      "now": [
+        {
+          "ar": "يمتص ماء البحر ضوء الشمس لونًا بعد لون: الأحمر أولًا في الأمتار الأولى، ثم البرتقالي والأصفر، ثم الأخضر، ويبقى الأزرق أطول. ويقسّم العلماء البحر إلى طبقات: «المنطقة المضيئة» حتى نحو ٢٠٠ متر، ثم «منطقة الشفق» حتى نحو ١٠٠٠ متر يخفت فيها الضوء بسرعة، ثم ما تحتها حيث لا يصل من ضوء الشمس شيء على الإطلاق: ظلماتٌ بعضها فوق بعض.",
+          "en": "Seawater absorbs sunlight colour by colour: red first, in the top few metres, then orange and yellow, then green, with blue lasting longest. Oceanographers divide the sea into layers: the sunlit zone to about 200 m, the twilight zone to about 1,000 m where light fades fast, and below that a depth no sunlight reaches at all — darknesses, one above another."
+        },
+        {
+          "ar": "وفي عام ١٨٩٣ علقت سفينة المستكشف النرويجي فريتيوف نانسن فيما سمّاه البحارة «الماء الميت»، فلم تتقدم رغم محركها. وفي عام ١٩٠٤ أثبت السويدي فاغن والفريد إكمان أن السبب «أمواجٌ داخلية» تتكون على الحد الفاصل بين طبقتين من الماء مختلفتين في الكثافة. هذه الأمواج تحت السطح قد يبلغ ارتفاعها مئات الأمتار، ولا تكاد تُرى من فوق؛ فهي موجٌ من فوقه موج السطح، ومن فوقهما السحاب.",
+          "en": "In 1893 the ship of the Norwegian explorer Fridtjof Nansen was caught in what sailors called “dead water” and barely moved despite its engine. In 1904 the Swede Vagn Walfrid Ekman showed the cause: “internal waves” forming on the boundary between two layers of water of different density. These waves beneath the surface can be hundreds of metres tall, yet barely show at the top — waves with surface waves above them, and clouds above both."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١٠٠٠ م",
+          "en": "1,000 m"
+        },
+        "label": {
+          "ar": "العمق الذي لا يصل بعده أي ضوءٍ من الشمس",
+          "en": "below which no sunlight reaches at all"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة النور",
+            "en": "The Qur’an is revealed, including surah An-Nur"
+          }
+        },
+        {
+          "year": "1893",
+          "text": {
+            "ar": "سفينة نانسن تعلق في «الماء الميت»",
+            "en": "Nansen’s ship is trapped in “dead water”"
+          }
+        },
+        {
+          "year": "1904",
+          "text": {
+            "ar": "إكمان يثبت أن السبب أمواجٌ داخلية بين طبقات الماء",
+            "en": "Ekman shows the cause is internal waves between water layers"
+          }
+        },
+        {
+          "year": "1934",
+          "text": {
+            "ar": "بيب وبارتون يهبطان بكرةٍ غاطسة إلى عمق ٩٢٣ مترًا ويصفان الظلام الدامس",
+            "en": "Beebe and Barton descend 923 m in a bathysphere and describe total darkness"
+          }
+        },
+        {
+          "year": "2020",
+          "text": {
+            "ar": "دراسة في مجلة PNAS تحسم تفسير ظاهرة «الماء الميت»",
+            "en": "A study in PNAS settles the explanation of “dead water”"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "ظلمة البحر العميق، ثم الموج، ثم موجٌ فوقه، ثم السحاب: طبقاتٌ متراكبة في مشهدٍ واحد، يرسمه القرآن مثلًا لحال القلب الذي لا نور فيه.",
+        "en": "The dark of the deep sea, then waves, then waves above them, then clouds: layers stacked in a single scene, drawn by the Qur’an as a likeness for a heart without light."
+      },
+      "caution": {
+        "ar": "الآية مثلٌ ضربه الله لأعمال الكافرين، وليست وصفًا علميًا مقصودًا لذاته. وبعض معناها يدركه كل ناظر: فالبحر العميق مظلم، وعليه أمواج، وفوقه سحاب، وقد عرف الغواصون أن الضوء يخفت كلما نزلوا. أما حمل «موجٌ من فوقه موج» على الأمواج الداخلية فهو فهمٌ معاصر حسن وأقوى ما في الموضوع، لكنه ليس التفسير الوحيد؛ فقد فسّره المفسرون بتراكب الأمواج بعضها على بعض.",
+        "en": "The verse is a parable for the deeds of disbelievers, not a scientific description for its own sake. Some of its meaning is open to anyone: a deep sea is dark, has waves on it and clouds above, and divers always knew light fades as they went down. Reading “waves above which are waves” as internal waves is a good modern understanding and the strongest part of this topic, but it is not the only one; classical commentators read it as waves piled on waves."
+      },
+      "didYouKnow": {
+        "ar": "يبدو الدم في الأعماق بلونٍ أخضر داكن أو أسود لا أحمر، لأن الضوء الأحمر لا يصل إلى هناك.",
+        "en": "At depth, blood looks dark green or black rather than red, because no red light reaches that far down."
+      },
+      "sources": [
+        {
+          "title": "What is the “deep” ocean?",
+          "publisher": "NOAA Ocean Exploration",
+          "url": "https://oceanexplorer.noaa.gov/facts/deep-ocean.html",
+          "kind": "agency"
+        },
+        {
+          "title": "How far does light travel in the ocean?",
+          "publisher": "NOAA National Ocean Service",
+          "url": "https://oceanservice.noaa.gov/facts/light_travel.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Layers of the Ocean",
+          "publisher": "NOAA JetStream",
+          "url": "https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+          "kind": "agency"
+        },
+        {
+          "title": "Making Waves in the Andaman Sea",
+          "publisher": "NASA Earth Observatory",
+          "year": "2020",
+          "url": "https://science.nasa.gov/earth/earth-observatory/making-waves-in-the-andaman-sea-146256",
+          "kind": "agency"
+        },
+        {
+          "title": "The dual nature of the dead-water phenomenology: Nansen versus Ekman wave-making drags (Fourdrinoy et al.)",
+          "publisher": "Proceedings of the National Academy of Sciences",
+          "year": "2020",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7382212/",
+          "kind": "journal"
+        },
+        {
+          "title": "Behind the dead-water phenomenon",
+          "publisher": "CNRS",
+          "year": "2020",
+          "url": "https://www.cnrs.fr/en/press/behind-dead-water-phenomenon",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "every-living-thing-from-water",
+      "category": "seas",
+      "art": "water-life",
+      "title": {
+        "ar": "وجعلنا من الماء كل شيءٍ حي",
+        "en": "Every Living Thing, Made from Water"
+      },
+      "hook": {
+        "ar": "لماذا يبحث العلماء عن الماء أولًا حين يبحثون عن الحياة في العوالم الأخرى؟",
+        "en": "Why do scientists look for water first when they search for life on other worlds?"
+      },
+      "summary": {
+        "ar": "آيةٌ تقرر أن كل شيءٍ حي جُعل من الماء، وعلم أحياءٍ وجد أن الماء أساس كل خليةٍ حية معروفة.",
+        "en": "A verse states that every living thing was made from water; biology found water at the heart of every known living cell."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "أَوَلَمۡ يَرَ ٱلَّذِينَ كَفَرُوٓاْ أَنَّ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ كَانَتَا رَتۡقٗا فَفَتَقۡنَٰهُمَاۖ وَجَعَلۡنَا مِنَ ٱلۡمَآءِ كُلَّ شَيۡءٍ حَيٍّۚ أَفَلَا يُؤۡمِنُونَ",
+          "meaning": {
+            "ar": "«وَجَعَلْنَا مِنَ الْمَاءِ كُلَّ شَيْءٍ حَيٍّ»: جعلنا الماء أصلًا لكل حيٍّ ومادةً لحياته، فلا حياة بدونه.",
+            "en": "“…and We made from water every living thing. Will they not then believe?”"
+          },
+          "ref": {
+            "ar": "الأنبياء: ٣٠",
+            "en": "Al-Anbiya 21:30"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "عرف الناس قديمًا أن الإنسان والحيوان والنبات يحتاجون إلى الماء، لكنهم لم يعرفوا الخلية، ولا أن الماء يدخل في تركيب كل كائنٍ حي بنسبةٍ كبيرة، ولا أن الحياة كلها — حتى أصغر الكائنات التي لا تُرى بالعين — لا تقوم بغيره.",
+          "en": "People always knew that humans, animals and plants need water. They did not know about cells, that water makes up a large part of every living thing, or that all life — even creatures too small to see — cannot exist without it."
+        }
+      ],
+      "now": [
+        {
+          "ar": "اكتُشفت الخلية في القرن السابع عشر، وتبيّن مع تطور علم الأحياء أن الماء هو الوسط الذي تجري فيه كيمياء الحياة كلها. وتذكر هيئة المسح الجيولوجي الأمريكية أن الماء يشكل ما يصل إلى ٦٠٪ من جسم الإنسان البالغ، ونحو ٧٣٪ من الدماغ والقلب، ونحو ٨٣٪ من الرئتين.",
+          "en": "The cell was discovered in the seventeenth century, and as biology advanced it became clear that water is the medium in which all the chemistry of life takes place. The US Geological Survey notes that water makes up as much as 60% of the adult human body — about 73% of the brain and heart, and about 83% of the lungs."
+        },
+        {
+          "ar": "ولهذا جعلت وكالة ناسا شعار بحثها عن الحياة خارج الأرض لسنواتٍ طويلة: «اتبع الماء» (Follow the water)؛ فكل الكائنات الحية المعروفة تحتاج إلى مصدرٍ للطاقة وإلى الماء السائل.",
+          "en": "That is why for many years NASA’s guiding strategy in the search for life beyond Earth was “Follow the water”: every known living thing needs a source of energy and liquid water."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٦٠٪",
+          "en": "60%"
+        },
+        "label": {
+          "ar": "تقريبًا نسبة الماء في جسم الإنسان البالغ",
+          "en": "of an adult human body is water, roughly"
+        }
+      },
+      "timeline": [
+        {
+          "year": {
+            "ar": "القرن ٦ ق.م",
+            "en": "6th c. BCE"
+          },
+          "text": {
+            "ar": "الفيلسوف اليوناني طاليس يقول إن الماء أصل الأشياء كلها",
+            "en": "The Greek philosopher Thales says water is the origin of all things"
+          }
+        },
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الأنبياء",
+            "en": "The Qur’an is revealed, including surah Al-Anbiya"
+          }
+        },
+        {
+          "year": "1665",
+          "text": {
+            "ar": "روبرت هوك يرى الخلايا بالمجهر ويسميها",
+            "en": "Robert Hooke sees cells under the microscope and names them"
+          }
+        },
+        {
+          "year": "1839",
+          "text": {
+            "ar": "نظرية الخلية: كل كائنٍ حي مكوّنٌ من خلايا",
+            "en": "Cell theory: every living thing is made of cells"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "تحدث الأقدمون عن عناصر أربعة تتكون منها الأشياء، أما القرآن فقال: ﴿وَجَعَلۡنَا مِنَ ٱلۡمَآءِ كُلَّ شَيۡءٍ حَيٍّ﴾ — لم يقل: كل شيء، بل: كل شيءٍ حيّ.",
+        "en": "Ancient thinkers spoke of four elements that make up all things. The Qur’an said: “We made from water every living thing” — not every thing, but every living thing."
+      },
+      "caution": {
+        "ar": "أهمية الماء للحياة ليست خفيةً تمامًا، وقد قال الفيلسوف اليوناني طاليس قبل الإسلام بقرون إن الماء أصل الأشياء كلها. فوجه التأمل ليس في أن الماء ضروري للحياة فحسب، بل في دقة العبارة وعمومها: كل كائنٍ حي — بما فيه ما لا يُرى — جُعل من الماء، دون أن تقول الآية ما قاله طاليس من أن الجمادات أيضًا من الماء. وتقول ناسا بحذر: «الحياة كما نعرفها».",
+        "en": "Water’s importance for life was not completely hidden: the Greek philosopher Thales, centuries before Islam, said water was the origin of all things. So what is worth noting is not only that life needs water, but the precision and scope of the wording: every living thing, including what cannot be seen, is made from water — without the verse claiming, as Thales did, that non-living things come from water too. NASA itself carefully says “life as we know it”."
+      },
+      "didYouKnow": {
+        "ar": "حتى البذور الجافة، وبعض الكائنات الدقيقة التي تبدو «ميتة» في الجفاف، تعود إليها الحياة النشطة حين يبللها الماء.",
+        "en": "Even dry seeds, and some microscopic creatures that seem lifeless in a drought, spring back into active life when water reaches them."
+      },
+      "sources": [
+        {
+          "title": "The Water in You: Water and the Human Body",
+          "publisher": "U.S. Geological Survey",
+          "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-you-water-and-human-body",
+          "kind": "agency"
+        },
+        {
+          "title": "What does life need for survival?",
+          "publisher": "NASA Astrobiology",
+          "url": "https://astrobiology.nasa.gov/education/alp/what-does-life-need-for-survival/",
+          "kind": "agency"
+        },
+        {
+          "title": "Ocean Worlds",
+          "publisher": "NASA Science",
+          "url": "https://science.nasa.gov/solar-system/ocean-worlds/",
+          "kind": "agency"
+        },
+        {
+          "title": "History of Astrobiology",
+          "publisher": "NASA Astrobiology",
+          "url": "https://astrobiology.nasa.gov/about/history-of-astrobiology/",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "stages-of-the-embryo",
+      "category": "human",
+      "journey": 3,
+      "art": "embryo",
+      "title": {
+        "ar": "نطفةً ثم علقةً ثم مضغة",
+        "en": "A Drop, a Clinging Form, a Chewed-like Lump"
+      },
+      "hook": {
+        "ar": "كيف يتشكل الإنسان في أسابيعه الأولى، قبل أن تراه عين؟",
+        "en": "How does a human being take shape in the first weeks, before any eye can see it?"
+      },
+      "summary": {
+        "ar": "آياتٌ تصف أطوار الجنين بالترتيب: نطفة، ثم علقة، ثم مضغة، ثم عظام تُكسى لحمًا. وعلم أجنةٍ حديث يرى هذه التحولات بالمجهر.",
+        "en": "Verses describe the embryo’s stages in order: a drop, a clinging form, a chewed-like lump, then bones clothed with flesh. Modern embryology sees these transformations under the microscope."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "وَلَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ مِن سُلَٰلَةٖ مِّن طِينٖ ۝١٢ ثُمَّ جَعَلۡنَٰهُ نُطۡفَةٗ فِي قَرَارٖ مَّكِينٖ ۝١٣ ثُمَّ خَلَقۡنَا ٱلنُّطۡفَةَ عَلَقَةٗ فَخَلَقۡنَا ٱلۡعَلَقَةَ مُضۡغَةٗ فَخَلَقۡنَا ٱلۡمُضۡغَةَ عِظَٰمٗا فَكَسَوۡنَا ٱلۡعِظَٰمَ لَحۡمٗا ثُمَّ أَنشَأۡنَٰهُ خَلۡقًا ءَاخَرَۚ فَتَبَارَكَ ٱللَّهُ أَحۡسَنُ ٱلۡخَٰلِقِينَ",
+          "meaning": {
+            "ar": "«نُطْفَةً»: قليلٌ من الماء. «قَرَارٍ مَكِينٍ»: مستقرٌّ حصين، وهو الرحم. «عَلَقَةً»: من العُلوق وهو التعلّق، وتُطلق على الدودة التي تعلق بالجلد وتمتص الدم، وعلى الدم الجامد. «مُضْغَةً»: قطعة لحمٍ بقدر ما يُمضغ. «خَلْقًا آخَرَ»: بنفخ الروح فيه.",
+            "en": "“We created the human being from an extract of clay; then We placed him as a drop in a secure resting place; then We made the drop into a clinging form, and made the clinging form into a lump, and made the lump into bones, and clothed the bones with flesh; then We brought him into being as another creation. So blessed is God, the best of creators.”"
+          },
+          "ref": {
+            "ar": "المؤمنون: ١٢–١٤",
+            "en": "Al-Mu’minun 23:12–14"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "سادت قرونًا طويلة نظرية أرسطو أن الجنين يتكوّن من دم الحيض يعقده المني كما تعقد الإنفحةُ اللبن. ثم ظهرت في القرن السابع عشر نظرية «التشكّل المسبق»: أن إنسانًا كاملًا صغيرًا موجودٌ في النطفة أو البويضة، وما عليه إلا أن يكبر.",
+          "en": "For centuries the dominant view was Aristotle’s: the embryo forms from menstrual blood set by semen, as rennet sets milk. In the seventeenth century the “preformation” theory appeared, holding that a complete tiny human already exists in the sperm or egg and merely grows larger."
+        }
+      ],
+      "now": [
+        {
+          "ar": "بالمجهر الحديث نعرف أن الإنسان يبدأ خليةً واحدة دقيقة. وفي الأسبوعين الثالث والرابع يكون الجنين جسمًا صغيرًا لا يتجاوز بضعة ملليمترات، متعلقًا بجدار الرحم يتغذى من دم أمه، وشكله المنحني يشبه دودة العلق.",
+          "en": "With modern microscopes we know a human begins as a single tiny cell. In the third and fourth weeks the embryo is a small body only a few millimetres long, attached to the wall of the womb and nourished by its mother’s blood, its curved shape resembling a leech."
+        },
+        {
+          "ar": "ومن اليوم العشرين تقريبًا تظهر على ظهر الجنين كتلٌ متتابعة تسمى «الكتل البدنية» (Somites)، يبلغ عددها نحو ٤٤ زوجًا، فيبدو كقطعةٍ مُضغت وبقيت فيها آثار الأسنان. ومن هذه الكتل تنشأ الغضاريف والعظام والعضلات. ثم يتكوّن الهيكل على قالبٍ من الغضروف يبدأ تعظّمه في نحو الأسبوع السادس والسابع، وتنتظم العضلات حوله، حتى يأخذ الجنين هيئته الإنسانية المميزة بنهاية الشهر الثاني تقريبًا.",
+          "en": "From about day 20, a series of blocks called somites appears along the embryo’s back — some 44 pairs — so that it looks like a piece of something chewed, with tooth marks left in it. From these blocks come cartilage, bone and muscle. The skeleton forms on a cartilage template that begins to turn to bone around weeks six and seven, the muscles arrange themselves around it, and by about the end of the second month the embryo has a distinctly human form."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "~٤٤ زوجًا",
+          "en": "~44 pairs"
+        },
+        "label": {
+          "ar": "عدد «الكتل البدنية» التي تظهر على ظهر الجنين فتعطيه هيئة الشيء الممضوغ",
+          "en": "of somites appear along the embryo’s back, giving it a chewed-like look"
+        }
+      },
+      "timeline": [
+        {
+          "year": {
+            "ar": "القرن ٤ ق.م",
+            "en": "4th c. BCE"
+          },
+          "text": {
+            "ar": "أرسطو: الجنين دمٌ يعقده المني",
+            "en": "Aristotle: the embryo is blood set by semen"
+          }
+        },
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة المؤمنون المكية",
+            "en": "The Qur’an is revealed, including the Meccan surah Al-Mu’minun"
+          }
+        },
+        {
+          "year": "1677",
+          "text": {
+            "ar": "لوفنهوك يرى الحيوانات المنوية بالمجهر لأول مرة",
+            "en": "Leeuwenhoek sees sperm cells under the microscope for the first time"
+          }
+        },
+        {
+          "year": "1827",
+          "text": {
+            "ar": "فون باير يكتشف بويضة الثدييات",
+            "en": "Von Baer discovers the mammalian egg"
+          }
+        },
+        {
+          "year": "1942",
+          "text": {
+            "ar": "ستريتر يضع «مراحل كارنيجي» لتطور الجنين البشري",
+            "en": "Streeter begins the “Carnegie stages” of human embryonic development"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "في زمنٍ كان أعلم الناس فيه يظنون الجنين دمًا يتخثر أو إنسانًا مصغّرًا، وصف القرآن تحولاتٍ متتابعة، لكلٍّ منها اسمٌ يصف شكله أو حاله: يعلق، ثم كأنه ممضوغ، ثم عظام، ثم لحم، ثم ﴿خَلۡقًا ءَاخَرَ﴾.",
+        "en": "At a time when the most learned believed the embryo was clotting blood or a miniature human, the Qur’an described a series of transformations, each named for its shape or state: clinging, then as if chewed, then bones, then flesh, then “another creation”."
+      },
+      "caution": {
+        "ar": "هذا من أكثر موضوعات الإعجاز تداولًا ونقدًا. فالأوصاف (علقة، مضغة) تشبيهاتٌ لغوية تحتمل أكثر من معنى، وفُسّرت العلقة قديمًا بالدم الجامد. و«الشبيه بالممضوغ» تعبيرٌ وصفي اشتهر في الثمانينيات، لا مصطلحٌ في علم الأجنة. كما أن الغضاريف وأوائل العضلات تتكون في وقتٍ واحد، والتعظّم الحقيقي يبدأ نحو الأسبوع السادس والسابع، فالقول إن العظام تكتمل أولًا ثم تُكسى لحمًا بإطلاقٍ لا يصح؛ والأقرب أن هيكل الجسم يتشكل وتنتظم العضلات حوله. ونرى الاعتماد على كتب علم الأجنة نفسها، لا على ما يُنقل عن هذا العالم أو ذاك.",
+        "en": "This is one of the most quoted — and most criticised — topics in this field. The descriptions (clinging form, chewed lump) are linguistic images open to more than one meaning, and early scholars explained ‘alaqah as clotted blood. “Chewed-like” is a lay description popularised in the 1980s, not an embryology term. Cartilage and the first muscle tissue form at the same time, and true bone formation begins only around weeks six and seven, so saying flatly that bones are completed first and then covered with flesh is not correct; closer to the facts is that the body’s framework takes shape and the muscles arrange themselves around it. We prefer to rely on embryology textbooks themselves rather than on statements attributed to particular scientists."
+      },
+      "didYouKnow": {
+        "ar": "يبدأ قلب الجنين بالنبض في نحو اليوم الثاني والعشرين بعد الإخصاب، أي قبل أن تعلم كثيرٌ من الأمهات بالحمل.",
+        "en": "The embryo’s heart starts beating around the 22nd day after conception — before many mothers even know they are pregnant."
+      },
+      "sources": [
+        {
+          "title": "Somitogenesis",
+          "publisher": "UNSW Embryology (Dr Mark Hill)",
+          "url": "https://embryology.med.unsw.edu.au/embryology/index.php/Somitogenesis",
+          "kind": "university"
+        },
+        {
+          "title": "Week 4",
+          "publisher": "UNSW Embryology",
+          "url": "https://embryology.med.unsw.edu.au/embryology/index.php/Week_4",
+          "kind": "university"
+        },
+        {
+          "title": "Musculoskeletal System — Limb Development",
+          "publisher": "UNSW Embryology",
+          "url": "https://embryology.med.unsw.edu.au/embryology/index.php/Musculoskeletal_System_-_Limb_Development",
+          "kind": "university"
+        },
+        {
+          "title": "Musculoskeletal System — Muscle Development",
+          "publisher": "UNSW Embryology",
+          "url": "https://embryology.med.unsw.edu.au/embryology/index.php/Musculoskeletal_System_-_Muscle_Development",
+          "kind": "university"
+        }
+      ]
+    },
+    {
+      "slug": "skins-renewed",
+      "category": "human",
+      "journey": 4,
+      "art": "skin",
+      "title": {
+        "ar": "كلما نضجت جلودهم بدّلناهم جلودًا غيرها",
+        "en": "Whenever Their Skins Are Burned Through, We Replace Them"
+      },
+      "hook": {
+        "ar": "لماذا قد لا يشعر المصاب بحرقٍ عميقٍ جدًا بالألم في موضعه؟",
+        "en": "Why might someone with a very deep burn feel little pain at the burn itself?"
+      },
+      "summary": {
+        "ar": "آيةٌ ربطت تجديد الجلود بدوام ذوق العذاب، وطبٌّ حديث وجد مستقبلات الألم منتشرة في الجلد، وأن الحرق الذي يتلفها يُذهب الإحساس.",
+        "en": "A verse links the renewal of skin to the continuation of pain; modern medicine found pain receptors spread through the skin, and that a burn which destroys them takes the feeling away."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "إِنَّ ٱلَّذِينَ كَفَرُواْ بِـَٔايَٰتِنَا سَوۡفَ نُصۡلِيهِمۡ نَارٗا كُلَّمَا نَضِجَتۡ جُلُودُهُم بَدَّلۡنَٰهُمۡ جُلُودًا غَيۡرَهَا لِيَذُوقُواْ ٱلۡعَذَابَۗ إِنَّ ٱللَّهَ كَانَ عَزِيزًا حَكِيمٗا",
+          "meaning": {
+            "ar": "«نَضِجَتْ»: احترقت. «بَدَّلْنَاهُمْ جُلُودًا غَيْرَهَا»: أعدناها جلودًا جديدة. «لِيَذُوقُوا الْعَذَابَ»: ليدوم إحساسهم بالألم.",
+            "en": "“Those who reject Our signs — We will drive them into a Fire. Whenever their skins are burned through, We will replace them with other skins, so that they may taste the punishment. God is ever Almighty, Wise.”"
+          },
+          "ref": {
+            "ar": "النساء: ٥٦",
+            "en": "An-Nisa 4:56"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "عرف أطباء اليونان كجالينوس أن الأعصاب تنقل الإحساس، لكن لم يكن معروفًا أن للألم نهاياتٍ عصبية متخصصة منتشرة في طبقات الجلد، ولا أن الحرق إذا بلغ عمقًا معينًا ذهب بالإحساس في موضعه.",
+          "en": "Ancient physicians such as Galen knew that nerves carry sensation, but nobody knew there are specialised pain-sensing nerve endings spread through the layers of the skin, or that a burn deep enough destroys feeling at the burn itself."
+        }
+      ],
+      "now": [
+        {
+          "ar": "عرف علم الأعصاب في القرن العشرين نهاياتٍ عصبية متخصصة في الإحساس بالألم، سمّاها البريطاني تشارلز شيرينغتون عام ١٩٠٦ «مستقبلات الألم» (Nociceptors). وهي تنتشر في البشرة والأدمة — طبقتي الجلد — وتمتد أيضًا إلى أعضاءٍ أخرى.",
+          "en": "Twentieth-century neuroscience identified nerve endings specialised for sensing pain, which the British physiologist Charles Sherrington named “nociceptors” in 1906. They are spread through the epidermis and dermis — the layers of the skin — and also reach other organs."
+        },
+        {
+          "ar": "ويصنّف الأطباء الحروق بحسب عمقها: فالحروق السطحية والمتوسطة مؤلمةٌ جدًا لأن النهايات العصبية متهيجة، أما حروق الدرجة الثالثة التي تتلف الجلد بكل طبقاته فقد يكون موضعها مخدّرًا؛ وتقول المكتبة الوطنية للطب الأمريكية إن أخطر الحروق قد تكون غير مؤلمة، لأن النهايات العصبية نفسها احترقت.",
+          "en": "Doctors grade burns by depth. Superficial and partial-thickness burns are very painful because the nerve endings are inflamed, but third-degree burns, which destroy every layer of the skin, can leave the area numb; the US National Library of Medicine notes that the most serious burns can be painless, because the nerve endings themselves have been burned away."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "الدرجة الثالثة",
+          "en": "Third-degree"
+        },
+        "label": {
+          "ar": "حروقٌ قد لا تؤلم في موضعها، لأنها أتلفت النهايات العصبية في الجلد",
+          "en": "burns that may not hurt at the site itself, because they have destroyed the nerve endings in the skin"
+        }
+      },
+      "timeline": [
+        {
+          "year": "c. 170",
+          "text": {
+            "ar": "جالينوس يصف الأعصاب ناقلةً للحس",
+            "en": "Galen describes nerves as carriers of sensation"
+          }
+        },
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة النساء",
+            "en": "The Qur’an is revealed, including surah An-Nisa"
+          }
+        },
+        {
+          "year": "1832",
+          "text": {
+            "ar": "الجرّاح الفرنسي دوبويتران يصنّف الحروق بحسب عمقها",
+            "en": "The French surgeon Dupuytren classifies burns by depth"
+          }
+        },
+        {
+          "year": "1906",
+          "text": {
+            "ar": "شيرينغتون يسمّي «مستقبلات الألم»",
+            "en": "Sherrington names “nociceptors”"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "لم تكتفِ الآية بأن العذاب يدوم، بل ذكرت السبب الذي يدوم به الإحساس: تجديد الجلد. وكأنها تشير إلى أن الجلد موضعٌ أساسي للإحساس بالألم.",
+        "en": "The verse does not simply say the punishment continues; it names the means by which the feeling continues: renewing the skin — as if pointing to the skin as a principal seat of the sensation of pain."
+      },
+      "caution": {
+        "ar": "الآية تتحدث عن عذاب الآخرة، وأحوال الآخرة لا تُقاس على الدنيا قياسًا تامًا. ووجه التأمل أنها جعلت تجديد الجلد سببًا لدوام الإحساس، وهو ما يتسق مع ما عرفه الطب عن دور الجلد في الشعور بالألم، دون أن نجعلها نصًّا في علم الأعصاب. والألم لا ينحصر في الجلد، ففي العضلات والمفاصل والأعضاء مستقبلاتٌ أيضًا، وحواف الحروق العميقة تكون مؤلمة عادةً.",
+        "en": "The verse speaks of punishment in the Hereafter, whose conditions cannot be fully measured against this world. What is worth reflecting on is that it makes renewing the skin the reason the feeling lasts — consistent with what medicine knows of the skin’s role in pain — without turning it into a neuroscience text. Pain is not confined to the skin: muscles, joints and organs have receptors too, and the edges of deep burns are usually painful."
+      },
+      "didYouKnow": {
+        "ar": "يتجدد سطح جلد الإنسان باستمرار؛ إذ تُستبدل طبقته الخارجية تقريبًا كل شهرٍ إلى شهرين.",
+        "en": "The surface of human skin renews itself constantly, replacing its outer layer roughly every one to two months."
+      },
+      "sources": [
+        {
+          "title": "Nociceptors: the sensors of the pain pathway (Dubin & Patapoutian)",
+          "publisher": "Journal of Clinical Investigation",
+          "year": "2010",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2964977/",
+          "kind": "journal"
+        },
+        {
+          "title": "Burns",
+          "publisher": "MedlinePlus (U.S. National Library of Medicine)",
+          "url": "https://medlineplus.gov/ency/article/000030.htm",
+          "kind": "agency"
+        },
+        {
+          "title": "Burn injury (Jeschke et al.)",
+          "publisher": "Nature Reviews Disease Primers",
+          "year": "2020",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7224101/",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "slug": "the-fingertips",
+      "category": "human",
+      "art": "fingerprint",
+      "title": {
+        "ar": "بلى قادرين على أن نسوّي بنانه",
+        "en": "We Are Able to Restore Even His Fingertips"
+      },
+      "hook": {
+        "ar": "ما الذي في طرف إصبعك يجعلك مختلفًا عن كل إنسانٍ عاش على الأرض؟",
+        "en": "What is it about your fingertip that sets you apart from everyone who has ever lived?"
+      },
+      "summary": {
+        "ar": "آيةٌ تجيب منكري البعث بأن الله قادرٌ على إعادة البنان — أطراف الأصابع — بتمامه، وعلمٌ اكتشف أن بصمة الإصبع لا تتطابق بين اثنين.",
+        "en": "A verse answers the deniers of resurrection by saying God can restore even the fingertips; science found that no two people share the same fingerprints."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "أَيَحۡسَبُ ٱلۡإِنسَٰنُ أَلَّن نَّجۡمَعَ عِظَامَهُۥ ۝٣ بَلَىٰ قَٰدِرِينَ عَلَىٰٓ أَن نُّسَوِّيَ بَنَانَهُۥ",
+          "meaning": {
+            "ar": "«بَنَانَهُ»: أطراف أصابعه. «نُسَوِّيَ»: نعيدها مستويةً كما كانت. أي: نقدر على جمع عظامه، بل على ما هو أدق منها: أطراف الأصابع.",
+            "en": "“Does the human being think that We will not reassemble his bones? Yes indeed — We are able to restore even his fingertips.”"
+          },
+          "ref": {
+            "ar": "القيامة: ٣–٤",
+            "en": "Al-Qiyamah 75:3–4"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان المشركون ينكرون أن تعود العظام البالية إلى الحياة، فجاء الجواب بأن الله قادرٌ على ما هو أدق: أن يعيد أطراف الأصابع بتفاصيلها. ولم يكن أحدٌ يعرف يومها أن الخطوط الدقيقة على أطراف الأصابع تختلف من إنسانٍ لآخر.",
+          "en": "The pagans denied that decayed bones could come back to life. The reply was that God can do something finer still: restore the fingertips in every detail. Nobody then knew that the fine ridges on the fingertips differ from one person to the next."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في عام ١٨٨٠ نشر الطبيب الاسكتلندي هنري فولدز في مجلة «نيتشر» رسالةً عن خطوط أطراف الأصابع يقترح فيها استخدامها لتحديد هوية المجرمين. ثم نشر البريطاني فرانسيس غالتون عام ١٨٩٢ كتابه «بصمات الأصابع» الذي أثبت فيه أنها لا تتغير طوال العمر.",
+          "en": "In 1880 the Scottish doctor Henry Faulds published a letter in Nature on the ridges of the fingertips, proposing them as a way to identify criminals. In 1892 the British scientist Francis Galton published his book Finger Prints, showing that they stay the same for life."
+        },
+        {
+          "ar": "تتشكل خطوط البصمة في الرحم، وتتأثر بالوراثة وبالظروف الدقيقة حول كل جنين، فحتى التوائم المتطابقة — الذين يحملون الجينات نفسها — تختلف بصماتهم. ولهذا صارت البصمة أشهر وسيلةٍ لتحديد الهوية في العالم.",
+          "en": "Fingerprint ridges form in the womb, shaped by genes and by the precise conditions around each fetus, so even identical twins, who share the same genes, have different fingerprints. That is why fingerprints became the world’s best-known means of identification."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١٨٨٠",
+          "en": "1880"
+        },
+        "label": {
+          "ar": "عام اقتراح فولدز في مجلة نيتشر استخدام البصمات لتحديد الهوية",
+          "en": "the year Faulds proposed in Nature using fingerprints for identification"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة القيامة المكية",
+            "en": "The Qur’an is revealed, including the Meccan surah Al-Qiyamah"
+          }
+        },
+        {
+          "year": "1880",
+          "text": {
+            "ar": "فولدز في مجلة نيتشر: البصمات وسيلةٌ لتحديد الهوية",
+            "en": "Faulds in Nature: fingerprints as a means of identification"
+          }
+        },
+        {
+          "year": "1892",
+          "text": {
+            "ar": "غالتون: كتاب «بصمات الأصابع»",
+            "en": "Galton publishes Finger Prints"
+          }
+        },
+        {
+          "year": "1901",
+          "text": {
+            "ar": "شرطة سكوتلاند يارد تعتمد البصمات",
+            "en": "Scotland Yard adopts fingerprinting"
+          }
+        },
+        {
+          "year": "2023",
+          "text": {
+            "ar": "دراسة تكشف كيف تتشكل خطوط البصمة في الرحم",
+            "en": "A study reveals how fingerprint ridges form in the womb"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "لما أنكروا البعث، لم يكتفِ القرآن بذكر العظام الكبيرة، بل نزل إلى أدق ما في الإنسان: أطراف أصابعه — الموضع الذي نعرف اليوم أنه يحمل توقيعًا لا يتكرر.",
+        "en": "When they denied the resurrection, the Qur’an did not stop at the large bones; it went down to the finest detail of a person — the fingertips, which we now know carry a signature found nowhere else."
+      },
+      "caution": {
+        "ar": "للمفسرين في الآية قولان مشهوران: أن الله قادرٌ على إعادة أطراف الأصابع بدقتها، أو أنه قادرٌ على أن يجعلها ملتصقةً مستويةً كخُفّ البعير فلا يُنتفع بها. وليس في الآية ذكرٌ صريح للبصمات؛ فربطها بتفرّد البصمة تأملٌ معاصر في اختيار «البنان» بالذات، لا تفسيرٌ قطعي. وقد استُعملت طبعات الأصابع قديمًا في الصين للختم، لكن تفرّدها لم يُدرس علميًا إلا في القرن التاسع عشر، وهو تعميمٌ قوي من الملاحظة لا برهانٌ رياضي. ووجدت دراسةٌ حديثة أن بصمات أصابع الشخص الواحد أكثر تشابهًا فيما بينها مما كان يُظن.",
+        "en": "Commentators give two well-known readings: that God can restore the fingertips precisely, or that He could make them fused and flat like a camel’s hoof, so they would be useless. The verse does not mention fingerprints explicitly; linking it to their uniqueness is a modern reflection on why fingertips in particular were chosen, not a definitive interpretation. Finger impressions were used as seals in ancient China, but their uniqueness was only studied scientifically in the nineteenth century, and it is a strong generalisation from observation rather than a mathematical proof. A recent study found that different fingers of the same person are more alike than was assumed."
+      },
+      "didYouKnow": {
+        "ar": "حتى التوائم المتطابقة، الذين يحملون الجينات نفسها تمامًا، لا تتطابق بصماتهم.",
+        "en": "Even identical twins, who share exactly the same genes, do not share fingerprints."
+      },
+      "sources": [
+        {
+          "title": "On the Skin-Furrows of the Hand (H. Faulds)",
+          "publisher": "Nature",
+          "year": "1880",
+          "url": "https://doi.org/10.1038/022605a0",
+          "kind": "journal"
+        },
+        {
+          "title": "How fingerprints form was a mystery — until now",
+          "publisher": "Science News",
+          "year": "2023",
+          "url": "https://www.sciencenews.org/article/fingerprints-form-mystery",
+          "kind": "news"
+        },
+        {
+          "title": "Francis Galton: Finger Prints (1892) — bibliography",
+          "publisher": "galton.org",
+          "url": "https://galton.org/fingerprinter.html",
+          "kind": "book"
+        },
+        {
+          "title": "AI Discovers That Not Every Fingerprint Is Unique",
+          "publisher": "Columbia Engineering (via Newswise)",
+          "year": "2024",
+          "url": "https://www.newswise.com/articles/ai-discovers-that-not-every-fingerprint-is-unique",
+          "kind": "news"
+        }
+      ]
+    },
+    {
+      "slug": "plague-quarantine",
+      "category": "health",
+      "journey": 6,
+      "art": "quarantine",
+      "title": {
+        "ar": "إذا سمعتم بالطاعون بأرضٍ فلا تدخلوها",
+        "en": "If You Hear of Plague in a Land, Do Not Enter It"
+      },
+      "hook": {
+        "ar": "قبل أن يعرف أحدٌ الجراثيم، كيف وُضعت قاعدةٌ يعمل بها العالم اليوم في مواجهة الأوبئة؟",
+        "en": "Before anyone knew of germs, how was a rule laid down that the world still follows against epidemics?"
+      },
+      "summary": {
+        "ar": "حديثٌ نبوي يأمر بألا يدخل الناس أرض الوباء ولا يخرجوا منها، وهو جوهر «الحجر الصحي» الذي يعمل به الطب الحديث.",
+        "en": "A hadith commands people not to enter a land struck by plague and not to leave it — the essence of the quarantine practised by modern medicine."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "إِذَا سَمِعْتُمْ بِالطَّاعُونِ بِأَرْضٍ فَلَا تَدْخُلُوهَا، وَإِذَا وَقَعَ بِأَرْضٍ وَأَنْتُمْ بِهَا فَلَا تَخْرُجُوا مِنْهَا",
+          "narrator": {
+            "ar": "عن أسامة بن زيد رضي الله عنهما",
+            "en": "Narrated by Usamah ibn Zayd"
+          },
+          "meaning": {
+            "ar": "أي: لا تُقدِموا على أرضٍ نزل بها الوباء، ولا تفرّوا من أرضٍ نزل بها وأنتم فيها.",
+            "en": "“If you hear of plague in a land, do not enter it; and if it breaks out in a land where you are, do not leave it.”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٥٧٢٨)، وصحيح مسلم (٢٢١٨)",
+            "en": "Sahih al-Bukhari 5728; Sahih Muslim 2218"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان الناس قديمًا يفرّون من الأوبئة إلى البلاد الأخرى، فيحملون المرض معهم وينشرونه. وكان كثيرون يفسّرون الأوبئة بفساد الهواء أو بأحوال النجوم، ولم يكن أحدٌ يعرف الجراثيم.",
+          "en": "In the past people fled epidemics to other lands, carrying the disease with them and spreading it. Many blamed outbreaks on bad air or the stars; nobody knew about germs."
+        }
+      ],
+      "now": [
+        {
+          "ar": "لم يثبت أن الأمراض المعدية تسببها كائناتٌ دقيقة إلا في القرن التاسع عشر، على يد لويس باستور وروبرت كوخ وغيرهما. وفي عام ١٨٩٤ اكتشف ألكسندر يرسين البكتيريا المسببة للطاعون.",
+          "en": "Only in the nineteenth century was it shown, by Louis Pasteur, Robert Koch and others, that infectious diseases are caused by microorganisms. In 1894 Alexandre Yersin discovered the bacterium that causes plague."
+        },
+        {
+          "ar": "ويقوم الحجر الصحي اليوم على مبدأين: ألا يدخل الناس منطقة الوباء، وألا يخرج منها من قد يكون مصابًا فينقل العدوى إلى غيره. وهذا ما طبقته دول العالم في مواجهة أوبئةٍ كثيرة، آخرها جائحة كوفيد-١٩.",
+          "en": "Quarantine today rests on two principles: keep people out of an outbreak zone, and keep those who may be infected from leaving it and carrying the infection elsewhere. Countries around the world applied exactly this against many epidemics, most recently COVID-19."
+        },
+        {
+          "ar": "وقد عمل الصحابة بهذا الحديث في حياتهم: فحين خرج عمر بن الخطاب رضي الله عنه إلى الشام، وبلغه أن الوباء وقع بها، حدّثه عبد الرحمن بن عوف بهذا الحديث فرجع بمن معه. والقصة في الصحيحين.",
+          "en": "The Companions acted on it: when ‘Umar ibn al-Khattab set out for Syria and learned that an epidemic had broken out there, ‘Abd al-Rahman ibn ‘Awf told him this hadith, and he turned back with his party. The story is in both Sahihs."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "أكثر من ١٢٦٠ عامًا",
+          "en": "1,260+ years"
+        },
+        "label": {
+          "ar": "بين هذا الحديث واكتشاف جرثومة الطاعون عام ١٨٩٤",
+          "en": "between this hadith and the discovery of the plague bacterium in 1894"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "الحديث النبوي في الطاعون",
+            "en": "The Prophet’s ﷺ hadith on plague"
+          }
+        },
+        {
+          "year": "1377",
+          "text": {
+            "ar": "مدينة راغوزا (دوبروفنيك) تفرض عزلًا مدته ٣٠ يومًا على القادمين",
+            "en": "Ragusa (Dubrovnik) imposes a 30-day isolation on arrivals"
+          }
+        },
+        {
+          "year": "1423",
+          "text": {
+            "ar": "البندقية تفتتح أول محجرٍ صحي دائم",
+            "en": "Venice opens a permanent quarantine station"
+          }
+        },
+        {
+          "year": "1894",
+          "text": {
+            "ar": "يرسين يكتشف جرثومة الطاعون",
+            "en": "Yersin discovers the plague bacterium"
+          }
+        },
+        {
+          "year": "2020",
+          "text": {
+            "ar": "العالم يطبق الحجر الصحي في مواجهة كوفيد-١٩",
+            "en": "The world applies quarantine against COVID-19"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "لا تدخل، ولا تخرج: كلمتان تحمي بهما المدينةُ نفسها وتحمي غيرها. قاعدةٌ جاءت قبل المجاهر والمختبرات بأكثر من ألف عام، وهي اليوم من أسس الصحة العامة.",
+        "en": "Don’t go in; don’t come out: two instructions that protect a city and everyone beyond it. A rule given more than a thousand years before microscopes and laboratories, and today a foundation of public health."
+      },
+      "caution": {
+        "ar": "عرفت أممٌ قبل الإسلام عزل المرضى، كعزل المصابين بالجذام، فالفكرة في أصلها ليست مجهولة تمامًا، ولا نقول إن الإسلام اخترع الحجر الصحي. ووجه التأمل اجتماع الأمرين في قاعدةٍ واحدة واضحة: منع الدخول ومنع الخروج معًا، مع النهي عن الفرار الذي كان طبيعة الناس عند الأوبئة. والحديث حكمٌ شرعي وتوجيه، لا نظريةٌ في علم الجراثيم.",
+        "en": "Societies before Islam isolated some of the sick — lepers, for example — so the idea was not wholly unknown, and we do not claim Islam invented quarantine. What is notable is how both rules come together in one clear instruction — no entering and no leaving — along with forbidding the flight that was people’s natural response to epidemics. The hadith is a religious ruling and guidance, not a theory of microbiology."
+      },
+      "didYouKnow": {
+        "ar": "كلمة «Quarantine» الإنجليزية أصلها الإيطالية «quaranta giorni» أي «أربعون يومًا»، وهي المدة التي كانت السفن تنتظرها في البندقية قبل أن ينزل ركابها.",
+        "en": "The English word “quarantine” comes from the Italian quaranta giorni, “forty days” — how long ships had to wait at Venice before their passengers could land."
+      },
+      "sources": [
+        {
+          "title": "History of Port Health (Quarantine)",
+          "publisher": "U.S. Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/quarantine/historyquarantine.html",
+          "kind": "agency"
+        },
+        {
+          "title": "The concept of quarantine in history: from plague to SARS (Gensini, Yacoub & Conti)",
+          "publisher": "Journal of Infection",
+          "year": "2004",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7133622/",
+          "kind": "journal"
+        },
+        {
+          "title": "Contact tracing and quarantine in the context of COVID-19",
+          "publisher": "World Health Organization",
+          "year": "2022",
+          "url": "https://www.who.int/publications/i/item/WHO-2019-nCoV-Contact_tracing_and_quarantine-2022.1",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "wash-and-cover",
+      "category": "health",
+      "art": "hygiene",
+      "title": {
+        "ar": "اغسل يدك، وغطِّ إناءك",
+        "en": "Wash Your Hands, Cover Your Vessels"
+      },
+      "hook": {
+        "ar": "كم من الأرواح كان يمكن إنقاذها لو غسل الأطباء أيديهم؟",
+        "en": "How many lives could have been saved if doctors had simply washed their hands?"
+      },
+      "summary": {
+        "ar": "أحاديث تأمر بغسل اليد قبل إدخالها في الإناء بعد النوم، وبتغطية الآنية من الوباء، وطبٌّ حديث لم يعرف أهمية غسل اليدين إلا في القرن التاسع عشر.",
+        "en": "Hadith command washing the hand before putting it into a vessel after sleep, and covering containers against pestilence; modern medicine grasped the importance of handwashing only in the nineteenth century."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "إِذَا اسْتَيْقَظَ أَحَدُكُمْ مِنْ نَوْمِهِ فَلَا يَغْمِسْ يَدَهُ فِي الْإِنَاءِ حَتَّى يَغْسِلَهَا ثَلَاثًا، فَإِنَّهُ لَا يَدْرِي أَيْنَ بَاتَتْ يَدُهُ",
+          "narrator": {
+            "ar": "عن أبي هريرة رضي الله عنه",
+            "en": "Narrated by Abu Hurayrah"
+          },
+          "meaning": {
+            "ar": "أي: لا يُدخل يده في إناء الماء بعد النوم حتى يغسلها؛ لأنه لا يدري ما أصابت يده وهو نائم.",
+            "en": "“When one of you wakes from sleep, let him not dip his hand into the vessel until he has washed it three times, for he does not know where his hand spent the night.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (٢٧٨)، وبنحوه في صحيح البخاري (١٦٢)",
+            "en": "Sahih Muslim 278; similar in Sahih al-Bukhari 162"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "غَطُّوا الْإِنَاءَ، وَأَوْكُوا السِّقَاءَ، فَإِنَّ فِي السَّنَةِ لَيْلَةً يَنْزِلُ فِيهَا وَبَاءٌ، لَا يَمُرُّ بِإِنَاءٍ لَيْسَ عَلَيْهِ غِطَاءٌ، أَوْ سِقَاءٍ لَيْسَ عَلَيْهِ وِكَاءٌ، إِلَّا نَزَلَ فِيهِ مِنْ ذَلِكَ الْوَبَاءِ",
+          "narrator": {
+            "ar": "عن جابر بن عبد الله رضي الله عنهما",
+            "en": "Narrated by Jabir ibn ‘Abdullah"
+          },
+          "meaning": {
+            "ar": "«أَوْكُوا السِّقَاءَ»: اربطوا فم القِربة. «وِكَاءٌ»: الخيط الذي يُربط به. «وَبَاءٌ»: مرضٌ عام.",
+            "en": "“Cover the vessels and tie up the water-skins, for there is a night in the year when a pestilence descends; it does not pass an uncovered vessel or an untied water-skin without some of that pestilence descending into it.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (٢٠١٤)",
+            "en": "Sahih Muslim 2014"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "حتى منتصف القرن التاسع عشر كان الأطباء في أرقى مستشفيات أوروبا ينتقلون من تشريح الجثث إلى توليد النساء دون أن يغسلوا أيديهم، وكانت «حمى النفاس» تقتل نسبةً كبيرة من الأمهات.",
+          "en": "Until the mid-nineteenth century, doctors in Europe’s finest hospitals went straight from dissecting corpses to delivering babies without washing their hands, and childbed fever killed a large share of mothers."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في عام ١٨٤٧ لاحظ الطبيب المجري إغناتس زيملفايس في مستشفى فيينا أن وفيات الأمهات في جناح الأطباء أعلى بكثير منها في جناح القابلات، فألزم الأطباء بغسل أيديهم بمحلول الكلور، فانخفضت الوفيات في جناحه من ١١٫٤٪ عام ١٨٤٦ إلى ١٫٣٪ عام ١٨٤٨. ومع ذلك سخر منه كثيرٌ من زملائه، ولم تُقبل فكرته إلا بعد وفاته.",
+          "en": "In 1847 the Hungarian doctor Ignaz Semmelweis noticed at Vienna’s hospital that mothers died far more often on the doctors’ ward than on the midwives’ ward. He made the doctors wash their hands in a chlorine solution, and deaths on his ward fell from 11.4% in 1846 to 1.3% in 1848. Even so, many colleagues mocked him, and his idea was only accepted after his death."
+        },
+        {
+          "ar": "واليوم تعدّ منظمة الصحة العالمية غسل اليدين من أبسط الوسائل وأنفعها في منع العدوى، وتذكر مراكز مكافحة الأمراض الأمريكية أن التثقيف بغسل اليدين يخفض أمراض الإسهال بنسبة ٢٣–٤٠٪. وتغطية الماء والطعام من أسس سلامة الغذاء: فتوصي المراكز نفسها بحفظ الماء في وعاءٍ مغطًّى بإحكام كي لا يتلوث من جديد.",
+          "en": "Today the World Health Organization counts handwashing among the simplest and most effective ways to prevent infection, and the US Centers for Disease Control reports that handwashing education cuts diarrhoeal illness by 23–40%. Covering water and food is a basic rule of food safety: the CDC advises storing water in a container with a tight lid so it is not contaminated again."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١١٫٤٪ ← ١٫٣٪",
+          "en": "11.4% → 1.3%"
+        },
+        "label": {
+          "ar": "وفيات الأمهات في جناح زيملفايس قبل فرض غسل اليدين وبعده (١٨٤٦–١٨٤٨)",
+          "en": "mothers’ deaths on Semmelweis’s ward before and after handwashing (1846–1848)"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "الأحاديث النبوية في غسل اليد وتغطية الآنية",
+            "en": "The Prophet’s ﷺ hadith on washing hands and covering vessels"
+          }
+        },
+        {
+          "year": "1847",
+          "text": {
+            "ar": "زيملفايس يفرض غسل اليدين في فيينا",
+            "en": "Semmelweis enforces handwashing in Vienna"
+          }
+        },
+        {
+          "year": "1867",
+          "text": {
+            "ar": "جوزيف ليستر ينشر أبحاثه في التعقيم في الجراحة",
+            "en": "Joseph Lister publishes on antiseptic surgery"
+          }
+        },
+        {
+          "year": "2009",
+          "text": {
+            "ar": "منظمة الصحة العالمية تصدر إرشاداتها لنظافة الأيدي في الرعاية الصحية",
+            "en": "The WHO publishes its guidelines on hand hygiene in health care"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "جعل الإسلام غسل اليدين جزءًا من عبادةٍ تتكرر خمس مرات كل يوم هي الوضوء، وأمر به عند الاستيقاظ. ما احتاج الطب قرونًا ليقنع به الأطباء، كان عادةً يومية عند المسلمين.",
+        "en": "Islam made washing the hands part of an act of worship repeated five times a day — ablution — and commanded it on waking. What medicine took centuries to persuade doctors of was a daily habit for Muslims."
+      },
+      "caution": {
+        "ar": "عرفت حضاراتٌ أخرى قبل الإسلام أشكالًا من النظافة والطهارة، فليس غسل اليد اكتشافًا خاصًا بالمسلمين، والوضوء طهارةٌ تعبدية قبل أن يكون نظافة. وعلّل الحديث الأمر بأن النائم «لا يدري أين باتت يده»، ولم يذكر الجراثيم؛ فلا ننسب إليه علمًا بها، بل نتأمل كيف يتفق هذا التوجيه مع ما عرفه الطب بعد ذلك. و«الوباء» الذي ينزل ليلةً في السنة أمرٌ غيبي لا نخوض في تفسيره.",
+        "en": "Other civilisations before Islam practised forms of cleanliness and purity, so handwashing is not a discovery unique to Muslims, and ablution is first of all ritual purity, not just hygiene. The hadith gives its own reason — the sleeper “does not know where his hand spent the night” — and says nothing of germs; we do not claim it describes them, only reflect on how well this guidance fits what medicine learned later. The pestilence that descends on one night of the year belongs to the unseen, which we do not try to explain."
+      },
+      "didYouKnow": {
+        "ar": "يحتفل العالم في ١٥ أكتوبر من كل عام بـ«اليوم العالمي لغسل اليدين».",
+        "en": "Every 15 October the world marks Global Handwashing Day."
+      },
+      "sources": [
+        {
+          "title": "Ignaz Phillip Semmelweis’ studies of death in childbirth (I. Loudon)",
+          "publisher": "Journal of the Royal Society of Medicine",
+          "year": "2013",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3807776/",
+          "kind": "journal"
+        },
+        {
+          "title": "Ignaz Philipp Semmelweis (1818–1865): herald of hygienic medicine",
+          "publisher": "Medical Journal of Australia",
+          "year": "2018",
+          "url": "https://www.mja.com.au/journal/2018/209/11/ignaz-philipp-semmelweis-1818-1865-herald-hygienic-medicine",
+          "kind": "journal"
+        },
+        {
+          "title": "WHO Guidelines on Hand Hygiene in Health Care",
+          "publisher": "World Health Organization",
+          "year": "2009",
+          "url": "https://www.who.int/publications/i/item/9789241597906",
+          "kind": "agency"
+        },
+        {
+          "title": "Handwashing Facts",
+          "publisher": "U.S. Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/clean-hands/data-research/facts-stats/index.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Safe Water Storage",
+          "publisher": "U.S. Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/global-water-sanitation-hygiene/about/about-safe-water-storage.html",
+          "kind": "agency"
+        },
+        {
+          "title": "Five keys to safer food",
+          "publisher": "World Health Organization",
+          "url": "https://www.who.int/activities/promoting-safe-food-handling/five-key-to-safer-food",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "healing-in-honey",
+      "category": "health",
+      "art": "honey",
+      "title": {
+        "ar": "فيه شفاءٌ للناس",
+        "en": "In It Is Healing for People"
+      },
+      "hook": {
+        "ar": "لماذا يُستخدم العسل اليوم في المستشفيات لعلاج الحروق والجروح؟",
+        "en": "Why is honey used in hospitals today to treat burns and wounds?"
+      },
+      "summary": {
+        "ar": "آيةٌ تقول إن في العسل شفاءً للناس، وحديثٌ في التداوي به، وأبحاثٌ حديثة تثبت خصائصه المضادة للبكتيريا وأثره في التئام الحروق.",
+        "en": "A verse says honey holds healing for people, a hadith tells of treatment with it, and modern research confirms its antibacterial properties and its effect on healing burns."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "وَأَوۡحَىٰ رَبُّكَ إِلَى ٱلنَّحۡلِ أَنِ ٱتَّخِذِي مِنَ ٱلۡجِبَالِ بُيُوتٗا وَمِنَ ٱلشَّجَرِ وَمِمَّا يَعۡرِشُونَ ۝٦٨ ثُمَّ كُلِي مِن كُلِّ ٱلثَّمَرَٰتِ فَٱسۡلُكِي سُبُلَ رَبِّكِ ذُلُلٗاۚ يَخۡرُجُ مِنۢ بُطُونِهَا شَرَابٞ مُّخۡتَلِفٌ أَلۡوَٰنُهُۥ فِيهِ شِفَآءٞ لِّلنَّاسِۚ إِنَّ فِي ذَٰلِكَ لَأٓيَةٗ لِّقَوۡمٖ يَتَفَكَّرُونَ",
+          "meaning": {
+            "ar": "«يَعْرِشُونَ»: يبنون من الخلايا والعرائش. «ذُلُلًا»: مذلّلةً سهلة. «شَرَابٌ»: هو العسل. «فِيهِ شِفَاءٌ لِلنَّاسِ»: من أمراضٍ كثيرة.",
+            "en": "“And your Lord inspired the bee: ‘Take homes in the mountains, in the trees, and in what people build. Then eat from every kind of fruit, and follow the ways of your Lord, made easy for you.’ From their bellies comes a drink of varying colours, in which there is healing for people. Truly in that is a sign for people who reflect.”"
+          },
+          "ref": {
+            "ar": "النحل: ٦٨–٦٩",
+            "en": "An-Nahl 16:68–69"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "صَدَقَ اللَّهُ، وَكَذَبَ بَطْنُ أَخِيكَ، اسْقِهِ عَسَلًا",
+          "narrator": {
+            "ar": "عن أبي سعيد الخدري رضي الله عنه",
+            "en": "Narrated by Abu Sa‘id al-Khudri"
+          },
+          "meaning": {
+            "ar": "جاء رجلٌ يشكو بطن أخيه، فأمره النبي ﷺ أن يسقيه عسلًا، فلما لم يبرأ أول الأمر قال: «صدق الله» — يعني قوله تعالى: ﴿فِيهِ شِفَآءٞ لِّلنَّاسِ﴾ — فسقاه فبرأ.",
+            "en": "A man said his brother had a stomach complaint, and the Prophet ﷺ told him to give him honey. When it did not help at first, he said: “God has spoken the truth, and your brother’s stomach has lied — give him honey,” meaning the verse “in it is healing for people”. He gave him honey, and he recovered."
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٥٦٨٤)، وصحيح مسلم (٢٢١٧)",
+            "en": "Sahih al-Bukhari 5684; Sahih Muslim 2217"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "استعمل الناس العسل دواءً منذ آلاف السنين في مصر القديمة والهند واليونان، لكنهم لم يعرفوا سرّ أثره، ولم يكن عندهم تصورٌ عن البكتيريا التي يحاربها.",
+          "en": "People used honey as medicine for thousands of years in ancient Egypt, India and Greece, but did not know how it worked, or that it fights bacteria."
+        }
+      ],
+      "now": [
+        {
+          "ar": "بيّنت الأبحاث الحديثة أن للعسل خصائص مضادة للميكروبات من عدة جهات: فتركيز السكر العالي يسحب الماء من البكتيريا، وحموضته تعيق نموها، ويُطلق عند تخفيفه «فوق أكسيد الهيدروجين» المطهّر، وفيه مركّبات أخرى مثل «الميثيل غليوكسال» — وبخاصة في عسل المانوكا — وببتيدٌ من النحل نفسه يسمى «ديفنسين-١».",
+          "en": "Modern research shows honey fights microbes in several ways: its high sugar concentration draws water out of bacteria, its acidity hinders their growth, it releases disinfecting hydrogen peroxide when diluted, and it contains other compounds such as methylglyoxal — especially in manuka honey — and a peptide made by the bees themselves, bee defensin-1."
+        },
+        {
+          "ar": "ولهذا يُستخدم «العسل الطبي» المعقّم اليوم في علاج الجروح والحروق. ووجدت مراجعة «كوكرين» المنهجية عام ٢٠١٥ — وهي من أوثق مصادر الطب المبني على الدليل — أن الحروق الجزئية السماكة تلتئم بالعسل أسرع بنحو ٤٫٧ أيام من الضمادات التقليدية، بأدلةٍ عالية الجودة.",
+          "en": "That is why sterilised “medical-grade honey” is used today to treat wounds and burns. A 2015 Cochrane systematic review — among the most trusted sources in evidence-based medicine — found, on high-quality evidence, that partial-thickness burns heal about 4.7 days faster with honey than with conventional dressings."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٤٫٧ أيام",
+          "en": "4.7 days"
+        },
+        "label": {
+          "ar": "أسرع في التئام الحروق الجزئية بالعسل مقارنةً بالضمادات التقليدية (مراجعة كوكرين ٢٠١٥)",
+          "en": "faster healing of partial-thickness burns with honey than with conventional dressings (Cochrane review, 2015)"
+        }
+      },
+      "timeline": [
+        {
+          "year": {
+            "ar": "نحو ١٥٥٠ ق.م",
+            "en": "c. 1550 BCE"
+          },
+          "text": {
+            "ar": "بردية إيبرس المصرية تذكر العسل في كثيرٍ من وصفاتها العلاجية",
+            "en": "Egypt’s Ebers Papyrus includes honey in many of its remedies"
+          }
+        },
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول سورة النحل، والحديث في التداوي بالعسل",
+            "en": "Surah An-Nahl is revealed; the hadith on treating with honey"
+          }
+        },
+        {
+          "year": "2015",
+          "text": {
+            "ar": "مراجعة كوكرين: العسل يسرّع التئام الحروق الجزئية",
+            "en": "Cochrane review: honey speeds healing of partial-thickness burns"
+          }
+        },
+        {
+          "year": "2019",
+          "text": {
+            "ar": "دراسة تفصّل المكوّنات المضادة للميكروبات في العسل",
+            "en": "A study details the antimicrobial components of honey"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "قال القرآن: ﴿فِيهِ شِفَآءٞ لِّلنَّاسِ﴾ ولم يقل: هو الشفاء من كل شيء. كلمةٌ نكرة تدل على أن فيه شفاءً، بلا مبالغةٍ ولا إطلاق، وهو ما يجده الباحثون اليوم.",
+        "en": "The Qur’an says “in it is healing” — not that it is the cure for everything. The indefinite Arabic word speaks of some healing, without exaggeration or sweeping claims — which is just what researchers find today."
+      },
+      "caution": {
+        "ar": "استعمال العسل دواءً معروفٌ قبل الإسلام، فليس هذا كشفًا لشيءٍ مجهول، ووجه التأمل في دقة الوصف واعتداله. والأدلة العلمية القوية تخص استعمال العسل الطبي المعقّم على الحروق والجروح، لا علاج الأمراض الداخلية. ولا يجوز ترك العلاج الطبي اعتمادًا على العسل وحده، ولا يُعطى العسل للرضّع دون السنة الأولى، لخطر التسمم الوشيقي.",
+        "en": "Honey was used as medicine long before Islam, so this is not a revelation of something unknown; what is worth noting is the precision and moderation of the wording. The strong scientific evidence concerns sterilised medical honey on burns and wounds, not the cure of internal disease. Medical treatment must never be abandoned for honey alone, and honey must not be given to babies under one year old because of the risk of infant botulism."
+      },
+      "didYouKnow": {
+        "ar": "لا يكاد العسل المحفوظ جيدًا يفسد أبدًا، لأن قلة الماء فيه وحموضته تمنعان نمو الميكروبات.",
+        "en": "Well-stored honey almost never spoils, because its low water content and acidity keep microbes from growing."
+      },
+      "sources": [
+        {
+          "title": "Honey as a topical treatment for acute and chronic wounds (Jull et al.)",
+          "publisher": "Cochrane Database of Systematic Reviews",
+          "year": "2015",
+          "url": "https://www.cochrane.org/evidence/CD005083",
+          "kind": "journal"
+        },
+        {
+          "title": "Dissecting the Antimicrobial Composition of Honey (Nolan, Harrison & Cox)",
+          "publisher": "Antibiotics (Aston University)",
+          "year": "2019",
+          "url": "https://research.aston.ac.uk/en/publications/dissecting-the-antimicrobial-composition-of-honey/",
+          "kind": "journal"
+        },
+        {
+          "title": "Botulism Prevention",
+          "publisher": "U.S. Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/botulism/prevention/index.html",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "romans-will-overcome",
+      "category": "prophecies",
+      "journey": 5,
+      "art": "romans",
+      "nowLabel": "history",
+      "title": {
+        "ar": "غُلبت الروم… وهم من بعد غلبهم سيغلبون",
+        "en": "The Romans Have Been Defeated — but They Will Overcome"
+      },
+      "hook": {
+        "ar": "هل يجرؤ أحدٌ أن يتنبأ علنًا بنصرٍ عسكري لإمبراطوريةٍ تنهار، ويحدد له موعدًا؟",
+        "en": "Who would dare to predict, publicly, the victory of a collapsing empire — and give it a deadline?"
+      },
+      "summary": {
+        "ar": "آياتٌ نزلت والروم في أسوأ هزائمهم أمام الفرس، تخبر بأنهم سيغلبون في بضع سنين، فتحقق ذلك كما أخبرت.",
+        "en": "Verses revealed when the Byzantines were at their lowest against the Persians foretold that they would prevail within a few years — and they did."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "غُلِبَتِ ٱلرُّومُ ۝٢ فِيٓ أَدۡنَى ٱلۡأَرۡضِ وَهُم مِّنۢ بَعۡدِ غَلَبِهِمۡ سَيَغۡلِبُونَ ۝٣ فِي بِضۡعِ سِنِينَۗ لِلَّهِ ٱلۡأَمۡرُ مِن قَبۡلُ وَمِنۢ بَعۡدُۚ وَيَوۡمَئِذٖ يَفۡرَحُ ٱلۡمُؤۡمِنُونَ",
+          "meaning": {
+            "ar": "«أَدْنَى الْأَرْضِ»: أقربها إلى بلاد العرب، وهي أطراف الشام. «بِضْعِ سِنِينَ»: ما بين الثلاث والتسع.",
+            "en": "“The Romans have been defeated in the nearest land; yet after their defeat they will overcome, within a few years. To God belongs the command, before and after. And on that day the believers will rejoice.”"
+          },
+          "ref": {
+            "ar": "الروم: ٢–٤",
+            "en": "Ar-Rum 30:2–4"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "في أوائل القرن السابع كانت الإمبراطورية الرومانية الشرقية (البيزنطية) تتهاوى أمام الفرس: سقطت أنطاكية، ثم دمشق عام ٦١٣م، ثم القدس في مايو ٦١٤م وأُخذ منها ما يعتقد النصارى أنه «الصليب الحقيقي»، ثم احتل الفرس مصر بين ٦١٦ و٦٢١م.",
+          "en": "In the early seventh century the Eastern Roman (Byzantine) Empire was crumbling before the Persians: Antioch fell, then Damascus in 613, then Jerusalem in May 614, when what Christians held to be the True Cross was carried off; the Persians then occupied Egypt between 616 and 621."
+        },
+        {
+          "ar": "وذكر المفسرون أن مشركي مكة فرحوا بانتصار الفرس — وهم مثلهم لا كتاب لهم — على الروم أهل الكتاب، فنزلت الآيات تعلن أن الهزيمة ستنقلب نصرًا في بضع سنين.",
+          "en": "The commentators relate that the pagans of Mecca were pleased to see the Persians — who, like them, had no scripture — defeat the Romans, who were People of the Book. The verses came to announce that the defeat would turn to victory within a few years."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في أبريل ٦٢٢م — العام الذي هاجر فيه النبي ﷺ إلى المدينة — بدأ الإمبراطور هرقل حملته المضادة. وفشل حصار الفرس للقسطنطينية عام ٦٢٦م، ثم هزمهم هرقل هزيمةً حاسمة في معركة نينوى في ديسمبر ٦٢٧م، وخُلع كسرى الثاني، واضطرت فارس إلى الصلح عام ٦٢٨م، ثم أُعيد الصليب إلى القدس عام ٦٣٠م.",
+          "en": "In April 622 — the year the Prophet ﷺ emigrated to Medina — Emperor Heraclius launched his counter-offensive. The Persian siege of Constantinople failed in 626, Heraclius crushed them at the Battle of Nineveh in December 627, Khosrow II was deposed, Persia was forced to make peace in 628, and the Cross was returned to Jerusalem in 630."
+        },
+        {
+          "ar": "ولم يكن في الأفق ما يبشّر بذلك: فقد كانت الإمبراطورية مفلسة ممزقة، والفرس على أبواب عاصمتها. وقد لاحظ المؤرخ البريطاني إدوارد جيبون أن هذه النبوءة حين قيلت لم يكن شيءٌ أبعد منها عن التحقق.",
+          "en": "Nothing on the horizon promised it: the empire was bankrupt and torn apart, with the Persians at the gates of its capital. The British historian Edward Gibbon observed that when this prophecy was given, no prediction could have seemed further from fulfilment."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٦١٤ ← ٦٢٧",
+          "en": "614 → 627"
+        },
+        "label": {
+          "ar": "من سقوط القدس بيد الفرس إلى نصر هرقل الحاسم في نينوى",
+          "en": "from Jerusalem’s fall to the Persians to Heraclius’s decisive victory at Nineveh"
+        }
+      },
+      "timeline": [
+        {
+          "year": "613–614",
+          "text": {
+            "ar": "الفرس يأخذون دمشق، ثم القدس",
+            "en": "The Persians take Damascus, then Jerusalem"
+          }
+        },
+        {
+          "year": {
+            "ar": "نحو ٦١٤–٦١٥",
+            "en": "c. 614–615"
+          },
+          "revelation": true,
+          "text": {
+            "ar": "نزول أوائل سورة الروم في مكة",
+            "en": "The opening verses of surah Ar-Rum are revealed in Mecca"
+          }
+        },
+        {
+          "year": "622",
+          "text": {
+            "ar": "هرقل يبدأ حملته المضادة، وهو عام الهجرة",
+            "en": "Heraclius begins his counter-offensive — the year of the Hijrah"
+          }
+        },
+        {
+          "year": "627",
+          "text": {
+            "ar": "معركة نينوى: نصرٌ حاسم للروم",
+            "en": "The Battle of Nineveh: a decisive Roman victory"
+          }
+        },
+        {
+          "year": "630",
+          "text": {
+            "ar": "هرقل يعيد الصليب إلى القدس",
+            "en": "Heraclius returns the Cross to Jerusalem"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "نبوءةٌ محددة، معلنة، في أمرٍ لا يملكه أحد، والدلائل كلها ضدها؛ لو لم تتحقق لكانت حجةً على القرآن إلى يوم القيامة. لكنها تحققت.",
+        "en": "A specific, public prophecy, about something no one controlled, with every sign pointing the other way. Had it failed, it would have stood against the Qur’an forever. It came true."
+      },
+      "caution": {
+        "ar": "يعتمد تحديد زمن نزول الآيات (نحو ٦١٤–٦١٥م) على الروايات التاريخية، ويختلف المؤرخون في بداية «بضع سنين» ونهايتها بدقة، لكن انتصارات الروم الكبرى بين ٦٢٢ و٦٢٧م تقع في هذا الإطار على أي تقديرٍ معقول. وهناك قراءةٌ شاذة للآية تعكس الغالب والمغلوب، لكن القراءة المتواترة هي المثبتة هنا. وأما تفسير «أدنى الأرض» بأخفض بقعةٍ على اليابسة فهو فهمٌ معاصر، والمعنى المشهور عند المفسرين: أقرب الأرض إلى العرب، ولم تقع المعارك عند البحر الميت نفسه.",
+        "en": "Dating the revelation of these verses (about 614–615) relies on historical reports, and historians differ on exactly where the “few years” begin and end, but the major Roman victories of 622–627 fall within that frame on any reasonable reckoning. There is also a rare, non-canonical reading that reverses who is defeated, but the mass-transmitted reading is the one given here. Reading adnā al-arḍ as “the lowest land on Earth” is a modern interpretation; the well-known meaning among commentators is “the nearest land” to Arabia, and the battles were not fought at the Dead Sea itself."
+      },
+      "didYouKnow": {
+        "ar": "كلمة «أدنى» في العربية تعني الأقرب، وتعني الأخفض أيضًا. وبلاد الشام التي هُزم فيها الروم تضمّ البحر الميت، أخفض بقعةٍ طبيعية على وجه الأرض بأكثر من ٤٠٠ مترٍ تحت سطح البحر.",
+        "en": "The Arabic word adnā means “nearest”, but also “lowest”. The Levant, where the Romans were defeated, contains the Dead Sea — the lowest natural surface on Earth, more than 400 m below sea level."
+      },
+      "sources": [
+        {
+          "title": "Defenders and Enemies of the True Cross (Y. Stoyanov), sample chapter",
+          "publisher": "Austrian Academy of Sciences Press",
+          "year": "2011",
+          "url": "https://verlag.oeaw.ac.at/_files_media/werke/leseprobe/9783700169574_leseprobe.pdf",
+          "kind": "book"
+        },
+        {
+          "title": "Heraclius",
+          "publisher": "Livius.org",
+          "url": "https://www.livius.org/articles/person/heraclius/",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Dead Sea, Israel, Jordan, West Bank",
+          "publisher": "U.S. Geological Survey (EROS Earthshots)",
+          "url": "https://eros.usgs.gov/earthshots/dead-sea-israel-jordan-west-bank",
+          "kind": "agency"
+        },
+        {
+          "title": "Getting Saltier (the Dead Sea)",
+          "publisher": "NASA Earth Observatory",
+          "year": "2019",
+          "url": "https://science.nasa.gov/earth/earth-observatory/getting-saltier-145373/",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "slug": "competing-in-tall-buildings",
+      "category": "prophecies",
+      "art": "buildings",
+      "nowLabel": "history",
+      "title": {
+        "ar": "رعاء الشاء يتطاولون في البنيان",
+        "en": "Shepherds Competing in Tall Buildings"
+      },
+      "hook": {
+        "ar": "من كان يتخيل أن رعاة الصحراء الفقراء سيبنون يومًا أطول ناطحات السحاب في العالم؟",
+        "en": "Who could have imagined that poor desert herders would one day build the tallest skyscrapers on Earth?"
+      },
+      "summary": {
+        "ar": "حديثٌ نبوي يذكر من علامات الساعة أن يرى الناس الحفاة العراة الفقراء رعاء الشاء يتطاولون في البنيان، وهو ما يشهده العالم اليوم في جزيرة العرب.",
+        "en": "A hadith lists among the signs of the Hour that people will see the barefoot, destitute herders of sheep competing in constructing tall buildings — something the world now witnesses in Arabia."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "وَأَنْ تَرَى الْحُفَاةَ الْعُرَاةَ الْعَالَةَ رِعَاءَ الشَّاءِ، يَتَطَاوَلُونَ فِي الْبُنْيَانِ",
+          "narrator": {
+            "ar": "عن عمر بن الخطاب رضي الله عنه، في حديث جبريل",
+            "en": "From ‘Umar ibn al-Khattab, in the hadith of Jibril"
+          },
+          "meaning": {
+            "ar": "«الْعَالَةَ»: الفقراء. «رِعَاءَ الشَّاءِ»: رعاة الغنم. «يَتَطَاوَلُونَ فِي الْبُنْيَانِ»: يتفاخرون ويتنافسون في إطالة البناء وتعليته.",
+            "en": "“…and that you see the barefoot, the unclothed, the destitute, the herders of sheep, competing with one another in constructing tall buildings.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (٨)، وبنحوه في صحيح البخاري (٥٠)",
+            "en": "Sahih Muslim 8; similar in Sahih al-Bukhari 50"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان أهل البادية في جزيرة العرب من أفقر الناس، يعيشون في بيوت الشَّعر ويتنقلون وراء المراعي، ولم يكن في الجزيرة كلها بناءٌ يُذكر بالعلو، وظلت كذلك حتى أوائل القرن العشرين.",
+          "en": "The Bedouin of Arabia were among the poorest people on earth, living in goat-hair tents and following the pasture. The whole peninsula had no building remarkable for its height, and it stayed that way into the early twentieth century."
+        }
+      ],
+      "now": [
+        {
+          "ar": "بعد اكتشاف النفط في القرن العشرين تحوّلت المنطقة في عقودٍ قليلة، وبدأ سباقٌ في التطاول بالبنيان: فبرج خليفة في دبي — أطول مبنى في العالم منذ اكتماله عام ٢٠١٠ — يرتفع ٨٢٨ مترًا في ١٦٣ طابقًا، ويجري في جدة بناء برجٍ يُراد له أن يبلغ ألف متر.",
+          "en": "After oil was discovered in the twentieth century the region was transformed within a few decades, and a race to build tall began. Dubai’s Burj Khalifa, the tallest building in the world since its completion in 2010, rises 828 metres over 163 floors, and in Jeddah a tower intended to reach 1,000 metres is under construction."
+        },
+        {
+          "ar": "وصار الحديث عن «أطول برج» و«أعلى مبنى» مفخرةً تتنافس فيها مدن الخليج، كما وصف الحديث بكلمةٍ واحدة: «يتطاولون»، أي يتنافسون ويتفاخرون في التعلية.",
+          "en": "Talk of “the tallest tower” and “the highest building” has become a point of pride the Gulf cities compete over — exactly the hadith’s one word: they vie with one another in building high."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٨٢٨ م",
+          "en": "828 m"
+        },
+        "label": {
+          "ar": "ارتفاع برج خليفة في دبي، أطول مبنى في العالم",
+          "en": "the height of Dubai’s Burj Khalifa, the world’s tallest building"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "حديث جبريل عن علامات الساعة",
+            "en": "The hadith of Jibril on the signs of the Hour"
+          }
+        },
+        {
+          "year": "1938",
+          "text": {
+            "ar": "اكتشاف النفط بكمياتٍ تجارية في المملكة العربية السعودية",
+            "en": "Oil is found in commercial quantities in Saudi Arabia"
+          }
+        },
+        {
+          "year": "2010",
+          "text": {
+            "ar": "اكتمال برج خليفة، أطول مبنى في العالم",
+            "en": "The Burj Khalifa is completed — the world’s tallest building"
+          }
+        },
+        {
+          "year": "2025",
+          "text": {
+            "ar": "استئناف بناء برج جدة المخطط له أن يبلغ ألف متر",
+            "en": "Construction resumes on Jeddah Tower, planned to reach 1,000 m"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "قيل هذا الكلام في مدينةٍ بيوتها من الطين وسعف النخل، عن قومٍ حفاة فقراء يرعون الغنم. لم يكن في حال أحدٍ يومها ما يشير إلى هذا المستقبل.",
+        "en": "These words were spoken in a town of mud-brick and palm-frond houses, about barefoot, poor herders of sheep. Nothing about anyone’s circumstances then hinted at such a future."
+      },
+      "caution": {
+        "ar": "يذكر الحديث هذه العلامة على وجه التعجب من تبدّل الأحوال، لا مدحًا للبنيان. ولا يحدد مكانًا بعينه؛ وقد فهمه العلماء على أن الفقراء من أهل البادية يصيرون أهل ثروةٍ يتفاخرون بالبناء، وهو ما ينطبق انطباقًا لافتًا على ما حدث في جزيرة العرب دون أن يُحصر فيها. وهو خبرٌ عام، فلا نبالغ في جعله تحديدًا لبرجٍ أو مدينة. ولم يكتمل برج جدة بعد، ولم يُؤكَّد ارتفاعه النهائي.",
+        "en": "The hadith mentions this sign in wonder at how circumstances are overturned, not in praise of tall buildings. It names no particular place; scholars understood it to mean that poor desert folk would become wealthy and vie in building, which fits what has happened in Arabia strikingly well without being limited to it. It is a general statement, so we do not stretch it to point at any particular tower or city. Jeddah Tower is not yet finished, and its final height is unconfirmed."
+      },
+      "didYouKnow": {
+        "ar": "ظل الهرم الأكبر في الجيزة — بارتفاعٍ يقارب ١٤٦ مترًا — أطول بناءٍ على وجه الأرض قرابة أربعة آلاف عام.",
+        "en": "The Great Pyramid of Giza, at about 146 m, remained the tallest structure on Earth for nearly four thousand years."
+      },
+      "sources": [
+        {
+          "title": "Burj Khalifa",
+          "publisher": "CTBUH Skyscraper Center",
+          "url": "https://www.skyscrapercenter.com/building/burj-khalifa/3",
+          "kind": "university"
+        },
+        {
+          "title": "Saudi Arabia (incl. Jeddah Tower)",
+          "publisher": "CTBUH Skyscraper Center",
+          "url": "https://www.skyscrapercenter.com/country/saudi-arabia",
+          "kind": "university"
+        }
+      ]
+    },
+    {
+      "slug": "green-arabia",
+      "category": "prophecies",
+      "art": "green-arabia",
+      "title": {
+        "ar": "حتى تعود أرض العرب مروجًا وأنهارًا",
+        "en": "Until the Land of the Arabs Returns to Meadows and Rivers"
+      },
+      "hook": {
+        "ar": "صحراء جزيرة العرب: هل كانت يومًا خضراء تجري فيها الأنهار؟",
+        "en": "The deserts of Arabia — were they ever green, with rivers running through them?"
+      },
+      "summary": {
+        "ar": "حديثٌ يقول إن أرض العرب «تعود» مروجًا وأنهارًا، وعلمٌ وجد أن جزيرة العرب كانت خضراء في عصورٍ سابقة، فيها بحيراتٌ وأنهار.",
+        "en": "A hadith says the land of the Arabs will “return” to meadows and rivers; science found that Arabia was green in earlier ages, with lakes and rivers."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "لَا تَقُومُ السَّاعَةُ حَتَّى يَكْثُرَ الْمَالُ وَيَفِيضَ، حَتَّى يَخْرُجَ الرَّجُلُ بِزَكَاةِ مَالِهِ فَلَا يَجِدُ أَحَدًا يَقْبَلُهَا مِنْهُ، وَحَتَّى تَعُودَ أَرْضُ الْعَرَبِ مُرُوجًا وَأَنْهَارًا",
+          "narrator": {
+            "ar": "عن أبي هريرة رضي الله عنه",
+            "en": "Narrated by Abu Hurayrah"
+          },
+          "meaning": {
+            "ar": "«مُرُوجًا»: رياضًا ومزارع، وقيل: مواضع ترعى فيها الدواب. وفي قوله «تَعُودَ» إشارةٌ إلى أنها كانت كذلك من قبل.",
+            "en": "“The Hour will not come until wealth becomes so abundant that a man goes out with the zakah of his wealth and finds no one to accept it from him, and until the land of the Arabs returns to meadows and rivers.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (١٥٧)",
+            "en": "Sahih Muslim 157"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "لم يعرف العرب أرضهم إلا صحراء قاحلة يتنقلون فيها بحثًا عن الماء والكلأ، ولم يكن لديهم أي علمٍ بمناخها قبل آلاف السنين.",
+          "en": "The Arabs had only ever known their land as harsh desert, roaming in search of water and pasture, and had no knowledge of its climate thousands of years before."
+        }
+      ],
+      "now": [
+        {
+          "ar": "كشفت الدراسات الجيولوجية والأثرية في العقود الأخيرة — من رواسب البحيرات القديمة والكهوف والأدوات الحجرية وعظام الحيوانات — أن جزيرة العرب مرّت بفتراتٍ رطبة متكررة، كانت فيها مراعٍ واسعة وبحيرات وأنهار، وعاشت فيها حيواناتٌ كأفراس النهر.",
+          "en": "Geological and archaeological studies of recent decades — from ancient lake deposits, caves, stone tools and animal bones — have shown that Arabia went through repeated humid periods, with wide grasslands, lakes and rivers, home to animals such as hippopotamuses."
+        },
+        {
+          "ar": "ففي عام ٢٠٢١ نشرت مجلة «نيتشر» دراسةً وثّقت «نوافذ خضراء» متعددة في صحراء النفود خلال الأربعمئة ألف سنة الماضية، ثم نشرت عام ٢٠٢٥ دراسةً من رواسب الكهوف تُظهر فتراتٍ رطبة متكررة في وسط الجزيرة على مدى ثمانية ملايين سنة.",
+          "en": "In 2021 Nature published a study documenting several “green windows” in the Nefud desert over the past 400,000 years, and in 2025 a study of cave deposits showing recurring wet periods in central Arabia across eight million years."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٨ ملايين سنة",
+          "en": "8 million years"
+        },
+        "label": {
+          "ar": "المدى الذي وثّقت فيه دراسة نيتشر (٢٠٢٥) فتراتٍ رطبة متكررة في جزيرة العرب",
+          "en": "the span over which a 2025 Nature study documented recurring wet periods in Arabia"
+        }
+      },
+      "timeline": [
+        {
+          "year": {
+            "ar": "قبل ٤٠٠ ألف سنة وما بعدها",
+            "en": "400,000 years ago onwards"
+          },
+          "text": {
+            "ar": "«نوافذ خضراء» متكررة في صحراء النفود",
+            "en": "Repeated “green windows” in the Nefud desert"
+          }
+        },
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "الحديث النبوي: «حتى تعود أرض العرب مروجًا وأنهارًا»",
+            "en": "The hadith: “until the land of the Arabs returns to meadows and rivers”"
+          }
+        },
+        {
+          "year": "2021",
+          "text": {
+            "ar": "مجلة نيتشر: بحيرات قديمة وأحافير أفراس نهر في النفود",
+            "en": "Nature: ancient lakes and hippo fossils in the Nefud"
+          }
+        },
+        {
+          "year": "2025",
+          "text": {
+            "ar": "مجلة نيتشر: فترات رطبة متكررة على مدى ٨ ملايين سنة",
+            "en": "Nature: recurring wet periods over 8 million years"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "لم يقل الحديث: تصير، بل قال: «تعود». كلمةٌ واحدة تحمل خبرًا عن ماضٍ لم يكن يعرفه أحد، وعن مستقبلٍ لم يأتِ بعد.",
+        "en": "The hadith does not say the land will “become” green, but that it will “return” to meadows and rivers. One word carries news of a past nobody knew, and of a future yet to come."
+      },
+      "caution": {
+        "ar": "يذكر الحديث علامةً من علامات الساعة لم تتحقق بعد. ووجه الاستدلال هنا في كلمة «تعود» الدالة على ماضٍ أخضر، وهو ما أثبته العلم. أما المستقبل فلا نقول إن العلم يتنبأ بعودة الجزيرة خضراء: فالنماذج المناخية متضاربة، يتوقع بعضها مزيدًا من المطر في جنوب الجزيرة وأقل في شمالها، ويتوقع غيرها مزيدًا من الجفاف.",
+        "en": "The hadith describes a sign of the Hour that has not yet come to pass. The point made here rests on the word “return”, implying a green past — which science has confirmed. As for the future, we do not say science predicts Arabia will turn green again: climate models are mixed, some projecting more rain in the south of the peninsula and less in the north, others projecting worsening drought."
+      },
+      "didYouKnow": {
+        "ar": "عُثر في صحراء النفود على أحافير أفراس النهر، وهي حيوانات لا تعيش إلا قرب الماء الدائم، في قلب ما صار اليوم بحرًا من الرمال.",
+        "en": "Hippopotamus fossils — animals that live only near permanent water — have been found in the Nefud desert, in the heart of what is now a sea of sand."
+      },
+      "sources": [
+        {
+          "title": "Multiple hominin dispersals into Southwest Asia over the past 400,000 years (Groucutt et al.)",
+          "publisher": "Nature",
+          "year": "2021",
+          "url": "https://doi.org/10.1038/s41586-021-03863-y",
+          "kind": "journal"
+        },
+        {
+          "title": "Recurrent humid phases in Arabia over the past 8 million years (Markowska et al.)",
+          "publisher": "Nature",
+          "year": "2025",
+          "url": "https://doi.org/10.1038/s41586-025-08859-6",
+          "kind": "journal"
+        },
+        {
+          "title": "Future Changes in Climate over the Arabian Peninsula based on CMIP6 Multimodel Simulations (Almazroui et al.)",
+          "publisher": "Earth Systems and Environment",
+          "year": "2020",
+          "url": "https://doi.org/10.1007/s41748-020-00183-5",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "slug": "the-quran-preserved",
+      "category": "preservation",
+      "journey": 7,
+      "art": "manuscript",
+      "nowLabel": "history",
+      "title": {
+        "ar": "إنا نحن نزّلنا الذكر وإنا له لحافظون",
+        "en": "We Sent Down the Reminder, and We Will Guard It"
+      },
+      "hook": {
+        "ar": "كيف نعرف أن القرآن الذي بين أيدينا هو نفسه الذي تلاه النبي ﷺ قبل أربعة عشر قرنًا؟",
+        "en": "How do we know the Qur’an we hold today is the same one the Prophet ﷺ recited fourteen centuries ago?"
+      },
+      "summary": {
+        "ar": "آيةٌ تَعِد بحفظ القرآن، ومخطوطاتٌ قديمة أُرّخت بالكربون المشع إلى زمن النبي ﷺ أو قريبٍ منه، نصّها يوافق ما نقرؤه اليوم.",
+        "en": "A verse promises the Qur’an will be guarded; ancient manuscripts radiocarbon-dated to the Prophet’s ﷺ lifetime or soon after carry the text we read today."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "إِنَّا نَحۡنُ نَزَّلۡنَا ٱلذِّكۡرَ وَإِنَّا لَهُۥ لَحَٰفِظُونَ",
+          "meaning": {
+            "ar": "«الذِّكْرَ»: القرآن. «لَحَافِظُونَ»: من الزيادة والنقص والتبديل.",
+            "en": "“Indeed, it is We who sent down the Reminder, and indeed We will guard it.”"
+          },
+          "ref": {
+            "ar": "الحجر: ٩",
+            "en": "Al-Hijr 15:9"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "نُقل القرآن منذ نزوله بطريقين معًا: الحفظ في الصدور، والكتابة في الصحف. فقد كان للنبي ﷺ كتّابٌ للوحي، ثم جُمع القرآن في مصحفٍ واحد في عهد أبي بكر، ونُسخت منه المصاحف في عهد عثمان رضي الله عنهما وأُرسلت إلى الأمصار.",
+          "en": "From the start the Qur’an was passed on in two ways at once: memorised by heart and written down. The Prophet ﷺ had scribes for the revelation; the Qur’an was gathered into a single volume under Abu Bakr, and under ‘Uthman copies were made and sent to the main cities."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في عام ٢٠١٥ أعلنت جامعة برمنغهام البريطانية أن رقّتين من مخطوطةٍ قرآنية في مكتبتها أُرّختا بالكربون المشع — في مختبرٍ بجامعة أكسفورد — إلى ما بين عامي ٥٦٨ و٦٤٥م بنسبة دقة ٩٥٫٤٪، أي إلى زمن النبي ﷺ (نحو ٥٧٠–٦٣٢م) أو بعده بقليل. وتحتوي الرقّتان على أجزاءٍ من سور الكهف ومريم وطه، بالخط الحجازي، بنصٍّ يوافق المصحف المتداول اليوم.",
+          "en": "In 2015 the University of Birmingham announced that two parchment leaves of a Qur’an manuscript in its library had been radiocarbon-dated, by a laboratory at the University of Oxford, to between 568 and 645 CE with 95.4% accuracy — the Prophet’s ﷺ lifetime (c. 570–632) or shortly after. The leaves hold parts of surahs Al-Kahf, Maryam and Ta-Ha, in Hijazi script, in a text that matches the Qur’an in use today."
+        },
+        {
+          "ar": "وليست وحدها: فقد أُرّخت قطعةٌ قرآنية في جامعة توبنغن الألمانية عام ٢٠١٤ إلى ما بين ٦٤٩ و٦٧٥م. وفوق المخطوطات، يحفظ القرآن كاملًا اليوم أعدادٌ هائلة من المسلمين عن ظهر قلب، بأسانيد متصلة من معلّمٍ إلى معلّم حتى النبي ﷺ.",
+          "en": "It is not alone: in 2014 a Qur’an fragment at Germany’s University of Tübingen was dated to 649–675 CE. And beyond manuscripts, vast numbers of Muslims today know the entire Qur’an by heart, through unbroken chains of teachers going back to the Prophet ﷺ."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٥٦٨–٦٤٥م",
+          "en": "568–645 CE"
+        },
+        "label": {
+          "ar": "تأريخ رقّتي مخطوطة برمنغهام بالكربون المشع (بدقة ٩٥٫٤٪)",
+          "en": "the radiocarbon date of the Birmingham manuscript leaves (95.4% accuracy)"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، وكتابته في حياة النبي ﷺ",
+            "en": "The Qur’an is revealed, and written down in the Prophet’s ﷺ lifetime"
+          }
+        },
+        {
+          "year": {
+            "ar": "نحو ٦٣٢–٦٣٤",
+            "en": "c. 632–634"
+          },
+          "text": {
+            "ar": "جمعه في مصحفٍ واحد في عهد أبي بكر",
+            "en": "Gathered into a single volume under Abu Bakr"
+          }
+        },
+        {
+          "year": {
+            "ar": "نحو ٦٥٠",
+            "en": "c. 650"
+          },
+          "text": {
+            "ar": "نسخ المصاحف العثمانية وإرسالها إلى الأمصار",
+            "en": "The ‘Uthmanic copies are made and sent to the main cities"
+          }
+        },
+        {
+          "year": "2014",
+          "text": {
+            "ar": "جامعة توبنغن: قطعةٌ قرآنية من ٦٤٩–٦٧٥م",
+            "en": "University of Tübingen: a Qur’an fragment from 649–675 CE"
+          }
+        },
+        {
+          "year": "2015",
+          "text": {
+            "ar": "جامعة برمنغهام: رقّتان من ٥٦٨–٦٤٥م",
+            "en": "University of Birmingham: two leaves from 568–645 CE"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "كتبٌ كثيرة ضاعت أصولها أو تبدّلت، أما هذه الآية فقد مضى عليها أكثر من أربعة عشر قرنًا، والوعد قائم: النص الذي تقرؤه اليوم هو النص الذي حُفظ في الصدور وكُتب في الرقاع منذ نزوله.",
+        "en": "Many books have lost their originals or changed over time. Fourteen centuries after this verse, its promise still stands: the text you read today is the text that was memorised and written down from the moment it was revealed."
+      },
+      "caution": {
+        "ar": "التأريخ بالكربون المشع يحدد عمر الرّق — أي وقت موت الحيوان الذي صُنع من جلده — لا تاريخ الكتابة نفسها، وإن كانت الكتابة تتم عادةً بعد تجهيز الرق بمدةٍ قصيرة؛ ولهذا يبدأ المدى (٥٦٨م) قبل بدء الوحي (٦١٠م) دون تعارض، وقد يحتج به بعض المشككين. وتوجد في بعض المخطوطات المبكرة فروقٌ في الرسم ووجوه القراءة، وفي النص السفلي لـ«طرس صنعاء» فروقٌ يدرسها الباحثون من المسلمين وغيرهم. فالمخطوطات دليلٌ على نصٍّ مكتوب مبكر، وحفظ القرآن عند المسلمين لا يقوم عليها وحدها، بل على التواتر في الحفظ والتلقّي جيلًا بعد جيل.",
+        "en": "Radiocarbon dating gives the age of the parchment — when the animal whose skin it was died — not of the writing itself, though writing usually followed soon after the parchment was prepared. That is why the range starts (568) before the revelation began (610) without any contradiction, though some sceptics cite it. Some early manuscripts show differences in spelling and in recognised readings, and the lower text of the Sana’a palimpsest has variants that scholars, Muslim and non-Muslim, study. Manuscripts are evidence of an early written text; for Muslims, the preservation of the Qur’an rests not on them alone but on mass transmission by memory and teaching, generation after generation."
+      },
+      "didYouKnow": {
+        "ar": "يحفظ القرآن كاملًا اليوم أعدادٌ كبيرة من المسلمين حول العالم، وكثيرٌ منهم أطفالٌ لا يتكلمون العربية.",
+        "en": "Large numbers of Muslims around the world know the whole Qur’an by heart today — many of them children who do not speak Arabic."
+      },
+      "sources": [
+        {
+          "title": "Birmingham Qur’an manuscript dated among the oldest in the world",
+          "publisher": "University of Birmingham",
+          "year": "2015",
+          "url": "https://www.birmingham.ac.uk/news/2015/birmingham-quran-manuscript-dated-among-the-oldest-in-the-world",
+          "kind": "university"
+        },
+        {
+          "title": "Koran manuscript from early period of Islam",
+          "publisher": "University of Tübingen",
+          "year": "2014",
+          "url": "https://uni-tuebingen.de/en/university/news-and-publications/article/koran-manuscript-from-early-period-of-islam/",
+          "kind": "university"
+        }
+      ]
+    }
+  ]
+}

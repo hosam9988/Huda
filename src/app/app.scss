@@ -1,0 +1,217 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100dvh;
+}
+
+main {
+  flex: 1;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-top: env(safe-area-inset-top);
+  background: rgb(var(--bg-rgb) / 80%);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-block-end: 1px solid var(--line);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-block-size: 4.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+
+  svg {
+    inline-size: 2.3rem;
+    overflow: visible;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 4;
+  }
+
+  .orbit {
+    stroke: var(--science);
+    stroke-width: 2.5;
+    opacity: 0.8;
+  }
+
+  circle {
+    fill: var(--gold);
+    stroke: none;
+  }
+
+  .moon {
+    fill: var(--science);
+  }
+
+  // In the Qur'an's script like the page titles, a little larger for its lighter weight. gold-text
+  // shows only the ink inside the box, so the line height keeps the letters whole.
+  span {
+    font-size: 1.75rem;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.25rem, 1.6vw, 1.4rem);
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    padding-inline: 0.4rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: color 0.2s;
+
+    &:hover,
+    &.active {
+      color: var(--gold-light);
+    }
+  }
+}
+
+.lang {
+  padding: 0.3rem 0.95rem;
+  font-size: 0.9rem;
+}
+
+.site-footer {
+  margin-block-start: 5rem;
+  padding-block: 2.75rem calc(2.75rem + env(safe-area-inset-bottom));
+  border-block-start: 1px solid var(--line);
+  text-align: center;
+
+  .verse {
+    margin: 0;
+    font-size: clamp(1.25rem, 4.6vw, 1.7rem);
+  }
+
+  .verse-ref {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.4rem;
+    margin-block: 1rem 0.5rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      min-block-size: 2.75rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+
+      &:hover {
+        color: var(--gold-light);
+      }
+    }
+  }
+
+  // The project is a waqf: said plainly, on every page.
+  .waqf {
+    display: inline-block;
+    margin: 0.5rem 0 0;
+    padding: 0.35rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .images-note {
+    max-inline-size: 36rem;
+    margin: 0.9rem auto 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    opacity: 0.85;
+  }
+}
+
+// ---------- Narrow screens ----------
+
+@media (max-width: 760px) {
+  nav .wide {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .bar {
+    min-block-size: 3.75rem;
+  }
+  .brand {
+    gap: 0.45rem;
+
+    svg {
+      inline-size: 1.9rem;
+    }
+    // As wide as the old calligraphy at 1.2rem, so the bar needs no more room than before.
+    span {
+      font-size: 1.05rem;
+    }
+  }
+  // Keep the two sections, the colours and the language; the links sit closer together.
+  nav {
+    gap: 0.15rem;
+
+    .link {
+      padding-inline: 0.3rem;
+      font-size: 0.92rem;
+    }
+  }
+  .lang {
+    padding-inline: 0.75rem;
+  }
+}
+
+// From 381px the brand's name shows, and the bar used to need 397px: on these phones its spacing
+// tightens so it fits without the page zooming out.
+@media (max-width: 420px) {
+  .bar {
+    gap: 0.5rem;
+  }
+  .brand {
+    gap: 0.35rem;
+  }
+  nav .link {
+    padding-inline: 0.15rem;
+  }
+  .lang {
+    padding-inline: 0.55rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand span {
+    display: none;
+  }
+}
+
+// Phones in landscape have little height to spare, so let the header scroll away.
+@media (max-height: 480px) and (orientation: landscape) {
+  .site-header {
+    position: static;
+  }
+}

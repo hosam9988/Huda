@@ -1,0 +1,107 @@
+<section class="hero">
+  <!-- A geometric pattern, with no writing in it. -->
+  <div class="hero-art" aria-hidden="true">
+    <img
+      src="images/names-hero.webp"
+      srcset="images/names-hero-sm.webp 768w, images/names-hero.webp 1536w"
+      sizes="100vw"
+      alt=""
+      width="1536"
+      height="864"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+  <div class="container hero-text">
+    <h1 class="title quran gold-text" lang="ar">أسماء الله الحسنى</h1>
+    @if (!language.isArabic()) {
+      <p class="title-en">{{ t().names.title }}</p>
+    }
+    <blockquote class="motto">
+      <p class="quran" lang="ar" dir="rtl">﴿وَلِلَّهِ ٱلۡأَسۡمَآءُ ٱلۡحُسۡنَىٰ فَٱدۡعُوهُ بِهَاۖ﴾</p>
+      @if (!language.isArabic()) {
+        <p class="motto-meaning">“And to God belong the most beautiful names, so call on Him by them.”</p>
+      }
+      <cite>{{ language.isArabic() ? 'الأعراف: ١٨٠' : 'Al-A‘raf 7:180' }}</cite>
+    </blockquote>
+    <p class="intro">{{ t().names.intro }}</p>
+  </div>
+</section>
+
+@if (names.isLoading() && !names.names().length) {
+  <p class="container status">{{ t().loading }}</p>
+} @else if (names.error()) {
+  <p class="container status">{{ t().loadError }}</p>
+} @else {
+  @if (names.nameOfTheDay(); as today) {
+    <section class="container section" appReveal>
+      <a class="panel today" [routerLink]="['/names', today.slug]">
+        <p class="eyebrow">{{ t().names.nameOfTheDay }}</p>
+        <p class="today-name quran gold-text" lang="ar" dir="rtl">{{ today.name }}</p>
+        <p class="today-meaning">{{ meaningOf(today) }}</p>
+        <span class="btn solid">{{ t().names.readName }}</span>
+      </a>
+    </section>
+  }
+
+  <section class="container section" id="all">
+    <header class="section-head" appReveal>
+      <app-ornament />
+      <h2>{{ t().names.allNames }}</h2>
+    </header>
+
+    <label class="search">
+      <span class="visually-hidden">{{ t().names.search }}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <input
+        type="search"
+        [placeholder]="t().names.search"
+        [value]="query()"
+        (input)="query.set($any($event.target).value)"
+      />
+    </label>
+
+    @if (filtered().length) {
+      <ol class="grid">
+        @for (name of filtered(); track name.slug) {
+          <li>
+            @if (name.content) {
+              <a class="name-card" [routerLink]="['/names', name.slug]">
+                <span class="number">{{ language.number(name.number) }}</span>
+                @if (isRead(name)) {
+                  <span class="read" [attr.title]="t().isRead">✓<span class="visually-hidden">{{ t().isRead }}</span></span>
+                }
+                <span class="name quran gold-text" lang="ar" dir="rtl">{{ name.name }}</span>
+                <span class="translit" lang="en" dir="ltr">{{ name.transliteration }}</span>
+                <span class="meaning">{{ meaningOf(name) }}</span>
+              </a>
+            } @else {
+              <div class="name-card soon">
+                <span class="number">{{ language.number(name.number) }}</span>
+                <span class="name quran" lang="ar" dir="rtl">{{ name.name }}</span>
+                <span class="translit" lang="en" dir="ltr">{{ name.transliteration }}</span>
+                <span class="meaning">{{ meaningOf(name) }}</span>
+                <span class="chip">{{ t().names.comingSoon }}</span>
+              </div>
+            }
+          </li>
+        }
+      </ol>
+    } @else {
+      <p class="status">{{ t().noResults }}</p>
+    }
+  </section>
+
+  <section class="container section" appReveal>
+    <div class="panel progress">
+      <app-progress-ring [value]="progress()">
+        <strong>{{ language.number(readCount()) }}</strong>
+        <small>/ {{ language.number(names.names().length) }}</small>
+      </app-progress-ring>
+      <p class="progress-line">{{ t().names.progress(readCount(), names.names().length) }}</p>
+    </div>
+  </section>
+}

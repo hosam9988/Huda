@@ -1,0 +1,223 @@
+<div class="reading-bar" aria-hidden="true" [style.transform]="'scaleX(' + progress() + ')'"></div>
+
+@if (ayah(); as a) {
+  <article #article class="ayah" [style.--scale]="reading.textScale()">
+    <header class="hero">
+      <div class="hero-art">
+        <img
+          [src]="artSrc(a.art)"
+          [attr.srcset]="artSrcset(a.art)"
+          sizes="100vw"
+          alt=""
+          width="1280"
+          height="800"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+      <span class="art-label">{{ t().illustrativeImage }}</span>
+      <div class="container hero-text">
+        <p class="crumbs">
+          <a routerLink="/signs" fragment="all">{{ t().backToAll }}</a>
+          @if (category(); as c) {
+            <span aria-hidden="true">/</span>
+            <span class="chip">{{ language.pick(c.title) }}</span>
+          }
+          @if (onJourney()) {
+            <span class="chip journey-chip">
+              {{ t().journeyStop(language.number(a.journey!), language.number(journeyTotal())) }}
+            </span>
+          }
+        </p>
+        <h1 [class.reading]="speech.activeKey() === 'title'">{{ language.pick(a.title) }}</h1>
+        <p class="hook" [class.reading]="speech.activeKey() === 'hook'">{{ language.pick(a.hook) }}</p>
+        <p class="meta">
+          <span>{{ t().minutes(minutes()) }}</span>
+          @if (isRead()) {
+            <span class="done">✓ {{ t().isRead }}</span>
+          }
+        </p>
+      </div>
+    </header>
+
+    <div class="container column">
+      <div class="toolbar">
+        <div class="size" role="group" [attr.aria-label]="t().textSize">
+          <button type="button" class="btn quiet" [attr.aria-label]="t().smaller" (click)="reading.stepScale(-1)">
+            {{ t().sizeLetter }}−
+          </button>
+          <button type="button" class="btn quiet" [attr.aria-label]="t().larger" (click)="reading.stepScale(1)">
+            {{ t().sizeLetter }}+
+          </button>
+        </div>
+        <app-read-aloud [segments]="readAloud()" [resetKey]="a.slug" />
+        <button type="button" class="btn quiet" (click)="share()">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          {{ copied() ? t().linkCopied : t().share }}
+        </button>
+      </div>
+
+      <!-- The text. -->
+      <section class="block" appReveal>
+        <h2 class="eyebrow">{{ t().sections.evidence }}</h2>
+        @for (e of a.evidence; track $index) {
+          <figure class="evidence" [class.hadith]="e.kind === 'hadith'" [class.reading]="speech.activeKey() === 'e' + $index">
+            <figcaption class="evidence-label">{{ e.kind === 'quran' ? t().quranLabel : t().hadithLabel }}</figcaption>
+            <blockquote lang="ar" dir="rtl" [class.quran]="e.kind === 'quran'">
+              @if (e.kind === 'quran') {
+                ﴿{{ e.text }}﴾
+              } @else {
+                «{{ e.text }}»
+              }
+            </blockquote>
+            <p class="meaning">{{ language.pick(e.meaning) }}</p>
+            <p class="ref">
+              @if (e.narrator) {
+                <span>{{ language.pick(e.narrator) }}</span> ·
+              }
+              {{ language.pick(e.ref) }}
+            </p>
+          </figure>
+        }
+      </section>
+
+      <!-- Then. -->
+      <section class="block" appReveal>
+        <h2>
+          <span class="eyebrow">{{ language.number('01') }}</span>
+          {{ t().sections.then }}
+        </h2>
+        @for (p of a.then; track $index) {
+          <p class="prose" [class.reading]="speech.activeKey() === 'then' + $index">{{ language.pick(p) }}</p>
+        }
+      </section>
+
+      <!-- Now. -->
+      <section class="block" appReveal>
+        <h2>
+          <span class="eyebrow science">{{ language.number('02') }}</span>
+          {{ a.nowLabel === 'history' ? t().sections.nowHistory : t().sections.now }}
+        </h2>
+        <aside class="highlight">
+          <strong>{{ language.pick(a.highlight.value) }}</strong>
+          <span>{{ language.pick(a.highlight.label) }}</span>
+        </aside>
+        @for (p of a.now; track $index) {
+          <p class="prose" [class.reading]="speech.activeKey() === 'now' + $index">{{ language.pick(p) }}</p>
+        }
+      </section>
+
+      <!-- Timeline. -->
+      <section class="block" appReveal>
+        <h2>
+          <span class="eyebrow">{{ language.number('03') }}</span>
+          {{ t().sections.timeline }}
+        </h2>
+        <ol class="timeline">
+          @for (m of a.timeline; track $index) {
+            <li [class.revelation]="m.revelation">
+              <span class="year">{{ yearOf(m) }}</span>
+              <span class="what">{{ language.pick(m.text) }}</span>
+            </li>
+          }
+        </ol>
+      </section>
+
+      @if (a.didYouKnow) {
+        <aside class="did-you-know" appReveal>
+          <p class="eyebrow science">{{ t().sections.didYouKnow }}</p>
+          <p>{{ language.pick(a.didYouKnow) }}</p>
+        </aside>
+      }
+
+      <section class="panel reflection" appReveal [class.reading]="speech.activeKey() === 'reflection'">
+        <app-ornament />
+        <h2>{{ t().sections.reflection }}</h2>
+        <p>{{ language.pick(a.reflection) }}</p>
+      </section>
+
+      <section class="caution" appReveal [class.reading]="speech.activeKey() === 'caution'">
+        <h2>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 3 7v5c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          {{ t().sections.caution }}
+        </h2>
+        <p>{{ language.pick(a.caution) }}</p>
+      </section>
+
+      <section class="block" appReveal>
+        <h2>
+          <span class="eyebrow">{{ language.number('04') }}</span>
+          {{ t().sections.sources }}
+        </h2>
+        <ol class="sources">
+          @for (s of a.sources; track s.url) {
+            <li>
+              <a [href]="s.url" target="_blank" rel="noopener">
+                <span class="source-title" lang="en" dir="auto">{{ s.title }}</span>
+                <span class="visually-hidden">{{ t().opensNewTab }}</span>
+              </a>
+              <span class="source-meta" lang="en" dir="auto">
+                {{ s.publisher }}{{ s.year ? ', ' + s.year : '' }}
+              </span>
+              <span class="source-kind">{{ t().sourceKinds[s.kind] }}</span>
+            </li>
+          }
+        </ol>
+      </section>
+
+      <div class="finish">
+        @if (isRead()) {
+          <p class="done-line">✓ {{ t().isRead }}</p>
+          <button type="button" class="btn quiet" (click)="reading.setRead(a.slug, false)">{{ t().markUnread }}</button>
+        } @else {
+          <button type="button" class="btn" (click)="reading.setRead(a.slug, true)">{{ t().markRead }}</button>
+        }
+      </div>
+
+      <nav class="onward">
+        @if (neighbours().next; as next) {
+          <a
+            class="next-card"
+            [routerLink]="['/signs', next.slug]"
+            [queryParams]="onJourney() ? { path: 'journey' } : undefined"
+          >
+            <img [src]="artSmallSrc(next.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
+            <span class="next-text">
+              <span class="eyebrow">{{ onJourney() ? t().nextStop : t().nextUp }}</span>
+              <span class="next-title">{{ language.pick(next.title) }}</span>
+              <span class="next-hook">{{ language.pick(next.hook) }}</span>
+            </span>
+          </a>
+        } @else if (onJourney()) {
+          <a class="next-card end" routerLink="/next">
+            <span class="next-text">
+              <span class="eyebrow">{{ t().journeyEndTitle }}</span>
+              <span class="next-title">{{ t().nextSteps }}</span>
+              <span class="next-hook">{{ t().journeyEndText }}</span>
+            </span>
+          </a>
+        }
+        <p class="prev-next">
+          @if (neighbours().prev; as prev) {
+            <a [routerLink]="['/signs', prev.slug]" [queryParams]="onJourney() ? { path: 'journey' } : undefined">
+              {{ language.isArabic() ? '→' : '←' }} {{ t().previous }}: {{ language.pick(prev.title) }}
+            </a>
+          }
+          <a routerLink="/signs" fragment="all">{{ t().backToAll }}</a>
+        </p>
+      </nav>
+    </div>
+  </article>
+} @else if (content.isLoading() || !content.ayat().length) {
+  <p class="container status">{{ content.error() ? t().loadError : t().loading }}</p>
+} @else {
+  <div class="container status">
+    <p>{{ t().notFound }}</p>
+    <a class="btn" routerLink="/">{{ t().home }}</a>
+  </div>
+}

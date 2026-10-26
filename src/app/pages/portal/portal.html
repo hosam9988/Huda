@@ -1,0 +1,98 @@
+<section class="hero">
+  <!-- The Earth at sunrise, seen from space: an illustration behind the text. -->
+  <div class="hero-art" aria-hidden="true">
+    <img
+      src="images/hero.webp"
+      srcset="images/hero-sm.webp 768w, images/hero.webp 1536w"
+      sizes="100vw"
+      alt=""
+      width="1536"
+      height="864"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+  <span class="art-label">{{ t().illustrativeImage }}</span>
+  <div class="container hero-text">
+    <h1 class="title quran gold-text" lang="ar">اعرف الله</h1>
+    @if (!language.isArabic()) {
+      <p class="title-en">Know Allah</p>
+    }
+    <blockquote class="motto">
+      <p class="quran" lang="ar" dir="rtl">
+        ﴿ذَٰلِكُمُ ٱللَّهُ رَبُّكُمۡۖ لَآ إِلَٰهَ إِلَّا هُوَۖ خَٰلِقُ كُلِّ شَيۡءٖ فَٱعۡبُدُوهُۚ﴾
+      </p>
+      @if (!language.isArabic()) {
+        <p class="motto-meaning">
+          “That is God, your Lord; there is no god but Him, the Creator of all things, so worship Him.”
+        </p>
+      }
+      <cite>{{ language.isArabic() ? 'الأنعام: ١٠٢' : 'Al-An‘am 6:102' }}</cite>
+    </blockquote>
+    <p class="intro">{{ t().portal.intro }}</p>
+  </div>
+</section>
+
+<!-- The two sections. -->
+<section class="container sections">
+  <a class="section-card" routerLink="/signs" appReveal>
+    <img
+      [src]="artSmallSrc('expansion')"
+      [attr.srcset]="artSrcset('expansion')"
+      sizes="(max-width: 760px) 100vw, 560px"
+      alt=""
+      width="1280"
+      height="800"
+      decoding="async"
+    />
+    <span class="card-text">
+      <span class="card-eyebrow quran" lang="ar">سنريهم آياتنا</span>
+      <span class="card-title">{{ t().portal.signsTitle }}</span>
+      <span class="card-blurb">{{ t().portal.signsBlurb }}</span>
+      <span class="btn solid">{{ t().portal.enter }}</span>
+    </span>
+  </a>
+  <a class="section-card" routerLink="/names" appReveal>
+    <img
+      src="images/names-hero-sm.webp"
+      srcset="images/names-hero-sm.webp 768w, images/names-hero.webp 1536w"
+      sizes="(max-width: 760px) 100vw, 560px"
+      alt=""
+      width="1536"
+      height="864"
+      decoding="async"
+    />
+    <span class="card-text">
+      <span class="card-eyebrow quran" lang="ar">تعرّف على ربك بأسمائه</span>
+      <span class="card-title">{{ t().portal.namesTitle }}</span>
+      <span class="card-blurb">{{ t().portal.namesBlurb }}</span>
+      <span class="btn solid">{{ t().portal.enter }}</span>
+    </span>
+  </a>
+</section>
+
+@if (content.journey()[0]; as first) {
+  <p class="container new-here" appReveal>
+    <a class="btn" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
+      {{ t().portal.newHere }} {{ language.isArabic() ? '←' : '→' }}
+    </a>
+  </p>
+}
+
+<!-- Today's sign and name, a reason to come back. -->
+<section class="container today">
+  @if (content.ayahOfTheDay(); as sign) {
+    <a class="panel today-card" [routerLink]="['/signs', sign.slug]" appReveal>
+      <span class="eyebrow">{{ t().ayahOfTheDay }}</span>
+      <span class="today-title">{{ language.pick(sign.title) }}</span>
+      <span class="today-hook">{{ language.pick(sign.hook) }}</span>
+    </a>
+  }
+  @if (names.nameOfTheDay(); as name) {
+    <a class="panel today-card" [routerLink]="['/names', name.slug]" appReveal>
+      <span class="eyebrow">{{ t().names.nameOfTheDay }}</span>
+      <span class="today-name quran gold-text" lang="ar" dir="rtl">{{ name.name }}</span>
+      <span class="today-hook">{{ language.pick(name.content!.meaning) }}</span>
+    </a>
+  }
+</section>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>اعرف الله · Know Allah</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="اعرف الله: آيات الله في الآفاق وفي الأنفس كما كشف العلم جانبًا منها، بأدلتها ومصادرها الموثّقة، وأسماؤه الحسنى بشرحٍ موجز — Know Allah through His signs in creation, with verified sources, and His Beautiful Names, briefly explained.">
+  <meta name="theme-color" content="#080c1c">
+  <meta property="og:title" content="اعرف الله · Know Allah">
+  <meta property="og:description" content="آياتٌ في الآفاق وفي الأنفس، وأسماء الله الحسنى، بأدلتها من القرآن والسنة.">
+  <!-- Apply the saved colour theme and language before first paint, so nothing flashes. -->
+  <script>
+    try {
+      var theme = localStorage.getItem('ayat.theme');
+      document.documentElement.dataset.theme = /^(night|paper|black|white|blue|navy|pink)$/.test(theme) ? theme : 'night';
+      var lang = localStorage.getItem('ayat.lang');
+      if (lang === 'en' || (!lang && !/^ar/i.test(navigator.language || ''))) {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+      }
+    } catch (e) {}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

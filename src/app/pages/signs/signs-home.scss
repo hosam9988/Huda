@@ -1,0 +1,568 @@
+.status {
+  padding-block: 3rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+// ---------- Hero ----------
+
+// The hero is a night sky in every page colour, so its text keeps the night theme's colours.
+.hero {
+  --text: #eef0f7;
+  --text-muted: #c5cbe0;
+  --accent-rgb: 217 180 90;
+  --gold: #d9b45a;
+  --gold-light: #f0d68e;
+  --verse: #f0d68e;
+  --on-accent: #0a0d1a;
+  --line-strong: rgb(217 180 90 / 45%);
+  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-block-size: min(46rem, 92vh);
+  overflow: hidden;
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(3rem, 7vw, 5rem);
+  background: #05070f;
+  color: var(--text);
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    animation: drift 30s ease-in-out infinite alternate;
+  }
+
+  // Darker on the side the text is on, and fading into the page below.
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgb(5 7 15 / 90%) 0%, rgb(5 7 15 / 60%) 45%, rgb(5 7 15 / 5%) 100%),
+      linear-gradient(180deg, transparent 70%, rgb(var(--bg-rgb)) 100%);
+  }
+}
+
+:host-context([dir='rtl']) .hero-art::after {
+  background:
+    linear-gradient(to left, rgb(5 7 15 / 90%) 0%, rgb(5 7 15 / 60%) 45%, rgb(5 7 15 / 5%) 100%),
+    linear-gradient(180deg, transparent 70%, rgb(var(--bg-rgb)) 100%);
+}
+
+@keyframes drift {
+  to {
+    scale: 1.06;
+  }
+}
+
+// «صورة تعبيرية»: every illustrative picture says that it is one.
+.art-label {
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-end: 1rem;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  background: rgb(5 7 15 / 55%);
+  color: rgb(255 255 255 / 75%);
+  font-size: 0.75rem;
+}
+
+.hero-text {
+  max-inline-size: 40rem;
+  animation: rise 0.9s var(--ease) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+
+// In the Qur'an's script like the site's other titles; set larger because it has a single,
+// lighter weight.
+.title {
+  margin: 0.4rem 0 0;
+  font-size: clamp(3.8rem, 12vw, 6.4rem);
+  line-height: 1.8;
+}
+
+.title-en {
+  margin: 0;
+  color: var(--text-muted);
+  font-family: var(--font-display-en);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-style: italic;
+}
+
+.motto {
+  margin: 1.25rem 0 0;
+  padding-inline-start: 1.1rem;
+  border-inline-start: 2px solid var(--gold);
+
+  .quran {
+    margin: 0;
+    color: var(--verse);
+    font-size: clamp(1.35rem, 3.4vw, 1.75rem);
+    line-height: 2.1;
+  }
+
+  cite {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-style: normal;
+  }
+}
+
+.motto-meaning {
+  margin: 0.2rem 0 0.3rem;
+  font-style: italic;
+}
+
+.intro {
+  max-inline-size: 40rem;
+  margin: 1.4rem 0 0;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.75rem;
+}
+
+.arrow {
+  inline-size: 1.15rem;
+}
+
+:host-context([dir='rtl']) .arrow {
+  scale: -1 1;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin: 2.25rem 0 0;
+
+  div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  dt {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--gold-light);
+    font-family: var(--font-display-en);
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
+
+// ---------- Sections ----------
+
+.section {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) 0;
+  scroll-margin-top: 5rem;
+}
+
+.section-head {
+  max-inline-size: 42rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+
+  h2 {
+    margin: 0.6rem 0 0.4rem;
+    color: var(--gold-light);
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+}
+
+.continue {
+  padding-block-start: 0.5rem;
+}
+
+.continue-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  color: inherit;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: var(--line-strong);
+  }
+
+  img {
+    inline-size: 5.5rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  div {
+    flex: 1;
+  }
+
+  .where {
+    margin: 0.1rem 0 0;
+    color: var(--text);
+  }
+
+  .arrow {
+    color: var(--gold);
+  }
+}
+
+.journey-track,
+.grid,
+.fields {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-track,
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+}
+
+.journey-track li:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.journey-track li:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+// ---------- Sign of the day ----------
+
+.today {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.today-art img {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 4px);
+}
+
+.today-text {
+  h2 {
+    margin: 0.4rem 0 0;
+    color: var(--gold-light);
+    font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  }
+}
+
+.today-verse {
+  margin: 0.6rem 0 0;
+  color: var(--verse);
+  font-size: 1.45rem;
+  line-height: 2.1;
+}
+
+.today-ref {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.today-hook {
+  margin: 0.75rem 0 1.25rem;
+}
+
+// ---------- Fields ----------
+
+.fields {
+  grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+}
+
+.field {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #0a0f24;
+  color: #f4f1e8;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: scale 0.6s var(--ease);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 25%, rgb(5 8 20 / 88%) 100%);
+  }
+
+  &:hover img {
+    scale: 1.06;
+  }
+}
+
+.field-text {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.field-title {
+  color: #f0d68e;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+:host-context([lang='ar']) .field-title {
+  font-family: var(--font-display-ar);
+  font-weight: 700;
+}
+
+.field-blurb {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.field-count {
+  margin-block-start: 0.3rem;
+  font-size: 0.82rem;
+  opacity: 0.75;
+}
+
+.field-read {
+  color: #7de2d1;
+}
+
+// ---------- All signs ----------
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 1.5rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter {
+  min-block-size: 2.5rem;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    border-color: var(--line-strong);
+    color: var(--text);
+  }
+
+  &[aria-pressed='true'] {
+    border-color: transparent;
+    background: var(--gold-gradient);
+    color: var(--on-accent);
+    font-weight: 600;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 1 16rem;
+  max-inline-size: 22rem;
+  min-block-size: 2.75rem;
+  padding-inline: 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+
+  &:focus-within {
+    border-color: var(--gold);
+  }
+
+  svg {
+    inline-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  // A zero base width: otherwise the input's built-in width pushes the box past narrow screens.
+  input {
+    flex: 1;
+    inline-size: 0;
+    min-inline-size: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.98rem;
+  }
+}
+
+// ---------- Progress and closing bands ----------
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+
+  strong {
+    display: block;
+    color: var(--gold-light);
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  small {
+    color: var(--text-muted);
+  }
+}
+
+.progress-line {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.confirm {
+  margin: 0 0 0.4rem;
+  color: var(--text-muted);
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bands {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  gap: 1.25rem;
+}
+
+.band {
+  display: block;
+  color: inherit;
+  transition:
+    border-color 0.3s,
+    transform 0.3s var(--ease);
+
+  &:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-3px);
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--gold-light);
+    font-size: 1.6rem;
+  }
+
+  p {
+    margin: 0.4rem 0 0.8rem;
+    color: var(--text-muted);
+  }
+
+  &.next {
+    border-color: var(--science-line);
+
+    h2,
+    .band-link {
+      color: var(--science);
+    }
+  }
+}
+
+.band-link {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+// ---------- Narrow screens ----------
+
+@media (max-width: 860px) {
+  // The text spans the whole width here, so darken the whole picture evenly.
+  .hero-art::after,
+  :host-context([dir='rtl']) .hero-art::after {
+    background:
+      linear-gradient(rgb(5 7 15 / 62%), rgb(5 7 15 / 62%)),
+      linear-gradient(180deg, transparent 70%, rgb(var(--bg-rgb)) 100%);
+  }
+  .today {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .progress {
+    flex-direction: column;
+    text-align: center;
+  }
+  .confirm-actions {
+    justify-content: center;
+  }
+  .search {
+    max-inline-size: none;
+  }
+}

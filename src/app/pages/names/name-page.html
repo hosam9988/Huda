@@ -1,0 +1,151 @@
+<div class="reading-bar" aria-hidden="true" [style.transform]="'scaleX(' + progress() + ')'"></div>
+
+@if (name(); as n) {
+  <article #article class="name-page" [style.--scale]="reading.textScale()">
+    <header class="hero">
+      <div class="hero-art" aria-hidden="true">
+        <img
+          src="images/names-hero-sm.webp"
+          srcset="images/names-hero-sm.webp 768w, images/names-hero.webp 1536w"
+          sizes="100vw"
+          alt=""
+          width="1536"
+          height="864"
+          decoding="async"
+        />
+      </div>
+      <div class="container hero-text">
+        <!-- Nothing above the name: its number sits with the transliteration below. -->
+        <h1 class="name quran gold-text" lang="ar" dir="rtl" [class.reading]="speech.activeKey() === 'meaning'">
+          {{ n.name }}
+        </h1>
+        <app-ornament class="name-ornament" />
+        <p class="translit" lang="en" dir="ltr">
+          {{ n.transliteration }}<span class="number">· {{ language.number(n.number) }}</span>
+        </p>
+        @if (content(); as c) {
+          <p class="meaning">{{ language.pick(c.meaning) }}</p>
+        }
+      </div>
+    </header>
+
+    <div class="container column">
+      @if (content(); as c) {
+        <div class="toolbar">
+          <div class="size" role="group" [attr.aria-label]="t().textSize">
+            <button type="button" class="btn quiet" [attr.aria-label]="t().smaller" (click)="reading.stepScale(-1)">
+              {{ t().sizeLetter }}−
+            </button>
+            <button type="button" class="btn quiet" [attr.aria-label]="t().larger" (click)="reading.stepScale(1)">
+              {{ t().sizeLetter }}+
+            </button>
+          </div>
+          <app-read-aloud [segments]="readAloud()" [resetKey]="n.slug" />
+          <button type="button" class="btn quiet" (click)="share()">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {{ copied() ? t().linkCopied : t().share }}
+          </button>
+        </div>
+
+        <!-- The evidence. -->
+        <section class="block" appReveal>
+          <h2 class="eyebrow">{{ t().names.sections.evidence }}</h2>
+          @for (e of c.evidence; track $index) {
+            <ng-container
+              [ngTemplateOutlet]="textCard"
+              [ngTemplateOutletContext]="{ $implicit: e, key: 'e' + $index }"
+            />
+          }
+        </section>
+
+        <!-- In your life. -->
+        <section class="panel impact" appReveal [class.reading]="speech.activeKey() === 'impact'">
+          <app-ornament />
+          <h2>{{ t().names.sections.impact }}</h2>
+          <p>{{ language.pick(c.impact) }}</p>
+        </section>
+
+        <!-- A du'a. -->
+        <section class="block" appReveal>
+          <h2 class="eyebrow">{{ t().names.sections.dua }}</h2>
+          <ng-container [ngTemplateOutlet]="textCard" [ngTemplateOutletContext]="{ $implicit: c.dua, key: 'dua' }" />
+        </section>
+
+        <p class="source">
+          {{ t().names.sourceNote }}
+          <a [href]="bookUrl" target="_blank" rel="noopener">
+            {{ t().names.sourceLink }} ↗<span class="visually-hidden">{{ t().opensNewTab }}</span>
+          </a>
+        </p>
+
+        <div class="finish">
+          @if (isRead()) {
+            <p class="done-line">✓ {{ t().isRead }}</p>
+            <button type="button" class="btn quiet" (click)="reading.setRead(n.slug, false)">{{ t().markUnread }}</button>
+          } @else {
+            <button type="button" class="btn" (click)="reading.setRead(n.slug, true)">{{ t().markRead }}</button>
+          }
+        </div>
+
+        <nav class="onward">
+          @if (neighbours().next; as next) {
+            <a class="next-card" [routerLink]="['/names', next.slug]">
+              <span class="eyebrow">{{ t().names.nextName }}</span>
+              <span class="next-name quran gold-text" lang="ar" dir="rtl">{{ next.name }}</span>
+              <span class="next-meaning">{{ language.pick(next.content!.meaning) }}</span>
+            </a>
+          }
+          <p class="prev-next">
+            @if (neighbours().prev; as prev) {
+              <a [routerLink]="['/names', prev.slug]">
+                {{ language.isArabic() ? '→' : '←' }} {{ t().previous }}: {{ language.isArabic() ? prev.name : prev.transliteration }}
+              </a>
+            }
+            <a routerLink="/names" fragment="all">{{ t().names.allNames }}</a>
+          </p>
+        </nav>
+      } @else {
+        <div class="status">
+          <p class="chip">{{ t().names.comingSoon }}</p>
+          <a class="btn" routerLink="/names" fragment="all">{{ t().names.allNames }}</a>
+        </div>
+      }
+    </div>
+  </article>
+} @else if (names.isLoading() || !names.names().length) {
+  <p class="container status">{{ names.error() ? t().loadError : t().loading }}</p>
+} @else {
+  <div class="container status">
+    <p>{{ t().notFound }}</p>
+    <a class="btn" routerLink="/names">{{ t().names.allNames }}</a>
+  </div>
+}
+
+<!-- A verse or hadith with its translation (outside Arabic), reference and short explanation. -->
+<ng-template #textCard let-text let-key="key">
+  <figure class="text-card" [class.hadith]="text.kind === 'hadith'" [class.reading]="speech.activeKey() === key">
+    <figcaption class="text-label">{{ text.kind === 'quran' ? t().quranLabel : t().hadithLabel }}</figcaption>
+    <blockquote lang="ar" dir="rtl" [class.quran]="text.kind === 'quran'">
+      @if (text.kind === 'quran') {
+        ﴿{{ text.text }}﴾
+      } @else {
+        «{{ text.text }}»
+      }
+    </blockquote>
+    @if (translationOf(text); as translation) {
+      <p class="translation">“{{ translation }}”</p>
+    }
+    <p class="ref">
+      @if (text.narrator) {
+        <span>{{ language.pick(text.narrator) }}</span> ·
+      }
+      {{ language.pick(text.ref) }}
+      @if (text.grading) {
+        <span class="grading">— {{ language.pick(text.grading) }}</span>
+      }
+    </p>
+    <p class="explanation">{{ language.pick(text.explanation) }}</p>
+  </figure>
+</ng-template>

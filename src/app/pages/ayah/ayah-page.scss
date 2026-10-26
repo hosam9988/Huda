@@ -1,0 +1,583 @@
+.status {
+  padding-block: 4rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+// How far down the page the reader is, under the site header.
+.reading-bar {
+  position: fixed;
+  inset-inline: 0;
+  top: calc(4.25rem + env(safe-area-inset-top));
+  z-index: 11;
+  block-size: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--science));
+  transform-origin: left;
+  transition: transform 0.12s linear;
+}
+
+:host-context([dir='rtl']) .reading-bar {
+  transform-origin: right;
+  background: linear-gradient(-90deg, var(--gold), var(--science));
+}
+
+@media (max-width: 560px) {
+  .reading-bar {
+    top: calc(3.75rem + env(safe-area-inset-top));
+  }
+}
+
+.ayah {
+  --scale: 1;
+}
+
+// ---------- Hero ----------
+
+.hero {
+  position: relative;
+  display: grid;
+  min-block-size: clamp(22rem, 62vh, 36rem);
+  align-items: end;
+  overflow: hidden;
+  color: #f4f1e8;
+  background: #0a0f24;
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    animation: drift 24s ease-in-out infinite alternate;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(5 8 20 / 15%) 0%, rgb(5 8 20 / 55%) 55%, rgb(5 8 20 / 92%) 100%);
+  }
+}
+
+@keyframes drift {
+  to {
+    scale: 1.08;
+  }
+}
+
+// «صورة تعبيرية»: every illustrative picture says that it is one.
+.art-label {
+  position: absolute;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
+  z-index: 1;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  background: rgb(5 8 20 / 55%);
+  color: rgb(255 255 255 / 75%);
+  font-size: 0.75rem;
+}
+
+.hero-text {
+  position: relative;
+  padding-block: 4rem 2.25rem;
+  max-inline-size: calc(var(--reading-width) + 12rem);
+  animation: rise 0.9s var(--ease) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+
+  a {
+    color: #f0d68e;
+  }
+
+  .chip {
+    border-color: rgb(125 226 209 / 45%);
+    color: #7de2d1;
+  }
+
+  .journey-chip {
+    border-color: rgb(240 214 142 / 50%);
+    color: #f0d68e;
+  }
+}
+
+h1 {
+  margin: 0.75rem 0 0.4rem;
+  color: #f0d68e;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+}
+
+.hook {
+  max-inline-size: 40rem;
+  margin: 0;
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  opacity: 0.92;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+
+  .done {
+    color: #7de2d1;
+  }
+}
+
+// ---------- Reading column ----------
+
+.column {
+  max-inline-size: calc(var(--reading-width) + 2rem);
+  font-size: calc(1em * var(--scale));
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 1.25rem;
+  border-block-end: 1px solid var(--line);
+  font-size: 1rem;
+
+  app-read-aloud {
+    flex: 1;
+  }
+}
+
+.size {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.block {
+  padding-block-start: 2.75rem;
+
+  > h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+    color: var(--gold-light);
+    font-size: 1.75em;
+  }
+
+  > h2.eyebrow {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+.eyebrow.science {
+  color: var(--science);
+}
+
+.prose {
+  margin: 0 0 1.1rem;
+}
+
+// The paragraph being read aloud.
+.reading {
+  border-radius: 8px;
+  background: rgb(var(--accent-rgb) / 9%);
+  box-shadow: 0 0 0 0.5rem rgb(var(--accent-rgb) / 9%);
+}
+
+.hero .reading {
+  background: rgb(240 214 142 / 12%);
+  box-shadow: 0 0 0 0.4rem rgb(240 214 142 / 12%);
+}
+
+// ---------- The text ----------
+
+.evidence {
+  position: relative;
+  margin: 0 0 1.25rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(var(--accent-rgb) / 12%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
+  text-align: center;
+
+  blockquote {
+    margin: 0.5rem 0 0.75rem;
+    color: var(--verse);
+    font-size: 1.7em;
+    line-height: 2.2;
+  }
+
+  &.hadith blockquote {
+    color: var(--hadith);
+    font-family: var(--font-body-ar);
+    font-size: 1.3em;
+    font-weight: 500;
+    line-height: 2;
+  }
+}
+
+.evidence-label {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.meaning {
+  max-inline-size: 36rem;
+  margin: 0 auto 0.6rem;
+  color: var(--text);
+  font-style: italic;
+}
+
+:host-context([lang='ar']) .meaning {
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+.ref {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+// ---------- Now ----------
+
+.highlight {
+  float: inline-end;
+  inline-size: min(15rem, 42%);
+  margin: 0.25rem 0 1rem;
+  margin-inline-start: 1.5rem;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--science-line);
+  border-radius: var(--radius);
+  background: rgb(var(--science-rgb) / 7%);
+  text-align: center;
+
+  strong {
+    display: block;
+    color: var(--science);
+    font-family: var(--font-display-en);
+    font-size: 2.3em;
+    line-height: 1.15;
+  }
+
+  span {
+    display: block;
+    margin-block-start: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+}
+
+:host-context([lang='ar']) .highlight strong {
+  font-family: var(--font-display-ar);
+  font-weight: 600;
+}
+
+.block::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+// ---------- Timeline ----------
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block: 0.6rem;
+    inset-inline-start: 0.45rem;
+    inline-size: 2px;
+    background: linear-gradient(180deg, var(--gold), var(--science));
+    opacity: 0.6;
+  }
+
+  li {
+    position: relative;
+    display: grid;
+    gap: 0.15rem;
+    padding-block-end: 1.4rem;
+    padding-inline-start: 2.1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset-block-start: 0.45rem;
+      inset-inline-start: 0;
+      inline-size: 1rem;
+      block-size: 1rem;
+      border: 2px solid var(--science);
+      border-radius: 50%;
+      background: var(--bg);
+    }
+
+    &.revelation::before {
+      border-color: var(--gold);
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgb(var(--accent-rgb) / 20%);
+    }
+  }
+}
+
+.year {
+  color: var(--science);
+  font-family: var(--font-display-en);
+  font-size: 1.15em;
+  font-weight: 700;
+}
+
+.revelation .year {
+  color: var(--gold-light);
+}
+
+.what {
+  color: var(--text-muted);
+}
+
+// ---------- Boxes ----------
+
+.did-you-know {
+  margin-block-start: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-inline-start: 3px solid var(--science);
+  border-radius: 0 12px 12px 0;
+  background: rgb(var(--science-rgb) / 7%);
+
+  p:last-child {
+    margin: 0.3rem 0 0;
+  }
+}
+
+:host-context([dir='rtl']) .did-you-know {
+  border-radius: 12px 0 0 12px;
+}
+
+.reflection {
+  margin-block-start: 2.75rem;
+  text-align: center;
+
+  h2 {
+    margin: 0.9rem 0 0.4rem;
+    color: var(--gold-light);
+    font-size: 1.5em;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.08em;
+  }
+}
+
+.caution {
+  margin-block-start: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.4rem;
+    color: var(--gold);
+    font-size: 1.1em;
+  }
+
+  svg {
+    inline-size: 1.4rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.97em;
+  }
+}
+
+// ---------- Sources ----------
+
+.sources {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  counter-reset: source;
+  list-style: none;
+
+  li {
+    position: relative;
+    display: grid;
+    padding: 0.85rem 1rem;
+    padding-inline-start: 3rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    counter-increment: source;
+
+    &::before {
+      content: counter(source);
+      position: absolute;
+      inset-block-start: 0.85rem;
+      inset-inline-start: 1rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+  }
+
+  a:hover .source-title {
+    text-decoration: underline;
+  }
+}
+
+:host-context([lang='ar']) .sources li::before {
+  content: counter(source, arabic-indic);
+}
+
+.source-title {
+  font-family: var(--font-body-en);
+  font-size: 1rem;
+}
+
+.source-meta {
+  color: var(--text-muted);
+  font-family: var(--font-body-en);
+  font-size: 0.9rem;
+}
+
+.source-kind {
+  color: var(--science);
+  font-size: 0.78rem;
+}
+
+// ---------- Onward ----------
+
+.finish {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  margin-block: 2.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.done-line {
+  margin: 0;
+  color: var(--science);
+}
+
+.onward {
+  font-size: 1rem;
+}
+
+.next-card {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  color: inherit;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+
+  img {
+    inline-size: 38%;
+    object-fit: cover;
+  }
+
+  &.end {
+    border-color: var(--science-line);
+  }
+}
+
+.next-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.next-title {
+  color: var(--gold-light);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.next-hook {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.prev-next {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 1.25rem 0 0;
+  font-size: 0.95rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .highlight {
+    float: none;
+    inline-size: auto;
+    margin-inline: 0;
+  }
+  .next-card {
+    flex-direction: column;
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+  .toolbar {
+    justify-content: space-between;
+
+    // Listen and its hint get a row of their own, under the text size and share buttons.
+    app-read-aloud {
+      order: 3;
+      flex-basis: 100%;
+    }
+  }
+}

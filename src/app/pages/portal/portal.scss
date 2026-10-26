@@ -1,0 +1,265 @@
+// ---------- Hero ----------
+
+// A night sky in every page colour, so its text keeps the night theme's colours.
+.hero {
+  --text: #eef0f7;
+  --text-muted: #c5cbe0;
+  --gold: #d9b45a;
+  --gold-light: #f0d68e;
+  --verse: #f0d68e;
+  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-block-size: min(40rem, 86vh);
+  overflow: hidden;
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(4rem, 9vw, 7rem);
+  background: #05070f;
+  color: var(--text);
+  text-align: center;
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    animation: drift 30s ease-in-out infinite alternate;
+  }
+
+  // Darker at the top, where the text is, fading into the page below.
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(5 7 15 / 78%) 0%, rgb(5 7 15 / 55%) 60%, rgb(var(--bg-rgb)) 100%);
+  }
+}
+
+@keyframes drift {
+  to {
+    scale: 1.06;
+  }
+}
+
+// «صورة تعبيرية»: every illustrative picture says that it is one.
+.art-label {
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-end: 1rem;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  background: rgb(5 7 15 / 55%);
+  color: rgb(255 255 255 / 75%);
+  font-size: 0.75rem;
+}
+
+.hero-text {
+  max-inline-size: 46rem;
+  animation: rise 0.9s var(--ease) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+
+// In the Qur'an's script, like the names' titles. It has a single, lighter weight, so it is set
+// larger; the line height leaves room above the letters for the marks on «الله».
+.title {
+  margin: 0;
+  font-size: clamp(4.6rem, 16vw, 8.5rem);
+  line-height: 1.8;
+}
+
+.title-en {
+  margin: 0;
+  color: var(--text-muted);
+  font-family: var(--font-display-en);
+  font-size: clamp(1.4rem, 3.2vw, 1.9rem);
+  font-style: italic;
+}
+
+.motto {
+  margin: 1.25rem 0 0;
+
+  .quran {
+    margin: 0;
+    color: var(--verse);
+    font-size: clamp(1.35rem, 3.4vw, 1.75rem);
+    line-height: 2.1;
+  }
+
+  cite {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-style: normal;
+  }
+}
+
+.motto-meaning {
+  margin: 0.2rem 0 0.3rem;
+  font-style: italic;
+}
+
+.intro {
+  margin: 1.25rem auto 0;
+  color: var(--text-muted);
+  font-size: 1.08em;
+}
+
+// ---------- The two sections ----------
+
+// Pulled up over the bottom of the hero, so the way in is the first thing below the title.
+.sections {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-block-start: clamp(-4rem, -6vw, -2rem);
+}
+
+.section-card {
+  position: relative;
+  display: grid;
+  min-block-size: 22rem;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--radius) + 4px);
+  background: #0a0f24;
+  color: #f4f1e8;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: scale 0.7s var(--ease);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(5 8 20 / 15%) 0%, rgb(5 8 20 / 88%) 75%);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+
+    img {
+      scale: 1.05;
+    }
+  }
+}
+
+.card-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+// In the Qur'an's script like the titles, a little larger for its lighter weight.
+.card-eyebrow {
+  color: #f0d68e;
+  font-size: 1.9rem;
+  line-height: 1.7;
+}
+
+.card-title {
+  font-family: var(--font-display-en);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+:host-context([lang='ar']) .card-title {
+  font-family: var(--font-display-ar);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.card-blurb {
+  max-inline-size: 30rem;
+  margin-block-end: 0.6rem;
+  font-size: 0.98rem;
+  opacity: 0.88;
+}
+
+.new-here {
+  margin: 1.75rem auto 0;
+  text-align: center;
+}
+
+// ---------- Today ----------
+
+.today {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+  gap: 1.25rem;
+  padding-block-start: clamp(2.5rem, 6vw, 4rem);
+}
+
+.today-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: inherit;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: var(--line-strong);
+  }
+}
+
+.today-title {
+  color: var(--gold-light);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+:host-context([lang='ar']) .today-title {
+  font-family: var(--font-display-ar);
+  font-weight: 700;
+}
+
+.today-name {
+  font-size: 2.2rem;
+  line-height: 1.9;
+}
+
+.today-hook {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+// ---------- Narrow screens ----------
+
+@media (max-width: 760px) {
+  .sections {
+    grid-template-columns: 1fr;
+  }
+  .section-card {
+    min-block-size: 18rem;
+  }
+}

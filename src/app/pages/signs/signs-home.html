@@ -1,0 +1,263 @@
+<section class="hero">
+  <!-- The Earth at sunrise, seen from space: an illustration behind the text. -->
+  <div class="hero-art" aria-hidden="true">
+    <img
+      src="images/hero.webp"
+      srcset="images/hero-sm.webp 768w, images/hero.webp 1536w"
+      sizes="100vw"
+      alt=""
+      width="1536"
+      height="864"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+  <span class="art-label">{{ t().illustrativeImage }}</span>
+  <div class="container">
+    <div class="hero-text">
+      <p class="eyebrow">{{ t().heroEyebrow }}</p>
+      <h1 class="title quran gold-text" lang="ar">سنريهم آياتنا</h1>
+      @if (!language.isArabic()) {
+        <p class="title-en">We Will Show Them Our Signs</p>
+      }
+      <blockquote class="motto">
+        <p class="quran" lang="ar" dir="rtl">
+          ﴿سَنُرِيهِمۡ ءَايَٰتِنَا فِي ٱلۡأٓفَاقِ وَفِيٓ أَنفُسِهِمۡ حَتَّىٰ يَتَبَيَّنَ لَهُمۡ أَنَّهُ ٱلۡحَقُّۗ﴾
+        </p>
+        @if (!language.isArabic()) {
+          <p class="motto-meaning">
+            “We will show them Our signs on the horizons and within themselves, until it becomes clear to
+            them that it is the truth.”
+          </p>
+        }
+        <cite>{{ language.isArabic() ? 'فصلت: ٥٣' : 'Fussilat 41:53' }}</cite>
+      </blockquote>
+      <p class="intro">{{ t().heroIntro }}</p>
+      <div class="actions">
+        @if (content.journey()[0]; as first) {
+          <a class="btn solid" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
+            {{ t().startJourney }}
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow">
+              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        }
+        <a class="btn" routerLink="/signs" fragment="all">{{ t().browseAll }}</a>
+      </div>
+      @if (stats().signs) {
+        <dl class="stats">
+          <div>
+            <dt>{{ t().statSigns }}</dt>
+            <dd>{{ language.number(stats().signs) }}</dd>
+          </div>
+          <div>
+            <dt>{{ t().statFields }}</dt>
+            <dd>{{ language.number(stats().fields) }}</dd>
+          </div>
+          <div>
+            <dt>{{ t().statSources }}</dt>
+            <dd>{{ language.number(stats().sources) }}</dd>
+          </div>
+        </dl>
+      }
+    </div>
+
+  </div>
+</section>
+
+@if (content.isLoading() && !content.ayat().length) {
+  <p class="container status">{{ t().loading }}</p>
+} @else if (content.error()) {
+  <div class="container status">
+    <p>{{ t().loadError }}</p>
+  </div>
+} @else {
+  @if (continueAt(); as current) {
+    <section class="container continue" appReveal>
+      <a class="panel continue-card" [routerLink]="['/signs', current.slug]" [queryParams]="{ resume: 1 }">
+        <img [src]="artSmallSrc(current.art)" alt="" width="640" height="400" decoding="async" />
+        <div>
+          <p class="eyebrow">{{ t().continueReading }}</p>
+          <p class="where">{{ t().continueWhere(language.pick(current.title)) }}</p>
+        </div>
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow">
+          <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </section>
+  }
+
+  <!-- The journey for readers new to Islam. -->
+  <section class="container section journey" id="journey">
+    <header class="section-head" appReveal>
+      <p class="eyebrow">{{ t().journeyEyebrow }}</p>
+      <h2>{{ t().journeyTitle }}</h2>
+      <p>
+        {{ t().journeyIntro(language.number(content.journey().length), language.number(journeyMinutes())) }}
+      </p>
+    </header>
+    <ol class="journey-track">
+      @for (ayah of content.journey(); track ayah.slug) {
+        <li appReveal>
+          <app-ayah-card [ayah]="ayah" [fromJourney]="true" />
+        </li>
+      }
+    </ol>
+  </section>
+
+  @if (content.ayahOfTheDay(); as today) {
+    <section class="container section" appReveal>
+      <article class="panel today">
+        <div class="today-art">
+          <img
+            [src]="artSrc(today.art)"
+            [attr.srcset]="artSrcset(today.art)"
+            sizes="(max-width: 860px) 100vw, 560px"
+            alt=""
+            width="1280"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="today-text">
+          <p class="eyebrow">{{ t().ayahOfTheDay }}</p>
+          <h2>{{ language.pick(today.title) }}</h2>
+          @if (today.evidence[0]; as evidence) {
+            <p class="quran today-verse" lang="ar" dir="rtl">{{ evidence.text }}</p>
+            <p class="today-ref">{{ language.pick(evidence.ref) }}</p>
+          }
+          <p class="today-hook">{{ language.pick(today.hook) }}</p>
+          <a class="btn solid" [routerLink]="['/signs', today.slug]">{{ t().readMore }}</a>
+        </div>
+      </article>
+    </section>
+  }
+
+  <!-- The fields. -->
+  <section class="container section" id="fields">
+    <header class="section-head" appReveal>
+      <app-ornament />
+      <h2>{{ t().categoriesTitle }}</h2>
+      <p>{{ t().categoriesIntro }}</p>
+    </header>
+    <ul class="fields">
+      @for (category of content.categories(); track category.id) {
+        <li appReveal>
+          <button type="button" class="field" (click)="showCategory(category.id)">
+            <img
+              [src]="artSrc(category.art)"
+              [attr.srcset]="artSrcset(category.art)"
+              sizes="(max-width: 640px) 100vw, 560px"
+              alt=""
+              width="1280"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="field-text">
+              <span class="field-title">{{ language.pick(category.title) }}</span>
+              <span class="field-blurb">{{ language.pick(category.blurb) }}</span>
+              <span class="field-count">
+                {{ t().signsCount(countIn(category.id)) }}
+                @if (readIn(category.id); as read) {
+                  · <span class="field-read">✓ {{ language.number(read) }}</span>
+                }
+              </span>
+            </span>
+          </button>
+        </li>
+      }
+    </ul>
+  </section>
+
+  <!-- Every sign, with a filter and search. -->
+  <section class="container section" id="all">
+    <header class="section-head" appReveal>
+      <app-ornament />
+      <h2>{{ t().allTitle }}</h2>
+      <p>{{ t().allIntro }}</p>
+    </header>
+
+    <div class="tools">
+      <div class="filters" role="group" [attr.aria-label]="t().filterLabel">
+        <button type="button" class="filter" [attr.aria-pressed]="filter() === null" (click)="filter.set(null)">
+          {{ t().filterAll }}
+        </button>
+        @for (category of content.categories(); track category.id) {
+          <button
+            type="button"
+            class="filter"
+            [attr.aria-pressed]="filter() === category.id"
+            (click)="filter.set(filter() === category.id ? null : category.id)"
+          >
+            {{ language.pick(category.title) }}
+          </button>
+        }
+      </div>
+      <label class="search">
+        <span class="visually-hidden">{{ t().searchPlaceholder }}</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2" />
+          <path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          [placeholder]="t().searchPlaceholder"
+          [value]="query()"
+          (input)="query.set($any($event.target).value)"
+        />
+      </label>
+    </div>
+
+    @if (filtered().length) {
+      <ul class="grid">
+        @for (ayah of filtered(); track ayah.slug) {
+          <li><app-ayah-card [ayah]="ayah" /></li>
+        }
+      </ul>
+    } @else {
+      <p class="status">{{ t().noResults }}</p>
+    }
+  </section>
+
+  <!-- Progress. -->
+  <section class="container section" appReveal>
+    <div class="panel progress">
+      <app-progress-ring [value]="progress()">
+        <strong>{{ language.number(readCount()) }}</strong>
+        <small>/ {{ language.number(stats().signs) }}</small>
+      </app-progress-ring>
+      <div class="progress-text">
+        <p class="progress-line">
+          {{ readCount() === stats().signs ? t().progressDone : t().progress(language.number(readCount()), language.number(stats().signs)) }}
+        </p>
+        @if (readCount() || reading.place()) {
+          @if (confirmingReset()) {
+            <p class="confirm">{{ t().resetAllConfirm }}</p>
+            <div class="confirm-actions">
+              <button type="button" class="btn quiet" (click)="reset()">{{ t().resetAllYes }}</button>
+              <button type="button" class="btn quiet" (click)="confirmingReset.set(false)">{{ t().cancel }}</button>
+            </div>
+          } @else {
+            <button type="button" class="btn quiet" (click)="confirmingReset.set(true)">{{ t().resetAll }}</button>
+          }
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- On to the method and the next step. -->
+  <section class="container section bands">
+    <a class="panel band" routerLink="/method" appReveal>
+      <h2>{{ t().methodBandTitle }}</h2>
+      <p>{{ t().methodBandText }}</p>
+      <span class="band-link">{{ t().method }} {{ language.isArabic() ? '←' : '→' }}</span>
+    </a>
+    <a class="panel band next" routerLink="/next" appReveal>
+      <h2>{{ t().nextBandTitle }}</h2>
+      <p>{{ t().nextBandText }}</p>
+      <span class="band-link">{{ t().nextSteps }} {{ language.isArabic() ? '←' : '→' }}</span>
+    </a>
+  </section>
+}

@@ -1,0 +1,52 @@
+<header class="site-header">
+  <div class="container bar">
+    <a routerLink="/" class="brand" [attr.aria-label]="t().appTitle">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <ellipse class="orbit" cx="50" cy="50" rx="46" ry="18" transform="rotate(-25 50 50)" />
+        <rect x="30" y="30" width="40" height="40" />
+        <rect x="30" y="30" width="40" height="40" transform="rotate(45 50 50)" />
+        <circle cx="50" cy="50" r="6" />
+        <circle class="moon" cx="91" cy="31" r="4.5" />
+      </svg>
+      <span class="quran gold-text">اعرف الله</span>
+    </a>
+
+    <nav>
+      <a class="link wide" routerLink="/signs" fragment="journey">{{ t().journey }}</a>
+      <a class="link" routerLink="/signs" routerLinkActive="active">{{ t().signsSection }}</a>
+      <a class="link" routerLink="/names" routerLinkActive="active">{{ t().namesSection }}</a>
+      <a class="link wide" routerLink="/method" routerLinkActive="active">{{ t().method }}</a>
+      <app-theme-picker />
+      <button
+        type="button"
+        class="btn lang"
+        [attr.lang]="language.nextLanguage().id"
+        [attr.aria-label]="t().languageLabel + ': ' + language.nextLanguage().name"
+        (click)="language.toggle()"
+      >
+        {{ language.nextLanguage().name }}
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="quran gold-text verse" lang="ar" dir="rtl">﴿فَٱعۡلَمۡ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ﴾</p>
+    <p class="verse-ref">{{ language.isArabic() ? 'محمد: ١٩' : 'Muhammad 47:19' }}</p>
+    <nav class="footer-links">
+      <a routerLink="/">{{ t().home }}</a>
+      <a routerLink="/signs">{{ t().signsSection }}</a>
+      <a routerLink="/names">{{ t().namesSection }}</a>
+      <a routerLink="/signs" fragment="journey">{{ t().journey }}</a>
+      <a routerLink="/method">{{ t().method }}</a>
+      <a routerLink="/next">{{ t().nextSteps }}</a>
+    </nav>
+    <p class="waqf">{{ t().waqfNote }}</p>
+    <p class="images-note">{{ t().imagesNote }}</p>
+  </div>
+</footer>
