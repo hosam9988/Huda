@@ -19,9 +19,12 @@ that more components can join it later.
 ## What's in it
 
 - **The home page** (`/`) leads to the two sections, and to "Start here" for readers new to Islam.
-- **The signs, «سنريهم آياتنا»** (`/signs`): 38 signs in 8 fields — the cosmos; earth and sky;
-  seas and water; the living world; the human being; health in the Sunnah; prophecies fulfilled;
-  preserving the Qur'an.
+- **The signs, «سنريهم آياتنا»** (`/signs`): 65 signs in 9 fields — the cosmos; earth and sky;
+  seas and water; the living world; the human being; health in the Sunnah; peoples of the past;
+  prophecies fulfilled; preserving the Qur'an.
+  - **Signs for reflection:** 27 of them carry the «للتفكر» badge: what they say is true and plain,
+    but people already knew it when it was revealed, so they are not offered as i'jaz. They come
+    after their field's other signs, and a second filter on `/signs` shows one kind or the other.
   - **"Start here":** a 7-stop journey through the signs, ending with "What next?"
   - **Every sign is a short story** (`/signs/:slug`):
     1. a question to open with;
@@ -64,6 +67,12 @@ that more components can join it later.
   reading, and a search for any serious objection. A prophecy's page says that the collections were
   compiled after the events, so the case rests on the hadith scholars' verification of the chain, and
   links the histories and the classical commentaries that recorded each fulfilment.
+- **The 27 signs for reflection** come from the same review's 72 candidates that were sound in their
+  science and text but showed nothing people did not already know. Each was screened again: the
+  reading must be the classical commentators' own and undisputed, the fact established, a ruling
+  never given a modern reason its text does not state, and a health statement must rest on current
+  guidance or a review. A page's «بكل أمانة» opens by saying that it is not offered as a miracle, and
+  how people knew it then.
 - **On the names' pages**, the explanations are short and in our own words. Hadith are from
   al-Bukhari and Muslim, or from another collection only with its grading quoted from a named
   scholar or edition and shown on the page: al-Tirmidhi, al-Arna'ut's edition of Sunan Abi Dawud, the
@@ -80,7 +89,7 @@ The images are in `public/images/` as WebP:
 
 | Image | Size | Saved as |
 |---|---|---|
-| the 38 sign images | 1280×800 | `<name>.webp` 1280 wide, `<name>-sm.webp` 640 wide |
+| the 65 sign images | 1280×800 | `<name>.webp` 1280 wide, `<name>-sm.webp` 640 wide |
 | the home page's Earth (`hero`) | 1536×864 | 1536 wide, `-sm` 768 wide |
 | the names' golden dome (`names-hero`) | 1536×864 | 1536 wide, `-sm` 768 wide |
 

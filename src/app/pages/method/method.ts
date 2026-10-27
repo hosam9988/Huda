@@ -53,6 +53,13 @@ const PRINCIPLES: Principle[] = [
     },
   },
   {
+    title: { ar: 'آياتٌ للتفكر', en: 'Signs for reflection' },
+    text: {
+      ar: 'على بعض الآيات علامة «للتفكر»: ما تذكره حقٌّ ظاهر، لكن الناس كانوا يعرفونه يوم نزل، فلا نعرضه إعجازًا. نذكر ما عرفوه يومئذٍ وما نعرفه اليوم، لنتفكر في خلق الله ورحمته، ولا ندّعي أن العلم كشف ما لم يكن معروفًا.',
+      en: 'Some signs carry the “For reflection” badge: what they say is true and plain, but people already knew it when it was revealed, so we do not present it as a miracle. We set out what was known then and what we know now, to reflect on Allah’s creation and mercy — never to claim that science uncovered something unknown.',
+    },
+  },
+  {
     title: { ar: 'ما استبعدناه عمدًا', en: 'What we left out on purpose' },
     text: {
       ar: 'استبعدنا ادعاءاتٍ منتشرة لا تثبت، مثل قصة رائد الفضاء الذي «سمع الأذان على القمر»، والاستدلال بأحاديث ضعيفة أو موضوعة، و«الإعجاز العددي» القائم على عدٍّ انتقائي. الحق لا يحتاج إلى باطلٍ ينصره.',
