@@ -6,6 +6,7 @@
 // outside the two Sahihs needs its grading.
 // The English says "Allah", never "God", and "deity" for «إله»: only a Qur'an verse's translation,
 // copied from Saheeh International, keeps "God" where Saheeh has it.
+// The Arabic has no KFQPC tanween marks (U+0656, U+0657, U+065E): Unicode's open tanween instead.
 import { existsSync, readFileSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
@@ -134,6 +135,21 @@ const allah = (node, where) => {
 content.categories.forEach((c) => allah(c, `field "${c.id}"`));
 content.ayat.forEach((a) => allah(a, `sign "${a.slug}"`));
 names.forEach((n) => allah(n, `name "${n.slug}"`));
+
+// The KFQPC Mushaf text writes the staggered tanween (of idgham and ikhfa') with three marks that
+// mean something else in Unicode: Amiri Quran has no glyph for U+065E, so the word breaks apart, and
+// draws U+0657 and U+0656 as an inverted damma and a subscript alef. Unicode's open tanween are the
+// same marks, and the font draws them.
+const KFQPC_TANWEEN = { 'ٗ': 'U+0657 → U+08F0', 'ٞ': 'U+065E → U+08F1', 'ٖ': 'U+0656 → U+08F2' };
+const tanween = (node, where) => {
+  if (typeof node === 'string') {
+    const marks = [...new Set(node.match(/[ٖٗٞ]/g))];
+    if (marks.length) errors.push(`${where}: KFQPC tanween marks; replace ${marks.map((m) => KFQPC_TANWEEN[m]).join(', ')}`);
+  } else if (Array.isArray(node)) node.forEach((x, i) => tanween(x, `${where}[${i}]`));
+  else if (node && typeof node === 'object') for (const [key, value] of Object.entries(node)) tanween(value, `${where} ${key}`);
+};
+content.ayat.forEach((a) => tanween(a, `sign "${a.slug}"`));
+names.forEach((n) => tanween(n, `name "${n.slug}"`));
 
 if (errors.length) {
   console.error(`${errors.length} problem(s) in public/data:\n- ${errors.join('\n- ')}`);

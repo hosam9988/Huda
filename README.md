@@ -3,7 +3,7 @@
 **Know Allah through His signs in creation and His Beautiful Names: the signs with their texts and
 verified sources, and the names briefly explained, in Arabic and English.**
 
-﴿ذَٰلِكُمُ ٱللَّهُ رَبُّكُمۡۖ لَآ إِلَٰهَ إِلَّا هُوَۖ خَٰلِقُ كُلِّ شَيۡءٖ فَٱعۡبُدُوهُۚ﴾ [الأنعام: ١٠٢]
+﴿ذَٰلِكُمُ ٱللَّهُ رَبُّكُمۡۖ لَآ إِلَٰهَ إِلَّا هُوَۖ خَٰلِقُ كُلِّ شَيۡءࣲ فَٱعۡبُدُوهُۚ﴾ [الأنعام: ١٠٢]
 
 The site joins two earlier projects, built the same way: «سنريهم آياتنا»
 ([`sanurihim-ayatina`](../sanurihim-ayatina)) became its signs section, and «أسماء الله الحسنى»
@@ -49,7 +49,10 @@ that more components can join it later.
 ## Our method, in short
 
 - **Verses** were copied from the Mushaf text (Hafs from ‘Asim, KFQPC rendering) through
-  al-Maktaba al-Shamela, not typed from memory.
+  al-Maktaba al-Shamela, not typed from memory. That text writes the staggered tanween of idgham
+  and ikhfa' with three marks that mean something else in Unicode (U+0657, U+065E, U+0656), which
+  Amiri Quran cannot draw as tanween; they are stored as Unicode's open tanween (U+08F0, U+08F1,
+  U+08F2), the same marks, and `npm run check:content` refuses the KFQPC ones.
 - **In the signs**, hadith are only from al-Bukhari and Muslim. Only established science, never
   passing theories; the Arabic must carry the meaning, and what the early commentators said is
   mentioned. Popular claims that don't hold up are left out on purpose. The sources are journals,

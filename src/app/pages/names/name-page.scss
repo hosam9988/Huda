@@ -180,12 +180,13 @@
     linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
 
-  // At 2.2 the marks of one line touched the letters of the next in some verses.
+  // At 2.2 the marks of one line touched the letters of the next in some verses; at 2.3 a staggered
+  // tanween touched a waqf mark on the line below (An-Nur 24:35 at a phone's width).
   blockquote {
     margin: 0.4rem 0 0.6rem;
     color: var(--verse);
     font-size: 1.6em;
-    line-height: 2.3;
+    line-height: 2.4;
   }
 
   &.hadith blockquote {
