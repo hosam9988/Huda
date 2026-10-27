@@ -23,6 +23,9 @@
             <span aria-hidden="true">/</span>
             <span class="chip">{{ language.pick(c.title) }}</span>
           }
+          @if (a.type === 'reflection') {
+            <span class="chip reflection-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+          }
           @if (onJourney()) {
             <span class="chip journey-chip">
               {{ t().journeyStop(language.number(a.journey!), language.number(journeyTotal())) }}

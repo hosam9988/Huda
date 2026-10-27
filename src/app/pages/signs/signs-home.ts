@@ -34,14 +34,23 @@ export class SignsHome {
   protected readonly artSrcset = artSrcset;
   protected readonly query = signal('');
   protected readonly filter = signal<CategoryId | null>(null);
+  /** `ijaz`: only the signs of i'jaz; `reflection`: only the signs for reflection. */
+  protected readonly kind = signal<'ijaz' | 'reflection' | null>(null);
+  protected readonly hasReflection = computed(() => this.content.ayat().some((a) => a.type === 'reflection'));
   protected readonly confirmingReset = signal(false);
 
   protected readonly filtered = computed(() => {
     const filter = this.filter();
+    const kind = this.kind();
     const query = this.query();
     return this.content
       .ordered()
-      .filter((a) => (!filter || a.category === filter) && matchesQuery(a, query));
+      .filter(
+        (a) =>
+          (!filter || a.category === filter) &&
+          (!kind || (kind === 'reflection') === (a.type === 'reflection')) &&
+          matchesQuery(a, query),
+      );
   });
 
   protected readonly stats = computed(() => ({

@@ -40,9 +40,12 @@ export class ContentService {
     return this.ayat().filter((a) => a.category === id);
   }
 
-  /** The signs in reading order: grouped by category, in the categories' order. */
+  /** The signs in reading order: grouped by category, in the categories' order, each field's signs for reflection last. */
   readonly ordered = computed(() =>
-    this.categories().flatMap((c) => this.ayat().filter((a) => a.category === c.id)),
+    this.categories().flatMap((c) => {
+      const signs = this.inCategory(c.id);
+      return [...signs.filter((a) => a.type !== 'reflection'), ...signs.filter((a) => a.type === 'reflection')];
+    }),
   );
 
   neighbours(slug: string): { prev?: Ayah; next?: Ayah } {

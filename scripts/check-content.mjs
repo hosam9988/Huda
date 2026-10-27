@@ -47,6 +47,7 @@ for (const a of content.ayat) {
   if (!categories.has(a.category)) errors.push(`${at}: unknown field "${a.category}"`);
   if (a.journey !== undefined) journey.push(a.journey);
   if (a.nowLabel !== undefined && a.nowLabel !== 'history') errors.push(`${at}: nowLabel must be "history" or absent`);
+  if (a.type !== undefined && a.type !== 'reflection') errors.push(`${at}: type must be "reflection" or absent`);
   art(a.art, at);
   for (const key of ['title', 'hook', 'summary', 'reflection', 'caution']) localized(a[key], `${at} ${key}`);
   if (a.didYouKnow) localized(a.didYouKnow, `${at} didYouKnow`);
@@ -139,6 +140,7 @@ if (errors.length) {
   process.exit(1);
 }
 const sources = new Set(content.ayat.flatMap((a) => a.sources.map((s) => s.url))).size;
+const reflection = content.ayat.filter((a) => a.type === 'reflection').length;
 const written = names.filter((n) => n.content).length;
-console.log(`OK: ${content.categories.length} fields, ${content.ayat.length} signs, ${stops.length} journey stops, ${sources} sources.`);
+console.log(`OK: ${content.categories.length} fields, ${content.ayat.length} signs (${reflection} for reflection), ${stops.length} journey stops, ${sources} sources.`);
 console.log(`OK: ${names.length} names, ${written} written.`);

@@ -394,6 +394,11 @@
   margin-block-end: 1.5rem;
 }
 
+.filter-rows {
+  display: grid;
+  gap: 0.6rem;
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;

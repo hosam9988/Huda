@@ -19,8 +19,9 @@ that more components can join it later.
 ## What's in it
 
 - **The home page** (`/`) leads to the two sections, and to "Start here" for readers new to Islam.
-- **The signs, «سنريهم آياتنا»** (`/signs`): 20 signs in 7 fields — the cosmos; earth and sky;
-  seas and water; the human being; health in the Sunnah; prophecies fulfilled; preserving the Qur'an.
+- **The signs, «سنريهم آياتنا»** (`/signs`): 38 signs in 8 fields — the cosmos; earth and sky;
+  seas and water; the living world; the human being; health in the Sunnah; prophecies fulfilled;
+  preserving the Qur'an.
   - **"Start here":** a 7-stop journey through the signs, ending with "What next?"
   - **Every sign is a short story** (`/signs/:slug`):
     1. a question to open with;
@@ -55,6 +56,11 @@ that more components can join it later.
   agencies, universities and reference works, each opened and checked against what the page says (for
   paywalled papers, against the abstract) in October 2026. Web pages move, so re-check the links now
   and then.
+- **Eighteen of the signs** (most of the prophecies, the camel and sleep) are the candidates that
+  passed all three checks of a review of 132: the science or history, the text and its classical
+  reading, and a search for any serious objection. A prophecy's page says that the collections were
+  compiled after the events, so the case rests on the hadith scholars' verification of the chain, and
+  links the histories and the classical commentaries that recorded each fulfilment.
 - **On the names' pages**, the explanations summarise Shaykh al-Badr's book in our own words. Hadith
   are from al-Bukhari and Muslim, or from another collection only with its grading quoted from a named
   scholar or edition and shown on the page: al-Tirmidhi, al-Arna'ut's edition of Sunan Abi Dawud, the
@@ -72,7 +78,7 @@ The images are in `public/images/` as WebP:
 
 | Image | Size | Saved as |
 |---|---|---|
-| the 20 sign images | 1280×800 | `<name>.webp` 1280 wide, `<name>-sm.webp` 640 wide |
+| the 38 sign images | 1280×800 | `<name>.webp` 1280 wide, `<name>-sm.webp` 640 wide |
 | the home page's Earth (`hero`) | 1536×864 | 1536 wide, `-sm` 768 wide |
 | the names' golden dome (`names-hero`) | 1536×864 | 1536 wide, `-sm` 768 wide |
 

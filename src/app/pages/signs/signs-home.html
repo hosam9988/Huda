@@ -180,19 +180,40 @@
     </header>
 
     <div class="tools">
-      <div class="filters" role="group" [attr.aria-label]="t().filterLabel">
-        <button type="button" class="filter" [attr.aria-pressed]="filter() === null" (click)="filter.set(null)">
-          {{ t().filterAll }}
-        </button>
-        @for (category of content.categories(); track category.id) {
-          <button
-            type="button"
-            class="filter"
-            [attr.aria-pressed]="filter() === category.id"
-            (click)="filter.set(filter() === category.id ? null : category.id)"
-          >
-            {{ language.pick(category.title) }}
+      <div class="filter-rows">
+        <div class="filters" role="group" [attr.aria-label]="t().filterLabel">
+          <button type="button" class="filter" [attr.aria-pressed]="filter() === null" (click)="filter.set(null)">
+            {{ t().filterAll }}
           </button>
+          @for (category of content.categories(); track category.id) {
+            <button
+              type="button"
+              class="filter"
+              [attr.aria-pressed]="filter() === category.id"
+              (click)="filter.set(filter() === category.id ? null : category.id)"
+            >
+              {{ language.pick(category.title) }}
+            </button>
+          }
+        </div>
+        @if (hasReflection()) {
+          <div class="filters" role="group" [attr.aria-label]="t().kindLabel">
+            <button type="button" class="filter" [attr.aria-pressed]="kind() === null" (click)="kind.set(null)">
+              {{ t().filterAll }}
+            </button>
+            <button type="button" class="filter" [attr.aria-pressed]="kind() === 'ijaz'" (click)="kind.set(kind() === 'ijaz' ? null : 'ijaz')">
+              {{ t().kindIjaz }}
+            </button>
+            <button
+              type="button"
+              class="filter"
+              [attr.aria-pressed]="kind() === 'reflection'"
+              [attr.title]="t().reflectionHint"
+              (click)="kind.set(kind() === 'reflection' ? null : 'reflection')"
+            >
+              {{ t().reflectionBadge }}
+            </button>
+          </div>
         }
       </div>
       <label class="search">

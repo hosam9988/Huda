@@ -39,6 +39,12 @@ export interface UiText {
   allIntro: string;
   filterAll: string;
   filterLabel: string;
+  /** The second filter row: every sign, the signs of i'jaz, or the signs for reflection. */
+  kindLabel: string;
+  kindIjaz: string;
+  /** The badge on a sign for reflection, and what it means (its tooltip). */
+  reflectionBadge: string;
+  reflectionHint: string;
   searchPlaceholder: string;
   noResults: string;
   loading: string;
@@ -196,6 +202,10 @@ export const UI_TEXT: Record<Lang, UiText> = {
     allIntro: 'اختر مجالًا، أو ابحث بكلمة.',
     filterAll: 'الكل',
     filterLabel: 'تصفية حسب المجال',
+    kindLabel: 'تصفية حسب النوع',
+    kindIjaz: 'إعجاز',
+    reflectionBadge: 'للتفكر',
+    reflectionHint: 'حقيقةٌ كان الناس يعرفونها يوم نزلت، نعرضها للتفكر لا على أنها إعجاز.',
     searchPlaceholder: 'ابحث: الجبال، الجنين، البحر…',
     noResults: 'لا توجد نتائج مطابقة.',
     loading: 'جارٍ التحميل…',
@@ -335,6 +345,10 @@ export const UI_TEXT: Record<Lang, UiText> = {
     allIntro: 'Choose a field, or search for a word.',
     filterAll: 'All',
     filterLabel: 'Filter by field',
+    kindLabel: 'Filter by kind',
+    kindIjaz: 'Miraculous signs',
+    reflectionBadge: 'For reflection',
+    reflectionHint: 'Something people already knew when it was revealed, shown here to reflect on, not as a miracle.',
     searchPlaceholder: 'Search: mountains, embryo, sea…',
     noResults: 'Nothing matches.',
     loading: 'Loading…',

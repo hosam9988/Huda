@@ -5,8 +5,10 @@ export type CategoryId =
   | 'cosmos'
   | 'earth'
   | 'seas'
+  | 'life'
   | 'human'
   | 'health'
+  | 'history'
   | 'prophecies'
   | 'preservation';
 
@@ -72,6 +74,12 @@ export interface Ayah {
   now: Localized[];
   /** `history`: «now» is headed "What history records" (a prophecy, a manuscript), not science. */
   nowLabel?: 'history';
+  /**
+   * `reflection`: a sign to reflect on. What it says is true and plainly meant, but people already
+   * knew it when it was revealed, so it is not offered as i'jaz. It carries the «للتفكر» badge and
+   * comes after its field's other signs.
+   */
+  type?: 'reflection';
   /** One large figure for the page, e.g. «١٣٠٠ عام» "between the verse and Hubble". */
   highlight: { value: Localized; label: Localized };
   timeline: Milestone[];

@@ -41,9 +41,14 @@ import { readingMinutes } from '../core/utils/reading-time';
       </div>
       <div class="body">
         <div class="meta">
-          @if (category(); as category) {
-            <span class="chip">{{ language.pick(category.title) }}</span>
-          }
+          <span class="chips">
+            @if (category(); as category) {
+              <span class="chip">{{ language.pick(category.title) }}</span>
+            }
+            @if (ayah().type === 'reflection') {
+              <span class="chip reflection" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+            }
+          </span>
           <span class="time">{{ t().minutes(minutes()) }}</span>
         </div>
         <h3>{{ language.pick(ayah().title) }}</h3>
@@ -141,6 +146,17 @@ import { readingMinutes } from '../core/utils/reading-time';
       align-items: center;
       justify-content: space-between;
       gap: 0.5rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .reflection {
+      border-color: var(--line-strong);
+      color: var(--text-muted);
     }
 
     .time {
