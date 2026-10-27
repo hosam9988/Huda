@@ -41,8 +41,8 @@ const PRINCIPLES: Principle[] = [
   {
     title: { ar: 'مصادر يمكنك التحقق منها', en: 'Sources you can check' },
     text: {
-      ar: 'في صفحة كل آيةٍ روابط إلى مجلاتٍ علمية محكّمة، ووكالاتٍ مثل ناسا والإدارة الوطنية للمحيطات والغلاف الجوي الأمريكية، وجامعاتٍ وموسوعات، وفي صفحة كل نبوءةٍ روابط إلى كتب التاريخ وشروح الحديث التي سجّلت تحقّقها. وفي صفحة كل اسمٍ ذكرُ الكتاب الذي لخّصنا منه الشرح. لا تأخذ كلامنا على الثقة: افتح المصدر واقرأ.',
-      en: 'Every sign’s page links to peer-reviewed journals, agencies such as NASA and NOAA, universities and encyclopaedias, and every prophecy’s page to the histories and hadith commentaries that recorded its fulfilment. Every name’s page names the book its explanation is summarised from. Don’t take our word for it: open the source and read it.',
+      ar: 'في صفحة كل آيةٍ روابط إلى مجلاتٍ علمية محكّمة، ووكالاتٍ مثل ناسا والإدارة الوطنية للمحيطات والغلاف الجوي الأمريكية، وجامعاتٍ وموسوعات، وفي صفحة كل نبوءةٍ روابط إلى كتب التاريخ وشروح الحديث التي سجّلت تحقّقها. لا تأخذ كلامنا على الثقة: افتح المصدر واقرأ.',
+      en: 'Every sign’s page links to peer-reviewed journals, agencies such as NASA and NOAA, universities and encyclopaedias, and every prophecy’s page to the histories and hadith commentaries that recorded its fulfilment. Don’t take our word for it: open the source and read it.',
     },
   },
   {

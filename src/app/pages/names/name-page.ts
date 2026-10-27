@@ -23,9 +23,6 @@ import { Ornament } from '../../shared/ornament';
 import { ReadAloud } from '../../shared/read-aloud';
 import { Reveal } from '../../shared/reveal';
 
-/** Where every name's explanation is summarised from: the book's page on the Shaykh's website. */
-const BOOK_URL = 'https://www.al-badr.net/ebook/57';
-
 /** One of the Beautiful Names, kept short: its meaning, evidence, effect on a life, and a du'a. */
 @Component({
   selector: 'app-name-page',
@@ -44,7 +41,6 @@ export class NamePage {
   protected readonly language = inject(LanguageService);
   protected readonly speech = inject(SpeechService);
   protected readonly t = this.language.t;
-  protected readonly bookUrl = BOOK_URL;
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly article = viewChild<ElementRef<HTMLElement>>('article');
 

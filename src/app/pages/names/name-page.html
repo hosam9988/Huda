@@ -73,13 +73,6 @@
           <ng-container [ngTemplateOutlet]="textCard" [ngTemplateOutletContext]="{ $implicit: c.dua, key: 'dua' }" />
         </section>
 
-        <p class="source">
-          {{ t().names.sourceNote }}
-          <a [href]="bookUrl" target="_blank" rel="noopener">
-            {{ t().names.sourceLink }} ↗<span class="visually-hidden">{{ t().opensNewTab }}</span>
-          </a>
-        </p>
-
         <div class="finish">
           @if (isRead()) {
             <p class="done-line">✓ {{ t().isRead }}</p>

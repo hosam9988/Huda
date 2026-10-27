@@ -2,7 +2,7 @@ import { Lang, Localized } from './lang';
 
 /**
  * A verse or hadith on a name's page — one of its evidences, or its supplication — with a very
- * short explanation, summarised from «فقه الأسماء الحسنى» by Shaykh ʿAbd al-Razzāq al-Badr.
+ * short explanation.
  */
 export interface NameText {
   kind: 'quran' | 'hadith';
@@ -35,7 +35,7 @@ export interface NameContent {
 /** One of the Beautiful Names, at /names/:slug. */
 export interface DivineName {
   slug: string;
-  /** Its place in the list, which follows «فقه الأسماء الحسنى». */
+  /** Its place in the list: 1, 2, 3… */
   number: number;
   /** The name, fully vowelled. */
   name: string;

@@ -127,9 +127,6 @@ export interface UiText {
     /** «قرأت ٥ من ١٠٧ أسماء». */
     progress: (read: number, total: number) => string;
     sections: { evidence: string; impact: string; dua: string };
-    /** Under every name's page: where its explanation comes from. */
-    sourceNote: string;
-    sourceLink: string;
     nextName: string;
     allNames: string;
   };
@@ -294,9 +291,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
       comingSoon: 'قريبًا',
       progress: (read, total) => `قرأت ${toArabicDigits(read)} من ${arabicCount(total, NAME_NOUN)}`,
       sections: { evidence: 'الأدلة', impact: 'أثره في حياتك', dua: 'دعاء' },
-      sourceNote:
-        'الشرح مختصرٌ بتصرّف، ومستفادٌ من كتاب «فقه الأسماء الحسنى» للشيخ عبد الرزاق بن عبد المحسن البدر.',
-      sourceLink: 'موقع الشيخ',
       nextName: 'الاسم التالي',
       allNames: 'كل الأسماء',
     },
@@ -437,9 +431,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
       comingSoon: 'Coming soon',
       progress: (read, total) => `You have read ${read} of ${total} names`,
       sections: { evidence: 'Evidence', impact: 'In your life', dua: 'Supplication' },
-      sourceNote:
-        'The explanations are summarised in our own words from «Fiqh al-Asmaʾ al-Husna» by Shaykh ʿAbd al-Razzaq ibn ʿAbd al-Muhsin al-Badr.',
-      sourceLink: 'The Shaykh’s website',
       nextName: 'Next name',
       allNames: 'All names',
     },

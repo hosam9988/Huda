@@ -33,8 +33,8 @@ that more components can join it later.
     7. **"In all honesty"**: the limits of the link, where scholars differ, and claims we refuse to make;
     8. the sources, linked.
   - Links from the first site (`/ayah/:slug`) redirect to `/signs/:slug`.
-- **The Beautiful Names** (`/names`): 107 names in the order of «فقه الأسماء الحسنى» by Shaykh
-  ʿAbd al-Razzāq al-Badr, with the name of the day and a search. Each name's page (`/names/:slug`) has:
+- **The Beautiful Names** (`/names`): 107 names, with the name of the day and a search. Each name's
+  page (`/names/:slug`) has:
   1. its meaning, in a line;
   2. one to three verses or hadith in which the name is established, each with a short explanation;
   3. «أثره في حياتك», what believing in the name does in your life;
@@ -64,13 +64,12 @@ that more components can join it later.
   reading, and a search for any serious objection. A prophecy's page says that the collections were
   compiled after the events, so the case rests on the hadith scholars' verification of the chain, and
   links the histories and the classical commentaries that recorded each fulfilment.
-- **On the names' pages**, the explanations summarise Shaykh al-Badr's book in our own words. Hadith
-  are from al-Bukhari and Muslim, or from another collection only with its grading quoted from a named
+- **On the names' pages**, the explanations are short and in our own words. Hadith are from
+  al-Bukhari and Muslim, or from another collection only with its grading quoted from a named
   scholar or edition and shown on the page: al-Tirmidhi, al-Arna'ut's edition of Sunan Abi Dawud, the
   al-Risala edition of Musnad Ahmad, or al-Albani. Hadith whose authenticity is disputed were left out.
-- Every hadith's text and number was checked in the books themselves: Bukhari in the common Fath
-  al-Bari numbering, Muslim in ‘Abd al-Baqi's. Where the book's footnotes gave a different number, the
-  number in the collection was used.
+- Every hadith's text and number was checked in the collections themselves: Bukhari in the common
+  Fath al-Bari numbering, Muslim in ‘Abd al-Baqi's.
 
 A qualified student of knowledge should review the Arabic glosses, the scholarly notes and the names'
 explanations before the site is promoted widely.
@@ -175,7 +174,7 @@ Typed in [`src/app/core/models/divine-name.ts`](src/app/core/models/divine-name.
 {
   "names": [{
     "slug": "allah",                       // URL: /names/allah
-    "number": 1,                           // the book's order; must run 1, 2, 3…
+    "number": 1,                           // its place in the list; must run 1, 2, 3…
     "name": "اللَّهُ", "transliteration": "Allah", "gloss": "The One truly worshipped",
     "content": {                           // optional: without it, the name shows "Coming soon"
       "meaning": {…},                      // one line
