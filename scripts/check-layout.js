@@ -30,6 +30,8 @@
   A.desc = desc;
   const isClipText = (cs) => cs.backgroundClip === 'text' || cs.webkitBackgroundClip === 'text';
   const isBlock = (cs) => cs.display !== 'inline' && cs.display !== 'contents';
+  // Laid out and painted: the content of a closed <details> keeps its boxes but isn't drawn.
+  const shown = (el) => el.getClientRects().length > 0 && (!el.checkVisibility || el.checkVisibility());
 
   // Every visible word with its layout box, baseline and ink box.
   A.words = () => {
@@ -42,7 +44,7 @@
       if (!text.trim()) continue;
       const p = n.parentElement;
       if (!p || p.closest('script,style,noscript,svg,.visually-hidden,[hidden]')) continue;
-      if (!p.getClientRects().length) continue;
+      if (!shown(p)) continue;
       const cs = gcs(p);
       if (cs.visibility !== 'visible') continue;
       const font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
@@ -179,7 +181,7 @@
     }
     // Glyphs on ornaments, buttons, fields and panels the text isn't part of.
     const solids = [...document.querySelectorAll('app-ornament .line, app-ornament svg, .btn, button, input, .panel, .search')]
-      .filter((e) => e.getClientRects().length)
+      .filter(shown)
       .map((e) => ({ e, r: e.getBoundingClientRect() }));
     for (const w of words) {
       for (const s of solids) {
@@ -192,7 +194,7 @@
     // (no object-fit) must keep its own.
     for (const img of document.querySelectorAll('img')) {
       const r = img.getBoundingClientRect();
-      if (r.width < 2 || r.height < 2) continue;
+      if (r.width < 2 || r.height < 2 || !shown(img)) continue;
       const cs = gcs(img);
       const ratio = r.width / r.height;
       const css = /^([\d.]+)(?:\s*\/\s*([\d.]+))?$/.exec(cs.aspectRatio);

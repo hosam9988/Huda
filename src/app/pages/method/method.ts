@@ -53,10 +53,10 @@ const PRINCIPLES: Principle[] = [
     },
   },
   {
-    title: { ar: 'آياتٌ للتفكر', en: 'Signs for reflection' },
+    title: { ar: 'معجزاتٌ، وعلاماتٌ للتفكر', en: 'Miracles, and signs for reflection' },
     text: {
-      ar: 'على بعض الآيات علامة «للتفكر»: ما تذكره حقٌّ ظاهر، لكن الناس كانوا يعرفونه يوم نزل، فلا نعرضه إعجازًا. نذكر ما عرفوه يومئذٍ وما نعرفه اليوم، لنتفكر في خلق الله ورحمته، ولا ندّعي أن العلم كشف ما لم يكن معروفًا.',
-      en: 'Some signs carry the “For reflection” badge: what they say is true and plain, but people already knew it when it was revealed, so we do not present it as a miracle. We set out what was known then and what we know now, to reflect on Allah’s creation and mercy — never to claim that science uncovered something unknown.',
+      ar: 'نعرض الآيات في قسمين. «المعجزات»: ما سبق به القرآن والسنة علمَ الناس، أو وصفاه بدقةٍ لم تتبيّن إلا بعد قرون، أو أخبرا به من غيبٍ فوقع. و«علامات تُظهر عظمة الخالق»: حقٌّ ظاهر كان الناس يعرفونه يوم نزل الوحي، فلا نعرضه إعجازًا، بل نذكر ما عرفوه يومئذٍ وما نعرفه اليوم، لنتفكر في خلق الله ورحمته وسننه في الأمم، ولا ندّعي أن العلم كشف ما لم يكن معروفًا.',
+      en: 'We show the signs in two parts. “Miracles”: what the Qur’an and Sunnah told of before people knew it, or described with a precision that only became clear centuries later, or foretold before it came to pass. “Signs that show the Creator’s greatness”: plain truths that people already knew when the revelation came, so we do not present them as miracles. We set out what was known then and what we know now, to reflect on Allah’s creation, His mercy and His ways with nations — never to claim that science uncovered something unknown.',
     },
   },
   {

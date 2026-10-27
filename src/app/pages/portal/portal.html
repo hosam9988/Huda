@@ -83,7 +83,10 @@
 <section class="container today">
   @if (content.ayahOfTheDay(); as sign) {
     <a class="panel today-card" [routerLink]="['/signs', sign.slug]" appReveal>
-      <span class="eyebrow">{{ t().ayahOfTheDay }}</span>
+      <span class="eyebrow">{{ t().ayahOfTheDay(sign.type === 'reflection') }}</span>
+      @if (sign.type === 'reflection') {
+        <span class="chip reflection-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+      }
       <span class="today-title">{{ language.pick(sign.title) }}</span>
       <span class="today-hook">{{ language.pick(sign.hook) }}</span>
     </a>

@@ -47,8 +47,12 @@
       @if (stats().signs) {
         <dl class="stats">
           <div>
-            <dt>{{ t().statSigns }}</dt>
-            <dd>{{ language.number(stats().signs) }}</dd>
+            <dt>{{ t().statMiracles }}</dt>
+            <dd>{{ language.number(stats().miracles) }}</dd>
+          </div>
+          <div>
+            <dt>{{ t().statReflection }}</dt>
+            <dd>{{ language.number(stats().signs - stats().miracles) }}</dd>
           </div>
           <div>
             <dt>{{ t().statFields }}</dt>
@@ -87,24 +91,6 @@
     </section>
   }
 
-  <!-- The journey for readers new to Islam. -->
-  <section class="container section journey" id="journey">
-    <header class="section-head" appReveal>
-      <p class="eyebrow">{{ t().journeyEyebrow }}</p>
-      <h2>{{ t().journeyTitle }}</h2>
-      <p>
-        {{ t().journeyIntro(language.number(content.journey().length), language.number(journeyMinutes())) }}
-      </p>
-    </header>
-    <ol class="journey-track">
-      @for (ayah of content.journey(); track ayah.slug) {
-        <li appReveal>
-          <app-ayah-card [ayah]="ayah" [fromJourney]="true" />
-        </li>
-      }
-    </ol>
-  </section>
-
   @if (content.ayahOfTheDay(); as today) {
     <section class="container section" appReveal>
       <article class="panel today">
@@ -121,7 +107,10 @@
           />
         </div>
         <div class="today-text">
-          <p class="eyebrow">{{ t().ayahOfTheDay }}</p>
+          <p class="eyebrow">{{ t().ayahOfTheDay(today.type === 'reflection') }}</p>
+          @if (today.type === 'reflection') {
+            <span class="chip reflection-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+          }
           <h2>{{ language.pick(today.title) }}</h2>
           @if (today.evidence[0]; as evidence) {
             <p class="quran today-verse" lang="ar" dir="rtl">{{ evidence.text }}</p>
@@ -159,7 +148,7 @@
               <span class="field-title">{{ language.pick(category.title) }}</span>
               <span class="field-blurb">{{ language.pick(category.blurb) }}</span>
               <span class="field-count">
-                {{ t().signsCount(countIn(category.id)) }}
+                {{ t().fieldCount(miraclesIn(category.id), reflectionIn(category.id)) }}
                 @if (readIn(category.id); as read) {
                   · <span class="field-read">✓ {{ language.number(read) }}</span>
                 }
@@ -171,49 +160,50 @@
     </ul>
   </section>
 
-  <!-- Every sign, with a filter and search. -->
+  <!-- The journey for non-Muslims and readers new to Islam: folded until the reader opens it. -->
+  <section class="container section journey" id="journey">
+    <details class="panel journey-fold" #fold [open]="journeyOpen()" (toggle)="journeyOpen.set(fold.open)" appReveal>
+      <summary>
+        <h2>{{ t().journeyTitle }}</h2>
+        <span class="journey-intro">
+          {{ t().journeyIntro(language.number(content.journey().length), language.number(journeyMinutes())) }}
+        </span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="chevron">
+          <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </summary>
+      <ol class="journey-track">
+        @for (ayah of content.journey(); track ayah.slug) {
+          <li>
+            <app-ayah-card [ayah]="ayah" [fromJourney]="true" />
+          </li>
+        }
+      </ol>
+    </details>
+  </section>
+
+  <!-- The miracles, with the filter and search that also apply to the signs for reflection below. -->
   <section class="container section" id="all">
     <header class="section-head" appReveal>
       <app-ornament />
-      <h2>{{ t().allTitle }}</h2>
-      <p>{{ t().allIntro }}</p>
+      <h2 tabindex="-1">{{ t().miraclesTitle }}</h2>
+      <p>{{ t().miraclesIntro }}</p>
     </header>
 
     <div class="tools">
-      <div class="filter-rows">
-        <div class="filters" role="group" [attr.aria-label]="t().filterLabel">
-          <button type="button" class="filter" [attr.aria-pressed]="filter() === null" (click)="filter.set(null)">
-            {{ t().filterAll }}
+      <div class="filters" role="group" [attr.aria-label]="t().filterLabel">
+        <button type="button" class="filter" [attr.aria-pressed]="filter() === null" (click)="filter.set(null)">
+          {{ t().filterAll }}
+        </button>
+        @for (category of content.categories(); track category.id) {
+          <button
+            type="button"
+            class="filter"
+            [attr.aria-pressed]="filter() === category.id"
+            (click)="filter.set(filter() === category.id ? null : category.id)"
+          >
+            {{ language.pick(category.title) }}
           </button>
-          @for (category of content.categories(); track category.id) {
-            <button
-              type="button"
-              class="filter"
-              [attr.aria-pressed]="filter() === category.id"
-              (click)="filter.set(filter() === category.id ? null : category.id)"
-            >
-              {{ language.pick(category.title) }}
-            </button>
-          }
-        </div>
-        @if (hasReflection()) {
-          <div class="filters" role="group" [attr.aria-label]="t().kindLabel">
-            <button type="button" class="filter" [attr.aria-pressed]="kind() === null" (click)="kind.set(null)">
-              {{ t().filterAll }}
-            </button>
-            <button type="button" class="filter" [attr.aria-pressed]="kind() === 'ijaz'" (click)="kind.set(kind() === 'ijaz' ? null : 'ijaz')">
-              {{ t().kindIjaz }}
-            </button>
-            <button
-              type="button"
-              class="filter"
-              [attr.aria-pressed]="kind() === 'reflection'"
-              [attr.title]="t().reflectionHint"
-              (click)="kind.set(kind() === 'reflection' ? null : 'reflection')"
-            >
-              {{ t().reflectionBadge }}
-            </button>
-          </div>
         }
       </div>
       <label class="search">
@@ -231,14 +221,35 @@
       </label>
     </div>
 
-    @if (filtered().length) {
+    @if (miracles().length) {
       <ul class="grid">
-        @for (ayah of filtered(); track ayah.slug) {
+        @for (ayah of miracles(); track ayah.slug) {
           <li><app-ayah-card [ayah]="ayah" /></li>
         }
       </ul>
+    } @else if (reflections().length) {
+      <p class="status"><a routerLink="/signs" fragment="reflection">{{ t().noMiraclesSeeBelow }}</a></p>
     } @else {
       <p class="status">{{ t().noResults }}</p>
+    }
+  </section>
+
+  <!-- The signs for reflection: true and plain, but known when revealed, so not offered as miracles. -->
+  <section class="container section" id="reflection">
+    <header class="section-head" appReveal>
+      <app-ornament />
+      <h2 tabindex="-1">{{ t().reflectionTitle }}</h2>
+      <p>{{ t().reflectionIntro }}</p>
+    </header>
+
+    @if (reflections().length) {
+      <ul class="verses">
+        @for (ayah of reflections(); track ayah.slug) {
+          <li><app-ayah-card [ayah]="ayah" look="verse" /></li>
+        }
+      </ul>
+    } @else {
+      <p class="status">{{ miracles().length ? t().noReflection : t().noResults }}</p>
     }
   </section>
 

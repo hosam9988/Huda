@@ -40,13 +40,11 @@ export class ContentService {
     return this.ayat().filter((a) => a.category === id);
   }
 
-  /** The signs in reading order: grouped by category, in the categories' order, each field's signs for reflection last. */
-  readonly ordered = computed(() =>
-    this.categories().flatMap((c) => {
-      const signs = this.inCategory(c.id);
-      return [...signs.filter((a) => a.type !== 'reflection'), ...signs.filter((a) => a.type === 'reflection')];
-    }),
-  );
+  /** The signs in reading order: the miracles, then the signs for reflection, each by field in the fields' order. */
+  readonly ordered = computed(() => {
+    const signs = this.categories().flatMap((c) => this.inCategory(c.id));
+    return [...signs.filter((a) => a.type !== 'reflection'), ...signs.filter((a) => a.type === 'reflection')];
+  });
 
   neighbours(slug: string): { prev?: Ayah; next?: Ayah } {
     const ayat = this.ordered();

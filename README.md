@@ -18,14 +18,24 @@ that more components can join it later.
 
 ## What's in it
 
-- **The home page** (`/`) leads to the two sections, and to "Start here" for readers new to Islam.
+- **The home page** (`/`) leads to the two sections, and to the journey for non-Muslims and readers
+  new to Islam.
 - **The signs, «سنريهم آياتنا»** (`/signs`): 65 signs in 9 fields — the cosmos; earth and sky;
   seas and water; the living world; the human being; health in the Sunnah; peoples of the past;
   prophecies fulfilled; preserving the Qur'an.
-  - **Signs for reflection:** 27 of them carry the «للتفكر» badge: what they say is true and plain,
+  - **Two lists:** «المعجزات» (Miracles, 38) and «علامات تُظهر عظمة الخالق» (Signs that show the
+    Creator's greatness, 27). The second holds the signs for reflection: what they say is true and plain,
     but people already knew it when it was revealed, so they are not offered as i'jaz. They come
-    after their field's other signs, and a second filter on `/signs` shows one kind or the other.
-  - **"Start here":** a 7-stop journey through the signs, ending with "What next?"
+    after the miracles, and their cards lead with the verse or hadith. On their own pages and as the sign
+    of the day they carry the «للتفكر» badge. The field filter and the search apply to both lists.
+  - **"Non-Muslim or new to Islam?":** a 7-stop journey through the signs, ending with "What next?".
+    It is folded just above «المعجزات» (Miracles) until the reader opens it, or follows a link to
+    `/signs#journey` (the header's "Start here" and the footer).
+  - **«آية (معجزة)»:** many readers don't know that «آية» can mean a miracle, so where the interface's
+    «آية» means the miracles it is followed by «(معجزة)» ("sign (miracle)" in English): «آية اليوم (معجزة
+    اليوم)» and «الآية (المعجزة) التالية» when that sign is a miracle, and the hero's «هذه الآيات
+    (المعجزات)». Never on words that cover both lists, on a sign for reflection, where «آية» means a
+    verse, or in the Qur'an's words and their translation.
   - **Every sign is a short story** (`/signs/:slug`):
     1. a question to open with;
     2. the verse or hadith;
@@ -71,7 +81,7 @@ that more components can join it later.
   science and text but showed nothing people did not already know. Each was screened again: the
   reading must be the classical commentators' own and undisputed, the fact established, a ruling
   never given a modern reason its text does not state, and a health statement must rest on current
-  guidance or a review. A page's «بكل أمانة» opens by saying that it is not offered as a miracle, and
+  guidance or a review. A page's «بأمانةٍ علمية» opens by saying that it is not offered as a miracle, and
   how people knew it then.
 - **On the names' pages**, the explanations are short and in our own words. Hadith are from
   al-Bukhari and Muslim, or from another collection only with its grading quoted from a named
@@ -236,7 +246,7 @@ src/app/
     utils/                     image paths, search (ignores tashkeel), reading time
   shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament
   pages/portal                 the home page (/): the two sections
-  pages/signs                  the signs (/signs): journey, sign of the day, fields, all signs
+  pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
   pages/ayah                   one sign (/signs/:slug; ?path=journey keeps the journey's order)
   pages/names                  the names (/names) and one name (/names/:slug)
   pages/method, next-steps     "Our method" (/method) and "What next?" (/next)

@@ -232,6 +232,13 @@
   }
 }
 
+// On a sign for reflection: not offered as a miracle.
+.today-card .reflection-chip {
+  align-self: flex-start;
+  border-color: var(--line-strong);
+  color: var(--text-muted);
+}
+
 .today-title {
   color: var(--gold-light);
   font-size: 1.35rem;

@@ -20,28 +20,33 @@ export interface UiText {
   heroIntro: string;
   startJourney: string;
   browseAll: string;
-  /** The figures under the hero: «٢٠ آية · ٧ مجالات · ٦٠ مصدرًا». */
-  statSigns: string;
+  /** The figures under the hero: «٣٨ معجزة · ٢٧ علامة للتفكر · ٩ مجالات · ٢٨٢ مصدرًا». */
+  statMiracles: string;
+  statReflection: string;
   statFields: string;
   statSources: string;
   continueReading: string;
   continueWhere: (title: string) => string;
-  journeyEyebrow: string;
   journeyTitle: string;
   journeyIntro: (stops: string, minutes: string) => string;
   journeyStop: (n: string, total: string) => string;
-  ayahOfTheDay: string;
+  /** Labels that name one sign gloss it «(معجزة)» only when it isn't a sign for reflection. */
+  ayahOfTheDay: (reflection: boolean) => string;
   readMore: string;
   categoriesTitle: string;
   categoriesIntro: string;
-  signsCount: (n: number) => string;
-  allTitle: string;
-  allIntro: string;
+  /** A field's count: «٤ معجزات · ٥ علامات للتفكر». */
+  fieldCount: (miracles: number, reflection: number) => string;
+  /** The two lists: the miracles, and the signs for reflection («علامات تُظهر عظمة الخالق»). */
+  miraclesTitle: string;
+  miraclesIntro: string;
+  reflectionTitle: string;
+  reflectionIntro: string;
+  /** One list is empty but the other isn't: say where the matches are. */
+  noMiraclesSeeBelow: string;
+  noReflection: string;
   filterAll: string;
   filterLabel: string;
-  /** The second filter row: every sign, the signs of i'jaz, or the signs for reflection. */
-  kindLabel: string;
-  kindIjaz: string;
   /** The badge on a sign for reflection, and what it means (its tooltip). */
   reflectionBadge: string;
   reflectionHint: string;
@@ -92,7 +97,7 @@ export interface UiText {
   markRead: string;
   isRead: string;
   markUnread: string;
-  nextUp: string;
+  nextUp: (reflection: boolean) => string;
   nextStop: string;
   journeyEndTitle: string;
   journeyEndText: string;
@@ -152,6 +157,14 @@ function arabicCount(n: number, noun: ArabicNoun): string {
 }
 
 const NAME_NOUN: ArabicNoun = { one: 'اسم واحد', two: 'اسمان', few: 'أسماء', many: 'اسمًا', bare: 'اسم' };
+const MIRACLE_NOUN: ArabicNoun = { one: 'معجزة واحدة', two: 'معجزتان', few: 'معجزات', many: 'معجزة', bare: 'معجزة' };
+const REFLECTION_NOUN: ArabicNoun = {
+  one: 'علامة واحدة للتفكر',
+  two: 'علامتان للتفكر',
+  few: 'علامات للتفكر',
+  many: 'علامة للتفكر',
+  bare: 'علامة للتفكر',
+};
 
 export const UI_TEXT: Record<Lang, UiText> = {
   ar: {
@@ -176,31 +189,37 @@ export const UI_TEXT: Record<Lang, UiText> = {
     languageLabel: 'اللغة',
     heroEyebrow: 'آياتٌ في الآفاق وفي الأنفس',
     heroIntro:
-      'نزل القرآن قبل أكثر من أربعة عشر قرنًا على نبيٍّ أُمّي، في صحراء لا مختبرات فيها ولا مراصد. ثم جاء العلم الحديث فكشف عن حقائق في الكون والأرض والبحار والإنسان، تتسق مع ما جاء فيه. هنا تقرأ هذه الآيات واحدةً واحدة: النص، وما كان يعرفه الناس يومها، وما كشفه العلم، ومصادره الموثّقة — بأمانةٍ ودون مبالغة.',
+      'نزل القرآن قبل أكثر من أربعة عشر قرنًا على نبيٍّ أُمّي، في صحراء لا مختبرات فيها ولا مراصد. ثم جاء العلم الحديث فكشف عن حقائق في الكون والأرض والبحار والإنسان، تتسق مع ما جاء فيه. هنا تقرأ هذه الآيات (المعجزات) واحدةً واحدة: النص، وما كان يعرفه الناس يومها، وما كشفه العلم، ومصادره الموثّقة — بأمانةٍ ودون مبالغة.',
     startJourney: 'ابدأ الرحلة',
     browseAll: 'تصفّح كل الآيات',
-    statSigns: 'آية',
+    statMiracles: 'معجزة',
+    statReflection: 'علامة للتفكر',
     statFields: 'مجالات',
     statSources: 'مصدرًا علميًا',
     continueReading: 'تابع القراءة',
     continueWhere: (title) => `توقفت عند: ${title}`,
-    journeyEyebrow: 'جديدٌ على الإسلام؟',
-    journeyTitle: 'ابدأ من هنا',
+    journeyTitle: 'غير مسلم أو جديدٌ على الإسلام؟',
     journeyIntro: (stops, minutes) =>
       `رحلةٌ قصيرة في ${stops} محطات، مرتبة لمن يتعرف على الإسلام أول مرة، تُقرأ في نحو ${minutes} دقيقة.`,
     journeyStop: (n, total) => `المحطة ${n} من ${total}`,
-    ayahOfTheDay: 'آية اليوم',
+    ayahOfTheDay: (reflection) => (reflection ? 'آية اليوم' : 'آية اليوم (معجزة اليوم)'),
     readMore: 'اقرأ المزيد',
     categoriesTitle: 'مجالات الآيات',
     categoriesIntro: 'من أعماق الكون إلى أعماق البحار، ومن خلق الإنسان إلى نبوءاتٍ تحققت.',
-    signsCount: (n) =>
-      n === 1 ? 'آية واحدة' : n === 2 ? 'آيتان' : `${toArabicDigits(n)} ${n <= 10 ? 'آيات' : 'آية'}`,
-    allTitle: 'كل الآيات',
-    allIntro: 'اختر مجالًا، أو ابحث بكلمة.',
+    fieldCount: (miracles, reflection) =>
+      [miracles ? arabicCount(miracles, MIRACLE_NOUN) : '', reflection ? arabicCount(reflection, REFLECTION_NOUN) : '']
+        .filter(Boolean)
+        .join(' · '),
+    miraclesTitle: 'المعجزات',
+    miraclesIntro:
+      'ما سبق به القرآن والسنة علمَ الناس، أو وصفاه بدقةٍ لم تتبيّن إلا بعد قرون، أو أخبرا به من غيبٍ فوقع كما أخبرا.',
+    reflectionTitle: 'علامات تُظهر عظمة الخالق',
+    reflectionIntro:
+      'في خلق الكون والإنسان، وفي حكمة شرعه وسننه في الأمم. ليست إعجازًا: كان الناس يعرفونها يوم نزل الوحي، وهو يدعونا إلى التفكر فيها.',
+    noMiraclesSeeBelow: 'لا توجد معجزات مطابقة؛ النتائج في «علامات تُظهر عظمة الخالق» أدناه.',
+    noReflection: 'لا توجد علامات للتفكر مطابقة.',
     filterAll: 'الكل',
     filterLabel: 'تصفية حسب المجال',
-    kindLabel: 'تصفية حسب النوع',
-    kindIjaz: 'إعجاز',
     reflectionBadge: 'للتفكر',
     reflectionHint: 'حقيقةٌ كان الناس يعرفونها يوم نزلت، نعرضها للتفكر لا على أنها إعجاز.',
     searchPlaceholder: 'ابحث: الجبال، الجنين، البحر…',
@@ -256,7 +275,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     markRead: 'أتممت القراءة',
     isRead: 'تمّت القراءة',
     markUnread: 'إلغاء علامة القراءة',
-    nextUp: 'الآية التالية',
+    nextUp: (reflection) => (reflection ? 'الآية التالية' : 'الآية (المعجزة) التالية'),
     nextStop: 'المحطة التالية',
     journeyEndTitle: 'أتممت الرحلة',
     journeyEndText: 'شكرًا لأنك قرأت حتى هنا. اقرأ «ماذا بعد؟» لتعرف خطوتك التالية.',
@@ -275,7 +294,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
         'طريقان لمعرفة الله: آياته في الكون وفي أنفسنا، وأسماؤه الحسنى التي عرّفنا بها نفسه. ابدأ بأيهما شئت.',
       signsTitle: 'الإعجاز في القرآن والسنة',
       signsBlurb:
-        'آياتٌ تحدّث عنها القرآن والسنة قبل أربعة عشر قرنًا، وكشف العلم جانبًا منها، بأدلتها ومصادرها.',
+        'معجزاتٌ تحدّث عنها القرآن والسنة قبل أربعة عشر قرنًا، وكشف العلم والتاريخ جانبًا منها، وعلاماتٌ تُظهر عظمة الخالق وتدعو إلى التفكر، بأدلتها ومصادرها.',
       namesTitle: 'أسماء الله الحسنى',
       namesBlurb: 'اسمًا اسمًا: معناه، ودليله من القرآن والسنة، وأثره في قلبك وحياتك، في دقائق.',
       enter: 'ادخل',
@@ -320,27 +339,37 @@ export const UI_TEXT: Record<Lang, UiText> = {
       'The Qur’an was revealed more than fourteen centuries ago to an unlettered Prophet, in a desert without laboratories or observatories. Modern science has since uncovered facts about the universe, the earth, the seas and the human body that sit remarkably well with what it says. Here you can read them one at a time: the text, what people knew back then, what science found, and the sources — honestly, and without exaggeration.',
     startJourney: 'Start the journey',
     browseAll: 'Browse all the signs',
-    statSigns: 'signs',
+    statMiracles: 'miracles',
+    statReflection: 'signs for reflection',
     statFields: 'fields',
     statSources: 'scientific sources',
     continueReading: 'Continue reading',
     continueWhere: (title) => `You stopped at: ${title}`,
-    journeyEyebrow: 'New to Islam?',
-    journeyTitle: 'Start here',
+    journeyTitle: 'Non-Muslim or new to Islam?',
     journeyIntro: (stops, minutes) =>
       `A short journey in ${stops} stops, arranged for anyone meeting Islam for the first time. About ${minutes} minutes of reading.`,
     journeyStop: (n, total) => `Stop ${n} of ${total}`,
-    ayahOfTheDay: 'Sign of the day',
+    ayahOfTheDay: (reflection) => (reflection ? 'Sign of the day' : 'Sign (miracle) of the day'),
     readMore: 'Read more',
     categoriesTitle: 'Fields',
     categoriesIntro: 'From the depths of space to the depths of the sea, from the making of a human being to prophecies that came true.',
-    signsCount: (n) => (n === 1 ? '1 sign' : `${n} signs`),
-    allTitle: 'All the signs',
-    allIntro: 'Choose a field, or search for a word.',
+    fieldCount: (miracles, reflection) =>
+      [
+        miracles ? `${miracles} ${miracles === 1 ? 'miracle' : 'miracles'}` : '',
+        reflection ? `${reflection} ${reflection === 1 ? 'sign' : 'signs'} for reflection` : '',
+      ]
+        .filter(Boolean)
+        .join(' · '),
+    miraclesTitle: 'Miracles',
+    miraclesIntro:
+      'What the Qur’an and Sunnah told of before people knew it, or described with a precision that only became clear centuries later, or foretold before it came to pass.',
+    reflectionTitle: 'Signs that show the Creator’s greatness',
+    reflectionIntro:
+      'In the making of the universe and of people, in the wisdom of His law, and in His ways with nations. They are not miracles: people already knew them when the revelation came, and it calls us to reflect on them.',
+    noMiraclesSeeBelow: 'No miracles match; the matches are below, in “Signs that show the Creator’s greatness”.',
+    noReflection: 'No signs for reflection match.',
     filterAll: 'All',
     filterLabel: 'Filter by field',
-    kindLabel: 'Filter by kind',
-    kindIjaz: 'Miraculous signs',
     reflectionBadge: 'For reflection',
     reflectionHint: 'Something people already knew when it was revealed, shown here to reflect on, not as a miracle.',
     searchPlaceholder: 'Search: mountains, embryo, sea…',
@@ -395,7 +424,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     markRead: 'I have finished reading',
     isRead: 'Finished reading',
     markUnread: 'Mark as unread',
-    nextUp: 'Next sign',
+    nextUp: (reflection) => (reflection ? 'Next sign' : 'Next sign (miracle)'),
     nextStop: 'Next stop',
     journeyEndTitle: 'You have finished the journey',
     journeyEndText: 'Thank you for reading this far. Read “What next?” to find your next step.',
@@ -414,7 +443,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
         'Two paths to knowing Allah: His signs in the universe and in ourselves, and the Beautiful Names by which He made Himself known. Start with either.',
       signsTitle: 'Signs in the Qur’an and Sunnah',
       signsBlurb:
-        'Signs the Qur’an and Sunnah spoke of fourteen centuries ago, on which science has since shed light — with their evidence and sources.',
+        'Miracles the Qur’an and Sunnah spoke of fourteen centuries ago, on which science and history have since shed light, and signs that show the Creator’s greatness and call for reflection — with their evidence and sources.',
       namesTitle: 'The Beautiful Names of Allah',
       namesBlurb:
         'One name at a time: what it means, its evidence from the Qur’an and Sunnah, and what it does to your heart and life — in a few minutes.',

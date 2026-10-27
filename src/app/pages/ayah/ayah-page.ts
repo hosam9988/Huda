@@ -53,6 +53,8 @@ export class AyahPage {
   protected readonly artSmallSrc = artSmallSrc;
   protected readonly artSrcset = artSrcset;
   protected readonly ayah = computed(() => this.content.ayah(this.slug()));
+  /** The list on /signs this sign is in: the miracles (`#all`) or the signs for reflection. */
+  protected readonly listId = computed(() => (this.ayah()?.type === 'reflection' ? 'reflection' : 'all'));
   protected readonly category = computed(() => {
     const a = this.ayah();
     return a ? this.content.category(a.category) : undefined;
@@ -120,6 +122,10 @@ export class AyahPage {
           const el = article.nativeElement;
           const top = el.offsetTop + place.progress * Math.max(0, el.offsetHeight - innerHeight);
           scrollTo({ top, behavior: 'instant' });
+        } else {
+          // Until the router scrolls up a frame later, the window keeps the list's offset, clamped to
+          // this page's end, which would count the sign as read on arrival.
+          scrollTo({ top: 0, behavior: 'instant' });
         }
         this.onScroll();
       });

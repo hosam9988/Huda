@@ -18,7 +18,7 @@
       <span class="art-label">{{ t().illustrativeImage }}</span>
       <div class="container hero-text">
         <p class="crumbs">
-          <a routerLink="/signs" fragment="all">{{ t().backToAll }}</a>
+          <a routerLink="/signs" [fragment]="listId()">{{ t().backToAll }}</a>
           @if (category(); as c) {
             <span aria-hidden="true">/</span>
             <span class="chip">{{ language.pick(c.title) }}</span>
@@ -191,7 +191,7 @@
           >
             <img [src]="artSmallSrc(next.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
             <span class="next-text">
-              <span class="eyebrow">{{ onJourney() ? t().nextStop : t().nextUp }}</span>
+              <span class="eyebrow">{{ onJourney() ? t().nextStop : t().nextUp(next.type === 'reflection') }}</span>
               <span class="next-title">{{ language.pick(next.title) }}</span>
               <span class="next-hook">{{ language.pick(next.hook) }}</span>
             </span>
@@ -211,7 +211,7 @@
               {{ language.isArabic() ? '→' : '←' }} {{ t().previous }}: {{ language.pick(prev.title) }}
             </a>
           }
-          <a routerLink="/signs" fragment="all">{{ t().backToAll }}</a>
+          <a routerLink="/signs" [fragment]="listId()">{{ t().backToAll }}</a>
         </p>
       </nav>
     </div>

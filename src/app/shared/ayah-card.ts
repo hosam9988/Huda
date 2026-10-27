@@ -7,7 +7,14 @@ import { ReadingService } from '../core/services/reading.service';
 import { artSmallSrc, artSrcset } from '../core/utils/art';
 import { readingMinutes } from '../core/utils/reading-time';
 
-/** A sign on the home page: its picture, field, title and summary, linking to its page. */
+/** For each card's own title id: a journey stop can also appear in a list on the same page. */
+let nextId = 0;
+
+/**
+ * A sign on the home page, linking to its page: its picture, field, title and summary. With
+ * `look="verse"`, in the list of signs for reflection, its verse or hadith leads instead of a
+ * picture, followed by its title and opening question.
+ */
 @Component({
   selector: 'app-ayah-card',
   imports: [RouterLink],
@@ -15,44 +22,67 @@ import { readingMinutes } from '../core/utils/reading-time';
   template: `
     <a
       class="card"
+      [class.verse-card]="look() === 'verse'"
+      [attr.aria-labelledby]="titleId"
+      [attr.aria-describedby]="titleId + '-text'"
       [routerLink]="['/signs', ayah().slug]"
       [queryParams]="fromJourney() ? { path: 'journey' } : undefined"
     >
-      <div class="art">
-        <img
-          [src]="artSmallSrc(ayah().art)"
-          [attr.srcset]="artSrcset(ayah().art)"
-          sizes="(max-width: 640px) 100vw, 420px"
-          alt=""
-          loading="lazy"
-          decoding="async"
-          width="640"
-          height="400"
-        />
-        @if (step(); as step) {
-          <span class="step">{{ language.number(step) }}</span>
-        }
-        @if (isRead()) {
-          <span class="read" [attr.title]="t().isRead">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
-            <span class="visually-hidden">{{ t().isRead }}</span>
-          </span>
-        }
-      </div>
+      @if (look() === 'art') {
+        <div class="art">
+          <img
+            [src]="artSmallSrc(ayah().art)"
+            [attr.srcset]="artSrcset(ayah().art)"
+            sizes="(max-width: 640px) 100vw, 420px"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="400"
+          />
+          @if (step(); as step) {
+            <span class="step">{{ language.number(step) }}</span>
+          }
+          @if (isRead()) {
+            <span class="read" [attr.title]="t().isRead">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+              <span class="visually-hidden">{{ t().isRead }}</span>
+            </span>
+          }
+        </div>
+      }
       <div class="body">
         <div class="meta">
           <span class="chips">
             @if (category(); as category) {
               <span class="chip">{{ language.pick(category.title) }}</span>
             }
-            @if (ayah().type === 'reflection') {
+            @if (ayah().type === 'reflection' && look() === 'art') {
               <span class="chip reflection" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
             }
           </span>
-          <span class="time">{{ t().minutes(minutes()) }}</span>
+          <span class="time">
+            @if (look() === 'verse' && isRead()) {
+              <span class="read-mark" [attr.title]="t().isRead">✓<span class="visually-hidden">{{ t().isRead }}</span></span>
+            }
+            {{ t().minutes(minutes()) }}
+          </span>
         </div>
-        <h3>{{ language.pick(ayah().title) }}</h3>
-        <p>{{ language.pick(ayah().summary) }}</p>
+        @if (look() === 'verse' && ayah().evidence[0]; as e) {
+          <blockquote class="verse" lang="ar" dir="rtl" [class.quran]="e.kind === 'quran'">
+            @if (e.kind === 'quran') {
+              ﴿{{ e.text }}﴾
+            } @else {
+              «{{ e.text }}»
+            }
+          </blockquote>
+          @if (!language.isArabic()) {
+            <p class="verse-meaning">{{ language.pick(e.meaning) }}</p>
+          }
+          <p class="verse-ref">{{ language.pick(e.ref) }}</p>
+        }
+        <h3 [id]="titleId">{{ language.pick(ayah().title) }}</h3>
+        <p [id]="titleId + '-text'">{{ language.pick(look() === 'verse' ? ayah().hook : ayah().summary) }}</p>
       </div>
     </a>
   `,
@@ -177,15 +207,60 @@ import { readingMinutes } from '../core/utils/reading-time';
       font-size: 0.98rem;
       line-height: 1.75;
     }
+
+    // Signs for reflection: no picture; the verse or hadith leads, the title follows it.
+    .verse-card {
+      .body {
+        gap: 0.5rem;
+        padding-block-start: 1.25rem;
+      }
+
+      h3 {
+        margin: 0.35rem 0 0;
+        font-size: 1.15rem;
+      }
+    }
+
+    .verse {
+      margin: 0.2rem 0 0;
+      color: var(--verse);
+      font-size: 1.05rem;
+      line-height: 2;
+
+      &.quran {
+        font-size: 1.3rem;
+        line-height: 2.3;
+      }
+    }
+
+    .verse-meaning {
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .verse-ref {
+      font-size: 0.82rem;
+    }
+
+    .read-mark {
+      margin-inline-end: 0.4rem;
+      color: var(--science);
+      font-weight: 700;
+    }
   `,
 })
 export class AyahCard {
   readonly ayah = input.required<Ayah>();
   /** Shows its number on the journey, and keeps the journey's order on its page. */
   readonly fromJourney = input(false);
+  /** `art`: led by its picture. `verse`: led by its verse or hadith, for the signs for reflection. */
+  readonly look = input<'art' | 'verse'>('art');
 
   protected readonly language = inject(LanguageService);
   protected readonly t = this.language.t;
+  /** The link is named by the title alone, and described by the summary or question under it. */
+  protected readonly titleId = `card-title-${nextId++}`;
   private readonly content = inject(ContentService);
   private readonly reading = inject(ReadingService);
 

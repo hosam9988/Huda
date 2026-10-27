@@ -76,8 +76,9 @@ export interface Ayah {
   nowLabel?: 'history';
   /**
    * `reflection`: a sign to reflect on. What it says is true and plainly meant, but people already
-   * knew it when it was revealed, so it is not offered as i'jaz. It carries the «للتفكر» badge and
-   * comes after its field's other signs.
+   * knew it when it was revealed, so it is not offered as i'jaz. It is listed under «علامات تُظهر عظمة
+   * الخالق», after every miracle, its card led by its verse or hadith; its own page and the sign of
+   * the day carry the «للتفكر» badge.
    */
   type?: 'reflection';
   /** One large figure for the page, e.g. «١٣٠٠ عام» "between the verse and Hubble". */
