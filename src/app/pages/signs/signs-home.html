@@ -33,17 +33,6 @@
         <cite>{{ language.isArabic() ? 'فصلت: ٥٣' : 'Fussilat 41:53' }}</cite>
       </blockquote>
       <p class="intro">{{ t().heroIntro }}</p>
-      <div class="actions">
-        @if (content.journey()[0]; as first) {
-          <a class="btn solid" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
-            {{ t().startJourney }}
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow">
-              <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </a>
-        }
-        <a class="btn" routerLink="/signs" fragment="all">{{ t().browseAll }}</a>
-      </div>
       @if (stats().signs) {
         <dl class="stats">
           <div>
@@ -162,6 +151,7 @@
 
   <!-- The journey for non-Muslims and readers new to Islam: folded until the reader opens it. -->
   <section class="container section journey" id="journey">
+    <app-ornament class="journey-ornament" />
     <details class="panel journey-fold" #fold [open]="journeyOpen()" (toggle)="journeyOpen.set(fold.open)" appReveal>
       <summary>
         <h2>{{ t().journeyTitle }}</h2>
@@ -182,56 +172,19 @@
     </details>
   </section>
 
-  <!-- The miracles, with the filter and search that also apply to the signs for reflection below. -->
+  <!-- The miracles, with their own field filter and search. -->
   <section class="container section" id="all">
     <header class="section-head" appReveal>
       <app-ornament />
       <h2 tabindex="-1">{{ t().miraclesTitle }}</h2>
       <p>{{ t().miraclesIntro }}</p>
     </header>
-
-    <div class="tools">
-      <div class="filters" role="group" [attr.aria-label]="t().filterLabel">
-        <button type="button" class="filter" [attr.aria-pressed]="filter() === null" (click)="filter.set(null)">
-          {{ t().filterAll }}
-        </button>
-        @for (category of content.categories(); track category.id) {
-          <button
-            type="button"
-            class="filter"
-            [attr.aria-pressed]="filter() === category.id"
-            (click)="filter.set(filter() === category.id ? null : category.id)"
-          >
-            {{ language.pick(category.title) }}
-          </button>
-        }
-      </div>
-      <label class="search">
-        <span class="visually-hidden">{{ t().searchPlaceholder }}</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2" />
-          <path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-        </svg>
-        <input
-          type="search"
-          [placeholder]="t().searchPlaceholder"
-          [value]="query()"
-          (input)="query.set($any($event.target).value)"
-        />
-      </label>
-    </div>
-
-    @if (miracles().length) {
-      <ul class="grid">
-        @for (ayah of miracles(); track ayah.slug) {
-          <li><app-ayah-card [ayah]="ayah" /></li>
-        }
-      </ul>
-    } @else if (reflections().length) {
-      <p class="status"><a routerLink="/signs" fragment="reflection">{{ t().noMiraclesSeeBelow }}</a></p>
-    } @else {
-      <p class="status">{{ t().noResults }}</p>
-    }
+    <app-sign-list
+      [signs]="miracleSigns()"
+      [state]="miracleList"
+      [name]="t().miraclesTitle"
+      [placeholder]="t().searchPlaceholder"
+    />
   </section>
 
   <!-- The signs for reflection: true and plain, but known when revealed, so not offered as miracles. -->
@@ -241,16 +194,13 @@
       <h2 tabindex="-1">{{ t().reflectionTitle }}</h2>
       <p>{{ t().reflectionIntro }}</p>
     </header>
-
-    @if (reflections().length) {
-      <ul class="verses">
-        @for (ayah of reflections(); track ayah.slug) {
-          <li><app-ayah-card [ayah]="ayah" look="verse" /></li>
-        }
-      </ul>
-    } @else {
-      <p class="status">{{ miracles().length ? t().noReflection : t().noResults }}</p>
-    }
+    <app-sign-list
+      [signs]="reflectionSigns()"
+      [state]="reflectionList"
+      [name]="t().reflectionTitle"
+      [placeholder]="t().searchReflectionPlaceholder"
+      look="verse"
+    />
   </section>
 
   <!-- Progress. -->

@@ -19,26 +19,26 @@ import { LanguageService } from '../../core/services/language.service';
 import { ReadingService } from '../../core/services/reading.service';
 import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
-import { matchesQuery } from '../../core/utils/search';
 import { AyahCard } from '../../shared/ayah-card';
 import { Ornament } from '../../shared/ornament';
 import { ProgressRing } from '../../shared/progress-ring';
 import { Reveal } from '../../shared/reveal';
+import { listState, resetList, SignList } from './sign-list';
 
 // Back and Forward rebuild this page, and the router restores the scroll position the reader left.
 // That position belongs to the page as it was then, so what changes its height lives out here:
 /** Whether the journey is open, kept for the whole visit. */
 const journeyOpen = signal(false);
-/** The field filter and the search, kept while Back/Forward rebuild the page. */
-const filter = signal<CategoryId | null>(null);
-const query = signal('');
+/** Each list's field filter, search and cards shown on a phone, kept while Back/Forward rebuild the page. */
+const miracleList = listState();
+const reflectionList = listState();
 /** The sign the continue card offered when the page was last reached by a link. */
 let continueSlug: string | undefined;
 
 /** The front page of the I'jaz section, «سنريهم آياتنا»: the fields, the folded journey, the miracles and the signs for reflection. */
 @Component({
   selector: 'app-signs-home',
-  imports: [RouterLink, AyahCard, Ornament, ProgressRing, Reveal],
+  imports: [RouterLink, AyahCard, Ornament, ProgressRing, Reveal, SignList],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signs-home.html',
   styleUrl: './signs-home.scss',
@@ -54,21 +54,16 @@ export class SignsHome {
   protected readonly artSrc = artSrc;
   protected readonly artSmallSrc = artSmallSrc;
   protected readonly artSrcset = artSrcset;
-  protected readonly query = query;
-  protected readonly filter = filter;
   protected readonly confirmingReset = signal(false);
   /** The journey stays folded until the reader opens it, or arrives by a link to `#journey`. */
   protected readonly journeyOpen = journeyOpen;
   private readonly fragment = toSignal(inject(ActivatedRoute).fragment);
 
-  /** The field filter and the search apply to both lists. */
-  private readonly shown = computed(() => {
-    const filter = this.filter();
-    const query = this.query();
-    return this.content.ordered().filter((a) => (!filter || a.category === filter) && matchesQuery(a, query));
-  });
-  protected readonly miracles = computed(() => this.shown().filter((a) => a.type !== 'reflection'));
-  protected readonly reflections = computed(() => this.shown().filter((a) => a.type === 'reflection'));
+  /** The two lists, each with its own filter and search. */
+  protected readonly miracleList = miracleList;
+  protected readonly reflectionList = reflectionList;
+  protected readonly miracleSigns = computed(() => this.content.ordered().filter((a) => a.type !== 'reflection'));
+  protected readonly reflectionSigns = computed(() => this.content.ordered().filter((a) => a.type === 'reflection'));
 
   protected readonly stats = computed(() => ({
     signs: this.content.ayat().length,
@@ -107,8 +102,8 @@ export class SignsHome {
     // ("popstate") return to the page as the reader left it.
     let trigger = router.currentNavigation()?.trigger;
     if (trigger !== 'popstate') {
-      filter.set(null);
-      query.set('');
+      resetList(miracleList);
+      resetList(reflectionList);
       const place = this.reading.place();
       continueSlug = place && !this.reading.isRead(place.slug) ? place.slug : undefined;
     }
@@ -127,8 +122,7 @@ export class SignsHome {
     // The router scrolls to #journey, #all or #reflection once, a frame after navigating. Arriving
     // before ayat.json has loaded (a fresh load, or from /method, /next or /names), those sections
     // aren't there yet, so scroll once they are. Jump rather than glide: a smooth scroll this long
-    // outlasts the web fonts' swap and ends at a stale offset, so jump again once they are in,
-    // unless the reader has scrolled meanwhile.
+    // outlasts the web fonts' swap and ends at a stale offset.
     if (!this.content.ayat().length) {
       let pending = true;
       effect(() => {
@@ -140,8 +134,23 @@ export class SignsHome {
           () => {
             const go = () => this.document.getElementById(fragment)?.scrollIntoView({ block: 'start', behavior: 'instant' });
             go();
-            const y = scrollY;
-            this.document.fonts?.ready.then(() => scrollY === y && go());
+            // WebKit may lay the page out before its stylesheets arrive. Jump again once they and their
+            // fonts are in, unless the reader has touched the page: scroll anchoring moves scrollY on
+            // its own, so scrollY can't tell.
+            const touch = new AbortController();
+            let touched = false;
+            for (const type of ['wheel', 'touchstart', 'keydown', 'pointerdown'])
+              addEventListener(type, () => (touched = true), { capture: true, passive: true, signal: touch.signal });
+            const loaded =
+              this.document.readyState === 'complete'
+                ? Promise.resolve()
+                : new Promise((done) => addEventListener('load', done, { once: true }));
+            loaded
+              .then(() => this.document.fonts?.ready)
+              .then(() => {
+                touch.abort();
+                if (!touched) go();
+              });
           },
           { injector: this.injector },
         );
@@ -162,14 +171,17 @@ export class SignsHome {
   }
 
   /**
-   * From a field's card: show only its signs, then scroll down to them (to its signs for reflection
-   * if it has no miracles) and move the focus to that list's heading.
+   * From a field's card: set both lists to that field (a list without it shows all its fields), then
+   * scroll down to its miracles, or to its signs for reflection if it has no miracles, and move the
+   * focus to that list's heading.
    */
   protected showCategory(id: CategoryId): void {
-    this.filter.set(id);
-    this.query.set('');
+    resetList(miracleList);
+    resetList(reflectionList);
+    if (this.miraclesIn(id)) miracleList.filter.set(id);
+    if (this.reflectionIn(id)) reflectionList.filter.set(id);
     const list = this.miraclesIn(id) ? 'all' : 'reflection';
-    // Until the lists re-render, #reflection still sits below every miracle.
+    // Until the lists re-render, #reflection still sits under the miracles shown before the click.
     afterNextRender(
       () => {
         const section = this.document.getElementById(list);

@@ -27,7 +27,10 @@ that more components can join it later.
     Creator's greatness, 27). The second holds the signs for reflection: what they say is true and plain,
     but people already knew it when it was revealed, so they are not offered as i'jaz. They come
     after the miracles, and their cards lead with the verse or hadith. On their own pages and as the sign
-    of the day they carry the «للتفكر» badge. The field filter and the search apply to both lists.
+    of the day they carry the «للتفكر» badge. Each list has its own field filter, with only the fields
+    it has signs in, and its own search. A field's card sets both lists to that field (a list with no
+    signs in it shows all its fields) and clears both searches. On a phone each list shows six cards,
+    and «اعرض المزيد» ("Show more") adds six more.
   - **"Non-Muslim or new to Islam?":** a 7-stop journey through the signs, ending with "What next?".
     It is folded just above «المعجزات» (Miracles) until the reader opens it, or follows a link to
     `/signs#journey` (the header's "Start here" and the footer).

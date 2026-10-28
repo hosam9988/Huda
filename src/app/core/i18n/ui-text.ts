@@ -18,7 +18,6 @@ export interface UiText {
   languageLabel: string;
   heroEyebrow: string;
   heroIntro: string;
-  startJourney: string;
   browseAll: string;
   /** The figures under the hero: «٣٨ معجزة · ٢٧ علامة للتفكر · ٩ مجالات · ٢٨٢ مصدرًا». */
   statMiracles: string;
@@ -42,15 +41,17 @@ export interface UiText {
   miraclesIntro: string;
   reflectionTitle: string;
   reflectionIntro: string;
-  /** One list is empty but the other isn't: say where the matches are. */
-  noMiraclesSeeBelow: string;
-  noReflection: string;
+  /** Under a list on a phone: «اعرض المزيد (بقي ٣٢)». */
+  showMore: (left: string) => string;
   filterAll: string;
   filterLabel: string;
   /** The badge on a sign for reflection, and what it means (its tooltip). */
   reflectionBadge: string;
   reflectionHint: string;
+  /** Each list's search box: its name for screen readers, from the list's title, and its examples. */
+  searchLabel: (list: string) => string;
   searchPlaceholder: string;
+  searchReflectionPlaceholder: string;
   noResults: string;
   loading: string;
   loadError: string;
@@ -190,7 +191,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
     heroEyebrow: 'آياتٌ في الآفاق وفي الأنفس',
     heroIntro:
       'نزل القرآن قبل أكثر من أربعة عشر قرنًا على نبيٍّ أُمّي، في صحراء لا مختبرات فيها ولا مراصد. ثم جاء العلم الحديث فكشف عن حقائق في الكون والأرض والبحار والإنسان، تتسق مع ما جاء فيه. هنا تقرأ هذه الآيات (المعجزات) واحدةً واحدة: النص، وما كان يعرفه الناس يومها، وما كشفه العلم، ومصادره الموثّقة — بأمانةٍ ودون مبالغة.',
-    startJourney: 'ابدأ الرحلة',
     browseAll: 'تصفّح كل الآيات',
     statMiracles: 'معجزة',
     statReflection: 'علامة للتفكر',
@@ -216,13 +216,14 @@ export const UI_TEXT: Record<Lang, UiText> = {
     reflectionTitle: 'علامات تُظهر عظمة الخالق',
     reflectionIntro:
       'في خلق الكون والإنسان، وفي حكمة شرعه وسننه في الأمم. ليست إعجازًا: كان الناس يعرفونها يوم نزل الوحي، وهو يدعونا إلى التفكر فيها.',
-    noMiraclesSeeBelow: 'لا توجد معجزات مطابقة؛ النتائج في «علامات تُظهر عظمة الخالق» أدناه.',
-    noReflection: 'لا توجد علامات للتفكر مطابقة.',
+    showMore: (left) => `اعرض المزيد (بقي ${left})`,
     filterAll: 'الكل',
     filterLabel: 'تصفية حسب المجال',
     reflectionBadge: 'للتفكر',
     reflectionHint: 'حقيقةٌ كان الناس يعرفونها يوم نزلت، نعرضها للتفكر لا على أنها إعجاز.',
+    searchLabel: (list) => `ابحث في ${list}`,
     searchPlaceholder: 'ابحث: الجبال، الجنين، البحر…',
+    searchReflectionPlaceholder: 'ابحث: الشمس، النجوم، الطير…',
     noResults: 'لا توجد نتائج مطابقة.',
     loading: 'جارٍ التحميل…',
     loadError: 'تعذّر تحميل المحتوى. تأكد من الإنترنت ثم حاول مرة أخرى.',
@@ -337,7 +338,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
     heroEyebrow: 'Signs on the horizons and within themselves',
     heroIntro:
       'The Qur’an was revealed more than fourteen centuries ago to an unlettered Prophet, in a desert without laboratories or observatories. Modern science has since uncovered facts about the universe, the earth, the seas and the human body that sit remarkably well with what it says. Here you can read them one at a time: the text, what people knew back then, what science found, and the sources — honestly, and without exaggeration.',
-    startJourney: 'Start the journey',
     browseAll: 'Browse all the signs',
     statMiracles: 'miracles',
     statReflection: 'signs for reflection',
@@ -366,13 +366,14 @@ export const UI_TEXT: Record<Lang, UiText> = {
     reflectionTitle: 'Signs that show the Creator’s greatness',
     reflectionIntro:
       'In the making of the universe and of people, in the wisdom of His law, and in His ways with nations. They are not miracles: people already knew them when the revelation came, and it calls us to reflect on them.',
-    noMiraclesSeeBelow: 'No miracles match; the matches are below, in “Signs that show the Creator’s greatness”.',
-    noReflection: 'No signs for reflection match.',
+    showMore: (left) => `Show more (${left} left)`,
     filterAll: 'All',
     filterLabel: 'Filter by field',
     reflectionBadge: 'For reflection',
     reflectionHint: 'Something people already knew when it was revealed, shown here to reflect on, not as a miracle.',
+    searchLabel: (list) => `Search: ${list}`,
     searchPlaceholder: 'Search: mountains, embryo, sea…',
+    searchReflectionPlaceholder: 'Search: sun, stars, birds…',
     noResults: 'Nothing matches.',
     loading: 'Loading…',
     loadError: 'Could not load the content. Check your connection and try again.',
