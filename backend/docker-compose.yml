@@ -1,0 +1,80 @@
+# The API on one server: PostgreSQL, the API, and Caddy in front of it for HTTPS. See README.md, "Deploying".
+#
+#   cp .env.example .env          then fill it in
+#   docker compose up -d db
+#   docker compose run --rm migrator
+#   docker compose up -d
+#
+# After the site's data changes: git pull, then `docker compose run --rm migrator` again. Images are served as
+# they are in ../public/images, so they need only the pull.
+
+name: huda
+
+services:
+  db:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: huda
+      POSTGRES_USER: huda
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    # From 18 on, the image keeps its data in a folder per major version under /var/lib/postgresql, and the
+    # volume goes there, not at .../data.
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      # Over TCP: on the first start, a temporary server that listens only on the socket creates the database.
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "huda", "-d", "huda"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # Applies the schema and imports ../public/data; run it, don't leave it up.
+  migrator:
+    build:
+      context: .
+      target: migrator
+    profiles: [tools]
+    environment:
+      ConnectionStrings__Huda: Host=db;Database=huda;Username=huda;Password=${POSTGRES_PASSWORD}
+    volumes:
+      - ../public/data:/site/data:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+  api:
+    build:
+      context: .
+      target: api
+    environment:
+      ConnectionStrings__Huda: Host=db;Database=huda;Username=huda;Password=${POSTGRES_PASSWORD}
+      Cors__Origins__0: ${SITE_ORIGIN:-https://hosam9988.github.io}
+    # The site's images, which the API serves at /img.
+    volumes:
+      - ../public/images:/site/images:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    environment:
+      API_DOMAIN: ${API_DOMAIN:?Set API_DOMAIN in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  caddy-data:
+  caddy-config:

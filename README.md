@@ -152,6 +152,12 @@ Every push to `main` checks the content, builds the app and publishes it to GitH
 repository's name, so name the repository `huda` for the address above. Before the first
 deploy, set the repo's **Settings → Pages → Source** to **GitHub Actions**.
 
+## The API
+
+[`backend/`](backend/README.md) holds an API for the same content. It runs on ASP.NET Core and
+PostgreSQL. Its migrator imports `public/data` into the database, and the API serves the images
+from `public/images` as they are. The site doesn't use it yet: it still reads `public/data` itself.
+
 ## Editing the content
 
 The content is in two files under `public/data/`. Run `npm run check:content` after editing either:
@@ -229,6 +235,9 @@ end-of-verse mark: `…يَلۡتَقِيَانِ ۝١٩ بَيۡنَهُمَا�
 3. Add its key next to `ar` and `en` in the content. Any text not translated yet falls back to
    English, then Arabic.
 4. Update the `ayat.lang` check in `src/index.html` so the page opens in the right direction.
+5. Add it to `LocalizedText` in
+   [`backend/src/Huda.Domain/LocalizedText.cs`](backend/src/Huda.Domain/LocalizedText.cs), or the
+   backend's import refuses the new key.
 
 The saved settings (`ayat.lang`, `ayat.theme`, `ayat.textScale`) keep the first site's `ayat.`
 prefix. Both sites are served from the same `github.io` origin, so readers keep their settings.
@@ -259,6 +268,7 @@ public/images/                 the images
 scripts/check-content.mjs      the content checker
 scripts/check-layout.js        the layout check, run in the browser
 scripts/check-safari.mjs       the gold titles in Safari's engine
+backend/                       the API, which the site doesn't use yet (backend/README.md)
 ```
 
 Built with Angular 22.

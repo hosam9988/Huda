@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!-- The outer layer: HTTP. Its controllers call the use cases; Program.cs is the composition
+       root, the one place that also knows the infrastructure. -->
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Huda.Application\Huda.Application.csproj" />
+    <ProjectReference Include="..\Huda.Infrastructure\Huda.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

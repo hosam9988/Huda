@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- The outer layer's adapters: the repositories on PostgreSQL through EF Core, and the reader of the site's
+       data files. They implement the inner layers' interfaces; nothing inside knows them. -->
+
+  <ItemGroup>
+    <PackageReference Include="EFCore.NamingConventions" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Huda.Application\Huda.Application.csproj" />
+  </ItemGroup>
+
+</Project>

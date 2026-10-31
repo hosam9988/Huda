@@ -1,0 +1,40 @@
+@api = http://localhost:5000
+
+### Every field, with its counts
+GET {{api}}/api/categories
+
+### The signs' cards in reading order
+GET {{api}}/api/signs
+
+### The signs for reflection in one field
+GET {{api}}/api/signs?category=cosmos&kind=reflection
+
+### A search, as on the site
+GET {{api}}/api/signs?q=السماء
+
+### The journey for readers new to Islam
+GET {{api}}/api/signs?journey=true
+
+### A sign's page
+GET {{api}}/api/signs/expanding-universe
+
+### A name search: «رحمن» finds «الرَّحْمَٰنُ»
+GET {{api}}/api/names?q=رحمن
+
+### A name's page
+GET {{api}}/api/names/allah
+
+### ayat.json and names.json, as the site reads them
+GET {{api}}/api/content/signs
+
+###
+GET {{api}}/api/content/names
+
+### An image, and its small copy
+GET {{api}}/img/expansion.webp
+
+###
+GET {{api}}/img/expansion-sm.webp
+
+### Is the database reachable?
+GET {{api}}/health

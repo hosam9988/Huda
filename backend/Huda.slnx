@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Huda.Api/Huda.Api.csproj" />
+    <Project Path="src/Huda.Application/Huda.Application.csproj" />
+    <Project Path="src/Huda.Domain/Huda.Domain.csproj" />
+    <Project Path="src/Huda.Infrastructure/Huda.Infrastructure.csproj" />
+    <Project Path="src/Huda.Migrator/Huda.Migrator.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Huda.IntegrationTests/Huda.IntegrationTests.csproj" />
+    <Project Path="tests/Huda.UnitTests/Huda.UnitTests.csproj" />
+  </Folder>
+</Solution>

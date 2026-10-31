@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- A security advisory on a package fails the build in CI, but only warns elsewhere, so that one published
+         for a package we use doesn't stop the server from building its Docker images. -->
+    <WarningsNotAsErrors Condition="'$(CI)' != 'true'">$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
+    <!-- No culture-dependent text handling anywhere, so the apps also run on the small chiseled images, which have no ICU. -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- The XML comments of every project describe the API in its OpenAPI document: the controllers', and those
+         of the entities, filters and cards they return. Members and parameters that explain themselves have none. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;CS1573</NoWarn>
+  </PropertyGroup>
+</Project>

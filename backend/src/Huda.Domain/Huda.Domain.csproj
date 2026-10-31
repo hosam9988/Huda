@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- The centre: the content's entities and values, their rules, the search and the reading order, and the
+       repositories' interfaces. It depends on nothing but .NET itself. -->
+
+</Project>

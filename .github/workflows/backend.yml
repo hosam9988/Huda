@@ -1,0 +1,47 @@
+# Builds the backend, runs its tests against PostgreSQL and builds its Docker images, whenever the backend or
+# the site's data (which its tests import) changes.
+name: Backend
+
+on:
+  push:
+    branches: [main]
+    paths: ['backend/**', 'public/data/**', 'public/images/**', '.github/workflows/backend.yml']
+  pull_request:
+    paths: ['backend/**', 'public/data/**', 'public/images/**', '.github/workflows/backend.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18-alpine
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      HUDA_TEST_DB: Host=localhost;Username=postgres;Password=postgres
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - run: dotnet build Huda.slnx -c Release
+
+      - run: dotnet test --solution Huda.slnx -c Release --no-build
+
+      - run: docker build --target api -t huda-api . && docker build --target migrator -t huda-migrator .
