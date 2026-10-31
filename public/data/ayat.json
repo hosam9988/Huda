@@ -4183,6 +4183,154 @@
       ]
     },
     {
+      "slug": "never-create-a-fly",
+      "category": "life",
+      "art": "lab-grains",
+      "type": "reflection",
+      "title": {
+        "ar": "لن يخلقوا ذبابًا",
+        "en": "They Will Never Create a Fly"
+      },
+      "hook": {
+        "ar": "تحدّى القرآنُ كلَّ ما يُعبد من دون الله أن يخلق ذبابة: فكم في هذه الحشرة الصغيرة من إتقان؟",
+        "en": "The Qur’an challenged everything worshipped besides Allah to create a fly. How much fine workmanship is packed into this small insect?"
+      },
+      "summary": {
+        "ar": "يضرب القرآن مثلًا: كل ما يُعبد من دون الله لن يخلق ذبابًا ولو اجتمع لذلك. وفي سنة ٢٠٢٤م نُشرت خريطةٌ لصلات الخلايا العصبية في دماغٍ كامل لذبابة الفاكهة، فإذا فيه ١٣٩٬٢٥٥ خليةً عصبية.",
+        "en": "The Qur’an gives an example: all that is worshipped besides Allah will never create a fly, even if they all came together for it. In 2024 the wiring diagram of a whole fruit-fly brain was published: it holds 139,255 nerve cells."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "يَٰٓأَيُّهَا ٱلنَّاسُ ضُرِبَ مَثَلࣱ فَٱسۡتَمِعُواْ لَهُۥٓۚ إِنَّ ٱلَّذِينَ تَدۡعُونَ مِن دُونِ ٱللَّهِ لَن يَخۡلُقُواْ ذُبَابࣰا وَلَوِ ٱجۡتَمَعُواْ لَهُۥۖ وَإِن يَسۡلُبۡهُمُ ٱلذُّبَابُ شَيۡـࣰٔا لَّا يَسۡتَنقِذُوهُ مِنۡهُۚ ضَعُفَ ٱلطَّالِبُ وَٱلۡمَطۡلُوبُ",
+          "meaning": {
+            "ar": "«ضُرِبَ مَثَلٌ»: لِما يعبده المشركون من دون الله. «وَلَوِ اجْتَمَعُوا لَهُ»: لو اجتمع كل ما يعبدون على خلق ذبابٍ واحد ما قدروا عليه. «لَا يَسْتَنْقِذُوهُ»: لا يستردّوه منه. «الطَّالِبُ وَالْمَطْلُوبُ»: الصنم والذباب، وهو اختيار الطبري، وقيل: العابد والصنم (ابن كثير).",
+            "en": "“O people, an example is presented, so listen to it. Indeed, those you invoke besides Allah will never create [as much as] a fly, even if they gathered together for that purpose. And if the fly should steal away from them a [tiny] thing, they could not recover it from him. Weak are the pursuer and pursued.”"
+          },
+          "ref": {
+            "ar": "الحج: ٧٣",
+            "en": "Al-Hajj 22:73"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "قَالَ اللهُ عَزَّ وَجَلَّ: وَمَنْ أَظْلَمُ مِمَّنْ ذَهَبَ يَخْلُقُ كَخَلْقِي، فَلْيَخْلُقُوا ذَرَّةً أَوْ لِيَخْلُقُوا حَبَّةً أَوْ شَعِيرَةً",
+          "narrator": {
+            "ar": "عن أبي هريرة رضي الله عنه",
+            "en": "Narrated by Abu Hurayrah"
+          },
+          "meaning": {
+            "ar": "حديثٌ قدسي، يرويه النبي ﷺ عن ربه. «ذَهَبَ»: قصد. «ذَرَّةً»: نملة. «حَبَّةً»: حبة قمح، أو هي أعمّ. قال ابن حجر: المراد إيجاد حبةٍ على الحقيقة لا تصويرها، والغرض تعجيزهم.",
+            "en": "“Allah, Mighty and Majestic, said: ‘And who does greater wrong than one who sets out to create as I create? Then let them create an ant, or let them create a grain, or a grain of barley.’”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٧٥٥٩)، وبنحوه في صحيح مسلم (٢١١١)",
+            "en": "Sahih al-Bukhari 7559; similar in Sahih Muslim 2111"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان مشركو العرب يعبدون الأصنام، فضرب القرآن لها مثلًا: لو اجتمعت كلها على خلق ذبابٍ واحد ما قدرت عليه، بل لو سلبها الذباب شيئًا من الطيب الذي عليها ما استطاعت أن تستنقذه منه، كما شرح ابن كثير، ثم قال: «والذباب من أضعف مخلوقات الله وأحقرها».",
+          "en": "The pagan Arabs worshipped idols, and the Qur’an gave them an example: if all those idols came together to create a single fly, they could not; indeed, as Ibn Kathir explains, if a fly carried off some of the perfume that was on them, they could not get it back. “And the fly,” he adds, “is among the weakest and lowliest of Allah’s creatures.”"
+        },
+        {
+          "ar": "وقال ابن كثير في الآية التالية إنهم «ما عرفوا قدر الله وعظمته حين عبدوا معه غيره من هذه التي لا تقاوم الذباب لضعفها وعجزها». وذكر عند آية الذباب حديثًا قدسيًّا في الصحيحين فيه التحدي نفسه، وفي بعض رواياته أن أبا هريرة رضي الله عنه حدّث به حين رأى مصوِّرًا يصوِّر في دارٍ بالمدينة (صحيح البخاري ٥٩٥٣، وصحيح مسلم ٢١١١).",
+          "en": "On the verse that follows, Ibn Kathir says the pagans “did not know Allah’s worth and greatness when they worshipped beside Him things that cannot stand up to a fly, for their weakness and helplessness.” At the verse of the fly he cites a hadith qudsi — words of Allah related by the Prophet ﷺ — that is found in the two Sahihs and carries the same challenge; in some of its narrations Abu Hurayrah related it when he saw a man making images in a house in Medina (Sahih al-Bukhari 5953; Sahih Muslim 2111)."
+        }
+      ],
+      "now": [
+        {
+          "ar": "في أكتوبر ٢٠٢٤م نشرت مجلة «نيتشر» خريطةً لصلات الخلايا العصبية في دماغٍ كامل لأنثى بالغة من ذباب الفاكهة: ١٣٩٬٢٥٥ خليةً عصبية، يصل بينها نحو ٥٠ مليون مشبكٍ كيميائي. وقدّر فريق «فلاي واير» الذي أنجزها أن إعادة بناء هذا الدماغ رقميًّا احتاجت من التدقيق اليدوي إلى ما يعادل عمل شخصٍ واحد نحو ٣٣ سنة، وشارك فيه متطوعون من أنحاء العالم.",
+          "en": "In October 2024 the journal Nature published a wiring diagram of a whole brain, that of an adult female fruit fly: 139,255 neurons, joined by some 50 million chemical synapses. The FlyWire team behind it estimates that reconstructing the brain took around 33 person-years of manual proofreading, with contributions from citizen scientists around the world."
+        },
+        {
+          "ar": "وفي سنة ٢٠١٦م أعلن معهد جيه كريغ فنتر عن خليةٍ صناعيةٍ «دنيا»، لكنها لم تُبنَ من الصفر: فقد صمّم الباحثون مجينها وركّبوه كيميائيًّا، ثم زرعوه في خليةٍ بكتيريةٍ موجودة، مكانَ مادتها الوراثية. وفي هذا المجين ٤٧٣ جينًا فقط، ومع ذلك لم يستطيعوا يومئذٍ، رغم البحث المكثّف، أن ينسبوا إلى ١٤٩ منها وظيفةً حيويةً محددة.",
+          "en": "In 2016 the J. Craig Venter Institute announced a “minimal” synthetic cell, but it was not built from scratch: the researchers designed its genome and synthesised it chemically, then transplanted it into an existing bacterial cell, in place of that cell’s own genetic material. That genome holds just 473 genes, yet at the time, despite intensive study, they could not assign a specific biological function to 149 of them."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١٣٩٬٢٥٥",
+          "en": "139,255"
+        },
+        "label": {
+          "ar": "خليةً عصبية في دماغ أنثى بالغة من ذباب الفاكهة، نُشرت خريطة صِلاتها سنة ٢٠٢٤م",
+          "en": "neurons in an adult female fruit fly’s brain, whose wiring diagram was published in 2024"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الحج",
+            "en": "The Qur’an is revealed, including surah Al-Hajj"
+          }
+        },
+        {
+          "year": "2016",
+          "text": {
+            "ar": "معهد جيه كريغ فنتر يعلن عن خليةٍ صناعيةٍ «دنيا»: ٤٧٣ جينًا، منها ١٤٩ لم تُعرف وظيفتها",
+            "en": "The J. Craig Venter Institute announces a “minimal” synthetic cell: 473 genes, 149 of them of unknown function"
+          }
+        },
+        {
+          "year": "2024",
+          "text": {
+            "ar": "مجلة «نيتشر» تنشر خريطة صلات دماغٍ كامل لأنثى بالغة من ذباب الفاكهة: ١٣٩٬٢٥٥ خليةً عصبية",
+            "en": "Nature publishes the wiring diagram of a whole adult female fruit-fly brain: 139,255 neurons"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "ذبابةٌ نطردها بحركة يد، احتاج رسمُ صلات دماغها وحده إلى سنين من عمل العلماء والمتطوعين، فكيف بخلقها؟ ﴿مَا قَدَرُواْ ٱللَّهَ حَقَّ قَدۡرِهِۦٓۚ إِنَّ ٱللَّهَ لَقَوِيٌّ عَزِيزٌ﴾",
+        "en": "A fly we wave away with one hand has a brain whose wiring took years of work by scientists and volunteers just to map — let alone to make. “They have not appraised Allah with true appraisal. Indeed, Allah is Powerful and Exalted in Might.”"
+      },
+      "caution": {
+        "ar": "هذه آيةٌ للتفكر، لا نعرضها إعجازًا علميًّا: فعجز الأصنام عن الخلق كان معلومًا لمن خوطبوا بالآية، وهي تتحدى ما يُعبد من دون الله، لا المختبرات. ولا نقول إن العلم أثبت أن البشر لن يصنعوا خليةً حيّةً أبدًا، فعلم الأحياء التخليقي ماضٍ في طريقه؛ وإنما نعرض ما كشفه العلم من إتقانٍ في ذبابة الفاكهة، مثالًا لمخلوقٍ ضُرب به المثل في الضعف. ولا نأخذ بما يُتداول من أن الذباب يهضم ما يأخذه في الحال فلا يمكن استرداده: فالآية تتحدث عن عجز ما يُعبد من دون الله، والمفسرون مثّلوا لها بالطيب الذي على الأصنام. وأما الحديث القدسي فسياقه في الصحيحين إنكار التصوير، وفيه التحدي نفسه.",
+        "en": "This is a sign for reflection, not offered as a scientific miracle: that idols cannot create was known to those the verse addressed, and its challenge is to what is worshipped besides Allah, not to laboratories. We do not say science has shown that humans will never make a living cell; synthetic biology is still moving forward. We show the fine workmanship science has found in the fruit fly, as an example of a creature that is a byword for weakness. Nor do we repeat the popular claim that a fly instantly digests what it takes, so that it can never be recovered: the verse speaks of the helplessness of what is worshipped besides Allah, and the commentators illustrate it with the perfume on the idols. The hadith qudsi’s setting in the two Sahihs is a rebuke of image-making, and the hadith itself carries the same challenge."
+      },
+      "didYouKnow": {
+        "ar": "لو مُدّت فروع الخلايا العصبية في دماغ ذبابة الفاكهة كلها خطًّا واحدًا لبلغ طولها نحو ١٤٩ مترًا.",
+        "en": "Laid end to end, the branches of all the neurons in a fruit fly’s brain would stretch about 149 metres."
+      },
+      "sources": [
+        {
+          "title": "Neuronal wiring diagram of an adult brain (Dorkenwald et al., FlyWire Consortium)",
+          "publisher": "Nature",
+          "year": "2024",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446842/",
+          "kind": "journal"
+        },
+        {
+          "title": "First Minimal Synthetic Bacterial Cell Designed and Constructed by Scientists at Venter Institute and Synthetic Genomics, Inc.",
+          "publisher": "J. Craig Venter Institute",
+          "year": "2016",
+          "url": "https://www.jcvi.org/media-center/first-minimal-synthetic-bacterial-cell-designed-and-constructed-scientists-venter",
+          "kind": "news"
+        },
+        {
+          "title": "Are there any artificial bacteria? (C. Köster)",
+          "publisher": "VAAM (Association for General and Applied Microbiology)",
+          "url": "https://vaam.de/en/microbiology-portal/short-question/are-there-any-artificial-bacteria/",
+          "kind": "university"
+        },
+        {
+          "title": "Ibn Kathir, Tafsir al-Qur’an al-‘Azim (Dar Ibn al-Jawzi ed.) 5/441–442, on Al-Hajj 22:73–74 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1503/3019",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Hajar, Fath al-Bari (Salafiyya ed.) 10/386, on Sahih al-Bukhari 5953 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1673/6147",
+          "kind": "book"
+        }
+      ]
+    },
+    {
       "slug": "stages-of-the-embryo",
       "category": "human",
       "journey": 3,
@@ -6795,22 +6943,22 @@
       ],
       "now": [
         {
-          "ar": "في أبريل ٦٢٢م — العام الذي هاجر فيه النبي ﷺ إلى المدينة — بدأ الإمبراطور هرقل حملته المضادة. وفشل حصار الفرس للقسطنطينية عام ٦٢٦م، ثم هزمهم هرقل هزيمةً حاسمة في معركة نينوى في ديسمبر ٦٢٧م، وخُلع كسرى الثاني، واضطرت فارس إلى الصلح عام ٦٢٨م، ثم أُعيد الصليب إلى القدس عام ٦٣٠م.",
-          "en": "In April 622 — the year the Prophet ﷺ emigrated to Medina — Emperor Heraclius launched his counter-offensive. The Persian siege of Constantinople failed in 626, Heraclius crushed them at the Battle of Nineveh in December 627, Khosrow II was deposed, Persia was forced to make peace in 628, and the Cross was returned to Jerusalem in 630."
+          "ar": "في أبريل ٦٢٢م — العام الذي هاجر فيه النبي ﷺ إلى المدينة — بدأ الإمبراطور هرقل حملته المضادة، وهزم في العام نفسه القائدَ الفارسي شهربراز. وفشل حصار الفرس للقسطنطينية عام ٦٢٦م، ثم هزمهم هرقل هزيمةً حاسمة في معركة نينوى في ديسمبر ٦٢٧م، وخُلع كسرى الثاني، واضطرت فارس إلى الصلح عام ٦٢٨م، ثم أُعيد الصليب إلى القدس عام ٦٣٠م.",
+          "en": "In April 622 — the year the Prophet ﷺ emigrated to Medina — Emperor Heraclius launched his counter-offensive, and that same year he defeated the Persian general Shahrbaraz. The Persians’ siege of Constantinople failed in 626, Heraclius crushed them at the Battle of Nineveh in December 627, Khosrow II was deposed, Persia was forced to make peace in 628, and the Cross was returned to Jerusalem in 630."
         },
         {
-          "ar": "ولم يكن في الأفق ما يبشّر بذلك: فقد كانت الإمبراطورية مفلسة ممزقة، والفرس على أبواب عاصمتها. وقد لاحظ المؤرخ البريطاني إدوارد جيبون أن هذه النبوءة حين قيلت لم يكن شيءٌ أبعد منها عن التحقق.",
-          "en": "Nothing on the horizon promised it: the empire was bankrupt and torn apart, with the Persians at the gates of its capital. The British historian Edward Gibbon observed that when this prophecy was given, no prediction could have seemed further from fulfilment."
+          "ar": "ولم يكن في الأفق ما يبشّر بذلك: فقد كانت الإمبراطورية مفلسة ممزقة، والفرس على أبواب عاصمتها. ومع أن المؤرخ البريطاني إدوارد جيبون يعدّ في حاشيته ما أخبرت به الآيات حدسًا لا نبوءة، فقد كتب: «في الوقت الذي يُقال إن هذا التنبؤ صدر فيه، لم تكن نبوءةٌ أبعد منه عن التحقق، إذ كانت السنوات الاثنتا عشرة الأولى من حكم هرقل تنذر بقرب انحلال الإمبراطورية». ثم كتب عن نصر هرقل سنة ٦٢٢م أنه «أعلن للعالم أن الفرس ليسوا ممن لا يُغلبون».",
+          "en": "Nothing on the horizon promised it: the empire was bankrupt and torn apart, with the Persians at the gates of its capital. The British historian Edward Gibbon, who in a note called the verses’ prediction a conjecture rather than a prophecy, still wrote: “At the time when this prediction is said to have been delivered, no prophecy could be more distant from its accomplishment, since the first twelve years of Heraclius announced the approaching dissolution of the empire.” Of Heraclius’s victory in 622 he wrote that it “declared to the world, that the Persians were not invincible.”"
         }
       ],
       "highlight": {
         "value": {
-          "ar": "٦١٤ ← ٦٢٧",
-          "en": "614 → 627"
+          "ar": "٧–٨ سنين",
+          "en": "7–8 years"
         },
         "label": {
-          "ar": "من سقوط القدس بيد الفرس إلى نصر هرقل الحاسم في نينوى",
-          "en": "from Jerusalem’s fall to the Persians to Heraclius’s decisive victory at Nineveh"
+          "ar": "بين نزول الآيات (نحو ٦١٤–٦١٥م) ونصر هرقل على الفرس سنة ٦٢٢م: في حدود «بضع سنين»",
+          "en": "between the verses (about 614–615) and Heraclius’s victory over the Persians in 622: within the verse’s “three to nine years”"
         }
       },
       "timeline": [
@@ -6835,8 +6983,8 @@
         {
           "year": "622",
           "text": {
-            "ar": "هرقل يبدأ حملته المضادة، وهو عام الهجرة",
-            "en": "Heraclius begins his counter-offensive — the year of the Hijrah"
+            "ar": "هرقل يبدأ حملته المضادة ويهزم القائد الفارسي شهربراز، وذلك في عام الهجرة",
+            "en": "Heraclius begins his counter-offensive and defeats the Persian general Shahrbaraz — the year of the Hijrah"
           }
         },
         {
@@ -6859,8 +7007,8 @@
         "en": "A specific, public prophecy, about something no one controlled, with every sign pointing the other way. Had it failed, it would have stood against the Qur’an forever. It came true."
       },
       "caution": {
-        "ar": "يعتمد تحديد زمن نزول الآيات (نحو ٦١٤–٦١٥م) على الروايات التاريخية، ويختلف المؤرخون في بداية «بضع سنين» ونهايتها بدقة، لكن انتصارات الروم الكبرى بين ٦٢٢ و٦٢٧م تقع في هذا الإطار على أي تقديرٍ معقول. وهناك قراءةٌ شاذة للآية تعكس الغالب والمغلوب، لكن القراءة المتواترة هي المثبتة هنا. وأما تفسير «أدنى الأرض» بأخفض بقعةٍ على اليابسة فهو فهمٌ معاصر، والمعنى المشهور عند المفسرين: أقرب الأرض إلى العرب، ولم تقع المعارك عند البحر الميت نفسه.",
-        "en": "Dating the revelation of these verses (about 614–615) relies on historical reports, and historians differ on exactly where the “few years” begin and end, but the major Roman victories of 622–627 fall within that frame on any reasonable reckoning. There is also a rare, non-canonical reading that reverses who is defeated, but the mass-transmitted reading is the one given here. Reading adnā al-arḍ as “the lowest land on Earth” is a modern interpretation; the well-known meaning among commentators is “the nearest land” to Arabia, and the battles were not fought at the Dead Sea itself."
+        "ar": "يعتمد تحديد زمن نزول الآيات (نحو ٦١٤–٦١٥م) على الروايات التاريخية. و«البضع» ما بين الثلاث والتسع: فنصر هرقل على الفرس سنة ٦٢٢م جاء بعد سبع سنين أو ثمانٍ، في حدوده، أما نصره الحاسم في نينوى سنة ٦٢٧م فجاء بعد اثنتي عشرة سنة أو ثلاث عشرة؛ فالذي وقع في «بضع سنين» هو انقلاب الهزيمة نصرًا، ثم استغرق حسم الحرب سنين أخرى. وهناك قراءةٌ شاذة للآية تعكس الغالب والمغلوب، لكن القراءة المتواترة هي المثبتة هنا. وأما تفسير «أدنى الأرض» بأخفض بقعةٍ على اليابسة فهو فهمٌ معاصر، والمعنى المشهور عند المفسرين: أقرب الأرض إلى العرب، ولم تقع المعارك عند البحر الميت نفسه.",
+        "en": "Dating the revelation of these verses (about 614–615) relies on historical reports. The verse’s word biḍ‘ means three to nine: Heraclius’s victory over the Persians in 622 came seven or eight years later, within that span, while his decisive victory at Nineveh in 627 came twelve or thirteen years after the verses. What came within the “three to nine years” was the turn from defeat to victory; winning the war took some years more. There is also a rare, non-canonical reading that reverses who is defeated, but the mass-transmitted reading is the one given here. Reading adnā al-arḍ as “the lowest land on Earth” is a modern interpretation; the well-known meaning among commentators is “the nearest land” to Arabia, and the battles were not fought at the Dead Sea itself."
       },
       "didYouKnow": {
         "ar": "كلمة «أدنى» في العربية تعني الأقرب، وتعني الأخفض أيضًا. وبلاد الشام التي هُزم فيها الروم تضمّ البحر الميت، أخفض بقعةٍ طبيعية على وجه الأرض بأكثر من ٤٠٠ مترٍ تحت سطح البحر.",
@@ -6892,6 +7040,13 @@
           "year": "2019",
           "url": "https://science.nasa.gov/earth/earth-observatory/getting-saltier-145373/",
           "kind": "agency"
+        },
+        {
+          "title": "The History of the Decline and Fall of the Roman Empire, chapter 46, with note 69 (E. Gibbon)",
+          "publisher": "Christian Classics Ethereal Library",
+          "year": "1788",
+          "url": "https://ccel.org/g/gibbon/decline/volume2/chap46.htm",
+          "kind": "book"
         }
       ]
     },
@@ -9073,6 +9228,22 @@
             "ar": "صحيح مسلم (٢٨٨٩)",
             "en": "Sahih Muslim 2889"
           }
+        },
+        {
+          "kind": "hadith",
+          "text": "وَلَئِنْ طَالَتْ بِكَ حَيَاةٌ لَتُفْتَحَنَّ كُنُوزُ كِسْرَى. قُلْتُ: كِسْرَى بْنِ هُرْمُزَ؟ قَالَ: كِسْرَى بْنِ هُرْمُزَ",
+          "narrator": {
+            "ar": "عن عديّ بن حاتم رضي الله عنه",
+            "en": "Narrated by ‘Adi ibn Hatim"
+          },
+          "meaning": {
+            "ar": "قاله النبي ﷺ لعديّ بن حاتم رضي الله عنه. «كِسْرَى»: لقبٌ لكل من ملك الفرس، وإنما سأل عديٌّ: «كسرى بن هرمز؟» لعظمة كسرى في نفسه يومئذٍ (ابن حجر).",
+            "en": "“‘And if you live long, the treasures of Khosrow will be opened.’ I said, ‘Khosrow son of Hormizd?’ He said, ‘Khosrow son of Hormizd.’”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٣٥٩٥)",
+            "en": "Sahih al-Bukhari 3595"
+          }
         }
       ],
       "then": [
@@ -9081,14 +9252,14 @@
           "en": "The commentators relate that this verse came in Medina when the Muslims lived in great fear, carrying their weapons morning and evening, until one of them asked: “Messenger of Allah, are we to be afraid like this forever? Will a day never come when we are safe and can lay down our arms?” The verse promised them succession in the land and security in place of fear."
         },
         {
-          "ar": "وكانت حولهم يومئذٍ دولتان عظميان: الروم في الشام، والفرس الساسانيون في العراق وإيران. وفي حديث ثوبان رضي الله عنه في صحيح مسلم أن الله زوى للنبي ﷺ الأرض فرأى مشارقها ومغاربها، وأن ملك أمته سيبلغ ما زُوي له منها.",
-          "en": "Around them stood two great empires: the Byzantines in Syria and the Sasanian Persians in Iraq and Iran. In Thawban’s hadith in Sahih Muslim, Allah gathered the earth together for the Prophet ﷺ so that he saw its easts and its wests, and his community’s rule would reach as far as what was gathered for him."
+          "ar": "وكانت حولهم يومئذٍ دولتان عظميان: الروم في الشام، والفرس الساسانيون في العراق وإيران. وفي حديث ثوبان رضي الله عنه في صحيح مسلم أن الله زوى للنبي ﷺ الأرض فرأى مشارقها ومغاربها، وأن ملك أمته سيبلغ ما زُوي له منها. وفي صحيح البخاري أن النبي ﷺ قال لعديّ بن حاتم رضي الله عنه: «لئن طالت بك حياة لتُفتحنّ كنوز كسرى».",
+          "en": "Around them stood two great empires: the Byzantines in Syria and the Sasanian Persians in Iraq and Iran. In Thawban’s hadith in Sahih Muslim, Allah gathered the earth together for the Prophet ﷺ so that he saw its easts and its wests, and his community’s rule would reach as far as what was gathered for him. And in Sahih al-Bukhari the Prophet ﷺ told ‘Adi ibn Hatim: “If you live long, the treasures of Khosrow will be opened.”"
         }
       ],
       "now": [
         {
-          "ar": "في عهد عمر رضي الله عنه (٦٣٤–٦٤٤م) تحولت دولة المسلمين من إمارةٍ عربية إلى قوةٍ عالمية: فُتح العراق والشام ومصر، وبدأ فتح إيران. ودخل المسلمون المدائن، عاصمة الفرس، في مارس ٦٣٧م، وأُخذت من خزائنها الملكية غنائم هائلة. ثم سقطت الدولة الساسانية كلها وانتهى ملكها سنة ٦٥١م، وأُخذت من الروم الشام ومصر، دون عاصمتهم القسطنطينية.",
-          "en": "Under ‘Umar (634–644) the Islamic state grew from an Arabian principality into a world power: Iraq, Syria and Egypt were conquered, and the conquest of Iran begun. The Muslims entered Ctesiphon, the Persian capital, in March 637, and huge amounts of booty were taken from its royal treasury. The whole Sasanian Empire fell, its rule ending in 651, and Syria and Egypt were taken from the Byzantines — though not their capital, Constantinople."
+          "ar": "في عهد عمر رضي الله عنه (٦٣٤–٦٤٤م) تحولت دولة المسلمين من إمارةٍ عربية إلى قوةٍ عالمية: فُتح العراق والشام ومصر، وبدأ فتح إيران. ودخل المسلمون المدائن، عاصمة الفرس، في مارس ٦٣٧م، وأُخذت من خزائنها الملكية غنائم هائلة. وفي حديث عديّ بن حاتم رضي الله عنه في صحيح البخاري أنه قال بعد ذلك: «وكنت فيمن افتتح كنوز كسرى بن هرمز». ثم سقطت الدولة الساسانية كلها وانتهى ملكها سنة ٦٥١م، وأُخذت من الروم الشام ومصر، دون عاصمتهم القسطنطينية.",
+          "en": "Under ‘Umar (634–644) the Islamic state grew from an Arabian principality into a world power: Iraq, Syria and Egypt were conquered, and the conquest of Iran begun. The Muslims entered Ctesiphon, the Persian capital, in March 637, and huge amounts of booty were taken from its royal treasury. In his hadith in Sahih al-Bukhari, ‘Adi ibn Hatim later said: “I was among those who opened the treasures of Khosrow son of Hormizd.” The whole Sasanian Empire fell, its rule ending in 651, and Syria and Egypt were taken from the Byzantines — though not their capital, Constantinople."
         },
         {
           "ar": "وفي عهد الأمويين امتد الحكم أبعد: ففي المشرق أخذ قتيبة بن مسلم بخارى (٧٠٦–٧٠٩م) وسمرقند (٧١٠–٧١٢م) فيما وراء النهر، وبلغت جيوشٌ أخرى السند، وفي المغرب نزل طارق بن زياد في الأندلس سنة ٧١١م. فخلال نحو ثمانين عامًا من وفاة النبي ﷺ امتد حكم المسلمين من شبه الجزيرة الأيبيرية إلى ما وراء النهر والسند.",
@@ -9155,8 +9326,8 @@
         "en": "A promise made to people who dared not lay down their arms — and within a century their community ruled from Iberia to Samarkand."
       },
       "caution": {
-        "ar": "نزلت الآية في المدينة وكانت تُتلى علنًا قبل هذه الفتوح. أما حديث ثوبان ففي صحيح مسلم، وقد دُوّن في القرن الثالث الهجري، بعد الفتوح، وتقوم الحجة فيه على تحقيق علماء الحديث لإسناده. والوعد في الآية مشروطٌ بالإيمان والعمل الصالح، ويختلف المفسرون فيمن يتناوله: فقيل: أبو بكر وعمر، وقيل: الخلفاء الأربعة، واختار القرطبي أنها عامة في الأمة، ويرى هؤلاء المفسرون أن الوعد تحقق في الفتوح الأولى. ولم يبلغ ملك الأمة الأرض كلها، فالحديث يقول: «ما زُوي لي منها»، وأما أن امتداده شرقًا وغربًا أكثر منه شمالًا وجنوبًا فملاحظةٌ للشرّاح، ذكرها القاضي عياض ثم النووي. ولا نأخذ بما في بعض كتب التفسير من نسبة فتح الأندلس ونحوها إلى عهد عثمان رضي الله عنه، فالمؤرخون يؤرخون نزول طارق في الأندلس بسنة ٧١١م.",
-        "en": "The verse was revealed in Medina and recited publicly before these conquests. Thawban’s hadith is in Sahih Muslim, compiled in the third century AH, after the conquests; its case rests on the hadith scholars’ verification of the chain. The promise in the verse is conditional on faith and righteous deeds, and the commentators differ on whom it addresses — Abu Bakr and ‘Umar, the four caliphs, or, as al-Qurtubi prefers, the whole community — and these commentators hold that it was fulfilled in the early conquests. The community’s rule never covered the whole earth — the hadith says “what was gathered for me of it” — and the point that it spread mostly east and west is an observation of the commentators, made by al-Qadi ‘Iyad and then al-Nawawi. We do not repeat lists in some commentaries that place al-Andalus and similar conquests under ‘Uthman; historians date Tariq’s landing in Iberia to 711."
+        "ar": "نزلت الآية في المدينة وكانت تُتلى علنًا قبل هذه الفتوح. أما حديث ثوبان ففي صحيح مسلم، وحديث عديّ بن حاتم في صحيح البخاري، وقد دُوّن الكتابان في القرن الثالث الهجري، بعد الفتوح، وتقوم الحجة في الحديثين على تحقيق علماء الحديث لإسناديهما. والوعد في الآية مشروطٌ بالإيمان والعمل الصالح، ويختلف المفسرون فيمن يتناوله: فقيل: أبو بكر وعمر، وقيل: الخلفاء الأربعة، واختار القرطبي أنها عامة في الأمة، ويرى هؤلاء المفسرون أن الوعد تحقق في الفتوح الأولى. ولم يبلغ ملك الأمة الأرض كلها، فالحديث يقول: «ما زُوي لي منها»، وأما أن امتداده شرقًا وغربًا أكثر منه شمالًا وجنوبًا فملاحظةٌ للشرّاح، ذكرها القاضي عياض ثم النووي. ولا نأخذ بما في بعض كتب التفسير من نسبة فتح الأندلس ونحوها إلى عهد عثمان رضي الله عنه، فالمؤرخون يؤرخون نزول طارق في الأندلس بسنة ٧١١م.",
+        "en": "The verse was revealed in Medina and recited publicly before these conquests. Thawban’s hadith is in Sahih Muslim and ‘Adi ibn Hatim’s in Sahih al-Bukhari, both compiled in the third century AH, after the conquests; the case for the two hadiths rests on the hadith scholars’ verification of their chains. The promise in the verse is conditional on faith and righteous deeds, and the commentators differ on whom it addresses — Abu Bakr and ‘Umar, the four caliphs, or, as al-Qurtubi prefers, the whole community — and these commentators hold that it was fulfilled in the early conquests. The community’s rule never covered the whole earth — the hadith says “what was gathered for me of it” — and the point that it spread mostly east and west is an observation of the commentators, made by al-Qadi ‘Iyad and then al-Nawawi. We do not repeat lists in some commentaries that place al-Andalus and similar conquests under ‘Uthman; historians date Tariq’s landing in Iberia to 711."
       },
       "didYouKnow": {
         "ar": "بعد فتح بخارى وسمرقند صارت المدينتان مركزين كبيرين لنشر الثقافة والعلم الإسلامي بين شعوب آسيا الوسطى.",
@@ -9197,6 +9368,12 @@
           "title": "Al-Nawawi, Sharh Sahih Muslim (Dar Ihya’ al-Turath ed.) 18/13, on hadith 2889 (Arabic)",
           "publisher": "al-Maktaba al-Shamela",
           "url": "https://shamela.ws/book/1711/3936",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Hajar, Fath al-Bari (Salafiyya ed.) 6/613, on Sahih al-Bukhari 3595 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1673/3807",
           "kind": "book"
         }
       ]
