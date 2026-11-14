@@ -141,17 +141,6 @@
         <p>{{ language.pick(a.reflection) }}</p>
       </section>
 
-      <section class="caution" appReveal [class.reading]="speech.activeKey() === 'caution'">
-        <h2>
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3 3 7v5c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-            <path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          {{ t().sections.caution }}
-        </h2>
-        <p>{{ language.pick(a.caution) }}</p>
-      </section>
-
       <section class="block" appReveal>
         <h2>
           <span class="eyebrow">{{ language.number('04') }}</span>

@@ -27,8 +27,8 @@ const PRINCIPLES: Principle[] = [
   {
     title: { ar: 'لا نلوي النص', en: 'We do not bend the text' },
     text: {
-      ar: 'يجب أن تحتمل ألفاظ الآية المعنى بلغة العرب التي نزل بها القرآن. ونذكر ما قاله المفسرون الأوائل، ونبيّن متى يكون الربط بالعلم الحديث فهمًا معاصرًا محتملًا لا تفسيرًا قطعيًا.',
-      en: 'The words of the verse must carry the meaning in the Arabic the Qur’an was revealed in. We mention what the early commentators said, and make clear when a link to modern science is a possible modern reading rather than a definitive explanation.',
+      ar: 'يجب أن تحتمل ألفاظ الآية المعنى بلغة العرب التي نزل بها القرآن، ونرجع إلى ما قاله المفسرون الأوائل.',
+      en: 'The words of the verse must carry the meaning in the Arabic the Qur’an was revealed in, and we go back to what the early commentators said.',
     },
   },
   {
@@ -43,13 +43,6 @@ const PRINCIPLES: Principle[] = [
     text: {
       ar: 'في صفحة كل آيةٍ روابط إلى مجلاتٍ علمية محكّمة، ووكالاتٍ مثل ناسا والإدارة الوطنية للمحيطات والغلاف الجوي الأمريكية، وجامعاتٍ وموسوعات، وفي صفحة كل نبوءةٍ روابط إلى كتب التاريخ وشروح الحديث التي سجّلت تحقّقها. لا تأخذ كلامنا على الثقة: افتح المصدر واقرأ.',
       en: 'Every sign’s page links to peer-reviewed journals, agencies such as NASA and NOAA, universities and encyclopaedias, and every prophecy’s page to the histories and hadith commentaries that recorded its fulfilment. Don’t take our word for it: open the source and read it.',
-    },
-  },
-  {
-    title: { ar: 'أمانةٌ في الحدود', en: 'Honest about the limits' },
-    text: {
-      ar: 'في آخر صفحة كل آيةٍ فقرة «بأمانةٍ علمية» تبيّن حدود الاستدلال، وما اختلف فيه العلماء، وما لا يصح أن يُقال.',
-      en: 'Each sign’s page ends with an “In all honesty” note on how far the link goes, where scholars differ, and what should not be claimed.',
     },
   },
   {

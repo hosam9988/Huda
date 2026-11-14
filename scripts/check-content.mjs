@@ -50,7 +50,7 @@ for (const a of content.ayat) {
   if (a.nowLabel !== undefined && a.nowLabel !== 'history') errors.push(`${at}: nowLabel must be "history" or absent`);
   if (a.type !== undefined && a.type !== 'reflection') errors.push(`${at}: type must be "reflection" or absent`);
   art(a.art, at);
-  for (const key of ['title', 'hook', 'summary', 'reflection', 'caution']) localized(a[key], `${at} ${key}`);
+  for (const key of ['title', 'hook', 'summary', 'reflection']) localized(a[key], `${at} ${key}`);
   if (a.didYouKnow) localized(a.didYouKnow, `${at} didYouKnow`);
   localized(a.highlight?.value, `${at} highlight.value`);
   localized(a.highlight?.label, `${at} highlight.label`);

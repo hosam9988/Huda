@@ -42,7 +42,6 @@ internal static class Make
         Highlight = new(Text("١٣٠٠ عام"), Text("بين الآية وهابل")),
         Timeline = [new(new MilestoneYear("1929", null), Text("هابل"))],
         Reflection = Text("تأمل"),
-        Caution = Text("بحذر"),
         Sources = [new("A Relation", "PNAS", "https://example.org/hubble", SourceKind.Journal, "1929")],
         Art = "expansion",
     };

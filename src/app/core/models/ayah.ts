@@ -86,8 +86,6 @@ export interface Ayah {
   timeline: Milestone[];
   /** The page's closing thought. */
   reflection: Localized;
-  /** An honest note on how far the link between the text and the finding goes. */
-  caution: Localized;
   /** A short extra fact for the "Did you know?" box. */
   didYouKnow?: Localized;
   sources: Source[];

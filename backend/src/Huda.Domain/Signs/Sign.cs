@@ -43,9 +43,6 @@ public sealed class Sign : IAggregateRoot
     /// <summary>The page's closing thought.</summary>
     public required LocalizedText Reflection { get; init; }
 
-    /// <summary>An honest note on how far the link between the text and the finding goes.</summary>
-    public required LocalizedText Caution { get; init; }
-
     public LocalizedText? DidYouKnow { get; init; }
     public required IReadOnlyList<Source> Sources { get; init; }
 

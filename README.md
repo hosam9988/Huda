@@ -46,8 +46,7 @@ that more components can join it later.
     4. "What science found" (or "What history records");
     5. a timeline from revelation to discovery;
     6. "Did you know?" and "A moment to reflect";
-    7. **"In all honesty"**: the limits of the link, where scholars differ, and claims we refuse to make;
-    8. the sources, linked.
+    7. the sources, linked.
   - Links from the first site (`/ayah/:slug`) redirect to `/signs/:slug`.
 - **The Beautiful Names** (`/names`): 107 names, with the name of the day and a search. Each name's
   page (`/names/:slug`) has:
@@ -77,15 +76,16 @@ that more components can join it later.
   and then.
 - **Eighteen of the signs** (most of the prophecies, the camel and sleep) are the candidates that
   passed all three checks of a review of 132: the science or history, the text and its classical
-  reading, and a search for any serious objection. A prophecy's page says that the collections were
-  compiled after the events, so the case rests on the hadith scholars' verification of the chain, and
-  links the histories and the classical commentaries that recorded each fulfilment.
+  reading, and a search for any serious objection. A prophecy's page links the histories and the
+  classical commentaries that recorded each fulfilment.
 - **The 27 signs for reflection** come from the same review's 72 candidates that were sound in their
   science and text but showed nothing people did not already know. Each was screened again: the
   reading must be the classical commentators' own and undisputed, the fact established, a ruling
   never given a modern reason its text does not state, and a health statement must rest on current
-  guidance or a review. A page's «بأمانةٍ علمية» opens by saying that it is not offered as a miracle, and
-  how people knew it then.
+  guidance or a review. Such a page carries the «للتفكر» badge and is never called a miracle.
+- **Every page makes the case:** its opening question, card summary and closing thought say why the
+  sign is evidence that the Qur'an is the word of Allah and Islam is the truth, without claiming more
+  than the page's facts. Neither the timeline nor the text names knowledge from before Islam.
 - **On the names' pages**, the explanations are short and in our own words. Hadith are from
   al-Bukhari and Muslim, or from another collection only with its grading quoted from a named
   scholar or edition and shown on the page: al-Tirmidhi, al-Arna'ut's edition of Sunan Abi Dawud, the
@@ -187,7 +187,7 @@ Typed in [`src/app/core/models/ayah.ts`](src/app/core/models/ayah.ts).
     "highlight": { "value": {…}, "label": {…} },
     "timeline": [{ "year": "1929", "text": {…} },
                  { "year": "610–632", "revelation": true, "text": {…} }],
-    "reflection": {…}, "caution": {…}, "didYouKnow": {…},
+    "reflection": {…}, "didYouKnow": {…},
     "sources": [{ "title": "…", "publisher": "…", "year": "…", "url": "https://…",
                   "kind": "journal" }]     // journal | preprint | agency | university | encyclopedia | book | news
   }]

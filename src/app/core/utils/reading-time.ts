@@ -11,7 +11,6 @@ export function readingMinutes(ayah: Ayah, lang: Lang): number {
     ...ayah.then,
     ...ayah.now,
     ayah.reflection,
-    ayah.caution,
     ayah.didYouKnow,
     ...ayah.evidence.map((e) => e.meaning),
     ...ayah.timeline.map((m) => m.text),

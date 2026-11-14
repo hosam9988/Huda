@@ -94,7 +94,6 @@ export class AyahPage {
       ...a.then.map((p, i) => ({ key: `then${i}`, text: pick(p) })),
       ...a.now.map((p, i) => ({ key: `now${i}`, text: pick(p) })),
       { key: 'reflection', text: pick(a.reflection) },
-      { key: 'caution', text: pick(a.caution) },
     ];
   });
 

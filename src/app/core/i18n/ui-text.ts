@@ -88,7 +88,6 @@ export interface UiText {
     timeline: string;
     didYouKnow: string;
     reflection: string;
-    caution: string;
     sources: string;
   };
   quranLabel: string;
@@ -235,7 +234,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     resetAllYes: 'نعم، امسحها',
     cancel: 'إلغاء',
     methodBandTitle: 'كيف نختار ما ننشره؟',
-    methodBandText: 'لا ننشر إلا ما ثبت علميًا، ونذكر حدود كل استدلال بأمانة. تعرّف على منهجنا.',
+    methodBandText: 'لا ننشر إلا ما ثبت علميًا، ولا نلوي النص ليوافقه. تعرّف على منهجنا.',
     nextBandTitle: 'ماذا بعد؟',
     nextBandText: 'إن لامست هذه الآيات قلبك، فهذه خطوتك التالية.',
     waqfNote: 'هذا المشروع وقفٌ لله تعالى، وهو غير ربحي.',
@@ -258,7 +257,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
       timeline: 'من الوحي إلى الاكتشاف',
       didYouKnow: 'هل تعلم؟',
       reflection: 'وقفة تأمل',
-      caution: 'بأمانةٍ علمية',
       sources: 'المصادر',
     },
     quranLabel: 'من القرآن الكريم',
@@ -385,7 +383,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     resetAllYes: 'Yes, clear them',
     cancel: 'Cancel',
     methodBandTitle: 'How do we choose what to publish?',
-    methodBandText: 'Only established science, and an honest note on the limits of every link we draw. Read about our method.',
+    methodBandText: 'Only established science, and never a verse bent to fit it. Read about our method.',
     nextBandTitle: 'What next?',
     nextBandText: 'If these signs have touched your heart, here is your next step.',
     waqfNote: 'This project is a waqf (an endowment for the sake of Allah) and is non-profit.',
@@ -407,7 +405,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
       timeline: 'From revelation to discovery',
       didYouKnow: 'Did you know?',
       reflection: 'A moment to reflect',
-      caution: 'In all honesty',
       sources: 'Sources',
     },
     quranLabel: 'From the Qur’an',
