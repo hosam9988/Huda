@@ -20,11 +20,11 @@ that more components can join it later.
 
 - **The home page** (`/`) leads to the two sections, and to the journey for non-Muslims and readers
   new to Islam.
-- **The signs, «سنريهم آياتنا»** (`/signs`): 65 signs in 9 fields — the cosmos; earth and sky;
+- **The signs, «سنريهم آياتنا»** (`/signs`): 72 signs in 9 fields — the cosmos; earth and sky;
   seas and water; the living world; the human being; health in the Sunnah; peoples of the past;
   prophecies fulfilled; preserving the Qur'an.
-  - **Two lists:** «المعجزات» (Miracles, 38) and «علامات تُظهر عظمة الخالق» (Signs that show the
-    Creator's greatness, 27). The second holds the signs for reflection: what they say is true and plain,
+  - **Two lists:** «المعجزات» (Miracles, 42) and «علامات تُظهر عظمة الخالق» (Signs that show the
+    Creator's greatness, 30). The second holds the signs for reflection: what they say is true and plain,
     but people already knew it when it was revealed, so they are not offered as i'jaz. They come
     after the miracles, and their cards lead with the verse or hadith. On their own pages and as the sign
     of the day they carry the «للتفكر» badge. Each list has its own field filter, with only the fields
@@ -78,8 +78,9 @@ that more components can join it later.
   passed all three checks of a review of 132: the science or history, the text and its classical
   reading, and a search for any serious objection. A prophecy's page links the histories and the
   classical commentaries that recorded each fulfilment.
-- **The 27 signs for reflection** come from the same review's 72 candidates that were sound in their
-  science and text but showed nothing people did not already know. Each was screened again: the
+- **The 30 signs for reflection:** 27 come from the same review's 72 candidates that were sound in
+  their science and text but showed nothing people did not already know, and 3 were added later
+  under the same rules. Each was screened again: the
   reading must be the classical commentators' own and undisputed, the fact established, a ruling
   never given a modern reason its text does not state, and a health statement must rest on current
   guidance or a review. Such a page carries the «للتفكر» badge and is never called a miracle.
@@ -102,7 +103,7 @@ The images are in `public/images/` as WebP:
 
 | Image | Size | Saved as |
 |---|---|---|
-| the 65 sign images | 1280×800 | `<name>.webp` 1280 wide, `<name>-sm.webp` 640 wide |
+| the 72 sign images | 1280×800 | `<name>.webp` 1280 wide, `<name>-sm.webp` 640 wide |
 | the home page's Earth (`hero`) | 1536×864 | 1536 wide, `-sm` 768 wide |
 | the names' golden dome (`names-hero`) | 1536×864 | 1536 wide, `-sm` 768 wide |
 

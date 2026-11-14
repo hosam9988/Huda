@@ -3358,6 +3358,10 @@
         {
           "ar": "لكن للتجربة نصيبًا: فالعناكب الدائرية تتعلّم بسرعة أن تتجنّب الفرائس الخطرة أو الكريهة، وتغيّر تدريجيًّا سعة عيون شبكتها وحجمها بحسب ما صادته مؤخرًا، وتُحسّن شباكها إذا بنتها في الموضع نفسه مرةً بعد مرة. وهي فوق ذلك تكيّف شباكها مع الحرارة والريح وضيق المكان.",
           "en": "Experience still has its part. Orb spiders readily learn to avoid dangerous and distasteful prey, gradually adjust the mesh and size of their webs to recent catches, and improve webs built again at the same site. They also adapt their webs to temperature, wind and confined spaces."
+        },
+        {
+          "ar": "وقد يلتقي خلقُ مخلوقٍ بهداية آخر: فبعض أزهار الأوركيد من جنس الحاجبية (أوفريس) تجذب ذكور النحل برائحتها في المقام الأول، وهي رائحةٌ تشبه الفيرومون الجنسي لأنثى النحل، فتنقل الذكور حبوب لقاحها من زهرةٍ إلى زهرة (شيستل وزملاؤه، ١٩٩٩م).",
+          "en": "One creature’s form can even meet another’s guidance: some orchids of the genus Ophrys draw male bees mainly by a scent like the female bee’s sex pheromone, and the males carry the orchids’ pollen from flower to flower (Schiestl and colleagues, 1999)."
         }
       ],
       "highlight": {
@@ -3440,6 +3444,13 @@
           "year": "2022",
           "url": "https://plato.stanford.edu/entries/innate-acquired/",
           "kind": "encyclopedia"
+        },
+        {
+          "title": "Orchid pollination by sexual swindle (Schiestl et al.)",
+          "publisher": "Nature",
+          "year": "1999",
+          "url": "https://www.nature.com/articles/20829",
+          "kind": "journal"
         }
       ]
     },
@@ -5311,6 +5322,318 @@
       ]
     },
     {
+      "slug": "a-mingled-drop",
+      "category": "human",
+      "art": "mingled-drops",
+      "type": "reflection",
+      "title": {
+        "ar": "من نطفةٍ أمشاج",
+        "en": "From a Mingled Drop"
+      },
+      "hook": {
+        "ar": "بدأ كلٌّ منا خليةً واحدة، من خليةٍ من أبيه وخليةٍ من أمه. فمن الذي جمع بينهما، ولماذا خُلقنا؟ آيةٌ واحدة من القرآن تجيب عن السؤالين.",
+        "en": "Each of us began as a single cell, made from a cell of the father and a cell of the mother. Who brought the two together, and why were we created? One verse of the Qur’an answers both questions."
+      },
+      "summary": {
+        "ar": "آيةٌ تذكّر الإنسان بأصله: ﴿مِن نُّطۡفَةٍ أَمۡشَاجࣲ﴾، أي أخلاط، وأرجح الأقوال عند الطبري أنها ماء الرجل وماء المرأة يختلطان. ويصف علم الأحياء اليوم كيف يبدأ كلٌّ منا خليةً واحدة، من خليةٍ من أبيه وخليةٍ من أمه. ثم تذكر الآية الغاية من خلقه، ولا يخبر بها إلا خالقه: ﴿نَّبۡتَلِيهِ﴾.",
+        "en": "A verse reminds man of his origin, “a sperm-drop mixture”: in al-Tabari’s preferred reading, the man’s fluid and the woman’s mixed together. Biology now describes each of us beginning as one cell, formed from a cell of each parent. And the verse gives the purpose, which only our Maker could tell: “that We may try him”."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "إِنَّا خَلَقۡنَا ٱلۡإِنسَٰنَ مِن نُّطۡفَةٍ أَمۡشَاجࣲ نَّبۡتَلِيهِ فَجَعَلۡنَٰهُ سَمِيعَۢا بَصِيرًا",
+          "meaning": {
+            "ar": "«أَمْشَاجٍ»: أخلاط، والمشيج: الشيء المختلط بعضه في بعض (ابن كثير). ورجّح الطبري أنها نطفة الرجل ونطفة المرأة تختلطان، وهو قول عكرمة ومجاهد والحسن، وقيل: أطوار الخلق، أو ألوان النطفة، أو عروقها. «نَبْتَلِيهِ»: نختبره. «سَمِيعًا بَصِيرًا»: ذا سمعٍ وبصر، إنعامًا من الله على عباده، وحجةً له عليهم (الطبري).",
+            "en": "“Indeed, We created man from a sperm-drop mixture that We may try him; and We made him hearing and seeing.”"
+          },
+          "ref": {
+            "ar": "الإنسان: ٢",
+            "en": "Al-Insan 76:2"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "لم يكن أحدٌ يجهل يوم نزلت الآية أن الإنسان يولد من أبٍ وأم. وكانت «الأمشاج» كلمةً يعرفها العرب: الأخلاط، واحدها مَشِجٌ ومَشِيج، يقال: مشجتُ هذا بهذا، إذا خلطته به، كما بيّن الطبري، واستشهد لها بشعرهم.",
+          "en": "When the verse came, no one needed to be told that a person is born of a father and a mother. And amshāj was a word the Arabs knew: mixtures, its singular mashij or mashīj; one says mashajtu this with that, “I mixed one with the other”, as al-Tabari explains, citing their poetry."
+        },
+        {
+          "ar": "وفي روايات الطبري فسّرها عكرمة ومجاهد والحسن والربيع بن أنس بماء الرجل وماء المرأة يختلطان، وقال مجاهد: «خلق الله عز وجل الولد من ماء الرجل وماء المرأة»، واستشهد بآية الحجرات في خلق الناس من ذكرٍ وأنثى. وذكر الطبري أقوالًا أخرى، بعضها عن عكرمة ومجاهد أنفسهما: أنها أطوار الخلق من نطفةٍ إلى علقةٍ إلى مضغة، أو ألوان النطفة، أو عروقها؛ ثم رجّح الأول، لأن الله وصف النطفة نفسها بأنها أمشاج، وهي إذا صارت علقةً لم تعد نطفة. ولم يتكلم أحدٌ منهم عن الخلايا.",
+          "en": "In the reports al-Tabari gives, ‘Ikrimah, Mujahid, al-Hasan and al-Rabi‘ ibn Anas explain it as the man’s fluid and the woman’s fluid mixed together. “Allah, Mighty and Majestic, created the child from the man’s fluid and the woman’s fluid,” said Mujahid, citing the verse of Al-Hujurat on people created from a male and a female. Al-Tabari also records other readings, some from ‘Ikrimah and Mujahid themselves — the stages of creation from drop to clinging form to lump, the colours of the drop, or its veins — and prefers the first, because Allah calls the drop itself amshāj, and once it becomes a clinging form it is a drop no longer. None of them spoke of cells."
+        }
+      ],
+      "now": [
+        {
+          "ar": "يشرح كتابٌ جامعي في التشريح ووظائف الأعضاء أن الإخصاب يحدث حين يتحد حيوانٌ منويٌّ وبويضة وتندمج نواتاهما. وكلٌّ منهما يحمل نصف المادة الوراثية اللازمة لتكوين إنسان، فتنشأ من اتحادهما خليةٌ واحدة جديدة تسمى «اللاقحة»، فيها المادة الوراثية كلها، نصفها من كل والد.",
+          "en": "Fertilisation, a university textbook of anatomy and physiology explains, happens when a sperm and an egg combine and their nuclei fuse. Each carries half of the genetic material needed to form a human being, so their union forms a single new cell, the zygote, which holds all of it, half from each parent."
+        },
+        {
+          "ar": "ثم تقترب النواتان، ويتلاشى غلافاهما، «فتختلط المادة الوراثية الآتية من الأب والآتية من الأم»، كما يقول الكتاب نفسه. وبهذا يتم الإخصاب: خليةٌ واحدة فيها كل ما تحتاج إليه من التعليمات الوراثية لتنمو حتى تصير إنسانًا بالغًا.",
+          "en": "The two nuclei then move towards each other, their envelopes break down and, in the textbook’s words, “the male- and female-derived genetic material intermingles.” That completes fertilisation: a single cell with all the genetic instructions it needs to develop into an adult."
+        },
+        {
+          "ar": "وللإنسان ٢٣ زوجًا من الصبغيات (الكروموسومات)، أي ٤٦ صبغيًّا، يرث من كل زوجٍ نسخةً عن أمه ونسخةً عن أبيه. ولهذا، كما يقول المعهد الوطني لأبحاث الجينوم البشري في الولايات المتحدة، يرث الأولاد بعض صفاتهم عن أمهاتهم وبعضها عن آبائهم.",
+          "en": "Humans have 23 pairs of chromosomes, 46 in all, and of each pair one copy is inherited from the mother and the other from the father. This, the U.S. National Human Genome Research Institute explains, is why children inherit some of their traits from their mother and others from their father."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٢٣ + ٢٣",
+          "en": "23 + 23"
+        },
+        "label": {
+          "ar": "صبغيًّا: مجموعةٌ من الأب ومجموعةٌ من الأم، تجتمعان في الخلية الأولى لكلٍّ منا",
+          "en": "chromosomes: one set from the father and one from the mother, joined in the first cell of each of us"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "نزول القرآن، ومنه سورة الإنسان",
+            "en": "The Qur’an is revealed, including surah Al-Insan"
+          }
+        },
+        {
+          "year": {
+            "ar": "أواخر القرن ١٩م",
+            "en": "Late 1800s"
+          },
+          "text": {
+            "ar": "العلماء يرون الصبغيات بالمجهر أول مرة، ولا تتضح لهم بعدُ طبيعتها ووظيفتها",
+            "en": "Scientists first observe chromosomes under the microscope, though their nature and function are still unclear"
+          }
+        },
+        {
+          "year": "1902",
+          "text": {
+            "ar": "والتر ساتون، من دراسته خلايا الجراد، يصف كيف يأخذ النسل من كل والدٍ صبغيًّا من كل زوج",
+            "en": "Walter Sutton, from his study of grasshopper cells, describes how offspring receive one chromosome of each pair from each parent"
+          }
+        },
+        {
+          "year": "1956",
+          "text": {
+            "ar": "تجيو وليفان ينشران العدد الصحيح لصبغيات الإنسان: ٤٦، بعد أكثر من ثلاثين سنة ظُنّ فيها أنه ٤٨",
+            "en": "Tjio and Levan publish the correct human chromosome number, 46; for more than 30 years it had been thought to be 48"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "في كلٍّ منا التقت خليةٌ من أبٍ وخليةٌ من أمٍّ لم نخترهما، بمشيئةٍ لم تكن مشيئتنا. والذي خلقنا من نطفةٍ أمشاج، وجعل لنا سمعًا وبصرًا، لم يخلقنا عبثًا: ﴿نَّبۡتَلِيهِ﴾. وقال الطبري إن ذكر السمع والبصر في الآية تذكيرٌ بنعم الله، وتنبيهٌ على موضع الشكر. ولا يخبرنا لماذا خُلقنا إلا من خلقنا، وكتابٌ يجيب عن ذلك في آيةٍ واحدة يحمل أثر خالقنا، وهو وحده المستحق للشكر والعبادة.",
+        "en": "In each of us, a cell from a father and a cell from a mother we did not choose were joined by a will that was not ours. The One who created us from a mingled drop and gave us hearing and sight did not create us for nothing: “that We may try him”. The mention of hearing and sight, al-Tabari says, reminds us of Allah’s blessings and shows where thanks is due. Only our Maker can tell us why we were made; a Book that does so in one verse bears His mark, and He alone deserves our thanks and worship."
+      },
+      "didYouKnow": {
+        "ar": "لا تأتي المادة الوراثية كلها مناصفة: فالصبغيّ الصغير الدائري الذي في «المتقدرات» (الميتوكوندريا) يرثه الولد عن أمه، لأن البويضة، لا الحيوان المنوي، هي التي تحتفظ بمتقدراتها عند الإخصاب.",
+        "en": "Not all of our genetic material comes half and half: the small circular chromosome found in the mitochondria is inherited from the mother, because only the egg, not the sperm, keeps its mitochondria during fertilisation."
+      },
+      "sources": [
+        {
+          "title": "Anatomy and Physiology 2e, 28.1 Fertilization (J. G. Betts et al.)",
+          "publisher": "OpenStax (Rice University)",
+          "year": "2022",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/28-1-fertilization",
+          "kind": "book"
+        },
+        {
+          "title": "Chromosomes Fact Sheet",
+          "publisher": "National Human Genome Research Institute (NIH)",
+          "year": "2020",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "kind": "agency"
+        },
+        {
+          "title": "Walter Stanborough Sutton (1877–1916) (A. Mishra)",
+          "publisher": "Embryo Project Encyclopedia (Arizona State University)",
+          "year": "2014",
+          "url": "https://embryo.asu.edu/pages/walter-stanborough-sutton-1877-1916",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "The discovery of the human chromosome number in Lund, 1955–1956 (P. S. Harper)",
+          "publisher": "Human Genetics",
+          "year": "2006",
+          "url": "https://europepmc.org/article/MED/16463025",
+          "kind": "journal"
+        },
+        {
+          "title": "Al-Tabari, Jami‘ al-Bayan (al-Turki ed.) 23/531–537, on Al-Insan 76:2 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/7798/15865",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Kathir, Tafsir al-Qur’an al-‘Azim (Dar Ibn al-Jawzi ed.) 7/443, on Al-Insan 76:2 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1503/4440",
+          "kind": "book"
+        }
+      ]
+    },
+    {
+      "slug": "not-from-all-the-fluid",
+      "category": "human",
+      "art": "furrows",
+      "type": "reflection",
+      "title": {
+        "ar": "ما من كل الماء يكون الولد",
+        "en": "Not from All the Fluid Is the Child"
+      },
+      "hook": {
+        "ar": "تنطلق مئات الملايين من الخلايا، ولا يتحد بالبويضة إلا واحدةٌ منها، ومن لقاءٍ كهذا بدأ كلٌّ منا. فمن الذي يقدّر ذلك، ومن ذا الذي يقف في وجه ما أراد الله؟",
+        "en": "Hundreds of millions of cells are released, yet only one joins the egg, and each of us began from such a meeting. Who decrees it, and what can stand in the way of what Allah wills?"
+      },
+      "summary": {
+        "ar": "قال النبي ﷺ: «مَا مِنْ كُلِّ الْمَاءِ يَكُونُ الْوَلَدُ، وَإِذَا أَرَادَ اللَّهُ خَلْقَ شَيْءٍ لَمْ يَمْنَعْهُ شَيْءٌ». ويصف علم الأحياء اليوم كيف يتحد بالبويضة حيوانٌ منويٌّ واحد من بين مئات الملايين، ومن لقاءٍ كهذا بدأ كلٌّ منا: خلقٌ بمشيئة الله، لا يمنعه شيء.",
+        "en": "The Prophet ﷺ said: “The child does not come from all of the fluid, and when Allah wills to create something, nothing prevents it.” Biology now describes how one sperm cell out of hundreds of millions fuses with the egg, and each of us began from such a meeting: a creation of Allah’s will, which nothing can prevent."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "مَا مِنْ كُلِّ الْمَاءِ يَكُونُ الْوَلَدُ، وَإِذَا أَرَادَ اللَّهُ خَلْقَ شَيْءٍ لَمْ يَمْنَعْهُ شَيْءٌ",
+          "narrator": {
+            "ar": "عن أبي سعيد الخدري رضي الله عنه",
+            "en": "Narrated by Abu Sa‘id al-Khudri"
+          },
+          "meaning": {
+            "ar": "قاله النبي ﷺ حين سُئل عن العزل. «مَا مِنْ كُلِّ الْمَاءِ يَكُونُ الْوَلَدُ»: أي ينعقد الولد في الرحم من جزءٍ من الماء، لا منه كله (أبو العباس القرطبي). وكم من ماءٍ لا يكون منه ولد، فتكوين الولد بمشيئة الله تعالى، لا بالماء، وكذلك عدمه (الطيبي).",
+            "en": "“The child does not come from all of the fluid, and when Allah wills to create something, nothing prevents it.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (١٤٣٨)",
+            "en": "Sahih Muslim 1438"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "روى أبو سعيد الخدري رضي الله عنه أن النبي ﷺ سُئل عن العزل، وهو كما قال ابن الأثير: «عزل الماء عن النساء حذر الحمل»، فأجاب بجملتين: أن الولد لا يكون من كل الماء، وأن الله إذا أراد خلق شيءٍ لم يمنعه شيء. أما حكم العزل نفسه فليس موضوع هذه الصفحة، وموضعه كتب الفقه وشروح الحديث.",
+          "en": "Abu Sa‘id al-Khudri related that the Prophet ﷺ was asked about al-‘azl, which Ibn al-Athir defines as “keeping the fluid from women for fear of pregnancy.” He answered in two sentences: the child does not come from all of the fluid, and when Allah wills to create something, nothing prevents it. The ruling on al-‘azl itself is not the subject of this page; it belongs to the books of fiqh and the commentaries on hadith."
+        },
+        {
+          "ar": "ولم يكن خافيًا على الناس أن الولد لا يأتي من كل لقاء؛ وقد علّق الطيبي على الحديث في شرحه لمشكاة المصابيح بأنه كم من ماءٍ لا يكون منه ولد، وبأن «تكوين الولد بمشيئة الله تعالى، لا بالماء»، وكذلك عدمه. وفهم أبو العباس القرطبي من لفظه أن الولد يكون من بعض الماء لا من كله، فقال: «ينعقد الولد في الرحم من جزءٍ من الماء». ولم يذكر الحديث خليةً ولا عددًا، ولم تُرصد الحيوانات المنوية وتوصف أول مرة إلا بعد ذلك بقرون.",
+          "en": "Nor was it hidden from people that not every union brings a child. In his commentary on Mishkat al-Masabih, al-Tibi notes on this hadith that many a time the fluid brings no child, and that “the forming of a child is by the will of Allah, not by the fluid”, and so is its absence. Abu al-‘Abbas al-Qurtubi took from its words that the child comes from a part of the fluid, not all of it: “the child is formed in the womb from a part of the fluid,” he wrote. The hadith names no cell and no number; sperm cells were first observed and described centuries later."
+        }
+      ],
+      "now": [
+        {
+          "ar": "يصف كتابٌ جامعي في التشريح ووظائف الأعضاء الإخصابَ بأنه «لعبة أعداد»: تنطلق مئات الملايين من الحيوانات المنوية، ويُفقد أكثرها في الطريق، فلا يبقى في السباق إلى قناتي فالوب، حيث تلتقي بالبويضة في الغالب، إلا بضعة آلاف.",
+          "en": "Fertilisation, a university textbook of anatomy and physiology says, is “a numbers game”: hundreds of millions of sperm cells are released, most are lost on the way, and only a few thousand are left in the race into the uterine tubes, where they most often meet the egg."
+        },
+        {
+          "ar": "وأول ما يصل منها إلى البويضة لا يكون هو الذي يخصبها أبدًا، كما يقول الكتاب، بل تُسهم مئاتٌ منها في شقّ الطبقتين اللتين تحيطان بها، حتى ينفتح الطريق لواحدٍ يتصل بغشائها ويندمج به. فإذا اندمج بها أطلقت وسيلتين تمنعان غيره من الدخول، لأنها لو أخصبها أكثر من واحد لكانت في اللاقحة ثلاث مجموعاتٍ من الصبغيات، ولا تقوم مع ذلك حياة.",
+          "en": "The first to reach the egg, the textbook notes, is never the one that fertilises it: hundreds each help to break down the two layers around the egg until a path opens for one to make contact and fuse with it. Once it has, the egg deploys two mechanisms that keep the others out, for an egg fertilised by more than one would carry three sets of chromosomes, which is incompatible with life."
+        },
+        {
+          "ar": "وبدأت أبحاثٌ على الفئران تكشف كيف يُحكم هذا اللقاء: ففي عام ٢٠١٤ حدّد باحثون على بويضة الفأر بروتينًا سمّوه «جونو»، يرتبط به «إيزومو ١»، وهو بروتينٌ لا غنى عنه على سطح الحيوان المنوي، والتقاؤهما محفوظٌ في عدة أنواعٍ من الثدييات منها الإنسان. والبويضة التي ليس فيها «جونو» لا تندمج بالحيوان المنوي، وتتخلص البويضة من «جونو» سريعًا بعد الإخصاب، وهذا يشير، كما كتب الباحثون، إلى وسيلةٍ تضمن أن تندمج البويضة في العادة بحيوانٍ منويٍّ واحد.",
+          "en": "Research in mice has begun to show how this meeting is sealed. In 2014 researchers identified Juno, the protein on the mouse egg that binds Izumo1, an essential protein on the surface of the sperm; the pairing is shared by several mammals, humans among them. Eggs lacking Juno do not fuse with normal sperm, and the egg sheds Juno rapidly after fertilisation, which, the researchers wrote, suggests a mechanism ensuring that eggs normally fuse with just a single sperm."
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١",
+          "en": "1"
+        },
+        "label": {
+          "ar": "حيوانٌ منويٌّ يتحد بالبويضة من بين مئات الملايين، ومن لقاءٍ كهذا بدأ كلٌّ منا",
+          "en": "sperm cell fuses with the egg, out of hundreds of millions released, and each of us began from such a meeting"
+        }
+      },
+      "timeline": [
+        {
+          "year": "610–632",
+          "revelation": true,
+          "text": {
+            "ar": "النبي ﷺ يقول: ما من كل الماء يكون الولد، وإذا أراد الله خلق شيءٍ لم يمنعه شيء",
+            "en": "The Prophet ﷺ says that the child does not come from all of the fluid, and that nothing prevents what Allah wills to create"
+          }
+        },
+        {
+          "year": "1677",
+          "text": {
+            "ar": "لوفنهوك أول من يرصد الحيوانات المنوية ويصفها",
+            "en": "Leeuwenhoek is the first to observe and describe sperm cells"
+          }
+        },
+        {
+          "year": "1876",
+          "text": {
+            "ar": "أوسكار هيرتفيغ ينشر ما وجده في بيض قنفذ البحر: حيوانٌ منويٌّ واحد يكفي لإخصاب البويضة، ثم يتكوّن غشاءٌ يمنع غيره من الدخول",
+            "en": "Oscar Hertwig publishes what he found in sea-urchin eggs: one sperm is enough to fertilise an egg, and a membrane then forms that keeps the others out"
+          }
+        },
+        {
+          "year": "2014",
+          "text": {
+            "ar": "تحديد «جونو» على بويضة الفأر، شريكِ «إيزومو ١» على الحيوان المنوي؛ وتتخلص البويضة من «جونو» سريعًا بعد الإخصاب",
+            "en": "Juno, the mouse-egg partner of the sperm’s Izumo1, is identified; the egg sheds it rapidly after fertilisation"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "قد يحتاط الإنسان ثم يُرزق الولد مع ذلك، وقد يتمناه فيطول انتظاره: «وَإِذَا أَرَادَ اللَّهُ خَلْقَ شَيْءٍ لَمْ يَمْنَعْهُ شَيْءٌ». ومن بين مئات الملايين يتحد بالبويضة واحد، فيبدأ من خليةٍ واحدة إنسانٌ كامل. فالولد هبةٌ من الله وحده، والنبي ﷺ حين سُئل عن تدبير الناس ردّهم إلى مشيئة ربه، فدلّهم على شكر الخالق وحده وعبادته.",
+        "en": "A person may take his precautions and still be given a child, or long for one and wait: “when Allah wills to create something, nothing prevents it.” Out of hundreds of millions, one cell joins the egg, and from a single cell a whole human being begins. A child is a gift from Allah alone; asked about what people do, His Messenger ﷺ turned them to what Allah wills, and so to thanking and worshipping the only Creator."
+      },
+      "didYouKnow": {
+        "ar": "حتى التوائم على هذه القاعدة: فالتوأمان غير المتطابقين يأتيان من بويضتين تُطلقان في دورةٍ واحدة، تُخصَب كلٌّ منهما بحيوانٍ منويٍّ واحد، أما المتطابقان فمن بويضةٍ واحدة مخصبة تنقسم في أول نموها إلى اثنين.",
+        "en": "Twins follow the same rule: fraternal twins come from two eggs released in one cycle, each fertilised by its own sperm, while identical twins come from a single fertilised egg that splits in two early in development."
+      },
+      "sources": [
+        {
+          "title": "Anatomy and Physiology 2e, 28.1 Fertilization (J. G. Betts et al.)",
+          "publisher": "OpenStax (Rice University)",
+          "year": "2022",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/28-1-fertilization",
+          "kind": "book"
+        },
+        {
+          "title": "Spermatozoa: A Historical Perspective (Puerta Suárez, du Plessis & Cardona Maya)",
+          "publisher": "International Journal of Fertility & Sterility",
+          "year": "2018",
+          "url": "https://europepmc.org/article/MED/29935062",
+          "kind": "journal"
+        },
+        {
+          "title": "Hertwig, Wilhelm August Oscar (R. Olby), Complete Dictionary of Scientific Biography",
+          "publisher": "Encyclopedia.com",
+          "url": "https://www.encyclopedia.com/science/dictionaries-thesauruses-pictures-and-press-releases/hertwig-wilhelm-august-oscar",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Juno is the egg Izumo receptor and is essential for mammalian fertilization (Bianchi, Doe, Goulding & Wright)",
+          "publisher": "Nature",
+          "year": "2014",
+          "url": "https://europepmc.org/article/MED/24739963",
+          "kind": "journal"
+        },
+        {
+          "title": "Sahih Muslim (ed. Muhammad Fu’ad ‘Abd al-Baqi) 2/1064, no. 1438 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1727/3480",
+          "kind": "book"
+        },
+        {
+          "title": "Abu al-‘Abbas al-Qurtubi, al-Mufhim 4/169, on Sahih Muslim 1438 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/132524/2181",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn al-Athir, al-Nihaya fi Gharib al-Hadith wa al-Athar 3/230, entry ‘azala (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/23691/1218",
+          "kind": "book"
+        },
+        {
+          "title": "Al-Tibi, al-Kashif ‘an Haqa’iq al-Sunan (on Mishkat al-Masabih) 7/2305–2306, on Sahih Muslim 1438 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/122257/1772",
+          "kind": "book"
+        }
+      ]
+    },
+    {
       "slug": "carried-with-hardship",
       "category": "human",
       "art": "cradle",
@@ -7004,6 +7327,185 @@
       ]
     },
     {
+      "slug": "al-walid-foretold",
+      "category": "prophecies",
+      "art": "open-door",
+      "nowLabel": "history",
+      "title": {
+        "ar": "ذرني ومن خلقت وحيدًا… سأصليه سقر",
+        "en": "Al-Walid’s End, Foretold While He Lived"
+      },
+      "hook": {
+        "ar": "آياتٌ نزلت في مكة تصف سيدًا حيًّا من سادة قريش قال في القرآن إنه سحر، ثم تعلن: ﴿سَأُصۡلِيهِ سَقَرَ﴾، وباب الإسلام مفتوحٌ أمامه سنين. فهل دخله يومًا؟",
+        "en": "Verses revealed in Mecca described a living lord of Quraysh who called the Qur’an magic, then declared: “I will drive him into Saqar.” The door to Islam stood open to him for years. Did he ever walk through it?"
+      },
+      "summary": {
+        "ar": "نزلت آياتٌ من سورة المدثر في أوائل العهد المكي في الوليد بن المغيرة، كما اتفق المفسرون، وفيها: ﴿سَأُصۡلِيهِ سَقَرَ﴾. وعاش بعدها سنين، ثم مات في مكة سنة ١هـ ولم يُسلم: خبرٌ عن مصير رجلٍ حيّ لا يملك بشرٌ أن يضمنه، ودليلٌ على أن القرآن من عند الله.",
+        "en": "Verses of Al-Muddaththir, revealed early in Mecca about al-Walid ibn al-Mughirah, as the commentators agree, declare: “I will drive him into Saqar.” He lived on for years and died in Mecca in 1 AH without accepting Islam: news of a living man’s end that no human could guarantee, and proof that the Qur’an is from Allah."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "ذَرۡنِي وَمَنۡ خَلَقۡتُ وَحِيدࣰا ۝١١ وَجَعَلۡتُ لَهُۥ مَالࣰا مَّمۡدُودࣰا ۝١٢ وَبَنِينَ شُهُودࣰا ۝١٣ وَمَهَّدتُّ لَهُۥ تَمۡهِيدࣰا ۝١٤ ثُمَّ يَطۡمَعُ أَنۡ أَزِيدَ ۝١٥ كَلَّآۖ إِنَّهُۥ كَانَ لِأٓيَٰتِنَا عَنِيدࣰا ۝١٦ سَأُرۡهِقُهُۥ صَعُودًا",
+          "meaning": {
+            "ar": "«ذَرْنِي وَمَنْ خَلَقْتُ وَحِيدًا»: كِلْ أمره إليّ، وقد خلقتُه في بطن أمه وحيدًا لا مال له ولا ولد (الطبري). «مَمْدُودًا»: واسعًا كثيرًا (ابن كثير). «شُهُودًا»: لا يغيبون (مجاهد)، أي حضورًا عنده لا يسافرون في التجارات (ابن كثير). «كَلَّا»: ليس ذلك كما يأمل ويرجو (الطبري). «عَنِيدًا»: معاندًا للحق مجانبًا له (الطبري). «صَعُودًا»: مشقّةً من العذاب (مجاهد).",
+            "en": "“Leave Me with the one I created alone And to whom I granted extensive wealth And children present [with him] And spread [everything] before him, easing [his life]. Then he desires that I should add more. No! Indeed, he has been toward Our verses obstinate. I will cover him with arduous torment.”"
+          },
+          "ref": {
+            "ar": "المدثر: ١١–١٧",
+            "en": "Al-Muddaththir 74:11–17"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "إِنَّهُۥ فَكَّرَ وَقَدَّرَ ۝١٨ فَقُتِلَ كَيۡفَ قَدَّرَ ۝١٩ ثُمَّ قُتِلَ كَيۡفَ قَدَّرَ ۝٢٠ ثُمَّ نَظَرَ ۝٢١ ثُمَّ عَبَسَ وَبَسَرَ ۝٢٢ ثُمَّ أَدۡبَرَ وَٱسۡتَكۡبَرَ ۝٢٣ فَقَالَ إِنۡ هَٰذَآ إِلَّا سِحۡرࣱ يُؤۡثَرُ ۝٢٤ إِنۡ هَٰذَآ إِلَّا قَوۡلُ ٱلۡبَشَرِ ۝٢٥ سَأُصۡلِيهِ سَقَرَ",
+          "meaning": {
+            "ar": "«فَكَّرَ وَقَدَّرَ»: تروّى ماذا يقول في القرآن (ابن كثير). «فَقُتِلَ»: دعاءٌ عليه (ابن كثير). «عَبَسَ»: قبض بين عينيه وقطّب، «وَبَسَرَ»: كلح وكره (ابن كثير). «أَدْبَرَ وَاسْتَكْبَرَ»: صرف عن الحق ورجع مستكبرًا عن الانقياد للقرآن (ابن كثير). «سِحْرٌ يُؤْثَرُ»: سحرٌ ينقله محمد ﷺ عن غيره ممن قبله، كما زعم (ابن كثير). «سَأُصْلِيهِ سَقَرَ»: سأورده بابًا من أبواب جهنم اسمه سقر (الطبري).",
+            "en": "“Indeed, he thought and deliberated. So may he be destroyed [for] how he deliberated. Then may he be destroyed [for] how he deliberated. Then he considered [again]; Then he frowned and scowled; Then he turned back and was arrogant And said, ‘This is not but magic imitated [from others]. This is not but the word of a human being.’ I will drive him into Saqar.”"
+          },
+          "ref": {
+            "ar": "المدثر: ١٨–٢٦",
+            "en": "Al-Muddaththir 74:18–26"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كان الوليد بن المغيرة المخزومي من أوسع قريشٍ ثراءً، ومرجعَها في أمورها، إذ كان أسنّ من أبي جهل وأبي سفيان، وكانت قريش تلقّبه «الوحيد». ولم يقبل دعوة النبي ﷺ، بل اشتدّ في معارضته.",
+          "en": "Al-Walid ibn al-Mughirah of Makhzum was among the wealthiest men of Quraysh and the elder they turned to in their affairs, being older than Abu Jahl and Abu Sufyan; Quraysh called him al-Wahid, “the unique”. He rejected the Prophet’s ﷺ call and opposed him fiercely."
+        },
+        {
+          "ar": "وفي السنوات الأولى من العهد المكي نزلت آياتٌ من سورة المدثر تذكّره بما أعطاه الله من مالٍ وبنين، وتصف كيف فكّر وقدّر ماذا يقول في القرآن، ثم أدبر واستكبر وقال: ﴿إِنۡ هَٰذَآ إِلَّا سِحۡرࣱ يُؤۡثَرُ﴾، ثم تعلن مصيره. ولم تسمّه الآيات، لكنها أشارت إليه بلقبه كما يقول ابن عاشور، واتفق المفسرون على أنها نزلت فيه. فقد أُعلن مصيره وهو حيّ، وباب الإسلام مفتوحٌ أمامه كما كان مفتوحًا لسائر قريش.",
+          "en": "In the first years at Mecca, verses of Al-Muddaththir came down that remind him of the wealth and sons Allah had given him, describe how he weighed what to say of the Qur’an, then turned back in arrogance and said, “This is not but magic imitated [from others]”, and announce his end. They do not name him, but they point to him by his nickname, as Ibn ‘Ashur explains, and the commentators agree they were revealed about him. His end was announced while he lived, with the door to Islam open to him, as it was to the rest of Quraysh."
+        }
+      ],
+      "now": [
+        {
+          "ar": "لم يُسلم الوليد. عاش بعد نزول الآيات سنين، ثم مات في مكة سنة ١هـ (٦٢٢م)، بعد الهجرة بنحو ثلاثة أشهر كما يروي الواقدي، وقد جاوز التسعين، ودُفن بالحجون.",
+          "en": "Al-Walid never accepted Islam. He lived on for years after the verses and died in Mecca in 1 AH (622) — about three months after the Hijrah, al-Waqidi reports — a man past ninety, and was buried at al-Hajun."
+        },
+        {
+          "ar": "وعدّ ابن تيمية ذلك من آيات النبوة الثابتة بالقرآن، فذكر هذه الآيات مع سورة المسد، ثم قال: «وكان كما أخبر به، مات الوليد كافرًا، ومات أبو لهب كافرًا».",
+          "en": "Ibn Taymiyyah counted this among the signs of prophethood established by the Qur’an. He set these verses beside surah Al-Masad and wrote: “It was as He foretold: al-Walid died an unbeliever, and Abu Lahab died an unbeliever.”"
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١هـ (٦٢٢م)",
+          "en": "1 AH (622)"
+        },
+        "label": {
+          "ar": "مات الوليد في مكة ولم يُسلم، بعد سنين من نزول الآيات فيه",
+          "en": "Al-Walid dies in Mecca without accepting Islam, years after the verses about him"
+        }
+      },
+      "timeline": [
+        {
+          "year": {
+            "ar": "أوائل العهد المكي",
+            "en": "Early Meccan years"
+          },
+          "revelation": true,
+          "text": {
+            "ar": "نزول آياتٍ من سورة المدثر في الوليد، تعلن مصيره",
+            "en": "Verses of Al-Muddaththir are revealed about al-Walid, announcing his end"
+          }
+        },
+        {
+          "year": {
+            "ar": "١هـ (٦٢٢)",
+            "en": "1 AH (622)"
+          },
+          "text": {
+            "ar": "يموت الوليد في مكة بعد الهجرة بنحو ثلاثة أشهر، ولم يُسلم",
+            "en": "About three months after the Hijrah, al-Walid dies in Mecca, never having accepted Islam"
+          }
+        },
+        {
+          "year": {
+            "ar": "٨هـ (٦٢٩)",
+            "en": "8 AH (629)"
+          },
+          "text": {
+            "ar": "ابنه خالد يُسلم",
+            "en": "His son Khalid accepts Islam"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "أُعلن مصيره وهو حيّ، وباب الإسلام مفتوحٌ أمامه كما انفتح لبنيه من بعده، ولو أسلم لكانت الآيات حجةً على القرآن إلى يوم القيامة. لكنه مات على كفره كما دلّت عليه، قال ابن تيمية: «وكان كما أخبر به، مات الوليد كافرًا». ولا يعلم خاتمة رجلٍ حيّ إلا الله، فهذا دليلٌ على أن محمدًا ﷺ رسوله حقًّا.",
+        "en": "His end was announced while he lived, with the door to Islam open to him, as it later opened for his sons. Had he accepted Islam, the verses would have stood against the Qur’an forever; instead he died outside Islam, as their verdict implied — “It was as He foretold: al-Walid died an unbeliever,” wrote Ibn Taymiyyah. Only Allah knows how a living man will end, so this is proof that Muhammad ﷺ is truly His Messenger."
+      },
+      "didYouKnow": {
+        "ar": "انفتح باب الإسلام في بيته من بعده: فأسلم ابنه الوليد بن الوليد بعد بدر، وهشامٌ يوم فتح مكة، وخالدٌ سنة ٨هـ (٦٢٩م)، وهو «سيف من سيوف الله» الذي أخذ الراية يوم مؤتة، رضي الله عنهم. أما الوليد نفسه فمات على كفره.",
+        "en": "The door to Islam opened in his house after him: his son al-Walid ibn al-Walid accepted Islam after Badr, Hisham at the conquest of Mecca, and Khalid in 8 AH (629) — the “sword among the swords of Allah” who took the banner at Mu’tah. Al-Walid himself died an unbeliever."
+      },
+      "sources": [
+        {
+          "title": "Velîd b. Mugīre (Mustafa Fayda)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2013",
+          "url": "https://islamansiklopedisi.org.tr/velid-b-mugire",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Müddessir Sûresi (M. Kâmil Yaşaroğlu)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2020",
+          "url": "https://islamansiklopedisi.org.tr/muddessir-suresi",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Ibn Kathir, Tafsir al-Qur’an al-‘Azim (Dar Ibn al-Jawzi ed.) 7/420–423, on Al-Muddaththir 74:11–30 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1503/4419",
+          "kind": "book"
+        },
+        {
+          "title": "al-Tabari, Jami‘ al-Bayan (ed. al-Turki) 23/421–432, on Al-Muddaththir 74:11–26 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/7798/15755",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn ‘Ashur, al-Tahrir wa al-Tanwir 29/303–304, on Al-Muddaththir 74:11 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/9776/10284",
+          "kind": "book"
+        },
+        {
+          "title": "al-Tabari, Tarikh al-Rusul wa al-Muluk 2/398: the events of 1 AH (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/9783/1023",
+          "kind": "book"
+        },
+        {
+          "title": "al-Baladhuri, Ansab al-Ashraf 1/152: al-Waqidi on the death of al-Walid ibn al-Mughirah (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/9773/169",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Taymiyyah, al-Jawab al-Sahih 6/76: signs of prophethood established by the Qur’an (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/170/2384",
+          "kind": "book"
+        },
+        {
+          "title": "Sahih al-Bukhari 3757, chapter on the virtues of Khalid ibn al-Walid (Sultaniyya ed., Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1681/5702",
+          "kind": "book"
+        },
+        {
+          "title": "Al-Razi, Mafatih al-Ghayb 30/704, on Al-Muddaththir 74:11 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/23635/5779",
+          "kind": "book"
+        }
+      ]
+    },
+    {
       "slug": "now-we-march-on-them",
       "category": "prophecies",
       "art": "trench",
@@ -7302,6 +7804,336 @@
           "title": "Ibn Hajar, Fath al-Bari 7/583, chapter on the expedition of Mu’tah (Arabic)",
           "publisher": "Islamweb Library",
           "url": "https://www.islamweb.net/ar/library/content/52/7700",
+          "kind": "book"
+        }
+      ]
+    },
+    {
+      "slug": "hatibs-hidden-letter",
+      "category": "prophecies",
+      "art": "hidden-scroll",
+      "nowLabel": "history",
+      "title": {
+        "ar": "فإنّ بها ظعينةً ومعها كتاب",
+        "en": "A Letter Hidden in Her Braids"
+      },
+      "hook": {
+        "ar": "يروي علي رضي الله عنه أن النبي ﷺ بعثه إلى روضةٍ بين المدينة ومكة وقال: «فَإِنَّ بِهَا ظَعِينَةً وَمَعَهَا كِتَابٌ». كتابٌ سرّيٌّ مخبّأٌ في ضفائر امرأة، فكيف علم به؟",
+        "en": "‘Ali relates that the Prophet ﷺ sent him to a meadow between Medina and Mecca: “There is a woman traveller there, and she has a letter.” The letter was a secret, hidden in her braids. How could he know?"
+      },
+      "summary": {
+        "ar": "يروي البخاري ومسلم أن حاطب بن أبي بلتعة رضي الله عنه كتب سرًّا إلى مشركي مكة، فبعث النبي ﷺ فرسانًا إلى روضة خاخ وقال: إن بها امرأةً معها كتاب، فوجدوها هناك، وأخرجت الكتاب من ضفائرها: علمٌ بأمرٍ خفيّ لا يُطلعه عليه إلا الله، ودليلٌ على نبوته ﷺ.",
+        "en": "Al-Bukhari and Muslim record that when Hatib ibn Abi Balta‘ah wrote secretly to the polytheists of Mecca, the Prophet ﷺ sent riders to Rawdat Khakh, saying a woman there had a letter. They found her, and it came out of her braids: knowledge only Allah could have given him, and a proof of his prophethood."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "انْطَلِقُوا حَتَّى تَأْتُوا رَوْضَةَ خَاخٍ فَإِنَّ بِهَا ظَعِينَةً وَمَعَهَا كِتَابٌ، فَخُذُوهُ مِنْهَا. فَانْطَلَقْنَا تَعَادَى بِنَا خَيْلُنَا حَتَّى انْتَهَيْنَا إِلَى الرَّوْضَةِ فَإِذَا نَحْنُ بِالظَّعِينَةِ فَقُلْنَا: أَخْرِجِي الْكِتَابَ. فَقَالَتْ: مَا مَعِي مِنْ كِتَابٍ. فَقُلْنَا: لَتُخْرِجِنَّ الْكِتَابَ أَوْ لَنُلْقِيَنَّ الثِّيَابَ. فَأَخْرَجَتْهُ مِنْ عِقَاصِهَا",
+          "narrator": {
+            "ar": "عن علي بن أبي طالب رضي الله عنه",
+            "en": "Narrated by ‘Ali ibn Abi Talib"
+          },
+          "meaning": {
+            "ar": "قاله النبي ﷺ لعليٍّ والزبير والمقداد رضي الله عنهم. «رَوْضَةَ خَاخٍ»: موضعٌ بين مكة والمدينة بقرب المدينة (النووي). «ظَعِينَةً»: امرأةٌ مسافرة، من الظَّعْن وهو الرحيل (ابن حجر). «تَعَادَى»: تجري (النووي). «لَنُلْقِيَنَّ الثِّيَابَ»: لننزعنّ ثيابك، تهديدٌ بما لا يفعلونه تخويفًا لها (ابن حجر). «عِقَاصِهَا»: شعرها المضفور (النووي).",
+            "en": "“‘Go on until you reach Rawdat Khakh, for there is a woman traveller there, and she has a letter: take it from her.’ So we set off, our horses racing with us, until we reached the meadow, and there was the woman. We said, ‘Bring out the letter.’ She said, ‘I have no letter with me.’ We said, ‘You will bring out the letter, or else we will take off your clothes.’ So she brought it out from her braids.”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٣٠٠٧)، وبنحوه في صحيح مسلم (٢٤٩٤)",
+            "en": "Sahih al-Bukhari 3007; similar in Sahih Muslim 2494"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "فَأَدْرَكْنَاهَا تَسِيرُ عَلَى بَعِيرٍ لَهَا حَيْثُ قَالَ رَسُولُ اللهِ ﷺ، فَقُلْنَا: الْكِتَابَ، فَقَالَتْ: مَا مَعَنَا كِتَابٌ، فَأَنَخْنَاهَا فَالْتَمَسْنَا فَلَمْ نَرَ كِتَابًا، فَقُلْنَا: مَا كَذَبَ رَسُولُ اللهِ ﷺ",
+          "narrator": {
+            "ar": "عن علي بن أبي طالب رضي الله عنه",
+            "en": "Narrated by ‘Ali ibn Abi Talib"
+          },
+          "meaning": {
+            "ar": "وفي هذه الرواية سمّى النبي ﷺ صاحب الكتاب حين بعثهم: «مَعَهَا كِتَابٌ مِنْ حَاطِبِ بْنِ أَبِي بَلْتَعَةَ إِلَى الْمُشْرِكِينَ». «حَيْثُ قَالَ»: في الموضع الذي وصفه لهم. «فَأَنَخْنَاهَا»: أبركنا بعيرها. «فَالْتَمَسْنَا»: طلبنا الكتاب في رحلها، أي فتّشوا ما معها ظاهرًا (ابن حجر).",
+            "en": "“We caught up with her riding a camel of hers, where the Messenger of Allah ﷺ had said. We said, ‘The letter!’ She said, ‘We have no letter.’ So we made her camel kneel and searched, and saw no letter. We said, ‘The Messenger of Allah ﷺ has not lied.’”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٣٩٨٣)، وبنحوه (٦٢٥٩، ٦٩٣٩)",
+            "en": "Sahih al-Bukhari 3983; similar in 6259 and 6939"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "حين نقضت قريشٌ صلح الحديبية تجهّز النبي ﷺ سنة ٨هـ للمسير إليها، وكتم وجهته أول الأمر. ثم أعلم الناس أنه سائرٌ إلى مكة، ودعا، كما يروي ابن إسحاق: «اللهم خذ العيون والأخبار عن قريش حتى نبغتها في بلادها».",
+          "en": "When Quraysh broke the truce of al-Hudaybiyah, the Prophet ﷺ prepared, in 8 AH, to march on them, at first keeping his destination hidden. Then he told the people he was heading for Mecca and prayed, as Ibn Ishaq reports: “O Allah, keep the spies and the news from Quraysh until we take them by surprise in their own land.”"
+        },
+        {
+          "ar": "وكان حاطب بن أبي بلتعة رضي الله عنه ممن شهد بدرًا، حليفًا في قريش لا من أنفسها، وله بمكة أهلٌ ومال. وفيما يرويه البخاري ومسلم وكتب السيرة، كتب إلى أناسٍ من مشركي مكة يخبرهم بمسير النبي ﷺ إليهم، يريد أن يتّخذ عندهم يدًا يحمون بها قرابته، ودفع الكتاب إلى امرأةٍ تحمله إلى قريش، فخبّأته في ضفائر شعرها.",
+          "en": "Hatib ibn Abi Balta‘ah, who had fought at Badr, was an ally of Quraysh rather than one of their own, and had family and property in Mecca. As al-Bukhari, Muslim and the sirah tell it, he wrote to some of its polytheists to tell them the Prophet ﷺ was marching on them, hoping to earn a favour that would protect his relatives, and gave the letter to a woman to carry to Quraysh. She hid it in her braids."
+        }
+      ],
+      "now": [
+        {
+          "ar": "يروي البخاري ومسلم عن علي رضي الله عنه أن النبي ﷺ بعثه والزبير والمقداد رضي الله عنهما إلى روضة خاخ، وهي بين مكة والمدينة بقرب المدينة كما يقول النووي، وأخبرهم أن بها امرأةً معها كتاب؛ وفي رواياتٍ للبخاري سمّى صاحبه: «معها كتابٌ من حاطب بن أبي بلتعة إلى المشركين». فأدركوها «حيث قال رسول الله ﷺ»، فأنكرت، وفتّشوا رحلها فلم يجدوا شيئًا، فقال علي: «لقد علمنا ما كذب رسول الله ﷺ». فلما هدّدوها بنزع ثيابها أخرجت الكتاب من ضفائرها، فإذا هو من حاطب إلى أناسٍ من مشركي مكة يخبرهم ببعض أمر رسول الله ﷺ.",
+          "en": "Al-Bukhari and Muslim record from ‘Ali that the Prophet ﷺ sent him with al-Zubayr and al-Miqdad to Rawdat Khakh — between Mecca and Medina, near Medina, al-Nawawi explains — telling them a woman there had a letter; in some of al-Bukhari’s reports he even named its writer: “a letter from Hatib ibn Abi Balta‘ah to the polytheists”. They caught up with her “where the Messenger of Allah ﷺ had said”. She denied it, and a search of her saddle found nothing, but ‘Ali said, “We knew the Messenger of Allah ﷺ had not lied.” When they threatened to take off her clothes, she drew the letter from her braids: from Hatib to some of the polytheists of Mecca, telling them of some of the affairs of the Messenger of Allah ﷺ."
+        },
+        {
+          "ar": "فلما سأله النبي ﷺ: «يا حاطب، ما هذا؟» قال إنه ما فعله كفرًا ولا ارتدادًا، وإنما أراد أن يتّخذ عند قريش يدًا يحمون بها قرابته، فقال ﷺ: «لقد صدقكم»، وردّ عمر رضي الله عنه حين استأذن في قتله بأن حاطبًا شهد بدرًا. وتذكر كتب السيرة أن الخبر أتاه «من السماء»، ثم سار إلى مكة ففُتحت في رمضان سنة ٨هـ (يناير ٦٣٠م). قال النووي: «وفي هذا معجزةٌ ظاهرة لرسول الله ﷺ»، وقال ابن حجر: «وفيه من أعلام النبوة إطلاع الله نبيه على قصة حاطب مع المرأة».",
+          "en": "Asked, “Hatib, what is this?”, he said he had done it not out of disbelief or apostasy but to earn a favour from Quraysh that would protect his relatives. The Prophet ﷺ said, “He has told you the truth,” and when ‘Umar asked leave to kill him, answered that Hatib had fought at Badr. The sirah adds that the news had come to him “from heaven”. He then marched on Mecca, which was opened in Ramadan 8 AH (January 630). Al-Nawawi comments: “In this is a clear miracle of the Messenger of Allah ﷺ”; and Ibn Hajar: “Among the signs of prophethood in it is that Allah informed His Prophet of the story of Hatib and the woman.”"
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "٨هـ (٦٣٠م)",
+          "en": "8 AH (630)"
+        },
+        "label": {
+          "ar": "تُفتح مكة، بعد أن ضُبط في الطريق كتابٌ إلى مشركيها، كما يروي البخاري ومسلم",
+          "en": "Mecca is opened, after a letter to its polytheists was seized on the road, as al-Bukhari and Muslim record"
+        }
+      },
+      "timeline": [
+        {
+          "year": {
+            "ar": "٨هـ",
+            "en": "8 AH"
+          },
+          "revelation": true,
+          "text": {
+            "ar": "النبي ﷺ يبعث فرسانًا إلى روضة خاخ، ويخبرهم أن بها امرأةً معها كتاب",
+            "en": "The Prophet ﷺ sends riders to Rawdat Khakh, telling them a woman there has a letter"
+          }
+        },
+        {
+          "year": {
+            "ar": "٨هـ",
+            "en": "8 AH"
+          },
+          "text": {
+            "ar": "الفرسان يجدون المرأة حيث قال، ويخرج الكتاب من ضفائرها",
+            "en": "The riders find the woman where he said, and the letter comes out of her braids"
+          }
+        },
+        {
+          "year": {
+            "ar": "رمضان ٨هـ (يناير ٦٣٠)",
+            "en": "Ramadan 8 AH (Jan. 630)"
+          },
+          "text": {
+            "ar": "المسلمون يدخلون مكة، وتُفتح",
+            "en": "The Muslims enter Mecca, and the city is opened"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "كتابٌ كُتب في السرّ وخُبّئ في ضفائر امرأةٍ في طريقها إلى مكة، ومع ذلك أخبر النبي ﷺ فرسانه، كما يروي علي رضي الله عنه، بالمكان والمرأة والكتاب، فوجدوا ذلك كما قال. ولمّا فتّشوا فلم يجدوا شيئًا لم يشكّوا، بل قالوا: «مَا كَذَبَ رَسُولُ اللهِ ﷺ». ولا يُطلعه على ذلك إلا الله، ولذلك قال النووي: «وفي هذا معجزةٌ ظاهرة لرسول الله ﷺ»، وهو رسول الله حقًّا.",
+        "en": "A letter written in secret and hidden in a woman’s braids on her way to Mecca — yet, as ‘Ali tells it, the Prophet ﷺ told his riders of the place, the woman and the letter, and they found it all as he said. When their search turned up nothing they did not doubt, but said, “The Messenger of Allah ﷺ has not lied.” Only Allah could have told him; that is why al-Nawawi writes, “In this is a clear miracle of the Messenger of Allah ﷺ” — and he is truly His Messenger."
+      },
+      "didYouKnow": {
+        "ar": "قال النبي ﷺ عن حاطب رضي الله عنه: «صدق، ولا تقولوا له إلا خيرًا». ويذكر العلماء هذه القصة سببًا لنزول أول سورة الممتحنة، التي تنهى المؤمنين أن يتّخذوا عدوّ الله وعدوّهم أولياء.",
+        "en": "Of Hatib the Prophet ﷺ said, “He has spoken the truth; say nothing to him but good.” The scholars give this episode as the occasion of the opening of surah Al-Mumtahanah, which forbids the believers to take Allah’s enemies and their own as allies."
+      },
+      "sources": [
+        {
+          "title": "Hâtıb b. Ebû Beltea (Nebi Bozkurt)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "1997",
+          "url": "https://islamansiklopedisi.org.tr/hatib-b-ebu-beltea",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Mekke (Nebi Bozkurt, Mustafa Sabri Küçükaşcı)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2003",
+          "url": "https://islamansiklopedisi.org.tr/mekke",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "al-Nawawi, Sharh Sahih Muslim 16/55–56, on Sahih Muslim 2494 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1711/3547",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Hajar, Fath al-Bari 12/306–310, on Sahih al-Bukhari 6939 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1673/7297",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Hajar, Fath al-Bari 7/519–520, on Sahih al-Bukhari 4274: the conquest of Mecca (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1673/4347",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Hisham, al-Sira al-Nabawiyya (ed. al-Saqqa) 2/397–399: Hatib’s letter to Quraysh (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/23833/1135",
+          "kind": "book"
+        }
+      ]
+    },
+    {
+      "slug": "return-to-mecca",
+      "category": "prophecies",
+      "art": "valley-dawn",
+      "nowLabel": "history",
+      "title": {
+        "ar": "لرادُّك إلى معاد",
+        "en": "He Will Take You Back to a Place of Return"
+      },
+      "hook": {
+        "ar": "يقول الله لنبيه ﷺ: ﴿إِنَّ ٱلَّذِي فَرَضَ عَلَيۡكَ ٱلۡقُرۡءَانَ لَرَآدُّكَ إِلَىٰ مَعَادࣲۚ﴾، وفسّرها ابن عباس رضي الله عنهما: إلى مكة، البلد الذي قرر كبراؤه قتله. فمن يملك أن يعد بهذا ثم يفي به إلا الله؟",
+        "en": "Allah told His Prophet ﷺ: “…He who imposed upon you the Qur’an will take you back to a place of return.” To Mecca, Ibn ‘Abbas explained: the city whose leaders resolved to kill him. Who but Allah could promise that, and keep it?"
+      },
+      "summary": {
+        "ar": "آيةٌ من سورةٍ مكية تعد النبي ﷺ بأن الذي فرض عليه القرآن رادُّه إلى معاد، وهو مكة في قول ابن عباس رضي الله عنهما الذي رواه البخاري، وفسّره آخرون بالآخرة. وقد خرج ﷺ من مكة سنة ٦٢٢م مطلوبًا، ثم دخلها فاتحًا سنة ٦٣٠م: وعدٌ من الله تحقق.",
+        "en": "A verse of a Meccan surah promises the Prophet ﷺ that the One who imposed the Qur’an on him will take him back to a “place of return”: Mecca, in Ibn ‘Abbas’s reading recorded by al-Bukhari, though others read it as the Hereafter. He left Mecca in 622 a hunted man and entered it as its conqueror in 630: Allah’s promise, kept."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "إِنَّ ٱلَّذِي فَرَضَ عَلَيۡكَ ٱلۡقُرۡءَانَ لَرَآدُّكَ إِلَىٰ مَعَادࣲۚ قُل رَّبِّيٓ أَعۡلَمُ مَن جَآءَ بِٱلۡهُدَىٰ وَمَنۡ هُوَ فِي ضَلَٰلࣲ مُّبِينࣲ",
+          "meaning": {
+            "ar": "«فَرَضَ عَلَيْكَ الْقُرْآنَ»: أنزله عليك (الطبري)، وأوجب عليك تبليغه، أي «افترض عليك أداءه إلى الناس» (ابن كثير). «لَرَادُّكَ إِلَى مَعَادٍ»: قال ابن عباس رضي الله عنهما: إلى مكة، وهو قول الأكثر عند القرطبي، وقيل: إلى يوم القيامة، أو إلى الموت، أو إلى الجنة. «قُلْ رَبِّي أَعْلَمُ»: أي قل لكفار مكة إذا قالوا: إنك لفي ضلال مبين (القرطبي).",
+            "en": "“Indeed, [O Muhammad], He who imposed upon you the Qur’an will take you back to a place of return. Say, ‘My Lord is most knowing of who brings guidance and who is in clear error.’”"
+          },
+          "ref": {
+            "ar": "القصص: ٨٥",
+            "en": "Al-Qasas 28:85"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "لَرَادُّكَ إِلَى مَعَادٍ، قَالَ: إِلَى مَكَّةَ",
+          "narrator": {
+            "ar": "عن ابن عباس رضي الله عنهما",
+            "en": "Narrated by Ibn ‘Abbas"
+          },
+          "meaning": {
+            "ar": "قولُ ابن عباس رضي الله عنهما في تفسير الآية، لا من كلام النبي ﷺ. «مَعَادٍ»: الموضع الذي يعود إليه المرء؛ قال القتبي: «معاد الرجل بلده، لأنه ينصرف ثم يعود» (القرطبي)، وهو عند ابن عباس هنا مكة.",
+            "en": "“‘…will take you back to a place of return’ — he said: ‘To Mecca.’”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٤٧٧٣)",
+            "en": "Sahih al-Bukhari 4773"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "الآية في أواخر سورة القصص، وهي في جملتها مكية كما يذكر ابن كثير. وفي مكة آذت قريش المسلمين، حتى هاجر بعضهم إلى الحبشة، وعُزل من بقي منهم نحو ثلاث سنين في شِعب أبي طالب. وفي الآية نفسها أمرٌ بأن يجيب من رموه بالضلال: ﴿قُل رَّبِّيٓ أَعۡلَمُ مَن جَآءَ بِٱلۡهُدَىٰ وَمَنۡ هُوَ فِي ضَلَٰلࣲ مُّبِينࣲ﴾.",
+          "en": "The verse comes near the end of Surah Al-Qasas, which as a whole is Meccan, as Ibn Kathir notes. In Mecca Quraysh persecuted the Muslims, driving some to flee to Abyssinia and cutting off those who stayed, for about three years, in the quarter of Abu Talib. The same verse tells him to answer those who accused him of error: “Say, ‘My Lord is most knowing of who brings guidance and who is in clear error.’”"
+        },
+        {
+          "ar": "واختلف المفسرون في «المعاد»: فروى البخاري عن ابن عباس رضي الله عنهما أنه مكة، وقال مجاهد: «إلى مولدك بمكة»، وجعله القرطبي قول الأكثر. وقال آخرون: يوم القيامة، وبه بدأ ابن كثير، وقيل: الموت، وقيل: الجنة، ورُويت هذه الأقوال عن ابن عباس أيضًا. واختار الطبري: «لرادّك إلى عادتك من الموت، أو إلى عادتك حيث ولدت»، وأجاز أن يكون المعنى: «أن تعود إلى مكة مفتوحة لك».",
+          "en": "Commentators differ on the “place of return”. Al-Bukhari records Ibn ‘Abbas saying it is Mecca; Mujahid said “to your birthplace in Mecca”, and al-Qurtubi calls this the more widely held view. Others said the Day of Resurrection, which Ibn Kathir gives first, or death, or Paradise, and these too are reported from Ibn ‘Abbas. Al-Tabari preferred “death, or the place where you were born”, and allowed the sense “that you return to Mecca, opened to you”."
+        }
+      ],
+      "now": [
+        {
+          "ar": "اجتمع كبراء قريش في دار الندوة، فقرروا قتل النبي ﷺ باقتراحٍ من أبي جهل، فخرج من مكة ليلًا سنة ٦٢٢م، واختبأ مع أبي بكر رضي الله عنه ثلاثة أيام في غار ثور، وقريش تبحث عنهما وقد جعلت لمن يأتي بهما جائزة، ثم دخل المدينة في ١٢ ربيع الأول (٢٤ سبتمبر ٦٢٢م).",
+          "en": "The leaders of Quraysh met in the Dar al-Nadwah and, on Abu Jahl’s proposal, resolved to kill the Prophet ﷺ. He left Mecca by night in 622 and hid for three days with Abu Bakr in the cave of Thawr, while Quraysh searched for them and offered a reward for their capture; he entered Medina on 12 Rabi‘ al-Awwal (24 September 622)."
+        },
+        {
+          "ar": "وفي سنة ٧هـ (٦٢٩م) دخل مكة معتمرًا ثلاثة أيام بمقتضى صلح الحديبية. ثم أغار بنو بكر على خزاعة ليلًا بدعمٍ من قريش، وأبت قريش أن تؤدي ديات القتلى أو تتبرأ من حلفائها، فخرج النبي ﷺ في رمضان سنة ٨هـ في جيشٍ بلغ عشرة آلاف، ودخل مكة فاتحًا، والمقبول عمومًا أن ذلك في ٢٠ رمضان (١١ يناير ٦٣٠م)، وأعلن فيها عفوًا عامًا. قال القرطبي: «ختم السورة ببشارة نبيه محمد ﷺ برده إلى مكة قاهرًا لأعدائه».",
+          "en": "In 7 AH (629) he entered Mecca for a three-day ‘umrah under the Hudaybiyyah truce. Then Banu Bakr, backed by Quraysh, made a night raid on the tribe of Khuza‘ah, and Quraysh refused to pay the blood money or give up their allies; in Ramadan 8 AH the Prophet ﷺ set out with an army that grew to 10,000. He entered Mecca as its conqueror, on 20 Ramadan (11 January 630) by the generally accepted date, and proclaimed a general amnesty. Al-Qurtubi wrote that the surah closes “with good news for His Prophet Muhammad ﷺ: that He would bring him back to Mecca, victorious over his enemies.”"
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "١٠٬٠٠٠",
+          "en": "10,000"
+        },
+        "label": {
+          "ar": "عدد الجيش الذي دخل به النبي ﷺ مكة فاتحًا سنة ٨هـ (٦٣٠م)، وقد خرج منها ليلًا سنة ٦٢٢م",
+          "en": "the army with which the Prophet ﷺ entered Mecca as its conqueror in 8 AH (630), having left it by night in 622"
+        }
+      },
+      "timeline": [
+        {
+          "year": {
+            "ar": "بحلول ٦٢٢",
+            "en": "by 622"
+          },
+          "revelation": true,
+          "text": {
+            "ar": "خاتمة سورة القصص، وهي سورة مكية، تعِد بالردّ إلى «معاد»",
+            "en": "The close of Surah Al-Qasas, a Meccan surah, promises a “place of return”"
+          }
+        },
+        {
+          "year": "622",
+          "text": {
+            "ar": "قريش تقرر قتله، فيخرج من مكة ليلًا مهاجرًا إلى المدينة",
+            "en": "Quraysh resolve to kill him; he leaves Mecca by night for Medina"
+          }
+        },
+        {
+          "year": {
+            "ar": "٧هـ (٦٢٩)",
+            "en": "7 AH (629)"
+          },
+          "text": {
+            "ar": "يدخل مكة معتمرًا ثلاثة أيام بمقتضى صلح الحديبية",
+            "en": "He enters Mecca for a three-day ‘umrah under the Hudaybiyyah truce"
+          }
+        },
+        {
+          "year": {
+            "ar": "رمضان ٨هـ (٦٣٠)",
+            "en": "Ramadan 8 AH (630)"
+          },
+          "text": {
+            "ar": "يدخل مكة فاتحًا في عشرة آلاف، ويعلن عفوًا عامًا",
+            "en": "He enters Mecca as its conqueror with 10,000 men and proclaims a general amnesty"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "في الآية وعدٌ وتحدٍّ: وعدٌ بأن الذي فرض عليه القرآن رادُّه، وتحدٍّ لمن رموه بالضلال: ﴿قُل رَّبِّيٓ أَعۡلَمُ مَن جَآءَ بِٱلۡهُدَىٰ﴾. والمعاد عند ابن عباس رضي الله عنهما مكة، فالبلد الذي قرر كبراؤه قتله، وخرج منه ليلًا، فُتح له بعد أقل من ثماني سنين. وقد يرجو المرء العودة إلى بلده، أما هذا فوعدٌ في القرآن نفسه ممن أنزله، وقد تحقق: فليس رجاءَ بشر، بل كلامُ الله.",
+        "en": "The verse holds a promise, that he would be taken back, and a challenge to those who called him misguided: “Say, ‘My Lord is most knowing of who brings guidance…’” In Ibn ‘Abbas’s reading the promise was Mecca, and the city whose leaders resolved to kill him, and which he left by night, opened to him within eight years. A man may hope to go home; but this was a promise in the Qur’an itself, from the One who sent it down, and it was kept: no man’s hope, but the word of Allah."
+      },
+      "didYouKnow": {
+        "ar": "رُوي عن ابن عباس رضي الله عنهما في الآية أكثر من قول، وجمع ابن كثير بينها بأن الرجوع إلى مكة، وهو الفتح، كان عند ابن عباس أمارةً على اقتراب أجل النبي ﷺ، فكان يفسرها تارةً بمكة، وتارةً بالموت، أو بيوم القيامة، أو بالجنة.",
+        "en": "Ibn ‘Abbas is reported with more than one reading of this verse. Ibn Kathir reconciles them: for Ibn ‘Abbas, the return to Mecca, the conquest, was a sign that the Prophet’s ﷺ death was near, so he explained the verse at times as Mecca, at times as death, the Resurrection or Paradise."
+      },
+      "sources": [
+        {
+          "title": "Hicret, part 1 (Ahmet Önkal)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "1998",
+          "url": "https://islamansiklopedisi.org.tr/hicret",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Mekke, part 1: history (Nebi Bozkurt, Mustafa Sabri Küçükaşcı)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2003",
+          "url": "https://islamansiklopedisi.org.tr/mekke",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Umretü’l-kazâ (Mustafa Sabri Küçükaşcı)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2012",
+          "url": "https://islamansiklopedisi.org.tr/umretul-kaza",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Al-Tabari, Jami‘ al-Bayan (Dar al-Tarbiya wa al-Turath ed.) 19/638–642, on Al-Qasas 28:85 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/43/11380",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Kathir, Tafsir al-Qur’an al-‘Azim (Dar Ibn al-Jawzi ed.) 6/43–45, on Al-Qasas 28:85 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1503/3315",
+          "kind": "book"
+        },
+        {
+          "title": "Al-Qurtubi, al-Jami‘ li-Ahkam al-Qur’an 13/320–321, on Al-Qasas 28:85 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/20855/5135",
           "kind": "book"
         }
       ]
@@ -8256,6 +9088,208 @@
       ]
     },
     {
+      "slug": "umm-haram-and-the-sea",
+      "category": "prophecies",
+      "art": "fleet-at-dawn",
+      "nowLabel": "history",
+      "title": {
+        "ar": "أنتِ من الأوّلين",
+        "en": "You Are Among the First"
+      },
+      "hook": {
+        "ar": "كانت قريش أهل قوافل لا أهل بحر، ولم يكن للمسلمين أسطول، ومع ذلك أُري النبي ﷺ في منامه أناسًا من أمته يغزون في البحر، فأخبر امرأةً من المدينة أنها من الأوّلين منهم. فمن أعلمه بذلك إلا الله؟",
+        "en": "Quraysh traded by caravan, not by sea, and the Muslims had no fleet. Yet the Prophet ﷺ, shown in a dream men of his community raiding by sea, told a woman of Medina she was among the first of them. Who told him, if not Allah?"
+      },
+      "summary": {
+        "ar": "أُري النبي ﷺ في منامه أناسًا من أمته يركبون البحر غزاةً، فأخبر أم حرام رضي الله عنها أنها من الأوّلين منهم. ونحو سنة ٦٤٩م، بعد وفاته بنحو سبعة عشر عامًا، أبحر أول أسطولٍ للمسلمين في البحر المتوسط إلى قبرص، ويذكر المؤرخون أنها كانت فيه وماتت في تلك الغزوة: خبرٌ لا يعلمه إلا الله.",
+        "en": "Shown in a dream men of his community riding the sea as raiders, the Prophet ﷺ told Umm Haram she was among the first of them. Around 649, some 17 years after his death, the first Muslim fleet on the Mediterranean sailed for Cyprus; the histories record that she was aboard and died on that campaign: news only Allah could give."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "نَاسٌ مِنْ أُمَّتِي عُرِضُوا عَلَيَّ غُزَاةً فِي سَبِيلِ اللَّهِ، يَرْكَبُونَ ثَبَجَ هَذَا الْبَحْرِ، مُلُوكًا عَلَى الْأَسِرَّةِ، أَوْ مِثْلَ الْمُلُوكِ عَلَى الْأَسِرَّةِ — يَشُكُّ أَيَّهُمَا قَالَ — قَالَتْ: فَقُلْتُ: يَا رَسُولَ اللَّهِ، ادْعُ اللَّهَ أَنْ يَجْعَلَنِي مِنْهُمْ، فَدَعَا لَهَا",
+          "narrator": {
+            "ar": "عن أنس بن مالك رضي الله عنه",
+            "en": "Narrated by Anas ibn Malik"
+          },
+          "meaning": {
+            "ar": "قالها النبي ﷺ لأم حرام بنت ملحان رضي الله عنها حين استيقظ يضحك من نومه عندها. «عُرِضُوا عَلَيَّ»: رآهم في منامه، و«رؤياه وحي» كما قال ابن عبد البر. «ثَبَجَ هَذَا الْبَحْرِ»: ظهره، وقيل: وسطه. «مُلُوكًا عَلَى الْأَسِرَّةِ»: قيل: صفتهم في الجنة، وقيل: صفة حالهم في الدنيا. «يَشُكُّ أَيَّهُمَا قَالَ»: من كلام الراوي.",
+            "en": "“‘People of my community were shown to me as raiders in the path of Allah, riding the back of this sea, kings upon thrones’ — or ‘like kings upon thrones’; the narrator was unsure which he said. She said: I said, ‘Messenger of Allah, pray to Allah to make me one of them,’ and he prayed for her.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (١٩١٢)، وبنحوه في صحيح البخاري (٢٧٨٨) و(٢٧٨٩)",
+            "en": "Sahih Muslim 1912; similar in Sahih al-Bukhari 2788–2789"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "ثُمَّ وَضَعَ رَأْسَهُ فَنَامَ، ثُمَّ اسْتَيْقَظَ وَهُوَ يَضْحَكُ، قَالَتْ: فَقُلْتُ: مَا يُضْحِكُكَ يَا رَسُولَ اللَّهِ؟ قَالَ: نَاسٌ مِنْ أُمَّتِي عُرِضُوا عَلَيَّ غُزَاةً فِي سَبِيلِ اللَّهِ — كَمَا قَالَ فِي الْأُولَى — قَالَتْ: فَقُلْتُ: يَا رَسُولَ اللَّهِ، ادْعُ اللَّهَ أَنْ يَجْعَلَنِي مِنْهُمْ، قَالَ: أَنْتِ مِنَ الْأَوَّلِينَ. فَرَكِبَتْ أُمُّ حَرَامٍ بِنْتُ مِلْحَانَ الْبَحْرَ فِي زَمَنِ مُعَاوِيَةَ، فَصُرِعَتْ عَنْ دَابَّتِهَا حِينَ خَرَجَتْ مِنَ الْبَحْرِ فَهَلَكَتْ",
+          "narrator": {
+            "ar": "عن أنس بن مالك رضي الله عنه",
+            "en": "Narrated by Anas ibn Malik"
+          },
+          "meaning": {
+            "ar": "«أَنْتِ مِنَ الْأَوَّلِينَ»: من الطائفة الأولى؛ قال النووي: «هذا دليل على أن رؤياه الثانية غير الأولى، وأنه عرض فيها غير الأولين». «فِي زَمَنِ مُعَاوِيَةَ»: أي في زمن غزوه البحر في خلافة عثمان رضي الله عنه، لا في أيام خلافته، كما نقل القاضي عياض عن أكثر أهل السير. «فَصُرِعَتْ»: سقطت. «فَهَلَكَتْ»: ماتت. والجملة الأخيرة من كلام أنس رضي الله عنه.",
+            "en": "“Then he laid his head down and slept, then woke up laughing. I said, ‘What makes you laugh, Messenger of Allah?’ He said, ‘People of my community were shown to me as raiders in the path of Allah’ — as he had said the first time. I said, ‘Messenger of Allah, pray to Allah to make me one of them.’ He said, ‘You are among the first.’ Umm Haram bint Milhan sailed the sea in the time of Mu‘awiyah, and when she came out of the sea she was thrown from her mount and died.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (١٩١٢)، وبنحوه في صحيح البخاري (٢٧٨٨) و(٢٧٨٩)",
+            "en": "Sahih Muslim 1912; similar in Sahih al-Bukhari 2788–2789"
+          }
+        }
+      ],
+      "then": [
+        {
+          "ar": "كانت أم حرام بنت ملحان رضي الله عنها من الأنصار من بني النجار، خالةَ أنس بن مالك، وتزوجها عبادة بن الصامت رضي الله عنهما، وكانت من محارم النبي ﷺ باتفاق العلماء كما يقول النووي. وكان ﷺ إذا ذهب إلى قباء دخل عليها، كما في رواية للبخاري، فنام عندها يومًا وقت القيلولة، ثم استيقظ يضحك وأخبرها بما أُري في منامه.",
+          "en": "Umm Haram bint Milhan was a woman of the Ansar, of Banu al-Najjar, the aunt of Anas ibn Malik, and she married ‘Ubadah ibn al-Samit. She was a mahram of the Prophet ﷺ, a relative he could not marry, as al-Nawawi says the scholars agree. When he went to Quba’ he would call on her, one narration in al-Bukhari says, and once, resting in her house at midday, he fell asleep, woke up laughing and told her what he had been shown."
+        },
+        {
+          "ar": "وكانت قريش أهل تجارةٍ بالقوافل لم يشتغلوا بالبحر، ولم يكن للمسلمين في حياته ﷺ أسطول، وكانت حملتهم البحرية الوحيدة في حياته سريةً خرجت سنة ٩هـ لصدّ قراصنة عند ساحل مكة. بل لما ألحّ معاوية، أمير الشام، على عمر رضي الله عنهما بعد ذلك في غزو البحر أبى عمر، إذ رأى، كما تقول الموسوعة الإسلامية لوقف الديانة التركي، أن المسلمين ليست لهم بعدُ معرفةٌ ولا خبرةٌ تؤهلهم لركوب البحر.",
+          "en": "Quraysh traded by caravan and did not take to the sea, and in the Prophet’s ﷺ lifetime the Muslims had no fleet: their only expedition by sea was a sortie against pirates off Mecca’s coast in 9 AH. Even later, when Mu‘awiyah, governor of Syria, pressed ‘Umar to let him raid by sea, ‘Umar refused, judging, as the TDV Encyclopedia of Islam puts it, that the Muslims did not yet have the knowledge and experience to put to sea."
+        }
+      ],
+      "now": [
+        {
+          "ar": "وفي خلافة عثمان رضي الله عنه أُذن لمعاوية رضي الله عنه في غزو قبرص على ألا يخرج معه إلا متطوع، فأبحر الأسطول من عكا في ربيع سنة ٢٨هـ (٦٤٩م)، في غزوة قبرص الأولى، التي قال البلاذري: «ولم يركب المسلمون بحر الروم قبلها». فصالح أهل قبرص المسلمين على مالٍ يؤدونه كل عام. ويذكر نقشان في سولي، على ساحل قبرص الشمالي، هجومين على الجزيرة، وتجعل المصادر غير العربية، ومنها هذان النقشان، الغزوَ بين ٦٤٨ و٦٥٠م. ثم هزم أسطول المسلمين في معركة ذات الصواري (٦٥٢ أو ٦٥٥م) أسطولًا بيزنطيًّا يقوده الإمبراطور قنسطانز الثاني بنفسه.",
+          "en": "Under the caliph ‘Uthman, Mu‘awiyah was allowed to send a fleet against Cyprus, on condition that only volunteers sailed. In the spring of 28 AH (649) it put out from Acre on the first Cyprus campaign, before which, al-Baladhuri writes, “the Muslims had not sailed the Sea of the Romans”, the Mediterranean. Cyprus came to terms, agreeing to pay a yearly sum. Two inscriptions at Soloi, on the island’s north coast, speak of two attacks, and the non-Arabic sources, these inscriptions among them, place the invasion between 648 and 650; and at the Battle of the Masts (652 or 655) a Muslim fleet defeated a Byzantine fleet led by Emperor Constans II himself."
+        },
+        {
+          "ar": "ويذكر مؤرخو المسلمين، كالبلاذري وخليفة بن خياط، أن عبادة بن الصامت رضي الله عنه حمل معه في تلك الغزوة زوجته أم حرام رضي الله عنها. ويقول أنس رضي الله عنه، راوي الحديث، إنها ركبت البحر في زمن معاوية، فلما خرجت منه صرعتها دابتها فماتت، ويجعل المؤرخون موتها في تلك الغزوة الأولى. وعدّ النووي من معجزات الحديث إخباره ﷺ بأن أمته يغزون ويركبون البحر، «وأن أم حرام تعيش إلى ذلك الزمان، وأنها تكون معهم، وقد وجد بحمد الله تعالى كل ذلك».",
+          "en": "Muslim historians such as al-Baladhuri and Khalifah ibn Khayyat record that ‘Ubadah ibn al-Samit took his wife Umm Haram with him on that campaign. Anas, who narrated the hadith, adds that she sailed in the time of Mu‘awiyah and that, when she came out of the sea, her mount threw her and she died; the historians place her death on that first campaign. Al-Nawawi counted among the miracles in the hadith that his community would raid and ride the sea, “and that Umm Haram would live to that time and be with them; and all of that has come to pass, praise be to Allah.”"
+        }
+      ],
+      "highlight": {
+        "value": {
+          "ar": "نحو ١٧ عامًا",
+          "en": "About 17 years"
+        },
+        "label": {
+          "ar": "بين وفاة النبي ﷺ (٦٣٢م) وإبحار أول أسطولٍ للمسلمين في البحر المتوسط (٢٨هـ/٦٤٩م)",
+          "en": "between the Prophet’s ﷺ death (632) and the first Muslim fleet on the Mediterranean (28 AH / 649)"
+        }
+      },
+      "timeline": [
+        {
+          "year": "622–632",
+          "revelation": true,
+          "text": {
+            "ar": "النبي ﷺ يخبر أم حرام رضي الله عنها: «أنتِ من الأوّلين»",
+            "en": "The Prophet ﷺ tells Umm Haram: “You are among the first”"
+          }
+        },
+        {
+          "year": "632",
+          "text": {
+            "ar": "وفاة النبي ﷺ، وليس للمسلمين أسطول",
+            "en": "The Prophet ﷺ dies; the Muslims have no fleet"
+          }
+        },
+        {
+          "year": "634–644",
+          "text": {
+            "ar": "خلافة عمر رضي الله عنه: يأبى أن يحمل المسلمين في البحر",
+            "en": "‘Umar’s caliphate: he refuses to send the Muslims to sea"
+          }
+        },
+        {
+          "year": {
+            "ar": "٢٨هـ (٦٤٩)",
+            "en": "28 AH (649)"
+          },
+          "text": {
+            "ar": "أول أسطولٍ للمسلمين في البحر المتوسط يبحر إلى قبرص، ويذكر المؤرخون أم حرام فيمن ركبوه",
+            "en": "The first Muslim fleet on the Mediterranean sails for Cyprus; the historians name Umm Haram among those aboard"
+          }
+        },
+        {
+          "year": {
+            "ar": "٦٥٢ أو ٦٥٥",
+            "en": "652 or 655"
+          },
+          "text": {
+            "ar": "معركة ذات الصواري: أسطول المسلمين يهزم أسطول بيزنطة",
+            "en": "The Battle of the Masts: a Muslim fleet defeats the Byzantine navy"
+          }
+        }
+      ],
+      "reflection": {
+        "ar": "رؤيا حدّث بها ﷺ في بيت أم حرام رضي الله عنها: رجالٌ من أمته يركبون البحر غزاة، وهي نفسها من الأوّلين منهم. ولم يكن للمسلمين أسطول، وسيأبى عمر رضي الله عنه بعدُ أن يحملهم في البحر، وكان عليها أن تعيش حتى ترى ذلك اليوم. ولو لم يقع لبقي الخبر حجةً عليه، لكن الأسطول أبحر، وكانت فيه كما يروي أنس رضي الله عنه والمؤرخون. ولا يعلم ما في غدٍ إلا الله، فصدق هذه الرؤيا شاهدٌ على أنه رسوله ﷺ.",
+        "en": "A dream told in Umm Haram’s house: men of his community on the open sea as raiders, and she herself among the first of them. The Muslims had no fleet, ‘Umar would later refuse to send them to sea, and she had to live to see the day. Had it not come, the words would have stood against him; yet the fleet sailed, and, as Anas and the historians relate, she was aboard. Only Allah knows what tomorrow holds; a dream that told it truly is a witness that he was His Messenger ﷺ."
+      },
+      "didYouKnow": {
+        "ar": "لما سأل عمرُ عمرَو بن العاص رضي الله عنهما أن يصف له البحر، كتب إليه كما يروي الطبري: «إني رأيت خلقًا كبيرًا يركبه خلق صغير… هم فيه كدود على عود، إن مال غرق، وإن نجا برق»، فأقسم عمر ألا يحمل فيه مسلمًا أبدًا.",
+        "en": "When ‘Umar asked ‘Amr ibn al-‘As to describe the sea, ‘Amr wrote, as al-Tabari relates: “I have seen a great creature ridden by a small creature… they are on it like worms on a stick: if it tilts, they drown; if they come through, they are left dazed.” ‘Umar swore he would never carry a Muslim on it."
+      },
+      "sources": [
+        {
+          "title": "Ümmü Harâm (M. Yaşar Kandemir)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2012",
+          "url": "https://islamansiklopedisi.org.tr/ummu-haram",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Muhammed, part 1 (Mustafa Fayda)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2020",
+          "url": "https://islamansiklopedisi.org.tr/muhammed",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Bahriye (Nebi Bozkurt)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "1991",
+          "url": "https://islamansiklopedisi.org.tr/bahriye",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Kıbrıs, part 2 (Işın Demirkent)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2022",
+          "url": "https://islamansiklopedisi.org.tr/kibris",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Zâtüssavârî (Murat Öztürk)",
+          "publisher": "TDV İslâm Ansiklopedisi",
+          "year": "2013",
+          "url": "https://islamansiklopedisi.org.tr/zatussavari",
+          "kind": "encyclopedia"
+        },
+        {
+          "title": "Cyprus and Its Legal and Historiographical Significance in Early Islamic History (R. J. Lynch)",
+          "publisher": "Journal of the American Oriental Society (open copy on Zenodo)",
+          "year": "2016",
+          "url": "https://zenodo.org/records/4544866",
+          "kind": "journal"
+        },
+        {
+          "title": "Al-Baladhuri, Futuh al-Buldan, pp. 153–155: the matter of Cyprus (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/12221/150",
+          "kind": "book"
+        },
+        {
+          "title": "Al-Tabari, Tarikh al-Rusul wa al-Muluk 4/257–260: the year 28 and the conquest of Cyprus (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/9783/2147",
+          "kind": "book"
+        },
+        {
+          "title": "Al-Nawawi, Sharh Sahih Muslim (Dar Ihya’ al-Turath ed.) 13/57–59, on hadith 1912 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1711/2868",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Hajar, Fath al-Bari (Salafiyya ed.) 11/72–76, on Sahih al-Bukhari 6282–6283 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1673/6447",
+          "kind": "book"
+        }
+      ]
+    },
+    {
       "slug": "ammar-and-the-transgressing-party",
       "category": "prophecies",
       "art": "euphrates-dusk",
@@ -8647,6 +9681,22 @@
             "ar": "صحيح البخاري (٣٥٩٥)",
             "en": "Sahih al-Bukhari 3595"
           }
+        },
+        {
+          "kind": "hadith",
+          "text": "فَبَيْنَا أَنَا نَائِمٌ أُتِيتُ بِمَفَاتِيحِ خَزَائِنِ الْأَرْضِ فَوُضِعَتْ فِي يَدِي",
+          "narrator": {
+            "ar": "عن أبي هريرة رضي الله عنه",
+            "en": "Narrated by Abu Hurayrah"
+          },
+          "meaning": {
+            "ar": "«مَفَاتِيحِ خَزَائِنِ الْأَرْضِ»: المراد منها ما يُفتح لأمته من بعده من الفتوح، وقيل: المعادن (ابن حجر).",
+            "en": "“And while I was asleep, I was brought the keys of the treasuries of the earth, and they were placed in my hand.”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٢٩٧٧)، وبنحوه في صحيح مسلم (٥٢٣)",
+            "en": "Sahih al-Bukhari 2977; similar in Sahih Muslim 523"
+          }
         }
       ],
       "then": [
@@ -8671,6 +9721,10 @@
         {
           "ar": "ونقل النووي في شرح الحديث عن العلماء أن المراد بالكنزين الذهب والفضة، كنزا كسرى وقيصر، ثم قال: «فيه إشارةٌ إلى أن ملك هذه الأمة يكون معظم امتداده في جهتي المشرق والمغرب، وهكذا وقع»، وأما في جهتي الجنوب والشمال فقليلٌ بالنسبة إليهما.",
           "en": "Al-Nawawi reports the scholars’ explanation of the two treasures as gold and silver — the treasures of Khosrow and Caesar — and observes that the hadith “indicates that the rule of this community would extend mostly east and west, and so it happened,” with far less to the south and north."
+        },
+        {
+          "ar": "وفي صحيح البخاري أن أبا هريرة رضي الله عنه، وقد سمع حديث مفاتيح خزائن الأرض من النبي ﷺ نفسه، قال لمن حدّثهم به بعد وفاته ﷺ: «وقد ذهب رسول الله ﷺ وأنتم تنتثلونها»، أي: تستخرجون ما فيها. وقال النووي: «هذا من أعلام النبوة، فإنه إخبارٌ بفتح هذه البلاد لأمته، ووقع كما أخبر ﷺ».",
+          "en": "In Sahih al-Bukhari, Abu Hurayrah, who heard the hadith of the keys of the earth’s treasuries from the Prophet ﷺ himself, later told his listeners: “The Messenger of Allah ﷺ has passed away, and you are drawing out what they hold.” Al-Nawawi comments: “This is one of the signs of prophethood, for it foretells the conquest of these lands for his community, and it happened as he ﷺ foretold.”"
         }
       ],
       "highlight": {
@@ -8773,6 +9827,18 @@
           "title": "Ibn Hajar, Fath al-Bari (Salafiyya ed.) 6/613, on Sahih al-Bukhari 3595 (Arabic)",
           "publisher": "al-Maktaba al-Shamela",
           "url": "https://shamela.ws/book/1673/3807",
+          "kind": "book"
+        },
+        {
+          "title": "Al-Nawawi, Sharh Sahih Muslim (Dar Ihya’ al-Turath ed.) 5/5, on hadith 523 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1711/948",
+          "kind": "book"
+        },
+        {
+          "title": "Ibn Hajar, Fath al-Bari (Salafiyya ed.) 6/128, on Sahih al-Bukhari 2977 (Arabic)",
+          "publisher": "al-Maktaba al-Shamela",
+          "url": "https://shamela.ws/book/1673/3322",
           "kind": "book"
         }
       ]
