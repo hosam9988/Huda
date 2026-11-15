@@ -11,7 +11,7 @@
 .reading-bar {
   position: fixed;
   inset-inline: 0;
-  top: calc(4.25rem + env(safe-area-inset-top));
+  top: calc(var(--header-height) + env(safe-area-inset-top));
   z-index: 11;
   block-size: 3px;
   background: linear-gradient(90deg, var(--gold), var(--science));
@@ -24,12 +24,6 @@
   background: linear-gradient(-90deg, var(--gold), var(--science));
 }
 
-@media (max-width: 560px) {
-  .reading-bar {
-    top: calc(3.75rem + env(safe-area-inset-top));
-  }
-}
-
 .name-page {
   --scale: 1;
 }
@@ -38,19 +32,12 @@
 
 // A night band in every page colour, over the section's geometric pattern.
 .hero {
-  --verse: #f0d68e;
-  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
-  // The band stays dark in the light page colours too, so the ornament keeps the night gold.
-  --gold: #d9b45a;
-  --gold-light: #f0d68e;
   --name-size: clamp(4.6rem, 17vw, 8.25rem);
 
   position: relative;
   isolation: isolate;
   overflow: hidden;
   padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 5vw, 3rem);
-  background: #05070f;
-  color: #f4f1e8;
   text-align: center;
 }
 
@@ -69,7 +56,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgb(5 7 15 / 70%), rgb(5 7 15 / 85%) 70%, rgb(var(--bg-rgb)) 100%);
+    background:
+      radial-gradient(ellipse 55% 60% at 50% 45%, rgb(5 7 15 / 58%), rgb(5 7 15 / 86%) 100%),
+      linear-gradient(180deg, transparent 72%, rgb(var(--bg-rgb)) 100%);
   }
 }
 
@@ -101,10 +90,10 @@
 
 .translit {
   margin: 0;
-  color: #f0d68e;
+  color: var(--gold-light);
   font-family: var(--font-display-en);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .number {
@@ -116,7 +105,6 @@
   max-inline-size: 36rem;
   margin: 0.5rem auto 0;
   font-size: clamp(1.1rem, 2.6vw, 1.3rem);
-  opacity: 0.92;
 }
 
 // ---------- Reading column ----------
@@ -147,12 +135,12 @@
 }
 
 .block {
-  padding-block-start: 2.5rem;
+  padding-block-start: 2.75rem;
 
   > h2.eyebrow {
     display: block;
     margin: 0 0 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -174,9 +162,9 @@
   margin: 0 0 1.1rem;
   padding: clamp(1.1rem, 4vw, 1.75rem);
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   background:
-    radial-gradient(ellipse at 50% 0%, rgb(var(--accent-rgb) / 12%), transparent 70%),
+    radial-gradient(ellipse at 50% 0%, rgb(var(--accent-rgb) / 14%), transparent 70%),
     linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
 
@@ -198,17 +186,29 @@
   }
 }
 
+// The verses keep their size in English, where the text around them is set a little smaller than
+// in Arabic: 1.736 of 1.06rem, as 1.6 of the book font's 1.15rem was.
+:host-context([lang='en']) .text-card blockquote.quran {
+  font-size: 1.736em;
+}
+
 .text-label {
   color: var(--gold);
-  font-size: 0.82rem;
+  font-family: var(--font-display-en);
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
+}
+
+:host-context([lang='ar']) .text-label {
+  font-family: var(--font-display-ar);
+  font-size: 0.9rem;
+  letter-spacing: 0;
 }
 
 .translation {
   max-inline-size: 36rem;
   margin: 0 auto 0.5rem;
-  font-style: italic;
 }
 
 .ref {
@@ -230,8 +230,17 @@
 }
 
 .impact {
-  margin-block-start: 2.5rem;
+  margin-block-start: 2.75rem;
+  border-color: var(--line-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 0%, rgb(var(--accent-rgb) / 12%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
+
+  &::before {
+    border-radius: calc(var(--radius-lg) - 5px);
+  }
 
   h2 {
     margin: 0.9rem 0 0.4rem;
@@ -267,30 +276,60 @@
   display: grid;
   justify-items: center;
   gap: 0.15rem;
-  padding: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 60% 90% at 50% 0%, rgb(var(--accent-rgb) / 12%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: inherit;
   text-align: center;
   transition:
     transform 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
+    box-shadow 0.3s var(--ease),
+    border-color 0.3s;
 
   &:hover {
     transform: translateY(-3px);
+    border-color: var(--gold);
     box-shadow: var(--shadow);
   }
 }
 
 .next-name {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   line-height: 2;
 }
 
+.next-translit {
+  color: var(--gold);
+  font-family: var(--font-display-en);
+  font-weight: 500;
+}
+
 .next-meaning {
+  max-inline-size: 32rem;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.next-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block-start: 0.5rem;
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-weight: 500;
+
+  .arrow {
+    inline-size: 1.1em;
+    block-size: 1.1em;
+  }
+}
+
+:host-context([lang='ar']) .next-go {
+  font-family: var(--font-display-ar);
 }
 
 .prev-next {
@@ -304,7 +343,14 @@
   a {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
     min-block-size: 2.75rem;
+
+    .arrow {
+      flex-shrink: 0;
+      inline-size: 1em;
+      block-size: 1em;
+    }
   }
 }
 

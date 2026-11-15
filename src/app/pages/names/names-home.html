@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero night">
   <!-- A geometric pattern, with no writing in it. -->
   <div class="hero-art" aria-hidden="true">
     <img
@@ -13,6 +13,7 @@
     />
   </div>
   <div class="container hero-text">
+    <p class="kicker">{{ t().names.kicker }}</p>
     <h1 class="title quran gold-text" lang="ar"><span class="beside">أسماء</span>&ngsp;<span class="allah">اللّٰه</span>&ngsp;<span class="beside lifted">الحسنى</span></h1>
     @if (!language.isArabic()) {
       <p class="title-en">The Beautiful Names of <span class="allah-en gold-text">Allah</span></p>
@@ -25,6 +26,20 @@
       <cite>{{ language.isArabic() ? 'الأعراف: ١٨٠' : 'Al-A‘raf 7:180' }}</cite>
     </blockquote>
     <p class="intro">{{ t().names.intro }}</p>
+    @if (names.names().length) {
+      <div class="actions">
+        <a class="btn solid big" routerLink="/names" fragment="all">
+          {{ t().names.browse(names.names().length) }}
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+        <button type="button" class="btn big" (click)="surprise()">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="shuffle">
+            <path d="M4 7h3.5c2 0 3.2 1 4.3 2.6l1.4 2.2c1 1.6 2.3 2.2 4.3 2.2H20M17 11.5 20 14l-3 2.5M4 17h3.5c1.3 0 2.3-.5 3.1-1.3M13.4 8.3c.8-.8 1.8-1.3 3.1-1.3H20M17 4.5 20 7l-3 2.5" />
+          </svg>
+          {{ t().names.surprise }}
+        </button>
+      </div>
+    }
   </div>
 </section>
 
@@ -35,18 +50,22 @@
 } @else {
   @if (names.nameOfTheDay(); as today) {
     <section class="container section" appReveal>
-      <a class="panel today" [routerLink]="['/names', today.slug]">
-        <p class="eyebrow">{{ t().names.nameOfTheDay }}</p>
-        <p class="today-name quran gold-text" lang="ar" dir="rtl">{{ today.name }}</p>
-        <p class="today-meaning">{{ meaningOf(today) }}</p>
-        <span class="btn solid">{{ t().names.readName }}</span>
+      <a class="today" [routerLink]="['/names', today.slug]">
+        <span class="eyebrow">{{ t().names.nameOfTheDay }}</span>
+        <span class="today-name quran gold-text" lang="ar" dir="rtl">{{ today.name }}</span>
+        <span class="today-translit" lang="en" dir="ltr">{{ today.transliteration }}</span>
+        <span class="today-meaning">{{ meaningOf(today) }}</span>
+        <span class="btn solid">
+          {{ t().names.readName }}
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </span>
       </a>
     </section>
   }
 
   <section class="container section" id="all">
     <header class="section-head" appReveal>
-      <app-ornament />
+      <p class="kicker">{{ language.number(names.names().length) }} {{ t().portal.statNames(names.names().length) }}</p>
       <h2>{{ t().names.allNames }}</h2>
     </header>
 
@@ -96,7 +115,7 @@
   </section>
 
   <section class="container section" appReveal>
-    <div class="panel progress">
+    <div class="progress">
       <app-progress-ring [value]="progress()">
         <strong>{{ language.number(readCount()) }}</strong>
         <small>/ {{ language.number(names.names().length) }}</small>

@@ -6,22 +6,12 @@
 
 // ---------- Hero ----------
 
-// A night band in every page colour, like the I'jaz section's, over a geometric pattern.
+// A night band in every page colour, over a geometric pattern.
 .hero {
-  --text: #eef0f7;
-  --text-muted: #c5cbe0;
-  --accent-rgb: 217 180 90;
-  --gold: #d9b45a;
-  --gold-light: #f0d68e;
-  --verse: #f0d68e;
-  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
-
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem);
-  background: #05070f;
-  color: var(--text);
+  padding-block: clamp(2.25rem, 6vw, 4.5rem) clamp(2.25rem, 5vw, 3.5rem);
   text-align: center;
 }
 
@@ -34,6 +24,7 @@
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
+    animation: turn 60s ease-in-out infinite alternate;
   }
 
   // Dark enough for the text everywhere, fading into the page below.
@@ -41,7 +32,15 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgb(5 7 15 / 62%), rgb(5 7 15 / 80%) 70%, rgb(var(--bg-rgb)) 100%);
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 45%, rgb(5 7 15 / 55%), rgb(5 7 15 / 82%) 100%),
+      linear-gradient(180deg, transparent 70%, rgb(var(--bg-rgb)) 100%);
+  }
+}
+
+@keyframes turn {
+  to {
+    scale: 1.08;
   }
 }
 
@@ -61,8 +60,8 @@
 // In the Qur'an's script with nothing above it, like the names' own titles; set larger because the
 // script has a single, lighter weight.
 .title {
-  margin-block-start: 0;
-  font-size: clamp(3.8rem, 12vw, 7rem);
+  margin-block-start: 0.25rem;
+  font-size: clamp(3.6rem, 12vw, 7rem);
   line-height: 1.8;
 }
 
@@ -82,12 +81,12 @@
   margin: 0;
   color: var(--text-muted);
   font-family: var(--font-display-en);
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
-  font-style: italic;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 300;
 }
 
 .motto {
-  margin: 1.25rem 0 0;
+  margin: 1.1rem 0 0;
 
   .quran {
     margin: 0;
@@ -105,55 +104,73 @@
 
 .motto-meaning {
   margin: 0.2rem 0 0.3rem;
-  font-style: italic;
 }
 
 .intro {
-  max-inline-size: 46rem;
+  max-inline-size: 44rem;
   margin: 1.25rem auto 0;
   color: var(--text-muted);
 }
 
-// ---------- Sections ----------
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block-start: 1.75rem;
 
-.section {
-  padding-block: clamp(2.5rem, 6vw, 4rem) 0;
-  scroll-margin-top: 5rem;
-}
-
-.section-head {
-  margin: 0 auto 1.5rem;
-  text-align: center;
-
-  h2 {
-    margin: 0.6rem 0 0;
-    color: var(--gold-light);
-    font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  .shuffle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 }
 
-// The name of the day.
+// ---------- The name of the day ----------
+
 .today {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.3rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 60% 90% at 50% 0%, rgb(var(--accent-rgb) / 14%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: inherit;
   text-align: center;
-  transition: border-color 0.3s;
+  transition:
+    border-color 0.3s,
+    transform 0.3s var(--ease);
 
   &:hover {
-    border-color: var(--line-strong);
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .btn {
+    margin-block-start: 0.75rem;
   }
 }
 
 .today-name {
-  margin-block-start: 0;
-  font-size: clamp(2.6rem, 8vw, 3.6rem);
+  font-size: clamp(2.8rem, 8vw, 3.8rem);
   line-height: 2;
 }
 
+.today-translit {
+  color: var(--gold);
+  font-family: var(--font-display-en);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .today-meaning {
-  margin: 0 0 0.75rem;
+  max-inline-size: 36rem;
   color: var(--text-muted);
 }
 
@@ -163,21 +180,22 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  max-inline-size: 26rem;
-  min-block-size: 2.75rem;
-  margin: 0 auto 1.5rem;
-  padding-inline: 1rem;
+  max-inline-size: 28rem;
+  min-block-size: 3rem;
+  margin: 0 auto 1.75rem;
+  padding-inline: 1.1rem;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: var(--surface);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: var(--text-muted);
+  box-shadow: 0 10px 30px -20px rgb(0 0 0 / 60%);
 
   &:focus-within {
     border-color: var(--gold);
   }
 
   svg {
-    inline-size: 1.1rem;
+    inline-size: 1.15rem;
     flex-shrink: 0;
   }
 
@@ -191,7 +209,7 @@
     background: transparent;
     color: var(--text);
     font: inherit;
-    font-size: 0.98rem;
+    font-size: 1rem;
   }
 }
 
@@ -213,8 +231,10 @@
   block-size: 100%;
   padding: 1.1rem 0.9rem 1.2rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgb(var(--accent-rgb) / 8%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: inherit;
   text-align: center;
   transition:
@@ -241,15 +261,16 @@
 .number {
   position: absolute;
   inset-block-start: 0.6rem;
-  inset-inline-start: 0.75rem;
+  inset-inline-start: 0.8rem;
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-family: var(--font-display-en);
+  font-size: 0.75rem;
 }
 
 .read {
   position: absolute;
   inset-block-start: 0.55rem;
-  inset-inline-end: 0.7rem;
+  inset-inline-end: 0.75rem;
   color: var(--science);
   font-weight: 700;
 }
@@ -262,14 +283,14 @@
 .translit {
   color: var(--gold);
   font-family: var(--font-display-en);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 500;
 }
 
 .meaning {
   color: var(--text-muted);
   font-size: 0.86rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .chip {
@@ -283,10 +304,15 @@
   align-items: center;
   justify-content: center;
   gap: 1.75rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
 
   strong {
     display: block;
     color: var(--gold-light);
+    font-family: var(--font-display-en);
     font-size: 2rem;
     line-height: 1;
   }
@@ -302,6 +328,10 @@
 }
 
 @media (max-width: 560px) {
+  .actions .btn.big {
+    padding-inline: 1.1rem;
+  }
+
   .progress {
     flex-direction: column;
     text-align: center;

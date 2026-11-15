@@ -8,7 +8,7 @@
 .reading-bar {
   position: fixed;
   inset-inline: 0;
-  top: calc(4.25rem + env(safe-area-inset-top));
+  top: calc(var(--header-height) + env(safe-area-inset-top));
   z-index: 11;
   block-size: 3px;
   background: linear-gradient(90deg, var(--gold), var(--science));
@@ -21,12 +21,6 @@
   background: linear-gradient(-90deg, var(--gold), var(--science));
 }
 
-@media (max-width: 560px) {
-  .reading-bar {
-    top: calc(3.75rem + env(safe-area-inset-top));
-  }
-}
-
 .ayah {
   --scale: 1;
 }
@@ -35,17 +29,17 @@
 
 .hero {
   position: relative;
+  isolation: isolate;
   display: grid;
-  min-block-size: clamp(22rem, 62vh, 36rem);
+  min-block-size: clamp(24rem, 66vh, 38rem);
   align-items: end;
   overflow: hidden;
-  color: #f4f1e8;
-  background: #0a0f24;
 }
 
 .hero-art {
   position: absolute;
   inset: 0;
+  z-index: -1;
 
   img {
     inline-size: 100%;
@@ -58,7 +52,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgb(5 8 20 / 15%) 0%, rgb(5 8 20 / 55%) 55%, rgb(5 8 20 / 92%) 100%);
+    background: linear-gradient(180deg, rgb(5 8 20 / 20%) 0%, rgb(5 8 20 / 50%) 45%, rgb(5 8 20 / 95%) 100%);
   }
 }
 
@@ -68,23 +62,15 @@
   }
 }
 
-// «صورة تعبيرية»: every illustrative picture says that it is one.
 .art-label {
-  position: absolute;
   inset-block-start: 1rem;
   inset-inline-end: 1rem;
-  z-index: 1;
-  padding: 0.1rem 0.7rem;
-  border-radius: 999px;
-  background: rgb(5 8 20 / 55%);
-  color: rgb(255 255 255 / 75%);
-  font-size: 0.75rem;
 }
 
 .hero-text {
   position: relative;
-  padding-block: 4rem 2.25rem;
-  max-inline-size: calc(var(--reading-width) + 12rem);
+  max-inline-size: calc(var(--reading-width) + 14rem);
+  padding-block: 5rem 2.5rem;
   animation: rise 0.9s var(--ease) both;
 }
 
@@ -104,55 +90,184 @@
   font-size: 0.9rem;
 
   a {
-    color: #f0d68e;
-  }
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-block-size: 2.25rem;
+    margin-inline-end: 0.25rem;
+    color: var(--gold-light);
+    font-family: var(--font-display-en);
+    font-weight: 500;
 
-  .chip {
-    border-color: rgb(125 226 209 / 45%);
-    color: #7de2d1;
-  }
-
-  .journey-chip {
-    border-color: rgb(240 214 142 / 50%);
-    color: #f0d68e;
+    .arrow {
+      inline-size: 1em;
+      block-size: 1em;
+    }
   }
 
   .reflection-chip {
     border-color: rgb(233 226 207 / 45%);
+    background: transparent;
     color: #e9e2cf;
+  }
+
+  .journey-chip {
+    border-color: rgb(240 214 142 / 50%);
+    background: rgb(240 214 142 / 10%);
+    color: var(--gold-light);
   }
 }
 
+:host-context([lang='ar']) .crumbs a {
+  font-family: var(--font-display-ar);
+}
+
 h1 {
-  margin: 0.75rem 0 0.4rem;
-  color: #f0d68e;
-  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin: 0.9rem 0 0.5rem;
+  color: var(--gold-light);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
 }
 
 .hook {
-  max-inline-size: 40rem;
+  max-inline-size: 42rem;
   margin: 0;
-  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
-  opacity: 0.92;
+  color: var(--text);
+  font-family: var(--font-display-en);
+  font-size: clamp(1.12rem, 2.4vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+:host-context([lang='ar']) .hook {
+  font-family: var(--font-body-ar);
+  font-weight: 400;
+  line-height: 1.9;
 }
 
 .meta {
   display: flex;
   gap: 1rem;
   margin: 1rem 0 0;
+  color: var(--text-muted);
   font-size: 0.9rem;
-  opacity: 0.8;
 
   .done {
     color: #7de2d1;
   }
 }
 
-// ---------- Reading column ----------
+// ---------- The parts and the reading column ----------
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, calc(var(--reading-width)));
+  justify-content: center;
+}
 
 .column {
-  max-inline-size: calc(var(--reading-width) + 2rem);
+  min-inline-size: 0;
   font-size: calc(1em * var(--scale));
+}
+
+// On a phone: a row of links to the page's parts, at its top.
+.toc {
+  padding-block-start: 1.25rem;
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  button {
+    min-block-size: 2.25rem;
+    padding: 0.2rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-muted);
+    font: inherit;
+    font-family: var(--font-display-en);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: start;
+    cursor: pointer;
+    transition:
+      color 0.2s,
+      border-color 0.2s,
+      background-color 0.2s;
+
+    &:hover {
+      color: var(--text);
+      border-color: var(--line-strong);
+    }
+
+    &.current {
+      border-color: var(--line-strong);
+      background: rgb(var(--accent-rgb) / 10%);
+      color: var(--gold-light);
+    }
+  }
+}
+
+:host-context([lang='ar']) .toc button {
+  font-family: var(--font-display-ar);
+}
+
+.toc-title {
+  margin: 0 0 0.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-display-en);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+:host-context([lang='ar']) .toc-title {
+  font-family: var(--font-display-ar);
+  font-size: 0.85rem;
+  letter-spacing: 0;
+}
+
+// Wide screens: the parts in a column of their own that stays in view, beside the reading column,
+// which stays in the middle of the page.
+@media (min-width: 1180px) {
+  .layout {
+    grid-template-columns: 13rem minmax(0, var(--reading-width)) 13rem;
+    gap: 2.5rem;
+  }
+
+  .toc {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+    align-self: start;
+    padding-block-start: 5.5rem;
+
+    ol {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-inline-start: 1px solid var(--line);
+    }
+
+    button {
+      inline-size: 100%;
+      margin-inline-start: -1px;
+      padding: 0.35rem 1rem;
+      border: 0;
+      border-inline-start: 2px solid transparent;
+      border-radius: 0;
+
+      &.current {
+        border-inline-start-color: var(--gold);
+        background: none;
+      }
+    }
+  }
 }
 
 .toolbar {
@@ -176,20 +291,42 @@ h1 {
 }
 
 .block {
-  padding-block-start: 2.75rem;
+  padding-block-start: 3rem;
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
 
   > h2 {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 0.75rem;
-    margin: 0 0 1rem;
-    color: var(--gold-light);
-    font-size: 1.75em;
+    margin: 0 0 1.1rem;
+    color: var(--text);
+    font-size: 1.6em;
   }
 
   > h2.eyebrow {
     display: block;
-    font-size: 1rem;
+    color: var(--gold);
+    font-size: 0.95rem;
+  }
+}
+
+.num {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: var(--font-display-en);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+
+  &.science {
+    border-color: var(--science-line);
+    color: var(--science);
   }
 }
 
@@ -215,14 +352,15 @@ h1 {
 
 // ---------- The text ----------
 
+// The verse's lines are checked at this width: a wider padding moves where they break.
 .evidence {
   position: relative;
   margin: 0 0 1.25rem;
   padding: clamp(1.25rem, 4vw, 2rem);
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   background:
-    radial-gradient(ellipse at 50% 0%, rgb(var(--accent-rgb) / 12%), transparent 70%),
+    radial-gradient(ellipse at 50% 0%, rgb(var(--accent-rgb) / 14%), transparent 70%),
     linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
 
@@ -245,21 +383,33 @@ h1 {
 
 .evidence-label {
   color: var(--gold);
-  font-size: 0.82rem;
+  font-family: var(--font-display-en);
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
+}
+
+:host-context([lang='ar']) .evidence-label {
+  font-family: var(--font-display-ar);
+  font-size: 0.9rem;
+  letter-spacing: 0;
 }
 
 .meaning {
   max-inline-size: 36rem;
   margin: 0 auto 0.6rem;
   color: var(--text);
-  font-style: italic;
 }
 
 :host-context([lang='ar']) .meaning {
-  font-style: normal;
   color: var(--text-muted);
+}
+
+// The verses keep their size in English, where the text around them is set a little smaller than
+// in Arabic: 1.845 of 1.06rem, as 1.7 of the book font's 1.15rem was. Their lines are checked
+// at this size.
+:host-context([lang='en']) .evidence blockquote.quran {
+  font-size: 1.845em;
 }
 
 .ref {
@@ -285,8 +435,9 @@ h1 {
     display: block;
     color: var(--science);
     font-family: var(--font-display-en);
-    font-size: 2.3em;
-    line-height: 1.15;
+    font-size: 2.1em;
+    font-weight: 600;
+    line-height: 1.2;
   }
 
   span {
@@ -300,7 +451,7 @@ h1 {
 
 :host-context([lang='ar']) .highlight strong {
   font-family: var(--font-display-ar);
-  font-weight: 600;
+  line-height: 1.5;
 }
 
 .block::after {
@@ -357,8 +508,12 @@ h1 {
 .year {
   color: var(--science);
   font-family: var(--font-display-en);
-  font-size: 1.15em;
-  font-weight: 700;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+:host-context([lang='ar']) .year {
+  font-family: var(--font-display-ar);
 }
 
 .revelation .year {
@@ -375,7 +530,7 @@ h1 {
   margin-block-start: 2rem;
   padding: 1.25rem 1.5rem;
   border-inline-start: 3px solid var(--science);
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
   background: rgb(var(--science-rgb) / 7%);
 
   p:last-child {
@@ -384,12 +539,19 @@ h1 {
 }
 
 :host-context([dir='rtl']) .did-you-know {
-  border-radius: 12px 0 0 12px;
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .reflection {
-  margin-block-start: 2.75rem;
+  margin-block-start: 3rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 0%, rgb(var(--accent-rgb) / 12%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
 
   h2 {
     margin: 0.9rem 0 0.4rem;
@@ -419,8 +581,8 @@ h1 {
     padding: 0.85rem 1rem;
     padding-inline-start: 3rem;
     border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--surface);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface-raised), var(--surface));
     counter-increment: source;
 
     &::before {
@@ -478,48 +640,94 @@ h1 {
 }
 
 .next-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
   overflow: hidden;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 0%, rgb(var(--accent-rgb) / 8%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: inherit;
   transition:
     transform 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
+    box-shadow 0.3s var(--ease),
+    border-color 0.3s;
 
   &:hover {
     transform: translateY(-3px);
+    border-color: var(--gold);
     box-shadow: var(--shadow);
   }
 
-  img {
-    inline-size: 38%;
-    object-fit: cover;
-  }
-
   &.end {
+    grid-template-columns: minmax(0, 1fr);
     border-color: var(--science-line);
+  }
+}
+
+.next-art {
+  position: relative;
+  display: block;
+  min-block-size: 100%;
+
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
   }
 }
 
 .next-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  gap: 0.3rem;
-  padding: 1.25rem 1.5rem;
+  gap: 0.35rem;
+  padding: 1.4rem 1.6rem;
 }
 
 .next-title {
   color: var(--gold-light);
+  font-family: var(--font-display-en);
   font-size: 1.35rem;
   font-weight: 600;
+  line-height: 1.4;
+}
+
+:host-context([lang='ar']) .next-title {
+  font-family: var(--font-display-ar);
+  line-height: 1.7;
 }
 
 .next-hook {
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.next-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block-start: 0.35rem;
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-weight: 500;
+
+  .arrow {
+    inline-size: 1.1em;
+    block-size: 1.1em;
+  }
+}
+
+:host-context([lang='ar']) .next-go {
+  font-family: var(--font-display-ar);
+}
+
+.end .next-go {
+  color: var(--science);
 }
 
 .prev-next {
@@ -533,7 +741,14 @@ h1 {
   a {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
     min-block-size: 2.75rem;
+
+    .arrow {
+      flex-shrink: 0;
+      inline-size: 1em;
+      block-size: 1em;
+    }
   }
 }
 
@@ -543,14 +758,16 @@ h1 {
     inline-size: auto;
     margin-inline: 0;
   }
-  .next-card {
-    flex-direction: column;
 
-    img {
-      inline-size: 100%;
-      aspect-ratio: 16 / 9;
-    }
+  .next-card {
+    grid-template-columns: minmax(0, 1fr);
   }
+
+  .next-art {
+    aspect-ratio: 16 / 9;
+    min-block-size: 0;
+  }
+
   .toolbar {
     justify-content: space-between;
 

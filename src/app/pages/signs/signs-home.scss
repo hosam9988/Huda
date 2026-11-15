@@ -6,27 +6,12 @@
 
 // ---------- Hero ----------
 
-// The hero is a night sky in every page colour, so its text keeps the night theme's colours.
 .hero {
-  --text: #eef0f7;
-  --text-muted: #c5cbe0;
-  --accent-rgb: 217 180 90;
-  --gold: #d9b45a;
-  --gold-light: #f0d68e;
-  --verse: #f0d68e;
-  --on-accent: #0a0d1a;
-  --line-strong: rgb(217 180 90 / 45%);
-  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
-
   position: relative;
   isolation: isolate;
-  display: grid;
-  align-items: center;
-  min-block-size: min(46rem, 92vh);
   overflow: hidden;
-  padding-block: clamp(3rem, 8vw, 6rem) clamp(3rem, 7vw, 5rem);
-  background: #05070f;
-  color: var(--text);
+  padding-block: clamp(2.25rem, 6vw, 4.5rem) clamp(2.25rem, 5vw, 3.5rem);
+  text-align: center;
 }
 
 .hero-art {
@@ -42,21 +27,13 @@
     animation: drift 30s ease-in-out infinite alternate;
   }
 
-  // Darker on the side the text is on, and fading into the page below.
+  // Dark enough for the text everywhere, fading into the page below.
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(to right, rgb(5 7 15 / 90%) 0%, rgb(5 7 15 / 60%) 45%, rgb(5 7 15 / 5%) 100%),
-      linear-gradient(180deg, transparent 70%, rgb(var(--bg-rgb)) 100%);
+    background: linear-gradient(180deg, rgb(5 7 15 / 74%) 0%, rgb(5 7 15 / 62%) 60%, rgb(var(--bg-rgb)) 100%);
   }
-}
-
-:host-context([dir='rtl']) .hero-art::after {
-  background:
-    linear-gradient(to left, rgb(5 7 15 / 90%) 0%, rgb(5 7 15 / 60%) 45%, rgb(5 7 15 / 5%) 100%),
-    linear-gradient(180deg, transparent 70%, rgb(var(--bg-rgb)) 100%);
 }
 
 @keyframes drift {
@@ -65,20 +42,13 @@
   }
 }
 
-// «صورة تعبيرية»: every illustrative picture says that it is one.
-.art-label {
-  position: absolute;
-  inset-block-end: 1rem;
-  inset-inline-end: 1rem;
-  padding: 0.1rem 0.7rem;
-  border-radius: 999px;
-  background: rgb(5 7 15 / 55%);
-  color: rgb(255 255 255 / 75%);
-  font-size: 0.75rem;
+.hero-label {
+  inset-block-end: 0.75rem;
+  inset-inline-end: 0.75rem;
 }
 
 .hero-text {
-  max-inline-size: 40rem;
+  max-inline-size: 52rem;
   animation: rise 0.9s var(--ease) both;
 }
 
@@ -92,8 +62,8 @@
 // In the Qur'an's script like the site's other titles; set larger because it has a single,
 // lighter weight.
 .title {
-  margin-block-start: 0.4rem;
-  font-size: clamp(3.8rem, 12vw, 6.4rem);
+  margin-block-start: 0.25rem;
+  font-size: clamp(3.6rem, 11vw, 6.4rem);
   line-height: 1.8;
 }
 
@@ -101,20 +71,19 @@
   margin: 0;
   color: var(--text-muted);
   font-family: var(--font-display-en);
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
-  font-style: italic;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 300;
 }
 
+// At 2.1 the marks of one line touched the letters of the next on narrow phones.
 .motto {
-  margin: 1.25rem 0 0;
-  padding-inline-start: 1.1rem;
-  border-inline-start: 2px solid var(--gold);
+  max-inline-size: 44rem;
+  margin: 1.1rem auto 0;
 
-  // At 2.1 the marks of one line touched the letters of the next on narrow phones.
   .quran {
     margin: 0;
     color: var(--verse);
-    font-size: clamp(1.35rem, 3.4vw, 1.75rem);
+    font-size: clamp(1.3rem, 3.2vw, 1.7rem);
     line-height: 2.3;
   }
 
@@ -127,181 +96,83 @@
 
 .motto-meaning {
   margin: 0.2rem 0 0.3rem;
-  font-style: italic;
 }
 
 .intro {
-  max-inline-size: 40rem;
-  margin: 1.4rem 0 0;
+  max-inline-size: 42rem;
+  margin: 1.25rem auto 0;
   color: var(--text-muted);
 }
 
-.arrow {
-  inline-size: 1.15rem;
-}
-
-:host-context([dir='rtl']) .arrow {
-  scale: -1 1;
-}
-
-.stats {
+.jump {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2.5rem;
-  margin: 2.25rem 0 0;
-
-  div {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  dt {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-  }
-
-  dd {
-    margin: 0;
-    color: var(--gold-light);
-    font-family: var(--font-display-en);
-    font-size: 2.3rem;
-    font-weight: 700;
-    line-height: 1.1;
-  }
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block-start: 1.75rem;
 }
 
-// ---------- Sections ----------
-
-.section {
-  padding-block: clamp(2.5rem, 6vw, 4.5rem) 0;
-  scroll-margin-top: 5rem;
-}
-
-.section-head {
-  max-inline-size: 42rem;
-  margin: 0 auto 2rem;
-  text-align: center;
-
-  h2 {
-    margin: 0.6rem 0 0.4rem;
-    color: var(--gold-light);
-    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
-  }
-
-  p {
-    margin: 0;
-    color: var(--text-muted);
-  }
-}
+// ---------- Continue reading ----------
 
 .continue {
-  padding-block-start: 0.5rem;
+  padding-block-start: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .continue-card {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  gap: 1rem;
+  padding: 0.75rem;
+  padding-inline-end: 1.25rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(90deg, rgb(var(--accent-rgb) / 10%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: inherit;
   transition: border-color 0.3s;
 
   &:hover {
-    border-color: var(--line-strong);
+    border-color: var(--gold);
   }
 
   // A fixed square: Safari otherwise narrows it when the title beside it is long.
   img {
     flex-shrink: 0;
-    inline-size: 5.5rem;
+    inline-size: 5rem;
     aspect-ratio: 1;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
   div {
     flex: 1;
+    min-inline-size: 0;
   }
 
   .where {
     margin: 0.1rem 0 0;
     color: var(--text);
+    font-family: var(--font-display-en);
+    font-weight: 500;
   }
 
-  .arrow {
+  .go {
+    flex-shrink: 0;
+    inline-size: 1.4rem;
+    block-size: 1.4rem;
     color: var(--gold);
   }
 }
 
-.journey-track,
-.fields {
-  display: grid;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+:host-context([dir='rtl']) .continue-card {
+  background:
+    linear-gradient(-90deg, rgb(var(--accent-rgb) / 10%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
 }
 
-.journey-track {
-  grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
-}
-
-// A gold rule sets the journey apart from the fields above it.
-.journey-ornament {
-  margin-block-end: 2rem;
-}
-
-// The journey, folded: the whole heading is the button that opens it.
-.journey-fold {
-  padding: 0;
-
-  > summary {
-    position: relative;
-    display: block;
-    padding: clamp(1.25rem, 3vw, 2rem);
-    padding-inline-end: 4.5rem;
-    border-radius: var(--radius);
-    cursor: pointer;
-    list-style: none;
-
-    &::-webkit-details-marker {
-      display: none;
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-    }
-  }
-
-  h2 {
-    margin: 0 0 0.35rem;
-    color: var(--gold-light);
-    font-size: clamp(1.5rem, 3.6vw, 2.1rem);
-  }
-
-  .journey-intro {
-    display: block;
-    color: var(--text-muted);
-  }
-
-  .chevron {
-    position: absolute;
-    inset-block-start: 50%;
-    inset-inline-end: clamp(1.25rem, 3vw, 2rem);
-    inline-size: 1.75rem;
-    block-size: 1.75rem;
-    margin-block-start: -0.875rem;
-    color: var(--gold);
-    transition: rotate 0.3s var(--ease);
-  }
-
-  &[open] .chevron {
-    rotate: 180deg;
-  }
-
-  .journey-track {
-    padding: 0 clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem);
-  }
+:host-context([lang='ar']) .continue-card .where {
+  font-family: var(--font-display-ar);
 }
 
 // ---------- Sign of the day ----------
@@ -311,6 +182,12 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   align-items: center;
   gap: clamp(1.25rem, 4vw, 2.5rem);
+  padding: clamp(0.85rem, 2vw, 1.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 60% 90% at 70% 0%, rgb(var(--accent-rgb) / 8%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
 }
 
 .today-art img {
@@ -318,29 +195,37 @@
   inline-size: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: calc(var(--radius) - 4px);
+  border-radius: var(--radius);
 }
 
 .today-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 0.5rem clamp(0.25rem, 2vw, 1.25rem) 0.75rem;
+
   h2 {
-    margin: 0.4rem 0 0;
+    margin: 0.2rem 0 0;
     color: var(--gold-light);
-    font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
   }
 
-  // On a sign for reflection: not offered as a miracle.
-  .reflection-chip {
+  .btn {
     margin-block-start: 0.5rem;
-    border-color: var(--line-strong);
-    color: var(--text-muted);
   }
 }
 
 .today-verse {
-  margin: 0.6rem 0 0;
+  margin: 0.4rem 0 0;
   color: var(--verse);
-  font-size: 1.45rem;
-  line-height: 2.1;
+  font-size: 1.1rem;
+  line-height: 2;
+
+  &.quran {
+    font-size: 1.45rem;
+    line-height: 2.2;
+  }
 }
 
 .today-ref {
@@ -350,33 +235,46 @@
 }
 
 .today-hook {
-  margin: 0.75rem 0 1.25rem;
+  margin: 0.4rem 0 0;
+  color: var(--text-muted);
 }
 
 // ---------- Fields ----------
 
 .fields {
-  grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+// The picture behind, the words in the flow at its foot: a long blurb makes the card taller
+// instead of being cut off.
 .field {
   position: relative;
-  display: block;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   inline-size: 100%;
-  aspect-ratio: 16 / 10;
+  min-block-size: 11.5rem;
   padding: 0;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   background: #0a0f24;
   color: #f4f1e8;
   font: inherit;
   text-align: start;
   cursor: pointer;
+  transition: border-color 0.3s;
 
   img {
     position: absolute;
     inset: 0;
+    z-index: -2;
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
@@ -387,50 +285,64 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 25%, rgb(5 8 20 / 88%) 100%);
+    z-index: -1;
+    background: linear-gradient(180deg, rgb(5 8 20 / 5%) 10%, rgb(5 8 20 / 90%) 100%);
   }
 
-  &:hover img {
-    scale: 1.06;
+  &:hover {
+    border-color: var(--line-strong);
+
+    img {
+      scale: 1.06;
+    }
   }
 }
 
 .field-text {
-  position: absolute;
-  inset-inline: 0;
-  inset-block-end: 0;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  padding: 1.1rem 1.25rem;
+  gap: 0.1rem;
+  padding: 1rem 1.2rem;
 }
 
 .field-title {
   color: #f0d68e;
-  font-size: 1.35rem;
+  font-family: var(--font-display-en);
+  font-size: 1.2rem;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 :host-context([lang='ar']) .field-title {
   font-family: var(--font-display-ar);
-  font-weight: 700;
+  line-height: 1.7;
 }
 
 .field-blurb {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   opacity: 0.85;
 }
 
 .field-count {
-  margin-block-start: 0.3rem;
-  font-size: 0.82rem;
-  opacity: 0.75;
+  margin-block-start: 0.2rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 
 .field-read {
   color: #7de2d1;
+}
+
+// ---------- The journey ----------
+
+.journey-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 // ---------- Progress and closing bands ----------
@@ -438,11 +350,17 @@
 .progress {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.75rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
 
   strong {
     display: block;
     color: var(--gold-light);
+    font-family: var(--font-display-en);
     font-size: 2rem;
     line-height: 1;
   }
@@ -454,7 +372,7 @@
 
 .progress-line {
   margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .confirm {
@@ -474,7 +392,16 @@
 }
 
 .band {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 0%, rgb(var(--accent-rgb) / 8%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: inherit;
   transition:
     border-color 0.3s,
@@ -487,19 +414,21 @@
 
   h2 {
     margin: 0;
-    color: var(--gold-light);
-    font-size: 1.6rem;
+    color: var(--text);
+    font-size: clamp(1.3rem, 2.6vw, 1.6rem);
   }
 
   p {
-    margin: 0.4rem 0 0.8rem;
+    margin: 0 0 0.4rem;
     color: var(--text-muted);
   }
 
   &.next {
     border-color: var(--science-line);
+    background:
+      radial-gradient(ellipse 70% 90% at 50% 0%, rgb(var(--science-rgb) / 8%), transparent 70%),
+      linear-gradient(180deg, var(--surface-raised), var(--surface));
 
-    h2,
     .band-link {
       color: var(--science);
     }
@@ -507,30 +436,72 @@
 }
 
 .band-link {
-  color: var(--gold);
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block-start: auto;
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-weight: 500;
+
+  .arrow {
+    inline-size: 1.1em;
+    block-size: 1.1em;
+  }
+}
+
+:host-context([lang='ar']) .band-link {
+  font-family: var(--font-display-ar);
 }
 
 // ---------- Narrow screens ----------
 
 @media (max-width: 860px) {
-  // The text spans the whole width here, so darken the whole picture evenly.
-  .hero-art::after,
-  :host-context([dir='rtl']) .hero-art::after {
-    background:
-      linear-gradient(rgb(5 7 15 / 62%), rgb(5 7 15 / 62%)),
-      linear-gradient(180deg, transparent 70%, rgb(var(--bg-rgb)) 100%);
-  }
   .today {
     grid-template-columns: 1fr;
+  }
+
+  .fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    // Nine fields in two columns: the last one takes the whole row.
+    li:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
   }
 }
 
 @media (max-width: 560px) {
+  .jump .btn.big {
+    padding-inline: 1.1rem;
+  }
+
+  .fields {
+    gap: 0.65rem;
+  }
+
+  .field {
+    min-block-size: 8.5rem;
+  }
+
+  .field-text {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .field-title {
+    font-size: 1rem;
+  }
+
+  // A phone shows each field's name and count; its blurb waits for a wider screen.
+  .field-blurb {
+    display: none;
+  }
+
   .progress {
     flex-direction: column;
     text-align: center;
   }
+
   .confirm-actions {
     justify-content: center;
   }

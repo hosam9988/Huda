@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero night">
   <!-- The Earth at sunrise, seen from space: an illustration behind the text. -->
   <div class="hero-art" aria-hidden="true">
     <img
@@ -12,90 +12,385 @@
       decoding="async"
     />
   </div>
-  <span class="art-label">{{ t().illustrativeImage }}</span>
-  <div class="container hero-text">
-    <h1 class="title quran gold-text" lang="ar"><span class="know">اعرف</span>&ngsp;<span class="allah">اللّٰه</span></h1>
-    @if (!language.isArabic()) {
-      <p class="title-en">Know <span class="allah-en gold-text">Allah</span></p>
-    }
-    <blockquote class="motto">
-      <p class="quran" lang="ar" dir="rtl">
-        ﴿ذَٰلِكُمُ ٱللَّهُ رَبُّكُمۡۖ لَآ إِلَٰهَ إِلَّا هُوَۖ خَٰلِقُ كُلِّ شَيۡءࣲ فَٱعۡبُدُوهُۚ﴾
-      </p>
+  <span class="art-label hero-label">{{ t().illustrativeImage }}</span>
+
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1 class="title quran gold-text" lang="ar"><span class="know">اعرف</span>&ngsp;<span class="allah">اللّٰه</span></h1>
       @if (!language.isArabic()) {
-        <p class="motto-meaning">
-          “That is Allah, your Lord; there is no deity except Him, the Creator of all things, so worship Him.”
+        <p class="title-en">Know <span class="allah-en gold-text">Allah</span></p>
+      }
+      <p class="lead">{{ t().portal.lead }}</p>
+      @if (journey()[0]; as first) {
+        <div class="actions">
+          <a class="btn solid big" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
+            {{ t().portal.startJourney }}
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="btn big" routerLink="/signs">{{ t().browseAll }}</a>
+        </div>
+        <p class="journey-meta">
+          {{ t().journeyIntro(language.number(journey().length), language.number(journeyMinutes())) }}
         </p>
       }
-      <cite>{{ language.isArabic() ? 'الأنعام: ١٠٢' : 'Al-An‘am 6:102' }}</cite>
-    </blockquote>
-    <p class="intro">{{ t().portal.intro }}</p>
+    </div>
+
+    <!-- The journey's questions, taking turns: each leads to its stop. -->
+    @if (journey().length) {
+      <div
+        class="deck"
+        role="group"
+        [attr.aria-label]="t().portal.questionLabel"
+        (pointerenter)="held.set(true)"
+        (pointerleave)="held.set(false)"
+        (focusin)="held.set(true)"
+        (focusout)="held.set(false)"
+      >
+        <div class="deck-stack">
+          @for (sign of journey(); track sign.slug; let i = $index) {
+            @let q = splitQuestion(language.pick(sign.hook));
+            <a
+              class="question"
+              [class.current]="i === current()"
+              [attr.aria-hidden]="i === current() ? null : 'true'"
+              [attr.tabindex]="i === current() ? null : -1"
+              [routerLink]="['/signs', sign.slug]"
+              [queryParams]="{ path: 'journey' }"
+            >
+              <img
+                class="question-art"
+                [src]="artSmallSrc(sign.art)"
+                [attr.srcset]="artSrcset(sign.art)"
+                sizes="(max-width: 860px) 100vw, 560px"
+                alt=""
+                width="1280"
+                height="800"
+                decoding="async"
+              />
+              <span class="question-text">
+                <span class="deck-label">{{ t().portal.questionLabel }}</span>
+                <span class="question-lead">{{ q.lead }}</span>
+                @if (q.rest) {
+                  <span class="question-rest">{{ q.rest }}</span>
+                }
+                <span class="question-link">
+                  {{ t().portal.discover }}
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </span>
+              </span>
+            </a>
+          }
+          <span class="art-label">{{ t().illustrativeImage }}</span>
+        </div>
+        <div class="deck-nav">
+          @for (sign of journey(); track sign.slug; let i = $index) {
+            <button
+              type="button"
+              class="dot"
+              [attr.aria-label]="t().portal.questionOf(language.number(i + 1), language.number(journey().length))"
+              [attr.aria-pressed]="i === current()"
+              (click)="show(i)"
+            ></button>
+          }
+          <button
+            type="button"
+            class="play"
+            [attr.aria-label]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
+            [attr.title]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
+            (click)="stopped.set(!stopped())"
+          >
+            @if (stopped()) {
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg>
+            } @else {
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" /></svg>
+            }
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (stats().miracles) {
+    <div class="container">
+      <dl class="hero-stats">
+        <div>
+          <dt>{{ t().statMiracles }}</dt>
+          <dd>{{ language.number(stats().miracles) }}</dd>
+        </div>
+        <div>
+          <dt>{{ t().statReflection }}</dt>
+          <dd>{{ language.number(stats().reflection) }}</dd>
+        </div>
+        @if (stats().names) {
+          <div>
+            <dt>{{ t().portal.statNames(stats().names) }}</dt>
+            <dd>{{ language.number(stats().names) }}</dd>
+          </div>
+        }
+        <div>
+          <dt>{{ t().statSources }}</dt>
+          <dd>{{ language.number(stats().sources) }}</dd>
+        </div>
+      </dl>
+    </div>
+  }
+</section>
+
+<!-- The journey for readers new to Islam, stop by stop: folded under a line that says what it holds. -->
+@if (journey().length) {
+  <section class="container section" id="start">
+    <details class="fold" #journeyFold [open]="journeyOpen()" (toggle)="journeyOpen.set(journeyFold.open)" appReveal>
+      <summary>
+        <span class="fold-head">
+          <span class="kicker">{{ t().journey }}</span>
+          <h2>{{ t().journeyTitle }}</h2>
+          <span class="fold-summary">
+            {{ t().portal.journeySummary(language.number(journey().length), language.number(journeyMinutes())) }}
+          </span>
+        </span>
+        <span class="fold-foot">
+          <span class="peek" aria-hidden="true">
+            @for (sign of journey(); track sign.slug; let i = $index) {
+              <span class="peek-stop">
+                <img [src]="artSmallSrc(sign.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
+                <span>{{ language.number(i + 1) }}</span>
+              </span>
+            }
+          </span>
+          <span class="fold-toggle">
+            {{ journeyOpen() ? t().portal.hide : t().portal.showStops }}
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </span>
+        </span>
+      </summary>
+      <div class="fold-body">
+        <ol class="stops">
+          @for (sign of journey(); track sign.slug; let i = $index) {
+            <li>
+              <a class="stop" [routerLink]="['/signs', sign.slug]" [queryParams]="{ path: 'journey' }">
+                <span class="stop-art">
+                  <img [src]="artSmallSrc(sign.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
+                </span>
+                <span class="stop-n" aria-hidden="true">{{ language.number(i + 1) }}</span>
+                <span class="stop-text">
+                  <span class="stop-title">{{ language.pick(sign.title) }}</span>
+                  <span class="stop-time">{{ t().minutes(minutes(sign)) }}</span>
+                </span>
+              </a>
+            </li>
+          }
+        </ol>
+        <p class="cta-row">
+          <a class="btn solid big" [routerLink]="['/signs', journey()[0].slug]" [queryParams]="{ path: 'journey' }">
+            {{ t().portal.startJourney }}
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </p>
+      </div>
+    </details>
+  </section>
+}
+
+<!-- More questions, from every field: folded too. -->
+@if (questions().length) {
+  <section class="container section">
+    <details class="fold" #questionsFold [open]="questionsOpen()" (toggle)="questionsOpen.set(questionsFold.open)" appReveal>
+      <summary>
+        <span class="fold-head">
+          <span class="kicker">{{ t().heroEyebrow }}</span>
+          <h2>{{ t().portal.questionsTitle }}</h2>
+          <span class="fold-summary">{{ t().portal.questionsSummary(language.number(questions().length)) }}</span>
+          @if (sample()) {
+            <span class="fold-sample">{{ t().portal.forExample }} <q>{{ sample() }}</q></span>
+          }
+        </span>
+        <span class="fold-foot">
+          <span class="peek squares" aria-hidden="true">
+            @for (sign of questions(); track sign.slug) {
+              <span class="peek-stop">
+                <img [src]="artSmallSrc(sign.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
+              </span>
+            }
+          </span>
+          <span class="fold-toggle">
+            {{ questionsOpen() ? t().portal.hide : t().portal.showQuestions }}
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </span>
+        </span>
+      </summary>
+      <div class="fold-body">
+        <ul class="questions">
+          @for (sign of questions(); track sign.slug) {
+            @let q = splitQuestion(language.pick(sign.hook));
+            <li>
+              <a class="q-card" [routerLink]="['/signs', sign.slug]">
+                <span class="q-art">
+                  <img
+                    [src]="artSmallSrc(sign.art)"
+                    [attr.srcset]="artSrcset(sign.art)"
+                    sizes="(max-width: 640px) 40vw, 400px"
+                    alt=""
+                    width="640"
+                    height="400"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+                <span class="q-body">
+                  <span class="chips">
+                    <span class="chip">{{ categoryTitle(sign) }}</span>
+                    @if (sign.type === 'reflection') {
+                      <span class="chip quiet-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+                    }
+                  </span>
+                  <span class="q-lead">{{ q.lead }}</span>
+                  @if (q.rest) {
+                    <span class="q-rest">{{ q.rest }}</span>
+                  }
+                  <span class="q-link">{{ t().portal.readAnswer }}</span>
+                </span>
+              </a>
+            </li>
+          }
+        </ul>
+        <p class="cta-row">
+          <a class="btn big" routerLink="/signs">{{ t().browseAll }}</a>
+        </p>
+      </div>
+    </details>
+  </section>
+}
+
+<!-- The two sections. -->
+<section class="container section">
+  <header class="section-head" appReveal>
+    <h2>{{ t().portal.pathsTitle }}</h2>
+    <p>{{ t().portal.intro }}</p>
+  </header>
+  <div class="paths">
+    <a class="path" routerLink="/signs" appReveal>
+      <img
+        [src]="artSmallSrc('expansion')"
+        [attr.srcset]="artSrcset('expansion')"
+        sizes="(max-width: 760px) 100vw, 600px"
+        alt=""
+        width="1280"
+        height="800"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="path-text">
+        <span class="path-eyebrow quran" lang="ar">سنريهم آياتنا</span>
+        <span class="path-title">{{ t().portal.signsTitle }}</span>
+        <span class="path-blurb">{{ t().portal.signsBlurb }}</span>
+        @if (stats().miracles) {
+          <span class="path-count">{{ t().fieldCount(stats().miracles, stats().reflection) }}</span>
+        }
+        <span class="btn solid">{{ t().portal.enter }}</span>
+      </span>
+    </a>
+    <a class="path" routerLink="/names" appReveal>
+      <img
+        src="images/names-hero-sm.webp"
+        srcset="images/names-hero-sm.webp 768w, images/names-hero.webp 1536w"
+        sizes="(max-width: 760px) 100vw, 600px"
+        alt=""
+        width="1536"
+        height="864"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="path-text">
+        <span class="path-eyebrow quran" lang="ar">تعرّف على ربك بأسمائه</span>
+        <span class="path-title">{{ t().portal.namesTitle }}</span>
+        <span class="path-blurb">{{ t().portal.namesBlurb }}</span>
+        @if (stats().names) {
+          <span class="path-count">{{ language.number(stats().names) }} {{ t().portal.statNames(stats().names) }}</span>
+        }
+        <span class="btn solid">{{ t().portal.enter }}</span>
+      </span>
+    </a>
   </div>
 </section>
 
-<!-- The two sections. -->
-<section class="container sections">
-  <a class="section-card" routerLink="/signs" appReveal>
-    <img
-      [src]="artSmallSrc('expansion')"
-      [attr.srcset]="artSrcset('expansion')"
-      sizes="(max-width: 760px) 100vw, 560px"
-      alt=""
-      width="1280"
-      height="800"
-      decoding="async"
-    />
-    <span class="card-text">
-      <span class="card-eyebrow quran" lang="ar">سنريهم آياتنا</span>
-      <span class="card-title">{{ t().portal.signsTitle }}</span>
-      <span class="card-blurb">{{ t().portal.signsBlurb }}</span>
-      <span class="btn solid">{{ t().portal.enter }}</span>
-    </span>
-  </a>
-  <a class="section-card" routerLink="/names" appReveal>
-    <img
-      src="images/names-hero-sm.webp"
-      srcset="images/names-hero-sm.webp 768w, images/names-hero.webp 1536w"
-      sizes="(max-width: 760px) 100vw, 560px"
-      alt=""
-      width="1536"
-      height="864"
-      decoding="async"
-    />
-    <span class="card-text">
-      <span class="card-eyebrow quran" lang="ar">تعرّف على ربك بأسمائه</span>
-      <span class="card-title">{{ t().portal.namesTitle }}</span>
-      <span class="card-blurb">{{ t().portal.namesBlurb }}</span>
-      <span class="btn solid">{{ t().portal.enter }}</span>
-    </span>
-  </a>
-</section>
-
-@if (content.journey()[0]; as first) {
-  <p class="container new-here" appReveal>
-    <a class="btn" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
-      {{ t().portal.newHere }} {{ language.isArabic() ? '←' : '→' }}
-    </a>
-  </p>
+<!-- Today's sign and name, a reason to come back. -->
+@if (content.ayahOfTheDay() || names.nameOfTheDay()) {
+  <section class="container section">
+    <header class="section-head" appReveal>
+      <h2>{{ t().portal.todayTitle }}</h2>
+    </header>
+    <div class="today">
+      @if (content.ayahOfTheDay(); as sign) {
+        <a class="today-card today-sign" [routerLink]="['/signs', sign.slug]" appReveal>
+          <span class="today-art">
+            <img [src]="artSmallSrc(sign.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
+          </span>
+          <span class="today-body">
+            <span class="eyebrow">{{ t().ayahOfTheDay(sign.type === 'reflection') }}</span>
+            @if (sign.type === 'reflection') {
+              <span class="chip quiet-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+            }
+            <span class="today-title">{{ language.pick(sign.title) }}</span>
+            <span class="today-hook">{{ language.pick(sign.hook) }}</span>
+          </span>
+        </a>
+      }
+      @if (names.nameOfTheDay(); as name) {
+        <a class="today-card today-name-card" [routerLink]="['/names', name.slug]" appReveal>
+          <span class="today-body">
+            <span class="eyebrow">{{ t().names.nameOfTheDay }}</span>
+            <span class="today-name quran gold-text" lang="ar" dir="rtl">{{ name.name }}</span>
+            <span class="today-translit" lang="en" dir="ltr">{{ name.transliteration }}</span>
+            <span class="today-hook">{{ language.pick(name.content!.meaning) }}</span>
+          </span>
+        </a>
+      }
+    </div>
+  </section>
 }
 
-<!-- Today's sign and name, a reason to come back. -->
-<section class="container today">
-  @if (content.ayahOfTheDay(); as sign) {
-    <a class="panel today-card" [routerLink]="['/signs', sign.slug]" appReveal>
-      <span class="eyebrow">{{ t().ayahOfTheDay(sign.type === 'reflection') }}</span>
-      @if (sign.type === 'reflection') {
-        <span class="chip reflection-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+<!-- Why the site can be trusted. -->
+<section class="container section">
+  <div class="trust" appReveal>
+    <h2>{{ t().portal.trustTitle }}</h2>
+    <ul>
+      @for (item of t().portal.trust; track $index) {
+        <li>
+          <span class="trust-icon" aria-hidden="true">
+            @switch ($index) {
+              @case (0) {
+                <svg viewBox="0 0 24 24"><path d="M4 5.5C6.5 4 9.5 4 12 5.5 14.5 4 17.5 4 20 5.5V19c-2.5-1.5-5.5-1.5-8 0-2.5-1.5-5.5-1.5-8 0z" /><path d="M12 5.5V19" /></svg>
+              }
+              @case (1) {
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="m8.2 12.3 2.6 2.6 5-5.2" /></svg>
+              }
+              @default {
+                <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" /><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" /></svg>
+              }
+            }
+          </span>
+          <span class="trust-title">{{ item.title }}</span>
+          <span class="trust-text">{{ item.text }}</span>
+        </li>
       }
-      <span class="today-title">{{ language.pick(sign.title) }}</span>
-      <span class="today-hook">{{ language.pick(sign.hook) }}</span>
-    </a>
-  }
-  @if (names.nameOfTheDay(); as name) {
-    <a class="panel today-card" [routerLink]="['/names', name.slug]" appReveal>
-      <span class="eyebrow">{{ t().names.nameOfTheDay }}</span>
-      <span class="today-name quran gold-text" lang="ar" dir="rtl">{{ name.name }}</span>
-      <span class="today-hook">{{ language.pick(name.content!.meaning) }}</span>
-    </a>
-  }
+    </ul>
+    <a class="btn" routerLink="/method">{{ t().portal.trustLink }}</a>
+  </div>
+</section>
+
+<!-- The call the signs lead to. -->
+<section class="container section closing" appReveal>
+  <blockquote class="motto">
+    <p class="quran" lang="ar" dir="rtl">
+      ﴿ذَٰلِكُمُ ٱللَّهُ رَبُّكُمۡۖ لَآ إِلَٰهَ إِلَّا هُوَۖ خَٰلِقُ كُلِّ شَيۡءࣲ فَٱعۡبُدُوهُۚ﴾
+    </p>
+    @if (!language.isArabic()) {
+      <p class="motto-meaning">
+        “That is Allah, your Lord; there is no deity except Him, the Creator of all things, so worship Him.”
+      </p>
+    }
+    <cite>{{ language.isArabic() ? 'الأنعام: ١٠٢' : 'Al-An‘am 6:102' }}</cite>
+  </blockquote>
+  <p class="closing-text">{{ t().nextBandText }}</p>
+  <a class="btn solid big" routerLink="/next">{{ t().nextSteps }}</a>
 </section>

@@ -104,19 +104,24 @@ export function resetList(list: ListState): void {
       display: block;
     }
 
+    // The list's field filter and search, together in one bar.
     .tools {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 0.75rem 1rem;
       margin-block-end: 1.5rem;
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, var(--surface-raised), var(--surface));
     }
 
     .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .filter {
@@ -127,7 +132,8 @@ export function resetList(list: ListState): void {
       background: transparent;
       color: var(--text-muted);
       font: inherit;
-      font-size: 0.92rem;
+      font-family: var(--font-display-en);
+      font-size: 0.9rem;
       cursor: pointer;
       transition:
         background-color 0.2s,
@@ -157,7 +163,7 @@ export function resetList(list: ListState): void {
       padding-inline: 1rem;
       border: 1px solid var(--line-strong);
       border-radius: 999px;
-      background: var(--surface);
+      background: rgb(var(--bg-rgb) / 60%);
       color: var(--text-muted);
 
       &:focus-within {
@@ -181,6 +187,10 @@ export function resetList(list: ListState): void {
         font: inherit;
         font-size: 0.98rem;
       }
+    }
+
+    :host-context([lang='ar']) .filter {
+      font-family: var(--font-display-ar);
     }
 
     .list {

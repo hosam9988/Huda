@@ -2,7 +2,7 @@
 
 @if (name(); as n) {
   <article #article class="name-page" [style.--scale]="reading.textScale()">
-    <header class="hero">
+    <header class="hero night">
       <div class="hero-art" aria-hidden="true">
         <img
           src="images/names-hero-sm.webp"
@@ -87,13 +87,19 @@
             <a class="next-card" [routerLink]="['/names', next.slug]">
               <span class="eyebrow">{{ t().names.nextName }}</span>
               <span class="next-name quran gold-text" lang="ar" dir="rtl">{{ next.name }}</span>
+              <span class="next-translit" lang="en" dir="ltr">{{ next.transliteration }}</span>
               <span class="next-meaning">{{ language.pick(next.content!.meaning) }}</span>
+              <span class="next-go">
+                {{ t().names.readName }}
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </span>
             </a>
           }
           <p class="prev-next">
             @if (neighbours().prev; as prev) {
               <a [routerLink]="['/names', prev.slug]">
-                {{ language.isArabic() ? '→' : '←' }} {{ t().previous }}: {{ language.isArabic() ? prev.name : prev.transliteration }}
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow back"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                {{ t().previous }}: {{ language.isArabic() ? prev.name : prev.transliteration }}
               </a>
             }
             <a routerLink="/names" fragment="all">{{ t().names.allNames }}</a>

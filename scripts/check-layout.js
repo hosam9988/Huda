@@ -7,6 +7,8 @@
 //   text-overlap      glyphs of two different blocks touching
 //   lines-collide     glyphs of two lines of the same Qur'an-script block touching
 //   runs-into         glyphs on an ornament, button, field or panel the text isn't part of
+//                     (a fixed layer such as the phone's tab bar is left out of both checks: it
+//                     floats over the page, covering what scrolls under it)
 //   invisible-text    transparent letters that no text-clipped background paints
 //   gold-layer        a positioned, transformed or filtered word inside gold text: Safari
 //                     leaves it out of the gold, so it vanishes there (Chrome doesn't)
@@ -32,6 +34,12 @@
   const isBlock = (cs) => cs.display !== 'inline' && cs.display !== 'contents';
   // Laid out and painted: the content of a closed <details> keeps its boxes but isn't drawn.
   const shown = (el) => el.getClientRects().length > 0 && (!el.checkVisibility || el.checkVisibility());
+  // Inside a fixed layer, such as the tab bar at the foot of a phone's screen: it floats over the
+  // page with a background of its own, so what it covers at this scroll position isn't a fault.
+  const inFixed = (el, gcs) => {
+    for (let a = el; a && a !== document.documentElement; a = a.parentElement) if (gcs(a).position === 'fixed') return true;
+    return false;
+  };
 
   // Every visible word with its layout box, baseline and ink box.
   A.words = () => {
@@ -70,7 +78,7 @@
         const baseline = box.top + t.fontBoundingBoxAscent * fit;
         const sx = t.width > 0 ? (box.right - box.left) / t.width : 1;
         words.push({
-          word, el: p, block, box, baseline, font, ls, dir: cs.direction,
+          word, el: p, block, box, baseline, font, ls, dir: cs.direction, fixed: inFixed(p, gcs),
           ink: { left: box.left - t.actualBoundingBoxLeft * sx, right: box.left + t.actualBoundingBoxRight * sx, top: baseline - t.actualBoundingBoxAscent, bottom: baseline + t.actualBoundingBoxDescent },
         });
       }
@@ -172,6 +180,7 @@
       const a = sorted[i];
       for (let j = i + 1; j < sorted.length && sorted[j].ink.top < a.ink.bottom; j++) {
         const b = sorted[j];
+        if (a.fixed !== b.fixed) continue;
         const same = a.block === b.block;
         if (same ? Math.abs(a.box.top - b.box.top) < 2 || !/Amiri Quran/.test(a.font) : a.block.contains(b.block) || b.block.contains(a.block)) continue;
         if (Math.min(a.ink.right, b.ink.right) - Math.max(a.ink.left, b.ink.left) <= 0) continue;
@@ -182,10 +191,10 @@
     // Glyphs on ornaments, buttons, fields and panels the text isn't part of.
     const solids = [...document.querySelectorAll('app-ornament .line, app-ornament svg, .btn, button, input, .panel, .search')]
       .filter(shown)
-      .map((e) => ({ e, r: e.getBoundingClientRect() }));
+      .map((e) => ({ e, r: e.getBoundingClientRect(), fixed: inFixed(e, gcs) }));
     for (const w of words) {
       for (const s of solids) {
-        if (s.e.contains(w.el) || w.el.contains(s.e)) continue;
+        if (s.e.contains(w.el) || w.el.contains(s.e) || s.fixed !== w.fixed) continue;
         const px = A.inRect(w, { left: s.r.left, right: s.r.right, top: s.r.top - 0.5, bottom: s.r.bottom + 0.5 });
         if (px >= 2) add('runs-into', w.block, w, { px }, desc(s.e));
       }

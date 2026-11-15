@@ -24,6 +24,12 @@ import { Ornament } from '../../shared/ornament';
 import { ReadAloud } from '../../shared/read-aloud';
 import { Reveal } from '../../shared/reveal';
 
+/** A part of a sign's page, for the list of links to its parts. */
+interface Part {
+  id: string;
+  label: string;
+}
+
 /** One sign, told as a short story: the text, then and now, the timeline, and the sources. */
 @Component({
   selector: 'app-ayah-page',
@@ -77,6 +83,23 @@ export class AyahPage {
     const a = this.ayah();
     return !!a && this.reading.countRead([a.slug]) > 0;
   });
+
+  /** The page's parts, in order: the links at its side (or, on a phone, under its tools) lead to them. */
+  protected readonly parts = computed<Part[]>(() => {
+    const a = this.ayah();
+    if (!a) return [];
+    const s = this.t().sections;
+    return [
+      { id: 'text', label: s.evidence },
+      { id: 'then', label: s.then },
+      { id: 'now', label: a.nowLabel === 'history' ? s.nowHistory : s.now },
+      { id: 'timeline', label: s.timeline },
+      { id: 'reflect', label: s.reflection },
+      { id: 'sources', label: s.sources },
+    ];
+  });
+  /** The part the reader is in, marked in the list. */
+  protected readonly currentPart = signal('text');
 
   /** 0–1: how far down the page the reader is. */
   protected readonly progress = signal(0);
@@ -151,6 +174,22 @@ export class AyahPage {
     // Reaching the end counts as having read the sign: on arriving there, so that marking it
     // unread while at the end sticks.
     if (progress > 0.97 && before <= 0.97 && !this.reading.isRead(a.slug)) this.reading.setRead(a.slug, true);
+    // The part in view: the last one whose top has passed a third of the way down the window.
+    let current = this.parts()[0]?.id ?? '';
+    for (const part of this.parts()) {
+      const top = this.host.nativeElement.querySelector(`#${part.id}`)?.getBoundingClientRect().top;
+      if (top !== undefined && top < innerHeight / 3) current = part.id;
+    }
+    if (current !== this.currentPart()) this.currentPart.set(current);
+  }
+
+  /** From the list of parts: to that part, with the focus on its heading for keyboard users. */
+  protected goTo(id: string): void {
+    const section = this.host.nativeElement.querySelector<HTMLElement>(`#${id}`);
+    if (!section) return;
+    section.scrollIntoView({ block: 'start' });
+    section.querySelector<HTMLElement>('h2')?.focus({ preventScroll: true });
+    this.currentPart.set(id);
   }
 
   protected yearOf(m: Milestone): string {

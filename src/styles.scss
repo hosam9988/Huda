@@ -147,17 +147,31 @@
   --line-strong: rgb(var(--accent-rgb) / 42%);
   --science-line: rgb(var(--science-rgb) / 30%);
 
-  --font-calligraphy: 'Aref Ruqaa', 'Amiri Quran', serif;
   --font-quran: 'Amiri Quran', serif;
-  --font-display-ar: 'Noto Naskh Arabic', serif;
+  // Titles and the interface in a modern face that has both Arabic and Latin letters; Arabic
+  // reading text stays in Naskh, which is easier on long paragraphs.
+  --font-display-ar: 'Readex Pro', 'Noto Naskh Arabic', sans-serif;
   --font-body-ar: 'Noto Naskh Arabic', serif;
-  --font-display-en: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
-  --font-body-en: 'EB Garamond', Georgia, serif;
+  --font-display-en: 'Readex Pro', system-ui, sans-serif;
+  --font-body-en: 'Readex Pro', system-ui, sans-serif;
+  --body-size-en: 1.06rem;
+  --body-weight-en: 300;
 
-  --radius: 18px;
-  --content-width: 74rem;
+  --radius: 20px;
+  --radius-lg: 28px;
+  --content-width: 76rem;
   --reading-width: 44rem;
+  --header-height: 4.25rem;
+  // The tab bar at the bottom of a phone's screen (see app.scss); nothing on wider screens.
+  --tabbar-height: 0px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-height: 3.75rem;
+    --tabbar-height: calc(3.9rem + env(safe-area-inset-bottom));
+  }
 }
 
 *,
@@ -179,8 +193,9 @@ body {
   color: var(--text);
   background-color: var(--bg);
   font-family: var(--font-body-en);
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: var(--body-size-en);
+  font-weight: var(--body-weight-en);
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   transition:
@@ -215,7 +230,13 @@ body {
 html[lang='ar'] body {
   font-family: var(--font-body-ar);
   font-size: 1.12rem;
+  font-weight: 400;
   line-height: 2;
+}
+
+strong,
+b {
+  font-weight: 600;
 }
 
 a {
@@ -248,14 +269,16 @@ h3 {
   font-family: var(--font-display-en);
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
-// Not the calligraphy or Qur'an-script titles, which keep their own font in every language.
-html[lang='ar'] :is(h1, h2, h3):not(.calligraphy, .quran) {
+// Not the Qur'an-script titles, which keep their own font in every language.
+html[lang='ar'] :is(h1, h2, h3):not(.quran) {
   font-family: var(--font-display-ar);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.6;
+  letter-spacing: 0;
 }
 
 blockquote {
@@ -293,13 +316,6 @@ p {
   box-decoration-break: clone;
 }
 
-// Decorative titles without tashkeel.
-.calligraphy {
-  font-family: var(--font-calligraphy);
-  font-weight: 700;
-  line-height: 1.5;
-}
-
 // Amiri Quran has one weight only, so never synthesise bold, and give the marks room.
 .quran {
   font-family: var(--font-quran);
@@ -318,8 +334,8 @@ p {
 
 // "Allah" in an English title: gold, larger and raised, like «اللّٰه» in the Arabic one. It is a
 // gold element itself, not a word inside one, so Safari paints it although top moves it; top
-// keeps its line as tall as before. The padding covers the italic letters' lean on both sides;
-// the negative margins keep the spaces around it as they were.
+// keeps its line as tall as before. The padding gives its letters room on both sides; the negative
+// margins keep the spaces around it as they were.
 .allah-en {
   position: relative;
   top: -0.08em;
@@ -333,21 +349,55 @@ p {
   font-size: 0.42em;
 }
 
-.eyebrow {
+// A small label over a title: «آية اليوم», "Sign of the day".
+.eyebrow,
+.kicker {
   margin: 0;
   color: var(--gold);
   font-family: var(--font-display-en);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-html[lang='ar'] .eyebrow {
+html[lang='ar'] :is(.eyebrow, .kicker) {
   font-family: var(--font-display-ar);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 500;
   letter-spacing: 0;
+}
+
+// A section's heading: its label, title and one line about it, centred.
+.section {
+  padding-block: clamp(3rem, 7vw, 5.5rem) 0;
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+.section-head {
+  max-inline-size: 44rem;
+  margin: 0 auto clamp(1.5rem, 3vw, 2.25rem);
+  text-align: center;
+
+  h2 {
+    margin: 0.35rem 0 0.5rem;
+    color: var(--text);
+    font-size: clamp(1.75rem, 4.2vw, 2.6rem);
+  }
+
+  > p:not(.kicker) {
+    margin: 0;
+    color: var(--text-muted);
+  }
+}
+
+// The row of buttons under a section.
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: clamp(1.5rem, 3vw, 2rem) 0 0;
 }
 
 .panel {
@@ -379,10 +429,12 @@ html[lang='ar'] .eyebrow {
   white-space: nowrap;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: transparent;
+  background: rgb(var(--accent-rgb) / 4%);
   color: var(--gold-light);
   font: inherit;
+  font-family: var(--font-display-en);
   font-size: 0.95em;
+  font-weight: 500;
   cursor: pointer;
   transition:
     background-color 0.25s var(--ease),
@@ -411,6 +463,13 @@ html[lang='ar'] .eyebrow {
     }
   }
 
+  // The main actions of a page: taller, and a little larger.
+  &.big {
+    min-block-size: 3.25rem;
+    padding: 0.7rem 1.6rem;
+    font-size: 1.02rem;
+  }
+
   // Smaller and muted, for a secondary action such as «إلغاء علامة القراءة».
   &.quiet {
     min-block-size: 2.25rem;
@@ -430,6 +489,32 @@ html[lang='ar'] .eyebrow {
   }
 }
 
+html[lang='ar'] .btn {
+  font-family: var(--font-display-ar);
+}
+
+// An arrow that points the way the text reads.
+svg.arrow {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[dir='rtl'] svg.arrow {
+  scale: -1 1;
+}
+
+// Back: against the way the text reads.
+svg.arrow.back {
+  scale: -1 1;
+}
+
+[dir='rtl'] svg.arrow.back {
+  scale: none;
+}
+
 // A small rounded label, e.g. a category on a card.
 .chip {
   display: inline-flex;
@@ -438,9 +523,30 @@ html[lang='ar'] .eyebrow {
   padding: 0.1rem 0.75rem;
   border: 1px solid var(--science-line);
   border-radius: 999px;
+  background: rgb(var(--science-rgb) / 6%);
   color: var(--science);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   white-space: nowrap;
+}
+
+// «للتفكر»: a sign for reflection, not offered as a miracle.
+.chip.quiet-chip {
+  border-color: var(--line-strong);
+  background: transparent;
+  color: var(--text-muted);
+}
+
+// «صورة تعبيرية»: every large illustrative picture says that it is one.
+.art-label {
+  position: absolute;
+  z-index: 1;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  background: rgb(5 7 15 / 55%);
+  color: rgb(255 255 255 / 80%);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  pointer-events: none;
 }
 
 // Things that fade and rise into view as the reader scrolls to them (see shared/reveal.ts).
@@ -501,7 +607,6 @@ html[lang='ar'] .eyebrow {
     .meaning {
       margin: 0.4rem 0 0;
       color: var(--text-muted);
-      font-style: italic;
     }
 
     cite {
@@ -560,6 +665,286 @@ html[lang='ar'] .eyebrow {
       }
     }
   }
+}
+
+// ---------- Night bands ----------
+
+// The top of the home page and of each section: a night sky in every page colour, so its text keeps
+// the night theme's colours.
+.night {
+  --text: #eef0f7;
+  --text-muted: #c5cbe0;
+  --accent-rgb: 217 180 90;
+  --gold: #d9b45a;
+  --gold-light: #f0d68e;
+  --verse: #f0d68e;
+  --on-accent: #0a0d1a;
+  --line: rgb(217 180 90 / 22%);
+  --line-strong: rgb(217 180 90 / 45%);
+  --science-rgb: 111 211 199;
+  --science: #6fd3c7;
+  --surface: #0f1630;
+  --surface-raised: #141d3d;
+  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
+
+  background: #05070f;
+  color: var(--text);
+}
+
+// ---------- Figures under a title ----------
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: clamp(2.25rem, 5vw, 3.5rem) 0 0;
+
+  div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-inline: clamp(1.25rem, 3.5vw, 2.75rem);
+    border-inline-start: 1px solid var(--line);
+
+    &:first-child {
+      border-inline-start: 0;
+    }
+  }
+
+  dt {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--gold-light);
+    font-family: var(--font-display-en);
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+html[lang='ar'] .hero-stats dd {
+  font-family: var(--font-display-ar);
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.25rem;
+
+    div:nth-child(3) {
+      border-inline-start: 0;
+    }
+  }
+}
+
+// ---------- The folded sections ----------
+
+// The journey and the questions are folded: their heading, what they hold and a glimpse of their
+// pictures make the button that opens them.
+.fold {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 0%, rgb(var(--accent-rgb) / 8%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
+  transition: border-color 0.3s;
+
+  &:hover,
+  &[open] {
+    border-color: var(--line-strong);
+  }
+
+  > summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(1.4rem, 3.5vw, 2.25rem);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    &:hover .fold-toggle {
+      border-color: var(--gold);
+      background: rgb(var(--accent-rgb) / 10%);
+    }
+  }
+}
+
+.fold-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  max-inline-size: 46rem;
+  margin-inline: auto;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+  }
+}
+
+.fold-summary {
+  color: var(--text-muted);
+}
+
+.fold-sample {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+
+  q {
+    color: var(--gold-light);
+    font-family: var(--font-display-en);
+    font-weight: 500;
+    quotes: '“' '”';
+  }
+}
+
+html[lang='ar'] .fold-sample q {
+  font-family: var(--font-display-ar);
+  quotes: '«' '»';
+}
+
+.fold-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.75rem;
+}
+
+// Small pictures of what the fold holds, overlapping like a fan of cards.
+.peek {
+  display: flex;
+  padding-inline-start: 0.6rem;
+}
+
+.peek-stop {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  margin-inline-start: -0.6rem;
+  overflow: hidden;
+  border: 2px solid var(--surface-raised);
+  border-radius: 50%;
+  background: #0a0f24;
+  box-shadow: 0 4px 12px -4px rgb(0 0 0 / 50%);
+
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  // The stop's number, over its picture.
+  span {
+    position: relative;
+    color: #fff;
+    font-family: var(--font-display-en);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 1px 4px rgb(0 0 0 / 90%);
+  }
+}
+
+.squares .peek-stop {
+  border-radius: 12px;
+}
+
+.fold-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-block-size: 2.75rem;
+  padding: 0.45rem 1.25rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-weight: 500;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
+
+  svg {
+    inline-size: 1.2rem;
+    block-size: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: rotate 0.3s var(--ease);
+  }
+}
+
+html[lang='ar'] .fold-toggle {
+  font-family: var(--font-display-ar);
+}
+
+.fold[open] {
+  .fold-toggle svg {
+    rotate: 180deg;
+  }
+
+  // Open, the pictures themselves are below.
+  .peek {
+    display: none;
+  }
+}
+
+.fold-body {
+  padding: 0 clamp(1rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem);
+  animation: unfold 0.5s var(--ease) both;
+}
+
+@keyframes unfold {
+  from {
+    opacity: 0;
+    translate: 0 -8px;
+  }
+}
+
+// For keyboard users: the first thing Tab reaches, shown only then.
+.skip {
+  position: fixed;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--on-accent);
+  translate: 0 -200%;
+
+  &:focus {
+    translate: none;
+  }
+}
+
+main:focus {
+  outline: none;
 }
 
 .visually-hidden {

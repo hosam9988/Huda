@@ -1,3 +1,5 @@
+<a class="skip" href="#main" (click)="skip($event)">{{ t().skipToContent }}</a>
+
 <header class="site-header">
   <div class="container bar">
     <a routerLink="/" class="brand" [attr.aria-label]="t().appTitle">
@@ -11,11 +13,17 @@
       <span class="quran gold-text"><span class="know">اعرف</span>&ngsp;<span class="allah">اللّٰه</span></span>
     </a>
 
-    <nav>
-      <a class="link wide" routerLink="/signs" fragment="journey">{{ t().journey }}</a>
-      <a class="link" routerLink="/signs" routerLinkActive="active">{{ t().signsSection }}</a>
-      <a class="link" routerLink="/names" routerLinkActive="active">{{ t().namesSection }}</a>
-      <a class="link wide" routerLink="/method" routerLinkActive="active">{{ t().method }}</a>
+    <!-- The sections, on wide screens; phones have the tab bar at the bottom. -->
+    <nav class="links" [attr.aria-label]="t().mainNav">
+      <a class="start" routerLink="/signs" fragment="journey" [class.active]="active() === 'start'">
+        {{ t().journey }}
+      </a>
+      <a routerLink="/signs" [class.active]="active() === 'signs'">{{ t().signsSection }}</a>
+      <a routerLink="/names" [class.active]="active() === 'names'">{{ t().namesSection }}</a>
+      <a routerLink="/method" [class.active]="active() === 'method'">{{ t().method }}</a>
+    </nav>
+
+    <div class="tools">
       <app-theme-picker />
       <button
         type="button"
@@ -26,27 +34,65 @@
       >
         {{ language.nextLanguage().name }}
       </button>
-    </nav>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <router-outlet />
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <p class="quran gold-text verse" lang="ar" dir="rtl">﴿فَٱعۡلَمۡ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ﴾</p>
-    <p class="verse-ref">{{ language.isArabic() ? 'محمد: ١٩' : 'Muhammad 47:19' }}</p>
-    <nav class="footer-links">
-      <a routerLink="/">{{ t().home }}</a>
-      <a routerLink="/signs">{{ t().signsSection }}</a>
-      <a routerLink="/names">{{ t().namesSection }}</a>
-      <a routerLink="/signs" fragment="journey">{{ t().journeyTitle }}</a>
-      <a routerLink="/method">{{ t().method }}</a>
-      <a routerLink="/next">{{ t().nextSteps }}</a>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <p class="quran gold-text verse" lang="ar" dir="rtl">﴿فَٱعۡلَمۡ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ﴾</p>
+      @if (!language.isArabic()) {
+        <p class="verse-meaning">“So know that there is no deity except Allah.”</p>
+      }
+      <p class="verse-ref">{{ language.isArabic() ? 'محمد: ١٩' : 'Muhammad 47:19' }}</p>
+    </div>
+    <nav class="footer-links" [attr.aria-label]="t().footerNav">
+      <div>
+        <p class="footer-title">{{ t().footerExplore }}</p>
+        <a routerLink="/signs" fragment="journey">{{ t().journeyTitle }}</a>
+        <a routerLink="/signs" fragment="all">{{ t().miraclesTitle }}</a>
+        <a routerLink="/signs" fragment="reflection">{{ t().reflectionTitle }}</a>
+        <a routerLink="/names">{{ t().namesSection }}</a>
+      </div>
+      <div>
+        <p class="footer-title">{{ t().footerAbout }}</p>
+        <a routerLink="/">{{ t().home }}</a>
+        <a routerLink="/method">{{ t().method }}</a>
+        <a routerLink="/next">{{ t().nextSteps }}</a>
+      </div>
     </nav>
+  </div>
+  <div class="container footer-notes">
     <p class="waqf">{{ t().waqfNote }}</p>
     <p class="images-note">{{ t().imagesNote }}</p>
   </div>
 </footer>
+
+<!-- Phones: the sections stay one tap away, at the bottom where a thumb reaches. -->
+<nav class="tabbar" [attr.aria-label]="t().mainNav">
+  <a routerLink="/" [class.active]="active() === 'home'" [attr.aria-current]="active() === 'home' ? 'page' : null">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z" /></svg>
+    <span>{{ t().home }}</span>
+  </a>
+  <a routerLink="/signs" fragment="journey" [class.active]="active() === 'start'" [attr.aria-current]="active() === 'start' ? 'page' : null">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="m15.2 8.8-1.9 4.5-4.5 1.9 1.9-4.5z" /></svg>
+    <span>{{ t().journeyShort }}</span>
+  </a>
+  <a routerLink="/signs" [class.active]="active() === 'signs'" [attr.aria-current]="active() === 'signs' ? 'page' : null">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.5l-1.9-5.7-5.6-1.9L10.1 9z" /><path d="M18.5 3.5v3M17 5h3" /></svg>
+    <span>{{ t().signsSection }}</span>
+  </a>
+  <a routerLink="/names" [class.active]="active() === 'names'" [attr.aria-current]="active() === 'names' ? 'page' : null">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" /><rect x="6.5" y="6.5" width="11" height="11" transform="rotate(45 12 12)" /></svg>
+    <span>{{ t().namesShort }}</span>
+  </a>
+  <a routerLink="/method" [class.active]="active() === 'method'" [attr.aria-current]="active() === 'method' ? 'page' : null">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h10.5L19 8v11.5H5z" /><path d="m8.5 12.5 2.2 2.2 4.6-4.6" /></svg>
+    <span>{{ t().method }}</span>
+  </a>
+</nav>

@@ -1,24 +1,10 @@
 // ---------- Hero ----------
 
-// A night sky in every page colour, so its text keeps the night theme's colours.
 .hero {
-  --text: #eef0f7;
-  --text-muted: #c5cbe0;
-  --gold: #d9b45a;
-  --gold-light: #f0d68e;
-  --verse: #f0d68e;
-  --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
-
   position: relative;
   isolation: isolate;
-  display: grid;
-  align-items: center;
-  min-block-size: min(40rem, 86vh);
   overflow: hidden;
-  padding-block: clamp(3rem, 8vw, 6rem) clamp(4rem, 9vw, 7rem);
-  background: #05070f;
-  color: var(--text);
-  text-align: center;
+  padding-block: clamp(2rem, 6vw, 4.5rem) clamp(2.25rem, 5vw, 3.5rem);
 }
 
 .hero-art {
@@ -34,13 +20,21 @@
     animation: drift 30s ease-in-out infinite alternate;
   }
 
-  // Darker at the top, where the text is, fading into the page below.
+  // Darker behind the words, and fading into the page below.
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgb(5 7 15 / 78%) 0%, rgb(5 7 15 / 55%) 60%, rgb(var(--bg-rgb)) 100%);
+    background:
+      radial-gradient(ellipse 70% 80% at 75% 35%, rgb(5 7 15 / 82%), rgb(5 7 15 / 45%) 70%),
+      linear-gradient(180deg, rgb(5 7 15 / 30%) 0%, transparent 40%, rgb(var(--bg-rgb)) 100%);
   }
+}
+
+:host-context([dir='ltr']) .hero-art::after {
+  background:
+    radial-gradient(ellipse 70% 80% at 25% 35%, rgb(5 7 15 / 82%), rgb(5 7 15 / 45%) 70%),
+    linear-gradient(180deg, rgb(5 7 15 / 30%) 0%, transparent 40%, rgb(var(--bg-rgb)) 100%);
 }
 
 @keyframes drift {
@@ -49,20 +43,22 @@
   }
 }
 
-// «صورة تعبيرية»: every illustrative picture says that it is one.
-.art-label {
-  position: absolute;
-  inset-block-end: 1rem;
-  inset-inline-end: 1rem;
-  padding: 0.1rem 0.7rem;
-  border-radius: 999px;
-  background: rgb(5 7 15 / 55%);
-  color: rgb(255 255 255 / 75%);
-  font-size: 0.75rem;
+.hero-label {
+  inset-block-end: 0.75rem;
+  inset-inline-end: 0.75rem;
 }
 
-.hero-text {
-  max-inline-size: 46rem;
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  align-items: center;
+  gap: 2rem clamp(2rem, 5vw, 4.5rem);
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   animation: rise 0.9s var(--ease) both;
 }
 
@@ -74,10 +70,10 @@
 }
 
 // In the Qur'an's script, like the names' titles. It has a single, lighter weight, so it is set
-// larger; the line height leaves room above the letters for the marks on «الله».
+// large; the line height leaves room above the letters for the marks on «الله».
 .title {
   margin-block-start: 0;
-  font-size: clamp(4.6rem, 16vw, 8.5rem);
+  font-size: clamp(4.2rem, 11vw, 7.5rem);
   line-height: 1.8;
 }
 
@@ -85,56 +81,417 @@
   margin: 0;
   color: var(--text-muted);
   font-family: var(--font-display-en);
-  font-size: clamp(1.4rem, 3.2vw, 1.9rem);
-  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 300;
 }
 
-.motto {
+.lead {
+  max-inline-size: 34rem;
   margin: 1.25rem 0 0;
-
-  .quran {
-    margin: 0;
-    color: var(--verse);
-    font-size: clamp(1.35rem, 3.4vw, 1.75rem);
-    line-height: 2.1;
-  }
-
-  cite {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    font-style: normal;
-  }
-}
-
-.motto-meaning {
-  margin: 0.2rem 0 0.3rem;
-  font-style: italic;
-}
-
-.intro {
-  margin: 1.25rem auto 0;
   color: var(--text-muted);
-  font-size: 1.08em;
+  font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.75rem;
+}
+
+.journey-meta {
+  max-inline-size: 30rem;
+  margin: 0.9rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+// ---------- The questions that take turns ----------
+
+.deck {
+  position: relative;
+  inline-size: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: rgb(8 12 28 / 60%);
+  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 80%);
+  animation: rise 0.9s 0.15s var(--ease) both;
+}
+
+// Every question sits in the same cell, so the card is as tall as the longest and never jumps.
+.deck-stack {
+  position: relative;
+  display: grid;
+
+  .art-label {
+    inset-block-start: 0.75rem;
+    inset-inline-end: 0.75rem;
+  }
+}
+
+.question {
+  position: relative;
+  isolation: isolate;
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-block-size: clamp(18rem, 36vw, 27rem);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  // Room above the words for the «صورة تعبيرية» label, however long the question.
+  padding-block-start: 3rem;
+  color: var(--text);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.8s var(--ease),
+    visibility 0.8s;
+
+  &.current {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgb(5 8 20 / 5%) 0%, rgb(5 8 20 / 55%) 42%, rgb(5 8 20 / 94%) 100%);
+  }
+
+  &:hover .question-art {
+    scale: 1.04;
+  }
+}
+
+.question-art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  transition: scale 0.8s var(--ease);
+}
+
+.question-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.deck-label {
+  color: var(--gold);
+  font-family: var(--font-display-en);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+:host-context([lang='ar']) .deck-label {
+  font-family: var(--font-display-ar);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.question-lead {
+  font-family: var(--font-display-en);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+:host-context([lang='ar']) .question-lead {
+  font-family: var(--font-display-ar);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.question-rest {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.question-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block-start: 0.35rem;
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-weight: 500;
+
+  .arrow {
+    inline-size: 1.1em;
+    block-size: 1.1em;
+  }
+}
+
+:host-context([lang='ar']) .question-link {
+  font-family: var(--font-display-ar);
+}
+
+.deck-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  padding: 0.35rem 0.75rem;
+  border-block-start: 1px solid var(--line);
+  background: rgb(5 8 20 / 70%);
+}
+
+.dot,
+.play {
+  display: grid;
+  place-items: center;
+  inline-size: 2.25rem;
+  block-size: 2.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.dot::before {
+  content: '';
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 999px;
+  background: rgb(var(--accent-rgb) / 40%);
+  transition:
+    inline-size 0.3s var(--ease),
+    background-color 0.3s;
+}
+
+.dot[aria-pressed='true']::before {
+  inline-size: 1.4rem;
+  background: var(--gold);
+}
+
+.play {
+  margin-inline-start: 0.4rem;
+
+  svg {
+    inline-size: 1rem;
+    fill: currentColor;
+  }
+
+  &:hover {
+    color: var(--gold-light);
+  }
+}
+
+// ---------- The journey, stop by stop ----------
+
+.stops {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  color: inherit;
+
+  &:hover {
+    .stop-art img {
+      scale: 1.06;
+    }
+
+    .stop-title {
+      color: var(--gold-light);
+    }
+  }
+}
+
+.stop-art {
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #0a0f24;
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: scale 0.6s var(--ease);
+  }
+}
+
+.stop-n {
+  position: absolute;
+  inset-block-start: 0.6rem;
+  inset-inline-start: 0.6rem;
+  display: grid;
+  place-items: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: var(--on-accent);
+  font-family: var(--font-display-en);
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 4px 14px -4px rgb(0 0 0 / 60%);
+}
+
+.stop-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stop-title {
+  color: var(--text);
+  font-family: var(--font-display-en);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.45;
+  transition: color 0.2s;
+}
+
+:host-context([lang='ar']) .stop-title {
+  font-family: var(--font-display-ar);
+  line-height: 1.7;
+}
+
+.stop-time {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+// ---------- More questions ----------
+
+.questions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.q-card {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  color: inherit;
+  transition:
+    transform 0.35s var(--ease),
+    border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow);
+
+    img {
+      scale: 1.05;
+    }
+  }
+}
+
+.q-art {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0a0f24;
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: scale 0.6s var(--ease);
+  }
+}
+
+.q-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1.1rem 1.3rem 1.3rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.q-lead {
+  color: var(--text);
+  font-family: var(--font-display-en);
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+:host-context([lang='ar']) .q-lead {
+  font-family: var(--font-display-ar);
+  line-height: 1.8;
+}
+
+.q-rest {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.q-link {
+  margin-block-start: auto;
+  padding-block-start: 0.35rem;
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+:host-context([lang='ar']) .q-link {
+  font-family: var(--font-display-ar);
 }
 
 // ---------- The two sections ----------
 
-// Pulled up over the bottom of the hero, so the way in is the first thing below the title.
-.sections {
-  position: relative;
+.paths {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
-  margin-block-start: clamp(-4rem, -6vw, -2rem);
 }
 
-.section-card {
+.path {
   position: relative;
   display: grid;
-  min-block-size: 22rem;
+  min-block-size: 24rem;
   overflow: hidden;
   border: 1px solid var(--line-strong);
-  border-radius: calc(var(--radius) + 4px);
+  border-radius: var(--radius-lg);
   background: #0a0f24;
   color: #f4f1e8;
   box-shadow: var(--shadow);
@@ -155,7 +512,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgb(5 8 20 / 15%) 0%, rgb(5 8 20 / 88%) 75%);
+    background: linear-gradient(180deg, rgb(5 8 20 / 10%) 0%, rgb(5 8 20 / 90%) 72%);
   }
 
   &:hover {
@@ -166,9 +523,15 @@
       scale: 1.05;
     }
   }
+
+  .btn.solid {
+    --on-accent: #0a0d1a;
+    --gold-gradient: linear-gradient(135deg, #f8e9a8 0%, #d9b45a 38%, #a8841f 62%, #f1d98a 100%);
+    margin-block-start: 0.5rem;
+  }
 }
 
-.card-text {
+.path-text {
   position: relative;
   z-index: 1;
   display: flex;
@@ -180,79 +543,114 @@
 }
 
 // In the Qur'an's script like the titles, a little larger for its lighter weight.
-.card-eyebrow {
+.path-eyebrow {
   color: #f0d68e;
   font-size: 1.9rem;
   line-height: 1.7;
 }
 
-.card-title {
+.path-title {
   font-family: var(--font-display-en);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.45rem, 2.8vw, 1.9rem);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
-:host-context([lang='ar']) .card-title {
+:host-context([lang='ar']) .path-title {
   font-family: var(--font-display-ar);
-  font-weight: 700;
   line-height: 1.6;
 }
 
-.card-blurb {
-  max-inline-size: 30rem;
-  margin-block-end: 0.6rem;
+.path-blurb {
+  max-inline-size: 32rem;
   font-size: 0.98rem;
   opacity: 0.88;
 }
 
-.new-here {
-  margin: 1.75rem auto 0;
-  text-align: center;
+.path-count {
+  color: #7de2d1;
+  font-size: 0.88rem;
 }
 
 // ---------- Today ----------
 
 .today {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   gap: 1.25rem;
-  padding-block-start: clamp(2.5rem, 6vw, 4rem);
 }
 
 .today-card {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
   color: inherit;
-  transition: border-color 0.3s;
+  transition:
+    border-color 0.3s,
+    transform 0.3s var(--ease);
 
   &:hover {
     border-color: var(--line-strong);
+    transform: translateY(-3px);
   }
 }
 
-// On a sign for reflection: not offered as a miracle.
-.today-card .reflection-chip {
-  align-self: flex-start;
-  border-color: var(--line-strong);
-  color: var(--text-muted);
+// A fixed width: Safari otherwise narrows a picture in a row beside long text.
+.today-art {
+  flex: 0 0 40%;
+  inline-size: 40%;
+  min-block-size: 100%;
+  overflow: hidden;
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+}
+
+.today-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.today-name-card {
+  justify-content: center;
+  text-align: center;
+
+  .today-body {
+    align-items: center;
+  }
 }
 
 .today-title {
   color: var(--gold-light);
-  font-size: 1.35rem;
+  font-family: var(--font-display-en);
+  font-size: 1.3rem;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 :host-context([lang='ar']) .today-title {
   font-family: var(--font-display-ar);
-  font-weight: 700;
+  line-height: 1.7;
 }
 
 .today-name {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   line-height: 1.9;
+}
+
+.today-translit {
+  color: var(--gold);
+  font-family: var(--font-display-en);
+  font-weight: 500;
 }
 
 .today-hook {
@@ -260,13 +658,288 @@
   font-size: 0.98rem;
 }
 
-// ---------- Narrow screens ----------
+// ---------- Trust ----------
 
-@media (max-width: 760px) {
-  .sections {
+.trust {
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 0%, rgb(var(--accent-rgb) / 10%), transparent 70%),
+    linear-gradient(180deg, var(--surface-raised), var(--surface));
+  text-align: center;
+
+  h2 {
+    margin: 0 0 1.75rem;
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
+
+.trust-icon {
+  display: grid;
+  place-items: center;
+  inline-size: 3.25rem;
+  block-size: 3.25rem;
+  margin-block-end: 0.25rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--gold);
+
+  svg {
+    inline-size: 1.5rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.trust-title {
+  color: var(--text);
+  font-family: var(--font-display-en);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+:host-context([lang='ar']) .trust-title {
+  font-family: var(--font-display-ar);
+}
+
+.trust-text {
+  max-inline-size: 22rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+// ---------- Closing ----------
+
+.closing {
+  text-align: center;
+}
+
+.motto {
+  max-inline-size: 46rem;
+  margin: 0 auto;
+
+  .quran {
+    margin: 0;
+    color: var(--verse);
+    font-size: clamp(1.5rem, 3.8vw, 2.1rem);
+    line-height: 2.3;
+  }
+
+  cite {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-style: normal;
+  }
+}
+
+.motto-meaning {
+  margin: 0.2rem 0 0.3rem;
+}
+
+.closing-text {
+  margin: 1.5rem auto 1.25rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+// ---------- Narrower screens ----------
+
+@media (max-width: 1100px) {
+  .stops {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .questions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  // One column: the question comes right after the line under the title, before the buttons.
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    text-align: center;
+  }
+
+  .hero-copy {
+    display: contents;
+  }
+
+  .title {
+    order: 1;
+  }
+  .title-en {
+    order: 2;
+  }
+  .lead {
+    order: 3;
+  }
+  .deck {
+    order: 4;
+    max-inline-size: 34rem;
+    margin-block-start: 1.5rem;
+  }
+  .actions {
+    order: 5;
+    justify-content: center;
+  }
+  .journey-meta {
+    order: 6;
+  }
+
+  .question {
+    text-align: start;
+  }
+
+  .hero-art::after,
+  :host-context([dir='ltr']) .hero-art::after {
+    background: linear-gradient(180deg, rgb(5 7 15 / 70%) 0%, rgb(5 7 15 / 55%) 50%, rgb(var(--bg-rgb)) 100%);
+  }
+
+  .today {
     grid-template-columns: 1fr;
   }
-  .section-card {
-    min-block-size: 18rem;
+
+  .trust ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .paths {
+    grid-template-columns: 1fr;
+  }
+
+  .path {
+    min-block-size: 20rem;
+  }
+}
+
+@media (max-width: 640px) {
+  // The title, the question and both buttons on a phone's first screen.
+  .hero {
+    padding-block-start: 1rem;
+  }
+
+  .title {
+    font-size: 3.7rem;
+  }
+
+  .lead {
+    margin-block-start: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .deck {
+    margin-block-start: 1.1rem;
+  }
+
+  .question {
+    min-block-size: 14.5rem;
+    padding: 2.75rem 1.2rem 1.1rem;
+  }
+
+  .question-lead {
+    font-size: 1.2rem;
+  }
+
+  .question-rest {
+    font-size: 0.92rem;
+  }
+
+  .actions {
+    margin-block-start: 1.1rem;
+
+    .btn.big {
+      padding-inline: 1.15rem;
+    }
+  }
+
+  // The journey as a list: a picture, its number, its title.
+  .stops {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .stop {
+    display: grid;
+    grid-template-columns: 4.75rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  }
+
+  .stop-art {
+    aspect-ratio: 1;
+    border-radius: calc(var(--radius) - 6px);
+  }
+
+  .stop-n {
+    inset-block-start: 0.2rem;
+    inset-inline-start: 0.2rem;
+    inline-size: 1.65rem;
+    block-size: 1.65rem;
+    font-size: 0.85rem;
+  }
+
+  .questions {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  // A small picture beside the question.
+  .q-card {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+  }
+
+  .q-art {
+    aspect-ratio: auto;
+    block-size: 100%;
+  }
+
+  .q-body {
+    padding: 0.9rem 1rem 1rem;
+  }
+
+  .q-lead {
+    font-size: 1.02rem;
+  }
+
+  .today-card {
+    flex-direction: column;
+  }
+
+  .today-art {
+    flex: none;
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
+    min-block-size: 0;
   }
 }

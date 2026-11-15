@@ -20,7 +20,6 @@ import { ReadingService } from '../../core/services/reading.service';
 import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
 import { AyahCard } from '../../shared/ayah-card';
-import { Ornament } from '../../shared/ornament';
 import { ProgressRing } from '../../shared/progress-ring';
 import { Reveal } from '../../shared/reveal';
 import { listState, resetList, SignList } from './sign-list';
@@ -38,7 +37,7 @@ let continueSlug: string | undefined;
 /** The front page of the I'jaz section, «سنريهم آياتنا»: the fields, the folded journey, the miracles and the signs for reflection. */
 @Component({
   selector: 'app-signs-home',
-  imports: [RouterLink, AyahCard, Ornament, ProgressRing, Reveal, SignList],
+  imports: [RouterLink, AyahCard, ProgressRing, Reveal, SignList],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signs-home.html',
   styleUrl: './signs-home.scss',

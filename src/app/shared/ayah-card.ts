@@ -58,7 +58,7 @@ let nextId = 0;
               <span class="chip">{{ language.pick(category.title) }}</span>
             }
             @if (ayah().type === 'reflection' && look() === 'art') {
-              <span class="chip reflection" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
+              <span class="chip quiet-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
             }
           </span>
           <span class="time">
@@ -99,7 +99,7 @@ let nextId = 0;
       color: inherit;
       background: linear-gradient(180deg, var(--surface-raised), var(--surface));
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       transition:
         transform 0.35s var(--ease),
         border-color 0.35s var(--ease),
@@ -112,6 +112,10 @@ let nextId = 0;
 
         img {
           scale: 1.05;
+        }
+
+        h3 {
+          color: var(--gold-light);
         }
       }
     }
@@ -140,8 +144,10 @@ let nextId = 0;
       inline-size: 2.1rem;
       block-size: 2.1rem;
       border-radius: 50%;
+      font-family: var(--font-display-en);
       font-weight: 700;
       line-height: 1;
+      box-shadow: 0 4px 14px -4px rgb(0 0 0 / 60%);
     }
 
     .step {
@@ -166,9 +172,10 @@ let nextId = 0;
 
     .body {
       display: flex;
+      flex: 1;
       flex-direction: column;
-      gap: 0.4rem;
-      padding: 1.1rem 1.25rem 1.35rem;
+      gap: 0.45rem;
+      padding: 1.1rem 1.3rem 1.35rem;
     }
 
     .meta {
@@ -184,32 +191,32 @@ let nextId = 0;
       gap: 0.35rem;
     }
 
-    .reflection {
-      border-color: var(--line-strong);
-      color: var(--text-muted);
-    }
-
     .time {
       color: var(--text-muted);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       white-space: nowrap;
     }
 
     h3 {
-      margin: 0.2rem 0 0;
-      color: var(--gold-light);
-      font-size: 1.3rem;
+      margin: 0.15rem 0 0;
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: color 0.2s;
     }
 
     p {
       margin: 0;
       color: var(--text-muted);
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       line-height: 1.75;
     }
 
     // Signs for reflection: no picture; the verse or hadith leads, the title follows it.
     .verse-card {
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgb(var(--accent-rgb) / 7%), transparent 70%),
+        linear-gradient(180deg, var(--surface-raised), var(--surface));
+
       .body {
         gap: 0.5rem;
         padding-block-start: 1.25rem;
@@ -217,7 +224,7 @@ let nextId = 0;
 
       h3 {
         margin: 0.35rem 0 0;
-        font-size: 1.15rem;
+        font-size: 1.12rem;
       }
     }
 

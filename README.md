@@ -18,8 +18,16 @@ that more components can join it later.
 
 ## What's in it
 
-- **The home page** (`/`) leads to the two sections, and to the journey for non-Muslims and readers
-  new to Islam.
+- **The home page** (`/`) is made to draw in a reader who is curious about Islam:
+  1. the opening questions of the journey's seven stops take turns over their pictures, each leading
+     to its stop, with buttons to start the journey or browse the signs, and the figures (signs,
+     names, sources);
+  2. the journey and nine more questions from every field, each folded under its title, a line on
+     what it holds and a glimpse of its pictures, until the reader opens it;
+  3. the two sections; today's sign and name; why the site can be trusted (verses from the Mushaf,
+     hadith with their numbers, every fact with its source); and al-An'am 6:102 with "What next?".
+- **Finding the way:** the header holds the sections, with "Start here" set apart; on a phone they
+  are in a tab bar at the foot of the screen (Home, Start here, Signs, Names, Our method).
 - **The signs, «سنريهم آياتنا»** (`/signs`): 72 signs in 9 fields — the cosmos; earth and sky;
   seas and water; the living world; the human being; health in the Sunnah; peoples of the past;
   prophecies fulfilled; preserving the Qur'an.
@@ -32,14 +40,16 @@ that more components can join it later.
     signs in it shows all its fields) and clears both searches. On a phone each list shows six cards,
     and «اعرض المزيد» ("Show more") adds six more.
   - **"Non-Muslim or new to Islam?":** a 7-stop journey through the signs, ending with "What next?".
-    It is folded just above «المعجزات» (Miracles) until the reader opens it, or follows a link to
-    `/signs#journey` (the header's "Start here" and the footer).
+    It is folded just above «المعجزات» (Miracles), under a line on what its stops hold and their
+    pictures, until the reader opens it or follows a link to `/signs#journey` (the header's "Start
+    here", the hero's first button and the footer). The hero's other buttons lead to the two lists.
   - **«آية (معجزة)»:** many readers don't know that «آية» can mean a miracle, so where the interface's
     «آية» means the miracles it is followed by «(معجزة)» ("sign (miracle)" in English): «آية اليوم (معجزة
     اليوم)» and «الآية (المعجزة) التالية» when that sign is a miracle, and the hero's «هذه الآيات
     (المعجزات)». Never on words that cover both lists, on a sign for reflection, where «آية» means a
     verse, or in the Qur'an's words and their translation.
-  - **Every sign is a short story** (`/signs/:slug`):
+  - **Every sign is a short story** (`/signs/:slug`), with a list of its parts («في هذه الصفحة») that
+    stays beside the text on a wide screen and sits above it on a phone:
     1. a question to open with;
     2. the verse or hadith;
     3. "Fourteen centuries ago";
@@ -48,8 +58,8 @@ that more components can join it later.
     6. "Did you know?" and "A moment to reflect";
     7. the sources, linked.
   - Links from the first site (`/ayah/:slug`) redirect to `/signs/:slug`.
-- **The Beautiful Names** (`/names`): 107 names, with the name of the day and a search. Each name's
-  page (`/names/:slug`) has:
+- **The Beautiful Names** (`/names`): 107 names, with the name of the day, a search, and «فاجئني
+  باسم» ("Surprise me"), which opens a name not yet read. Each name's page (`/names/:slug`) has:
   1. its meaning, in a line;
   2. one to three verses or hadith in which the name is established, each with a short explanation;
   3. «أثره في حياتك», what believing in the name does in your life;
@@ -258,7 +268,7 @@ src/app/
     i18n/ui-text.ts            interface labels in each language
     utils/                     image paths, search (ignores tashkeel), reading time
   shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament
-  pages/portal                 the home page (/): the two sections
+  pages/portal                 the home page (/): the journey's questions, the folded journey and questions, the two sections
   pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
   pages/ayah                   one sign (/signs/:slug; ?path=journey keeps the journey's order)
   pages/names                  the names (/names) and one name (/names/:slug)

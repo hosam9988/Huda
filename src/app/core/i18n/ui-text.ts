@@ -16,6 +16,17 @@ export interface UiText {
   themeNames: Record<Theme, string>;
   /** The language switch's label, for screen readers. */
   languageLabel: string;
+  /** The link that skips the header, for keyboard users. */
+  skipToContent: string;
+  /** Names of the header's and footer's menus, for screen readers. */
+  mainNav: string;
+  footerNav: string;
+  /** The footer's two columns of links. */
+  footerExplore: string;
+  footerAbout: string;
+  /** Short labels for the tab bar at the bottom of a phone's screen. */
+  journeyShort: string;
+  namesShort: string;
   heroEyebrow: string;
   heroIntro: string;
   browseAll: string;
@@ -41,6 +52,10 @@ export interface UiText {
   miraclesIntro: string;
   reflectionTitle: string;
   reflectionIntro: string;
+  /** The second list's name where space is short: «علامات للتفكر». */
+  reflectionShort: string;
+  /** The links to each part of a long page, for screen readers. */
+  onThisPage: string;
   /** Under a list on a phone: «اعرض المزيد (بقي ٣٢)». */
   showMore: (left: string) => string;
   filterAll: string;
@@ -111,20 +126,54 @@ export interface UiText {
   stop: string;
   noVoice: string;
   versesSkipped: string;
-  /** The site's front page: the two sections. */
+  /** The site's front page. */
   portal: {
     intro: string;
+    /** Under the title: what the site offers, in a sentence. */
+    lead: string;
+    startJourney: string;
+    /** The questions that take turns in the hero: each opens a stop of the journey. */
+    questionLabel: string;
+    questionOf: (n: string, total: string) => string;
+    discover: string;
+    pauseQuestions: string;
+    playQuestions: string;
+    /** «١٠٧ أسماء» under the figures in the hero, and on the names' card. */
+    statNames: (n: number) => string;
+    questionsTitle: string;
+    questionsIntro: string;
+    readAnswer: string;
+    /**
+     * The two folded sections: what each holds, said before it is opened. The journey's describes
+     * its stops in ayat.json, in order; the questions' names the fields of the home page's questions.
+     */
+    journeySummary: (stops: string, minutes: string) => string;
+    questionsSummary: (count: string) => string;
+    forExample: string;
+    showStops: string;
+    showQuestions: string;
+    hide: string;
+    pathsTitle: string;
     signsTitle: string;
     signsBlurb: string;
     namesTitle: string;
     namesBlurb: string;
     enter: string;
     newHere: string;
+    todayTitle: string;
+    trustTitle: string;
+    trust: { title: string; text: string }[];
+    trustLink: string;
   };
   /** The Beautiful Names section. */
   names: {
     title: string;
+    /** The small line over the section's title. */
+    kicker: string;
     intro: string;
+    /** «تصفّح الأسماء ١٠٧» / "Browse the 107 names", and a name at random. */
+    browse: (count: number) => string;
+    surprise: string;
     nameOfTheDay: string;
     readName: string;
     search: string;
@@ -187,6 +236,13 @@ export const UI_TEXT: Record<Lang, UiText> = {
       pink: 'وردي',
     },
     languageLabel: 'اللغة',
+    skipToContent: 'انتقل إلى المحتوى',
+    mainNav: 'أقسام الموقع',
+    footerNav: 'روابط الموقع',
+    footerExplore: 'اكتشف',
+    footerAbout: 'عن الموقع',
+    journeyShort: 'ابدأ هنا',
+    namesShort: 'الأسماء',
     heroEyebrow: 'آياتٌ في الآفاق وفي الأنفس',
     heroIntro:
       'نزل القرآن قبل أكثر من أربعة عشر قرنًا على نبيٍّ أُمّي، في صحراء لا مختبرات فيها ولا مراصد. ثم جاء العلم الحديث فكشف عن حقائق في الكون والأرض والبحار والإنسان، تتسق مع ما جاء فيه. هنا تقرأ هذه الآيات (المعجزات) واحدةً واحدة: النص، وما كان يعرفه الناس يومها، وما كشفه العلم، ومصادره الموثّقة — بأمانةٍ ودون مبالغة.',
@@ -215,6 +271,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
     reflectionTitle: 'علامات تُظهر عظمة الخالق',
     reflectionIntro:
       'في خلق الكون والإنسان، وفي حكمة شرعه وسننه في الأمم. ليست إعجازًا: كان الناس يعرفونها يوم نزل الوحي، وهو يدعونا إلى التفكر فيها.',
+    reflectionShort: 'علامات للتفكر',
+    onThisPage: 'في هذه الصفحة',
     showMore: (left) => `اعرض المزيد (بقي ${left})`,
     filterAll: 'الكل',
     filterLabel: 'تصفية حسب المجال',
@@ -291,6 +349,26 @@ export const UI_TEXT: Record<Lang, UiText> = {
     portal: {
       intro:
         'طريقان لمعرفة الله: آياته في الكون وفي أنفسنا، وأسماؤه الحسنى التي عرّفنا بها نفسه. ابدأ بأيهما شئت.',
+      lead: 'آياتٌ في الكون وفي نفسك تدل على خالقها، وأسماءٌ حسنى عرّفنا الله بها نفسه: بأدلتها من القرآن والسنة، ومصادرها الموثّقة.',
+      startJourney: 'ابدأ الرحلة',
+      questionLabel: 'سؤالٌ يستحق التفكير',
+      questionOf: (n, total) => `السؤال ${n} من ${total}`,
+      discover: 'اكتشف الجواب',
+      pauseQuestions: 'أوقف تبديل الأسئلة',
+      playQuestions: 'تابع تبديل الأسئلة',
+      statNames: (n) => arabicCount(n, NAME_NOUN).replace(/^[٠-٩]+ /, ''),
+      questionsTitle: 'أسئلةٌ تستحق أن تتوقف عندها',
+      questionsIntro: 'وراء كل سؤالٍ صفحةٌ تُقرأ في دقائق: النص، وما كان يعرفه الناس يوم نزل، وما كشفه العلم أو سجّله التاريخ، بمصادره.',
+      readAnswer: 'اقرأ الجواب',
+      journeySummary: (stops, minutes) =>
+        `رحلةٌ في ${stops} محطات مرتّبة لمن يتعرف على الإسلام أول مرة، تُقرأ في نحو ${minutes} دقيقة: من الكون الذي يتسع، إلى ظلمات أعماق البحر، إلى أطوار الجنين وألم الحروق، إلى نبوءةٍ تحققت ووقايةٍ من الأوبئة، إلى كتابٍ حُفظ أربعة عشر قرنًا.`,
+      questionsSummary: (count) =>
+        `${count} أسئلة من الكون والأرض والبحار، ومن عالم الأحياء وخلق الإنسان والصحة، ومن نبوءاتٍ تحققت. وراء كل سؤالٍ صفحةٌ تُقرأ في دقائق: النص، وما كشفه العلم أو سجّله التاريخ، بمصادره.`,
+      forExample: 'مثلًا:',
+      showStops: 'اعرض المحطات',
+      showQuestions: 'اعرض الأسئلة',
+      hide: 'إخفاء',
+      pathsTitle: 'طريقان لمعرفة الله',
       signsTitle: 'الإعجاز في القرآن والسنة',
       signsBlurb:
         'معجزاتٌ تحدّث عنها القرآن والسنة قبل أربعة عشر قرنًا، وكشف العلم والتاريخ جانبًا منها، وعلاماتٌ تُظهر عظمة الخالق وتدعو إلى التفكر، بأدلتها ومصادرها.',
@@ -298,9 +376,20 @@ export const UI_TEXT: Record<Lang, UiText> = {
       namesBlurb: 'اسمًا اسمًا: معناه، ودليله من القرآن والسنة، وأثره في قلبك وحياتك، في دقائق.',
       enter: 'ادخل',
       newHere: 'جديدٌ على الإسلام؟ ابدأ الرحلة',
+      todayTitle: 'كل يومٍ آيةٌ واسم',
+      trustTitle: 'لماذا تثق بما تقرؤه هنا؟',
+      trust: [
+        { title: 'آياتٌ من المصحف', text: 'نُقلت الآيات بنصها من المصحف، ولم تُكتب من الذاكرة.' },
+        { title: 'أحاديث بأرقامها', text: 'رُوجع كل حديثٍ في كتابه برقمه، وأحاديث الإعجاز كلها من صحيحي البخاري ومسلم.' },
+        { title: 'كل معلومةٍ بمصدرها', text: 'كل معلومةٍ علمية مربوطةٌ بمصدرٍ فتحناه وتحققنا أنه يقولها.' },
+      ],
+      trustLink: 'تعرّف على منهجنا',
     },
     names: {
       title: 'أسماء الله الحسنى',
+      kicker: 'تعرّف على ربك بأسمائه',
+      browse: (count) => `تصفّح ${arabicCount(count, NAME_NOUN)}`,
+      surprise: 'فاجئني باسم',
       intro:
         'عرّفنا الله بنفسه بأسمائه الحسنى. هنا تقرأ كل اسمٍ في دقائق: معناه، ودليله من القرآن والسنة، وأثره في حياتك، ودعاءً به.',
       nameOfTheDay: 'اسم اليوم',
@@ -333,6 +422,13 @@ export const UI_TEXT: Record<Lang, UiText> = {
       pink: 'Pink',
     },
     languageLabel: 'Language',
+    skipToContent: 'Skip to content',
+    mainNav: 'Sections',
+    footerNav: 'Site links',
+    footerExplore: 'Explore',
+    footerAbout: 'About',
+    journeyShort: 'Start here',
+    namesShort: 'Names',
     heroEyebrow: 'Signs on the horizons and within themselves',
     heroIntro:
       'The Qur’an was revealed more than fourteen centuries ago to an unlettered Prophet, in a desert without laboratories or observatories. Modern science has since uncovered facts about the universe, the earth, the seas and the human body that sit remarkably well with what it says. Here you can read them one at a time: the text, what people knew back then, what science found, and the sources — honestly, and without exaggeration.',
@@ -364,6 +460,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
     reflectionTitle: 'Signs that show the Creator’s greatness',
     reflectionIntro:
       'In the making of the universe and of people, in the wisdom of His law, and in His ways with nations. They are not miracles: people already knew them when the revelation came, and it calls us to reflect on them.',
+    reflectionShort: 'Signs for reflection',
+    onThisPage: 'On this page',
     showMore: (left) => `Show more (${left} left)`,
     filterAll: 'All',
     filterLabel: 'Filter by field',
@@ -439,6 +537,26 @@ export const UI_TEXT: Record<Lang, UiText> = {
     portal: {
       intro:
         'Two paths to knowing Allah: His signs in the universe and in ourselves, and the Beautiful Names by which He made Himself known. Start with either.',
+      lead: 'Signs in the universe and within you that point to their Creator, and the Beautiful Names by which Allah made Himself known — with their evidence from the Qur’an and Sunnah, and their sources.',
+      startJourney: 'Start the journey',
+      questionLabel: 'A question worth thinking about',
+      questionOf: (n, total) => `Question ${n} of ${total}`,
+      discover: 'Discover the answer',
+      pauseQuestions: 'Stop changing the questions',
+      playQuestions: 'Keep changing the questions',
+      statNames: (n) => (n === 1 ? 'name' : 'names'),
+      questionsTitle: 'Questions worth stopping for',
+      questionsIntro: 'Behind each question is a page you can read in minutes: the text, what people knew when it came, what science found or history recorded, and the sources.',
+      readAnswer: 'Read the answer',
+      journeySummary: (stops, minutes) =>
+        `A journey in ${stops} stops, arranged for anyone meeting Islam for the first time, about ${minutes} minutes of reading: from a universe that keeps expanding, to the darkness of the deep sea, the stages of the embryo and the pain of burns, a prophecy that came true and a rule against epidemics, and a book kept unchanged for fourteen centuries.`,
+      questionsSummary: (count) =>
+        `${count} questions from the cosmos, the earth and the seas, the living world, the human body and health, and prophecies that came true. Behind each is a page you can read in minutes: the text, what science found or history recorded, and the sources.`,
+      forExample: 'For example:',
+      showStops: 'Show the stops',
+      showQuestions: 'Show the questions',
+      hide: 'Hide',
+      pathsTitle: 'Two paths to knowing Allah',
       signsTitle: 'Signs in the Qur’an and Sunnah',
       signsBlurb:
         'Miracles the Qur’an and Sunnah spoke of fourteen centuries ago, on which science and history have since shed light, and signs that show the Creator’s greatness and call for reflection — with their evidence and sources.',
@@ -447,9 +565,20 @@ export const UI_TEXT: Record<Lang, UiText> = {
         'One name at a time: what it means, its evidence from the Qur’an and Sunnah, and what it does to your heart and life — in a few minutes.',
       enter: 'Enter',
       newHere: 'New to Islam? Start the journey',
+      todayTitle: 'A sign and a name for every day',
+      trustTitle: 'Why trust what you read here?',
+      trust: [
+        { title: 'Verses from the Mushaf', text: 'Every verse is copied from the text of the Mushaf, never typed from memory.' },
+        { title: 'Hadith with their numbers', text: 'Every hadith was checked in its book, with its number; those in the signs are all from al-Bukhari and Muslim.' },
+        { title: 'Every fact with its source', text: 'Every scientific claim links to a source we opened and checked.' },
+      ],
+      trustLink: 'Read our method',
     },
     names: {
       title: 'The Beautiful Names of Allah',
+      kicker: 'Know your Lord by His names',
+      browse: (count) => `Browse the ${count} names`,
+      surprise: 'Surprise me',
       intro:
         'Allah made Himself known to us through His Beautiful Names. Here you can read each name in a few minutes: what it means, its evidence from the Qur’an and Sunnah, what it does in your life, and a supplication with it.',
       nameOfTheDay: 'Name of the day',
