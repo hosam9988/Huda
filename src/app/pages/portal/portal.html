@@ -23,99 +23,128 @@
       <p class="lead">{{ t().portal.lead }}</p>
     </div>
 
-    <!-- The journey: a line on what it is (and that the site holds far more, further down), then its
-         questions taking turns (each leads to its stop, and a swipe turns them too), then the button
-         that goes through all of them in order. On one column, the site's gold rule comes first, to
-         keep that line apart from the one under the title. -->
+    <!-- The journey for readers new to Islam, folded under its title and a line on what it holds (and
+         on how much more the site holds, further down) until the reader opens it. Open, its questions
+         take turns (each leads to its stop, and a swipe turns them too) above the button that goes
+         through all of them in order. The button to all the signs stays in sight under the fold. On
+         one column, the site's gold rule comes first, to keep the fold apart from the line under the
+         title. -->
     @if (journey()[0]; as first) {
       <div class="hero-journey">
         <app-ornament class="hero-rule" />
-        <p class="journey-meta">
-          {{ t().journeyIntro(language.number(journey().length), language.number(journeyMinutes())) }}
-          {{ t().portal.moreBelow(content.ayat().length, stats().names) }}
-        </p>
-        <div
-          class="deck"
-          role="group"
-          [attr.aria-label]="t().portal.questionLabel"
-          (pointerenter)="held.set(true)"
-          (pointerleave)="held.set(false)"
-          (focusin)="held.set(true)"
-          (focusout)="held.set(false)"
-        >
-          <div
-            class="deck-stack"
-            appSwipe
-            #swipe="appSwipe"
-            [class.dragging]="swipe.drag() !== null"
-            (swiped)="turn($event)"
-          >
-            @for (sign of journey(); track sign.slug; let i = $index) {
-              @let q = splitQuestion(language.pick(sign.hook));
-              <a
-                class="question"
-                [class.current]="i === current()"
-                [style]="swipeStyle(i, swipe.drag())"
-                [attr.aria-hidden]="i === current() ? null : 'true'"
-                [attr.tabindex]="i === current() ? null : -1"
-                [routerLink]="['/signs', sign.slug]"
-                [queryParams]="{ path: 'journey' }"
-              >
-                <img
-                  class="question-art"
-                  [src]="artSmallSrc(sign.art)"
-                  [attr.srcset]="artSrcset(sign.art)"
-                  sizes="(max-width: 860px) 100vw, 576px"
-                  alt=""
-                  width="1280"
-                  height="800"
-                  decoding="async"
-                />
-                <span class="question-text">
-                  <span class="deck-label">{{ t().portal.questionLabel }}</span>
-                  <span class="question-lead">{{ q.lead }}</span>
-                  @if (q.rest) {
-                    <span class="question-rest">{{ q.rest }}</span>
-                  }
-                  <span class="question-link">
-                    {{ t().portal.discover }}
-                    <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        <details class="fold hero-fold" id="start" #journeyFold [open]="journeyOpen()" (toggle)="journeyOpen.set(journeyFold.open)">
+          <summary>
+            <span class="fold-head">
+              <span class="kicker">{{ t().journey }}</span>
+              <h2>{{ t().journeyTitle }}</h2>
+              <span class="fold-summary">
+                {{ t().journeyIntro(language.number(journey().length), language.number(journeyMinutes())) }}
+                {{ t().portal.moreBelow(content.ayat().length, stats().names) }}
+              </span>
+            </span>
+            <span class="fold-foot">
+              <span class="peek" aria-hidden="true">
+                @for (sign of journey(); track sign.slug; let i = $index) {
+                  <span class="peek-stop">
+                    <img [src]="artSmallSrc(sign.art)" alt="" width="640" height="400" decoding="async" />
+                    <span>{{ language.number(i + 1) }}</span>
                   </span>
-                </span>
-              </a>
-            }
-            <span class="art-label">{{ t().illustrativeImage }}</span>
-          </div>
-          <div class="deck-nav">
-            @for (sign of journey(); track sign.slug; let i = $index) {
-              <button
-                type="button"
-                class="dot"
-                [attr.aria-label]="t().portal.questionOf(language.number(i + 1), language.number(journey().length))"
-                [attr.aria-pressed]="i === current()"
-                (click)="show(i)"
-              ></button>
-            }
-            <button
-              type="button"
-              class="play"
-              [attr.aria-label]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
-              [attr.title]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
-              (click)="stopped.set(!stopped())"
+                }
+              </span>
+              <span class="fold-toggle">
+                {{ journeyOpen() ? t().portal.hide : t().portal.showJourney(journey().length) }}
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              </span>
+            </span>
+          </summary>
+          <div class="fold-body">
+            <div
+              class="deck"
+              role="group"
+              [attr.aria-label]="t().portal.questionLabel"
+              (pointerenter)="held.set(true)"
+              (pointerleave)="held.set(false)"
+              (focusin)="held.set(true)"
+              (focusout)="held.set(false)"
             >
-              @if (stopped()) {
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg>
-              } @else {
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" /></svg>
-              }
-            </button>
+              <div
+                class="deck-stack"
+                appSwipe
+                #swipe="appSwipe"
+                [class.dragging]="swipe.drag() !== null"
+                (swiped)="turn($event)"
+              >
+                @for (sign of journey(); track sign.slug; let i = $index) {
+                  @let q = splitQuestion(language.pick(sign.hook));
+                  <a
+                    class="question"
+                    [class.current]="i === current()"
+                    [style]="swipeStyle(i, swipe.drag())"
+                    [attr.aria-hidden]="i === current() ? null : 'true'"
+                    [attr.tabindex]="i === current() ? null : -1"
+                    [routerLink]="['/signs', sign.slug]"
+                    [queryParams]="{ path: 'journey' }"
+                  >
+                    <img
+                      class="question-art"
+                      [src]="artSmallSrc(sign.art)"
+                      [attr.srcset]="artSrcset(sign.art)"
+                      sizes="(max-width: 860px) 100vw, 576px"
+                      alt=""
+                      width="1280"
+                      height="800"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span class="question-text">
+                      <span class="deck-label">{{ t().portal.questionLabel }}</span>
+                      <span class="question-lead">{{ q.lead }}</span>
+                      @if (q.rest) {
+                        <span class="question-rest">{{ q.rest }}</span>
+                      }
+                      <span class="question-link">
+                        {{ t().portal.discover }}
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                      </span>
+                    </span>
+                  </a>
+                }
+                <span class="art-label">{{ t().illustrativeImage }}</span>
+              </div>
+              <div class="deck-nav">
+                @for (sign of journey(); track sign.slug; let i = $index) {
+                  <button
+                    type="button"
+                    class="dot"
+                    [attr.aria-label]="t().portal.questionOf(language.number(i + 1), language.number(journey().length))"
+                    [attr.aria-pressed]="i === current()"
+                    (click)="show(i)"
+                  ></button>
+                }
+                <button
+                  type="button"
+                  class="play"
+                  [attr.aria-label]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
+                  [attr.title]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
+                  (click)="stopped.set(!stopped())"
+                >
+                  @if (stopped()) {
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg>
+                  } @else {
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" /></svg>
+                  }
+                </button>
+              </div>
+            </div>
+            <p class="cta-row">
+              <a class="btn solid big" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
+                {{ t().portal.answersInOrder(journey().length) }}
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </p>
           </div>
-        </div>
+        </details>
         <div class="actions">
-          <a class="btn solid big" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
-            {{ t().portal.answersInOrder(journey().length) }}
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
           <a class="btn big" routerLink="/signs">{{ t().browseAll }}</a>
         </div>
       </div>
@@ -147,61 +176,6 @@
     </div>
   }
 </section>
-
-<!-- The journey for readers new to Islam, stop by stop: folded under a line that says what it holds. -->
-@if (journey().length) {
-  <section class="container section" id="start">
-    <details class="fold" #journeyFold [open]="journeyOpen()" (toggle)="journeyOpen.set(journeyFold.open)" appReveal>
-      <summary>
-        <span class="fold-head">
-          <span class="kicker">{{ t().journey }}</span>
-          <h2>{{ t().journeyTitle }}</h2>
-          <span class="fold-summary">
-            {{ t().portal.journeySummary(language.number(journey().length), language.number(journeyMinutes())) }}
-          </span>
-        </span>
-        <span class="fold-foot">
-          <span class="peek" aria-hidden="true">
-            @for (sign of journey(); track sign.slug; let i = $index) {
-              <span class="peek-stop">
-                <img [src]="artSmallSrc(sign.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
-                <span>{{ language.number(i + 1) }}</span>
-              </span>
-            }
-          </span>
-          <span class="fold-toggle">
-            {{ journeyOpen() ? t().portal.hide : t().portal.showStops }}
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
-          </span>
-        </span>
-      </summary>
-      <div class="fold-body">
-        <ol class="stops">
-          @for (sign of journey(); track sign.slug; let i = $index) {
-            <li>
-              <a class="stop" [routerLink]="['/signs', sign.slug]" [queryParams]="{ path: 'journey' }">
-                <span class="stop-art">
-                  <img [src]="artSmallSrc(sign.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
-                </span>
-                <span class="stop-n" aria-hidden="true">{{ language.number(i + 1) }}</span>
-                <span class="stop-text">
-                  <span class="stop-title">{{ language.pick(sign.title) }}</span>
-                  <span class="stop-time">{{ t().minutes(minutes(sign)) }}</span>
-                </span>
-              </a>
-            </li>
-          }
-        </ol>
-        <p class="cta-row">
-          <a class="btn solid big" [routerLink]="['/signs', journey()[0].slug]" [queryParams]="{ path: 'journey' }">
-            {{ t().portal.startJourney }}
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
-        </p>
-      </div>
-    </details>
-  </section>
-}
 
 <!-- More questions, from every field: folded too. -->
 @if (questions().length) {

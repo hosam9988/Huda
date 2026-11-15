@@ -39,9 +39,8 @@ export interface UiText {
   continueWhere: (title: string) => string;
   journeyTitle: string;
   /**
-   * The line above the hero's questions, followed by portal.moreBelow. Kept short, like portal.lead
-   * (two lines each on a large phone), so the two buttons under the questions show on a phone's
-   * first screen as they do in Arabic.
+   * What the hero's fold «غير مسلم أو جديدٌ على الإسلام؟» holds, followed by portal.moreBelow. Kept
+   * short, like portal.lead: both are on a phone's first screen.
    */
   journeyIntro: (stops: string, minutes: string) => string;
   journeyStop: (n: string, total: string) => string;
@@ -141,11 +140,12 @@ export interface UiText {
     lead: string;
     startJourney: string;
     /**
-     * After the journey's line above its questions («رحلةٌ قصيرة في ٧ محطات…»): they are a start, not
-     * all the site holds, so a reader doesn't take the seven for the whole of it. Counted from the data.
+     * After the journey's line in the hero's fold («رحلةٌ قصيرة في ٧ محطات…»): its questions are a
+     * start, not all the site holds, so a reader doesn't take the seven for the whole of it. Counted
+     * from the data.
      */
     moreBelow: (signs: number, names: number) => string;
-    /** The questions that take turns in the hero: each opens a stop of the journey. */
+    /** The questions that take turns in the hero's fold: each opens a stop of the journey. */
     questionLabel: string;
     questionOf: (n: string, total: string) => string;
     discover: string;
@@ -162,7 +162,7 @@ export interface UiText {
     questionsIntro: string;
     readAnswer: string;
     /**
-     * The two folded sections: what each holds, said before it is opened. The journey's describes
+     * Folded sections: what each holds, said before it is opened. The journey's, on /signs, describes
      * its stops in ayat.json, in order; the questions' names the fields of the home page's questions.
      */
     journeySummary: (stops: string, minutes: string) => string;
@@ -170,6 +170,8 @@ export interface UiText {
     forExample: string;
     showStops: string;
     showQuestions: string;
+    /** What opens the hero's fold: the journey's questions, named by their count. */
+    showJourney: (count: number) => string;
     hide: string;
     pathsTitle: string;
     signsTitle: string;
@@ -396,6 +398,10 @@ export const UI_TEXT: Record<Lang, UiText> = {
       forExample: 'مثلًا:',
       showStops: 'اعرض المحطات',
       showQuestions: 'اعرض الأسئلة',
+      showJourney: (count) =>
+        ARABIC_THREE_TO_TEN[count - 3]
+          ? `اعرض الأسئلة ${ARABIC_THREE_TO_TEN[count - 3]}`
+          : 'اعرض الأسئلة',
       hide: 'إخفاء',
       pathsTitle: 'طريقان لمعرفة الله',
       signsTitle: 'الإعجاز في القرآن والسنة',
@@ -587,6 +593,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       forExample: 'For example:',
       showStops: 'Show the stops',
       showQuestions: 'Show the questions',
+      showJourney: (count) => `Show the ${count} questions`,
       hide: 'Hide',
       pathsTitle: 'Two paths to knowing Allah',
       signsTitle: 'Signs in the Qur’an and Sunnah',

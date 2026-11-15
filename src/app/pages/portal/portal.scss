@@ -50,9 +50,9 @@
 
 .hero-grid {
   display: grid;
-  // The journey's column is wide enough for its two buttons side by side under the questions.
   grid-template-columns: minmax(0, 1fr) minmax(0, 36rem);
-  align-items: center;
+  // From the top, so the title stays put when the journey's fold beside it opens.
+  align-items: start;
   gap: 2rem clamp(2rem, 5vw, 4.5rem);
 }
 
@@ -93,29 +93,53 @@
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
 }
 
-// ---------- The journey: what it is, its questions taking turns, the way through them ----------
+// ---------- The journey, folded: what it is; open, its questions taking turns ----------
 
-// The line above the questions says what they are, and that far more follows further down, so the
-// reader doesn't take the seven for all the site holds. The button under them goes through the
-// same questions in order, so the reader doesn't take it for a way to somewhere else.
+// The fold's line says what the questions are, and that far more follows further down, so the reader
+// doesn't take the seven for all the site holds. The button under them goes through the same
+// questions in order, so the reader doesn't take it for a way to somewhere else.
 .hero-journey {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   animation: rise 0.9s 0.15s var(--ease) both;
 }
 
-// The site's gold rule, between the line under the title and the journey's line: only where one
-// comes under the other. Side by side, the two columns keep them apart.
+// The site's gold rule, between the line under the title and the fold: only where one comes under
+// the other. Side by side, the two columns keep them apart.
 .hero-rule {
   display: none;
 }
 
-.journey-meta {
-  margin: 0 0 0.75rem;
-  color: var(--text-muted);
-  font-size: 0.88rem;
-  text-wrap: balance;
+// The site's fold (styles.scss), on the night sky: see-through like the questions' card, and
+// smaller than the folds further down, as it sits under the page's title.
+.hero-fold {
+  inline-size: 100%;
+  border-color: var(--line-strong);
+  background: rgb(8 12 28 / 60%);
+  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 80%);
+
+  > summary {
+    gap: 1rem;
+    padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  }
+
+  .fold-head h2 {
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  }
+
+  .fold-summary {
+    font-size: 0.92rem;
+    text-wrap: balance;
+  }
+
+  .fold-body {
+    padding-inline: clamp(0.75rem, 2vw, 1.25rem);
+  }
+
+  .cta-row {
+    margin-block-start: 1.25rem;
+  }
 }
 
 .actions {
@@ -321,94 +345,6 @@
   &:hover {
     color: var(--gold-light);
   }
-}
-
-// ---------- The journey, stop by stop ----------
-
-.stops {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.stop {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  color: inherit;
-
-  &:hover {
-    .stop-art img {
-      scale: 1.06;
-    }
-
-    .stop-title {
-      color: var(--gold-light);
-    }
-  }
-}
-
-.stop-art {
-  display: block;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #0a0f24;
-
-  img {
-    display: block;
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    transition: scale 0.6s var(--ease);
-  }
-}
-
-.stop-n {
-  position: absolute;
-  inset-block-start: 0.6rem;
-  inset-inline-start: 0.6rem;
-  display: grid;
-  place-items: center;
-  inline-size: 2rem;
-  block-size: 2rem;
-  border-radius: 50%;
-  background: var(--gold-gradient);
-  color: var(--on-accent);
-  font-family: var(--font-display-en);
-  font-weight: 700;
-  line-height: 1;
-  box-shadow: 0 4px 14px -4px rgb(0 0 0 / 60%);
-}
-
-.stop-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.stop-title {
-  color: var(--text);
-  font-family: var(--font-display-en);
-  font-size: 0.98rem;
-  font-weight: 500;
-  line-height: 1.45;
-  transition: color 0.2s;
-}
-
-:host-context([lang='ar']) .stop-title {
-  font-family: var(--font-display-ar);
-  line-height: 1.7;
-}
-
-.stop-time {
-  color: var(--text-muted);
-  font-size: 0.8rem;
 }
 
 // ---------- More questions ----------
@@ -797,13 +733,9 @@
 // ---------- Narrower screens ----------
 
 @media (max-width: 1100px) {
-  // Narrower, so the title keeps its room; the buttons go one under the other.
+  // Narrower, so the title keeps its room.
   .hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
-  }
-
-  .stops {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .questions {
@@ -812,7 +744,7 @@
 }
 
 @media (max-width: 860px) {
-  // One column: the title and the line under it, then the journey's line, questions and buttons.
+  // One column: the title and the line under it, then the journey's fold and the button under it.
   .hero-grid {
     display: flex;
     flex-direction: column;
@@ -828,7 +760,6 @@
   }
 
   .hero-journey {
-    align-items: center;
     inline-size: 100%;
     max-inline-size: 34rem;
     margin-block-start: 1.25rem;
@@ -873,7 +804,7 @@
 }
 
 @media (max-width: 640px) {
-  // The title, the question and both buttons on a phone's first screen.
+  // The title, the journey's fold and the button under it on a phone's first screen.
   .hero {
     padding-block-start: 1rem;
   }
@@ -882,8 +813,8 @@
     font-size: 3.7rem;
   }
 
-  // «Know Allah», on the English page only: a shorter line, so that page shows both buttons under
-  // the questions on the first screen as the Arabic one does, though it has this line more.
+  // «Know Allah», on the English page only: a shorter line, so that page's hero is no taller than
+  // the Arabic one's, though it has this line more.
   .title-en {
     line-height: 1.3;
   }
@@ -899,10 +830,6 @@
 
   .hero-rule {
     margin-block-end: 0.75rem;
-  }
-
-  .journey-meta {
-    margin-block-end: 0.6rem;
   }
 
   .question {
@@ -924,36 +851,6 @@
     .btn.big {
       padding-inline: 1.15rem;
     }
-  }
-
-  // The journey as a list: a picture, its number, its title.
-  .stops {
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
-  }
-
-  .stop {
-    display: grid;
-    grid-template-columns: 4.75rem minmax(0, 1fr);
-    align-items: center;
-    gap: 0.9rem;
-    padding: 0.5rem;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: linear-gradient(180deg, var(--surface-raised), var(--surface));
-  }
-
-  .stop-art {
-    aspect-ratio: 1;
-    border-radius: calc(var(--radius) - 6px);
-  }
-
-  .stop-n {
-    inset-block-start: 0.2rem;
-    inset-inline-start: 0.2rem;
-    inline-size: 1.65rem;
-    block-size: 1.65rem;
-    font-size: 0.85rem;
   }
 
   .questions {

@@ -49,8 +49,8 @@ const LEAVE = 800;
 const ON_TOP = { 'z-index': '1', 'box-shadow': '0 0 48px rgb(0 0 0 / 60%)' };
 
 /**
- * The journey and the questions are folded until the reader opens them. Back and Forward rebuild
- * the page, so whether each is open is kept here, for the whole visit.
+ * The journey (in the hero) and the questions are folded until the reader opens them. Back and
+ * Forward rebuild the page, so whether each is open is kept here, for the whole visit.
  */
 const journeyOpen = signal(false);
 const questionsOpen = signal(false);
@@ -62,9 +62,9 @@ export function splitQuestion(text: string): { lead: string; rest: string } {
 }
 
 /**
- * The site's front page. It opens with the questions of the journey for readers new to Islam,
- * taking turns; then the journey itself and more questions, each folded under a line that says what
- * it holds; then the two sections, today's sign and name, and why the site can be trusted.
+ * The site's front page. Under its title, the journey for readers new to Islam is folded under a
+ * line that says what it holds; open, its questions take turns. Then more questions, folded too;
+ * then the two sections, today's sign and name, and why the site can be trusted.
  */
 @Component({
   selector: 'app-portal',
@@ -120,21 +120,17 @@ export class Portal {
     const title = inject(Title);
     effect(() => title.setTitle(this.language.isArabic() ? 'اعرف الله' : `${this.t().appTitle} · اعرف الله`));
 
-    // The questions take turns, unless the reader prefers less motion.
+    // The questions take turns while their fold is open, unless the reader prefers less motion.
     const destroyRef = inject(DestroyRef);
     afterNextRender(() => {
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) this.stopped.set(true);
       const timer = setInterval(() => {
         const count = this.journey().length;
-        if (!count || this.stopped() || this.held() || document.hidden) return;
+        if (!count || !journeyOpen() || this.stopped() || this.held() || document.hidden) return;
         this.current.set((this.current() + 1) % count);
       }, TURN);
       destroyRef.onDestroy(() => clearInterval(timer));
     });
-  }
-
-  protected minutes(sign: Ayah): number {
-    return readingMinutes(sign, this.language.lang());
   }
 
   protected categoryTitle(sign: Ayah): string {

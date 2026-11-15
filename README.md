@@ -19,11 +19,12 @@ that more components can join it later.
 ## What's in it
 
 - **The home page** (`/`) is made to draw in a reader who is curious about Islam:
-  1. the opening questions of the journey's seven stops take turns over their pictures, each leading
-     to its stop, with buttons to start the journey or browse the signs, and the figures (signs,
-     names, sources);
-  2. the journey and nine more questions from every field, each folded under its title, a line on
-     what it holds and a glimpse of its pictures, until the reader opens it;
+  1. under the title, the journey for readers new to Islam, folded under «غير مسلم أو جديدٌ على
+     الإسلام؟» ("Non-Muslim or new to Islam?"), a line on what it holds and a glimpse of its
+     pictures until the reader opens it. Open, the opening questions of its seven stops take turns
+     over their pictures, each leading to its stop, above a button through all of them in order.
+     Under the fold, a button to browse the signs, and the figures (signs, names, sources);
+  2. nine more questions from every field, folded the same way;
   3. the two sections; today's sign and name; why the site can be trusted (verses from the Mushaf,
      hadith with their numbers, every fact with its source); and al-An'am 6:102 with "What next?".
 - **Finding the way:** the header holds the sections, with "Start here" set apart; on a phone they
@@ -315,7 +316,7 @@ src/app/
     i18n/ui-text.ts            interface labels in each language
     utils/                     image paths, search (ignores tashkeel), reading time
   shared/                      sign card, progress ring, scroll reveal, swipe, theme picker, listen, ornament
-  pages/portal                 the home page (/): the journey's questions (they take turns, or swipe) between a line on what they are (and on how much more follows) and a button through all of them in order, the folded journey and questions, the two sections
+  pages/portal                 the home page (/): the journey folded in the hero (open, its questions take turns, or swipe, above a button through all of them in order), the folded questions, the two sections
   pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
   pages/ayah                   one sign (/signs/:slug; ?path=journey keeps the journey's order)
   pages/names                  the names (/names) and one name (/names/:slug)
