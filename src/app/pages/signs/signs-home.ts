@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import {
   afterNextRender,
+  ApplicationRef,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -119,11 +120,13 @@ export class SignsHome {
       if (e instanceof NavigationSkipped && router.parseUrl(e.url).fragment === 'journey') this.journeyOpen.set(true);
     });
 
-    // The router scrolls to #journey, #all or #reflection once, a frame after navigating. Arriving
-    // before ayat.json has loaded (a fresh load, or from /method, /next or /names), those sections
-    // aren't there yet, so scroll once they are. Jump rather than glide: a smooth scroll this long
-    // outlasts the web fonts' swap and ends at a stale offset.
-    if (!this.content.ayat().length) {
+    // The router scrolls to #journey, #all or #reflection once, a frame after navigating. On the
+    // first page the reader opens, the page isn't in its final shape yet; arriving before ayat.json
+    // has loaded (from /method, /next or /names), those sections aren't there yet. So scroll once
+    // they are. Jump rather than glide: a smooth scroll this long outlasts the web fonts' swap and
+    // ends at a stale offset.
+    const appRef = inject(ApplicationRef);
+    if (!this.content.ayat().length || !router.navigated) {
       let pending = true;
       effect(() => {
         if (!pending || !this.content.ayat().length) return;
@@ -134,9 +137,10 @@ export class SignsHome {
           () => {
             const go = () => this.document.getElementById(fragment)?.scrollIntoView({ block: 'start', behavior: 'instant' });
             go();
-            // WebKit may lay the page out before its stylesheets arrive. Jump again once they and their
-            // fonts are in, unless the reader has touched the page: scroll anchoring moves scrollY on
-            // its own, so scrollY can't tell.
+            // WebKit may lay the page out before its stylesheets arrive, and on a phone the prerendered
+            // page drops the cards past each list's first six once the app has taken it over. Jump
+            // again once that is done and the stylesheets and fonts are in, unless the reader has
+            // touched the page: scroll anchoring moves scrollY on its own, so scrollY can't tell.
             const touch = new AbortController();
             let touched = false;
             for (const type of ['wheel', 'touchstart', 'keydown', 'pointerdown'])
@@ -146,6 +150,7 @@ export class SignsHome {
                 ? Promise.resolve()
                 : new Promise((done) => addEventListener('load', done, { once: true }));
             loaded
+              .then(() => appRef.whenStable())
               .then(() => this.document.fonts?.ready)
               .then(() => {
                 touch.abort();

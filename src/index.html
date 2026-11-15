@@ -9,15 +9,28 @@
   <meta name="theme-color" content="#080c1c">
   <meta property="og:title" content="اعرف الله · Know Allah">
   <meta property="og:description" content="آياتٌ في الآفاق وفي الأنفس، وأسماء الله الحسنى، بأدلتها من القرآن والسنة.">
-  <!-- Apply the saved colour theme and language before first paint, so nothing flashes. -->
+  <!-- Apply the saved colour theme and language before first paint, so nothing flashes. Pages are
+       prerendered in Arabic: for a reader of English, the page stays hidden until the app has
+       drawn it in English (src/app/core/prerender.ts), or for ten seconds at most. Without
+       JavaScript, what would fade in on scrolling (shared/reveal.ts) is simply shown. -->
+  <style>
+    html.relang app-root { visibility: hidden; }
+    html:not(.js) .reveal { opacity: 1; translate: none; }
+  </style>
   <script>
+    var html = document.documentElement;
+    html.classList.add('js');
     try {
       var theme = localStorage.getItem('ayat.theme');
-      document.documentElement.dataset.theme = /^(night|paper|black|white|blue|navy|pink)$/.test(theme) ? theme : 'night';
+      html.dataset.theme = /^(night|paper|black|white|blue|navy|pink)$/.test(theme) ? theme : 'night';
       var lang = localStorage.getItem('ayat.lang');
       if (lang === 'en' || (!lang && !/^ar/i.test(navigator.language || ''))) {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
+        if (html.lang !== 'en') {
+          html.classList.add('relang');
+          setTimeout(function () { html.classList.remove('relang'); }, 10000);
+        }
+        html.lang = 'en';
+        html.dir = 'ltr';
       }
     } catch (e) {}
   </script>

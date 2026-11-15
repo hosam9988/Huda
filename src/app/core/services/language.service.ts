@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { computed, effect, inject, Injectable, signal } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { computed, effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { toArabicDigits, UI_TEXT } from '../i18n/ui-text';
 import { isLang, Lang, LANGUAGES, localize, Localized } from '../models/lang';
 import { readStorage, writeStorage } from './storage';
@@ -45,6 +45,8 @@ export class LanguageService {
 }
 
 function initialLang(): Lang {
+  // The server prerenders every page in Arabic, the site's first language (see core/prerender.ts).
+  if (!isPlatformBrowser(inject(PLATFORM_ID))) return 'ar';
   const saved = readStorage(KEY);
   if (isLang(saved)) return saved;
   const browser = navigator.language?.toLowerCase() ?? '';
