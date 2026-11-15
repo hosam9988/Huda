@@ -15,7 +15,7 @@ export class ThemeService {
   constructor() {
     effect(() => {
       const theme = this.theme();
-      this.document.documentElement.dataset['theme'] = theme;
+      this.document.documentElement.setAttribute('data-theme', theme);
       const background = THEMES.find((t) => t.id === theme)!.background;
       this.document.querySelector('meta[name="theme-color"]')?.setAttribute('content', background);
       writeStorage(KEY, theme);

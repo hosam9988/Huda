@@ -148,7 +148,8 @@ Requires Node 22.22+ or 24.15+.
 npm install
 npm start              # http://localhost:4200
 npm run check:content  # checks public/data/ayat.json and names.json
-npm run build          # production build in dist/huda/browser
+npm run build          # prerenders every page into dist/huda/browser, laid out for GitHub Pages
+npm run preview        # serves that build as GitHub Pages does: http://localhost:4300/Huda/
 ```
 
 After changing styles, check that no text is cut off or touches something it shouldn't, and that
@@ -167,9 +168,39 @@ one, can be checked with `npm run check:safari -- <its address>`.
 ## Deploying
 
 Every push to `main` checks the content, builds the app and publishes it to GitHub Pages
-([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)). The build's base path is the
-repository's name, so name the repository `huda` for the address above. Before the first
-deploy, set the repo's **Settings → Pages → Source** to **GitHub Actions**.
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)). Before the first deploy, set the
+repo's **Settings → Pages → Source** to **GitHub Actions**.
+
+The build prerenders every page (the home page, `/signs`, `/names`, `/method`, `/next`, each sign
+and each name) into an HTML file of its own, with its text, title, description and Open Graph tags
+in it ([`src/app/app.routes.server.ts`](src/app/app.routes.server.ts)), so Pages answers every
+address as a page that search engines can index. A new sign or name gets its page on the next
+build. In the browser, the app then takes over the page it was given rather than drawing it again
+(hydration).
+
+Every page is there twice: in Arabic at its plain address (`/signs/<slug>`) and in English under
+`/en/` (`/en/signs/<slug>`). Each names the other with `hreflang` (and the English one for readers
+of other languages), so that search engines show each reader the page in their language. The
+address gives a page's language
+([`language-location.ts`](src/app/core/services/language-location.ts) takes the `/en/` out before
+the router sees it, and puts it in every link). The language switch moves the page to its other
+address without reloading it and saves the choice: from then on, `src/index.html` opens every page
+in that language before it is drawn. Search engines save no choice, so they see each address in its
+own language.
+
+Pages answers `/x` with `x.html` but redirects it to `/x/` wherever a folder `x/` exists, so
+[`scripts/finish-build.mjs`](scripts/finish-build.mjs) moves each page to `<route>.html`; only the
+folders `/signs/`, `/names/`, `/en/`, `/en/signs/` and `/en/names/` keep their `index.html`, and
+their address ends in a slash. It also writes `404.html` for any other address, `sitemap.xml` with
+every page in both languages and `robots.txt`, and fails the build if a sign or name lacks its page
+in either language, its text or its description, or a page's canonical address isn't the one it is
+served at, or its `hreflang` links don't name its two versions.
+
+The site's address is set in two places: the base href in `angular.json` (`/Huda/`) and `SITE_URL`
+in [`src/app/core/services/page-meta.service.ts`](src/app/core/services/page-meta.service.ts).
+Change both if the repository is renamed or the site moves to a domain of its own; the build
+refuses a mismatch. Search engines read `robots.txt` only at a host's root, so submit
+`https://hosam9988.github.io/Huda/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 
 ## The API
 
@@ -253,7 +284,10 @@ end-of-verse mark: `…يَلۡتَقِيَانِ ۝١٩ بَيۡنَهُمَا�
 2. Add its labels to `UI_TEXT` in [`src/app/core/i18n/ui-text.ts`](src/app/core/i18n/ui-text.ts).
 3. Add its key next to `ar` and `en` in the content. Any text not translated yet falls back to
    English, then Arabic.
-4. Update the `ayat.lang` check in `src/index.html` so the page opens in the right direction.
+4. Give it its own address folder, as `/en/` has: a `{ path: 'fr', children: … }` copy of the
+   pages in `src/app/app.routes.ts`, its `fr/signs/:slug` and `fr/names/:slug` in
+   `app.routes.server.ts`, its `OG_LOCALE` in `page-meta.service.ts`, the redirect to a saved
+   choice in `src/index.html`, and the checks for its pages in `scripts/finish-build.mjs`.
 5. Add it to `LocalizedText` in
    [`backend/src/Huda.Domain/LocalizedText.cs`](backend/src/Huda.Domain/LocalizedText.cs), or the
    backend's import refuses the new key.
@@ -264,13 +298,18 @@ prefix. Both sites are served from the same `github.io` origin, so readers keep 
 ## Project structure
 
 ```
+src/main.server.ts             the app as the build prerenders it
 src/app/
+  app.routes.server.ts         the pages prerendered at build time
   core/
+    prerender.ts               how the app takes over a prerendered page
     models/ayah.ts             a sign; divine-name.ts a name; lang.ts the languages; theme.ts the page colours
     services/content.service   loads ayat.json: fields, signs, journey, sign of the day
+    services/page-meta.service each page's description, canonical address and Open Graph tags
     services/names.service     loads names.json: the names, name of the day, the previous and next name
     services/reading.service   read marks, where the reader stopped, text size (localStorage)
-    services/language.service  the language, sets <html dir/lang>
+    services/language.service  the language, from the address; sets <html dir/lang>
+    services/language-location puts the language in the address: English pages under /en/
     services/speech.service    listen, with the browser's speech synthesis
     services/theme.service     page colour, sets <html data-theme> (palettes in styles.scss)
     i18n/ui-text.ts            interface labels in each language
@@ -285,6 +324,8 @@ public/data/ayat.json          the signs
 public/data/names.json         the names
 public/images/                 the images
 scripts/check-content.mjs      the content checker
+scripts/finish-build.mjs       lays the build out for GitHub Pages; 404.html, sitemap.xml, robots.txt
+scripts/preview.mjs            serves the build as GitHub Pages does
 scripts/check-layout.js        the layout check, run in the browser
 scripts/check-safari.mjs       the gold titles in Safari's engine
 backend/                       the API, which the site doesn't use yet (backend/README.md)

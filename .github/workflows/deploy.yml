@@ -32,11 +32,11 @@ jobs:
       # Refuse to publish content with a missing translation, source or field.
       - run: npm run check:content
 
-      # Pages serves the site from /<repo-name>/, so the base href must match.
-      - run: npx ng build --base-href "/${{ github.event.repository.name }}/"
-
-      # Pages has no SPA fallback: serve index.html for deep links like /ayah/expanding-universe.
-      - run: cp dist/huda/browser/index.html dist/huda/browser/404.html
+      # Prerenders every page into an HTML file of its own, so that Pages answers each sign and name
+      # as a page (200) that search engines index. Pages serves the site from /Huda/, the base href
+      # in angular.json. scripts/finish-build.mjs then lays the files out for Pages, adds 404.html,
+      # sitemap.xml and robots.txt, and fails the build if a page lacks its text or address.
+      - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:

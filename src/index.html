@@ -9,15 +9,31 @@
   <meta name="theme-color" content="#080c1c">
   <meta property="og:title" content="اعرف الله · Know Allah">
   <meta property="og:description" content="آياتٌ في الآفاق وفي الأنفس، وأسماء الله الحسنى، بأدلتها من القرآن والسنة.">
-  <!-- Apply the saved colour theme and language before first paint, so nothing flashes. -->
+  <!-- Apply the saved colour theme before first paint, so nothing flashes. The address gives the
+       page's language: /en/… is English, the plain addresses Arabic. A reader who chose the other
+       language with the switch is sent to this page in it, hidden meanwhile; search engines keep no
+       choice, so they find every page in both languages. Without JavaScript, what would fade in on
+       scrolling (shared/reveal.ts) is simply shown. -->
+  <style>
+    html.relang app-root { visibility: hidden; }
+    html:not(.js) .reveal { opacity: 1; translate: none; }
+  </style>
   <script>
+    var html = document.documentElement;
+    html.classList.add('js');
     try {
       var theme = localStorage.getItem('ayat.theme');
-      document.documentElement.dataset.theme = /^(night|paper|black|white|blue|navy|pink)$/.test(theme) ? theme : 'night';
-      var lang = localStorage.getItem('ayat.lang');
-      if (lang === 'en' || (!lang && !/^ar/i.test(navigator.language || ''))) {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
+      html.dataset.theme = /^(night|paper|black|white|blue|navy|pink)$/.test(theme) ? theme : 'night';
+      var chosen = localStorage.getItem('ayat.lang');
+      var base = document.querySelector('base').getAttribute('href');
+      var path = location.pathname;
+      if ((chosen === 'ar' || chosen === 'en') && path.indexOf(base) === 0) {
+        var rest = path.slice(base.length);
+        var english = /^en(\/|$)/.test(rest);
+        if (english !== (chosen === 'en')) {
+          html.classList.add('relang');
+          location.replace(base + (english ? rest.replace(/^en\/?/, '') : 'en/' + rest) + location.search + location.hash);
+        }
       }
     } catch (e) {}
   </script>
