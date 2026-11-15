@@ -37,8 +37,9 @@ that more components can join it later.
     after the miracles, and their cards lead with the verse or hadith. On their own pages and as the sign
     of the day they carry the «للتفكر» badge. Each list has its own field filter, with only the fields
     it has signs in, and its own search. A field's card sets both lists to that field (a list with no
-    signs in it shows all its fields) and clears both searches. On a phone each list shows six cards,
-    and «اعرض المزيد» ("Show more") adds six more.
+    signs in it shows all its fields) and clears both searches. Each list shows its first twelve
+    cards (six on a phone), and «اعرض المزيد» ("Show more") adds as many more, so the page never runs
+    on and on.
   - **"Non-Muslim or new to Islam?":** a 7-stop journey through the signs, ending with "What next?".
     It is folded just above «المعجزات» (Miracles), under a line on what its stops hold and their
     pictures, until the reader opens it or follows a link to `/signs#journey` (the header's "Start

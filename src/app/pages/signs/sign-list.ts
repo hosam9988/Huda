@@ -17,36 +17,42 @@ import { LanguageService } from '../../core/services/language.service';
 import { matchesQuery } from '../../core/utils/search';
 import { AyahCard } from '../../shared/ayah-card';
 
-/** How many cards a phone shows at first, and how many more each «اعرض المزيد» adds. */
-const STEP = 6;
 const PHONE = '(max-width: 640px)';
 
 /**
- * One list's field filter and search, and how many of its cards a phone shows. The page keeps them,
- * so that Back finds the list as the reader left it.
+ * How many cards a list shows at first, and how many more each «اعرض المزيد» adds, so that the page
+ * never runs on and on: six on a phone, twelve on a wider screen, which fill whole rows of two,
+ * three or four cards.
+ */
+function step(): number {
+  return typeof matchMedia === 'function' && matchMedia(PHONE).matches ? 6 : 12;
+}
+
+/**
+ * One list's field filter and search, and how many of its cards it shows. The page keeps them, so
+ * that Back finds the list as the reader left it.
  */
 export interface ListState {
   filter: WritableSignal<CategoryId | null>;
   query: WritableSignal<string>;
-  /** Cards shown on a phone: six again whenever the filter or the search changes. */
+  /** Cards shown: the first ones again whenever the filter or the search changes. */
   shown: WritableSignal<number>;
 }
 
 export function listState(): ListState {
-  return { filter: signal(null), query: signal(''), shown: signal(STEP) };
+  return { filter: signal(null), query: signal(''), shown: signal(step()) };
 }
 
 /** Back to every field, no search, and the first cards. */
 export function resetList(list: ListState): void {
   list.filter.set(null);
   list.query.set('');
-  list.shown.set(STEP);
+  list.shown.set(step());
 }
 
 /**
  * One list on /signs, the miracles or the signs for reflection: its own field filter (only the
- * fields it has signs in) and search, its cards, and on a phone the first six, with «اعرض المزيد»
- * for six more at a time.
+ * fields it has signs in) and search, and its first cards, with «اعرض المزيد» for more at a time.
  */
 @Component({
   selector: 'app-sign-list',
@@ -92,7 +98,10 @@ export function resetList(list: ListState): void {
       </ul>
       @if (hidden()) {
         <p class="more">
-          <button type="button" class="btn" (click)="showMore()">{{ t().showMore(language.number(hidden())) }}</button>
+          <button type="button" class="btn big" (click)="showMore()">
+            {{ t().showMore(language.number(hidden())) }}
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="chevron"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
         </p>
       }
     } @else {
@@ -205,35 +214,31 @@ export function resetList(list: ListState): void {
       gap: 1.25rem;
     }
 
-    // The signs for reflection lead with their verse, so their cards differ in height: they flow in
-    // columns instead of rows.
+    // The signs for reflection lead with their verse. Their cards stand in rows too, each row as tall
+    // as its tallest card, so that «اعرض المزيد» adds cards below without moving the ones shown.
     .verses {
-      columns: 18rem 3;
-      column-gap: 1.25rem;
-
-      li {
-        break-inside: avoid;
-        margin-block-end: 1.25rem;
-      }
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
+      gap: 1.25rem;
     }
 
     .more {
-      margin: 1.5rem 0 0;
+      margin: 1.75rem 0 0;
       text-align: center;
+
+      .chevron {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
     }
 
     .status {
       padding-block: 3rem;
       color: var(--text-muted);
       text-align: center;
-    }
-
-    // A phone adds six cards at a time: in one column the cards already shown stay where they are,
-    // and the last card's margin collapses into the button's, as under the miracles.
-    @media (max-width: 640px) {
-      .verses {
-        columns: auto;
-      }
     }
 
     @media (max-width: 560px) {
@@ -257,7 +262,6 @@ export class SignList {
   private readonly content = inject(ContentService);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly injector = inject(Injector);
-  private readonly phone = signal(matchMedia(PHONE).matches);
 
   /** The fields this list has signs in, in the fields' order. */
   protected readonly fields = computed(() => {
@@ -271,41 +275,35 @@ export class SignList {
     return this.signs().filter((a) => (!filter || a.category === filter) && matchesQuery(a, query));
   });
 
-  protected readonly visible = computed(() => {
-    const matching = this.matching();
-    return this.phone() ? matching.slice(0, this.state().shown()) : matching;
-  });
+  protected readonly visible = computed(() => this.matching().slice(0, this.state().shown()));
 
   protected readonly hidden = computed(() => this.matching().length - this.visible().length);
 
   constructor() {
     const phone = matchMedia(PHONE);
-    const onChange = (e: MediaQueryListEvent) => {
-      // Narrowed to a phone's width (a phone turned upright): keep every card it was showing, or the
-      // reader's card can vanish and leave them at the end of the page.
-      if (e.matches) this.state().shown.set(Math.max(this.matching().length, STEP));
-      this.phone.set(e.matches);
-    };
+    // A phone turned on its side, or upright: never fewer cards than it was showing, or the reader's
+    // card could vanish and leave them at the end of the page.
+    const onChange = () => this.state().shown.set(Math.max(this.state().shown(), step()));
     phone.addEventListener('change', onChange);
     inject(DestroyRef).onDestroy(() => phone.removeEventListener('change', onChange));
   }
 
-  /** Another field or search starts again from the first six cards. */
+  /** Another field or search starts again from the first cards. */
   protected setFilter(id: CategoryId | null): void {
     if (id === this.state().filter()) return;
     this.state().filter.set(id);
-    this.state().shown.set(STEP);
+    this.state().shown.set(step());
   }
 
   protected setQuery(query: string): void {
     this.state().query.set(query);
-    this.state().shown.set(STEP);
+    this.state().shown.set(step());
   }
 
-  /** Six more cards, and the focus on the first of them, for keyboard and screen-reader users. */
+  /** More cards, and the focus on the first of them, for keyboard and screen-reader users. */
   protected showMore(): void {
     const from = this.visible().length;
-    this.state().shown.set(from + STEP);
+    this.state().shown.set(from + step());
     afterNextRender(
       () => {
         const card = this.host.nativeElement.querySelectorAll<HTMLElement>('.list > li a')[from];
