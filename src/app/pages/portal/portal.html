@@ -23,12 +23,16 @@
       <p class="lead">{{ t().portal.lead }}</p>
     </div>
 
-    <!-- The journey: a line on what it is, then its questions taking turns (each leads to its stop,
-         and a swipe turns them too), then the button that goes through all of them in order. -->
+    <!-- The journey: a line on what it is (and that the site holds far more, further down), then its
+         questions taking turns (each leads to its stop, and a swipe turns them too), then the button
+         that goes through all of them in order. On one column, the site's gold rule comes first, to
+         keep that line apart from the one under the title. -->
     @if (journey()[0]; as first) {
       <div class="hero-journey">
+        <app-ornament class="hero-rule" />
         <p class="journey-meta">
           {{ t().journeyIntro(language.number(journey().length), language.number(journeyMinutes())) }}
+          {{ t().portal.moreBelow(content.ayat().length, stats().names) }}
         </p>
         <div
           class="deck"

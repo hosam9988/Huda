@@ -132,6 +132,11 @@ export interface UiText {
     /** Under the title: what the site offers, in a sentence. */
     lead: string;
     startJourney: string;
+    /**
+     * After the journey's line above its questions («رحلةٌ قصيرة في ٧ محطات…»): they are a start, not
+     * all the site holds, so a reader doesn't take the seven for the whole of it. Counted from the data.
+     */
+    moreBelow: (signs: number, names: number) => string;
     /** The questions that take turns in the hero: each opens a stop of the journey. */
     questionLabel: string;
     questionOf: (n: string, total: string) => string;
@@ -214,6 +219,8 @@ function arabicCount(n: number, noun: ArabicNoun): string {
 const ARABIC_THREE_TO_TEN = ['الثلاثة', 'الأربعة', 'الخمسة', 'الستة', 'السبعة', 'الثمانية', 'التسعة', 'العشرة'];
 
 const NAME_NOUN: ArabicNoun = { one: 'اسم واحد', two: 'اسمان', few: 'أسماء', many: 'اسمًا', bare: 'اسم' };
+/** The site's signs, both kinds, by the word the home page uses for all of them: «تصفّح كل الآيات». */
+const SIGN_NOUN: ArabicNoun = { one: 'آية واحدة', two: 'آيتان', few: 'آيات', many: 'آية', bare: 'آية' };
 const MIRACLE_NOUN: ArabicNoun = { one: 'معجزة واحدة', two: 'معجزتان', few: 'معجزات', many: 'معجزة', bare: 'معجزة' };
 const REFLECTION_NOUN: ArabicNoun = {
   one: 'علامة واحدة للتفكر',
@@ -359,6 +366,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
         'طريقان لمعرفة الله: آياته في الكون وفي أنفسنا، وأسماؤه الحسنى التي عرّفنا بها نفسه. ابدأ بأيهما شئت.',
       lead: 'آياتٌ في الكون وفي نفسك تدل على خالقها، وأسماءٌ حسنى عرّفنا الله بها نفسه: بأدلتها من القرآن والسنة، ومصادرها الموثّقة.',
       startJourney: 'ابدأ الرحلة',
+      moreBelow: (signs, names) =>
+        `وما هي إلا البداية: تجد في الأسفل ${arabicCount(signs, SIGN_NOUN)}${names ? ` و${toArabicDigits(names)} من أسماء الله الحسنى` : ''}.`,
       questionLabel: 'سؤالٌ يستحق التفكير',
       questionOf: (n, total) => `السؤال ${n} من ${total}`,
       discover: 'اكتشف الجواب',
@@ -551,6 +560,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
         'Two paths to knowing Allah: His signs in the universe and in ourselves, and the Beautiful Names by which He made Himself known. Start with either.',
       lead: 'Signs in the universe and within you that point to their Creator, and the Beautiful Names by which Allah made Himself known — with their evidence from the Qur’an and Sunnah, and their sources.',
       startJourney: 'Start the journey',
+      moreBelow: (signs, names) =>
+        `It’s only the beginning: further down you’ll find ${signs} ${signs === 1 ? 'sign' : 'signs'}${names ? ` and ${names} of Allah’s Beautiful Names` : ''}.`,
       questionLabel: 'A question worth thinking about',
       questionOf: (n, total) => `Question ${n} of ${total}`,
       discover: 'Discover the answer',

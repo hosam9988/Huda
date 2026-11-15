@@ -16,6 +16,7 @@ import { LanguageService } from '../../core/services/language.service';
 import { NamesService } from '../../core/services/names.service';
 import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
+import { Ornament } from '../../shared/ornament';
 import { Reveal } from '../../shared/reveal';
 import { Swipe, SwipeDrag } from '../../shared/swipe';
 
@@ -67,7 +68,7 @@ export function splitQuestion(text: string): { lead: string; rest: string } {
  */
 @Component({
   selector: 'app-portal',
-  imports: [RouterLink, Reveal, Swipe],
+  imports: [Ornament, RouterLink, Reveal, Swipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './portal.html',
   styleUrl: './portal.scss',
