@@ -3,7 +3,8 @@ import { firstPageData } from './core/prerender';
 import { ContentService } from './core/services/content.service';
 import { NamesService } from './core/services/names.service';
 
-export const routes: Routes = [
+/** The site's pages, at their Arabic addresses. */
+const pages: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/portal/portal').then((m) => m.Portal),
@@ -30,7 +31,20 @@ export const routes: Routes = [
     resolve: { ready: firstPageData(NamesService) },
   },
   { path: 'method', loadComponent: () => import('./pages/method/method').then((m) => m.Method) },
-  { path: 'next', loadComponent: () => import('./pages/next-steps/next-steps').then((m) => m.NextSteps) },
+  {
+    path: 'next',
+    loadComponent: () => import('./pages/next-steps/next-steps').then((m) => m.NextSteps),
+  },
+];
+
+export const routes: Routes = [
+  ...pages,
+  // The same pages in English, at /en/…. LanguageLocationStrategy takes the /en/ out of the address
+  // before the router sees it, so these routes only tell the build which English pages to prerender.
+  {
+    path: 'en',
+    children: [...pages.map((route) => ({ ...route })), { path: '**', redirectTo: '' }],
+  },
   // Links to signs from the first site, «سنريهم آياتنا».
   { path: 'ayah/:slug', redirectTo: 'signs/:slug' },
   { path: '**', redirectTo: '' },

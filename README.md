@@ -154,20 +154,29 @@ Every push to `main` checks the content, builds the app and publishes it to GitH
 repo's **Settings → Pages → Source** to **GitHub Actions**.
 
 The build prerenders every page (the home page, `/signs`, `/names`, `/method`, `/next`, each sign
-and each name)
-into an HTML file of its own, with its text, title, description and Open Graph tags in it
-([`src/app/app.routes.server.ts`](src/app/app.routes.server.ts)), so Pages answers every address
-as a page that search engines can index. A new sign or name gets its page on the next build. In
-the browser, the app then takes over the page it was given rather than drawing it again
-(hydration). The pages are prerendered in Arabic; a reader of English sees the page once the app
-has redrawn it in English.
+and each name) into an HTML file of its own, with its text, title, description and Open Graph tags
+in it ([`src/app/app.routes.server.ts`](src/app/app.routes.server.ts)), so Pages answers every
+address as a page that search engines can index. A new sign or name gets its page on the next
+build. In the browser, the app then takes over the page it was given rather than drawing it again
+(hydration).
+
+Every page is there twice: in Arabic at its plain address (`/signs/<slug>`) and in English under
+`/en/` (`/en/signs/<slug>`). Each names the other with `hreflang` (and the English one for readers
+of other languages), so that search engines show each reader the page in their language. The
+address gives a page's language
+([`language-location.ts`](src/app/core/services/language-location.ts) takes the `/en/` out before
+the router sees it, and puts it in every link). The language switch moves the page to its other
+address without reloading it and saves the choice: from then on, `src/index.html` opens every page
+in that language before it is drawn. Search engines save no choice, so they see each address in its
+own language.
 
 Pages answers `/x` with `x.html` but redirects it to `/x/` wherever a folder `x/` exists, so
-[`scripts/finish-build.mjs`](scripts/finish-build.mjs) moves each page to `<route>.html`; only
-`/signs/` and `/names/` keep their folder, and their address ends in a slash. It also writes
-`404.html` for any other address, `sitemap.xml` with every page and `robots.txt`, and fails the
-build if a sign or name lacks its page, its text or its description, or a page's canonical address
-isn't the one it is served at.
+[`scripts/finish-build.mjs`](scripts/finish-build.mjs) moves each page to `<route>.html`; only the
+folders `/signs/`, `/names/`, `/en/`, `/en/signs/` and `/en/names/` keep their `index.html`, and
+their address ends in a slash. It also writes `404.html` for any other address, `sitemap.xml` with
+every page in both languages and `robots.txt`, and fails the build if a sign or name lacks its page
+in either language, its text or its description, or a page's canonical address isn't the one it is
+served at, or its `hreflang` links don't name its two versions.
 
 The site's address is set in two places: the base href in `angular.json` (`/Huda/`) and `SITE_URL`
 in [`src/app/core/services/page-meta.service.ts`](src/app/core/services/page-meta.service.ts).
@@ -257,7 +266,10 @@ end-of-verse mark: `…يَلۡتَقِيَانِ ۝١٩ بَيۡنَهُمَا�
 2. Add its labels to `UI_TEXT` in [`src/app/core/i18n/ui-text.ts`](src/app/core/i18n/ui-text.ts).
 3. Add its key next to `ar` and `en` in the content. Any text not translated yet falls back to
    English, then Arabic.
-4. Update the `ayat.lang` check in `src/index.html` so the page opens in the right direction.
+4. Give it its own address folder, as `/en/` has: a `{ path: 'fr', children: … }` copy of the
+   pages in `src/app/app.routes.ts`, its `fr/signs/:slug` and `fr/names/:slug` in
+   `app.routes.server.ts`, its `OG_LOCALE` in `page-meta.service.ts`, the redirect to a saved
+   choice in `src/index.html`, and the checks for its pages in `scripts/finish-build.mjs`.
 5. Add it to `LocalizedText` in
    [`backend/src/Huda.Domain/LocalizedText.cs`](backend/src/Huda.Domain/LocalizedText.cs), or the
    backend's import refuses the new key.
@@ -278,7 +290,8 @@ src/app/
     services/page-meta.service each page's description, canonical address and Open Graph tags
     services/names.service     loads names.json: the names, name of the day, the previous and next name
     services/reading.service   read marks, where the reader stopped, text size (localStorage)
-    services/language.service  the language, sets <html dir/lang>
+    services/language.service  the language, from the address; sets <html dir/lang>
+    services/language-location puts the language in the address: English pages under /en/
     services/speech.service    listen, with the browser's speech synthesis
     services/theme.service     page colour, sets <html data-theme> (palettes in styles.scss)
     i18n/ui-text.ts            interface labels in each language

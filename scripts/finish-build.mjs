@@ -6,8 +6,9 @@
 // <route>.html, while /signs/ and /names/, the folders of the signs' and the names' pages, keep
 // their index.html and their address ends in a slash (as in src/app/core/services/page-meta.service.ts).
 // Then it writes 404.html (the app with no page in it, for any other address), sitemap.xml and
-// robots.txt, and checks that every sign and name has its page, with its own text and description,
-// and that each page's canonical address is the one it is served at.
+// robots.txt, and checks that every sign and name has its page in Arabic and, under en/, in English,
+// with its own text and description; that each page's canonical address is the one it is served
+// at; and that each page names its version in the other language (hreflang).
 import {
   existsSync,
   readdirSync,
@@ -66,6 +67,12 @@ const attr = (html, pattern) => {
   return m ? decode(m[1]) : undefined;
 };
 const canonicalOf = (html) => attr(html, /<link rel="canonical" href="([^"]*)"/);
+const alternateOf = (html, lang) => {
+  const link = html
+    .match(/<link [^>]*>/g)
+    ?.find((tag) => tag.includes('rel="alternate"') && tag.includes(`hreflang="${lang}"`));
+  return link && attr(link, /href="([^"]*)"/);
+};
 const descriptionOf = (html) => attr(html, /<meta name="description" content="([^"]*)"/);
 const textOf = (html) =>
   decode((html.match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1] ?? '').replace(/<[^>]*>/g, ''));
@@ -116,6 +123,19 @@ for (const file of htmlFiles(dist)) {
   // An error while prerendering is only logged, and can leave a page half drawn.
   if (!/<main[^>]*>[\s\S]*?<h1[\s>]/.test(html))
     errors.push(`${served || '/'}: no <h1> in its <main>`);
+  // English pages are the ones under en/; each names both versions, and English for other readers.
+  const lang = /^en(\/|$)/.test(served) ? 'en' : 'ar';
+  const arabic = served.replace(/^en(\/|$)/, '');
+  const expected = {
+    ar: site + arabic,
+    en: `${site}en/${arabic}`,
+    'x-default': `${site}en/${arabic}`,
+  };
+  if (attr(html, /<html lang="([^"]*)"/) !== lang) errors.push(`${served || '/'}: not in ${lang}`);
+  for (const [hreflang, address] of Object.entries(expected)) {
+    if (alternateOf(html, hreflang) !== address)
+      errors.push(`${served || '/'}: its hreflang="${hreflang}" isn't ${address}`);
+  }
   pages.set(served, canonical);
 }
 
@@ -123,8 +143,10 @@ for (const [served, target] of redirects) {
   if (![...pages.values()].includes(target))
     errors.push(`${served}: redirects to ${target}, which has no page`);
 }
-for (const served of ['', 'signs/', 'names/', 'method', 'next']) {
-  if (!pages.has(served)) errors.push(`${served || '/'}: not prerendered`);
+for (const page of ['', 'signs/', 'names/', 'method', 'next']) {
+  for (const served of [page, `en/${page}`]) {
+    if (!pages.has(served)) errors.push(`${served || '/'}: not prerendered`);
+  }
 }
 
 // 4. Every sign and name: its page, its text and its description.
@@ -136,9 +158,14 @@ const check = (served, title, description) => {
   if (description && descriptionOf(html) !== description)
     errors.push(`${served}: its description isn't «${description}»`);
 };
-for (const sign of data('ayat.json').ayat) check(`signs/${sign.slug}`, sign.title.ar, sign.hook.ar);
-for (const name of data('names.json').names)
+for (const sign of data('ayat.json').ayat) {
+  check(`signs/${sign.slug}`, sign.title.ar, sign.hook.ar);
+  check(`en/signs/${sign.slug}`, sign.title.en, sign.hook.en);
+}
+for (const name of data('names.json').names) {
   check(`names/${name.slug}`, name.name, name.content?.meaning.ar);
+  check(`en/names/${name.slug}`, name.transliteration, name.content?.meaning.en);
+}
 
 if (errors.length) {
   console.error(
