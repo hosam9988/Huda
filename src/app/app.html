@@ -45,7 +45,9 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <p class="quran gold-text verse" lang="ar" dir="rtl">﴿فَٱعۡلَمۡ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ﴾</p>
+      <!-- Only the words run right to left: the line itself keeps the page's side, so on the
+           English pages the verse lines up with its translation instead of the far edge. -->
+      <p class="quran gold-text verse"><span lang="ar" dir="rtl">﴿فَٱعۡلَمۡ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ﴾</span></p>
       @if (!language.isArabic()) {
         <p class="verse-meaning">“So know that there is no deity except Allah.”</p>
       }

@@ -139,6 +139,9 @@ main {
 .footer-brand {
   .verse {
     margin: 0;
+    // gold-text pads its sides so the gold covers the letters' swashes; the negative margins take
+    // that room back, so the verse's first letter lines up with the translation under it.
+    margin-inline: -0.25em;
     font-size: clamp(1.5rem, 4.6vw, 1.9rem);
   }
 
