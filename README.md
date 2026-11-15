@@ -31,8 +31,8 @@ that more components can join it later.
 - **The signs, «سنريهم آياتنا»** (`/signs`): 74 signs in 9 fields — the cosmos; earth and sky;
   seas and water; the living world; the human being; health in the Sunnah; peoples of the past;
   prophecies fulfilled; preserving the Qur'an.
-  - **Two lists:** «المعجزات» (Miracles, 43) and «علامات تُظهر عظمة الخالق» (Signs that show the
-    Creator's greatness, 31). The second holds the signs for reflection: what they say is true and plain,
+  - **Two lists:** «المعجزات» (Miracles, 44) and «علامات تُظهر عظمة الخالق» (Signs that show the
+    Creator's greatness, 30). The second holds the signs for reflection: what they say is true and plain,
     but people already knew it when it was revealed, so they are not offered as i'jaz. They come
     after the miracles, and their cards lead with the verse or hadith. On their own pages and as the sign
     of the day they carry the «للتفكر» badge. Each list has its own field filter, with only the fields
@@ -91,14 +91,17 @@ that more components can join it later.
   passed all three checks of a review of 132: the science or history, the text and its classical
   reading, and a search for any serious objection. A prophecy's page links the histories and the
   classical commentaries that recorded each fulfilment.
-- **The 31 signs for reflection:** 27 come from the same review's 72 candidates that were sound in
-  their science and text but showed nothing people did not already know, and 4 were added later
+- **The 30 signs for reflection:** 27 come from the same review's 72 candidates that were sound in
+  their science and text but showed nothing people did not already know, and 3 were added later
   under the same rules. Each was screened again: the
   reading must be the classical commentators' own and undisputed, the fact established, a ruling
   never given a modern reason its text does not state, and a health statement must rest on current
-  guidance or a review. A count of the Qur'an's words is given only with the rule it was counted
-  by, and only if it holds under that one rule. Such a page carries the «للتفكر» badge and is never
-  called a miracle.
+  guidance or a review. Such a page carries the «للتفكر» badge and is never called a miracle.
+- **The page of paired word counts** («كلماتٌ متقابلة بعددٍ واحد») is among the miracles, by the
+  owner's decision: a Book recited in parts over twenty-three years whose paired words come out equal
+  in number. A count of the Qur'an's words is given only with the rule it was counted by, and only if
+  it holds under that one rule; counts that need a chosen exception (365 for "day") or do not hold
+  (145 for "life" and "death") stay out.
 - **Every page makes the case:** its opening question, card summary and closing thought say why the
   sign is evidence that the Qur'an is the word of Allah and Islam is the truth, without claiming more
   than the page's facts. Neither the timeline nor the text names knowledge from before Islam.

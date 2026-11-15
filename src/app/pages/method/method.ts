@@ -48,8 +48,8 @@ const PRINCIPLES: Principle[] = [
   {
     title: { ar: 'معجزاتٌ، وعلاماتٌ للتفكر', en: 'Miracles, and signs for reflection' },
     text: {
-      ar: 'نعرض الآيات في قسمين. «المعجزات»: ما سبق به القرآن والسنة علمَ الناس، أو وصفاه بدقةٍ لم تتبيّن إلا بعد قرون، أو أخبرا به من غيبٍ فوقع. و«علامات تُظهر عظمة الخالق»: حقٌّ ظاهر كان الناس يعرفونه يوم نزل الوحي، فلا نعرضه إعجازًا، بل نذكر ما عرفوه يومئذٍ وما نعرفه اليوم، لنتفكر في خلق الله ورحمته وسننه في الأمم، ولا ندّعي أن العلم كشف ما لم يكن معروفًا.',
-      en: 'We show the signs in two parts. “Miracles”: what the Qur’an and Sunnah told of before people knew it, or described with a precision that only became clear centuries later, or foretold before it came to pass. “Signs that show the Creator’s greatness”: plain truths that people already knew when the revelation came, so we do not present them as miracles. We set out what was known then and what we know now, to reflect on Allah’s creation, His mercy and His ways with nations — never to claim that science uncovered something unknown.',
+      ar: 'نعرض الآيات في قسمين. «المعجزات»: ما سبق به القرآن والسنة علمَ الناس، أو وصفاه بدقةٍ لم تتبيّن إلا بعد قرون، أو أخبرا به من غيبٍ فوقع، أو اتساقٌ في أعداد ألفاظ القرآن لا يظهر إلا بعدّ المصحف كله. و«علامات تُظهر عظمة الخالق»: حقٌّ ظاهر كان الناس يعرفونه يوم نزل الوحي، فلا نعرضه إعجازًا، بل نذكر ما عرفوه يومئذٍ وما نعرفه اليوم، لنتفكر في خلق الله ورحمته وسننه في الأمم، ولا ندّعي أن العلم كشف ما لم يكن معروفًا.',
+      en: 'We show the signs in two parts. “Miracles”: what the Qur’an and Sunnah told of before people knew it, or described with a precision that only became clear centuries later, or foretold before it came to pass, or a balance in the counts of the Qur’an’s words that shows only when the whole Mushaf is counted. “Signs that show the Creator’s greatness”: plain truths that people already knew when the revelation came, so we do not present them as miracles. We set out what was known then and what we know now, to reflect on Allah’s creation, His mercy and His ways with nations — never to claim that science uncovered something unknown.',
     },
   },
   {
