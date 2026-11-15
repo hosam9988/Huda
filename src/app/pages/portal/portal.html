@@ -21,97 +21,98 @@
         <p class="title-en">Know <span class="allah-en gold-text">Allah</span></p>
       }
       <p class="lead">{{ t().portal.lead }}</p>
-      @if (journey()[0]; as first) {
-        <div class="actions">
-          <a class="btn solid big" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
-            {{ t().portal.startJourney }}
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
-          <a class="btn big" routerLink="/signs">{{ t().browseAll }}</a>
-        </div>
+    </div>
+
+    <!-- The journey: a line on what it is, then its questions taking turns (each leads to its stop,
+         and a swipe turns them too), then the button that goes through all of them in order. -->
+    @if (journey()[0]; as first) {
+      <div class="hero-journey">
         <p class="journey-meta">
           {{ t().journeyIntro(language.number(journey().length), language.number(journeyMinutes())) }}
         </p>
-      }
-    </div>
-
-    <!-- The journey's questions, taking turns: each leads to its stop. A swipe turns them too. -->
-    @if (journey().length) {
-      <div
-        class="deck"
-        role="group"
-        [attr.aria-label]="t().portal.questionLabel"
-        (pointerenter)="held.set(true)"
-        (pointerleave)="held.set(false)"
-        (focusin)="held.set(true)"
-        (focusout)="held.set(false)"
-      >
         <div
-          class="deck-stack"
-          appSwipe
-          #swipe="appSwipe"
-          [class.dragging]="swipe.drag() !== null"
-          (swiped)="turn($event)"
+          class="deck"
+          role="group"
+          [attr.aria-label]="t().portal.questionLabel"
+          (pointerenter)="held.set(true)"
+          (pointerleave)="held.set(false)"
+          (focusin)="held.set(true)"
+          (focusout)="held.set(false)"
         >
-          @for (sign of journey(); track sign.slug; let i = $index) {
-            @let q = splitQuestion(language.pick(sign.hook));
-            <a
-              class="question"
-              [class.current]="i === current()"
-              [style]="swipeStyle(i, swipe.drag())"
-              [attr.aria-hidden]="i === current() ? null : 'true'"
-              [attr.tabindex]="i === current() ? null : -1"
-              [routerLink]="['/signs', sign.slug]"
-              [queryParams]="{ path: 'journey' }"
-            >
-              <img
-                class="question-art"
-                [src]="artSmallSrc(sign.art)"
-                [attr.srcset]="artSrcset(sign.art)"
-                sizes="(max-width: 860px) 100vw, 560px"
-                alt=""
-                width="1280"
-                height="800"
-                decoding="async"
-              />
-              <span class="question-text">
-                <span class="deck-label">{{ t().portal.questionLabel }}</span>
-                <span class="question-lead">{{ q.lead }}</span>
-                @if (q.rest) {
-                  <span class="question-rest">{{ q.rest }}</span>
-                }
-                <span class="question-link">
-                  {{ t().portal.discover }}
-                  <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          <div
+            class="deck-stack"
+            appSwipe
+            #swipe="appSwipe"
+            [class.dragging]="swipe.drag() !== null"
+            (swiped)="turn($event)"
+          >
+            @for (sign of journey(); track sign.slug; let i = $index) {
+              @let q = splitQuestion(language.pick(sign.hook));
+              <a
+                class="question"
+                [class.current]="i === current()"
+                [style]="swipeStyle(i, swipe.drag())"
+                [attr.aria-hidden]="i === current() ? null : 'true'"
+                [attr.tabindex]="i === current() ? null : -1"
+                [routerLink]="['/signs', sign.slug]"
+                [queryParams]="{ path: 'journey' }"
+              >
+                <img
+                  class="question-art"
+                  [src]="artSmallSrc(sign.art)"
+                  [attr.srcset]="artSrcset(sign.art)"
+                  sizes="(max-width: 860px) 100vw, 576px"
+                  alt=""
+                  width="1280"
+                  height="800"
+                  decoding="async"
+                />
+                <span class="question-text">
+                  <span class="deck-label">{{ t().portal.questionLabel }}</span>
+                  <span class="question-lead">{{ q.lead }}</span>
+                  @if (q.rest) {
+                    <span class="question-rest">{{ q.rest }}</span>
+                  }
+                  <span class="question-link">
+                    {{ t().portal.discover }}
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                  </span>
                 </span>
-              </span>
-            </a>
-          }
-          <span class="art-label">{{ t().illustrativeImage }}</span>
-        </div>
-        <div class="deck-nav">
-          @for (sign of journey(); track sign.slug; let i = $index) {
+              </a>
+            }
+            <span class="art-label">{{ t().illustrativeImage }}</span>
+          </div>
+          <div class="deck-nav">
+            @for (sign of journey(); track sign.slug; let i = $index) {
+              <button
+                type="button"
+                class="dot"
+                [attr.aria-label]="t().portal.questionOf(language.number(i + 1), language.number(journey().length))"
+                [attr.aria-pressed]="i === current()"
+                (click)="show(i)"
+              ></button>
+            }
             <button
               type="button"
-              class="dot"
-              [attr.aria-label]="t().portal.questionOf(language.number(i + 1), language.number(journey().length))"
-              [attr.aria-pressed]="i === current()"
-              (click)="show(i)"
-            ></button>
-          }
-          <button
-            type="button"
-            class="play"
-            [attr.aria-label]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
-            [attr.title]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
-            (click)="stopped.set(!stopped())"
-          >
-            @if (stopped()) {
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg>
-            } @else {
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" /></svg>
-            }
-          </button>
+              class="play"
+              [attr.aria-label]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
+              [attr.title]="stopped() ? t().portal.playQuestions : t().portal.pauseQuestions"
+              (click)="stopped.set(!stopped())"
+            >
+              @if (stopped()) {
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg>
+              } @else {
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" /></svg>
+              }
+            </button>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn solid big" [routerLink]="['/signs', first.slug]" [queryParams]="{ path: 'journey' }">
+            {{ t().portal.answersInOrder(journey().length) }}
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="btn big" routerLink="/signs">{{ t().browseAll }}</a>
         </div>
       </div>
     }

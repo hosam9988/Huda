@@ -50,7 +50,8 @@
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  // The journey's column is wide enough for its two buttons side by side under the questions.
+  grid-template-columns: minmax(0, 1fr) minmax(0, 36rem);
   align-items: center;
   gap: 2rem clamp(2rem, 5vw, 4.5rem);
 }
@@ -92,21 +93,30 @@
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
 }
 
+// ---------- The journey: what it is, its questions taking turns, the way through them ----------
+
+// The line above the questions says what they are, and the button under them goes through the
+// same questions in order, so the reader doesn't take it for a way to somewhere else.
+.hero-journey {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: rise 0.9s 0.15s var(--ease) both;
+}
+
+.journey-meta {
+  margin: 0 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  text-wrap: balance;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-block-start: 1.75rem;
+  margin-block-start: 1.25rem;
 }
-
-.journey-meta {
-  max-inline-size: 30rem;
-  margin: 0.9rem 0 0;
-  color: var(--text-muted);
-  font-size: 0.88rem;
-}
-
-// ---------- The questions that take turns ----------
 
 .deck {
   position: relative;
@@ -116,7 +126,6 @@
   border-radius: var(--radius-lg);
   background: rgb(8 12 28 / 60%);
   box-shadow: 0 30px 80px -30px rgb(0 0 0 / 80%);
-  animation: rise 0.9s 0.15s var(--ease) both;
 }
 
 // Every question sits in the same cell, so the card is as tall as the longest and never jumps.
@@ -781,6 +790,11 @@
 // ---------- Narrower screens ----------
 
 @media (max-width: 1100px) {
+  // Narrower, so the title keeps its room; the buttons go one under the other.
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  }
+
   .stops {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -791,7 +805,7 @@
 }
 
 @media (max-width: 860px) {
-  // One column: the question comes right after the line under the title, before the buttons.
+  // One column: the title and the line under it, then the journey's line, questions and buttons.
   .hero-grid {
     display: flex;
     flex-direction: column;
@@ -800,30 +814,21 @@
     text-align: center;
   }
 
+  // Shown at once: on a phone the title and the line under it are the first things on the screen.
   .hero-copy {
-    display: contents;
+    align-items: center;
+    animation: none;
   }
 
-  .title {
-    order: 1;
-  }
-  .title-en {
-    order: 2;
-  }
-  .lead {
-    order: 3;
-  }
-  .deck {
-    order: 4;
+  .hero-journey {
+    align-items: center;
+    inline-size: 100%;
     max-inline-size: 34rem;
-    margin-block-start: 1.5rem;
+    margin-block-start: 1.25rem;
   }
+
   .actions {
-    order: 5;
     justify-content: center;
-  }
-  .journey-meta {
-    order: 6;
   }
 
   .question {
@@ -869,8 +874,12 @@
     font-size: 1rem;
   }
 
-  .deck {
-    margin-block-start: 1.1rem;
+  .hero-journey {
+    margin-block-start: 0.9rem;
+  }
+
+  .journey-meta {
+    margin-block-end: 0.6rem;
   }
 
   .question {

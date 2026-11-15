@@ -136,6 +136,11 @@ export interface UiText {
     questionLabel: string;
     questionOf: (n: string, total: string) => string;
     discover: string;
+    /**
+     * The button under them. It opens the first and leads through the rest one after another, so it
+     * names them: the reader should know it goes through these same questions, not somewhere else.
+     */
+    answersInOrder: (count: number) => string;
     pauseQuestions: string;
     playQuestions: string;
     /** «١٠٧ أسماء» under the figures in the hero, and on the names' card. */
@@ -204,6 +209,9 @@ function arabicCount(n: number, noun: ArabicNoun): string {
   const form = lastTwo >= 3 && lastTwo <= 10 ? noun.few : lastTwo >= 11 ? noun.many : noun.bare;
   return `${toArabicDigits(n)} ${form}`;
 }
+
+/** A count from 3 to 10 in words, after a masculine plural: «الأجوبة السبعة». */
+const ARABIC_THREE_TO_TEN = ['الثلاثة', 'الأربعة', 'الخمسة', 'الستة', 'السبعة', 'الثمانية', 'التسعة', 'العشرة'];
 
 const NAME_NOUN: ArabicNoun = { one: 'اسم واحد', two: 'اسمان', few: 'أسماء', many: 'اسمًا', bare: 'اسم' };
 const MIRACLE_NOUN: ArabicNoun = { one: 'معجزة واحدة', two: 'معجزتان', few: 'معجزات', many: 'معجزة', bare: 'معجزة' };
@@ -354,6 +362,10 @@ export const UI_TEXT: Record<Lang, UiText> = {
       questionLabel: 'سؤالٌ يستحق التفكير',
       questionOf: (n, total) => `السؤال ${n} من ${total}`,
       discover: 'اكتشف الجواب',
+      answersInOrder: (count) =>
+        ARABIC_THREE_TO_TEN[count - 3]
+          ? `اكتشف الأجوبة ${ARABIC_THREE_TO_TEN[count - 3]} بالترتيب`
+          : 'اكتشف الأجوبة كلها بالترتيب',
       pauseQuestions: 'أوقف تبديل الأسئلة',
       playQuestions: 'تابع تبديل الأسئلة',
       statNames: (n) => arabicCount(n, NAME_NOUN).replace(/^[٠-٩]+ /, ''),
@@ -542,6 +554,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       questionLabel: 'A question worth thinking about',
       questionOf: (n, total) => `Question ${n} of ${total}`,
       discover: 'Discover the answer',
+      answersInOrder: (count) => `Discover all ${count} answers in order`,
       pauseQuestions: 'Stop changing the questions',
       playQuestions: 'Keep changing the questions',
       statNames: (n) => (n === 1 ? 'name' : 'names'),
