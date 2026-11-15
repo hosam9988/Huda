@@ -148,12 +148,16 @@
   --science-line: rgb(var(--science-rgb) / 30%);
 
   --font-quran: 'Amiri Quran', serif;
-  // Titles and the interface in a modern face that has both Arabic and Latin letters; Arabic
-  // reading text stays in Naskh, which is easier on long paragraphs.
+  // Arabic titles and the interface in Readex Pro, a modern face; Arabic reading text stays in
+  // Naskh, which is easier on long paragraphs. Latin letters are in Inter, close to Readex Pro's
+  // Latin in size and width: Readex Pro's own Latin draws «t» as a plain cross. Inter also has the
+  // letters of the transliterations («Fāṭema», «ʿUmar»). It has no Arabic, so in the English
+  // stacks each Arabic letter (a «ﷺ» in the text, an Arabic-Indic number) comes from Readex Pro,
+  // as before.
   --font-display-ar: 'Readex Pro', 'Noto Naskh Arabic', sans-serif;
   --font-body-ar: 'Noto Naskh Arabic', serif;
-  --font-display-en: 'Readex Pro', system-ui, sans-serif;
-  --font-body-en: 'Readex Pro', system-ui, sans-serif;
+  --font-display-en: 'Inter', 'Readex Pro', system-ui, sans-serif;
+  --font-body-en: 'Inter', 'Readex Pro', system-ui, sans-serif;
   --body-size-en: 1.06rem;
   --body-weight-en: 300;
 
@@ -490,6 +494,16 @@ html[lang='ar'] :is(.eyebrow, .kicker) {
 }
 
 html[lang='ar'] .btn {
+  font-family: var(--font-display-ar);
+}
+
+// A button that speaks the other language (the language switch: «English» on the Arabic pages,
+// «العربية» on the English ones) takes that language's face.
+html[lang='ar'] .btn:lang(en) {
+  font-family: var(--font-display-en);
+}
+
+html[lang='en'] .btn:lang(ar) {
   font-family: var(--font-display-ar);
 }
 
