@@ -38,6 +38,11 @@ export interface UiText {
   continueReading: string;
   continueWhere: (title: string) => string;
   journeyTitle: string;
+  /**
+   * The line above the hero's questions, followed by portal.moreBelow. Kept short, like portal.lead
+   * (two lines each on a large phone), so the two buttons under the questions show on a phone's
+   * first screen as they do in Arabic.
+   */
   journeyIntro: (stops: string, minutes: string) => string;
   journeyStop: (n: string, total: string) => string;
   /** Labels that name one sign gloss it «(معجزة)» only when it isn't a sign for reflection. */
@@ -129,7 +134,10 @@ export interface UiText {
   /** The site's front page. */
   portal: {
     intro: string;
-    /** Under the title: what the site offers, in a sentence. */
+    /**
+     * Under the title: what the site offers, in a sentence. Kept short (see journeyIntro); the
+     * English one more than the Arabic, as its page also has the line «Know Allah».
+     */
     lead: string;
     startJourney: string;
     /**
@@ -462,7 +470,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     continueWhere: (title) => `You stopped at: ${title}`,
     journeyTitle: 'Non-Muslim or new to Islam?',
     journeyIntro: (stops, minutes) =>
-      `A short journey in ${stops} stops, arranged for anyone meeting Islam for the first time. About ${minutes} minutes of reading.`,
+      `A ${minutes}-minute journey in ${stops} stops for anyone new to Islam.`,
     journeyStop: (n, total) => `Stop ${n} of ${total}`,
     ayahOfTheDay: (reflection) => (reflection ? 'Sign of the day' : 'Sign (miracle) of the day'),
     readMore: 'Read more',
@@ -558,10 +566,10 @@ export const UI_TEXT: Record<Lang, UiText> = {
     portal: {
       intro:
         'Two paths to knowing Allah: His signs in the universe and in ourselves, and the Beautiful Names by which He made Himself known. Start with either.',
-      lead: 'Signs in the universe and within you that point to their Creator, and the Beautiful Names by which Allah made Himself known — with their evidence from the Qur’an and Sunnah, and their sources.',
+      lead: 'Signs in the universe and within you that point to their Creator, and Allah’s Beautiful Names.',
       startJourney: 'Start the journey',
       moreBelow: (signs, names) =>
-        `It’s only the beginning: further down you’ll find ${signs} ${signs === 1 ? 'sign' : 'signs'}${names ? ` and ${names} of Allah’s Beautiful Names` : ''}.`,
+        `It’s only the start: below ${signs + names === 1 ? 'is' : 'are'} ${signs} ${signs === 1 ? 'sign' : 'signs'}${names ? ` and ${names} ${names === 1 ? 'Name' : 'Names'}` : ''}.`,
       questionLabel: 'A question worth thinking about',
       questionOf: (n, total) => `Question ${n} of ${total}`,
       discover: 'Discover the answer',
