@@ -120,9 +120,23 @@
 }
 
 // Every question sits in the same cell, so the card is as tall as the longest and never jumps.
+// Sideways moves on it are the reader's swipes (shared/swipe.ts); up and down still scroll the
+// page, and two fingers still zoom. A mouse drag would select the words, so they can't be.
 .deck-stack {
   position: relative;
   display: grid;
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-select: none;
+  user-select: none;
+
+  // The questions follow the finger as it moves, without easing behind it.
+  &.dragging {
+    cursor: grabbing;
+
+    .question {
+      transition: none;
+    }
+  }
 
   .art-label {
     inset-block-start: 0.75rem;
@@ -144,9 +158,11 @@
   color: var(--text);
   visibility: hidden;
   opacity: 0;
+  // translate: a question let go mid-swipe glides back, or on and out of the card.
   transition:
     opacity 0.8s var(--ease),
-    visibility 0.8s;
+    visibility 0.8s,
+    translate 0.5s var(--ease);
 
   &.current {
     visibility: visible;

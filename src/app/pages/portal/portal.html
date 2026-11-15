@@ -35,7 +35,7 @@
       }
     </div>
 
-    <!-- The journey's questions, taking turns: each leads to its stop. -->
+    <!-- The journey's questions, taking turns: each leads to its stop. A swipe turns them too. -->
     @if (journey().length) {
       <div
         class="deck"
@@ -46,12 +46,19 @@
         (focusin)="held.set(true)"
         (focusout)="held.set(false)"
       >
-        <div class="deck-stack">
+        <div
+          class="deck-stack"
+          appSwipe
+          #swipe="appSwipe"
+          [class.dragging]="swipe.drag() !== null"
+          (swiped)="turn($event)"
+        >
           @for (sign of journey(); track sign.slug; let i = $index) {
             @let q = splitQuestion(language.pick(sign.hook));
             <a
               class="question"
               [class.current]="i === current()"
+              [style]="swipeStyle(i, swipe.drag())"
               [attr.aria-hidden]="i === current() ? null : 'true'"
               [attr.tabindex]="i === current() ? null : -1"
               [routerLink]="['/signs', sign.slug]"

@@ -17,6 +17,7 @@ import { NamesService } from '../../core/services/names.service';
 import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
 import { Reveal } from '../../shared/reveal';
+import { Swipe, SwipeDrag } from '../../shared/swipe';
 
 /**
  * The signs whose opening questions the home page shows under the journey: one or two from each
@@ -40,6 +41,12 @@ const SAMPLE_QUESTION = 'mountains-as-pegs';
 /** How long each of the hero's questions stays before the next, in milliseconds. */
 const TURN = 7000;
 
+/** How long a question sent away by a swipe takes to fade out (`.question` in portal.scss). */
+const LEAVE = 800;
+
+/** A question a swipe is moving: above the others, its moving edge casting a shadow on them. */
+const ON_TOP = { 'z-index': '1', 'box-shadow': '0 0 48px rgb(0 0 0 / 60%)' };
+
 /**
  * The journey and the questions are folded until the reader opens them. Back and Forward rebuild
  * the page, so whether each is open is kept here, for the whole visit.
@@ -60,7 +67,7 @@ export function splitQuestion(text: string): { lead: string; rest: string } {
  */
 @Component({
   selector: 'app-portal',
-  imports: [RouterLink, Reveal],
+  imports: [RouterLink, Reveal, Swipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './portal.html',
   styleUrl: './portal.scss',
@@ -104,6 +111,9 @@ export class Portal {
   /** Stopped by the reader's button; held while the pointer or the focus is on the questions. */
   protected readonly stopped = signal(false);
   protected readonly held = signal(false);
+  /** The question a swipe has just sent away, and how far it goes while it fades out. */
+  private readonly leaving = signal<{ i: number; x: number } | null>(null);
+  private leavingTimer?: ReturnType<typeof setTimeout>;
 
   constructor() {
     const title = inject(Title);
@@ -133,5 +143,33 @@ export class Portal {
   protected show(i: number): void {
     this.current.set(i);
     this.stopped.set(true);
+  }
+
+  /** A swipe on the questions: the next or the one before, and the turns stop, as with the dots. */
+  protected turn(drag: SwipeDrag): void {
+    const count = this.journey().length;
+    if (!count) return;
+    const from = this.current();
+    this.leaving.set({ i: from, x: drag.x + Math.sign(drag.x) * drag.width * 0.3 });
+    clearTimeout(this.leavingTimer);
+    this.leavingTimer = setTimeout(() => this.leaving.set(null), LEAVE);
+    this.show((from + drag.step + count) % count);
+  }
+
+  /**
+   * Where a question sits while a swipe moves it. The one on show follows the drag, on top, and
+   * the one the drag leads to lies under it, seen where the top one has moved off, like the next
+   * card of a stack. Once let go, the question sent away keeps going while it fades out.
+   */
+  protected swipeStyle(i: number, drag: SwipeDrag | null): Record<string, string> | null {
+    const count = this.journey().length;
+    if (drag && count) {
+      if (i === this.current()) return { translate: `${drag.x}px 0`, ...ON_TOP };
+      if (i === (this.current() + drag.step + count) % count) {
+        return { visibility: 'visible', opacity: '1' };
+      }
+    }
+    const leaving = this.leaving();
+    return leaving?.i === i ? { translate: `${leaving.x}px 0`, ...ON_TOP } : null;
   }
 }

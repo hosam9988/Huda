@@ -314,8 +314,8 @@ src/app/
     services/theme.service     page colour, sets <html data-theme> (palettes in styles.scss)
     i18n/ui-text.ts            interface labels in each language
     utils/                     image paths, search (ignores tashkeel), reading time
-  shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament
-  pages/portal                 the home page (/): the journey's questions, the folded journey and questions, the two sections
+  shared/                      sign card, progress ring, scroll reveal, swipe, theme picker, listen, ornament
+  pages/portal                 the home page (/): the journey's questions (they take turns, or swipe), the folded journey and questions, the two sections
   pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
   pages/ayah                   one sign (/signs/:slug; ?path=journey keeps the journey's order)
   pages/names                  the names (/names) and one name (/names/:slug)
