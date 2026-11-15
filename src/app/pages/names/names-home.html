@@ -79,13 +79,13 @@
         type="search"
         [placeholder]="t().names.search"
         [value]="query()"
-        (input)="query.set($any($event.target).value)"
+        (input)="setQuery($any($event.target).value)"
       />
     </label>
 
     @if (filtered().length) {
       <ol class="grid">
-        @for (name of filtered(); track name.slug) {
+        @for (name of visible(); track name.slug) {
           <li>
             @if (name.content) {
               <a class="name-card" [routerLink]="['/names', name.slug]">
@@ -109,6 +109,14 @@
           </li>
         }
       </ol>
+      @if (hidden()) {
+        <p class="more">
+          <button type="button" class="btn big" (click)="showMore()">
+            {{ t().showMore(language.number(hidden())) }}
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="chevron"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+        </p>
+      }
     } @else {
       <p class="status">{{ t().noResults }}</p>
     }

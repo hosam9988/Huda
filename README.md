@@ -60,7 +60,9 @@ that more components can join it later.
     7. the sources, linked.
   - Links from the first site (`/ayah/:slug`) redirect to `/signs/:slug`.
 - **The Beautiful Names** (`/names`): 107 names, with the name of the day, a search, and «فاجئني
-  باسم» ("Surprise me"), which opens a name not yet read. Each name's page (`/names/:slug`) has:
+  باسم» ("Surprise me"), which opens a name not yet read. The list shows its first 24 names (12 on a
+  phone, two to a row), and «اعرض المزيد» ("Show more") adds as many more. Each name's page
+  (`/names/:slug`) has:
   1. its meaning, in a line;
   2. one to three verses or hadith in which the name is established, each with a short explanation;
   3. «أثره في حياتك», what believing in the name does in your life;
