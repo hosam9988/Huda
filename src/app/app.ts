@@ -40,6 +40,8 @@ export class App {
     if (!path.length) return tree.fragment === 'map' ? 'start' : 'home';
     if (path[0] === 'signs') return tree.fragment === 'journey' || onJourney ? 'start' : 'signs';
     if (path[0] === 'names') return onJourney ? 'start' : 'names';
+    // A topic (/topics/:slug) is only ever a stop on the journey.
+    if (path[0] === 'topics') return 'start';
     if (path[0] === 'method') return 'method';
     return 'other';
   });

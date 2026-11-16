@@ -3,9 +3,11 @@ import { Ayah } from './models/ayah';
 import { DivineName } from './models/divine-name';
 import { Lang, Localized, localize } from './models/lang';
 import { ContentService } from './services/content.service';
+import { Topic } from './models/topic';
 import { NamesService } from './services/names.service';
 import { ReadingService } from './services/reading.service';
-import { readingMinutes } from './utils/reading-time';
+import { TopicsService } from './services/topics.service';
+import { readingMinutes, topicMinutes } from './utils/reading-time';
 
 /**
  * The journey: seven questions a person asks about God, one after the other, each answered by a few
@@ -14,9 +16,12 @@ import { readingMinutes } from './utils/reading-time';
  * the seeker and the Muslim take the same stops, and part only at the end, on «ماذا بعد؟».
  */
 
-/** A page on the journey: a sign (/signs/:slug) or one of the Beautiful Names (/names/:slug). */
+/**
+ * A page on the journey: a sign (/signs/:slug), one of the Beautiful Names (/names/:slug), or a
+ * topic of the later stages (/topics/:slug).
+ */
 export interface StopRef {
-  kind: 'sign' | 'name';
+  kind: 'sign' | 'name' | 'topic';
   slug: string;
 }
 
@@ -39,6 +44,7 @@ export interface StageDef {
 
 const sign = (slug: string): StopRef => ({ kind: 'sign', slug });
 const name = (slug: string): StopRef => ({ kind: 'name', slug });
+const topic = (slug: string): StopRef => ({ kind: 'topic', slug });
 
 /**
  * The stages, in order. Each open stage takes a few pages of its field, chosen so that together
@@ -111,21 +117,35 @@ export const STAGES: StageDef[] = [
     kicker: { ar: 'دينه', en: 'His religion' },
     title: { ar: 'ماذا يريد منّا؟', en: 'What does He ask of us?' },
     line: {
-      ar: 'الغاية من الحياة، وأركان الإسلام، واليوم الآخر.',
-      en: 'The purpose of life, the pillars of Islam, and the Last Day.',
+      ar: 'لماذا خُلقنا، وأركان الإسلام والإيمان، وما يأمر به، واليوم الآخر، وباب التوبة.',
+      en: 'Why we were created, the pillars of Islam and of faith, what He commands, the Last Day, and the door of repentance.',
     },
-    status: 'soon',
-    stops: [],
+    status: 'open',
+    stops: [
+      topic('why-we-were-created'),
+      topic('pillars-of-islam'),
+      topic('pillars-of-faith'),
+      topic('what-he-commands'),
+      topic('the-last-day'),
+      topic('the-door-is-open'),
+    ],
   },
   {
     kicker: { ar: 'أسئلتك', en: 'Your questions' },
     title: { ar: 'وماذا عن أسئلتي؟', en: 'And what about my questions?' },
     line: {
-      ar: 'لماذا الشر؟ لماذا الإسلام دون غيره؟ والمسيح عليه السلام في الإسلام.',
-      en: 'Why is there evil? Why Islam and not another faith? And Jesus, peace be upon him, in Islam.',
+      ar: 'من خلق الله؟ لماذا الألم؟ لماذا الإسلام؟ المسيح عليه السلام، والعقل، ومن لم تبلغه الرسالة.',
+      en: 'Who created Allah? Why pain? Why Islam? Jesus, peace be upon him; reason; and those the message never reached.',
     },
-    status: 'soon',
-    stops: [],
+    status: 'open',
+    stops: [
+      topic('who-created-allah'),
+      topic('why-pain'),
+      topic('why-islam'),
+      topic('jesus-in-islam'),
+      topic('faith-and-reason'),
+      topic('never-reached'),
+    ],
   },
   {
     kicker: { ar: 'خطوتك', en: 'Your step' },
@@ -155,10 +175,10 @@ export const JOURNEY_TEXT = {
   start: { ar: 'ابدأ الرحلة', en: 'Start the journey' } as Localized,
   seeMap: { ar: 'خريطة الرحلة', en: 'The journey’s map' } as Localized,
   continueTitle: { ar: 'أكمل رحلتك', en: 'Continue your journey' } as Localized,
-  doneTitle: { ar: 'أتممت المحطات المكتوبة', en: 'You have finished the stops written so far' } as Localized,
+  doneTitle: { ar: 'أتممت الرحلة', en: 'You have finished the journey' } as Localized,
   doneLine: {
-    ar: 'وما زالت مرحلتان تُكتبان. وهذه خطوتك التالية.',
-    en: 'Two stages are still being written. Here is your next step.',
+    ar: 'قطعت المراحل الست كلها. بقيت خطوتك أنت.',
+    en: 'You have come through all six stages. What remains is your own step.',
   } as Localized,
   here: { ar: 'أنت هنا', en: 'You are here' } as Localized,
   startHere: { ar: 'ابدأ هنا', en: 'Start here' } as Localized,
@@ -170,10 +190,10 @@ export const JOURNEY_TEXT = {
   quickAsk: { ar: 'مستعجل؟', en: 'Short of time?' } as Localized,
   summaryTitle: { ar: 'خلاصة المحطة', en: 'This stop in short' } as Localized,
   nextStage: { ar: 'المرحلة التالية', en: 'Next stage' } as Localized,
-  lastTitle: { ar: 'آخر محطة مكتوبة', en: 'The last stop written so far' } as Localized,
+  lastTitle: { ar: 'المرحلة الأخيرة، خطوتك', en: 'The last stage: your step' } as Localized,
   lastLine: {
-    ar: 'أتممت المراحل الأربع الأولى، والخامسة والسادسة تُكتبان. أما خطوتك التالية فهنا.',
-    en: 'You have finished the first four stages; the fifth and sixth are being written. Your next step is here.',
+    ar: 'رأيت الدليل، وسمعت الجواب عن أسئلتك. فماذا بعد؟',
+    en: 'You have seen the evidence and heard the answers to your questions. So what next?',
   } as Localized,
   readOn: { ar: 'اقرأ', en: 'Read' } as Localized,
 };
@@ -223,6 +243,8 @@ export interface Stop extends StopRef {
   title: Localized | string;
   /** For a name: the name itself, in Arabic, shown in every language. */
   arabic?: string;
+  /** For a name or a topic, which have no picture: a word in Arabic, drawn in a gold ring. */
+  mark?: string;
   /** For a sign: its picture (images/<art>-sm.webp). */
   art?: string;
   /** One or two sentences: a sign's summary, a name's meaning. */
@@ -260,6 +282,7 @@ export function nameMinutes(item: DivineName, lang: Lang): number {
 export class JourneyService {
   private readonly content = inject(ContentService);
   private readonly names = inject(NamesService);
+  private readonly topics = inject(TopicsService);
   private readonly reading = inject(ReadingService);
 
   /** Every stage, its stops drawn from the data (a stop whose page is missing is left out). */
@@ -268,7 +291,12 @@ export class JourneyService {
     return STAGES.map((def, s) => {
       const stops: Stop[] = [];
       for (const ref of def.stops) {
-        const stop = ref.kind === 'sign' ? this.signStop(this.content.ayah(ref.slug)) : this.nameStop(this.names.name(ref.slug));
+        const stop =
+          ref.kind === 'sign'
+            ? this.signStop(this.content.ayah(ref.slug))
+            : ref.kind === 'name'
+              ? this.nameStop(this.names.name(ref.slug))
+              : this.topicStop(this.topics.topic(ref.slug));
         if (stop) stops.push({ ...stop, index: index++, stage: s + 1, inStage: stops.length });
       }
       const minutes = {
@@ -333,9 +361,23 @@ export class JourneyService {
       slug: item.slug,
       title: item.transliteration,
       arabic: item.name,
+      mark: item.name,
       summary: item.content.meaning,
       minutes: { ar: nameMinutes(item, 'ar'), en: nameMinutes(item, 'en') },
       link: ['/names', item.slug],
+    };
+  }
+
+  private topicStop(t: Topic | undefined): Omit<Stop, 'index' | 'stage' | 'inStage'> | undefined {
+    if (!t) return undefined;
+    return {
+      kind: 'topic',
+      slug: t.slug,
+      title: t.title,
+      mark: t.mark,
+      summary: t.summary,
+      minutes: { ar: topicMinutes(t, 'ar'), en: topicMinutes(t, 'en') },
+      link: ['/topics', t.slug],
     };
   }
 }

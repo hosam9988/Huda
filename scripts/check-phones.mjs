@@ -206,7 +206,7 @@ async function run(browser, task) {
   await page.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
   await page.addScriptTag({ path: script });
   let routes = await page.evaluate(() => __audit.routes());
-  if (task.mode === 'big-text') routes = routes.filter((r) => /^\/(signs|names)\/./.test(r));
+  if (task.mode === 'big-text') routes = routes.filter((r) => /^\/(signs|names|topics)\/./.test(r));
   const issues = [];
   for (const route of routes) {
     try {

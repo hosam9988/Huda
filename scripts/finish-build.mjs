@@ -149,7 +149,7 @@ for (const page of ['', 'signs/', 'names/', 'method', 'next']) {
   }
 }
 
-// 4. Every sign and name: its page, its text and its description.
+// 4. Every sign, name and topic: its page, its text and its description.
 const check = (served, title, description) => {
   const file = join(dist, `${served}.html`);
   if (!existsSync(file)) return errors.push(`${served}: not prerendered`);
@@ -165,6 +165,10 @@ for (const sign of data('ayat.json').ayat) {
 for (const name of data('names.json').names) {
   check(`names/${name.slug}`, name.name, name.content?.meaning.ar);
   check(`en/names/${name.slug}`, name.transliteration, name.content?.meaning.en);
+}
+for (const topic of data('topics.json').topics) {
+  check(`topics/${topic.slug}`, topic.title.ar, topic.summary.ar);
+  check(`en/topics/${topic.slug}`, topic.title.en, topic.summary.en);
 }
 
 if (errors.length) {

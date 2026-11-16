@@ -4,6 +4,7 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 import { firstValueFrom } from 'rxjs';
 import { Content } from './core/models/ayah';
 import { NamesData } from './core/models/divine-name';
+import { TopicsData } from './core/models/topic';
 
 /** Every sign's slug, from public/data/ayat.json. */
 async function signs(): Promise<Record<string, string>[]> {
@@ -17,6 +18,12 @@ async function names(): Promise<Record<string, string>[]> {
   return data.names.map(({ slug }) => ({ slug }));
 }
 
+/** Every topic's slug (the journey's stages 5 and 6), from public/data/topics.json. */
+async function topics(): Promise<Record<string, string>[]> {
+  const data = await firstValueFrom(inject(HttpClient).get<TopicsData>('data/topics.json'));
+  return data.topics.map(({ slug }) => ({ slug }));
+}
+
 /**
  * Every page is prerendered at build time into an HTML file of its own, in Arabic and, under /en/,
  * in English, with its text, title and description in it, so that GitHub Pages serves it as a page
@@ -27,6 +34,8 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'names/:slug', renderMode: RenderMode.Prerender, getPrerenderParams: names },
   { path: 'en/signs/:slug', renderMode: RenderMode.Prerender, getPrerenderParams: signs },
   { path: 'en/names/:slug', renderMode: RenderMode.Prerender, getPrerenderParams: names },
+  { path: 'topics/:slug', renderMode: RenderMode.Prerender, getPrerenderParams: topics },
+  { path: 'en/topics/:slug', renderMode: RenderMode.Prerender, getPrerenderParams: topics },
   // The first site's links: a page that sends the reader on to the sign.
   { path: 'ayah/:slug', renderMode: RenderMode.Prerender, getPrerenderParams: signs },
   // The home page, /signs, /names, /method and /next, in both languages. Unknown addresses get

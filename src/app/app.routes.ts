@@ -2,13 +2,14 @@ import { Routes } from '@angular/router';
 import { firstPageData } from './core/prerender';
 import { ContentService } from './core/services/content.service';
 import { NamesService } from './core/services/names.service';
+import { TopicsService } from './core/services/topics.service';
 
 /** The site's pages, at their Arabic addresses. */
 const pages: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/portal/portal').then((m) => m.Portal),
-    resolve: { ready: firstPageData(ContentService, NamesService) },
+    resolve: { ready: firstPageData(ContentService, NamesService, TopicsService) },
   },
   {
     path: 'signs',
@@ -29,6 +30,11 @@ const pages: Routes = [
     path: 'names/:slug',
     loadComponent: () => import('./pages/names/name-page').then((m) => m.NamePage),
     resolve: { ready: firstPageData(NamesService) },
+  },
+  {
+    path: 'topics/:slug',
+    loadComponent: () => import('./pages/topic/topic-page').then((m) => m.TopicPage),
+    resolve: { ready: firstPageData(TopicsService) },
   },
   { path: 'method', loadComponent: () => import('./pages/method/method').then((m) => m.Method) },
   {

@@ -8,6 +8,7 @@ import { artSrc } from '../utils/art';
 import { ContentService } from './content.service';
 import { LanguageService } from './language.service';
 import { NamesService } from './names.service';
+import { TopicsService } from './topics.service';
 
 /** Where the site is published. Its path is the production build's base href, in angular.json. */
 export const SITE_URL = 'https://hosam9988.github.io/Huda/';
@@ -134,6 +135,14 @@ export class PageMeta {
           description: meaning ?? t.names.intro,
           type: meaning ? 'article' : 'website',
           ...namesHero,
+        };
+      }
+      case 'topics/:slug': {
+        const topic = untracked(() => this.injector.get(TopicsService)).topic(slug ?? '');
+        return {
+          description: topic ? this.language.pick(topic.summary) : t.portal.intro,
+          type: topic ? 'article' : 'website',
+          ...hero,
         };
       }
       case 'signs':

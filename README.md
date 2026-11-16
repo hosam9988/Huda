@@ -31,16 +31,19 @@ that more components can join it later.
      خالق؟» (Is there a Creator?), «من هو؟» (Who is He?), «هل كلّمنا؟» (Has He spoken to us?), «من
      الذي بلّغنا؟» (Who brought it?), «ماذا يريد منّا؟» (What does He ask of us?), «وماذا عن
      أسئلتي؟» (And my questions?), «ماذا بعد؟» (What next?). The stage the reader is in lists its
-     stops; a finished stage is ticked off; the fifth and sixth are marked «تُكتب قريبًا» until
-     their pages are written. Under the map, the short tour of seven miracles;
+     stops; a finished stage is ticked off. Under the map, the short tour of seven miracles;
   3. the library (the signs and the names); today's sign and name; why the site can be trusted
      (verses from the Mushaf, hadith with their numbers, every fact with its source); and al-An'am
      6:102 with "What next?".
-- **The journey's stops** are the site's own pages: signs and names (`src/app/core/journey.ts`
-  lists them, six to a stage). Reached from the map (`?path=map`), a page shows where it stands
+- **The journey's stops** are the site's own pages (`src/app/core/journey.ts` lists them, six to a
+  stage): signs and names for the first four stages, and for the fifth and sixth twelve pages of
+  their own (`/topics/:slug`, from `public/data/topics.json`): why we were created, the pillars of
+  Islam and of faith, what Allah commands, the Last Day and repentance; then who created Allah, why
+  pain, why Islam, Jesus in Islam, faith and reason, and those the message never reached. A topic
+  page has its texts (verses, and hadith from al-Bukhari or Muslim), its argument in a few parts, a
+  closing thought and its sources (tafsir and hadith pages); it is only ever a stop. Reached from the map (`?path=map`), a page shows where it stands
   («المرحلة ٣، المحطة ١ من ٦», with a step for each stop of its stage) and ends with what it showed
-  in a line and the next stop, in its stage or the next; after the last stop written so far, "What
-  next?". A stop counts as done once read (the read marks kept in the browser), and the map and the
+  in a line and the next stop, in its stage or the next; after the last, "What next?". A stop counts as done once read (the read marks kept in the browser), and the map and the
   card follow from those.
 - **Finding the way:** the header holds the sections, with "Start here" (the journey's map) set
   apart; on a phone they are in a tab bar at the foot of the screen (Home, Start here, Signs, Names,
@@ -164,7 +167,7 @@ Requires Node 22.22+ or 24.15+.
 ```bash
 npm install
 npm start              # http://localhost:4200
-npm run check:content  # checks public/data/ayat.json and names.json
+npm run check:content  # checks public/data/ayat.json, names.json and topics.json
 npm run build          # prerenders every page into dist/huda/browser, laid out for GitHub Pages
 npm run preview        # serves that build as GitHub Pages does: http://localhost:4300/Huda/
 ```
@@ -300,7 +303,16 @@ Typed in [`src/app/core/models/divine-name.ts`](src/app/core/models/divine-name.
 A verse's `ref` reads `{ "ar": "النساء: ٨٥", "en": "An-Nisa 4:85" }`; for several verses,
 `{ "ar": "العلق: ٣–٥", "en": "Al-‘Alaq 96:3–5" }`.
 
-In both files, every `{…}` is `{ "ar": "…", "en": "…" }`, and joined verses use the Mushaf's
+### The journey's topics: [`topics.json`](public/data/topics.json)
+
+Typed in [`src/app/core/models/topic.ts`](src/app/core/models/topic.ts): each topic has a `slug`
+(its address, /topics/…, and its read mark, so never a sign's or a name's), a `mark` (a word in
+Arabic, drawn in a gold ring), `title`, `hook`, `summary`, `evidence` (as a sign's), `sections`
+(`heading` and `paragraphs`), `reflection` and `sources` (`title` in each language and `url`).
+Qur'an words quoted in the paragraphs are written ﴿…﴾ and copied from the Mushaf text, as the
+verses are.
+
+In all three files, every `{…}` is `{ "ar": "…", "en": "…" }`, and joined verses use the Mushaf's
 end-of-verse mark: `…يَلۡتَقِيَانِ ۝١٩ بَيۡنَهُمَا…`.
 
 ### Adding a language
@@ -328,11 +340,12 @@ src/app/
   app.routes.server.ts         the pages prerendered at build time
   core/
     prerender.ts               how the app takes over a prerendered page
-    models/ayah.ts             a sign; divine-name.ts a name; lang.ts the languages; theme.ts the page colours
+    models/ayah.ts             a sign; divine-name.ts a name; topic.ts a topic; lang.ts the languages; theme.ts the page colours
     journey.ts                 the journey: its seven stages, their stops, the reader's progress
     services/content.service   loads ayat.json: fields, signs, the short tour, sign of the day
     services/page-meta.service each page's description, canonical address and Open Graph tags
     services/names.service     loads names.json: the names, name of the day, the previous and next name
+    services/topics.service    loads topics.json: the journey's topics (stages 5 and 6)
     services/reading.service   read marks, where the reader stopped, text size (localStorage)
     services/language.service  the language, from the address; sets <html dir/lang>
     services/language-location puts the language in the address: English pages under /en/
@@ -345,9 +358,11 @@ src/app/
   pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
   pages/ayah                   one sign (/signs/:slug; ?path=map leads on along the journey, ?path=journey along the short tour)
   pages/names                  the names (/names) and one name (/names/:slug)
+  pages/topic                  one topic of the journey (/topics/:slug), styled as a sign's page
   pages/method, next-steps     "Our method" (/method) and "What next?" (/next)
 public/data/ayat.json          the signs
 public/data/names.json         the names
+public/data/topics.json        the journey's topics (stages 5 and 6)
 public/images/                 the images
 scripts/check-content.mjs      the content checker
 scripts/finish-build.mjs       lays the build out for GitHub Pages; 404.html, sitemap.xml, robots.txt

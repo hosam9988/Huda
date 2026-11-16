@@ -1,0 +1,1644 @@
+{
+  "topics": [
+    {
+      "slug": "why-we-were-created",
+      "mark": "الغاية",
+      "title": {
+        "ar": "لماذا خُلقنا؟",
+        "en": "Why were we created?"
+      },
+      "hook": {
+        "ar": "يسأل كل إنسانٍ يومًا: لماذا أنا هنا؟ والقرآن يجيب بجملةٍ واحدة واضحة، تعطي الحياة كلها معناها.",
+        "en": "Every person asks one day: why am I here? The Qur’an answers in one clear sentence, and that sentence gives the whole of life its meaning."
+      },
+      "summary": {
+        "ar": "خُلقنا لنعبد الله وحده، والعبادة في الإسلام كل ما يحبه الله من قولٍ وعمل. والحياة اختبارٌ قصير يعقبه رجوعٌ إليه، فلا شيء فيها عبث.",
+        "en": "We were created to worship Allah alone, and in Islam worship is everything Allah loves, in word and deed. Life is a short test followed by a return to Him, so nothing in it is meaningless."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "وَمَا خَلَقۡتُ ٱلۡجِنَّ وَٱلۡإِنسَ إِلَّا لِيَعۡبُدُونِ",
+          "meaning": {
+            "ar": "«لِيَعۡبُدُونِ»: لغايةٍ سامية، هي أن يعبدوني وحدي دون من سواي.",
+            "en": "“And I did not create the jinn and mankind except to worship Me.”"
+          },
+          "ref": {
+            "ar": "الذاريات: ٥٦",
+            "en": "Adh-Dhariyat 51:56"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "أَفَحَسِبۡتُمۡ أَنَّمَا خَلَقۡنَٰكُمۡ عَبَثࣰا وَأَنَّكُمۡ إِلَيۡنَا لَا تُرۡجَعُونَ",
+          "meaning": {
+            "ar": "«عَبَثࣰا»: مهملين، لا أمر ولا نهي ولا ثواب ولا عقاب. «إِلَيۡنَا لَا تُرۡجَعُونَ»: لا ترجعون إلينا في الآخرة للحساب والجزاء؛ والاستفهام للإنكار: بل سترجعون.",
+            "en": "“Then did you think that We created you uselessly and that to Us you would not be returned?”"
+          },
+          "ref": {
+            "ar": "المؤمنون: ١١٥",
+            "en": "Al-Mu’minun 23:115"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "ٱلَّذِي خَلَقَ ٱلۡمَوۡتَ وَٱلۡحَيَوٰةَ لِيَبۡلُوَكُمۡ أَيُّكُمۡ أَحۡسَنُ عَمَلࣰاۚ وَهُوَ ٱلۡعَزِيزُ ٱلۡغَفُورُ",
+          "meaning": {
+            "ar": "«لِيَبۡلُوَكُمۡ»: ليختبركم. «أَحۡسَنُ عَمَلࣰاۚ»: خيرٌ عملًا وأخلصه.",
+            "en": "“[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving -”"
+          },
+          "ref": {
+            "ar": "الملك: ٢",
+            "en": "Al-Mulk 67:2"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "سؤالٌ لا يجيب عنه العلم وحده",
+            "en": "A question science alone cannot answer"
+          },
+          "paragraphs": [
+            {
+              "ar": "العلم يخبرنا كيف تعمل الأشياء: كيف ينبض القلب، وكيف تدور الأرض، وكيف تنقسم الخلية. لكنه لا يخبرنا لماذا وُجدنا، ولا ما الذي يستحق أن نعيش من أجله. ومن ينكر الخالق لا يملك في النهاية إلا جوابًا واحدًا: أن الحياة صدفةٌ بلا غاية، وأن كل ما نفعله ينتهي بموتنا.",
+              "en": "Science tells us how things work: how the heart beats, how the earth turns, how a cell divides. It does not tell us why we exist, or what is worth living for. Whoever denies the Creator has, in the end, only one answer: that life is an accident without a purpose, and that all we do ends when we die."
+            },
+            {
+              "ar": "أما من رأى في المراحل الأولى من هذه الرحلة أن لهذا الكون خالقًا عليمًا حكيمًا، فالسؤال عنده له جواب؛ لأن الحكيم لا يصنع شيئًا عبثًا. والقرآن يقولها صريحة: ﴿وَمَا خَلَقۡتُ ٱلۡجِنَّ وَٱلۡإِنسَ إِلَّا لِيَعۡبُدُونِ﴾.",
+              "en": "But whoever has seen, in the first stages of this journey, that the universe has a Creator who knows and is wise, has an answer, because the Wise does nothing in vain. The Qur’an says it plainly: “And I did not create the jinn and mankind except to worship Me.”"
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "العبادة أوسع مما تظن",
+            "en": "Worship is wider than you think"
+          },
+          "paragraphs": [
+            {
+              "ar": "ليست العبادة في الإسلام صلاةً في المسجد فحسب. فقد عرّفها ابن تيمية في رسالته «العبودية» بأنها اسمٌ جامع لكل ما يحبه الله ويرضاه من الأقوال والأعمال، الظاهرة والباطنة. فالصدق عبادة، وبرّ الوالدين عبادة، والرحمة بالضعيف عبادة، والعمل الحلال تنفق منه على أهلك عبادة إذا ابتغيت به وجه الله.",
+              "en": "In Islam, worship is not only prayer in a mosque. Ibn Taymiyyah, in his treatise “Al-‘Ubudiyyah”, defined it as a name for everything Allah loves and is pleased with, in words and deeds, outward and inward. Honesty is worship; kindness to one’s parents is worship; mercy to the weak is worship; lawful work that feeds your family is worship when you seek Allah’s pleasure by it."
+            },
+            {
+              "ar": "فالإسلام لا يطلب منك أن تهجر الدنيا، بل أن تعيشها كلها لله: أن يكون لكل يومٍ من أيامك معنى، ولكل عملٍ صالحٍ فيه أجر.",
+              "en": "So Islam does not ask you to leave the world behind, but to live all of it for Allah: so that every day of yours has a meaning, and every good deed in it a reward."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "الحياة اختبار، وللاختبار نهاية",
+            "en": "Life is a test, and the test ends"
+          },
+          "paragraphs": [
+            {
+              "ar": "يخبرنا الله أنه خلق الموت والحياة ليختبرنا أيّنا أحسن عملًا. فكل ما يمرّ بك من نعمةٍ وشدّة جزءٌ من هذا الاختبار: هل تشكر في الرخاء؟ هل تصبر في البلاء؟ هل تعدل حين تقدر على الظلم؟",
+              "en": "Allah tells us that He created death and life to test which of us is best in deed. Everything that comes to you, blessing or hardship, is part of this test: do you give thanks in ease? Are you patient in trial? Are you just when you could do wrong?"
+            },
+            {
+              "ar": "ولكل اختبارٍ يومُ نتيجة. ولهذا يسأل القرآن سؤال إنكار: ﴿أَفَحَسِبۡتُمۡ أَنَّمَا خَلَقۡنَٰكُمۡ عَبَثࣰا وَأَنَّكُمۡ إِلَيۡنَا لَا تُرۡجَعُونَ﴾، أي: بل سترجعون. وعن هذا الرجوع تتحدث محطة «اليوم الآخر» في هذه المرحلة.",
+              "en": "And every test has a day of results. That is why the Qur’an asks, in rebuke: “Then did you think that We created you uselessly and that to Us you would not be returned?” You will be returned. The stop “The Last Day”, in this stage, is about that return."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "لو لم يكن لهذا الكون خالق لكانت الحياة بلا معنى: نولد ونتعب ونموت، ثم لا شيء. لكن الآيات التي رأيتها في هذه الرحلة تشهد أن وراء الكون خالقًا عليمًا حكيمًا، والحكيم لا يخلق عبثًا. فاسأل نفسك بصدق: إن كان لك خالقٌ خلقك لغاية، أفلا تستحق هذه الغاية أن تعرفها وتعيش لها؟ هذا هو الإسلام: أن تعرف لماذا خُلقت، ثم تُسلم وجهك لمن خلقك.",
+        "en": "If the universe had no Creator, life would have no meaning: we are born, we toil, we die, and then nothing. But the signs you have seen on this journey bear witness that behind the universe is a Creator who knows and is wise, and the Wise does not create in vain. So ask yourself honestly: if you have a Creator who made you for a purpose, does that purpose not deserve to be known, and lived for? That is Islam: to know why you were created, and then to submit yourself to the One who created you."
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: الذاريات ٥٦",
+            "en": "Al-Tafsir al-Muyassar on Adh-Dhariyat 51:56 (in Arabic)"
+          },
+          "url": "https://quran.com/51:56/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: المؤمنون ١١٥",
+            "en": "Al-Tafsir al-Muyassar on Al-Mu’minun 23:115 (in Arabic)"
+          },
+          "url": "https://quran.com/23:115/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: الملك ٢",
+            "en": "Al-Tafsir al-Muyassar on Al-Mulk 67:2 (in Arabic)"
+          },
+          "url": "https://quran.com/67:2/tafsirs/ar-tafsir-muyassar"
+        }
+      ]
+    },
+    {
+      "slug": "pillars-of-islam",
+      "mark": "الأركان",
+      "title": {
+        "ar": "أركان الإسلام الخمسة",
+        "en": "The five pillars of Islam"
+      },
+      "hook": {
+        "ar": "ماذا يفعل المسلم ليكون مسلمًا؟ خمسة أركان، أولها كلمة، وكلها في حديثٍ واحد قصير.",
+        "en": "What does a Muslim do to be a Muslim? Five pillars, the first of them a sentence, and all five in one short hadith."
+      },
+      "summary": {
+        "ar": "يقوم الإسلام على خمسة أركان: الشهادتين، والصلاة، والزكاة، والحج، وصوم رمضان. عباداتٌ واضحة يقدر عليها كل أحد، تصل الإنسان بربه كل يوم، وتصله بالناس من حوله.",
+        "en": "Islam stands on five pillars: the declaration of faith, prayer, zakat, the pilgrimage and the fast of Ramadan. Clear acts of worship that anyone can keep, which bind a person to their Lord every day, and to the people around them."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "بُنِيَ الْإِسْلَامُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلَاةِ، وَإِيتَاءِ الزَّكَاةِ، وَالْحَجِّ، وَصَوْمِ رَمَضَانَ",
+          "narrator": {
+            "ar": "عن عبد الله بن عمر رضي الله عنهما",
+            "en": "Narrated by ‘Abdullah ibn ‘Umar"
+          },
+          "meaning": {
+            "ar": "«بُنِيَ الْإِسْلَامُ عَلَى خَمْسٍ»: هذه الخمس له كالأعمدة للبناء، لا يقوم إلا بها. «إِقَامِ الصَّلَاةِ»: أداؤها في أوقاتها كاملةً. «إِيتَاءِ الزَّكَاةِ»: دفعها إلى مستحقيها.",
+            "en": "“Islam is built on five: testifying that there is no deity but Allah and that Muhammad is the Messenger of Allah, establishing the prayer, giving zakat, the pilgrimage, and fasting Ramadan.”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٨)",
+            "en": "Sahih al-Bukhari 8"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "إِنَّنِيٓ أَنَا ٱللَّهُ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدۡنِي وَأَقِمِ ٱلصَّلَوٰةَ لِذِكۡرِيٓ",
+          "meaning": {
+            "ar": "«لَآ إِلَٰهَ إِلَّآ أَنَا۠»: لا معبود بحقٍّ إلا أنا. «لِذِكۡرِيٓ»: لتذكرني فيها.",
+            "en": "“Indeed, I am Allah. There is no deity except Me, so worship Me and establish prayer for My remembrance.”"
+          },
+          "ref": {
+            "ar": "طه: ١٤",
+            "en": "Ta-Ha 20:14"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ كُتِبَ عَلَيۡكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبۡلِكُمۡ لَعَلَّكُمۡ تَتَّقُونَ",
+          "meaning": {
+            "ar": "«كُتِبَ عَلَيۡكُمُ»: فُرض عليكم. «لَعَلَّكُمۡ تَتَّقُونَ»: لتجعلوا بينكم وبين المعاصي وقايةً بطاعة الله وعبادته وحده.",
+            "en": "“O you who have believed, decreed upon you is fasting as it was decreed upon those before you that you may become righteous -”"
+          },
+          "ref": {
+            "ar": "البقرة: ١٨٣",
+            "en": "Al-Baqarah 2:183"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "الشهادتان: الباب",
+            "en": "The declaration of faith: the door"
+          },
+          "paragraphs": [
+            {
+              "ar": "أول الأركان كلمة: أن تشهد أن لا إله إلا الله، وأن محمدًا رسول الله. بها يدخل الإنسان في الإسلام، وكل ما بعدها مبنيٌّ عليها. فالشطر الأول يعني أنه لا معبود بحقٍّ إلا الله: لا صنم ولا بشر ولا نبي ولا ملك. والشطر الثاني يعني أن الطريق إلى عبادته هو ما جاء به رسوله ﷺ، لا ما يخترعه الناس.",
+              "en": "The first pillar is a sentence: to bear witness that there is no deity but Allah, and that Muhammad is the Messenger of Allah. By it a person enters Islam, and everything after it is built on it. Its first half means that nothing deserves worship but Allah: no idol, no human being, no prophet, no angel. Its second half means that the way to worship Him is what His Messenger ﷺ brought, not what people invent."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "الصلاة: لقاءٌ خمس مرات كل يوم",
+            "en": "Prayer: a meeting five times a day"
+          },
+          "paragraphs": [
+            {
+              "ar": "خمس صلواتٍ في اليوم والليلة، دقائق قليلة في كل مرة، يقف فيها المسلم بين يدي ربه بلا وسيط: يقرأ كلامه، ويركع ويسجد له، ويدعوه بحاجته. ولهذا قال الله لموسى عليه السلام: ﴿وَأَقِمِ ٱلصَّلَوٰةَ لِذِكۡرِيٓ﴾؛ فهي التي تذكّرك بالله وسط مشاغل الدنيا كلها، فلا يمرّ عليك نصف يومٍ حتى تعود إليه.",
+              "en": "Five prayers in a day and a night, a few minutes each time, in which a Muslim stands before their Lord with no intermediary: reciting His words, bowing and prostrating to Him, asking Him for what they need. That is why Allah said to Moses, peace be upon him: “establish prayer for My remembrance.” Prayer brings Allah back to mind amid all the busyness of the world; half a day never passes before you return to Him."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "الزكاة والصيام والحج",
+            "en": "Zakat, fasting and the pilgrimage"
+          },
+          "paragraphs": [
+            {
+              "ar": "الزكاة جزءٌ يسير من مال من ملك النصاب، ربع العشر في النقود إذا حال عليها عامٌ كامل، يُعطى للفقراء والمحتاجين، فيطهّر المال من الشحّ والقلب من الأنانية. والصيام شهر رمضان من كل عام، يمسك فيه المسلم عن الطعام والشراب من الفجر إلى غروب الشمس، فيتعلم أن يملك نفسه، ويحسّ بجوع الفقير.",
+              "en": "Zakat is a small share of the wealth of whoever owns more than a set minimum: a fortieth of savings held for a full year, given to the poor and those in need. It cleanses wealth of greed and the heart of selfishness. Fasting is the month of Ramadan each year, when a Muslim keeps from food and drink from dawn until sunset, learning to master themselves and to feel the hunger of the poor."
+            },
+            {
+              "ar": "والحج رحلة العمر إلى مكة، فرضٌ مرةً واحدة على من استطاع إليه سبيلًا. يقف فيه الناس من كل لونٍ ولغة بلباسٍ واحدٍ بسيط، لا يُعرف فيه الغني من الفقير، يدعون ربًّا واحدًا.",
+              "en": "The pilgrimage is the journey of a lifetime to Mecca, required once of whoever is able to make it. People of every colour and language stand there in the same simple clothing, the rich not told apart from the poor, calling on one Lord."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "تأمّل كيف تبني هذه الأركان إنسانًا كاملًا: كلمةٌ تصحّح ما في قلبه، وصلاةٌ تصله بربه كل يوم، وزكاةٌ تصله بالفقير، وصيامٌ يقوّي إرادته، وحجٌّ يذكّره أن الناس سواسية. ليست طقوسًا ثقيلة ولا أسرارًا يحتكرها رجال دين، بل نظام حياةٍ واضح يقدر عليه كل أحد. ومن ذا الذي يعرف ما يُصلح الإنسان أكثر من الذي خلقه؟",
+        "en": "Consider how these pillars build a whole person: a sentence that sets the heart right, a prayer that joins them to their Lord every day, zakat that joins them to the poor, a fast that strengthens the will, and a pilgrimage that reminds them all people are equal. They are not heavy rites, nor secrets held by a priesthood, but a clear way of life that anyone can keep. And who knows better what is good for people than the One who created them?"
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "صحيح البخاري (٨)",
+            "en": "Sahih al-Bukhari 8"
+          },
+          "url": "https://sunnah.com/bukhari:8"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: طه ١٤",
+            "en": "Al-Tafsir al-Muyassar on Ta-Ha 20:14 (in Arabic)"
+          },
+          "url": "https://quran.com/20:14/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: البقرة ١٨٣",
+            "en": "Al-Tafsir al-Muyassar on Al-Baqarah 2:183 (in Arabic)"
+          },
+          "url": "https://quran.com/2:183/tafsirs/ar-tafsir-muyassar"
+        }
+      ]
+    },
+    {
+      "slug": "pillars-of-faith",
+      "mark": "الإيمان",
+      "title": {
+        "ar": "أركان الإيمان، والإحسان",
+        "en": "The pillars of faith, and excellence"
+      },
+      "hook": {
+        "ar": "الإسلام أعمالٌ تُرى، ووراءها إيمانٌ في القلب. فبماذا يؤمن المسلم؟ وما أعلى درجات الدين؟",
+        "en": "Islam is deeds that can be seen, and behind them is faith in the heart. What does a Muslim believe? And what is the highest level of the religion?"
+      },
+      "summary": {
+        "ar": "يؤمن المسلم بالله، وملائكته، وكتبه، ورسله، واليوم الآخر، والقدر خيره وشره. وأعلى درجات الدين الإحسان: أن تعبد الله كأنك تراه.",
+        "en": "A Muslim believes in Allah, His angels, His books, His messengers, the Last Day, and the decree, its good and its bad. The highest level of the religion is excellence: to worship Allah as though you see Him."
+      },
+      "evidence": [
+        {
+          "kind": "hadith",
+          "text": "فَأَخْبِرْنِي عَنِ الْإِيمَانِ. قَالَ: أَنْ تُؤْمِنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ وَالْيَوْمِ الْآخِرِ، وَتُؤْمِنَ بِالْقَدَرِ خَيْرِهِ وَشَرِّهِ. قَالَ: صَدَقْتَ. قَالَ: فَأَخْبِرْنِي عَنِ الْإِحْسَانِ. قَالَ: أَنْ تَعْبُدَ اللَّهَ كَأَنَّكَ تَرَاهُ، فَإِنْ لَمْ تَكُنْ تَرَاهُ فَإِنَّهُ يَرَاكَ",
+          "narrator": {
+            "ar": "عن عمر بن الخطاب رضي الله عنه",
+            "en": "Narrated by ‘Umar ibn al-Khattab"
+          },
+          "meaning": {
+            "ar": "السائل جبريل عليه السلام، جاء في صورة رجل. «بِالْقَدَرِ»: أن الله علم كل شيء وكتبه وشاءه وخلقه. «الْإِحْسَانِ»: إتقان العبادة ومراقبة الله فيها.",
+            "en": "“‘Tell me about faith.’ He said: ‘That you believe in Allah, His angels, His books, His messengers and the Last Day, and that you believe in the decree, its good and its bad.’ He said: ‘You have spoken truly.’ He said: ‘Then tell me about excellence.’ He said: ‘That you worship Allah as though you see Him; for though you do not see Him, He sees you.’”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (٨)",
+            "en": "Sahih Muslim 8"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "ءَامَنَ ٱلرَّسُولُ بِمَآ أُنزِلَ إِلَيۡهِ مِن رَّبِّهِۦ وَٱلۡمُؤۡمِنُونَۚ كُلٌّ ءَامَنَ بِٱللَّهِ وَمَلَٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ لَا نُفَرِّقُ بَيۡنَ أَحَدࣲ مِّن رُّسُلِهِۦۚ وَقَالُواْ سَمِعۡنَا وَأَطَعۡنَاۖ غُفۡرَانَكَ رَبَّنَا وَإِلَيۡكَ ٱلۡمَصِيرُ",
+          "meaning": {
+            "ar": "«لَا نُفَرِّقُ بَيۡنَ أَحَدࣲ مِّن رُّسُلِهِۦۚ»: لا نؤمن ببعضهم ونكفر ببعض، بل نؤمن بهم جميعًا. «وَإِلَيۡكَ ٱلۡمَصِيرُ»: إليك المرجع يوم القيامة.",
+            "en": "“The Messenger has believed in what was revealed to him from his Lord, and [so have] the believers. All of them have believed in Allah and His angels and His books and His messengers, [saying], ‘We make no distinction between any of His messengers.’ And they say, ‘We hear and we obey. [We seek] Your forgiveness, our Lord, and to You is the [final] destination.’”"
+          },
+          "ref": {
+            "ar": "البقرة: ٢٨٥",
+            "en": "Al-Baqarah 2:285"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "سائلٌ غريب",
+            "en": "A stranger’s questions"
+          },
+          "paragraphs": [
+            {
+              "ar": "يروي عمر بن الخطاب أنهم كانوا عند النبي ﷺ ذات يوم، إذ دخل عليهم رجلٌ شديد بياض الثياب، شديد سواد الشعر، لا يُرى عليه أثر السفر، ولا يعرفه منهم أحد. جلس إلى النبي ﷺ وسأله عن الإسلام، ثم عن الإيمان، ثم عن الإحسان، ثم مضى. فقال النبي ﷺ لعمر: «فَإِنَّهُ جِبْرِيلُ أَتَاكُمْ يُعَلِّمُكُمْ دِينَكُمْ». فهذا الحديث خلاصة الدين كله في ثلاث درجات.",
+              "en": "‘Umar ibn al-Khattab tells that one day, as they sat with the Prophet ﷺ, a man came in with very white clothes and very black hair. No sign of travel was on him, and none of them knew him. He sat before the Prophet ﷺ and asked him about Islam, then about faith, then about excellence, and then he left. The Prophet ﷺ told ‘Umar: “It was Jibril; he came to teach you your religion.” This hadith is the whole religion in three levels."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "ستة أركان، كلٌّ منها جواب",
+            "en": "Six pillars, each an answer"
+          },
+          "paragraphs": [
+            {
+              "ar": "الإيمان بالله: أنه الخالق الواحد، المستحق وحده للعبادة، الموصوف بالأسماء الحسنى التي مرّت بك. والإيمان بالملائكة: خلقٌ من خلق الله لا نراهم، يطيعونه ولا يعصونه، منهم جبريل الذي نزل بالوحي. والإيمان بالكتب: التوراة والإنجيل والزبور وصحف إبراهيم، وآخرها القرآن، وهو الوحيد الذي تكفّل الله بحفظه.",
+              "en": "Faith in Allah: that He is the One Creator, alone deserving of worship, described by the Beautiful Names you have met. Faith in the angels: beings Allah created whom we do not see, who obey Him and never disobey, among them Jibril, who brought the revelation. Faith in the books: the Torah, the Gospel, the Psalms and the scriptures of Abraham, and the last of them, the Qur’an, the only one Allah undertook to guard Himself."
+            },
+            {
+              "ar": "والإيمان بالرسل: من نوح إلى إبراهيم وموسى وعيسى، وخاتمهم محمد ﷺ، جاؤوا جميعًا برسالةٍ واحدة. والإيمان باليوم الآخر: أن الناس يُبعثون ويُحاسبون. والإيمان بالقدر: أن الله علم كل شيء قبل أن يكون وكتبه، وأن الإنسان مع ذلك يختار ويُسأل عن اختياره. فمن آمن بالقدر عمل بجدّ، ثم رضي بما يأتيه، فلا يطغى في النعمة ولا ييأس في المصيبة.",
+              "en": "Faith in the messengers: from Noah to Abraham, Moses and Jesus, and the last of them, Muhammad ﷺ, all of whom brought one message. Faith in the Last Day: that people will be raised and held to account. Faith in the decree: that Allah knew everything before it came to be and wrote it, and that a person still chooses and is answerable for the choice. Whoever believes in the decree works hard and then accepts what comes, neither arrogant in blessing nor despairing in loss."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "الإحسان: أن تعبد الله كأنك تراه",
+            "en": "Excellence: to worship Allah as though you see Him"
+          },
+          "paragraphs": [
+            {
+              "ar": "هذه أعلى درجات الدين. أن تصلّي كأنك ترى الله أمامك، فإن لم تبلغ ذلك فاعلم أنه يراك. ومن عاش بهذا اليقين تغيّرت حياته كلها: يصدق حين لا يراه أحد، ويُتقن عمله وإن لم يراقبه أحد، ويترك الظلم وإن قدر عليه؛ لأنه يعلم أن الله يراه.",
+              "en": "This is the highest level of the religion: to pray as if you saw Allah before you, and, if you cannot reach that, to know that He sees you. Whoever lives with that certainty is changed in everything: honest when no one is watching, careful in their work when no one checks it, keeping from wrong even when they could get away with it, because they know Allah sees them."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "هذه العقيدة لا تطلب منك أن تؤمن بما يناقض العقل: إلهٌ واحد لا شريك له، أرسل رسلًا برسالةٍ واحدة، وأنزل كتبًا آخرها محفوظ بين يديك، ويجزي كل نفسٍ بما عملت. عقيدةٌ واضحة يفهمها الطفل ويطمئن إليها العالِم. ثم تأتي ذروتها: أن تعيش وأنت تعلم أن الله يراك. أيّ نظامٍ آخر يصنع من الإنسان رقيبًا على نفسه هكذا؟",
+        "en": "This creed does not ask you to believe anything against reason: one deity with no partner, who sent messengers with one message, revealed books of which the last is kept safe in your hands, and repays every soul for what it did. A creed a child can understand and a scholar can rest in. And then its peak: to live knowing that Allah sees you. What other way of life makes a person their own watchman like this?"
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "صحيح مسلم (٨)",
+            "en": "Sahih Muslim 8"
+          },
+          "url": "https://sunnah.com/muslim:8a"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: البقرة ٢٨٥",
+            "en": "Al-Tafsir al-Muyassar on Al-Baqarah 2:285 (in Arabic)"
+          },
+          "url": "https://quran.com/2:285/tafsirs/ar-tafsir-muyassar"
+        }
+      ]
+    },
+    {
+      "slug": "what-he-commands",
+      "mark": "الأخلاق",
+      "title": {
+        "ar": "ماذا يأمر، وعمّ ينهى؟",
+        "en": "What does He command, and what does He forbid?"
+      },
+      "hook": {
+        "ar": "يظن بعض الناس أن الدين طقوسٌ تُؤدّى في المسجد ثم تنتهي. لكن آيةً واحدة تكفي لترى ما يريده الله من الناس في تعاملهم.",
+        "en": "Some people think religion is rites performed in a mosque and then over. But one verse is enough to show what Allah wants from people in how they treat each other."
+      },
+      "summary": {
+        "ar": "يأمر الله بالعدل والإحسان وصلة الأقارب، وينهى عن الفحشاء والمنكر والظلم، ويقرن عبادته وحده بالإحسان إلى الوالدين. وخيار الناس عند النبي ﷺ أحسنهم أخلاقًا.",
+        "en": "Allah commands justice, kindness and care for one’s relatives, and forbids indecency, wrongdoing and oppression. He joins worshipping Him alone with kindness to parents. And the best of people, the Prophet ﷺ said, are the best in character."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "إِنَّ ٱللَّهَ يَأۡمُرُ بِٱلۡعَدۡلِ وَٱلۡإِحۡسَٰنِ وَإِيتَآيِٕ ذِي ٱلۡقُرۡبَىٰ وَيَنۡهَىٰ عَنِ ٱلۡفَحۡشَآءِ وَٱلۡمُنكَرِ وَٱلۡبَغۡيِۚ يَعِظُكُمۡ لَعَلَّكُمۡ تَذَكَّرُونَ",
+          "meaning": {
+            "ar": "«بِٱلۡعَدۡلِ»: بالإنصاف، وإعطاء كل ذي حقٍّ حقه. «وَٱلۡإِحۡسَٰنِ»: في عبادة الله، وإلى الخلق في القول والفعل. «ٱلۡفَحۡشَآءِ»: كل ما قبُح قولًا أو عملًا. «وَٱلۡبَغۡيِۚ»: الظلم والتعدي على الناس.",
+            "en": "“Indeed, Allah orders justice and good conduct and giving to relatives and forbids immorality and bad conduct and oppression. He admonishes you that perhaps you will be reminded.”"
+          },
+          "ref": {
+            "ar": "النحل: ٩٠",
+            "en": "An-Nahl 16:90"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "وَقَضَىٰ رَبُّكَ أَلَّا تَعۡبُدُوٓاْ إِلَّآ إِيَّاهُ وَبِٱلۡوَٰلِدَيۡنِ إِحۡسَٰنًاۚ إِمَّا يَبۡلُغَنَّ عِندَكَ ٱلۡكِبَرَ أَحَدُهُمَآ أَوۡ كِلَاهُمَا فَلَا تَقُل لَّهُمَآ أُفࣲّ وَلَا تَنۡهَرۡهُمَا وَقُل لَّهُمَا قَوۡلࣰا كَرِيمࣰا",
+          "meaning": {
+            "ar": "«وَقَضَىٰ رَبُّكَ»: أمر وألزم. «أُفࣲّ»: كلمة تضجّر، وهي أدنى القول السيئ. «وَلَا تَنۡهَرۡهُمَا»: لا تزجرهما. «قَوۡلࣰا كَرِيمࣰا»: لينًا لطيفًا.",
+            "en": "“And your Lord has decreed that you not worship except Him, and to parents, good treatment. Whether one or both of them reach old age [while] with you, say not to them [so much as], ‘uff,’ and do not repel them but speak to them a noble word.”"
+          },
+          "ref": {
+            "ar": "الإسراء: ٢٣",
+            "en": "Al-Isra 17:23"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "لَمْ يَكُنْ رَسُولُ اللَّهِ ﷺ فَاحِشًا وَلَا مُتَفَحِّشًا، وَإِنَّهُ كَانَ يَقُولُ: إِنَّ خِيَارَكُمْ أَحَاسِنُكُمْ أَخْلَاقًا",
+          "narrator": {
+            "ar": "عن عبد الله بن عمرو رضي الله عنهما",
+            "en": "Narrated by ‘Abdullah ibn ‘Amr"
+          },
+          "meaning": {
+            "ar": "«فَاحِشًا»: بذيئًا في قوله أو فعله بطبعه. «مُتَفَحِّشًا»: متكلّفًا للفحش. «خِيَارَكُمْ»: أفضلكم.",
+            "en": "“The Messenger of Allah ﷺ was neither coarse nor given to coarseness, and he used to say: ‘The best of you are those best in character.’”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٦٠٣٥)",
+            "en": "Sahih al-Bukhari 6035"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "العدل مع كل أحد",
+            "en": "Justice towards everyone"
+          },
+          "paragraphs": [
+            {
+              "ar": "أول ما في الآية: ﴿إِنَّ ٱللَّهَ يَأۡمُرُ بِٱلۡعَدۡلِ﴾. عدلٌ مع الله بأن تعبده وحده، وعدلٌ مع الناس بأن تعطي كل ذي حقٍّ حقه: في البيع والشهادة والحكم، مع القريب والبعيد، ومع من تحب ومن تكره. ثم يأتي الإحسان، وهو فوق العدل: أن تعطي أكثر مما يجب عليك، وتعفو عمّن ظلمك.",
+              "en": "The verse begins: “Indeed, Allah orders justice.” Justice towards Allah, by worshipping Him alone; justice towards people, by giving everyone their due: in trade, in testimony and in judgement, to the near and the far, to those you love and those you dislike. Then comes kindness, which is above justice: to give more than you owe, and to forgive whoever wronged you."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "البيت أولًا",
+            "en": "Home first"
+          },
+          "paragraphs": [
+            {
+              "ar": "في آية الإسراء يقرن الله الأمر بعبادته وحده بالإحسان إلى الوالدين، ثم ينزل إلى أدقّ التفاصيل: إذا كبرا عندك فلا تقل لهما حتى كلمة التضجّر «أفّ». هكذا يربّي الإسلام الإنسان: لا يكفي أن تكون صالحًا في المسجد، بل في بيتك أولًا، مع أضعف الناس حولك وأحوجهم إليك.",
+              "en": "In the verse of al-Isra, Allah joins the command to worship Him alone with kindness to parents, and then goes into the finest detail: if they grow old in your care, do not say to them even “uff”, a sigh of impatience. That is how Islam shapes a person: it is not enough to be good in the mosque; you must be good at home first, with the weakest of the people around you and those who need you most."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "الخُلق هو الميزان",
+            "en": "Character is the measure"
+          },
+          "paragraphs": [
+            {
+              "ar": "لم يقل النبي ﷺ إن خياركم أكثركم مالًا أو علمًا أو نسبًا، بل «أَحَاسِنُكُمْ أَخْلَاقًا». وكان هو أول من عاش ذلك: لم يكن بذيء القول ولا متكلّفًا للفحش، يشهد له بذلك من عاشره. فالدين الذي جاء به ليس شعائر منفصلة عن الحياة، بل صدقٌ في الحديث، ووفاءٌ بالعهد، ورحمةٌ بالضعيف، وحفظٌ للسان واليد عن أذى الناس.",
+              "en": "The Prophet ﷺ did not say the best of you are those with the most wealth, learning or lineage, but “those best in character.” And he lived it first: he was neither coarse in speech nor given to coarseness, as those who lived with him testify. The religion he brought is not rites cut off from life, but truth in speech, keeping one’s word, mercy to the weak, and keeping tongue and hand from harming people."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "ضع هذه الأوامر أمامك: العدل، والإحسان، وصلة الرحم، وبرّ الوالدين، وترك الفحش والظلم. أيّ عقلٍ سليم يعترض عليها؟ إنها ما تعرفه فطرتك من قبل أن تقرأ عنه. وهذا ما ينتظره المرء من دين الخالق: أن يأمر بما يعرف القلب أنه حق، وأن يجعل خيار الناس أحسنهم خلقًا لا أكثرهم مالًا.",
+        "en": "Set these commands before you: justice, kindness, care for relatives, honouring parents, keeping away from indecency and oppression. What sound mind objects to them? They are what your own nature knew before you read of them. And this is what one expects from the religion of the Creator: that it commands what the heart knows to be right, and counts as the best of people those best in character, not those richest in wealth."
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: النحل ٩٠",
+            "en": "Al-Tafsir al-Muyassar on An-Nahl 16:90 (in Arabic)"
+          },
+          "url": "https://quran.com/16:90/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: الإسراء ٢٣",
+            "en": "Al-Tafsir al-Muyassar on Al-Isra 17:23 (in Arabic)"
+          },
+          "url": "https://quran.com/17:23/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "صحيح البخاري (٦٠٣٥)",
+            "en": "Sahih al-Bukhari 6035"
+          },
+          "url": "https://sunnah.com/bukhari:6035"
+        }
+      ]
+    },
+    {
+      "slug": "the-last-day",
+      "mark": "الآخرة",
+      "title": {
+        "ar": "اليوم الآخر",
+        "en": "The Last Day"
+      },
+      "hook": {
+        "ar": "ظالمٌ مات ولم يُحاسَب، ومظلومٌ مات ولم يُنصَف. هل ينتهي الأمر هنا؟",
+        "en": "A tyrant died without ever being called to account; someone he wronged died without ever seeing justice. Does it end there?"
+      },
+      "summary": {
+        "ar": "الذي خلقنا أول مرة قادرٌ على أن يعيدنا، وعدله يأبى أن يستوي المحسن والمسيء. لذلك يوقن المسلم بيومٍ يُجزى فيه كل إنسان بمثقال ذرّة من خيرٍ أو شر.",
+        "en": "The One who created us the first time is able to bring us back, and His justice will not let the good and the corrupt be treated alike. So a Muslim is certain of a day when every person is repaid for an atom’s weight of good or evil."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "وَضَرَبَ لَنَا مَثَلࣰا وَنَسِيَ خَلۡقَهُۥۖ قَالَ مَن يُحۡيِ ٱلۡعِظَٰمَ وَهِيَ رَمِيمࣱ ۝٧٨ قُلۡ يُحۡيِيهَا ٱلَّذِيٓ أَنشَأَهَآ أَوَّلَ مَرَّةࣲۖ وَهُوَ بِكُلِّ خَلۡقٍ عَلِيمٌ",
+          "meaning": {
+            "ar": "«وَنَسِيَ خَلۡقَهُۥۖ»: نسي أن الله خلقه من العدم. «رَمِيمࣱ»: بالية متفتّتة. «أَنشَأَهَآ أَوَّلَ مَرَّةࣲۖ»: خلقها أول مرة، فإعادتها أهون.",
+            "en": "“And he presents for Us an example and forgets his [own] creation. He says, ‘Who will give life to bones while they are disintegrated?’ Say, ‘He will give them life who produced them the first time; and He is, of all creation, Knowing.’”"
+          },
+          "ref": {
+            "ar": "يس: ٧٨–٧٩",
+            "en": "Ya-Sin 36:78–79"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "فَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٍ خَيۡرࣰا يَرَهُۥ ۝٧ وَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةࣲ شَرࣰّا يَرَهُۥ",
+          "meaning": {
+            "ar": "«مِثۡقَالَ ذَرَّةٍ»: وزن نملةٍ صغيرة. «يَرَهُۥ»: يرى ثوابه أو عقابه في الآخرة.",
+            "en": "“So whoever does an atom's weight of good will see it, And whoever does an atom's weight of evil will see it.”"
+          },
+          "ref": {
+            "ar": "الزلزلة: ٧–٨",
+            "en": "Az-Zalzalah 99:7–8"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "أَمۡ نَجۡعَلُ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ كَٱلۡمُفۡسِدِينَ فِي ٱلۡأَرۡضِ أَمۡ نَجۡعَلُ ٱلۡمُتَّقِينَ كَٱلۡفُجَّارِ",
+          "meaning": {
+            "ar": "استفهامٌ للإنكار: لا يليق بحكمة الله أن يجعل المؤمنين المصلحين كالمفسدين، ولا المتقين كالفجّار؛ فلا يستوون عنده.",
+            "en": "“Or should we treat those who believe and do righteous deeds like corrupters in the land? Or should We treat those who fear Allah like the wicked?”"
+          },
+          "ref": {
+            "ar": "ص: ٢٨",
+            "en": "Sad 38:28"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "من يحيي العظام؟",
+            "en": "Who will give life to bones?"
+          },
+          "paragraphs": [
+            {
+              "ar": "ذكر المفسرون، ومنهم ابن كثير، أن رجلًا من المشركين جاء إلى النبي ﷺ يحمل عظمًا باليًا، يفتّته بيده ويسأل: من يحيي هذا؟ فنزل الجواب: ﴿قُلۡ يُحۡيِيهَا ٱلَّذِيٓ أَنشَأَهَآ أَوَّلَ مَرَّةࣲۖ﴾. وهو جوابٌ يفهمه كل عاقل: أنت لم تكن شيئًا، ثم صرت إنسانًا يسمع ويبصر ويفكر. والذي صنعك من لا شيء أقدر على أن يعيدك مما بقي منك.",
+              "en": "The commentators, Ibn Kathir among them, relate that a man among the idolaters came to the Prophet ﷺ with a crumbling bone, breaking it in his hand and asking: who will bring this back to life? The answer came: “Say, ‘He will give them life who produced them the first time.’” Any thinking person understands it: you were nothing, then you became a human being who hears, sees and thinks. The One who made you from nothing is surely able to bring you back from what remains of you."
+            },
+            {
+              "ar": "وقد رأيت في المرحلة الأولى من هذه الرحلة، في محطة «إن الله فالقُ الحبّ والنوى»، كيف يُخرج الله الحياة من حبّةٍ تبدو ميتة. وترى عيناك كل عامٍ أرضًا يابسة تحيا بعد موتها. فالبعث ليس أمرًا غريبًا عن هذا الكون.",
+              "en": "In the first stage of this journey, at the stop “Allah Is the Cleaver of Grain and Date Stones”, you saw how Allah brings life out of a seed that looks dead. And every year your own eyes see dry earth come to life after its death. Resurrection is not foreign to this universe."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "عدلٌ لا يضيع فيه شيء",
+            "en": "A justice in which nothing is lost"
+          },
+          "paragraphs": [
+            {
+              "ar": "لو كانت الحياة الدنيا هي كل شيء، لكان الظالم الذي مات في قصره رابحًا، والمظلوم الذي مات في سجنه خاسرًا، ولما كان للصدق والتضحية معنى. والقرآن ينكر هذا بأشدّ عبارة: ﴿أَمۡ نَجۡعَلُ ٱلۡمُتَّقِينَ كَٱلۡفُجَّارِ﴾؟ فالعدل الذي في قلبك، والذي يغضب حين يرى الظلم، يشهد أن هناك يومًا تُردّ فيه الحقوق.",
+              "en": "If this life were everything, the tyrant who died in his palace would have won, the victim who died in his prison would have lost, and honesty and sacrifice would mean nothing. The Qur’an rejects this in the strongest words: “Or should We treat those who fear Allah like the wicked?” The sense of justice in your heart, which rises in anger at oppression, testifies that there is a day when every right is restored."
+            },
+            {
+              "ar": "وفي ذلك اليوم لا يضيع شيء: ﴿فَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٍ خَيۡرࣰا يَرَهُۥ﴾. كل ابتسامةٍ صادقة، وكل صبرٍ على ألم، وكل ظلمٍ ظنّ صاحبه أنه نجا به.",
+              "en": "And on that day nothing is lost: “So whoever does an atom’s weight of good will see it.” Every sincere smile, every patience in pain, and every wrong whose doer thought he had got away with it."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "إيمانٌ يغيّر الحياة",
+            "en": "A belief that changes life"
+          },
+          "paragraphs": [
+            {
+              "ar": "من أيقن بالآخرة لم تعد الدنيا عنده نهاية المطاف: يصبر على ما فاته منها، ولا يبيع دينه بشيءٍ من متاعها، ويعمل الخير وإن لم يشكره أحد. ويعلم أن الموت ليس فناءً بل انتقال، وأن من فقدهم من المؤمنين لم يضيعوا.",
+              "en": "Whoever is certain of the Hereafter no longer sees this world as the end of the road. They are patient over what they miss of it, they do not sell their faith for any of its goods, and they do good even when no one thanks them. They know that death is not an ending but a passing on, and that the believers they have lost are not lost for ever."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "في القلب يقينٌ لا يُطفأ بأن الظلم لا ينبغي أن يمرّ، وأن الخير لا ينبغي أن يضيع. والقرآن يجيب هذا اليقين بيومٍ يُوزن فيه مثقال الذرّة. ومن خلقك أول مرة لا يعجزه أن يعيدك. فالسؤال الحقيقي ليس: هل سنُبعث؟ بل: بماذا سنلقاه حين نُبعث؟",
+        "en": "There is a certainty in the heart that will not die: that oppression ought not to pass, and good ought not to be lost. The Qur’an answers that certainty with a day on which an atom’s weight is weighed. The One who created you the first time is not unable to bring you back. So the real question is not: will we be raised? It is: with what will we meet Him when we are?"
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "تفسير ابن كثير: يس ٧٧",
+            "en": "Tafsir Ibn Kathir on Ya-Sin 36:77 (in Arabic)"
+          },
+          "url": "https://quran.com/36:77/tafsirs/ar-tafsir-ibn-kathir"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: يس ٧٨",
+            "en": "Al-Tafsir al-Muyassar on Ya-Sin 36:78 (in Arabic)"
+          },
+          "url": "https://quran.com/36:78/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: الزلزلة ٧",
+            "en": "Al-Tafsir al-Muyassar on Az-Zalzalah 99:7 (in Arabic)"
+          },
+          "url": "https://quran.com/99:7/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: ص ٢٨",
+            "en": "Al-Tafsir al-Muyassar on Sad 38:28 (in Arabic)"
+          },
+          "url": "https://quran.com/38:28/tafsirs/ar-tafsir-muyassar"
+        }
+      ]
+    },
+    {
+      "slug": "the-door-is-open",
+      "mark": "التوبة",
+      "title": {
+        "ar": "الباب مفتوح",
+        "en": "The door is open"
+      },
+      "hook": {
+        "ar": "ربما تقول: فات الأوان، وذنوبي كثيرة. فاسمع ما يقوله الله لمن أسرف على نفسه.",
+        "en": "Perhaps you are thinking: it is too late, my sins are too many. Then listen to what Allah says to those who have wronged themselves."
+      },
+      "summary": {
+        "ar": "لا ذنب أكبر من رحمة الله: من تاب تاب الله عليه، ومن أسلم محا الإسلام ما كان قبله، بل يبدّل الله سيئات التائب حسنات. والباب مفتوحٌ ليلًا ونهارًا.",
+        "en": "No sin is greater than Allah’s mercy. Whoever repents, Allah turns to them; whoever accepts Islam, Islam wipes out what came before; Allah even replaces the penitent’s bad deeds with good. And the door is open night and day."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ",
+          "meaning": {
+            "ar": "«أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ»: تمادَوا في المعاصي. «لَا تَقۡنَطُواْ»: لا تيأسوا. «يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ»: لمن تاب منها ورجع عنها، مهما كانت.",
+            "en": "“Say, ‘O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.’”"
+          },
+          "ref": {
+            "ar": "الزمر: ٥٣",
+            "en": "Az-Zumar 39:53"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "إِلَّا مَن تَابَ وَءَامَنَ وَعَمِلَ عَمَلࣰا صَٰلِحࣰا فَأُوْلَٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتࣲۗ وَكَانَ ٱللَّهُ غَفُورࣰا رَّحِيمࣰا",
+          "meaning": {
+            "ar": "«يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتࣲۗ»: يمحو ما سلف من سيئاتهم، ويجعل مكانها حسنات بتوبتهم وعملهم الصالح.",
+            "en": "“Except for those who repent, believe and do righteous work. For them Allah will replace their evil deeds with good. And ever is Allah Forgiving and Merciful.”"
+          },
+          "ref": {
+            "ar": "الفرقان: ٧٠",
+            "en": "Al-Furqan 25:70"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "أَمَا عَلِمْتَ أَنَّ الْإِسْلَامَ يَهْدِمُ مَا كَانَ قَبْلَهُ",
+          "narrator": {
+            "ar": "عن عمرو بن العاص رضي الله عنه",
+            "en": "Narrated by ‘Amr ibn al-‘As"
+          },
+          "meaning": {
+            "ar": "قالها النبي ﷺ لعمرو حين أراد أن يشترط أن يُغفر له قبل أن يُسلم. «يَهْدِمُ»: يمحو، فلا يبقى من ذنوب ما قبل الإسلام شيء.",
+            "en": "“Do you not know that Islam wipes out what came before it?”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (١٢١)",
+            "en": "Sahih Muslim 121"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "إِنَّ اللَّهَ عَزَّ وَجَلَّ يَبْسُطُ يَدَهُ بِاللَّيْلِ لِيَتُوبَ مُسِيءُ النَّهَارِ، وَيَبْسُطُ يَدَهُ بِالنَّهَارِ لِيَتُوبَ مُسِيءُ اللَّيْلِ، حَتَّى تَطْلُعَ الشَّمْسُ مِنْ مَغْرِبِهَا",
+          "narrator": {
+            "ar": "عن أبي موسى الأشعري رضي الله عنه",
+            "en": "Narrated by Abu Musa al-Ash‘ari"
+          },
+          "meaning": {
+            "ar": "«يَبْسُطُ يَدَهُ»: يقبل التوبة ويدعو إليها. «حَتَّى تَطْلُعَ الشَّمْسُ مِنْ مَغْرِبِهَا»: إلى قرب قيام الساعة، حين تُغلق التوبة.",
+            "en": "“Allah, the Mighty and Majestic, stretches out His hand by night so that whoever did wrong by day may repent, and stretches out His hand by day so that whoever did wrong by night may repent, until the sun rises from the west.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (٢٧٥٩)",
+            "en": "Sahih Muslim 2759"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "رجلٌ كان أشدّ الناس عداوة",
+            "en": "The man who had been the bitterest enemy"
+          },
+          "paragraphs": [
+            {
+              "ar": "كان عمرو بن العاص من أشدّ الناس عداوةً للنبي ﷺ، حتى قال عن نفسه إنه لم يكن أحدٌ أبغض إليه منه. فلما دخل الإسلام قلبه أتى النبي ﷺ ليبايعه، فبسط النبي ﷺ يمينه، فقبض عمرو يده. قال: ما لك يا عمرو؟ قال: أردت أن أشترط أن يُغفر لي. فقال ﷺ: «أَمَا عَلِمْتَ أَنَّ الْإِسْلَامَ يَهْدِمُ مَا كَانَ قَبْلَهُ».",
+              "en": "‘Amr ibn al-‘As had been among the Prophet’s ﷺ fiercest enemies; he said of himself that no one had been more hateful to him. When Islam entered his heart, he came to the Prophet ﷺ to pledge himself. The Prophet ﷺ stretched out his right hand, and ‘Amr drew his own back. “What is it, ‘Amr?” He said: “I want to make a condition: that I am forgiven.” The Prophet ﷺ said: “Do you not know that Islam wipes out what came before it?”"
+            },
+            {
+              "ar": "فمن أسلم بدأ صفحةً بيضاء، مهما كان ماضيه. لا يُطلب منه أن يعترف بذنوبه لأحد، ولا أن يدفع ثمنًا لمغفرتها.",
+              "en": "Whoever accepts Islam starts on a clean page, whatever their past. They are not asked to confess their sins to anyone, or to pay any price for their forgiveness."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "يدٌ مبسوطة بالليل والنهار",
+            "en": "A hand stretched out night and day"
+          },
+          "paragraphs": [
+            {
+              "ar": "والمسلم نفسه يخطئ، فلا يغلق الله الباب في وجهه: يبسط يده بالليل ليتوب من أساء بالنهار، وبالنهار ليتوب من أساء بالليل. والتوبة لا تحتاج إلى وسيط ولا مكانٍ مخصوص: أن تترك الذنب، وتندم عليه، وتعزم ألّا تعود إليه، وتردّ الحق إلى صاحبه إن كان فيه حقٌّ لأحد. ثم يقول الله: ﴿فَأُوْلَٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتࣲۗ﴾.",
+              "en": "A Muslim, too, does wrong, and Allah does not shut the door on them: He stretches out His hand by night for whoever did wrong by day to repent, and by day for whoever did wrong by night. Repentance needs no intermediary and no special place: to leave the sin, to regret it, to resolve not to return to it, and to give back what is owed if the sin took someone’s right. Then Allah says: “For them Allah will replace their evil deeds with good.”"
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "بهذه المحطة تتم المرحلة الخامسة. عرفت لماذا خُلقت، وما الذي يريده الله منك، وأن أمامك يومًا تلقاه فيه. وقد يقف بينك وبين الخطوة شعورٌ بأن الماضي أثقل من أن يُغفر. فاعلم أن الله يناديك أنت: ﴿لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ﴾. الباب مفتوح، ولا يُغلق إلا بالموت أو بطلوع الشمس من مغربها؛ فلا تؤجّل ما تعرف أنه الحق.",
+        "en": "With this stop the fifth stage ends. You know why you were created, what Allah wants from you, and that a day lies ahead on which you will meet Him. Between you and the step there may stand a feeling that your past is too heavy to be forgiven. Know that Allah is calling you: “do not despair of the mercy of Allah.” The door is open, and it closes only at death, or when the sun rises from the west. So do not put off what you know to be true."
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: الزمر ٥٣",
+            "en": "Al-Tafsir al-Muyassar on Az-Zumar 39:53 (in Arabic)"
+          },
+          "url": "https://quran.com/39:53/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: الفرقان ٧٠",
+            "en": "Al-Tafsir al-Muyassar on Al-Furqan 25:70 (in Arabic)"
+          },
+          "url": "https://quran.com/25:70/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "صحيح مسلم (١٢١)",
+            "en": "Sahih Muslim 121"
+          },
+          "url": "https://sunnah.com/muslim:121"
+        },
+        {
+          "title": {
+            "ar": "صحيح مسلم (٢٧٥٩)",
+            "en": "Sahih Muslim 2759"
+          },
+          "url": "https://sunnah.com/muslim:2759a"
+        }
+      ]
+    },
+    {
+      "slug": "who-created-allah",
+      "mark": "الأول",
+      "title": {
+        "ar": "فمن خلق الله؟",
+        "en": "Then who created Allah?"
+      },
+      "hook": {
+        "ar": "إن كان لكل شيءٍ خالق، فمن خلق الخالق؟ سؤالٌ أخبر النبي ﷺ أنه سيُطرح، وجوابه في العقل قبل النقل.",
+        "en": "If everything has a creator, who created the Creator? The Prophet ﷺ said this question would be asked, and reason answers it before scripture does."
+      },
+      "summary": {
+        "ar": "ليس كل موجودٍ يحتاج إلى خالق، بل كل ما له بداية. ولا بد أن تنتهي سلسلة الأسباب إلى أوّلٍ لم يُخلق، وإلا ما وُجد شيءٌ أصلًا: وهو الله، الأول الذي ليس قبله شيء.",
+        "en": "Not everything that exists needs a creator, only what has a beginning. The chain of causes must end in a First that was never created, or nothing would exist at all: that is Allah, the First, before whom there is nothing."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "أَمۡ خُلِقُواْ مِنۡ غَيۡرِ شَيۡءٍ أَمۡ هُمُ ٱلۡخَٰلِقُونَ",
+          "meaning": {
+            "ar": "أخُلقوا من غير خالقٍ أوجدهم، أم هم الخالقون لأنفسهم؟ وكلا الأمرين باطلٌ مستحيل، فتعيّن أن الله هو الذي خلقهم.",
+            "en": "“Or were they created by nothing, or were they the creators [of themselves]?”"
+          },
+          "ref": {
+            "ar": "الطور: ٣٥",
+            "en": "At-Tur 52:35"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "هُوَ ٱلۡأَوَّلُ وَٱلۡأٓخِرُ وَٱلظَّٰهِرُ وَٱلۡبَاطِنُۖ وَهُوَ بِكُلِّ شَيۡءٍ عَلِيمٌ",
+          "meaning": {
+            "ar": "«ٱلۡأَوَّلُ»: الذي ليس قبله شيء. «وَٱلۡأٓخِرُ»: الذي ليس بعده شيء. «وَٱلظَّٰهِرُ»: الذي ليس فوقه شيء. «وَٱلۡبَاطِنُۖ»: الذي ليس دونه شيء.",
+            "en": "“He is the First and the Last, the Ascendant and the Intimate, and He is, of all things, Knowing.”"
+          },
+          "ref": {
+            "ar": "الحديد: ٣",
+            "en": "Al-Hadid 57:3"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "يَأْتِي الشَّيْطَانُ أَحَدَكُمْ فَيَقُولُ: مَنْ خَلَقَ كَذَا؟ مَنْ خَلَقَ كَذَا؟ حَتَّى يَقُولَ: مَنْ خَلَقَ رَبَّكَ؟ فَإِذَا بَلَغَهُ فَلْيَسْتَعِذْ بِاللَّهِ وَلْيَنْتَهِ",
+          "narrator": {
+            "ar": "عن أبي هريرة رضي الله عنه",
+            "en": "Narrated by Abu Hurayrah"
+          },
+          "meaning": {
+            "ar": "«فَلْيَسْتَعِذْ بِاللَّهِ»: فليقل: أعوذ بالله من الشيطان الرجيم. «وَلْيَنْتَهِ»: وليقطع هذا الخاطر ولا يسترسل معه.",
+            "en": "“Satan comes to one of you and says: ‘Who created this? Who created that?’ until he says: ‘Who created your Lord?’ When it reaches that, let him seek refuge in Allah and stop.”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٣٢٧٦)",
+            "en": "Sahih al-Bukhari 3276"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "قُلۡ هُوَ ٱللَّهُ أَحَدٌ ۝١ ٱللَّهُ ٱلصَّمَدُ ۝٢ لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ ۝٣ وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ",
+          "meaning": {
+            "ar": "«ٱلصَّمَدُ»: الكامل في صفاته، الذي تقصده الخلائق في حوائجها. «لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ»: ليس له ولد، ولا هو مولود. «كُفُوًا»: مماثلًا.",
+            "en": "“Say, ‘He is Allah, [who is] One, Allah, the Eternal Refuge. He neither begets nor is born, Nor is there to Him any equivalent.’”"
+          },
+          "ref": {
+            "ar": "الإخلاص: ١–٤",
+            "en": "Al-Ikhlas 112:1–4"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "الخطأ في السؤال",
+            "en": "The mistake in the question"
+          },
+          "paragraphs": [
+            {
+              "ar": "يفترض السؤال أن كل موجودٍ يحتاج إلى من يوجده. لكن العقل لا يقول ذلك؛ إنما يقول: كل ما بدأ بعد أن لم يكن يحتاج إلى سبب. والكون بدأ، كما رأيت في محطة «السماء التي تتسع»، فاحتاج إلى من يوجده. أما الخالق فليس شيئًا بدأ بعد أن لم يكن، فلا معنى لأن يُسأل: من خلقه؟ كمن يسأل: ما الرقم الذي قبل الرقم الأول؟",
+              "en": "The question assumes that everything that exists needs something to bring it into being. Reason does not say that. It says: whatever began, after not being, needs a cause. The universe began, as you saw at the stop “A Heaven That Keeps Expanding”, so it needed one to bring it about. The Creator is not something that began after not being, so “Who created Him?” has no meaning; it is like asking which number comes before the first."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "لماذا لا تمتدّ السلسلة بلا نهاية؟",
+            "en": "Why the chain cannot go on for ever"
+          },
+          "paragraphs": [
+            {
+              "ar": "تخيّل جنديًّا لا يطلق النار حتى يأذن له من فوقه، ومن فوقه لا يأذن حتى يأذن له من فوقه، وهكذا بلا نهاية. هل تنطلق الرصاصة يومًا؟ لا؛ لأن الإذن لا يبدأ من أحد. فإن انطلقت، علمنا أن في أعلى السلسلة من يأذن ولا يحتاج إلى إذن.",
+              "en": "Imagine a soldier who will not fire until the one above him gives permission, and that one will not give it until the one above him does, and so on without end. Will the shot ever be fired? No, because the permission never starts anywhere. If it is fired, we know that at the top of the chain is one who gives permission and needs none."
+            },
+            {
+              "ar": "وكذلك الكون: لو كان كل موجودٍ فيه محتاجًا إلى موجِدٍ قبله بلا نهاية، لما وُجد شيء. ووجودُ أي شيءٍ اليوم دليلٌ على أوّلٍ غنيٍّ عن غيره. وهذا ما تقوله الآية: ﴿أَمۡ خُلِقُواْ مِنۡ غَيۡرِ شَيۡءٍ أَمۡ هُمُ ٱلۡخَٰلِقُونَ﴾، وما يقوله اسمه سبحانه: ﴿هُوَ ٱلۡأَوَّلُ﴾، وقد فسّره النبي ﷺ في دعائه: «أَنْتَ الْأَوَّلُ فَلَيْسَ قَبْلَكَ شَيْءٌ» (صحيح مسلم ٢٧١٣).",
+              "en": "So it is with the universe: if everything in it needed a maker before it, without end, nothing would exist. That anything exists today shows a First who needs nothing else. This is what the verse says: “Or were they created by nothing, or were they the creators [of themselves]?”, and what His name says: “He is the First.” The Prophet ﷺ explained it in his prayer: “You are the First, and there is nothing before You” (Sahih Muslim 2713)."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "أخبر به قبل أن يُطرح",
+            "en": "Foretold before it was asked"
+          },
+          "paragraphs": [
+            {
+              "ar": "أخبر النبي ﷺ أن هذا الخاطر سيأتي الناس: «مَنْ خَلَقَ رَبَّكَ؟». وأمر من وجده بأن يستعيذ بالله ويقطعه. وليس ذلك هروبًا من التفكير، بل هو ما يفعله كل عاقل حين يتبيّن له الجواب ثم يعود الخاطر يلحّ عليه: يقطعه. وسورة الإخلاص تحسم الأمر: ﴿لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ﴾؛ فالله ليس حلقةً في سلسلة المخلوقات، بل هو خالقها.",
+              "en": "The Prophet ﷺ foretold that this thought would come to people: “Who created your Lord?”, and told whoever finds it to seek refuge in Allah and stop. That is not running from thought; it is what any sensible person does when the answer is clear and the whisper keeps returning: they cut it off. Surat al-Ikhlas settles it: “He neither begets nor is born.” Allah is not a link in the chain of created things; He is its Creator."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "السؤال «من خلق الله؟» لا يهدم الإيمان بل يثبّته؛ لأن جوابه أن سلسلة الأسباب لا بد أن تقف عند أوّلٍ لا أول له، غنيٍّ عن كل ما سواه. والملحد نفسه يقف عند شيءٍ لا يسأل: من أوجده؟ لكنه يجعله مادةً عمياء لا تعلم ولا تريد. فأيّهما أقرب إلى العقل: أن يقف عند مادةٍ صمّاء لا تعلم ما تصنع، أم عند خالقٍ حيٍّ عليمٍ حكيم، شهد له كل ما رأيت في هذه الرحلة؟",
+        "en": "The question “Who created Allah?” does not undo faith; it strengthens it, because its answer is that the chain of causes must stop at a First with no beginning, who needs nothing else. The atheist, too, stops at something whose origin he does not ask about, but makes it blind matter that neither knows nor wills. Which is closer to reason: to stop at deaf matter that does not know what it makes, or at a Creator who is living, knowing and wise, to whom everything you have seen on this journey bears witness?"
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: الطور ٣٥",
+            "en": "Al-Tafsir al-Muyassar on At-Tur 52:35 (in Arabic)"
+          },
+          "url": "https://quran.com/52:35/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: الحديد ٣",
+            "en": "Al-Tafsir al-Muyassar on Al-Hadid 57:3 (in Arabic)"
+          },
+          "url": "https://quran.com/57:3/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "صحيح البخاري (٣٢٧٦)",
+            "en": "Sahih al-Bukhari 3276"
+          },
+          "url": "https://sunnah.com/bukhari:3276"
+        },
+        {
+          "title": {
+            "ar": "صحيح مسلم (٢٧١٣)",
+            "en": "Sahih Muslim 2713"
+          },
+          "url": "https://sunnah.com/muslim:2713a"
+        }
+      ]
+    },
+    {
+      "slug": "why-pain",
+      "mark": "الابتلاء",
+      "title": {
+        "ar": "لماذا الألم والشر؟",
+        "en": "Why is there pain and evil?"
+      },
+      "hook": {
+        "ar": "إن كان الله رحيمًا، فلماذا المرض والفقد والحروب؟ سؤالٌ صادق يستحق جوابًا صادقًا.",
+        "en": "If Allah is merciful, why are there sickness, loss and wars? An honest question deserves an honest answer."
+      },
+      "summary": {
+        "ar": "الدنيا دار اختبارٍ لا دار جزاء: فيها الخير والشر ليظهر الصبر والشكر والعدل. وأكثر الظلم من أفعال الناس التي حرّمها الله وسيحاسبهم عليها، ولا يضيع عنده ألمٌ صبر عليه صاحبه.",
+        "en": "This world is a place of testing, not of reward: good and evil are in it so that patience, gratitude and justice may show. Most wrong comes from people’s own deeds, which Allah has forbidden and will call them to account for, and no pain borne with patience is lost with Him."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "كُلُّ نَفۡسࣲ ذَآئِقَةُ ٱلۡمَوۡتِۗ وَنَبۡلُوكُم بِٱلشَّرِّ وَٱلۡخَيۡرِ فِتۡنَةࣰۖ وَإِلَيۡنَا تُرۡجَعُونَ",
+          "meaning": {
+            "ar": "«وَنَبۡلُوكُم»: نختبركم. «بِٱلشَّرِّ وَٱلۡخَيۡرِ»: بالشدة والرخاء، والمرض والصحة. «فِتۡنَةࣰۖ»: ابتلاءً، ثم المرجع إلى الله للحساب والجزاء.",
+            "en": "“Every soul will taste death. And We test you with evil and with good as trial; and to Us you will be returned.”"
+          },
+          "ref": {
+            "ar": "الأنبياء: ٣٥",
+            "en": "Al-Anbiya 21:35"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "وَلَنَبۡلُوَنَّكُم بِشَيۡءࣲ مِّنَ ٱلۡخَوۡفِ وَٱلۡجُوعِ وَنَقۡصࣲ مِّنَ ٱلۡأَمۡوَٰلِ وَٱلۡأَنفُسِ وَٱلثَّمَرَٰتِۗ وَبَشِّرِ ٱلصَّٰبِرِينَ ۝١٥٥ ٱلَّذِينَ إِذَآ أَصَٰبَتۡهُم مُّصِيبَةࣱ قَالُوٓاْ إِنَّا لِلَّهِ وَإِنَّآ إِلَيۡهِ رَٰجِعُونَ ۝١٥٦ أُوْلَٰٓئِكَ عَلَيۡهِمۡ صَلَوَٰتࣱ مِّن رَّبِّهِمۡ وَرَحۡمَةࣱۖ وَأُوْلَٰٓئِكَ هُمُ ٱلۡمُهۡتَدُونَ",
+          "meaning": {
+            "ar": "«وَلَنَبۡلُوَنَّكُم»: ولنختبرنكم. «إِنَّا لِلَّهِ»: نحن ملكٌ له يفعل بنا ما يشاء. «صَلَوَٰتࣱ مِّن رَّبِّهِمۡ»: ثناءٌ من ربهم عليهم.",
+            "en": "“And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient, Who, when disaster strikes them, say, ‘Indeed we belong to Allah, and indeed to Him we will return.’ Those are the ones upon whom are blessings from their Lord and mercy. And it is those who are the [rightly] guided.”"
+          },
+          "ref": {
+            "ar": "البقرة: ١٥٥–١٥٧",
+            "en": "Al-Baqarah 2:155–157"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "عَجَبًا لِأَمْرِ الْمُؤْمِنِ، إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ، وَلَيْسَ ذَاكَ لِأَحَدٍ إِلَّا لِلْمُؤْمِنِ: إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ فَكَانَ خَيْرًا لَهُ، وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ فَكَانَ خَيْرًا لَهُ",
+          "narrator": {
+            "ar": "عن صهيب الرومي رضي الله عنه",
+            "en": "Narrated by Suhayb ar-Rumi"
+          },
+          "meaning": {
+            "ar": "«سَرَّاءُ»: ما يسرّه من نعمة. «ضَرَّاءُ»: ما يضرّه من مرضٍ أو فقرٍ أو مصيبة.",
+            "en": "“How wonderful is the affair of the believer: all of it is good for him, and that is so for no one but the believer. If something pleasing comes to him, he gives thanks, and that is good for him; if something harmful comes to him, he is patient, and that is good for him.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (٢٩٩٩)",
+            "en": "Sahih Muslim 2999"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "يَا عِبَادِي، إِنِّي حَرَّمْتُ الظُّلْمَ عَلَى نَفْسِي، وَجَعَلْتُهُ بَيْنَكُمْ مُحَرَّمًا، فَلَا تَظَالَمُوا",
+          "narrator": {
+            "ar": "عن أبي ذر رضي الله عنه، فيما يرويه النبي ﷺ عن ربه",
+            "en": "Narrated by Abu Dharr, from what the Prophet ﷺ related from his Lord"
+          },
+          "meaning": {
+            "ar": "حديثٌ قدسي. «حَرَّمْتُ الظُّلْمَ عَلَى نَفْسِي»: لا يظلم الله أحدًا. «فَلَا تَظَالَمُوا»: لا يظلم بعضكم بعضًا.",
+            "en": "“O My servants, I have forbidden injustice to Myself and made it forbidden among you, so do not wrong one another.”"
+          },
+          "ref": {
+            "ar": "صحيح مسلم (٢٥٧٧)",
+            "en": "Sahih Muslim 2577"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "الدنيا ليست الجنة",
+            "en": "This world is not Paradise"
+          },
+          "paragraphs": [
+            {
+              "ar": "لم يَعِد الله أحدًا بأن تكون الدنيا خاليةً من الألم، بل قال: ﴿وَنَبۡلُوكُم بِٱلشَّرِّ وَٱلۡخَيۡرِ فِتۡنَةࣰۖ﴾. فالسؤال «لماذا يوجد الألم؟» يفترض أن الدنيا كان ينبغي أن تكون جنة. لكنها دار اختبار، والجنة دار الجزاء. ولا اختبار بلا مشقة: فلا صبر بلا شدّة، ولا شجاعة بلا خطر، ولا كرم بلا حاجة.",
+              "en": "Allah never promised anyone a world without pain. He said: “And We test you with evil and with good as trial.” The question “Why is there pain?” assumes this world should have been Paradise. But it is a place of testing, and Paradise is the place of reward. There is no test without hardship: no patience without trouble, no courage without danger, no generosity without need."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "أكثر الشر من صنع الإنسان",
+            "en": "Most evil is the work of people"
+          },
+          "paragraphs": [
+            {
+              "ar": "الحروب والقتل والسرقة والفقر الذي يصنعه الطمع، أكثرها من أفعال البشر، لا من فعل الله. أعطى الله الإنسان الاختيار، ولولاه لما كان للخير معنى، ثم حرّم الظلم وقال: «فَلَا تَظَالَمُوا». فمن ظلم فقد عصى أمره، وسيقف بين يديه يوم القيامة. ولا يُعقل أن نلوم الخالق على ظلمٍ نهى عنه، ووعد بأن يقتصّ منه.",
+              "en": "Wars, killing, theft, and the poverty that greed creates are mostly the deeds of human beings, not of Allah. Allah gave people choice, without which good would mean nothing, and then forbade injustice: “so do not wrong one another.” Whoever does wrong has disobeyed Him, and will stand before Him on the Day of Resurrection. It makes no sense to blame the Creator for an injustice He forbade and promised to avenge."
+            },
+            {
+              "ar": "ومن العجيب أن من ينكر الخالق بسبب الشر لا يملك أن يسمّيه شرًّا؛ فلو لم يكن وراء الكون إلا المادة، لكان الظلم والعدل حركاتٍ لا خير فيها ولا شر. فغضبك على الظلم نفسه شاهدٌ على أن هناك عدلًا حقيقيًّا، له مصدر.",
+              "en": "Strangely, whoever denies the Creator because of evil cannot even call it evil: if there were nothing behind the universe but matter, injustice and justice would just be events, neither good nor bad. Your very anger at injustice testifies that real justice exists, and that it has a source."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "ما لا نراه، وما لا يضيع",
+            "en": "What we cannot see, and what is not lost"
+          },
+          "paragraphs": [
+            {
+              "ar": "نحن نرى من الأحداث جزءًا صغيرًا، ولا نرى ما بعدها. والقرآن يذكّرنا: ﴿وَعَسَىٰٓ أَن تَكۡرَهُواْ شَيۡـࣰٔا وَهُوَ خَيۡرࣱ لَّكُمۡۖ﴾ (البقرة: ٢١٦). وقصة موسى مع الخضر في سورة الكهف مثلٌ لذلك: سفينةٌ تُخرق، وغلامٌ يُقتل، وجدارٌ يُقام بلا أجر، ثم يتبيّن في النهاية ما وراء كلٍّ منها من حكمة.",
+              "en": "We see a small part of events, and not what comes after them. The Qur’an reminds us: “But perhaps you hate a thing and it is good for you” (Al-Baqarah 2:216). The story of Moses and al-Khidr in Surat al-Kahf is an example: a boat is holed, a boy is killed, a wall is rebuilt without pay, and in the end the wisdom behind each is made plain."
+            },
+            {
+              "ar": "ثم إن الألم لا يضيع عند الله: من صبر بُشِّر بأن عليه ﴿صَلَوَٰتࣱ مِّن رَّبِّهِمۡ وَرَحۡمَةࣱۖ﴾، والمؤمن كما قال النبي ﷺ أمره كله خير: يشكر في النعمة، ويصبر في المصيبة. ومن ظُلم في الدنيا ولم يُنصف، فأمامه يومٌ يُنصفه الله فيه.",
+              "en": "And pain is not lost with Allah. The patient are given glad tidings of “blessings from their Lord and mercy”, and the believer, as the Prophet ﷺ said, finds good in all his affairs: thankful in blessing, patient in hardship. Whoever was wronged in this world and saw no justice has a day ahead when Allah will do them justice."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "الإلحاد لا يرفع عنك الألم، بل يسلبك معناه: يبقى المرض والفقد والظلم كما هي، ثم لا عزاء ولا عدل ولا لقاء. أما الإسلام فيقول لك: ألمك مرئيٌّ عند الله، وصبرك محفوظ، والظالم لن يفلت، ومن فقدتهم من المؤمنين ستلقاهم. فأيّ الجوابين أصدق مع قلبك، وأيّهما أعدل؟",
+        "en": "Atheism does not take your pain away; it takes away its meaning. The sickness, the loss and the injustice remain as they are, and then there is no comfort, no justice and no reunion. Islam tells you: your pain is seen by Allah, your patience is kept, the oppressor will not escape, and you will meet again the believers you have lost. Which answer is truer to your heart, and which is more just?"
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: الأنبياء ٣٥",
+            "en": "Al-Tafsir al-Muyassar on Al-Anbiya 21:35 (in Arabic)"
+          },
+          "url": "https://quran.com/21:35/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: البقرة ١٥٥",
+            "en": "Al-Tafsir al-Muyassar on Al-Baqarah 2:155 (in Arabic)"
+          },
+          "url": "https://quran.com/2:155/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "صحيح مسلم (٢٩٩٩)",
+            "en": "Sahih Muslim 2999"
+          },
+          "url": "https://sunnah.com/muslim:2999"
+        },
+        {
+          "title": {
+            "ar": "صحيح مسلم (٢٥٧٧)",
+            "en": "Sahih Muslim 2577"
+          },
+          "url": "https://sunnah.com/muslim:2577a"
+        }
+      ]
+    },
+    {
+      "slug": "why-islam",
+      "mark": "الإسلام",
+      "title": {
+        "ar": "لماذا الإسلام دون غيره؟",
+        "en": "Why Islam, and not another religion?"
+      },
+      "hook": {
+        "ar": "في العالم أديانٌ كثيرة، وكلٌّ يقول إنه الحق. فبأي دليلٍ يقول الإسلام إنه الدين الذي يقبله الله؟",
+        "en": "The world has many religions, and each says it is the truth. On what evidence does Islam say it is the religion Allah accepts?"
+      },
+      "summary": {
+        "ar": "الإسلام ليس دينًا جديدًا، بل رسالة الأنبياء كلهم: لا إله إلا الله. جاء به محمد ﷺ خاتمًا لهم، بكتابٍ محفوظ ودلائل صدقٍ ظاهرة، يدعو إلى عبادة الخالق وحده بلا وسيطٍ ولا شريك.",
+        "en": "Islam is not a new religion but the message of all the prophets: there is no deity but Allah. Muhammad ﷺ brought it as the last of them, with a preserved book and clear proofs of his truthfulness, calling to the worship of the Creator alone, with no intermediary and no partner."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "وَمَآ أَرۡسَلۡنَا مِن قَبۡلِكَ مِن رَّسُولٍ إِلَّا نُوحِيٓ إِلَيۡهِ أَنَّهُۥ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدُونِ",
+          "meaning": {
+            "ar": "«لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدُونِ»: لا معبود بحقٍّ إلا الله، فأخلصوا العبادة له وحده؛ وهي رسالة كل رسول.",
+            "en": "“And We sent not before you any messenger except that We revealed to him that, ‘There is no deity except Me, so worship Me.’”"
+          },
+          "ref": {
+            "ar": "الأنبياء: ٢٥",
+            "en": "Al-Anbiya 21:25"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "وَمَن يَبۡتَغِ غَيۡرَ ٱلۡإِسۡلَٰمِ دِينࣰا فَلَن يُقۡبَلَ مِنۡهُ وَهُوَ فِي ٱلۡأٓخِرَةِ مِنَ ٱلۡخَٰسِرِينَ",
+          "meaning": {
+            "ar": "«ٱلۡإِسۡلَٰمِ»: الاستسلام لله بالتوحيد والانقياد له بالطاعة، واتّباع رسوله الخاتم ﷺ. «مِنَ ٱلۡخَٰسِرِينَ»: الذين بخسوا أنفسهم حظوظها.",
+            "en": "“And whoever desires other than Islam as religion - never will it be accepted from him, and he, in the Hereafter, will be among the losers.”"
+          },
+          "ref": {
+            "ar": "آل عمران: ٨٥",
+            "en": "Al ‘Imran 3:85"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "إِنَّ مَثَلِي وَمَثَلَ الْأَنْبِيَاءِ مِنْ قَبْلِي كَمَثَلِ رَجُلٍ بَنَى بَيْتًا فَأَحْسَنَهُ وَأَجْمَلَهُ، إِلَّا مَوْضِعَ لَبِنَةٍ مِنْ زَاوِيَةٍ، فَجَعَلَ النَّاسُ يَطُوفُونَ بِهِ وَيَعْجَبُونَ لَهُ، وَيَقُولُونَ: هَلَّا وُضِعَتْ هَذِهِ اللَّبِنَةُ؟ قَالَ: فَأَنَا اللَّبِنَةُ، وَأَنَا خَاتِمُ النَّبِيِّينَ",
+          "narrator": {
+            "ar": "عن أبي هريرة رضي الله عنه",
+            "en": "Narrated by Abu Hurayrah"
+          },
+          "meaning": {
+            "ar": "«لَبِنَةٍ»: قطعة طينٍ تُبنى بها الجدران. «خَاتِمُ النَّبِيِّينَ»: آخرهم، فلا نبيّ بعده.",
+            "en": "“The likeness of me and of the prophets before me is that of a man who built a house and made it fine and beautiful, except for the place of one brick in a corner. People walked around it, admiring it, and said: ‘If only this brick were put in place!’ I am that brick, and I am the last of the prophets.”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٣٥٣٥)",
+            "en": "Sahih al-Bukhari 3535"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "مَّا كَانَ مُحَمَّدٌ أَبَآ أَحَدࣲ مِّن رِّجَالِكُمۡ وَلَٰكِن رَّسُولَ ٱللَّهِ وَخَاتَمَ ٱلنَّبِيِّـۧنَۗ وَكَانَ ٱللَّهُ بِكُلِّ شَيۡءٍ عَلِيمࣰا",
+          "meaning": {
+            "ar": "«وَخَاتَمَ ٱلنَّبِيِّـۧنَۗ»: آخرهم، فلا نبيّ بعده.",
+            "en": "“Muhammad is not the father of [any] one of your men, but [he is] the Messenger of Allah and last of the prophets. And ever is Allah, of all things, Knowing.”"
+          },
+          "ref": {
+            "ar": "الأحزاب: ٤٠",
+            "en": "Al-Ahzab 33:40"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "دين الأنبياء كلهم",
+            "en": "The religion of all the prophets"
+          },
+          "paragraphs": [
+            {
+              "ar": "كلمة «الإسلام» تعني الاستسلام لله وحده. وبهذا المعنى يصف القرآن الأنبياء جميعًا بأنهم مسلمون: نوح وإبراهيم وموسى وعيسى، عليهم السلام. فما من رسولٍ إلا أُوحي إليه: ﴿أَنَّهُۥ لَآ إِلَٰهَ إِلَّآ أَنَا۠ فَٱعۡبُدُونِ﴾. فالمسلم لا يترك أنبياء اليهود والنصارى، بل يؤمن بهم جميعًا، ويتبع آخرهم.",
+              "en": "The word “Islam” means submission to Allah alone. In that sense the Qur’an calls all the prophets Muslims: Noah, Abraham, Moses and Jesus, peace be upon them. No messenger was sent without being told: “There is no deity except Me, so worship Me.” A Muslim does not leave behind the prophets of the Jews and Christians; he believes in them all, and follows the last of them."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "اللبنة الأخيرة",
+            "en": "The last brick"
+          },
+          "paragraphs": [
+            {
+              "ar": "يشبّه النبي ﷺ الأنبياء ببيتٍ جميل بُني لبنةً لبنة، بقي فيه موضع لبنةٍ واحدة، وكان هو تلك اللبنة. فالإسلام لا يهدم ما جاء به الأنبياء قبله، بل يتمّه ويحفظه. ولمّا كانت الكتب السابقة قد دخلها التبديل، تكفّل الله بحفظ آخرها، كما رأيت في محطة «إنا نحن نزّلنا الذكر وإنا له لحافظون».",
+              "en": "The Prophet ﷺ likened the prophets to a beautiful house built brick by brick, with the place of one brick left empty, and he was that brick. Islam does not tear down what the prophets before it brought; it completes it and keeps it safe. Since the earlier books were altered over time, Allah undertook to guard the last one Himself, as you saw at the stop “We Sent Down the Reminder, and We Will Guard It”."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "كيف تختار؟",
+            "en": "How do you choose?"
+          },
+          "paragraphs": [
+            {
+              "ar": "إن كان للكون خالقٌ كلّم الناس، فدينه الحق ينبغي أن تجتمع فيه ثلاثة أمور: أن يدعو إلى عبادة الخالق وحده كما تشهد الفطرة والعقل، وأن يكون كتابه محفوظًا كما نزل، وأن يكون لرسوله دلائل صدقٍ ظاهرة. وقد مررت في هذه الرحلة بالثلاثة: خالقٌ واحد في المرحلتين الأولى والثانية، وكتابٌ محفوظ يوافق ما كُشف بعد قرون في الثالثة، ورسولٌ أخبر بالغيب فوقع كما أخبر في الرابعة.",
+              "en": "If the universe has a Creator who spoke to people, His true religion should bring three things together: it calls to the worship of the Creator alone, as nature and reason testify; its book is kept as it was revealed; and its messenger has clear proofs that he spoke the truth. On this journey you have met all three: one Creator in the first and second stages; a preserved book that agrees with what was found centuries later, in the third; and a messenger who foretold the unseen, which came about as he said, in the fourth."
+            },
+            {
+              "ar": "ولهذا يقول القرآن بوضوح: ﴿وَمَن يَبۡتَغِ غَيۡرَ ٱلۡإِسۡلَٰمِ دِينࣰا فَلَن يُقۡبَلَ مِنۡهُ﴾. وليس ذلك تعصّبًا، بل هو ما يلزم من أن الحق واحد: فمن عرف رسالة الخالق الأخيرة ثم أعرض عنها، فقد أعرض عن الخالق نفسه.",
+              "en": "That is why the Qur’an says plainly: “And whoever desires other than Islam as religion – never will it be accepted from him.” That is not bigotry; it follows from the truth being one. Whoever knows the Creator’s last message and turns away from it has turned away from the Creator Himself."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "الإسلام لا يطلب منك أن تكفر بموسى أو عيسى عليهما السلام، بل أن تؤمن بهم جميعًا كما أرسلهم الله: عبادًا له ورسلًا، دعوا إلى عبادته وحده. ثم يضع بين يديك كتابًا محفوظًا ورسولًا ظهرت دلائل صدقه. فإن كان الحق واحدًا، والدليل قائمًا، فما الذي يمنعك من أن تتّبعه؟",
+        "en": "Islam does not ask you to reject Moses or Jesus, peace be upon them, but to believe in them all as Allah sent them: His servants and messengers, who called to the worship of Him alone. Then it puts in your hands a preserved book and a messenger whose truthfulness has been shown. If the truth is one, and the evidence stands, what keeps you from following it?"
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: الأنبياء ٢٥",
+            "en": "Al-Tafsir al-Muyassar on Al-Anbiya 21:25 (in Arabic)"
+          },
+          "url": "https://quran.com/21:25/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: آل عمران ٨٥",
+            "en": "Al-Tafsir al-Muyassar on Al ‘Imran 3:85 (in Arabic)"
+          },
+          "url": "https://quran.com/3:85/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "صحيح البخاري (٣٥٣٥)",
+            "en": "Sahih al-Bukhari 3535"
+          },
+          "url": "https://sunnah.com/bukhari:3535"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: الأحزاب ٤٠",
+            "en": "Al-Tafsir al-Muyassar on Al-Ahzab 33:40 (in Arabic)"
+          },
+          "url": "https://quran.com/33:40/tafsirs/ar-tafsir-muyassar"
+        }
+      ]
+    },
+    {
+      "slug": "jesus-in-islam",
+      "mark": "المسيح",
+      "title": {
+        "ar": "المسيح عيسى ابن مريم عليه السلام",
+        "en": "The Messiah, Jesus son of Mary, peace be upon him"
+      },
+      "hook": {
+        "ar": "قد تُفاجأ إن علمت أن المسلم لا يكون مسلمًا حتى يؤمن بعيسى عليه السلام. فمن هو المسيح في القرآن؟",
+        "en": "You may be surprised to learn that no one is a Muslim until they believe in Jesus, peace be upon him. So who is the Messiah in the Qur’an?"
+      },
+      "summary": {
+        "ar": "يؤمن المسلمون بأن عيسى عليه السلام هو المسيح، وُلد من مريم العذراء بلا أب، وأيّده الله بالمعجزات، وهو من أعظم الرسل. لكنه عبد الله ورسوله، لا إلهٌ ولا ابن إله؛ ومثله عند الله كمثل آدم.",
+        "en": "Muslims believe that Jesus, peace be upon him, is the Messiah, born of the virgin Mary without a father, supported by Allah with miracles, and one of the greatest messengers. But he is Allah’s servant and messenger, not a deity nor the son of one; his example with Allah is like that of Adam."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "إِذۡ قَالَتِ ٱلۡمَلَٰٓئِكَةُ يَٰمَرۡيَمُ إِنَّ ٱللَّهَ يُبَشِّرُكِ بِكَلِمَةࣲ مِّنۡهُ ٱسۡمُهُ ٱلۡمَسِيحُ عِيسَى ٱبۡنُ مَرۡيَمَ وَجِيهࣰا فِي ٱلدُّنۡيَا وَٱلۡأٓخِرَةِ وَمِنَ ٱلۡمُقَرَّبِينَ",
+          "meaning": {
+            "ar": "«بِكَلِمَةࣲ مِّنۡهُ»: بولدٍ يكون وجوده بكلمةٍ من الله، وهي قوله: «كن»، فيكون. «وَجِيهࣰا»: له الجاه العظيم في الدنيا والآخرة.",
+            "en": "“[And mention] when the angels said, O Mary, indeed Allah gives you good tidings of a word from Him, whose name will be the Messiah, Jesus, the son of Mary - distinguished in this world and the Hereafter and among those brought near [to Allah].”"
+          },
+          "ref": {
+            "ar": "آل عمران: ٤٥",
+            "en": "Al ‘Imran 3:45"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "قَالَ إِنِّي عَبۡدُ ٱللَّهِ ءَاتَىٰنِيَ ٱلۡكِتَٰبَ وَجَعَلَنِي نَبِيࣰّا",
+          "meaning": {
+            "ar": "قالها عيسى عليه السلام وهو في مهده رضيع: إني عبد الله، قضى بأن يعطيني الكتاب، وهو الإنجيل، وجعلني نبيًّا.",
+            "en": "“[Jesus] said, Indeed, I am the servant of Allah. He has given me the Scripture and made me a prophet.”"
+          },
+          "ref": {
+            "ar": "مريم: ٣٠",
+            "en": "Maryam 19:30"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "إِنَّ مَثَلَ عِيسَىٰ عِندَ ٱللَّهِ كَمَثَلِ ءَادَمَۖ خَلَقَهُۥ مِن تُرَابࣲ ثُمَّ قَالَ لَهُۥ كُن فَيَكُونُ",
+          "meaning": {
+            "ar": "خلق الله عيسى من غير أب، كما خلق آدم من غير أبٍ ولا أم، من تراب، ثم قال له: «كن» فكان. فلا تصحّ دعوى إلهيته لأنه وُلد بلا أب؛ فآدم أعجب منه خلقًا، والجميع متفقون على أنه عبدٌ من عباد الله.",
+            "en": "“Indeed, the example of Jesus to Allah is like that of Adam. He created Him from dust; then He said to him, ‘Be,’ and he was.”"
+          },
+          "ref": {
+            "ar": "آل عمران: ٥٩",
+            "en": "Al ‘Imran 3:59"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "إِنَّمَا ٱلۡمَسِيحُ عِيسَى ٱبۡنُ مَرۡيَمَ رَسُولُ ٱللَّهِ وَكَلِمَتُهُۥٓ أَلۡقَىٰهَآ إِلَىٰ مَرۡيَمَ وَرُوحࣱ مِّنۡهُۖ",
+          "meaning": {
+            "ar": "«وَكَلِمَتُهُۥٓ»: خلقه بكلمة «كن». «وَرُوحࣱ مِّنۡهُۖ»: نفخةٌ من الله نفخها جبريل في مريم بأمر ربه.",
+            "en": "“…The Messiah, Jesus, the son of Mary, was but a messenger of Allah and His word which He directed to Mary and a soul [created at a command] from Him…”"
+          },
+          "ref": {
+            "ar": "النساء: ١٧١",
+            "en": "An-Nisa 4:171"
+          }
+        },
+        {
+          "kind": "hadith",
+          "text": "مَنْ شَهِدَ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، وَأَنَّ عِيسَى عَبْدُ اللَّهِ وَرَسُولُهُ، وَكَلِمَتُهُ أَلْقَاهَا إِلَى مَرْيَمَ، وَرُوحٌ مِنْهُ، وَالْجَنَّةُ حَقٌّ، وَالنَّارُ حَقٌّ، أَدْخَلَهُ اللَّهُ الْجَنَّةَ عَلَى مَا كَانَ مِنَ الْعَمَلِ",
+          "narrator": {
+            "ar": "عن عبادة بن الصامت رضي الله عنه",
+            "en": "Narrated by ‘Ubadah ibn as-Samit"
+          },
+          "meaning": {
+            "ar": "جعل النبي ﷺ الشهادة لعيسى بأنه عبد الله ورسوله جزءًا من الشهادة التي يدخل بها المسلم الجنة. «عَلَى مَا كَانَ مِنَ الْعَمَلِ»: وإن قلّ عمله.",
+            "en": "“Whoever bears witness that there is no deity but Allah alone, who has no partner; that Muhammad is His servant and messenger; that Jesus is the servant of Allah and His messenger, and His word which He cast to Mary, and a spirit from Him; and that Paradise is true and the Fire is true, Allah will admit him into Paradise, whatever his deeds.”"
+          },
+          "ref": {
+            "ar": "صحيح البخاري (٣٤٣٥)",
+            "en": "Sahih al-Bukhari 3435"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "مريم: سورةٌ باسمها",
+            "en": "Mary: a chapter named after her"
+          },
+          "paragraphs": [
+            {
+              "ar": "مريم عليها السلام هي المرأة الوحيدة التي ذُكرت باسمها في القرآن، وسُمّيت سورةٌ كاملة باسمها، هي سورة مريم. يصفها القرآن بالطهر والعبادة، ويروي كيف بشّرتها الملائكة بغلامٍ اسمه ﴿ٱلۡمَسِيحُ عِيسَى ٱبۡنُ مَرۡيَمَ﴾، فعجبت كيف يكون لها ولدٌ ولم يمسسها بشر.",
+              "en": "Mary, peace be upon her, is the only woman named in the Qur’an, and a whole chapter bears her name: Surat Maryam. The Qur’an describes her purity and devotion, and tells how the angels gave her glad tidings of a son named “the Messiah, Jesus, the son of Mary”, and how she wondered how she could have a child when no man had touched her."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "ولادةٌ معجزة، ومعجزات",
+            "en": "A miraculous birth, and miracles"
+          },
+          "paragraphs": [
+            {
+              "ar": "وُلد عيسى عليه السلام بلا أب، وتكلّم في المهد يبرّئ أمه، فكانت أول كلمةٍ قالها: ﴿إِنِّي عَبۡدُ ٱللَّهِ﴾. وأيّده الله بالمعجزات: يبرئ الأكمه والأبرص، ويحيي الموتى، بإذن الله، كما في سورة آل عمران (٤٩). فالمسلم يؤمن بمعجزاته كلها، ويحبه ويوقّره، ولا يذكره إلا بقوله: عليه السلام.",
+              "en": "Jesus, peace be upon him, was born without a father, and spoke in the cradle to clear his mother’s name; the first words he said were: “Indeed, I am the servant of Allah.” Allah supported him with miracles: he healed the blind and the leper and raised the dead, by Allah’s permission, as Al ‘Imran (3:49) says. A Muslim believes in all his miracles, loves and honours him, and never mentions him without saying: peace be upon him."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "عبد الله ورسوله",
+            "en": "Allah’s servant and messenger"
+          },
+          "paragraphs": [
+            {
+              "ar": "يقول بعض الناس: وُلد بلا أب، فهو ابن الله. فيجيب القرآن بحجةٍ واضحة: ﴿إِنَّ مَثَلَ عِيسَىٰ عِندَ ٱللَّهِ كَمَثَلِ ءَادَمَۖ﴾؛ فآدم خُلق بلا أبٍ ولا أم، ولم يقل أحدٌ إنه إله. والمعجزات لا تجعل صاحبها إلهًا، فقد أيّد الله بها موسى وغيره من الأنبياء. وعيسى نفسه، في أول كلمةٍ قالها، أعلن أنه عبد الله.",
+              "en": "Some say: he was born without a father, so he must be divine. The Qur’an answers with a clear argument: “Indeed, the example of Jesus to Allah is like that of Adam.” Adam was created with neither father nor mother, and no one says he is a deity. Miracles do not make the one who performs them divine; Allah supported Moses and other prophets with them too. And Jesus himself, in the first words he spoke, declared that he was the servant of Allah."
+            },
+            {
+              "ar": "ويؤمن المسلمون بأنه لم يُقتل ولم يُصلب، بل رفعه الله إليه (النساء: ١٥٧–١٥٨)، وأنه سينزل في آخر الزمان حَكَمًا عدلًا، كما أخبر النبي ﷺ (صحيح البخاري ٣٤٤٨).",
+              "en": "Muslims also believe that he was neither killed nor crucified, but that Allah raised him up to Himself (An-Nisa 4:157–158), and that he will descend at the end of time as a just ruler, as the Prophet ﷺ foretold (Sahih al-Bukhari 3448)."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "إن كنت مسيحيًّا، فاعلم أن الإسلام لا يطلب منك أن تترك حبّ المسيح، بل أن تؤمن به كما قدّم نفسه في القرآن: ﴿إِنِّي عَبۡدُ ٱللَّهِ ءَاتَىٰنِيَ ٱلۡكِتَٰبَ وَجَعَلَنِي نَبِيࣰّا﴾. وأن تعبد الإله الذي كان هو نفسه يعبده ويدعوه. هذه هي الكلمة السواء التي يدعوك إليها القرآن: ألّا نعبد إلا الله، ولا نشرك به شيئًا.",
+        "en": "If you are a Christian, know that Islam does not ask you to stop loving the Messiah, but to believe in him as he presents himself in the Qur’an: “Indeed, I am the servant of Allah. He has given me the Scripture and made me a prophet.” And to worship the One he himself worshipped and prayed to. This is the common word the Qur’an invites you to: that we worship none but Allah, and associate nothing with Him."
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: آل عمران ٤٥",
+            "en": "Al-Tafsir al-Muyassar on Al ‘Imran 3:45 (in Arabic)"
+          },
+          "url": "https://quran.com/3:45/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: مريم ٣٠",
+            "en": "Al-Tafsir al-Muyassar on Maryam 19:30 (in Arabic)"
+          },
+          "url": "https://quran.com/19:30/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: آل عمران ٥٩",
+            "en": "Al-Tafsir al-Muyassar on Al ‘Imran 3:59 (in Arabic)"
+          },
+          "url": "https://quran.com/3:59/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: النساء ١٧١",
+            "en": "Al-Tafsir al-Muyassar on An-Nisa 4:171 (in Arabic)"
+          },
+          "url": "https://quran.com/4:171/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "صحيح البخاري (٣٤٣٥)",
+            "en": "Sahih al-Bukhari 3435"
+          },
+          "url": "https://sunnah.com/bukhari:3435"
+        },
+        {
+          "title": {
+            "ar": "صحيح البخاري (٣٤٤٨)",
+            "en": "Sahih al-Bukhari 3448"
+          },
+          "url": "https://sunnah.com/bukhari:3448"
+        }
+      ]
+    },
+    {
+      "slug": "faith-and-reason",
+      "mark": "العقل",
+      "title": {
+        "ar": "هل الإيمان تسليمٌ بلا عقل؟",
+        "en": "Is faith giving up on reason?"
+      },
+      "hook": {
+        "ar": "يُقال إن الدين يطلب منك أن تُطفئ عقلك وتصدّق. فاقرأ ما يقوله القرآن نفسه عن العقل والدليل.",
+        "en": "People say religion asks you to switch off your mind and believe. Read what the Qur’an itself says about reason and evidence."
+      },
+      "summary": {
+        "ar": "القرآن يطالب مخالفيه بالبرهان، ويدعو إلى التفكّر في الكون، وإلى تدبّره هو، ويجعل خلوّه من الاختلاف دليلًا على أنه من عند الله. فالإيمان في الإسلام يقينٌ يقوم على الدليل.",
+        "en": "The Qur’an demands proof from those who disagree with it, calls people to think about the universe and to reflect on the Qur’an itself, and makes its freedom from contradiction a proof that it is from Allah. In Islam, faith is certainty built on evidence."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "قُلۡ هَاتُواْ بُرۡهَٰنَكُمۡ إِن كُنتُمۡ صَٰدِقِينَ",
+          "meaning": {
+            "ar": "«بُرۡهَٰنَكُمۡ»: حجتكم ودليلكم على ما تدّعون.",
+            "en": "“…Say, ‘Produce your proof, if you should be truthful.’”"
+          },
+          "ref": {
+            "ar": "البقرة: ١١١",
+            "en": "Al-Baqarah 2:111"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "إِنَّ فِي خَلۡقِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَٱخۡتِلَٰفِ ٱلَّيۡلِ وَٱلنَّهَارِ لَأٓيَٰتࣲ لِّأُوْلِي ٱلۡأَلۡبَٰبِ ۝١٩٠ ٱلَّذِينَ يَذۡكُرُونَ ٱللَّهَ قِيَٰمࣰا وَقُعُودࣰا وَعَلَىٰ جُنُوبِهِمۡ وَيَتَفَكَّرُونَ فِي خَلۡقِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ رَبَّنَا مَا خَلَقۡتَ هَٰذَا بَٰطِلࣰا سُبۡحَٰنَكَ فَقِنَا عَذَابَ ٱلنَّارِ",
+          "meaning": {
+            "ar": "«لِّأُوْلِي ٱلۡأَلۡبَٰبِ»: لأصحاب العقول السليمة. «بَٰطِلࣰا»: عبثًا بلا حكمة.",
+            "en": "“Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding. Who remember Allah while standing or sitting or [lying] on their sides and give thought to the creation of the heavens and the earth, [saying], Our Lord, You did not create this aimlessly; exalted are You [above such a thing]; then protect us from the punishment of the Fire.”"
+          },
+          "ref": {
+            "ar": "آل عمران: ١٩٠–١٩١",
+            "en": "Al ‘Imran 3:190–191"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "أَفَلَا يَتَدَبَّرُونَ ٱلۡقُرۡءَانَۚ وَلَوۡ كَانَ مِنۡ عِندِ غَيۡرِ ٱللَّهِ لَوَجَدُواْ فِيهِ ٱخۡتِلَٰفࣰا كَثِيرࣰا",
+          "meaning": {
+            "ar": "«يَتَدَبَّرُونَ»: ينظرون فيه نظر تأمّل. «ٱخۡتِلَٰفࣰا كَثِيرࣰا»: تناقضًا واضطرابًا؛ وقد جاء على نسقٍ محكم يقطع بأنه من عند الله.",
+            "en": "“Then do they not reflect upon the Qur'an? If it had been from [any] other than Allah, they would have found within it much contradiction.”"
+          },
+          "ref": {
+            "ar": "النساء: ٨٢",
+            "en": "An-Nisa 4:82"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "كتابٌ يطلب الدليل",
+            "en": "A book that asks for proof"
+          },
+          "paragraphs": [
+            {
+              "ar": "حين ادّعى قومٌ أن الجنة لهم وحدهم، لم يقل القرآن: صدّقونا وكفى، بل قال: ﴿قُلۡ هَاتُواْ بُرۡهَٰنَكُمۡ إِن كُنتُمۡ صَٰدِقِينَ﴾. فالدعوى بلا دليلٍ لا قيمة لها في القرآن، أيًّا كان صاحبها. وهو يعيب على المشركين تقليد آبائهم بلا علم، ويدعو كل إنسانٍ إلى أن ينظر بنفسه.",
+              "en": "When some people claimed Paradise was theirs alone, the Qur’an did not say: just believe us. It said: “Say, ‘Produce your proof, if you should be truthful.’” In the Qur’an a claim without evidence is worth nothing, whoever makes it. It faults the idolaters for blindly following their forefathers, and calls every person to look for themselves."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "تفكّروا في الكون",
+            "en": "Think about the universe"
+          },
+          "paragraphs": [
+            {
+              "ar": "يذكر القرآن أن في خلق السماوات والأرض آياتٍ ﴿لِّأُوْلِي ٱلۡأَلۡبَٰبِ﴾، أصحاب العقول، الذين يتفكّرون فيها، فينتهي بهم التفكير إلى الإيمان: ﴿رَبَّنَا مَا خَلَقۡتَ هَٰذَا بَٰطِلࣰا﴾. فالتفكّر في الكون عنده طريقٌ إلى الله، لا خطرٌ على الإيمان. وهذه الرحلة نفسها بُنيت على هذا: بدأت بالنظر في الكون وفي نفسك، قبل أي شيءٍ آخر.",
+              "en": "The Qur’an praises “those of understanding”, who think about the creation of the heavens and the earth, and whose thinking leads them to faith: “Our Lord, You did not create this aimlessly.” For the Qur’an, reflecting on the universe is a road to Allah, not a danger to faith. This journey was built the same way: it began by looking at the universe and at yourself, before anything else."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "كتابٌ يدعوك إلى فحصه",
+            "en": "A book that invites you to test it"
+          },
+          "paragraphs": [
+            {
+              "ar": "قليلٌ من الكتب يتحدّى قارئه أن يجد فيه خطأ. أما القرآن فيقول: ﴿أَفَلَا يَتَدَبَّرُونَ ٱلۡقُرۡءَانَۚ وَلَوۡ كَانَ مِنۡ عِندِ غَيۡرِ ٱللَّهِ لَوَجَدُواْ فِيهِ ٱخۡتِلَٰفࣰا كَثِيرࣰا﴾. كتابٌ نزل مفرّقًا في ثلاثٍ وعشرين سنة، في السلم والحرب، والفرح والحزن، ثم لا تجد فيه اختلافًا. فهو لا يخاف من عقلك، بل يدعوه.",
+              "en": "Few books dare their readers to find a fault in them. The Qur’an says: “Then do they not reflect upon the Qur’an? If it had been from [any] other than Allah, they would have found within it much contradiction.” A book revealed piece by piece over twenty-three years, in peace and war, joy and grief, and still you find no contradiction in it. It does not fear your mind; it invites it."
+            },
+            {
+              "ar": "والعقل في الإسلام يدلّ على الله، ثم يقف عند حدوده: فيعرف به الإنسان أن له خالقًا حكيمًا، وأن الرسول صادق، ثم يتلقّى من الوحي ما لا يبلغه العقل وحده: كيف يعبد ربه، وما بعد الموت.",
+              "en": "In Islam reason leads to Allah, and then knows its limits. By it a person knows they have a wise Creator and that the Messenger is truthful; then from revelation they receive what reason alone cannot reach: how to worship their Lord, and what comes after death."
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "الإيمان الذي يدعو إليه القرآن ليس قفزةً في الظلام، بل خطوةٌ على أرضٍ صلبة من الدليل: كونٌ يشهد بخالقه، وكتابٌ يتحدّى أن يُوجد فيه اختلاف، ورسولٌ صدّقته الأحداث. فإن كان عقلك قد سار معك في هذه الرحلة إلى هنا، فإنه لا يطلب منك أن تتركه عند الباب، بل أن تتبع ما دلّك عليه.",
+        "en": "The faith the Qur’an calls to is not a leap in the dark but a step on the solid ground of evidence: a universe that bears witness to its Creator, a book that dares anyone to find a contradiction in it, and a messenger whom events proved true. If your mind has walked with you this far on the journey, it does not ask you to leave it at the door; it asks you to follow where it has led."
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: البقرة ١١١",
+            "en": "Al-Tafsir al-Muyassar on Al-Baqarah 2:111 (in Arabic)"
+          },
+          "url": "https://quran.com/2:111/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: آل عمران ١٩٠",
+            "en": "Al-Tafsir al-Muyassar on Al ‘Imran 3:190 (in Arabic)"
+          },
+          "url": "https://quran.com/3:190/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: النساء ٨٢",
+            "en": "Al-Tafsir al-Muyassar on An-Nisa 4:82 (in Arabic)"
+          },
+          "url": "https://quran.com/4:82/tafsirs/ar-tafsir-muyassar"
+        }
+      ]
+    },
+    {
+      "slug": "never-reached",
+      "mark": "العدل",
+      "title": {
+        "ar": "وماذا عمّن لم تبلغه الرسالة؟",
+        "en": "And those the message never reached?"
+      },
+      "hook": {
+        "ar": "إنسانٌ عاش ومات ولم يسمع بالإسلام قط: هل يُعذَّب على ما لم يعرفه؟",
+        "en": "Someone lived and died without ever hearing of Islam: will they be punished for what they never knew?"
+      },
+      "summary": {
+        "ar": "الله لا يعذّب أحدًا حتى تقوم عليه الحجة برسول، ولا يكلّف نفسًا إلا وسعها، ولا يحمل أحدٌ ذنب غيره. لكن من بلغته الرسالة صار السؤال سؤاله هو.",
+        "en": "Allah punishes no one until a messenger has brought them the proof; He burdens no soul beyond its capacity, and no one bears another’s sin. But whoever the message has reached now has a question of their own to answer."
+      },
+      "evidence": [
+        {
+          "kind": "quran",
+          "text": "مَّنِ ٱهۡتَدَىٰ فَإِنَّمَا يَهۡتَدِي لِنَفۡسِهِۦۖ وَمَن ضَلَّ فَإِنَّمَا يَضِلُّ عَلَيۡهَاۚ وَلَا تَزِرُ وَازِرَةࣱ وِزۡرَ أُخۡرَىٰۗ وَمَا كُنَّا مُعَذِّبِينَ حَتَّىٰ نَبۡعَثَ رَسُولࣰا",
+          "meaning": {
+            "ar": "«وَلَا تَزِرُ وَازِرَةࣱ وِزۡرَ أُخۡرَىٰۗ»: لا تحمل نفسٌ مذنبة إثم نفسٍ أخرى. «حَتَّىٰ نَبۡعَثَ رَسُولࣰا»: لا يعذّب الله أحدًا إلا بعد إقامة الحجة عليه بإرسال الرسل.",
+            "en": "“Whoever is guided is only guided for [the benefit of] his soul. And whoever errs only errs against it. And no bearer of burdens will bear the burden of another. And never would We punish until We sent a messenger.”"
+          },
+          "ref": {
+            "ar": "الإسراء: ١٥",
+            "en": "Al-Isra 17:15"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "رُّسُلࣰا مُّبَشِّرِينَ وَمُنذِرِينَ لِئَلَّا يَكُونَ لِلنَّاسِ عَلَى ٱللَّهِ حُجَّةُۢ بَعۡدَ ٱلرُّسُلِۚ وَكَانَ ٱللَّهُ عَزِيزًا حَكِيمࣰا",
+          "meaning": {
+            "ar": "«حُجَّةُۢ»: عذرٌ يعتذرون به لو لم تُرسل إليهم الرسل.",
+            "en": "“[We sent] messengers as bringers of good tidings and warners so that mankind will have no argument against Allah after the messengers. And ever is Allah Exalted in Might and Wise.”"
+          },
+          "ref": {
+            "ar": "النساء: ١٦٥",
+            "en": "An-Nisa 4:165"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "لَا يُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ",
+          "meaning": {
+            "ar": "«وُسۡعَهَاۚ»: طاقتها؛ فدين الله يسرٌ لا يطلب من العباد ما لا يطيقون.",
+            "en": "“Allah does not charge a soul except [with that within] its capacity…”"
+          },
+          "ref": {
+            "ar": "البقرة: ٢٨٦",
+            "en": "Al-Baqarah 2:286"
+          }
+        },
+        {
+          "kind": "quran",
+          "text": "لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ قَد تَّبَيَّنَ ٱلرُّشۡدُ مِنَ ٱلۡغَيِّۚ",
+          "meaning": {
+            "ar": "«لَآ إِكۡرَاهَ فِي ٱلدِّينِۖ»: لا يُكره أحدٌ على الدخول فيه. «ٱلرُّشۡدُ مِنَ ٱلۡغَيِّۚ»: الهدى من الضلال.",
+            "en": "“There shall be no compulsion in [acceptance of] the religion. The right course has become clear from the wrong…”"
+          },
+          "ref": {
+            "ar": "البقرة: ٢٥٦",
+            "en": "Al-Baqarah 2:256"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": {
+            "ar": "عدلٌ لا ظلم فيه",
+            "en": "A justice without injustice"
+          },
+          "paragraphs": [
+            {
+              "ar": "يقرّر القرآن قاعدةً واضحة: ﴿وَمَا كُنَّا مُعَذِّبِينَ حَتَّىٰ نَبۡعَثَ رَسُولࣰا﴾. فالله لا يحاسب أحدًا على رسالةٍ لم تصله، ولا يكلّف نفسًا فوق طاقتها، ولا يحمّل أحدًا ذنب أبيه أو قومه. وأرسل الرسل ﴿لِئَلَّا يَكُونَ لِلنَّاسِ عَلَى ٱللَّهِ حُجَّةُۢ﴾: فلا يبقى لأحدٍ عذرٌ يوم القيامة، ولا يُظلم أحد.",
+              "en": "The Qur’an lays down a clear rule: “And never would We punish until We sent a messenger.” Allah does not hold anyone to account for a message that never reached them, does not burden a soul beyond its capacity, and does not make anyone carry the sin of their father or their people. He sent the messengers “so that mankind will have no argument against Allah”: on the Day of Resurrection no one will be left with an excuse, and no one will be wronged."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "أمرهم إلى الله",
+            "en": "Their affair is with Allah"
+          },
+          "paragraphs": [
+            {
+              "ar": "أما من مات ولم تبلغه الدعوة، فقد اختلف العلماء في حكمه. ونقل ابن كثير في تفسير هذه الآية قول من ذهب إلى أنهم يُمتحنون يوم القيامة، فمن أطاع دخل الجنة، ومن عصى دخل النار، وقال إن هذا القول يجمع بين الأدلة كلها. وفي كل الأقوال يبقى الأصل واحدًا: أن الله أعدل من أن يظلم أحدًا، وأعلم بما في القلوب.",
+              "en": "As for those who died without the call reaching them, scholars have differed over their case. In his commentary on this verse, Ibn Kathir reports the view that they will be tested on the Day of Resurrection, those who obey entering Paradise and those who disobey entering the Fire, and says this view brings all the evidence together. Whatever the view, one principle remains: Allah is too just to wrong anyone, and knows best what is in hearts."
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ar": "أما أنت، فقد بلغتك",
+            "en": "But as for you, it has reached you"
+          },
+          "paragraphs": [
+            {
+              "ar": "هذا السؤال كثيرًا ما يُسأل عن غيرنا، وقلّما نسأله عن أنفسنا. فأنت الآن لست ممن لم تبلغه الرسالة: قرأت آيات الخالق في الكون، وعرفت أسماءه، ورأيت شواهد صدق كتابه ورسوله، وسمعت ما يريده منك. ولا إكراه في الدين؛ فالقرار قرارك وحدك. لكن ﴿قَد تَّبَيَّنَ ٱلرُّشۡدُ مِنَ ٱلۡغَيِّۚ﴾.",
+              "en": "This question is often asked about others and seldom about ourselves. You are no longer someone the message has not reached: you have read the Creator’s signs in the universe, learned His names, seen the evidence that His book and His messenger are true, and heard what He asks of you. There is no compulsion in religion; the decision is yours alone. But “the right course has become clear from the wrong.”"
+            }
+          ]
+        }
+      ],
+      "reflection": {
+        "ar": "بهذه المحطة تنتهي أسئلتك، ويبدأ سؤالٌ واحد هو سؤالك أنت. لقد رأيت الدليل، وسمعت الجواب، والله لا يظلم أحدًا. فما بقي إلا أن تختار، بعقلك وقلبك، وبلا إكراه. والمرحلة الأخيرة من هذه الرحلة صفحةٌ واحدة: ماذا بعد؟",
+        "en": "With this stop your questions end, and one question begins that is yours alone. You have seen the evidence and heard the answers, and Allah wrongs no one. All that remains is to choose, with your mind and your heart, and under no compulsion. The last stage of this journey is a single page: what next?"
+      },
+      "sources": [
+        {
+          "title": {
+            "ar": "التفسير الميسر: الإسراء ١٥",
+            "en": "Al-Tafsir al-Muyassar on Al-Isra 17:15 (in Arabic)"
+          },
+          "url": "https://quran.com/17:15/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "تفسير ابن كثير: الإسراء ١٥",
+            "en": "Tafsir Ibn Kathir on Al-Isra 17:15 (in Arabic)"
+          },
+          "url": "https://quran.com/17:15/tafsirs/ar-tafsir-ibn-kathir"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: النساء ١٦٥",
+            "en": "Al-Tafsir al-Muyassar on An-Nisa 4:165 (in Arabic)"
+          },
+          "url": "https://quran.com/4:165/tafsirs/ar-tafsir-muyassar"
+        },
+        {
+          "title": {
+            "ar": "التفسير الميسر: البقرة ٢٥٦",
+            "en": "Al-Tafsir al-Muyassar on Al-Baqarah 2:256 (in Arabic)"
+          },
+          "url": "https://quran.com/2:256/tafsirs/ar-tafsir-muyassar"
+        }
+      ]
+    }
+  ]
+}

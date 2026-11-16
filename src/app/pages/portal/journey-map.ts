@@ -243,7 +243,7 @@ export class JourneyStart {
                       @if (stop.art) {
                         <img [src]="artSmallSrc(stop.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
                       } @else {
-                        <span class="name-mark quran" lang="ar" dir="rtl">{{ stop.arabic }}</span>
+                        <span class="name-mark" [class.quran]="stop.kind === 'name'" lang="ar" dir="rtl">{{ stop.mark }}</span>
                       }
                       <span class="stop-text">
                         <span class="stop-title">{{ titleOf(stop) }}</span>
@@ -275,7 +275,7 @@ export class JourneyStart {
                     }
                   </span>
                 } @else if (stage.stops.length) {
-                  <span class="names quran" lang="ar" dir="rtl">{{ namesOf(stage) }}</span>
+                  <span class="names" [class.quran]="stage.stops[0].kind === 'name'" lang="ar" dir="rtl">{{ namesOf(stage) }}</span>
                 }
                 <span class="meta">{{ metaOf(stage) }}</span>
               </span>
@@ -348,7 +348,7 @@ export class JourneyMap {
   }
 
   protected namesOf(stage: Stage): string {
-    return stage.stops.map((stop) => stop.arabic).join(' · ');
+    return stage.stops.map((stop) => stop.mark).join(' · ');
   }
 
   protected titleOf(stop: Stop): string {

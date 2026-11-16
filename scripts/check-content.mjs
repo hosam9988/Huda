@@ -1,4 +1,5 @@
-// Checks public/data/ayat.json and names.json after they are edited: run `npm run check:content`.
+// Checks public/data/ayat.json, names.json and topics.json after they are edited: run
+// `npm run check:content`.
 // Every text needs Arabic and English, every sign a known field, an image, a revelation step on
 // its timeline, at least one https source and only hadith from al-Bukhari or Muslim; the journey
 // stops must run 1, 2, 3…
@@ -12,6 +13,7 @@ import { existsSync, readFileSync } from 'node:fs';
 const root = new URL('../', import.meta.url);
 const content = JSON.parse(readFileSync(new URL('public/data/ayat.json', root), 'utf8'));
 const { names } = JSON.parse(readFileSync(new URL('public/data/names.json', root), 'utf8'));
+const { topics } = JSON.parse(readFileSync(new URL('public/data/topics.json', root), 'utf8'));
 
 const SOURCE_KINDS = ['journal', 'preprint', 'agency', 'university', 'encyclopedia', 'book', 'news'];
 // The method page says every hadith in the signs is from al-Bukhari or Muslim, with its number, so
@@ -117,6 +119,40 @@ names.forEach((n, i) => {
   nameText(c.dua, `${at} dua`);
 });
 
+// A topic (the journey's stages 5 and 6): texts in both languages, a mark, its verses and hadith as a
+// sign's (hadith from al-Bukhari or Muslim only), parts with paragraphs, https sources. Its slug is
+// its read mark in the browser, which signs and names share, so it must not be one of theirs.
+topics.forEach((t) => {
+  const at = `topic "${t.slug}"`;
+  if (slugs.has(t.slug) || nameSlugs.has(t.slug)) errors.push(`${at}: slug already used by a sign or a name`);
+  if (!t.mark?.trim()) errors.push(`${at}: no mark`);
+  for (const key of ['title', 'hook', 'summary', 'reflection']) localized(t[key], `${at} ${key}`);
+  if (!t.evidence?.length) errors.push(`${at}: no evidence`);
+  t.evidence?.forEach((e, i) => {
+    const where = `${at} evidence[${i}]`;
+    if (!['quran', 'hadith'].includes(e.kind)) errors.push(`${where}: kind must be quran or hadith`);
+    if (/[﴿﴾«»]/.test(e.text ?? '')) errors.push(`${where}: remove the brackets from the text`);
+    localized(e.meaning, `${where} meaning`);
+    localized(e.ref, `${where} ref`);
+    if (e.kind !== 'hadith') return;
+    localized(e.narrator, `${where} narrator`);
+    if (!SAHIHAYN_REF.ar.test(e.ref?.ar ?? '') || !SAHIHAYN_REF.en.test(e.ref?.en ?? '')) {
+      errors.push(`${where}: a topic's hadith must be cited from al-Bukhari or Muslim, with its number`);
+    }
+  });
+  if (!t.sections?.length) errors.push(`${at}: no parts`);
+  t.sections?.forEach((s, i) => {
+    localized(s.heading, `${at} part[${i}] heading`);
+    if (!s.paragraphs?.length) errors.push(`${at} part[${i}]: no paragraphs`);
+    s.paragraphs?.forEach((p, j) => localized(p, `${at} part[${i}][${j}]`));
+  });
+  if (!t.sources?.length) errors.push(`${at}: no sources`);
+  t.sources?.forEach((s, i) => {
+    localized(s.title, `${at} source[${i}] title`);
+    if (!/^https:\/\//.test(s.url ?? '')) errors.push(`${at} source[${i}]: the url must start with https://`);
+  });
+});
+
 // Every English text but a verse's translation (Saheeh International's wording), the references and
 // the sources' own titles.
 const GOD = /\b(God|gods?)\b/;
@@ -135,6 +171,7 @@ const allah = (node, where) => {
 content.categories.forEach((c) => allah(c, `field "${c.id}"`));
 content.ayat.forEach((a) => allah(a, `sign "${a.slug}"`));
 names.forEach((n) => allah(n, `name "${n.slug}"`));
+topics.forEach((t) => allah(t, `topic "${t.slug}"`));
 
 // The KFQPC Mushaf text writes the staggered tanween (of idgham and ikhfa') with three marks that
 // mean something else in Unicode: Amiri Quran has no glyph for U+065E, so the word breaks apart, and
@@ -150,6 +187,7 @@ const tanween = (node, where) => {
 };
 content.ayat.forEach((a) => tanween(a, `sign "${a.slug}"`));
 names.forEach((n) => tanween(n, `name "${n.slug}"`));
+topics.forEach((t) => tanween(t, `topic "${t.slug}"`));
 
 if (errors.length) {
   console.error(`${errors.length} problem(s) in public/data:\n- ${errors.join('\n- ')}`);
@@ -160,3 +198,4 @@ const reflection = content.ayat.filter((a) => a.type === 'reflection').length;
 const written = names.filter((n) => n.content).length;
 console.log(`OK: ${content.categories.length} fields, ${content.ayat.length} signs (${reflection} for reflection), ${stops.length} journey stops, ${sources} sources.`);
 console.log(`OK: ${names.length} names, ${written} written.`);
+console.log(`OK: ${topics.length} topics.`);

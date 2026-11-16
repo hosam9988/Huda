@@ -235,7 +235,8 @@
   A.routes = async () => {
     const names = (await (await fetch('data/names.json')).json()).names.map((n) => '/names/' + n.slug);
     const signs = (await (await fetch('data/ayat.json')).json()).ayat.map((a) => '/signs/' + a.slug);
-    return ['/', '/signs', '/names', '/method', '/next', ...signs, ...names];
+    const topics = (await (await fetch('data/topics.json')).json()).topics.map((t) => '/topics/' + t.slug);
+    return ['/', '/signs', '/names', '/method', '/next', ...signs, ...names, ...topics];
   };
 
   // Runs in the background; poll __audit.state.
