@@ -360,6 +360,22 @@
 
 // ---------- More questions ----------
 
+// The nine pictures on the closed fold: smaller on a narrow phone, so the row stays inside the
+// fold down to a 320px screen. 5rem is what the page's and the fold's paddings and its frame take
+// from the screen's width; nine squares, each overlapping the one before by a fifth, take 7.6 of
+// their widths. From about 450px up they keep their full 3rem.
+.squares {
+  --square: min(3rem, calc((100vw - 5rem) / 7.6));
+  padding-inline-start: calc(var(--square) * 0.2);
+
+  .peek-stop {
+    inline-size: var(--square);
+    block-size: var(--square);
+    margin-inline-start: calc(var(--square) * -0.2);
+    border-radius: calc(var(--square) / 4);
+  }
+}
+
 .questions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
