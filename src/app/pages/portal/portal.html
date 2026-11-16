@@ -21,14 +21,15 @@
         <p class="title-en">Know <span class="allah-en gold-text">Allah</span></p>
       }
       <p class="lead">{{ t().portal.lead }}</p>
+      <p class="lead-note">{{ t().portal.notAll }}</p>
     </div>
 
-    <!-- The journey for readers new to Islam, folded under its title and a line on what it holds (and
-         on how much more the site holds, further down) until the reader opens it. Open, its questions
-         take turns (each leads to its stop, and a swipe turns them too) above the button that goes
-         through all of them in order. The button to all the signs stays in sight under the fold. On
-         one column, the site's gold rule comes first, to keep the fold apart from the line under the
-         title. -->
+    <!-- The journey for readers new to Islam, folded under its title and a line on what it holds
+         until the reader opens it. Open, its questions take turns (each leads to its stop, and a
+         swipe turns them too) above the button that goes through all of them in order. The button to
+         all the signs stays in sight under the fold, and the figures under it say how much the site
+         holds. On a tablet, the site's gold rule comes first, to keep the fold apart from the lines
+         under the title. -->
     @if (journey()[0]; as first) {
       <div class="hero-journey">
         <app-ornament class="hero-rule" />
@@ -39,7 +40,6 @@
               <h2>{{ t().journeyTitle }}</h2>
               <span class="fold-summary">
                 {{ t().journeyIntro(language.number(journey().length), language.number(journeyMinutes())) }}
-                {{ t().portal.moreBelow(content.ayat().length, stats().names) }}
               </span>
             </span>
             <span class="fold-foot">

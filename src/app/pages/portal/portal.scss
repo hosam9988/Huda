@@ -93,6 +93,16 @@
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
 }
 
+// Under it: what the site holds is a few of Allah's signs, which number in the thousands. In the
+// gold of the site's labels, so it doesn't read as one paragraph with the line above it.
+.lead-note {
+  max-inline-size: 34rem;
+  margin: 0.75rem 0 0;
+  color: var(--gold-light);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  text-wrap: pretty;
+}
+
 // ---------- The journey, folded: what it is; open, its questions taking turns ----------
 
 // The fold's line says what the questions are, and that far more follows further down, so the reader
@@ -105,8 +115,9 @@
   animation: rise 0.9s 0.15s var(--ease) both;
 }
 
-// The site's gold rule, between the line under the title and the fold: only where one comes under
-// the other. Side by side, the two columns keep them apart.
+// The site's gold rule, between the lines under the title and the fold: only where one comes under
+// the other, on a tablet. Side by side, the two columns keep them apart; on a phone, the fold's frame
+// does, and the room goes to the figures.
 .hero-rule {
   display: none;
 }
@@ -759,6 +770,11 @@
     animation: none;
   }
 
+  // Centred, its lines are evened out.
+  .lead-note {
+    text-wrap: balance;
+  }
+
   .hero-journey {
     inline-size: 100%;
     max-inline-size: 34rem;
@@ -804,9 +820,10 @@
 }
 
 @media (max-width: 640px) {
-  // The title, the journey's fold and the button under it on a phone's first screen.
+  // The title, the journey's fold, the button under it and the figures on a phone's first screen.
+  // Below the figures, room for the «صورة تعبيرية» label.
   .hero {
-    padding-block-start: 1rem;
+    padding-block: 1rem 3rem;
   }
 
   .title {
@@ -824,12 +841,69 @@
     font-size: 1rem;
   }
 
+  .lead-note {
+    margin-block-start: 0.5rem;
+    font-size: 0.92rem;
+  }
+
   .hero-journey {
     margin-block-start: 0.9rem;
   }
 
+  // The fold's frame keeps it apart from the lines above, and the room goes to the figures.
   .hero-rule {
-    margin-block-end: 0.75rem;
+    display: none;
+  }
+
+  // The journey's fold, closed, as small as it can be: its title, its line, and the stops' pictures
+  // beside the button that opens it. The tab bar already says «ابدأ هنا», so its label goes.
+  .hero-fold {
+    > summary {
+      gap: 0.65rem;
+      padding: 0.85rem 1rem;
+    }
+
+    .kicker {
+      display: none;
+    }
+
+    .fold-head {
+      gap: 0.15rem;
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .fold-summary {
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .fold-foot {
+      gap: 0.5rem 0.6rem;
+    }
+
+    .peek {
+      padding-inline-start: 0.4rem;
+    }
+
+    .peek-stop {
+      inline-size: 1.55rem;
+      block-size: 1.55rem;
+      margin-inline-start: -0.4rem;
+      border-width: 1.5px;
+
+      span {
+        font-size: 0.66rem;
+      }
+    }
+
+    .fold-toggle {
+      min-block-size: 2.5rem;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.9rem;
+    }
   }
 
   .question {
@@ -850,6 +924,36 @@
 
     .btn.big {
       padding-inline: 1.15rem;
+    }
+  }
+
+  // The figures in one row, not two by two as on the signs' page, so they too are on the first
+  // screen.
+  .hero-stats {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-block-start: 1.4rem;
+
+    // The numbers level, whether their label takes one line or two.
+    div {
+      flex: 1 1 0;
+      justify-content: flex-end;
+      min-inline-size: 0;
+      padding-inline: 0.3rem;
+    }
+
+    div:nth-child(3) {
+      border-inline-start: 1px solid var(--line);
+    }
+
+    dt {
+      font-size: 0.74rem;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    dd {
+      font-size: 1.65rem;
     }
   }
 
@@ -886,5 +990,12 @@
     inline-size: 100%;
     aspect-ratio: 16 / 9;
     min-block-size: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  // Too narrow for the stops' pictures beside the button that opens the fold: only the button.
+  .hero-fold .peek {
+    display: none;
   }
 }

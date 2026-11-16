@@ -39,8 +39,8 @@ export interface UiText {
   continueWhere: (title: string) => string;
   journeyTitle: string;
   /**
-   * What the hero's fold «غير مسلم أو جديدٌ على الإسلام؟» holds, followed by portal.moreBelow. Kept
-   * short, like portal.lead: both are on a phone's first screen.
+   * What the hero's fold «غير مسلم أو جديدٌ على الإسلام؟» holds. Kept short, like portal.lead: both
+   * are on a phone's first screen, with the figures under the fold.
    */
   journeyIntro: (stops: string, minutes: string) => string;
   journeyStop: (n: string, total: string) => string;
@@ -138,13 +138,12 @@ export interface UiText {
      * English one more than the Arabic, as its page also has the line «Know Allah».
      */
     lead: string;
-    startJourney: string;
     /**
-     * After the journey's line in the hero's fold («رحلةٌ قصيرة في ٧ محطات…»): its questions are a
-     * start, not all the site holds, so a reader doesn't take the seven for the whole of it. Counted
-     * from the data.
+     * Under it: what the site holds is a few of Allah's signs, not all of them, so a reader doesn't
+     * take its signs and miracles for all there are.
      */
-    moreBelow: (signs: number, names: number) => string;
+    notAll: string;
+    startJourney: string;
     /** The questions that take turns in the hero's fold: each opens a stop of the journey. */
     questionLabel: string;
     questionOf: (n: string, total: string) => string;
@@ -229,8 +228,6 @@ function arabicCount(n: number, noun: ArabicNoun): string {
 const ARABIC_THREE_TO_TEN = ['الثلاثة', 'الأربعة', 'الخمسة', 'الستة', 'السبعة', 'الثمانية', 'التسعة', 'العشرة'];
 
 const NAME_NOUN: ArabicNoun = { one: 'اسم واحد', two: 'اسمان', few: 'أسماء', many: 'اسمًا', bare: 'اسم' };
-/** The site's signs, both kinds, by the word the home page uses for all of them: «تصفّح كل الآيات». */
-const SIGN_NOUN: ArabicNoun = { one: 'آية واحدة', two: 'آيتان', few: 'آيات', many: 'آية', bare: 'آية' };
 const MIRACLE_NOUN: ArabicNoun = { one: 'معجزة واحدة', two: 'معجزتان', few: 'معجزات', many: 'معجزة', bare: 'معجزة' };
 const REFLECTION_NOUN: ArabicNoun = {
   one: 'علامة واحدة للتفكر',
@@ -375,9 +372,9 @@ export const UI_TEXT: Record<Lang, UiText> = {
       intro:
         'طريقان لمعرفة الله: آياته في الكون وفي أنفسنا، وأسماؤه الحسنى التي عرّفنا بها نفسه. ابدأ بأيهما شئت.',
       lead: 'آياتٌ في الكون وفي نفسك تدل على خالقها، وأسماءٌ حسنى عرّفنا الله بها نفسه: بأدلتها من القرآن والسنة، ومصادرها الموثّقة.',
+      notAll:
+        'وليس ما هنا كلَّ الآيات والمعجزات، بل هو قليلٌ من كثير: فآيات الله في القرآن والسنة، وفي الكون وفي أنفسنا، تُعدّ بالآلاف.',
       startJourney: 'ابدأ الرحلة',
-      moreBelow: (signs, names) =>
-        `وما هي إلا البداية: تجد في الأسفل ${arabicCount(signs, SIGN_NOUN)}${names ? ` و${toArabicDigits(names)} من أسماء الله الحسنى` : ''}.`,
       questionLabel: 'سؤالٌ يستحق التفكير',
       questionOf: (n, total) => `السؤال ${n} من ${total}`,
       discover: 'اكتشف الجواب',
@@ -573,9 +570,9 @@ export const UI_TEXT: Record<Lang, UiText> = {
       intro:
         'Two paths to knowing Allah: His signs in the universe and in ourselves, and the Beautiful Names by which He made Himself known. Start with either.',
       lead: 'Signs in the universe and within you that point to their Creator, and Allah’s Beautiful Names.',
+      notAll:
+        'What is here is not every sign and miracle, only a few of many: Allah’s signs, in the Qur’an and Sunnah, in the universe and in ourselves, number in the thousands.',
       startJourney: 'Start the journey',
-      moreBelow: (signs, names) =>
-        `It’s only the start: below ${signs + names === 1 ? 'is' : 'are'} ${signs} ${signs === 1 ? 'sign' : 'signs'}${names ? ` and ${names} ${names === 1 ? 'Name' : 'Names'}` : ''}.`,
       questionLabel: 'A question worth thinking about',
       questionOf: (n, total) => `Question ${n} of ${total}`,
       discover: 'Discover the answer',

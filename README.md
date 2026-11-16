@@ -19,11 +19,15 @@ that more components can join it later.
 ## What's in it
 
 - **The home page** (`/`) is made to draw in a reader who is curious about Islam:
-  1. under the title, the journey for readers new to Islam, folded under «غير مسلم أو جديدٌ على
-     الإسلام؟» ("Non-Muslim or new to Islam?"), a line on what it holds and a glimpse of its
-     pictures until the reader opens it. Open, the opening questions of its seven stops take turns
-     over their pictures, each leading to its stop, above a button through all of them in order.
-     Under the fold, a button to browse the signs, and the figures (signs, names, sources);
+  1. under the title, a line on what the site offers, and a note that what it holds is a few of
+     Allah's signs and miracles, which number in the thousands in the Qur'an and Sunnah, in the
+     universe and in ourselves. Then the journey for readers new to Islam, folded under «غير مسلم
+     أو جديدٌ على الإسلام؟» ("Non-Muslim or new to Islam?"), a line on what it holds and a glimpse
+     of its pictures until the reader opens it. Open, the opening questions of its seven stops take
+     turns over their pictures, each leading to its stop, above a button through all of them in
+     order. Under the fold, a button to browse the signs, and the figures (signs, names, sources).
+     On a phone the fold is small and the figures sit in one row, so all of it fits the first
+     screen;
   2. nine more questions from every field, folded the same way;
   3. the two sections; today's sign and name; why the site can be trusted (verses from the Mushaf,
      hadith with their numbers, every fact with its source); and al-An'am 6:102 with "What next?".
