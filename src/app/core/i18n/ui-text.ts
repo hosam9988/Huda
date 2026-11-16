@@ -42,7 +42,6 @@ export interface UiText {
    * What the hero's fold «غير مسلم أو جديدٌ على الإسلام؟» holds. Kept short, like portal.lead: both
    * are on a phone's first screen, with the figures under the fold.
    */
-  journeyIntro: (stops: string, minutes: string) => string;
   journeyStop: (n: string, total: string) => string;
   /** Labels that name one sign gloss it «(معجزة)» only when it isn't a sign for reflection. */
   ayahOfTheDay: (reflection: boolean) => string;
@@ -134,7 +133,7 @@ export interface UiText {
   portal: {
     intro: string;
     /**
-     * Under the title: what the site offers, in a sentence. Kept short (see journeyIntro); the
+     * Under the title: what the site offers, in a sentence. Kept short, so the journey's card fits; the
      * English one more than the Arabic, as its page also has the line «Know Allah».
      */
     lead: string;
@@ -144,33 +143,18 @@ export interface UiText {
      */
     notAll: string;
     startJourney: string;
-    /** The questions that take turns in the hero's fold: each opens a stop of the journey. */
-    questionLabel: string;
-    questionOf: (n: string, total: string) => string;
-    discover: string;
     /**
      * The button under them. It opens the first and leads through the rest one after another, so it
      * names them: the reader should know it goes through these same questions, not somewhere else.
      */
-    answersInOrder: (count: number) => string;
-    pauseQuestions: string;
-    playQuestions: string;
     /** «١٠٧ أسماء» under the figures in the hero, and on the names' card. */
     statNames: (n: number) => string;
-    questionsTitle: string;
-    questionsIntro: string;
-    readAnswer: string;
     /**
      * Folded sections: what each holds, said before it is opened. The journey's, on /signs, describes
      * its stops in ayat.json, in order; the questions' names the fields of the home page's questions.
      */
     journeySummary: (stops: string, minutes: string) => string;
-    questionsSummary: (count: string) => string;
-    forExample: string;
     showStops: string;
-    showQuestions: string;
-    /** What opens the hero's fold: the journey's questions, named by their count. */
-    showJourney: (count: number) => string;
     hide: string;
     pathsTitle: string;
     signsTitle: string;
@@ -224,9 +208,6 @@ function arabicCount(n: number, noun: ArabicNoun): string {
   return `${toArabicDigits(n)} ${form}`;
 }
 
-/** A count from 3 to 10 in words, after a masculine plural: «الأجوبة السبعة». */
-const ARABIC_THREE_TO_TEN = ['الثلاثة', 'الأربعة', 'الخمسة', 'الستة', 'السبعة', 'الثمانية', 'التسعة', 'العشرة'];
-
 const NAME_NOUN: ArabicNoun = { one: 'اسم واحد', two: 'اسمان', few: 'أسماء', many: 'اسمًا', bare: 'اسم' };
 const MIRACLE_NOUN: ArabicNoun = { one: 'معجزة واحدة', two: 'معجزتان', few: 'معجزات', many: 'معجزة', bare: 'معجزة' };
 const REFLECTION_NOUN: ArabicNoun = {
@@ -276,8 +257,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
     continueReading: 'تابع القراءة',
     continueWhere: (title) => `توقفت عند: ${title}`,
     journeyTitle: 'غير مسلم أو جديدٌ على الإسلام؟',
-    journeyIntro: (stops, minutes) =>
-      `رحلةٌ قصيرة في ${stops} محطات، مرتبة لمن يتعرف على الإسلام أول مرة، تُقرأ في نحو ${minutes} دقيقة.`,
     journeyStop: (n, total) => `المحطة ${n} من ${total}`,
     ayahOfTheDay: (reflection) => (reflection ? 'آية اليوم' : 'آية اليوم (معجزة اليوم)'),
     readMore: 'اقرأ المزيد',
@@ -375,32 +354,12 @@ export const UI_TEXT: Record<Lang, UiText> = {
       notAll:
         'وليس ما هنا كلَّ الآيات والمعجزات، بل هو قليلٌ من كثير: فآيات الله في القرآن والسنة، وفي الكون وفي أنفسنا، تُعدّ بالآلاف.',
       startJourney: 'ابدأ الرحلة',
-      questionLabel: 'سؤالٌ يستحق التفكير',
-      questionOf: (n, total) => `السؤال ${n} من ${total}`,
-      discover: 'اكتشف الجواب',
-      answersInOrder: (count) =>
-        ARABIC_THREE_TO_TEN[count - 3]
-          ? `اكتشف الأجوبة ${ARABIC_THREE_TO_TEN[count - 3]} بالترتيب`
-          : 'اكتشف الأجوبة كلها بالترتيب',
-      pauseQuestions: 'أوقف تبديل الأسئلة',
-      playQuestions: 'تابع تبديل الأسئلة',
       statNames: (n) => arabicCount(n, NAME_NOUN).replace(/^[٠-٩]+ /, ''),
-      questionsTitle: 'أسئلةٌ تستحق أن تتوقف عندها',
-      questionsIntro: 'وراء كل سؤالٍ صفحةٌ تُقرأ في دقائق: النص، وما كان يعرفه الناس يوم نزل، وما كشفه العلم أو سجّله التاريخ، بمصادره.',
-      readAnswer: 'اقرأ الجواب',
       journeySummary: (stops, minutes) =>
         `رحلةٌ في ${stops} محطات مرتّبة لمن يتعرف على الإسلام أول مرة، تُقرأ في نحو ${minutes} دقيقة: من الكون الذي يتسع، إلى ظلمات أعماق البحر، إلى أطوار الجنين وألم الحروق، إلى نبوءةٍ تحققت ووقايةٍ من الأوبئة، إلى كتابٍ حُفظ أربعة عشر قرنًا.`,
-      questionsSummary: (count) =>
-        `${count} أسئلة من الكون والأرض والبحار، ومن عالم الأحياء وخلق الإنسان والصحة، ومن نبوءاتٍ تحققت. وراء كل سؤالٍ صفحةٌ تُقرأ في دقائق: النص، وما كشفه العلم أو سجّله التاريخ، بمصادره.`,
-      forExample: 'مثلًا:',
       showStops: 'اعرض المحطات',
-      showQuestions: 'اعرض الأسئلة',
-      showJourney: (count) =>
-        ARABIC_THREE_TO_TEN[count - 3]
-          ? `اعرض الأسئلة ${ARABIC_THREE_TO_TEN[count - 3]}`
-          : 'اعرض الأسئلة',
       hide: 'إخفاء',
-      pathsTitle: 'طريقان لمعرفة الله',
+      pathsTitle: 'المكتبة',
       signsTitle: 'الإعجاز في القرآن والسنة',
       signsBlurb:
         'معجزاتٌ تحدّث عنها القرآن والسنة قبل أربعة عشر قرنًا، وكشف العلم والتاريخ جانبًا منها، وعلاماتٌ تُظهر عظمة الخالق وتدعو إلى التفكر، بأدلتها ومصادرها.',
@@ -472,8 +431,6 @@ export const UI_TEXT: Record<Lang, UiText> = {
     continueReading: 'Continue reading',
     continueWhere: (title) => `You stopped at: ${title}`,
     journeyTitle: 'Non-Muslim or new to Islam?',
-    journeyIntro: (stops, minutes) =>
-      `A ${minutes}-minute journey in ${stops} stops for anyone new to Islam.`,
     journeyStop: (n, total) => `Stop ${n} of ${total}`,
     ayahOfTheDay: (reflection) => (reflection ? 'Sign of the day' : 'Sign (miracle) of the day'),
     readMore: 'Read more',
@@ -573,26 +530,12 @@ export const UI_TEXT: Record<Lang, UiText> = {
       notAll:
         'What is here is not every sign and miracle, only a few of many: Allah’s signs, in the Qur’an and Sunnah, in the universe and in ourselves, number in the thousands.',
       startJourney: 'Start the journey',
-      questionLabel: 'A question worth thinking about',
-      questionOf: (n, total) => `Question ${n} of ${total}`,
-      discover: 'Discover the answer',
-      answersInOrder: (count) => `Discover all ${count} answers in order`,
-      pauseQuestions: 'Stop changing the questions',
-      playQuestions: 'Keep changing the questions',
       statNames: (n) => (n === 1 ? 'name' : 'names'),
-      questionsTitle: 'Questions worth stopping for',
-      questionsIntro: 'Behind each question is a page you can read in minutes: the text, what people knew when it came, what science found or history recorded, and the sources.',
-      readAnswer: 'Read the answer',
       journeySummary: (stops, minutes) =>
         `A journey in ${stops} stops, arranged for anyone meeting Islam for the first time, about ${minutes} minutes of reading: from a universe that keeps expanding, to the darkness of the deep sea, the stages of the embryo and the pain of burns, a prophecy that came true and a rule against epidemics, and a book kept unchanged for fourteen centuries.`,
-      questionsSummary: (count) =>
-        `${count} questions from the cosmos, the earth and the seas, the living world, the human body and health, and prophecies that came true. Behind each is a page you can read in minutes: the text, what science found or history recorded, and the sources.`,
-      forExample: 'For example:',
       showStops: 'Show the stops',
-      showQuestions: 'Show the questions',
-      showJourney: (count) => `Show the ${count} questions`,
       hide: 'Hide',
-      pathsTitle: 'Two paths to knowing Allah',
+      pathsTitle: 'The library',
       signsTitle: 'Signs in the Qur’an and Sunnah',
       signsBlurb:
         'Miracles the Qur’an and Sunnah spoke of fourteen centuries ago, on which science and history have since shed light, and signs that show the Creator’s greatness and call for reflection — with their evidence and sources.',

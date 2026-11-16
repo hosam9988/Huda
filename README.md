@@ -18,21 +18,33 @@ that more components can join it later.
 
 ## What's in it
 
-- **The home page** (`/`) is made to draw in a reader who is curious about Islam:
+- **The home page** (`/`) is the journey's map, made to carry a reader from the first question to
+  the last, whether they are looking for the truth or are Muslims who want their hearts at rest:
   1. under the title, a line on what the site offers, and a note that what it holds is a few of
      Allah's signs and miracles, which number in the thousands in the Qur'an and Sunnah, in the
-     universe and in ourselves. Then the journey for readers new to Islam, folded under «غير مسلم
-     أو جديدٌ على الإسلام؟» ("Non-Muslim or new to Islam?"), a line on what it holds and a glimpse
-     of its pictures until the reader opens it. Open, the opening questions of its seven stops take
-     turns over their pictures, each leading to its stop, above a button through all of them in
-     order. Under the fold, a button to browse the signs, and the figures (signs, names, sources).
-     On a phone the fold is small and the figures sit in one row, so all of it fits the first
-     screen;
-  2. nine more questions from every field, folded the same way;
-  3. the two sections; today's sign and name; why the site can be trusted (verses from the Mushaf,
-     hadith with their numbers, every fact with its source); and al-An'am 6:102 with "What next?".
-- **Finding the way:** the header holds the sections, with "Start here" set apart; on a phone they
-  are in a tab bar at the foot of the screen (Home, Start here, Signs, Names, Our method).
+     universe and in ourselves. Then the journey's card: on a first visit, «رحلةٌ في سبعة أسئلة»
+     ("A journey in seven questions") and «ابدأ الرحلة» ("Start the journey"); once the reader has
+     begun, «أكمل رحلتك» ("Continue your journey"), how far they have come, and their next stop.
+     Under it, a button to browse the signs, and the figures (signs, names, sources). On a phone the
+     figures sit in one row, so all of it fits the first screen;
+  2. the journey's map (`/#map`): seven stages on one road, each a question — «هل لهذا الكون
+     خالق؟» (Is there a Creator?), «من هو؟» (Who is He?), «هل كلّمنا؟» (Has He spoken to us?), «من
+     الذي بلّغنا؟» (Who brought it?), «ماذا يريد منّا؟» (What does He ask of us?), «وماذا عن
+     أسئلتي؟» (And my questions?), «ماذا بعد؟» (What next?). The stage the reader is in lists its
+     stops; a finished stage is ticked off; the fifth and sixth are marked «تُكتب قريبًا» until
+     their pages are written. Under the map, the short tour of seven miracles;
+  3. the library (the signs and the names); today's sign and name; why the site can be trusted
+     (verses from the Mushaf, hadith with their numbers, every fact with its source); and al-An'am
+     6:102 with "What next?".
+- **The journey's stops** are the site's own pages: signs and names (`src/app/core/journey.ts`
+  lists them, six to a stage). Reached from the map (`?path=map`), a page shows where it stands
+  («المرحلة ٣، المحطة ١ من ٦», with a step for each stop of its stage) and ends with what it showed
+  in a line and the next stop, in its stage or the next; after the last stop written so far, "What
+  next?". A stop counts as done once read (the read marks kept in the browser), and the map and the
+  card follow from those.
+- **Finding the way:** the header holds the sections, with "Start here" (the journey's map) set
+  apart; on a phone they are in a tab bar at the foot of the screen (Home, Start here, Signs, Names,
+  Our method).
 - **The signs, «سنريهم آياتنا»** (`/signs`): 74 signs in 9 fields — the cosmos; earth and sky;
   seas and water; the living world; the human being; health in the Sunnah; peoples of the past;
   prophecies fulfilled; preserving the Qur'an.
@@ -45,10 +57,10 @@ that more components can join it later.
     signs in it shows all its fields) and clears both searches. Each list shows its first twelve
     cards (six on a phone), and «اعرض المزيد» ("Show more") adds as many more, so the page never runs
     on and on.
-  - **"Non-Muslim or new to Islam?":** a 7-stop journey through the signs, ending with "What next?".
+  - **The short tour, "Non-Muslim or new to Islam?":** seven miracles, ending with "What next?".
     It is folded just above «المعجزات» (Miracles), under a line on what its stops hold and their
-    pictures, until the reader opens it or follows a link to `/signs#journey` (the header's "Start
-    here", the hero's first button and the footer). The hero's other buttons lead to the two lists.
+    pictures, until the reader opens it or follows a link to `/signs#journey` (the footer and the
+    link under the home page's map). The hero's other buttons lead to the two lists.
   - **«آية (معجزة)»:** many readers don't know that «آية» can mean a miracle, so where the interface's
     «آية» means the miracles it is followed by «(معجزة)» ("sign (miracle)" in English): «آية اليوم (معجزة
     اليوم)» and «الآية (المعجزة) التالية» when that sign is a miracle, and the hero's «هذه الآيات
@@ -317,7 +329,8 @@ src/app/
   core/
     prerender.ts               how the app takes over a prerendered page
     models/ayah.ts             a sign; divine-name.ts a name; lang.ts the languages; theme.ts the page colours
-    services/content.service   loads ayat.json: fields, signs, journey, sign of the day
+    journey.ts                 the journey: its seven stages, their stops, the reader's progress
+    services/content.service   loads ayat.json: fields, signs, the short tour, sign of the day
     services/page-meta.service each page's description, canonical address and Open Graph tags
     services/names.service     loads names.json: the names, name of the day, the previous and next name
     services/reading.service   read marks, where the reader stopped, text size (localStorage)
@@ -327,10 +340,10 @@ src/app/
     services/theme.service     page colour, sets <html data-theme> (palettes in styles.scss)
     i18n/ui-text.ts            interface labels in each language
     utils/                     image paths, search (ignores tashkeel), reading time
-  shared/                      sign card, progress ring, scroll reveal, swipe, theme picker, listen, ornament
-  pages/portal                 the home page (/): the journey folded in the hero (open, its questions take turns, or swipe, above a button through all of them in order), the folded questions, the two sections
+  shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament, a stop's place and way on
+  pages/portal                 the home page (/): the journey's card and its map (journey-map.ts), the library
   pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
-  pages/ayah                   one sign (/signs/:slug; ?path=journey keeps the journey's order)
+  pages/ayah                   one sign (/signs/:slug; ?path=map leads on along the journey, ?path=journey along the short tour)
   pages/names                  the names (/names) and one name (/names/:slug)
   pages/method, next-steps     "Our method" (/method) and "What next?" (/next)
 public/data/ayat.json          the signs

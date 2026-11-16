@@ -103,11 +103,8 @@
   text-wrap: pretty;
 }
 
-// ---------- The journey, folded: what it is; open, its questions taking turns ----------
+// ---------- The journey: its card under the title, its map under the hero ----------
 
-// The fold's line says what the questions are, and that far more follows further down, so the reader
-// doesn't take the seven for all the site holds. The button under them goes through the same
-// questions in order, so the reader doesn't take it for a way to somewhere else.
 .hero-journey {
   display: flex;
   flex-direction: column;
@@ -115,42 +112,11 @@
   animation: rise 0.9s 0.15s var(--ease) both;
 }
 
-// The site's gold rule, between the lines under the title and the fold: only where one comes under
-// the other, on a tablet. Side by side, the two columns keep them apart; on a phone, the fold's frame
-// does, and the room goes to the figures.
+// The site's gold rule, between the lines under the title and the journey's card: only where one
+// comes under the other, on a tablet. Side by side, the two columns keep them apart; on a phone, the
+// card's frame does, and the room goes to the figures.
 .hero-rule {
   display: none;
-}
-
-// The site's fold (styles.scss), on the night sky: see-through like the questions' card, and
-// smaller than the folds further down, as it sits under the page's title.
-.hero-fold {
-  inline-size: 100%;
-  border-color: var(--line-strong);
-  background: rgb(8 12 28 / 60%);
-  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 80%);
-
-  > summary {
-    gap: 1rem;
-    padding: clamp(1.1rem, 2.5vw, 1.6rem);
-  }
-
-  .fold-head h2 {
-    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
-  }
-
-  .fold-summary {
-    font-size: 0.92rem;
-    text-wrap: balance;
-  }
-
-  .fold-body {
-    padding-inline: clamp(0.75rem, 2vw, 1.25rem);
-  }
-
-  .cta-row {
-    margin-block-start: 1.25rem;
-  }
 }
 
 .actions {
@@ -160,319 +126,17 @@
   margin-block-start: 1.25rem;
 }
 
-.deck {
-  position: relative;
-  inline-size: 100%;
-  overflow: hidden;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-lg);
-  background: rgb(8 12 28 / 60%);
-  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 80%);
-}
-
-// Every question sits in the same cell, so the card is as tall as the longest and never jumps.
-// Sideways moves on it are the reader's swipes (shared/swipe.ts); up and down still scroll the
-// page, and two fingers still zoom. A mouse drag would select the words, so they can't be.
-.deck-stack {
-  position: relative;
+// The short tour, under the map.
+.quick {
   display: grid;
-  touch-action: pan-y pinch-zoom;
-  -webkit-user-select: none;
-  user-select: none;
-
-  // The questions follow the finger as it moves, without easing behind it.
-  &.dragging {
-    cursor: grabbing;
-
-    .question {
-      transition: none;
-    }
-  }
-
-  .art-label {
-    inset-block-start: 0.75rem;
-    inset-inline-end: 0.75rem;
-  }
-}
-
-.question {
-  position: relative;
-  isolation: isolate;
-  grid-area: 1 / 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-block-size: clamp(18rem, 36vw, 27rem);
-  padding: clamp(1.25rem, 3vw, 1.75rem);
-  // Room above the words for the «صورة تعبيرية» label, however long the question.
-  padding-block-start: 3rem;
-  color: var(--text);
-  visibility: hidden;
-  opacity: 0;
-  // translate: a question let go mid-swipe glides back, or on and out of the card.
-  transition:
-    opacity 0.8s var(--ease),
-    visibility 0.8s,
-    translate 0.5s var(--ease);
-
-  &.current {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(180deg, rgb(5 8 20 / 5%) 0%, rgb(5 8 20 / 55%) 42%, rgb(5 8 20 / 94%) 100%);
-  }
-
-  &:hover .question-art {
-    scale: 1.04;
-  }
-}
-
-.question-art {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  transition: scale 0.8s var(--ease);
-}
-
-.question-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.4rem;
-}
-
-.deck-label {
-  color: var(--gold);
-  font-family: var(--font-display-en);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-:host-context([lang='ar']) .deck-label {
-  font-family: var(--font-display-ar);
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
-.question-lead {
-  font-family: var(--font-display-en);
-  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
-  font-weight: 600;
-  line-height: 1.4;
-  text-wrap: balance;
-}
-
-:host-context([lang='ar']) .question-lead {
-  font-family: var(--font-display-ar);
-  font-weight: 500;
-  line-height: 1.7;
-}
-
-.question-rest {
-  color: var(--text-muted);
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-
-.question-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-block-start: 0.35rem;
-  color: var(--gold-light);
-  font-family: var(--font-display-en);
-  font-weight: 500;
-
-  .arrow {
-    inline-size: 1.1em;
-    block-size: 1.1em;
-  }
-}
-
-:host-context([lang='ar']) .question-link {
-  font-family: var(--font-display-ar);
-}
-
-.deck-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.1rem;
-  padding: 0.35rem 0.75rem;
-  border-block-start: 1px solid var(--line);
-  background: rgb(5 8 20 / 70%);
-}
-
-.dot,
-.play {
-  display: grid;
-  place-items: center;
-  inline-size: 2.25rem;
-  block-size: 2.5rem;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--text-muted);
-  cursor: pointer;
-  touch-action: manipulation;
-}
-
-.dot::before {
-  content: '';
-  inline-size: 0.5rem;
-  block-size: 0.5rem;
-  border-radius: 999px;
-  background: rgb(var(--accent-rgb) / 40%);
-  transition:
-    inline-size 0.3s var(--ease),
-    background-color 0.3s;
-}
-
-.dot[aria-pressed='true']::before {
-  inline-size: 1.4rem;
-  background: var(--gold);
-}
-
-.play {
-  margin-inline-start: 0.4rem;
-
-  svg {
-    inline-size: 1rem;
-    fill: currentColor;
-  }
-
-  &:hover {
-    color: var(--gold-light);
-  }
-}
-
-// ---------- More questions ----------
-
-// The nine pictures on the closed fold: smaller on a narrow phone, so the row stays inside the
-// fold down to a 320px screen. 5rem is what the page's and the fold's paddings and its frame take
-// from the screen's width; nine squares, each overlapping the one before by a fifth, take 7.6 of
-// their widths. From about 450px up they keep their full 3rem.
-.squares {
-  --square: min(3rem, calc((100vw - 5rem) / 7.6));
-  padding-inline-start: calc(var(--square) * 0.2);
-
-  .peek-stop {
-    inline-size: var(--square);
-    block-size: var(--square);
-    margin-inline-start: calc(var(--square) * -0.2);
-    border-radius: calc(var(--square) / 4);
-  }
-}
-
-.questions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.q-card {
-  display: flex;
-  flex-direction: column;
-  block-size: 100%;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
-  color: inherit;
-  transition:
-    transform 0.35s var(--ease),
-    border-color 0.35s var(--ease),
-    box-shadow 0.35s var(--ease);
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: var(--line-strong);
-    box-shadow: var(--shadow);
-
-    img {
-      scale: 1.05;
-    }
-  }
-}
-
-.q-art {
-  display: block;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #0a0f24;
-
-  img {
-    display: block;
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    transition: scale 0.6s var(--ease);
-  }
-}
-
-.q-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-  padding: 1.1rem 1.3rem 1.3rem;
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
+  justify-items: center;
   gap: 0.35rem;
-}
-
-.q-lead {
-  color: var(--text);
-  font-family: var(--font-display-en);
-  font-size: 1.12rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-:host-context([lang='ar']) .q-lead {
-  font-family: var(--font-display-ar);
-  line-height: 1.8;
-}
-
-.q-rest {
+  margin: 1.75rem 0 0;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.q-link {
-  margin-block-start: auto;
-  padding-block-start: 0.35rem;
-  color: var(--gold-light);
-  font-family: var(--font-display-en);
   font-size: 0.92rem;
-  font-weight: 500;
 }
 
-:host-context([lang='ar']) .q-link {
-  font-family: var(--font-display-ar);
-}
-
-// ---------- The two sections ----------
+// ---------- The library: the signs and the names ----------
 
 .paths {
   display: grid;
@@ -764,14 +428,10 @@
   .hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
   }
-
-  .questions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 860px) {
-  // One column: the title and the line under it, then the journey's fold and the button under it.
+  // One column: the title and the line under it, then the journey's card and the button under it.
   .hero-grid {
     display: flex;
     flex-direction: column;
@@ -807,10 +467,6 @@
     justify-content: center;
   }
 
-  .question {
-    text-align: start;
-  }
-
   .hero-art::after,
   :host-context([dir='ltr']) .hero-art::after {
     background: linear-gradient(180deg, rgb(5 7 15 / 70%) 0%, rgb(5 7 15 / 55%) 50%, rgb(var(--bg-rgb)) 100%);
@@ -836,7 +492,7 @@
 }
 
 @media (max-width: 640px) {
-  // The title, the journey's fold, the button under it and the figures on a phone's first screen.
+  // The title, the journey's card, the button under it and the figures on a phone's first screen.
   // Below the figures, room for the «صورة تعبيرية» label.
   .hero {
     padding-block: 1rem 3rem;
@@ -866,73 +522,9 @@
     margin-block-start: 0.9rem;
   }
 
-  // The fold's frame keeps it apart from the lines above, and the room goes to the figures.
+  // The card's frame keeps it apart from the lines above, and the room goes to the figures.
   .hero-rule {
     display: none;
-  }
-
-  // The journey's fold, closed, as small as it can be: its title, its line, and the stops' pictures
-  // beside the button that opens it. The tab bar already says «ابدأ هنا», so its label goes.
-  .hero-fold {
-    > summary {
-      gap: 0.65rem;
-      padding: 0.85rem 1rem;
-    }
-
-    .kicker {
-      display: none;
-    }
-
-    .fold-head {
-      gap: 0.15rem;
-
-      h2 {
-        font-size: 1.2rem;
-      }
-    }
-
-    .fold-summary {
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-
-    .fold-foot {
-      gap: 0.5rem 0.6rem;
-    }
-
-    .peek {
-      padding-inline-start: 0.4rem;
-    }
-
-    .peek-stop {
-      inline-size: 1.55rem;
-      block-size: 1.55rem;
-      margin-inline-start: -0.4rem;
-      border-width: 1.5px;
-
-      span {
-        font-size: 0.66rem;
-      }
-    }
-
-    .fold-toggle {
-      min-block-size: 2.5rem;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.9rem;
-    }
-  }
-
-  .question {
-    min-block-size: 14.5rem;
-    padding: 2.75rem 1.2rem 1.1rem;
-  }
-
-  .question-lead {
-    font-size: 1.2rem;
-  }
-
-  .question-rest {
-    font-size: 0.92rem;
   }
 
   .actions {
@@ -973,30 +565,6 @@
     }
   }
 
-  .questions {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-  }
-
-  // A small picture beside the question.
-  .q-card {
-    display: grid;
-    grid-template-columns: 6.5rem minmax(0, 1fr);
-  }
-
-  .q-art {
-    aspect-ratio: auto;
-    block-size: 100%;
-  }
-
-  .q-body {
-    padding: 0.9rem 1rem 1rem;
-  }
-
-  .q-lead {
-    font-size: 1.02rem;
-  }
-
   .today-card {
     flex-direction: column;
   }
@@ -1006,12 +574,5 @@
     inline-size: 100%;
     aspect-ratio: 16 / 9;
     min-block-size: 0;
-  }
-}
-
-@media (max-width: 420px) {
-  // Too narrow for the stops' pictures beside the button that opens the fold: only the button.
-  .hero-fold .peek {
-    display: none;
   }
 }

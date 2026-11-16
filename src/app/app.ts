@@ -29,15 +29,17 @@ export class App {
   );
 
   /**
-   * The journey ("Start here") lives on /signs#journey and leads through signs with ?path=journey,
-   * so it is told apart from the rest of the signs.
+   * The journey ("Start here") is the map on the home page (/#map), and leads through signs and
+   * names with ?path=map; the short tour of seven miracles leads through signs with ?path=journey.
+   * Both are told apart from the rest of the site.
    */
   protected readonly active = computed<Place>(() => {
     const tree = this.router.parseUrl(this.url());
     const path = tree.root.children['primary']?.segments.map((s) => s.path) ?? [];
-    if (!path.length) return 'home';
-    if (path[0] === 'signs') return tree.fragment === 'journey' || tree.queryParams['path'] === 'journey' ? 'start' : 'signs';
-    if (path[0] === 'names') return 'names';
+    const onJourney = tree.queryParams['path'] === 'map' || tree.queryParams['path'] === 'journey';
+    if (!path.length) return tree.fragment === 'map' ? 'start' : 'home';
+    if (path[0] === 'signs') return tree.fragment === 'journey' || onJourney ? 'start' : 'signs';
+    if (path[0] === 'names') return onJourney ? 'start' : 'names';
     if (path[0] === 'method') return 'method';
     return 'other';
   });

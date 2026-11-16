@@ -17,6 +17,9 @@
       </div>
       <span class="art-label">{{ t().illustrativeImage }}</span>
       <div class="container hero-text">
+        @if (stop(); as s) {
+          <app-journey-place [stop]="s" />
+        } @else {
         <p class="crumbs">
           <a routerLink="/signs" [fragment]="listId()">
             <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow back"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
@@ -34,6 +37,7 @@
             </span>
           }
         </p>
+        }
         <h1 [class.reading]="speech.activeKey() === 'title'">{{ language.pick(a.title) }}</h1>
         <p class="hook" [class.reading]="speech.activeKey() === 'hook'">{{ language.pick(a.hook) }}</p>
         <p class="meta">
@@ -189,6 +193,9 @@
           }
         </div>
 
+        @if (stop(); as s) {
+          <app-journey-onward [stop]="s" />
+        } @else {
         <nav class="onward">
           @if (neighbours().next; as next) {
             <a
@@ -232,6 +239,7 @@
             <a routerLink="/signs" [fragment]="listId()">{{ t().backToAll }}</a>
           </p>
         </nav>
+        }
       </div>
     </div>
   </article>

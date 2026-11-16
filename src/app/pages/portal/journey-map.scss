@@ -1,0 +1,375 @@
+// The journey's map: the stages one under the other, joined by a road from each number to the next.
+
+:host {
+  display: block;
+  max-inline-size: 46rem;
+  margin-inline: auto;
+}
+
+.section-head {
+  margin-block-end: 1.75rem;
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+  }
+}
+
+.path {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage {
+  position: relative;
+  padding-inline-start: 3rem;
+
+  // The road from this stage's number to the next one's.
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 2.1rem;
+    inset-inline-start: calc(1.1rem - 1px);
+    inline-size: 2px;
+    block-size: calc(100% + 0.85rem);
+    background: rgb(var(--accent-rgb) / 24%);
+  }
+
+  &:last-child::before {
+    display: none;
+  }
+
+  &.done::before {
+    background: var(--gold);
+  }
+}
+
+.node {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 1rem;
+  inset-inline-start: 0;
+  display: grid;
+  place-items: center;
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+
+  .done & {
+    border-color: transparent;
+    background: var(--gold-gradient);
+    color: var(--on-accent);
+  }
+
+  .here & {
+    border-color: var(--gold);
+    box-shadow:
+      0 0 0 5px rgb(var(--accent-rgb) / 16%),
+      0 0 26px rgb(var(--accent-rgb) / 50%);
+  }
+
+  .soon & {
+    border-style: dashed;
+    background: var(--bg);
+    color: var(--text-muted);
+  }
+}
+
+:host-context([lang='ar']) .node {
+  font-family: var(--font-display-ar);
+}
+
+.tick {
+  flex-shrink: 0;
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.card {
+  display: block;
+  padding: 0.9rem 1.1rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  color: inherit;
+  transition: border-color 0.25s var(--ease);
+
+  .here & {
+    border-color: var(--line-strong);
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgb(var(--accent-rgb) / 10%), transparent 70%),
+      linear-gradient(180deg, var(--surface-raised), var(--surface));
+  }
+
+  .soon & {
+    border-style: dashed;
+    background: transparent;
+  }
+}
+
+a.card:hover {
+  border-color: var(--gold);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-block-size: 1.6rem;
+}
+
+.kicker {
+  color: var(--gold);
+  font-family: var(--font-display-en);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+:host-context([lang='ar']) .kicker {
+  font-family: var(--font-display-ar);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.state {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--gold-light);
+  font-family: var(--font-display-en);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  white-space: nowrap;
+
+  &.here {
+    border-color: transparent;
+    background: var(--gold-gradient);
+    color: var(--on-accent);
+    font-weight: 600;
+  }
+
+  &.soon {
+    border-color: var(--line);
+    color: var(--text-muted);
+  }
+}
+
+:host-context([lang='ar']) .state {
+  font-family: var(--font-display-ar);
+}
+
+h3 {
+  margin: 0.15rem 0 0.1rem;
+  color: var(--text);
+  font-size: 1.3rem;
+
+  .soon & {
+    color: var(--text-muted);
+  }
+}
+
+.line {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 0.75rem;
+  margin-block-start: 0.65rem;
+}
+
+.peek {
+  display: flex;
+  padding-inline-start: 0.5rem;
+}
+
+.peek-stop {
+  position: relative;
+  inline-size: 2.1rem;
+  block-size: 2.1rem;
+  margin-inline-start: -0.5rem;
+  overflow: hidden;
+  border: 2px solid var(--surface-raised);
+  border-radius: 50%;
+  background: #0a0f24;
+
+  img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+}
+
+.names {
+  color: var(--verse);
+  font-size: 1rem;
+  line-height: 2.2;
+}
+
+.meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-family: var(--font-display-en);
+  font-size: 0.8rem;
+}
+
+:host-context([lang='ar']) .meta {
+  font-family: var(--font-display-ar);
+}
+
+.card > .meta {
+  margin-block-start: 0.4rem;
+}
+
+// The stops of the stage the reader is in.
+.stops {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0.75rem 0 0;
+  padding: 0.55rem 0 0;
+  border-block-start: 1px solid var(--line);
+  list-style: none;
+}
+
+.stop {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.7rem;
+  min-block-size: 3.25rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  color: inherit;
+
+  img,
+  .name-mark {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: 50%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  // A name has no picture: the name itself, in a gold ring.
+  .name-mark {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    color: var(--gold-light);
+    font-size: 0.8rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    border-color: var(--line);
+  }
+
+  &.read {
+    .stop-title {
+      color: var(--text-muted);
+    }
+
+    > .tick {
+      color: var(--gold);
+    }
+  }
+
+  &.next {
+    border-color: var(--line-strong);
+    background: rgb(var(--accent-rgb) / 9%);
+  }
+}
+
+.stop-text {
+  display: grid;
+}
+
+.stop-title {
+  color: var(--text);
+  font-family: var(--font-display-en);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.stop-meta {
+  color: var(--text-muted);
+  font-family: var(--font-display-en);
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+:host-context([lang='ar']) :is(.stop-title, .stop-meta) {
+  font-family: var(--font-display-ar);
+}
+
+:host-context([lang='ar']) .stop-title {
+  line-height: 1.6;
+}
+
+.go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--gold-gradient);
+  color: var(--on-accent);
+  font-family: var(--font-display-en);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: nowrap;
+
+  .arrow {
+    inline-size: 0.95em;
+    block-size: 0.95em;
+  }
+}
+
+:host-context([lang='ar']) .go {
+  font-family: var(--font-display-ar);
+}
+
+@media (max-width: 420px) {
+  .stage {
+    padding-inline-start: 2.6rem;
+  }
+
+  .card {
+    padding-inline: 0.9rem;
+  }
+}

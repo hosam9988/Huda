@@ -20,6 +20,8 @@ import { ReadingService } from '../../core/services/reading.service';
 import { SpeechSegment, SpeechService } from '../../core/services/speech.service';
 import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
+import { JourneyService } from '../../core/journey';
+import { JourneyOnward, JourneyPlace } from '../../shared/journey-stop';
 import { Ornament } from '../../shared/ornament';
 import { ReadAloud } from '../../shared/read-aloud';
 import { Reveal } from '../../shared/reveal';
@@ -33,7 +35,7 @@ interface Part {
 /** One sign, told as a short story: the text, then and now, the timeline, and the sources. */
 @Component({
   selector: 'app-ayah-page',
-  imports: [RouterLink, Ornament, ReadAloud, Reveal],
+  imports: [RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './ayah-page.html',
   styleUrl: './ayah-page.scss',
@@ -48,6 +50,7 @@ export class AyahPage {
   readonly resume = input<string | undefined>(undefined);
 
   protected readonly content = inject(ContentService);
+  private readonly journeyMap = inject(JourneyService);
   protected readonly reading = inject(ReadingService);
   protected readonly language = inject(LanguageService);
   protected readonly speech = inject(SpeechService);
@@ -65,6 +68,8 @@ export class AyahPage {
     const a = this.ayah();
     return a ? this.content.category(a.category) : undefined;
   });
+  /** `?path=map`: the reader came from the journey's map, and this sign is one of its stops. */
+  protected readonly stop = computed(() => (this.path() === 'map' ? this.journeyMap.find('sign', this.slug()) : undefined));
   protected readonly onJourney = computed(() => this.path() === 'journey' && this.ayah()?.journey !== undefined);
   protected readonly journeyTotal = computed(() => this.content.journey().length);
   protected readonly neighbours = computed(() => {

@@ -19,6 +19,8 @@ import { LanguageService } from '../../core/services/language.service';
 import { NamesService } from '../../core/services/names.service';
 import { ReadingService } from '../../core/services/reading.service';
 import { SpeechSegment, SpeechService } from '../../core/services/speech.service';
+import { JourneyService } from '../../core/journey';
+import { JourneyOnward, JourneyPlace } from '../../shared/journey-stop';
 import { Ornament } from '../../shared/ornament';
 import { ReadAloud } from '../../shared/read-aloud';
 import { Reveal } from '../../shared/reveal';
@@ -26,7 +28,7 @@ import { Reveal } from '../../shared/reveal';
 /** One of the Beautiful Names, kept short: its meaning, evidence, effect on a life, and a du'a. */
 @Component({
   selector: 'app-name-page',
-  imports: [NgTemplateOutlet, RouterLink, Ornament, ReadAloud, Reveal],
+  imports: [NgTemplateOutlet, RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './name-page.html',
   styleUrl: './name-page.scss',
@@ -35,6 +37,8 @@ import { Reveal } from '../../shared/reveal';
 export class NamePage {
   /** Bound from /names/:slug. */
   readonly slug = input<string>('');
+  /** `?path=map`: the reader came from the journey's map, so the page leads on along it. */
+  readonly path = input<string | undefined>(undefined);
 
   protected readonly names = inject(NamesService);
   protected readonly reading = inject(ReadingService);
@@ -47,6 +51,9 @@ export class NamePage {
   protected readonly name = computed(() => this.names.name(this.slug()));
   protected readonly content = computed(() => this.name()?.content);
   protected readonly neighbours = computed(() => this.names.neighbours(this.slug()));
+  private readonly journey = inject(JourneyService);
+  /** This name as a stop of the journey, when the reader came from the map. */
+  protected readonly stop = computed(() => (this.path() === 'map' ? this.journey.find('name', this.slug()) : undefined));
   protected readonly isRead = computed(() => this.reading.countRead([this.slug()]) > 0);
 
   /** 0–1: how far down the page the reader is. */

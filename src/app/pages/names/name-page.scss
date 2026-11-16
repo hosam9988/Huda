@@ -66,6 +66,11 @@
   animation: rise 0.8s var(--ease) both;
 }
 
+// On the journey: where this stop stands, above the name.
+.journey-place {
+  margin-block-end: 1.25rem;
+}
+
 @keyframes rise {
   from {
     opacity: 0;

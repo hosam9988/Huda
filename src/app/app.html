@@ -15,7 +15,7 @@
 
     <!-- The sections, on wide screens; phones have the tab bar at the bottom. -->
     <nav class="links" [attr.aria-label]="t().mainNav">
-      <a class="start" routerLink="/signs" fragment="journey" [class.active]="active() === 'start'">
+      <a class="start" routerLink="/" fragment="map" [class.active]="active() === 'start'">
         {{ t().journey }}
       </a>
       <a routerLink="/signs" [class.active]="active() === 'signs'">{{ t().signsSection }}</a>
@@ -81,7 +81,7 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z" /></svg>
     <span>{{ t().home }}</span>
   </a>
-  <a routerLink="/signs" fragment="journey" [class.active]="active() === 'start'" [attr.aria-current]="active() === 'start' ? 'page' : null">
+  <a routerLink="/" fragment="map" [class.active]="active() === 'start'" [attr.aria-current]="active() === 'start' ? 'page' : null">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="m15.2 8.8-1.9 4.5-4.5 1.9 1.9-4.5z" /></svg>
     <span>{{ t().journeyShort }}</span>
   </a>

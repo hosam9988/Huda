@@ -60,7 +60,10 @@ export interface Source {
 export interface Ayah {
   slug: string;
   category: CategoryId;
-  /** Position on the "Start here" journey, for readers new to Islam; absent if not on it. */
+  /**
+   * Position on the short tour of seven miracles (/signs#journey, ?path=journey); absent if not on it.
+   * The journey's stops are listed in core/journey.ts.
+   */
   journey?: number;
   title: Localized;
   /** The question the page opens with. */
