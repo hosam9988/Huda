@@ -121,7 +121,8 @@
             {{ a.nowLabel === 'history' ? t().sections.nowHistory : t().sections.now }}
           </h2>
           <aside class="highlight">
-            <strong>{{ language.pick(a.highlight.value) }}</strong>
+            @let figure = language.pick(a.highlight.value);
+            <strong [class.long]="longWord(figure)">{{ figure }}</strong>
             <span>{{ language.pick(a.highlight.label) }}</span>
           </aside>
           @for (p of a.now; track $index) {

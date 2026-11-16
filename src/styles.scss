@@ -430,7 +430,10 @@ html[lang='ar'] :is(.eyebrow, .kicker) {
   min-block-size: 2.75rem; // 44px touch target
   padding: 0.55rem 1.25rem;
   touch-action: manipulation;
-  white-space: nowrap;
+  // On one line where it fits; on a narrow screen a long label wraps rather than spill out of
+  // its card («Discover all 7 answers in order» at 320px).
+  text-align: center;
+  text-wrap: balance;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: rgb(var(--accent-rgb) / 4%);
@@ -540,7 +543,10 @@ svg.arrow.back {
   background: rgb(var(--science-rgb) / 6%);
   color: var(--science);
   font-size: 0.8rem;
-  white-space: nowrap;
+  // On one line where it fits; in a narrow card («Health in the Sunnah» beside a question's
+  // picture at 320px) it wraps rather than being cut off.
+  text-align: center;
+  text-wrap: balance;
 }
 
 // «للتفكر»: a sign for reflection, not offered as a miracle.

@@ -196,6 +196,14 @@ export class AyahPage {
     return typeof m.year === 'string' ? this.language.number(m.year) : this.language.pick(m.year);
   }
 
+  /**
+   * A highlight figure with a word too long for its box at full size («3 commanders»): it is set
+   * smaller (`.long` in the styles). Shorter words, «hectares» and the like, keep the full size.
+   */
+  protected longWord(text: string): boolean {
+    return text.split(/\s+/).some((word) => word.length > 8);
+  }
+
   /** The phone's share sheet where there is one; otherwise copy the link. */
   protected async share(): Promise<void> {
     const a = this.ayah();

@@ -364,12 +364,14 @@ h1 {
     linear-gradient(180deg, var(--surface-raised), var(--surface));
   text-align: center;
 
-  // At 2.2 the marks of one line touched the letters of the next in some verses.
+  // At 2.2 the marks of one line touched the letters of the next in some verses; at 2.3 they
+  // still did, by up to 4px, where some phone widths break the lines (Saba 34:15 at 402-440px).
+  // From 2.4 none touch at any phone size; 2.45 leaves some room.
   blockquote {
     margin: 0.5rem 0 0.75rem;
     color: var(--verse);
     font-size: 1.7em;
-    line-height: 2.3;
+    line-height: 2.45;
   }
 
   &.hadith blockquote {
@@ -421,6 +423,8 @@ h1 {
 // ---------- Now ----------
 
 .highlight {
+  // Its figure's size can follow the box's width (cqi), not the screen's.
+  container-type: inline-size;
   float: inline-end;
   inline-size: min(15rem, 42%);
   margin: 0.25rem 0 1rem;
@@ -431,6 +435,7 @@ h1 {
   background: rgb(var(--science-rgb) / 7%);
   text-align: center;
 
+  // A word that still can't fit breaks rather than spill out of the box.
   strong {
     display: block;
     color: var(--science);
@@ -438,6 +443,14 @@ h1 {
     font-size: 2.1em;
     font-weight: 600;
     line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  // A word of nine letters or more («commanders», 226px at full size) is too wide for the box
+  // beside the text (206px), or on a phone held sideways (191px). Its size is capped at 15% of
+  // the box's width, so it fits.
+  strong.long {
+    font-size: min(2.1em, 15cqi);
   }
 
   span {
