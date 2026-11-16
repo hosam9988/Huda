@@ -170,6 +170,14 @@ they are also checked in WebKit, Safari's engine: run `npx playwright install we
 `npm run check:safari` while `npm start` is running. Another copy of the site, such as the live
 one, can be checked with `npm run check:safari -- <its address>`.
 
+Phones come in many sizes, so after changing styles, also run `npm run check:phones` while
+`npm run preview` serves the build (about 35 minutes; it needs Chrome). It checks every page in
+both languages at 20 phone sizes, upright and sideways. On each page it runs the layout check as
+the page loads and with every fold open and every list shown in full, and the sign and name pages
+again with the text at its largest. It also looks for anything cut off at the screen's sides or
+sticking out of its card, the page's end hidden under the tab bar, and buttons too small to tap.
+To check only some sizes: `npm run check:phones -- http://localhost:4300/Huda 4 320x568,440x956`.
+
 ## Deploying
 
 Every push to `main` checks the content, builds the app and publishes it to GitHub Pages
@@ -333,6 +341,7 @@ scripts/finish-build.mjs       lays the build out for GitHub Pages; 404.html, si
 scripts/preview.mjs            serves the build as GitHub Pages does
 scripts/check-layout.js        the layout check, run in the browser
 scripts/check-safari.mjs       the gold titles in Safari's engine
+scripts/check-phones.mjs       every page at 20 phone sizes, folds open, text at its largest
 backend/                       the API, which the site doesn't use yet (backend/README.md)
 ```
 

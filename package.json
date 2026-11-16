@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "check:content": "node scripts/check-content.mjs",
-    "check:safari": "node scripts/check-safari.mjs"
+    "check:safari": "node scripts/check-safari.mjs",
+    "check:phones": "node scripts/check-phones.mjs"
   },
   "private": true,
   "packageManager": "npm@12.1.0",
