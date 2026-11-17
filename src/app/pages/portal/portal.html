@@ -66,7 +66,8 @@
 </section>
 
 <!-- The journey's map: seven questions, one after the other. Under it, the short tour of seven
-     miracles, for a reader short of time. -->
+     miracles, for a reader short of time; and, for a reader who has read something, the way to
+     clear their reading history and start afresh. -->
 <section class="container section" id="map">
   <app-journey-map />
   @if (tour()[0]; as first) {
@@ -77,6 +78,7 @@
       </a>
     </p>
   }
+  <app-reset-reading class="reset" />
 </section>
 
 <!-- The two sections. -->

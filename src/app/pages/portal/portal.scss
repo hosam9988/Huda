@@ -136,6 +136,13 @@
   font-size: 0.92rem;
 }
 
+// «امسح سجل القراءة», under the map: there only for a reader who has read something.
+.reset {
+  margin-block-start: 0.6rem;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
 // ---------- The library: the signs and the names ----------
 
 .paths {

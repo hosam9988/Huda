@@ -22,6 +22,7 @@ import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
 import { AyahCard } from '../../shared/ayah-card';
 import { ProgressRing } from '../../shared/progress-ring';
+import { ResetReading } from '../../shared/reset-reading';
 import { Reveal } from '../../shared/reveal';
 import { listState, resetList, SignList } from './sign-list';
 
@@ -38,7 +39,7 @@ let continueSlug: string | undefined;
 /** The front page of the I'jaz section, «سنريهم آياتنا»: the fields, the folded journey, the miracles and the signs for reflection. */
 @Component({
   selector: 'app-signs-home',
-  imports: [RouterLink, AyahCard, ProgressRing, Reveal, SignList],
+  imports: [RouterLink, AyahCard, ProgressRing, ResetReading, Reveal, SignList],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './signs-home.html',
   styleUrl: './signs-home.scss',
@@ -54,7 +55,6 @@ export class SignsHome {
   protected readonly artSrc = artSrc;
   protected readonly artSmallSrc = artSmallSrc;
   protected readonly artSrcset = artSrcset;
-  protected readonly confirmingReset = signal(false);
   /** The journey stays folded until the reader opens it, or arrives by a link to `#journey`. */
   protected readonly journeyOpen = journeyOpen;
   private readonly fragment = toSignal(inject(ActivatedRoute).fragment);
@@ -194,10 +194,5 @@ export class SignsHome {
       },
       { injector: this.injector },
     );
-  }
-
-  protected reset(): void {
-    this.reading.resetAll();
-    this.confirmingReset.set(false);
   }
 }

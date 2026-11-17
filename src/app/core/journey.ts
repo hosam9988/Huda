@@ -14,6 +14,10 @@ import { readingMinutes, topicMinutes } from './utils/reading-time';
  * of the site's pages (its stops). The home page draws them as a map; a page reached from the map
  * (`?path=map`) shows where it stands and leads on to the next stop. One road for every reader:
  * the seeker and the Muslim take the same stops, and part only at the end, on «ماذا بعد؟».
+ *
+ * The code calls a question a stage and a page under it a stop. The reader meets two words only:
+ * «السؤال» (question) for each of the seven, and «الموضوع» (topic) for a page under one. «مرحلة»
+ * and «محطة» appear in nothing the reader sees, so nobody has to tell a stop from a question.
  */
 
 /**
@@ -117,8 +121,8 @@ export const STAGES: StageDef[] = [
     kicker: { ar: 'دينه', en: 'His religion' },
     title: { ar: 'ماذا يريد منّا؟', en: 'What does He ask of us?' },
     line: {
-      ar: 'لماذا خُلقنا، وأركان الإسلام والإيمان، وما يأمر به، واليوم الآخر، وباب التوبة.',
-      en: 'Why we were created, the pillars of Islam and of faith, what He commands, the Last Day, and the door of repentance.',
+      ar: 'أن نعبده وحده؛ وقد بيّن لنا الطريق، وما ينتظرنا في آخره.',
+      en: 'To worship Him alone. He has shown us the way, and what waits at its end.',
     },
     status: 'open',
     stops: [
@@ -134,8 +138,8 @@ export const STAGES: StageDef[] = [
     kicker: { ar: 'أسئلتك', en: 'Your questions' },
     title: { ar: 'وماذا عن أسئلتي؟', en: 'And what about my questions?' },
     line: {
-      ar: 'من خلق الله؟ لماذا الألم؟ لماذا الإسلام؟ المسيح عليه السلام، والعقل، ومن لم تبلغه الرسالة.',
-      en: 'Who created Allah? Why pain? Why Islam? Jesus, peace be upon him; reason; and those the message never reached.',
+      ar: 'أسئلةٌ يسألها كل باحثٍ صادق، ولكلٍّ منها جوابه بالدليل.',
+      en: 'Questions every honest seeker asks, each answered with its evidence.',
     },
     status: 'open',
     stops: [
@@ -177,20 +181,18 @@ export const JOURNEY_TEXT = {
   continueTitle: { ar: 'أكمل رحلتك', en: 'Continue your journey' } as Localized,
   doneTitle: { ar: 'أتممت الرحلة', en: 'You have finished the journey' } as Localized,
   doneLine: {
-    ar: 'قطعت المراحل الست كلها. بقيت خطوتك أنت.',
-    en: 'You have come through all six stages. What remains is your own step.',
+    ar: 'قرأت أجوبة الأسئلة الستة كلها. بقيت خطوتك أنت.',
+    en: 'You have read the answers to all six questions. What remains is your own step.',
   } as Localized,
   here: { ar: 'أنت هنا', en: 'You are here' } as Localized,
   startHere: { ar: 'ابدأ هنا', en: 'Start here' } as Localized,
   finished: { ar: 'أتممتها', en: 'Done' } as Localized,
   soon: { ar: 'تُكتب قريبًا', en: 'Being written' } as Localized,
   onePage: { ar: 'صفحة واحدة', en: 'One page' } as Localized,
-  go: { ar: 'ابدأ', en: 'Start' } as Localized,
-  goOn: { ar: 'أكمل', en: 'Continue' } as Localized,
   quickAsk: { ar: 'مستعجل؟', en: 'Short of time?' } as Localized,
-  summaryTitle: { ar: 'خلاصة المحطة', en: 'This stop in short' } as Localized,
-  nextStage: { ar: 'المرحلة التالية', en: 'Next stage' } as Localized,
-  lastTitle: { ar: 'المرحلة الأخيرة، خطوتك', en: 'The last stage: your step' } as Localized,
+  summaryTitle: { ar: 'خلاصة الموضوع', en: 'This topic in short' } as Localized,
+  nextStage: { ar: 'السؤال التالي', en: 'Next question' } as Localized,
+  lastTitle: { ar: 'السؤال الأخير، خطوتك', en: 'The last question: your step' } as Localized,
   lastLine: {
     ar: 'رأيت الدليل، وسمعت الجواب عن أسئلتك. فماذا بعد؟',
     en: 'You have seen the evidence and heard the answers to your questions. So what next?',
@@ -206,30 +208,37 @@ export function sep(lang: Lang): string {
   return lang === 'ar' ? '، ' : ' · ';
 }
 
-/** «المرحلة ٣ من ٧» */
+/** «السؤال ٣ من ٧» */
 export function stageOf(lang: Lang, n: string, total: string): string {
-  return lang === 'ar' ? `المرحلة ${n} من ${total}` : `Stage ${n} of ${total}`;
+  return lang === 'ar' ? `السؤال ${n} من ${total}` : `Question ${n} of ${total}`;
 }
 
-/** «المرحلة ٣، المحطة ١ من ٦» */
+/** «السؤال ٣، الموضوع ١ من ٦» */
 export function stopOf(lang: Lang, stage: string, n: string, total: string): string {
-  return lang === 'ar' ? `المرحلة ${stage}، المحطة ${n} من ${total}` : `Stage ${stage} · stop ${n} of ${total}`;
+  return lang === 'ar' ? `السؤال ${stage}، الموضوع ${n} من ${total}` : `Question ${stage} · topic ${n} of ${total}`;
 }
 
-/** «أتممت ١٣ من ٢٥ محطة» */
-export function doneOf(lang: Lang, done: string, total: string): string {
-  return lang === 'ar' ? `أتممت ${done} من ${total} محطة` : `${done} of ${total} stops done`;
+/** The word a count of topics takes in Arabic: «٦ موضوعات», «٣٦ موضوعًا». */
+function topicsWord(count: number): string {
+  const lastTwo = count % 100;
+  if (lastTwo >= 3 && lastTwo <= 10) return 'موضوعات';
+  return lastTwo >= 11 ? 'موضوعًا' : 'موضوع';
 }
 
-/** «٦ محطات» */
+/** «قرأت ١٣ من ٣٦ موضوعًا». `count` is the total as a number: it picks the word that follows it. */
+export function doneOf(lang: Lang, done: string, total: string, count: number): string {
+  return lang === 'ar' ? `قرأت ${done} من ${total} ${topicsWord(count)}` : `${done} of ${total} topics read`;
+}
+
+/** «٦ موضوعات» */
 export function stopsCount(lang: Lang, count: number, n: string): string {
-  if (lang === 'en') return count === 1 ? '1 stop' : `${n} stops`;
-  if (count === 1) return 'محطة واحدة';
-  if (count === 2) return 'محطتان';
-  return count <= 10 ? `${n} محطات` : `${n} محطة`;
+  if (lang === 'en') return count === 1 ? '1 topic' : `${n} topics`;
+  if (count === 1) return 'موضوع واحد';
+  if (count === 2) return 'موضوعان';
+  return `${n} ${topicsWord(count)}`;
 }
 
-/** «المحطة التالية: …» on the button of a reader who has started. */
+/** «أكمل: …» on the button of a reader who has started. */
 export function nextOf(lang: Lang, title: string): string {
   return lang === 'ar' ? `أكمل: ${title}` : `Continue: ${title}`;
 }

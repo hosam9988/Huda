@@ -8,7 +8,7 @@ import { artSmallSrc } from '../core/utils/art';
 export const ON_MAP = { path: 'map' } as const;
 
 /**
- * At the top of a stop: the way back to the map, where the stop stands («المرحلة ٣ · المحطة ١ من
+ * At the top of a stop: the way back to the map, where the stop stands («السؤال ٣، الموضوع ١ من
  * ٦»), and a bar with one step for each stop of its stage.
  */
 @Component({
@@ -330,7 +330,7 @@ export class JourneyOnward {
   protected readonly next = computed(() => this.journey.after(this.stop()));
   protected readonly previous = computed(() => this.journey.before(this.stop()));
 
-  /** «المحطة التالية، ٢ من ٦», or, at a stage's first stop, «المرحلة التالية، من هو؟». */
+  /** «الموضوع التالي، ٢ من ٦», or, at a stage's first stop, «السؤال التالي، من هو؟». */
   protected readonly label = computed(() => {
     const next = this.next();
     if (!next) return '';

@@ -8,6 +8,7 @@ import { NamesService } from '../../core/services/names.service';
 import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
 import { Ornament } from '../../shared/ornament';
+import { ResetReading } from '../../shared/reset-reading';
 import { Reveal } from '../../shared/reveal';
 import { WATCH_TEXT } from '../../shared/video';
 import { JourneyMap, JourneyStart } from './journey-map';
@@ -20,7 +21,7 @@ import { JourneyMap, JourneyStart } from './journey-map';
  */
 @Component({
   selector: 'app-portal',
-  imports: [Ornament, RouterLink, Reveal, JourneyStart, JourneyMap],
+  imports: [Ornament, RouterLink, ResetReading, Reveal, JourneyStart, JourneyMap],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './portal.html',
   styleUrl: './portal.scss',
@@ -44,8 +45,8 @@ export class Portal {
     const n = (value: number) => this.language.number(value);
     const minutes = this.tour().reduce((sum, a) => sum + readingMinutes(a, this.language.lang()), 0);
     return this.language.isArabic()
-      ? `الجولة السريعة: ${n(this.tour().length)} محطات في ${n(minutes)} دقيقة`
-      : `The short tour: ${n(this.tour().length)} stops in ${n(minutes)} minutes`;
+      ? `الجولة السريعة: ${n(this.tour().length)} معجزات في ${n(minutes)} دقيقة`
+      : `The short tour: ${n(this.tour().length)} miracles in ${n(minutes)} minutes`;
   });
 
   protected readonly stats = computed(() => {

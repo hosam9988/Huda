@@ -19,8 +19,8 @@ export const WATCH_TEXT = {
     en: 'Nothing loads from YouTube until you press play, and clips play from its domain that does not keep cookies. Any ads, and the suggestions at the end of a clip, come from YouTube, not from us.',
   } as Localized,
   here: {
-    ar: 'للمحطة نفسها، بصوت عالمٍ أو داعية.',
-    en: 'The same stop, in a scholar’s or speaker’s voice.',
+    ar: 'الموضوع نفسه، بصوت عالمٍ أو داعية.',
+    en: 'The same topic, in a scholar’s or speaker’s voice.',
   } as Localized,
   play: { ar: 'شغّل', en: 'Play' } as Localized,
   onYoutube: { ar: 'على يوتيوب', en: 'On YouTube' } as Localized,

@@ -20,7 +20,6 @@ import {
   stopsCount,
 } from '../../core/journey';
 import { LanguageService } from '../../core/services/language.service';
-import { artSmallSrc } from '../../core/utils/art';
 import { ON_MAP } from '../../shared/journey-stop';
 
 /**
@@ -42,7 +41,7 @@ function titleOf(language: LanguageService, stop: Stop): string {
 
 /**
  * The journey's card under the home page's title. A first visit: what it is, and the button that
- * starts it. Later: how far the reader has come, and the button to the next stop.
+ * starts it. Later: how far the reader has come, and the button to the next topic.
  */
 @Component({
   selector: 'app-journey-start',
@@ -188,9 +187,10 @@ export class JourneyStart {
     return stage ? `${where}${sep(this.language.lang())}${this.language.pick(stage.title)}` : where;
   });
 
-  protected readonly doneLine = computed(() =>
-    doneOf(this.language.lang(), this.language.number(this.journey.done()), this.language.number(this.journey.stops().length)),
-  );
+  protected readonly doneLine = computed(() => {
+    const total = this.journey.stops().length;
+    return doneOf(this.language.lang(), this.language.number(this.journey.done()), this.language.number(total), total);
+  });
 
   protected readonly nextLabel = computed(() => {
     const next = this.journey.next();
@@ -199,9 +199,10 @@ export class JourneyStart {
 }
 
 /**
- * The journey's map, under the home page's title: the seven stages on one road, each a question.
- * The stage the reader is in lists its stops; a finished stage is ticked off; a stage still being
- * written is shown but can't be entered.
+ * The journey's map, under the home page's title: the seven questions on one road. Every question
+ * lists its topics as small links, so a reader sees all that the journey holds in a short scroll and
+ * can open any of them; the one to read next is in gold. A question whose topics are all read is
+ * ticked off; one still being written is shown without topics; the last is one page («ماذا بعد؟»).
  */
 @Component({
   selector: 'app-journey-map',
@@ -226,60 +227,42 @@ export class JourneyStart {
             }
           </span>
 
-          @if (state === 'soon') {
-            <div class="card">
+          @if (stage.status === 'page') {
+            <a class="card" routerLink="/next">
               <ng-container *ngTemplateOutlet="head; context: { $implicit: stage, state }" />
-            </div>
-          } @else if (state === 'here' && stage.stops.length) {
-            <div class="card">
-              <ng-container *ngTemplateOutlet="head; context: { $implicit: stage, state }" />
-              <p class="meta">{{ metaOf(stage) }}</p>
-              <ol class="stops">
-                @for (stop of stage.stops; track stop.slug) {
-                  @let read = isRead(stop);
-                  @let isNext = stop === nextHere();
-                  <li>
-                    <a class="stop" [class.read]="read" [class.next]="isNext" [routerLink]="stop.link" [queryParams]="onMap">
-                      @if (stop.art) {
-                        <img [src]="artSmallSrc(stop.art)" alt="" width="640" height="400" loading="lazy" decoding="async" />
-                      } @else {
-                        <span class="name-mark" [class.quran]="stop.kind === 'name'" lang="ar" dir="rtl">{{ stop.mark }}</span>
-                      }
-                      <span class="stop-text">
-                        <span class="stop-title">{{ titleOf(stop) }}</span>
-                        <span class="stop-meta">{{ t().minutes(stop.minutes[language.lang()]) }}</span>
-                      </span>
-                      @if (read) {
-                        <svg viewBox="0 0 24 24" class="tick" role="img" [attr.aria-label]="language.pick(text.finished)">
-                          <path d="m5 12.5 4.5 4.5L19 7.5" />
-                        </svg>
-                      } @else if (isNext) {
-                        <span class="go">
-                          {{ language.pick(journey.done() ? text.goOn : text.go) }}
-                          <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                        </span>
-                      }
-                    </a>
-                  </li>
-                }
-              </ol>
-            </div>
-          } @else {
-            <a class="card" [routerLink]="entry(stage).link" [queryParams]="entry(stage).query">
-              <ng-container *ngTemplateOutlet="head; context: { $implicit: stage, state }" />
-              <span class="foot">
-                @if (stage.stops[0]?.art) {
-                  <span class="peek" aria-hidden="true">
-                    @for (stop of stage.stops; track stop.slug) {
-                      <span class="peek-stop"><img [src]="artSmallSrc(stop.art!)" alt="" width="640" height="400" loading="lazy" decoding="async" /></span>
-                    }
-                  </span>
-                } @else if (stage.stops.length) {
-                  <span class="names" [class.quran]="stage.stops[0].kind === 'name'" lang="ar" dir="rtl">{{ namesOf(stage) }}</span>
-                }
-                <span class="meta">{{ metaOf(stage) }}</span>
-              </span>
             </a>
+          } @else {
+            <div class="card">
+              <ng-container *ngTemplateOutlet="head; context: { $implicit: stage, state }" />
+              @if (state !== 'soon' && stage.stops.length) {
+                <ol class="topics">
+                  @for (stop of stage.stops; track stop.slug) {
+                    @let read = isRead(stop);
+                    @let isNext = stop === nextHere();
+                    <li>
+                      <a
+                        class="topic"
+                        [class.read]="read"
+                        [class.next]="isNext"
+                        [attr.aria-current]="isNext ? 'step' : null"
+                        [routerLink]="stop.link"
+                        [queryParams]="onMap"
+                      >
+                        @if (read) {
+                          <svg viewBox="0 0 24 24" class="tick" role="img" [attr.aria-label]="language.pick(text.finished)">
+                            <path d="m5 12.5 4.5 4.5L19 7.5" />
+                          </svg>
+                        }
+                        <span>{{ titleOf(stop) }}</span>
+                        @if (isNext) {
+                          <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                        }
+                      </a>
+                    </li>
+                  }
+                </ol>
+              }
+            </div>
           }
         </li>
       }
@@ -288,6 +271,9 @@ export class JourneyStart {
     <ng-template #head let-stage let-state="state">
       <span class="top">
         <span class="kicker">{{ language.pick(stage.kicker) }}</span>
+        @if (state !== 'soon') {
+          <span class="meta">{{ metaOf(stage) }}</span>
+        }
         @switch (state) {
           @case ('done') {
             <span class="state">{{ language.pick(text.finished) }}</span>
@@ -312,13 +298,12 @@ export class JourneyMap {
   protected readonly t = this.language.t;
   protected readonly text = JOURNEY_TEXT;
   protected readonly onMap = ON_MAP;
-  protected readonly artSmallSrc = artSmallSrc;
   private readonly ready = mounted();
 
-  /** The stage the reader is in: the first one, until the app knows what they have read. */
+  /** The question the reader is in: the first one, until the app knows what they have read. */
   private readonly current = computed(() => (this.ready() ? this.journey.current() : 1));
 
-  /** The next stop to read in the stage the reader is in. */
+  /** The topic to read next, on the whole journey. */
   protected readonly nextHere = computed(() => (this.ready() ? this.journey.next() : this.journey.stops()[0]));
 
   protected stateOf(stage: Stage): 'done' | 'here' | 'ahead' | 'soon' {
@@ -332,23 +317,12 @@ export class JourneyMap {
     return this.ready() && this.journey.isRead(stop);
   }
 
-  /** Where a stage's card leads: its first stop not yet read, or «ماذا بعد؟» for the last. */
-  protected entry(stage: Stage): { link: string[]; query: typeof ON_MAP | null } {
-    if (stage.status === 'page') return { link: ['/next'], query: null };
-    const stop = stage.stops.find((s) => !this.isRead(s)) ?? stage.stops[0];
-    return { link: stop.link, query: ON_MAP };
-  }
-
-  /** «٦ محطات، ٢١ دقيقة», or «صفحة واحدة». */
+  /** «٦ موضوعات، ٢١ دقيقة», or «صفحة واحدة». */
   protected metaOf(stage: Stage): string {
     if (stage.status === 'page') return this.language.pick(this.text.onePage);
     const lang = this.language.lang();
     const count = stopsCount(lang, stage.stops.length, this.language.number(stage.stops.length));
     return `${count}${sep(lang)}${this.t().minutes(stage.minutes[lang])}`;
-  }
-
-  protected namesOf(stage: Stage): string {
-    return stage.stops.map((stop) => stop.mark).join(' · ');
   }
 
   protected titleOf(stop: Stop): string {

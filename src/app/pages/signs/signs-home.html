@@ -36,7 +36,7 @@
       <!-- The way to each part of this long page. -->
       <nav class="jump" [attr.aria-label]="t().onThisPage">
         <a class="btn solid big" routerLink="/signs" fragment="journey">
-          {{ t().portal.startJourney }}
+          {{ t().portal.shortTour }}
           <svg viewBox="0 0 24 24" aria-hidden="true" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
         </a>
         <a class="btn big" routerLink="/signs" fragment="all">{{ t().miraclesTitle }}</a>
@@ -237,17 +237,7 @@
         <p class="progress-line">
           {{ readCount() === stats().signs ? t().progressDone : t().progress(language.number(readCount()), language.number(stats().signs)) }}
         </p>
-        @if (readCount() || reading.place()) {
-          @if (confirmingReset()) {
-            <p class="confirm">{{ t().resetAllConfirm }}</p>
-            <div class="confirm-actions">
-              <button type="button" class="btn quiet" (click)="reset()">{{ t().resetAllYes }}</button>
-              <button type="button" class="btn quiet" (click)="confirmingReset.set(false)">{{ t().cancel }}</button>
-            </div>
-          } @else {
-            <button type="button" class="btn quiet" (click)="confirmingReset.set(true)">{{ t().resetAll }}</button>
-          }
-        }
+        <app-reset-reading />
       </div>
     </div>
   </section>

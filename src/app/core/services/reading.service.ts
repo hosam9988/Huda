@@ -1,4 +1,4 @@
-import { effect, Injectable, signal } from '@angular/core';
+import { computed, effect, Injectable, signal } from '@angular/core';
 import { readStorage, removeStorage, writeStorage } from './storage';
 
 const READ_KEY = 'ayat.read.v1';
@@ -19,6 +19,9 @@ export class ReadingService {
   private readonly read = signal<ReadonlySet<string>>(new Set(parse<string[]>(READ_KEY) ?? []));
   readonly place = signal<Place | null>(parse<Place>(PLACE_KEY));
   readonly textScale = signal<number>(Number(readStorage(SCALE_KEY)) || 1);
+
+  /** Whether there is anything to forget: a read mark, or a place where the reader stopped. */
+  readonly hasHistory = computed(() => this.read().size > 0 || this.place() !== null);
 
   constructor() {
     effect(() => writeStorage(READ_KEY, JSON.stringify([...this.read()])));

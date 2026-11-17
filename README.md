@@ -24,26 +24,33 @@ that more components can join it later.
      Allah's signs and miracles, which number in the thousands in the Qur'an and Sunnah, in the
      universe and in ourselves. Then the journey's card: on a first visit, «رحلةٌ في سبعة أسئلة»
      ("A journey in seven questions") and «ابدأ الرحلة» ("Start the journey"); once the reader has
-     begun, «أكمل رحلتك» ("Continue your journey"), how far they have come, and their next stop.
+     begun, «أكمل رحلتك» ("Continue your journey"), how far they have come, and their next topic.
      Under it, a button to browse the signs, and the figures (signs, names, sources). On a phone the
      figures sit in one row, so all of it fits the first screen;
-  2. the journey's map (`/#map`): seven stages on one road, each a question — «هل لهذا الكون
+  2. the journey's map (`/#map`): seven questions on one road — «هل لهذا الكون
      خالق؟» (Is there a Creator?), «من هو؟» (Who is He?), «هل كلّمنا؟» (Has He spoken to us?), «من
      الذي بلّغنا؟» (Who brought it?), «ماذا يريد منّا؟» (What does He ask of us?), «وماذا عن
-     أسئلتي؟» (And my questions?), «ماذا بعد؟» (What next?). The stage the reader is in lists its
-     stops; a finished stage is ticked off. Under the map, the short tour of seven miracles;
+     أسئلتي؟» (And my questions?), «ماذا بعد؟» (What next?). Every question lists its topics as
+     small links (the one to read next in gold), so the whole journey shows in a short scroll; a
+     finished question is ticked off. Under the map, the short tour of seven miracles, and, for a
+     reader who has read something, «امسح سجل القراءة» (Clear reading history);
   3. the library (the signs and the names); today's sign and name; why the site can be trusted
      (verses from the Mushaf, hadith with their numbers, every fact with its source); and al-An'am
      6:102 with "What next?".
-- **The journey's stops** are the site's own pages (`src/app/core/journey.ts` lists them, six to a
-  stage): signs and names for the first four stages, and for the fifth and sixth twelve pages of
+- **One word for each thing.** The reader meets «السؤال» (question) for each of the seven and
+  «الموضوع» (topic) for a page under one, and nothing else: «مرحلة» (stage) and «محطة» (stop) are
+  the code's own names (`Stage`, `Stop`) and appear in nothing the reader sees, so that nobody has
+  to tell a stop from a question. The seven miracles on /signs are «الجولة السريعة» (the short
+  tour), not a second journey.
+- **The journey's topics** are the site's own pages (`src/app/core/journey.ts` lists them, six to a
+  question): signs and names for the first four questions, and for the fifth and sixth twelve pages of
   their own (`/topics/:slug`, from `public/data/topics.json`): why we were created, the pillars of
   Islam and of faith, what Allah commands, the Last Day and repentance; then who created Allah, why
   pain, why Islam, Jesus in Islam, faith and reason, and those the message never reached. A topic
   page has its texts (verses, and hadith from al-Bukhari or Muslim), its argument in a few parts, a
-  closing thought and its sources (tafsir and hadith pages); it is only ever a stop. Reached from the map (`?path=map`), a page shows where it stands
-  («المرحلة ٣، المحطة ١ من ٦», with a step for each stop of its stage) and ends with what it showed
-  in a line and the next stop, in its stage or the next; after the last, "What next?". A stop counts as done once read (the read marks kept in the browser), and the map and the
+  closing thought and its sources (tafsir and hadith pages); it is only ever part of the journey. Reached from the map (`?path=map`), a page shows where it stands
+  («السؤال ٣، الموضوع ١ من ٦», with a step for each topic of its question) and ends with what it showed
+  in a line and the next topic, under its question or the next; after the last, "What next?". A topic counts as done once read (the read marks kept in the browser), and the map and the
   card follow from those.
 - **«شاهد» (Watch, `/watch`):** short clips by speakers the owner approved, chosen clip by clip
   after their transcripts were read against the site's method, from `public/data/videos.json`. A
@@ -68,7 +75,7 @@ that more components can join it later.
     cards (six on a phone), and «اعرض المزيد» ("Show more") adds as many more, so the page never runs
     on and on.
   - **The short tour, "Non-Muslim or new to Islam?":** seven miracles, ending with "What next?".
-    It is folded just above «المعجزات» (Miracles), under a line on what its stops hold and their
+    It is folded just above «المعجزات» (Miracles), under a line on what its miracles hold and their
     pictures, until the reader opens it or follows a link to `/signs#journey` (the footer and the
     link under the home page's map). The hero's other buttons lead to the two lists.
   - **«آية (معجزة)»:** many readers don't know that «آية» can mean a miracle, so where the interface's
@@ -96,7 +103,9 @@ that more components can join it later.
   4. a supplication from the Qur'an or the authentic Sunnah.
 - **A reading experience that leads on:** reading progress, read marks and "Continue reading", the
   next sign or name, text size, listen (the device's voice, which skips the Qur'an's own words rather
-  than recite them) and share.
+  than recite them) and share. «امسح سجل القراءة» (Clear reading history), under the journey's map
+  and beside the progress ring on /signs, forgets every read mark and where the reader stopped,
+  after asking once (`shared/reset-reading.ts`); it shows only when there is something to forget.
 - **Seven page colours**: night (the default) plus the six of `asmaa-alhusna` (paper, black, white,
   blue, dark blue, pink), and **Arabic ⇄ English**. More languages can be added; see below.
 - **"Our method"** (`/method`) and **"What next?"** (`/next`) pages.
@@ -361,7 +370,7 @@ src/app/
     services/theme.service     page colour, sets <html data-theme> (palettes in styles.scss)
     i18n/ui-text.ts            interface labels in each language
     utils/                     image paths, search (ignores tashkeel), reading time
-  shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament, a stop's place and way on, a clip
+  shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament, a stop's place and way on, a clip, clear reading history
   pages/portal                 the home page (/): the journey's card and its map (journey-map.ts), the library
   pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
   pages/ayah                   one sign (/signs/:slug; ?path=map leads on along the journey, ?path=journey along the short tour)

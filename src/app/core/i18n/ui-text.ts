@@ -80,6 +80,7 @@ export interface UiText {
   resetAll: string;
   resetAllConfirm: string;
   resetAllYes: string;
+  resetAllDone: string;
   cancel: string;
   methodBandTitle: string;
   methodBandText: string;
@@ -142,7 +143,7 @@ export interface UiText {
      * take its signs and miracles for all there are.
      */
     notAll: string;
-    startJourney: string;
+    shortTour: string;
     /**
      * The button under them. It opens the first and leads through the rest one after another, so it
      * names them: the reader should know it goes through these same questions, not somewhere else.
@@ -257,7 +258,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     continueReading: 'تابع القراءة',
     continueWhere: (title) => `توقفت عند: ${title}`,
     journeyTitle: 'غير مسلم أو جديدٌ على الإسلام؟',
-    journeyStop: (n, total) => `المحطة ${n} من ${total}`,
+    journeyStop: (n, total) => `الجولة السريعة، ${n} من ${total}`,
     ayahOfTheDay: (reflection) => (reflection ? 'آية اليوم' : 'آية اليوم (معجزة اليوم)'),
     readMore: 'اقرأ المزيد',
     categoriesTitle: 'مجالات الآيات',
@@ -288,9 +289,10 @@ export const UI_TEXT: Record<Lang, UiText> = {
     retry: 'أعد المحاولة',
     progress: (read, total) => `قرأت ${read} من ${total} آية`,
     progressDone: 'ما شاء الله! أتممت قراءة الآيات كلها.',
-    resetAll: 'إعادة ضبط',
+    resetAll: 'امسح سجل القراءة',
     resetAllConfirm: 'مسح علامات القراءة كلها، والموضع الذي توقفت عنده؟',
     resetAllYes: 'نعم، امسحها',
+    resetAllDone: 'مُسح سجل القراءة.',
     cancel: 'إلغاء',
     methodBandTitle: 'كيف نختار ما ننشره؟',
     methodBandText: 'لا ننشر إلا ما ثبت علميًا، ولا نلوي النص ليوافقه. تعرّف على منهجنا.',
@@ -334,8 +336,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
     isRead: 'تمّت القراءة',
     markUnread: 'إلغاء علامة القراءة',
     nextUp: (reflection) => (reflection ? 'الآية التالية' : 'الآية (المعجزة) التالية'),
-    nextStop: 'المحطة التالية',
-    journeyEndTitle: 'أتممت الرحلة',
+    nextStop: 'الموضوع التالي',
+    journeyEndTitle: 'أتممت الجولة السريعة',
     journeyEndText: 'شكرًا لأنك قرأت حتى هنا. اقرأ «ماذا بعد؟» لتعرف خطوتك التالية.',
     previous: 'السابق',
     next: 'التالي',
@@ -353,11 +355,11 @@ export const UI_TEXT: Record<Lang, UiText> = {
       lead: 'آياتٌ في الكون وفي نفسك تدل على خالقها، وأسماءٌ حسنى عرّفنا الله بها نفسه: بأدلتها من القرآن والسنة، ومصادرها الموثّقة.',
       notAll:
         'وليس ما هنا كلَّ الآيات والمعجزات، بل هو قليلٌ من كثير: فآيات الله في القرآن والسنة، وفي الكون وفي أنفسنا، تُعدّ بالآلاف.',
-      startJourney: 'ابدأ الرحلة',
+      shortTour: 'الجولة السريعة',
       statNames: (n) => arabicCount(n, NAME_NOUN).replace(/^[٠-٩]+ /, ''),
       journeySummary: (stops, minutes) =>
-        `رحلةٌ في ${stops} محطات مرتّبة لمن يتعرف على الإسلام أول مرة، تُقرأ في نحو ${minutes} دقيقة: من الكون الذي يتسع، إلى ظلمات أعماق البحر، إلى أطوار الجنين وألم الحروق، إلى نبوءةٍ تحققت ووقايةٍ من الأوبئة، إلى كتابٍ حُفظ أربعة عشر قرنًا.`,
-      showStops: 'اعرض المحطات',
+        `جولةٌ سريعة في ${stops} معجزات مرتّبة لمن يتعرف على الإسلام أول مرة، تُقرأ في نحو ${minutes} دقيقة: من الكون الذي يتسع، إلى ظلمات أعماق البحر، إلى أطوار الجنين وألم الحروق، إلى نبوءةٍ تحققت ووقايةٍ من الأوبئة، إلى كتابٍ حُفظ أربعة عشر قرنًا.`,
+      showStops: 'اعرض المعجزات',
       hide: 'إخفاء',
       pathsTitle: 'المكتبة',
       signsTitle: 'الإعجاز في القرآن والسنة',
@@ -431,7 +433,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
     continueReading: 'Continue reading',
     continueWhere: (title) => `You stopped at: ${title}`,
     journeyTitle: 'Non-Muslim or new to Islam?',
-    journeyStop: (n, total) => `Stop ${n} of ${total}`,
+    journeyStop: (n, total) => `Short tour · ${n} of ${total}`,
     ayahOfTheDay: (reflection) => (reflection ? 'Sign of the day' : 'Sign (miracle) of the day'),
     readMore: 'Read more',
     categoriesTitle: 'Fields',
@@ -465,9 +467,10 @@ export const UI_TEXT: Record<Lang, UiText> = {
     retry: 'Try again',
     progress: (read, total) => `You have read ${read} of ${total} signs`,
     progressDone: 'Masha’Allah! You have read every sign.',
-    resetAll: 'Reset',
+    resetAll: 'Clear reading history',
     resetAllConfirm: 'Clear every read mark, and where you stopped reading?',
     resetAllYes: 'Yes, clear them',
+    resetAllDone: 'Reading history cleared.',
     cancel: 'Cancel',
     methodBandTitle: 'How do we choose what to publish?',
     methodBandText: 'Only established science, and never a verse bent to fit it. Read about our method.',
@@ -510,8 +513,8 @@ export const UI_TEXT: Record<Lang, UiText> = {
     isRead: 'Finished reading',
     markUnread: 'Mark as unread',
     nextUp: (reflection) => (reflection ? 'Next sign' : 'Next sign (miracle)'),
-    nextStop: 'Next stop',
-    journeyEndTitle: 'You have finished the journey',
+    nextStop: 'Next topic',
+    journeyEndTitle: 'You have finished the short tour',
     journeyEndText: 'Thank you for reading this far. Read “What next?” to find your next step.',
     previous: 'Previous',
     next: 'Next',
@@ -529,11 +532,11 @@ export const UI_TEXT: Record<Lang, UiText> = {
       lead: 'Signs in the universe and within you that point to their Creator, and Allah’s Beautiful Names.',
       notAll:
         'What is here is not every sign and miracle, only a few of many: Allah’s signs, in the Qur’an and Sunnah, in the universe and in ourselves, number in the thousands.',
-      startJourney: 'Start the journey',
+      shortTour: 'The short tour',
       statNames: (n) => (n === 1 ? 'name' : 'names'),
       journeySummary: (stops, minutes) =>
-        `A journey in ${stops} stops, arranged for anyone meeting Islam for the first time, about ${minutes} minutes of reading: from a universe that keeps expanding, to the darkness of the deep sea, the stages of the embryo and the pain of burns, a prophecy that came true and a rule against epidemics, and a book kept unchanged for fourteen centuries.`,
-      showStops: 'Show the stops',
+        `A short tour of ${stops} miracles, arranged for anyone meeting Islam for the first time, about ${minutes} minutes of reading: from a universe that keeps expanding, to the darkness of the deep sea, the stages of the embryo and the pain of burns, a prophecy that came true and a rule against epidemics, and a book kept unchanged for fourteen centuries.`,
+      showStops: 'Show the miracles',
       hide: 'Hide',
       pathsTitle: 'The library',
       signsTitle: 'Signs in the Qur’an and Sunnah',

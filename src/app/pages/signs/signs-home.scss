@@ -375,16 +375,6 @@
   font-size: 1.15rem;
 }
 
-.confirm {
-  margin: 0 0 0.4rem;
-  color: var(--text-muted);
-}
-
-.confirm-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
 .bands {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
@@ -500,9 +490,5 @@
   .progress {
     flex-direction: column;
     text-align: center;
-  }
-
-  .confirm-actions {
-    justify-content: center;
   }
 }

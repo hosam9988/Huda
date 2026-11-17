@@ -142,9 +142,9 @@ export class Watch {
     effect(() => title.setTitle(`${this.language.pick(WATCH_TEXT.pageTitle)} | ${this.t().appTitle}`));
   }
 
-  /** «في المحطة: لماذا خُلقنا؟» */
+  /** «الموضوع: لماذا خُلقنا؟» */
   protected stopLabel(stop: Stop): string {
     const name = stop.arabic && this.language.isArabic() ? stop.arabic : typeof stop.title === 'string' ? stop.title : this.language.pick(stop.title);
-    return this.language.isArabic() ? `في المحطة: ${name}` : `At the stop: ${name}`;
+    return this.language.isArabic() ? `الموضوع: ${name}` : `Topic: ${name}`;
   }
 }
