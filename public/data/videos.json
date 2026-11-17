@@ -393,6 +393,174 @@
       "stops": [
         "what-he-commands"
       ]
+    },
+    {
+      "id": "js61PTeDicc",
+      "lang": "ar",
+      "speaker": {
+        "ar": "د. إياد قنيبي",
+        "en": "Dr Eyad Qunaibi"
+      },
+      "title": {
+        "ar": "ما الفطرة؟",
+        "en": "What is the fitra?"
+      },
+      "about": {
+        "ar": "يعرّف الفطرة التي أودعها الله في الإنسان، ومنها إقراره بأن للكون خالقًا مدبّرًا، وكيف تُحجب ثم تعود.",
+        "en": "He explains the fitra, the innate nature Allah placed in every person, which includes knowing that the universe has a Creator who governs it, and how it can be covered over."
+      },
+      "seconds": 129,
+      "start": 39,
+      "end": 168,
+      "stops": [
+        "allah"
+      ]
+    },
+    {
+      "id": "xx0m3NM_umg",
+      "lang": "ar",
+      "speaker": {
+        "ar": "د. إياد قنيبي",
+        "en": "Dr Eyad Qunaibi"
+      },
+      "title": {
+        "ar": "الشيفرة المحيّرة",
+        "en": "The puzzling code"
+      },
+      "about": {
+        "ar": "يشرح بمثال المكتبة كيف تُقرأ الشيفرة الوراثية وتُترجم إلى بروتينات، ثم يسأل: من أبدع هذا كله؟",
+        "en": "Using a library as a picture, he explains how the genetic code is read and turned into proteins, then asks: who devised all this?"
+      },
+      "note": {
+        "ar": "في المقطع تبسيطٌ مقبول: ليس كل جينٍ يُترجم إلى بروتينٍ واحد، والرقم الذي يذكره لأزواج القواعد أكبر قليلًا من المعروف لنسخةٍ واحدة من الجينوم (نحو ٣٫١ مليار)، وأصغر مما في الخلية كلها.",
+        "en": "It simplifies a little: not every gene makes one protein, and his count of base pairs is a little above the usual figure for one copy of the genome (about 3.1 billion) and below what a whole cell holds."
+      },
+      "seconds": 471,
+      "start": 34,
+      "end": 505,
+      "stops": [
+        "al-alim"
+      ]
+    },
+    {
+      "id": "DuXzqI7Y24w",
+      "lang": "en",
+      "speaker": {
+        "ar": "د. ذاكر نايك",
+        "en": "Dr Zakir Naik"
+      },
+      "title": {
+        "ar": "«لن يخلقوا ذبابًا»",
+        "en": "“They could not create a fly”"
+      },
+      "about": {
+        "ar": "يشرح مثل الذباب في سورة الحج (٧٣): كل ما يُعبد من دون الله لن يخلق ذبابًا ولو اجتمعوا له، ولو سلبهم الذباب شيئًا لم يستنقذوه منه.",
+        "en": "He explains the parable of the fly in al-Hajj 22:73: all that is worshipped besides Allah could never create a fly, even all together, nor take back what a fly snatches from them."
+      },
+      "note": {
+        "ar": "يذكر الرقم الشائع «٣٣٠ مليون إله» في الهندوسية، وكثيرٌ من الهندوس يفهمونه «٣٣ نوعًا».",
+        "en": "He gives the popular figure of 330 million Hindu deities, which many Hindus read as 33 kinds."
+      },
+      "seconds": 93,
+      "stops": [
+        "never-create-a-fly"
+      ]
+    },
+    {
+      "id": "tV6Bl5CZsSs",
+      "lang": "en",
+      "speaker": {
+        "ar": "يوسف إستس",
+        "en": "Yusuf Estes"
+      },
+      "title": {
+        "ar": "أركان الإسلام الخمسة",
+        "en": "The five pillars of Islam"
+      },
+      "about": {
+        "ar": "شرحٌ مبسّط لأركان الإسلام الخمسة: الشهادتين، والصلاة، والزكاة، والصيام، والحج.",
+        "en": "A plain explanation of the five pillars of Islam: the declaration of faith, prayer, zakat, fasting and the pilgrimage."
+      },
+      "note": {
+        "ar": "يقول إن الزكاة تذهب كلها إلى الفقراء؛ والصحيح أن لها ثمانية مصارف ذكرتها سورة التوبة (٦٠)، أولها الفقراء والمساكين.",
+        "en": "He says all of zakat goes to the poor; in fact at-Tawbah 9:60 names eight kinds of recipients, the poor and the needy first among them."
+      },
+      "seconds": 175,
+      "start": 24,
+      "end": 199,
+      "stops": [
+        "pillars-of-islam"
+      ]
+    },
+    {
+      "id": "qWssvIYQrSU",
+      "lang": "ar",
+      "speaker": {
+        "ar": "د. إياد قنيبي",
+        "en": "Dr Eyad Qunaibi"
+      },
+      "title": {
+        "ar": "لماذا ينتهي الدليل إلى الله كما وصفه الإسلام؟",
+        "en": "Why does the evidence lead to Allah as Islam describes Him?"
+      },
+      "about": {
+        "ar": "يجيب عن اعتراضين: لماذا يُخاطَب المنكر بأدلة القرآن العقلية، ولماذا ينتهي الخالق الذي دلّ عليه العقل إلى الإله الذي وصفه الإسلام.",
+        "en": "He answers two objections: why the Qur’an’s rational arguments can be put to someone who denies, and why the Creator that reason points to is the deity Islam describes."
+      },
+      "seconds": 188,
+      "start": 406,
+      "end": 594,
+      "stops": [
+        "why-islam"
+      ]
+    },
+    {
+      "id": "4xi6yv6Pvko",
+      "lang": "en",
+      "speaker": {
+        "ar": "د. ذاكر نايك",
+        "en": "Dr Zakir Naik"
+      },
+      "title": {
+        "ar": "لماذا الفقر والمرض في العالم؟",
+        "en": "Why is there poverty and sickness in the world?"
+      },
+      "about": {
+        "ar": "الحياة الدنيا دار ابتلاء، يُبتلى فيها كل إنسانٍ بما يختلف عن غيره: الغني بماله، والفقير بفقره، والمريض بمرضه، والفوز لمن صبر وشكر.",
+        "en": "This life is a test, and each person is tested differently: the rich with wealth, the poor with poverty, the sick with sickness; success belongs to those who are patient and grateful."
+      },
+      "note": {
+        "ar": "قوله إن دخول الفقير الجنة أيسر معناه ما في صحيح مسلم (٢٩٧٩): «إِنَّ فُقَرَاءَ الْمُهَاجِرِينَ يَسْبِقُونَ الْأَغْنِيَاءَ يَوْمَ الْقِيَامَةِ إِلَى الْجَنَّةِ بِأَرْبَعِينَ خَرِيفًا».",
+        "en": "His point that the poor enter Paradise more easily has its source in Sahih Muslim (2979): the poor among the Emigrants will precede the rich into Paradise by forty years."
+      },
+      "seconds": 173,
+      "start": 243,
+      "end": 416,
+      "stops": [
+        "why-pain"
+      ]
+    },
+    {
+      "id": "Lvp-5T5TCj0",
+      "lang": "ar",
+      "speaker": {
+        "ar": "د. محمد راتب النابلسي",
+        "en": "Dr Mohamed Ratib al-Nabulsi"
+      },
+      "title": {
+        "ar": "ما معنى التوحيد؟",
+        "en": "What does tawhid mean?"
+      },
+      "about": {
+        "ar": "التوحيد ألّا ترى رازقًا ولا معطيًا ولا مانعًا إلا الله، وأن تتجه إليه وحده؛ وبه يتحرر الإنسان من الخوف ومن عبودية ما سواه.",
+        "en": "Tawhid is to see no provider, giver or withholder but Allah, and to turn to Him alone; by it a person is freed from fear and from serving anything else."
+      },
+      "seconds": 190,
+      "start": 6,
+      "end": 196,
+      "stops": [
+        "al-ahad"
+      ]
     }
   ]
 }
