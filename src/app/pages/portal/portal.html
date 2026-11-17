@@ -128,6 +128,24 @@
         <span class="btn solid">{{ t().portal.enter }}</span>
       </span>
     </a>
+    <!-- «شاهد»: the chosen clips. -->
+    <a class="path wide" routerLink="/watch" appReveal>
+      <img
+        [src]="artSmallSrc('lamp-doorway')"
+        [attr.srcset]="artSrcset('lamp-doorway')"
+        sizes="100vw"
+        alt=""
+        width="1280"
+        height="800"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="path-text">
+        <span class="path-title">{{ language.pick(watchText.pageTitle) }}</span>
+        <span class="path-blurb">{{ language.pick(watchText.pageIntro) }}</span>
+        <span class="btn solid">{{ t().portal.enter }}</span>
+      </span>
+    </a>
   </div>
 </section>
 

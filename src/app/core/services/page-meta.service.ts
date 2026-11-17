@@ -3,7 +3,8 @@ import { effect, inject, Injectable, Injector, signal, untracked } from '@angula
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
 import { UiText } from '../i18n/ui-text';
-import { Lang, LANGUAGES, pathInLang } from '../models/lang';
+import { Lang, LANGUAGES, localize, pathInLang } from '../models/lang';
+import { WATCH_TEXT } from '../../shared/video';
 import { artSrc } from '../utils/art';
 import { ContentService } from './content.service';
 import { LanguageService } from './language.service';
@@ -151,6 +152,8 @@ export class PageMeta {
         return { description: t.names.intro, type: 'website', ...namesHero };
       case 'method':
         return { description: t.methodBandText, type: 'website', ...hero };
+      case 'watch':
+        return { description: localize(WATCH_TEXT.pageIntro, this.language.lang()), type: 'website', ...hero };
       case 'next':
         return { description: t.nextBandText, type: 'website', ...hero };
       default:

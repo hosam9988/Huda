@@ -120,6 +120,8 @@
           </ol>
         </section>
 
+        <app-watch-here [slug]="topic.slug" />
+
         <div class="finish">
           @if (isRead()) {
             <p class="done-line">✓ {{ t().isRead }}</p>

@@ -24,6 +24,7 @@ import { JourneyService } from '../../core/journey';
 import { JourneyOnward, JourneyPlace } from '../../shared/journey-stop';
 import { Ornament } from '../../shared/ornament';
 import { ReadAloud } from '../../shared/read-aloud';
+import { WatchHere } from '../../shared/video';
 import { Reveal } from '../../shared/reveal';
 
 /** A part of a sign's page, for the list of links to its parts. */
@@ -35,7 +36,7 @@ interface Part {
 /** One sign, told as a short story: the text, then and now, the timeline, and the sources. */
 @Component({
   selector: 'app-ayah-page',
-  imports: [RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward],
+  imports: [RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward, WatchHere],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './ayah-page.html',
   styleUrl: './ayah-page.scss',

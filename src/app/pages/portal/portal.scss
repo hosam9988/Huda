@@ -144,6 +144,11 @@
   gap: 1.25rem;
 }
 
+.path.wide {
+  grid-column: 1 / -1;
+  min-block-size: 18rem;
+}
+
 .path {
   position: relative;
   display: grid;

@@ -9,6 +9,7 @@ import { artSmallSrc, artSrc, artSrcset } from '../../core/utils/art';
 import { readingMinutes } from '../../core/utils/reading-time';
 import { Ornament } from '../../shared/ornament';
 import { Reveal } from '../../shared/reveal';
+import { WATCH_TEXT } from '../../shared/video';
 import { JourneyMap, JourneyStart } from './journey-map';
 
 /**
@@ -31,6 +32,7 @@ export class Portal {
   protected readonly t = this.language.t;
   protected readonly artSrc = artSrc;
   protected readonly artSmallSrc = artSmallSrc;
+  protected readonly watchText = WATCH_TEXT;
   protected readonly artSrcset = artSrcset;
   protected readonly journeyText = JOURNEY_TEXT;
 

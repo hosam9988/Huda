@@ -14,6 +14,7 @@ const root = new URL('../', import.meta.url);
 const content = JSON.parse(readFileSync(new URL('public/data/ayat.json', root), 'utf8'));
 const { names } = JSON.parse(readFileSync(new URL('public/data/names.json', root), 'utf8'));
 const { topics } = JSON.parse(readFileSync(new URL('public/data/topics.json', root), 'utf8'));
+const { videos } = JSON.parse(readFileSync(new URL('public/data/videos.json', root), 'utf8'));
 
 const SOURCE_KINDS = ['journal', 'preprint', 'agency', 'university', 'encyclopedia', 'book', 'news'];
 // The method page says every hadith in the signs is from al-Bukhari or Muslim, with its number, so
@@ -153,6 +154,27 @@ topics.forEach((t) => {
   });
 });
 
+// A clip of «شاهد»: a YouTube id, its language, its texts in both languages, a length that matches
+// the part shown, and pages that exist (it is shown on them).
+const pages = new Set([...slugs, ...nameSlugs, ...topics.map((t) => t.slug)]);
+const clips = new Set();
+videos.forEach((v, i) => {
+  const at = `video ${i} "${v.id}"`;
+  if (!/^[\w-]{11}$/.test(v.id ?? '')) errors.push(`${at}: not a YouTube id`);
+  const key = `${v.id}@${v.start ?? 0}`;
+  if (clips.has(key)) errors.push(`${at}: the same part listed twice`);
+  clips.add(key);
+  if (!['ar', 'en'].includes(v.lang)) errors.push(`${at}: lang must be ar or en`);
+  for (const key of ['speaker', 'title', 'about']) localized(v[key], `${at} ${key}`);
+  if (v.note) localized(v.note, `${at} note`);
+  if (!(v.seconds > 0)) errors.push(`${at}: no length`);
+  if ((v.start !== undefined || v.end !== undefined) && v.end - (v.start ?? 0) !== v.seconds) {
+    errors.push(`${at}: seconds should be end − start (${v.end - (v.start ?? 0)})`);
+  }
+  if (!v.stops?.length) errors.push(`${at}: on no page`);
+  for (const slug of v.stops ?? []) if (!pages.has(slug)) errors.push(`${at}: no page "${slug}"`);
+});
+
 // Every English text but a verse's translation (Saheeh International's wording), the references and
 // the sources' own titles.
 const GOD = /\b(God|gods?)\b/;
@@ -198,4 +220,4 @@ const reflection = content.ayat.filter((a) => a.type === 'reflection').length;
 const written = names.filter((n) => n.content).length;
 console.log(`OK: ${content.categories.length} fields, ${content.ayat.length} signs (${reflection} for reflection), ${stops.length} journey stops, ${sources} sources.`);
 console.log(`OK: ${names.length} names, ${written} written.`);
-console.log(`OK: ${topics.length} topics.`);
+console.log(`OK: ${topics.length} topics, ${videos.length} clips.`);

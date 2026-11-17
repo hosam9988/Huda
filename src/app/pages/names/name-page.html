@@ -77,6 +77,8 @@
           <ng-container [ngTemplateOutlet]="textCard" [ngTemplateOutletContext]="{ $implicit: c.dua, key: 'dua' }" />
         </section>
 
+        <app-watch-here [slug]="n.slug" />
+
         <div class="finish">
           @if (isRead()) {
             <p class="done-line">✓ {{ t().isRead }}</p>

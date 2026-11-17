@@ -23,6 +23,7 @@ import { JourneyOnward, JourneyPlace } from '../../shared/journey-stop';
 import { Ornament } from '../../shared/ornament';
 import { ReadAloud } from '../../shared/read-aloud';
 import { Reveal } from '../../shared/reveal';
+import { WatchHere } from '../../shared/video';
 
 /** A part of a topic's page, for the list of links to its parts. */
 interface Part {
@@ -37,7 +38,7 @@ interface Part {
  */
 @Component({
   selector: 'app-topic-page',
-  imports: [RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward],
+  imports: [RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward, WatchHere],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './topic-page.html',
   styleUrls: ['../ayah/ayah-page.scss', './topic-page.scss'],

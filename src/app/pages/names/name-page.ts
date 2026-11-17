@@ -24,11 +24,12 @@ import { JourneyOnward, JourneyPlace } from '../../shared/journey-stop';
 import { Ornament } from '../../shared/ornament';
 import { ReadAloud } from '../../shared/read-aloud';
 import { Reveal } from '../../shared/reveal';
+import { WatchHere } from '../../shared/video';
 
 /** One of the Beautiful Names, kept short: its meaning, evidence, effect on a life, and a du'a. */
 @Component({
   selector: 'app-name-page',
-  imports: [NgTemplateOutlet, RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward],
+  imports: [NgTemplateOutlet, RouterLink, Ornament, ReadAloud, Reveal, JourneyPlace, JourneyOnward, WatchHere],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './name-page.html',
   styleUrl: './name-page.scss',

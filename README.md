@@ -45,6 +45,13 @@ that more components can join it later.
   («المرحلة ٣، المحطة ١ من ٦», with a step for each stop of its stage) and ends with what it showed
   in a line and the next stop, in its stage or the next; after the last, "What next?". A stop counts as done once read (the read marks kept in the browser), and the map and the
   card follow from those.
+- **«شاهد» (Watch, `/watch`):** short clips by speakers the owner approved, chosen clip by clip
+  after their transcripts were read against the site's method, from `public/data/videos.json`. A
+  clip can be part of a longer video (`start`, `end`), and may carry a note from the site. Each
+  shows on the journey's pages it is listed for (a «شاهد» block before the end of the page) and on
+  /watch, under its stage. A clip is a card until pressed; only then does the player load, from
+  youtube-nocookie.com, so a page loads nothing from YouTube by itself. The card is our own, never
+  YouTube's thumbnail. A clip whose picture shows a cross or a six-pointed star is left out.
 - **Finding the way:** the header holds the sections, with "Start here" (the journey's map) set
   apart; on a phone they are in a tab bar at the foot of the screen (Home, Start here, Signs, Names,
   Our method).
@@ -167,7 +174,7 @@ Requires Node 22.22+ or 24.15+.
 ```bash
 npm install
 npm start              # http://localhost:4200
-npm run check:content  # checks public/data/ayat.json, names.json and topics.json
+npm run check:content  # checks public/data/ayat.json, names.json, topics.json and videos.json
 npm run build          # prerenders every page into dist/huda/browser, laid out for GitHub Pages
 npm run preview        # serves that build as GitHub Pages does: http://localhost:4300/Huda/
 ```
@@ -346,6 +353,7 @@ src/app/
     services/page-meta.service each page's description, canonical address and Open Graph tags
     services/names.service     loads names.json: the names, name of the day, the previous and next name
     services/topics.service    loads topics.json: the journey's topics (stages 5 and 6)
+    services/videos.service    loads videos.json: the clips of «شاهد», and those for a page
     services/reading.service   read marks, where the reader stopped, text size (localStorage)
     services/language.service  the language, from the address; sets <html dir/lang>
     services/language-location puts the language in the address: English pages under /en/
@@ -353,16 +361,18 @@ src/app/
     services/theme.service     page colour, sets <html data-theme> (palettes in styles.scss)
     i18n/ui-text.ts            interface labels in each language
     utils/                     image paths, search (ignores tashkeel), reading time
-  shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament, a stop's place and way on
+  shared/                      sign card, progress ring, scroll reveal, theme picker, listen, ornament, a stop's place and way on, a clip
   pages/portal                 the home page (/): the journey's card and its map (journey-map.ts), the library
   pages/signs                  the signs (/signs): sign of the day, fields, the folded journey, the miracles, the signs for reflection
   pages/ayah                   one sign (/signs/:slug; ?path=map leads on along the journey, ?path=journey along the short tour)
   pages/names                  the names (/names) and one name (/names/:slug)
   pages/topic                  one topic of the journey (/topics/:slug), styled as a sign's page
+  pages/watch                  «شاهد» (/watch): every clip, under its stage
   pages/method, next-steps     "Our method" (/method) and "What next?" (/next)
 public/data/ayat.json          the signs
 public/data/names.json         the names
 public/data/topics.json        the journey's topics (stages 5 and 6)
+public/data/videos.json        the clips of «شاهد»
 public/images/                 the images
 scripts/check-content.mjs      the content checker
 scripts/finish-build.mjs       lays the build out for GitHub Pages; 404.html, sitemap.xml, robots.txt

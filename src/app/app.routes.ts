@@ -3,6 +3,7 @@ import { firstPageData } from './core/prerender';
 import { ContentService } from './core/services/content.service';
 import { NamesService } from './core/services/names.service';
 import { TopicsService } from './core/services/topics.service';
+import { VideosService } from './core/services/videos.service';
 
 /** The site's pages, at their Arabic addresses. */
 const pages: Routes = [
@@ -35,6 +36,11 @@ const pages: Routes = [
     path: 'topics/:slug',
     loadComponent: () => import('./pages/topic/topic-page').then((m) => m.TopicPage),
     resolve: { ready: firstPageData(TopicsService) },
+  },
+  {
+    path: 'watch',
+    loadComponent: () => import('./pages/watch/watch').then((m) => m.Watch),
+    resolve: { ready: firstPageData(VideosService, ContentService, NamesService, TopicsService) },
   },
   { path: 'method', loadComponent: () => import('./pages/method/method').then((m) => m.Method) },
   {

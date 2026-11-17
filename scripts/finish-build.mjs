@@ -143,7 +143,7 @@ for (const [served, target] of redirects) {
   if (![...pages.values()].includes(target))
     errors.push(`${served}: redirects to ${target}, which has no page`);
 }
-for (const page of ['', 'signs/', 'names/', 'method', 'next']) {
+for (const page of ['', 'signs/', 'names/', 'method', 'next', 'watch']) {
   for (const served of [page, `en/${page}`]) {
     if (!pages.has(served)) errors.push(`${served || '/'}: not prerendered`);
   }
