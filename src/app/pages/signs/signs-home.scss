@@ -343,6 +343,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  // Every card in a row as tall as the row (see sign-list.ts).
+  > li {
+    display: grid;
+  }
 }
 
 // ---------- Progress and closing bands ----------

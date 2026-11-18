@@ -222,6 +222,13 @@ export function resetList(list: ListState): void {
       gap: 1.25rem;
     }
 
+    // Every card in a row as tall as the row: the list item stretches with its row, and as a grid it
+    // stretches the card inside it too (the card then fills it with its own block-size: 100%).
+    .grid > li,
+    .verses > li {
+      display: grid;
+    }
+
     .more {
       margin: 1.75rem 0 0;
       text-align: center;
