@@ -34,8 +34,8 @@ const PRINCIPLES: Principle[] = [
   {
     title: { ar: 'نصوصٌ موثّقة', en: 'Verified texts' },
     text: {
-      ar: 'نُقلت الآيات بنصها من المصحف برواية حفص عن عاصم، ولم تُكتب من الذاكرة، وترجمتها الإنجليزية ترجمة «صحيح إنترناشونال» (Saheeh International). وأحاديث قسم الإعجاز كلها من الصحيحين، بأرقامها. وفي قسم الأسماء الحسنى نذكر ما في الصحيحين، وما صحّحه أو حسّنه أهل العلم من غيرهما مع ذكر الحكم ومن قاله، وتركنا ما اختُلف في ثبوته.',
-      en: 'Every verse is copied from the text of the Mushaf (the reading of Hafs from ‘Asim), never typed from memory, and its English translation is Saheeh International’s. Every hadith in the Signs section is from the two Sahihs, al-Bukhari and Muslim, with its number. In the Beautiful Names section we also cite hadith from other collections that scholars graded sahih or hasan, giving the grading and who gave it, and we left out any whose authenticity is disputed.',
+      ar: 'نُقلت الآيات بنصها من المصحف برواية حفص عن عاصم، ولم تُكتب من الذاكرة، وترجمتها الإنجليزية ترجمة «صحيح إنترناشونال» (Saheeh International). والأحاديث من الكتب التسعة بأرقامها: أكثرها من الصحيحين، وما كان من غيرهما فمما صحّحه أو حسّنه أهل العلم، ونذكر الحكم ومن قاله، وتركنا ما اختُلف في ثبوته.',
+      en: 'Every verse is copied from the text of the Mushaf (the reading of Hafs from ‘Asim), never typed from memory, and its English translation is Saheeh International’s. Every hadith is from the nine books, with its number: most from the two Sahihs, al-Bukhari and Muslim; any other is one that scholars graded sahih or hasan, and we give the grading and who gave it. We left out any whose authenticity is disputed.',
     },
   },
   {

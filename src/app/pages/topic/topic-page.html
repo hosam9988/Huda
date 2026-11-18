@@ -79,6 +79,9 @@
                   <span>{{ language.pick(e.narrator) }}</span> ·
                 }
                 {{ language.pick(e.ref) }}
+                @if (e.grading) {
+                  <span class="grading">— {{ language.pick(e.grading) }}</span>
+                }
               </p>
             </figure>
           }

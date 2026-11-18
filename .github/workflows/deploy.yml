@@ -1,10 +1,12 @@
-# Builds the app and publishes it to GitHub Pages on every push to main.
+# Builds the app and publishes it to GitHub Pages on every push to main, and, on the journey
+# branch, on every push to journey: the owner has the live site follow journey while main is
+# left as it is (2026-11-18). The github-pages environment allows both branches.
 # One-time setup: repo Settings → Pages → Source: "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, journey]
   workflow_dispatch:
 
 permissions:

@@ -43,11 +43,17 @@ that more components can join it later.
   to tell a stop from a question. The seven miracles on /signs are «الجولة السريعة» (the short
   tour), not a second journey.
 - **The journey's topics** are the site's own pages (`src/app/core/journey.ts` lists them, six to a
-  question): signs and names for the first four questions, and for the fifth and sixth twelve pages of
-  their own (`/topics/:slug`, from `public/data/topics.json`): why we were created, the pillars of
-  Islam and of faith, what Allah commands, the Last Day and repentance; then who created Allah, why
-  pain, why Islam, Jesus in Islam, faith and reason, and those the message never reached. A topic
-  page has its texts (verses, and hadith from al-Bukhari or Muslim), its argument in a few parts, a
+  question, twelve for «وماذا عن أسئلتي؟»). Questions 1, 3 and 4 open with arguments, topic pages of
+  their own (`/topics/:slug`, from `public/data/topics.json`) written from Dr Haitham Talaat's four
+  books and the older works they point to (whom nothing created and who did not make himself; what
+  begins needs a cause; the perfection of creation; the fitrah; why revelation; the Qur'an's
+  challenge; one whole revealed in parts; his truthfulness; his life; signs crowds saw), and then
+  their strongest signs; question 2 is six of the Names; questions 5 and 6 are topic pages only
+  (why we were created, the pillars, what Allah commands, the Last Day, repentance; who created
+  Allah, laws and chance, whether Allah is the universe, man in a vast universe, pain, prayers that
+  seem unanswered, why Islam, why Muslims are weak, Jesus, reincarnation, faith and reason, those the
+  message never reached). Signs that left the journey stay in the library. A topic
+  page has its texts (verses, and hadith from the nine books), its argument in a few parts, a
   closing thought and its sources (tafsir and hadith pages); it is only ever part of the journey. Reached from the map (`?path=map`), a page shows where it stands
   («السؤال ٣، الموضوع ١ من ٦», with a step for each topic of its question) and ends with what it showed
   in a line and the next topic, under its question or the next; after the last, "What next?". A topic counts as done once read (the read marks kept in the browser), and the map and the
@@ -117,7 +123,9 @@ that more components can join it later.
   and ikhfa' with three marks that mean something else in Unicode (U+0657, U+065E, U+0656), which
   Amiri Quran cannot draw as tanween; they are stored as Unicode's open tanween (U+08F0, U+08F1,
   U+08F2), the same marks, and `npm run check:content` refuses the KFQPC ones.
-- **In the signs**, hadith are only from al-Bukhari and Muslim. Only established science, never
+- **Hadith** are from the nine books: al-Bukhari and Muslim first; from the other seven (Abu
+  Dawud, al-Tirmidhi, al-Nasa'i, Ibn Majah, Ahmad, Malik, al-Darimi) only one a named scholar
+  graded sahih or hasan, shown with that grading (the owner's rule since 2026-11-18). Only established science, never
   passing theories; the Arabic must carry the meaning, and what the early commentators said is
   mentioned. Popular claims that don't hold up are left out on purpose. The sources are journals,
   agencies, universities and reference works, each opened and checked against what the page says (for
@@ -212,7 +220,8 @@ To check only some sizes: `npm run check:phones -- http://localhost:4300/Huda 4 
 ## Deploying
 
 Every push to `main` checks the content, builds the app and publishes it to GitHub Pages
-([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)). Before the first deploy, set the
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)); on the `journey` branch, so does
+every push to `journey`, since the live site follows that branch while `main` is left as it is. Before the first deploy, set the
 repo's **Settings → Pages → Source** to **GitHub Actions**.
 
 The build prerenders every page (the home page, `/signs`, `/names`, `/method`, `/next`, each sign
@@ -256,7 +265,7 @@ from `public/images` as they are. The site doesn't use it yet: it still reads `p
 
 The content is in two files under `public/data/`. Run `npm run check:content` after editing either:
 it reports any missing translation, source, field, image or part of a name's page, a sign's hadith
-not cited from al-Bukhari or Muslim, a name's hadith from another collection without its grading,
+not cited from the nine books, a hadith outside al-Bukhari and Muslim without its grading,
 and any "God" in the English outside a verse's translation. The site's English says "Allah", and
 "deity" for «إله»; the English of every verse is Saheeh International's, cut to the part shown.
 

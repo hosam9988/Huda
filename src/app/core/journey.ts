@@ -51,26 +51,26 @@ const name = (slug: string): StopRef => ({ kind: 'name', slug });
 const topic = (slug: string): StopRef => ({ kind: 'topic', slug });
 
 /**
- * The stages, in order. Each open stage takes a few pages of its field, chosen so that together
- * they answer its question; the rest stay in the library (/signs, /names). A page is on the
- * journey once at most.
+ * The stages, in order. Each open stage opens with its arguments (topic pages written from Dr
+ * Haitham Talaat's four books and their sources), then its strongest signs; the rest stay in the
+ * library (/signs, /names). A page is on the journey once at most.
  */
 export const STAGES: StageDef[] = [
   {
     kicker: { ar: 'الخالق', en: 'The Creator' },
     title: { ar: 'هل لهذا الكون خالق؟', en: 'Does this universe have a Creator?' },
     line: {
-      ar: 'آياتٌ في الكون وفي نفسك تدلّ على من صنعها.',
-      en: 'Signs in the universe and within you that point to the One who made them.',
+      ar: 'عقلك وفطرتك وما حولك في الكون: كلها تشهد بأن له خالقًا.',
+      en: 'Your reason, your nature and the universe around you all bear witness that it has a Creator.',
     },
     status: 'open',
     stops: [
-      sign('a-blazing-lamp'),
-      sign('the-water-you-drink'),
-      sign('cleaver-of-grain'),
-      sign('form-then-guidance'),
+      topic('created-by-nothing'),
+      topic('every-event-has-a-cause'),
+      topic('he-perfected-all-things'),
+      topic('the-fitrah'),
       sign('never-create-a-fly'),
-      sign('languages-and-colours'),
+      sign('cleaver-of-grain'),
     ],
   },
   {
@@ -87,16 +87,16 @@ export const STAGES: StageDef[] = [
     kicker: { ar: 'كلامه', en: 'His word' },
     title: { ar: 'هل كلّمنا؟', en: 'Has He spoken to us?' },
     line: {
-      ar: 'القرآن: آياتٌ وافقت ما كشفه العلم بعد قرون، وكتابٌ حُفظ كما نزل.',
-      en: 'The Qur’an: verses that agree with what science found centuries later, and a book kept as it was revealed.',
+      ar: 'لماذا نحتاج إلى الوحي، وكيف نعرف أن القرآن كلامه: تحدّيه، وبناؤه، وحفظه، وآياتٌ وافقت ما كُشف بعد قرون.',
+      en: 'Why we need revelation, and how we know the Qur’an is His word: its challenge, its structure, its preservation, and verses that agree with what was found centuries later.',
     },
     status: 'open',
     stops: [
+      topic('why-revelation'),
+      topic('bring-a-surah-like-it'),
+      topic('revealed-in-parts-one-whole'),
       sign('expanding-universe'),
       sign('darkness-of-the-deep'),
-      sign('stages-of-the-embryo'),
-      sign('skins-renewed'),
-      sign('each-in-an-orbit'),
       sign('the-quran-preserved'),
     ],
   },
@@ -104,15 +104,15 @@ export const STAGES: StageDef[] = [
     kicker: { ar: 'رسوله ﷺ', en: 'His Messenger ﷺ' },
     title: { ar: 'من الذي بلّغنا؟', en: 'Who brought it to us?' },
     line: {
-      ar: 'محمد ﷺ: أخبر بأمورٍ قبل وقوعها، فوقعت كما قال.',
-      en: 'Muhammad ﷺ: he foretold things before they happened, and they happened as he said.',
+      ar: 'محمد ﷺ: صدقه الذي شهد به خصومه، وسيرته، ودلائل رآها الناس، وأمورٌ أخبر بها قبل وقوعها فوقعت.',
+      en: 'Muhammad ﷺ: the truthfulness his opponents admitted, his life, signs people saw, and things he foretold that came true.',
     },
     status: 'open',
     stops: [
+      topic('never-known-to-lie'),
+      topic('his-life-is-proof'),
+      topic('miracles-people-saw'),
       sign('romans-will-overcome'),
-      sign('the-host-will-be-routed'),
-      sign('return-to-mecca'),
-      sign('commanders-of-mutah'),
       sign('you-will-conquer-egypt'),
       sign('competing-in-tall-buildings'),
     ],
@@ -144,9 +144,15 @@ export const STAGES: StageDef[] = [
     status: 'open',
     stops: [
       topic('who-created-allah'),
+      topic('laws-and-chance'),
+      topic('is-allah-the-universe'),
+      topic('man-in-a-vast-universe'),
       topic('why-pain'),
+      topic('when-prayers-seem-unanswered'),
       topic('why-islam'),
+      topic('why-are-muslims-weak'),
       topic('jesus-in-islam'),
+      topic('do-souls-return'),
       topic('faith-and-reason'),
       topic('never-reached'),
     ],

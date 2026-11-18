@@ -373,7 +373,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       trustTitle: 'لماذا تثق بما تقرؤه هنا؟',
       trust: [
         { title: 'آياتٌ من المصحف', text: 'نُقلت الآيات بنصها من المصحف، ولم تُكتب من الذاكرة.' },
-        { title: 'أحاديث بأرقامها', text: 'رُوجع كل حديثٍ في كتابه برقمه، وأحاديث الإعجاز كلها من صحيحي البخاري ومسلم.' },
+        { title: 'أحاديث بأرقامها', text: 'رُوجع كل حديثٍ في كتابه برقمه، وكلها من الكتب التسعة، وما كان من غير الصحيحين فبحكم من صحّحه.' },
         { title: 'كل معلومةٍ بمصدرها', text: 'كل معلومةٍ علمية مربوطةٌ بمصدرٍ فتحناه وتحققنا أنه يقولها.' },
       ],
       trustLink: 'تعرّف على منهجنا',
@@ -551,7 +551,7 @@ export const UI_TEXT: Record<Lang, UiText> = {
       trustTitle: 'Why trust what you read here?',
       trust: [
         { title: 'Verses from the Mushaf', text: 'Every verse is copied from the text of the Mushaf, never typed from memory.' },
-        { title: 'Hadith with their numbers', text: 'Every hadith was checked in its book, with its number; those in the signs are all from al-Bukhari and Muslim.' },
+        { title: 'Hadith with their numbers', text: 'Every hadith was checked in its book, with its number; all are from the nine books, and any outside the two Sahihs carries the grading of the scholar who authenticated it.' },
         { title: 'Every fact with its source', text: 'Every scientific claim links to a source we opened and checked.' },
       ],
       trustLink: 'Read our method',

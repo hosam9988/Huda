@@ -35,6 +35,11 @@ export interface Evidence {
   ref: Localized;
   /** For a hadith: who narrated it. */
   narrator?: Localized;
+  /**
+   * For a hadith outside al-Bukhari and Muslim (from the rest of the nine books): its grading and
+   * the scholar who gave it, e.g. «صحّحه الألباني».
+   */
+  grading?: Localized;
 }
 
 /** A dated step on the way from revelation to discovery. */

@@ -1,7 +1,7 @@
 // Checks public/data/ayat.json, names.json and topics.json after they are edited: run
 // `npm run check:content`.
 // Every text needs Arabic and English, every sign a known field, an image, a revelation step on
-// its timeline, at least one https source and only hadith from al-Bukhari or Muslim; the journey
+// its timeline, at least one https source and only hadith from the nine books (graded, outside the two Sahihs); the journey
 // stops must run 1, 2, 3…
 // A written name needs a meaning, one to three evidences, its impact and a du'a; a hadith from
 // outside the two Sahihs needs its grading.
@@ -20,6 +20,18 @@ const SOURCE_KINDS = ['journal', 'preprint', 'agency', 'university', 'encycloped
 // The method page says every hadith in the signs is from al-Bukhari or Muslim, with its number, so
 // each one's ref must start with one of them: «صحيح مسلم (٢٧٨)، وبنحوه في…» / "Sahih Muslim 278; …".
 const SAHIHAYN_REF = { ar: /^صحيح (البخاري|مسلم) \([٠-٩]+\)/, en: /^Sahih (al-Bukhari|Muslim) \d+/ };
+// The owner's rule since 2026-11-18: a sign's or topic's hadith may also come from the rest of the
+// nine books, with its number, when scholars graded it sahih or hasan; then its grading is required.
+const NINE_REF = {
+  ar: /^(سنن أبي داود|سنن الترمذي|جامع الترمذي|سنن النسائي|سنن ابن ماجه|مسند أحمد|موطأ مالك|سنن الدارمي) \([٠-٩]+\)/,
+  en: /^(Sunan Abi Dawud|Jami‘ al-Tirmidhi|Sunan al-Nasa’i|Sunan Ibn Majah|Musnad Ahmad|Muwatta’ Malik|Sunan al-Darimi) \d+/,
+};
+const hadithRef = (e, where, what) => {
+  const sahihayn = SAHIHAYN_REF.ar.test(e.ref?.ar ?? '') && SAHIHAYN_REF.en.test(e.ref?.en ?? '');
+  const nine = NINE_REF.ar.test(e.ref?.ar ?? '') && NINE_REF.en.test(e.ref?.en ?? '');
+  if (!sahihayn && !nine) errors.push(`${where}: ${what}'s hadith must be cited from one of the nine books first, with its number`);
+  if (nine && !sahihayn) localized(e.grading, `${where} grading`);
+};
 const errors = [];
 
 const localized = (v, where) => {
@@ -72,9 +84,7 @@ for (const a of content.ayat) {
     localized(e.ref, `${where} ref`);
     if (e.kind !== 'hadith') return;
     localized(e.narrator, `${where} narrator`);
-    if (!SAHIHAYN_REF.ar.test(e.ref?.ar ?? '') || !SAHIHAYN_REF.en.test(e.ref?.en ?? '')) {
-      errors.push(`${where}: a sign's hadith must be cited from al-Bukhari or Muslim first, with its number`);
-    }
+    hadithRef(e, where, 'a sign');
   });
   if (!a.timeline?.some((m) => m.revelation)) errors.push(`${at}: the timeline has no revelation step`);
   a.timeline?.forEach((m, i) => {
@@ -137,9 +147,7 @@ topics.forEach((t) => {
     localized(e.ref, `${where} ref`);
     if (e.kind !== 'hadith') return;
     localized(e.narrator, `${where} narrator`);
-    if (!SAHIHAYN_REF.ar.test(e.ref?.ar ?? '') || !SAHIHAYN_REF.en.test(e.ref?.en ?? '')) {
-      errors.push(`${where}: a topic's hadith must be cited from al-Bukhari or Muslim, with its number`);
-    }
+    hadithRef(e, where, 'a topic');
   });
   if (!t.sections?.length) errors.push(`${at}: no parts`);
   t.sections?.forEach((s, i) => {
