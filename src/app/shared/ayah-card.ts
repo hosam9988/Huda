@@ -12,8 +12,9 @@ let nextId = 0;
 
 /**
  * A sign on the home page, linking to its page: its picture, field, title and summary. With
- * `look="verse"`, in the list of signs for reflection, its verse or hadith leads instead of a
- * picture, followed by its title and opening question.
+ * `look="verse"`, in the list of signs for reflection, the card is its title alone, under its field
+ * and reading time: the verse, its translation and the opening question are on the sign's own page
+ * (the owner found the cards too long with them, 2026-11-18).
  */
 @Component({
   selector: 'app-ayah-card',
@@ -24,7 +25,7 @@ let nextId = 0;
       class="card"
       [class.verse-card]="look() === 'verse'"
       [attr.aria-labelledby]="titleId"
-      [attr.aria-describedby]="titleId + '-text'"
+      [attr.aria-describedby]="look() === 'verse' ? null : titleId + '-text'"
       [routerLink]="['/signs', ayah().slug]"
       [queryParams]="fromJourney() ? { path: 'journey' } : undefined"
     >
@@ -68,21 +69,10 @@ let nextId = 0;
             {{ t().minutes(minutes()) }}
           </span>
         </div>
-        @if (look() === 'verse' && ayah().evidence[0]; as e) {
-          <blockquote class="verse" lang="ar" dir="rtl" [class.quran]="e.kind === 'quran'">
-            @if (e.kind === 'quran') {
-              ﴿{{ e.text }}﴾
-            } @else {
-              «{{ e.text }}»
-            }
-          </blockquote>
-          @if (!language.isArabic()) {
-            <p class="verse-meaning">{{ language.pick(e.meaning) }}</p>
-          }
-          <p class="verse-ref">{{ language.pick(e.ref) }}</p>
-        }
         <h3 [id]="titleId">{{ language.pick(ayah().title) }}</h3>
-        <p [id]="titleId + '-text'">{{ language.pick(look() === 'verse' ? ayah().hook : ayah().summary) }}</p>
+        @if (look() !== 'verse') {
+          <p [id]="titleId + '-text'">{{ language.pick(ayah().summary) }}</p>
+        }
       </div>
     </a>
   `,
@@ -211,7 +201,7 @@ let nextId = 0;
       line-height: 1.75;
     }
 
-    // Signs for reflection: no picture; the verse or hadith leads, the title follows it.
+    // Signs for reflection: no picture and no verse, only the field, the time and the title.
     .verse-card {
       background:
         radial-gradient(ellipse 80% 60% at 50% 0%, rgb(var(--accent-rgb) / 7%), transparent 70%),
@@ -228,28 +218,6 @@ let nextId = 0;
       }
     }
 
-    .verse {
-      margin: 0.2rem 0 0;
-      color: var(--verse);
-      font-size: 1.05rem;
-      line-height: 2;
-
-      &.quran {
-        font-size: 1.3rem;
-        line-height: 2.3;
-      }
-    }
-
-    .verse-meaning {
-      color: var(--text);
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-
-    .verse-ref {
-      font-size: 0.82rem;
-    }
-
     .read-mark {
       margin-inline-end: 0.4rem;
       color: var(--science);
@@ -261,12 +229,12 @@ export class AyahCard {
   readonly ayah = input.required<Ayah>();
   /** Shows its number on the journey, and keeps the journey's order on its page. */
   readonly fromJourney = input(false);
-  /** `art`: led by its picture. `verse`: led by its verse or hadith, for the signs for reflection. */
+  /** `art`: led by its picture. `verse`: its title alone, for the signs for reflection. */
   readonly look = input<'art' | 'verse'>('art');
 
   protected readonly language = inject(LanguageService);
   protected readonly t = this.language.t;
-  /** The link is named by the title alone, and described by the summary or question under it. */
+  /** The link is named by the title alone, and described by the summary under it (art cards only). */
   protected readonly titleId = `card-title-${nextId++}`;
   private readonly content = inject(ContentService);
   private readonly reading = inject(ReadingService);

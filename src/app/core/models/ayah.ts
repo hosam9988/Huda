@@ -85,7 +85,7 @@ export interface Ayah {
   /**
    * `reflection`: a sign to reflect on. What it says is true and plainly meant, but people already
    * knew it when it was revealed, so it is not offered as i'jaz. It is listed under «علامات تُظهر عظمة
-   * الخالق», after every miracle, its card led by its verse or hadith; its own page and the sign of
+   * الخالق», after every miracle, its card showing its title alone; its own page and the sign of
    * the day carry the «للتفكر» badge.
    */
   type?: 'reflection';

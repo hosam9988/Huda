@@ -71,10 +71,10 @@ that more components can join it later.
 - **The signs, «سنريهم آياتنا»** (`/signs`): 74 signs in 9 fields — the cosmos; earth and sky;
   seas and water; the living world; the human being; health in the Sunnah; peoples of the past;
   prophecies fulfilled; preserving the Qur'an.
-  - **Two lists:** «المعجزات» (Miracles, 44) and «علامات تُظهر عظمة الخالق» (Signs that show the
-    Creator's greatness, 30). The second holds the signs for reflection: what they say is true and plain,
+  - **Two lists:** «المعجزات» (Miracles, 47) and «علامات تُظهر عظمة الخالق» (Signs that show the
+    Creator's greatness, 38). The second holds the signs for reflection: what they say is true and plain,
     but people already knew it when it was revealed, so they are not offered as i'jaz. They come
-    after the miracles, and their cards lead with the verse or hadith. On their own pages and as the sign
+    after the miracles, and their cards show the title alone (the verse is on the sign's page). On their own pages and as the sign
     of the day they carry the «للتفكر» badge. Each list has its own field filter, with only the fields
     it has signs in, and its own search. A field's card sets both lists to that field (a list with no
     signs in it shows all its fields) and clears both searches. Each list shows its first twelve

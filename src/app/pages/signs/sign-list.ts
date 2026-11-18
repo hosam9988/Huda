@@ -214,7 +214,7 @@ export function resetList(list: ListState): void {
       gap: 1.25rem;
     }
 
-    // The signs for reflection lead with their verse. Their cards stand in rows too, each row as tall
+    // The signs for reflection show their title alone. Their cards stand in rows too, each row as tall
     // as its tallest card, so that «اعرض المزيد» adds cards below without moving the ones shown.
     .verses {
       display: grid;
