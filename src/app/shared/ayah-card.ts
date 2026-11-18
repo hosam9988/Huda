@@ -12,9 +12,10 @@ let nextId = 0;
 
 /**
  * A sign on the home page, linking to its page: its picture, field, title and summary. With
- * `look="verse"`, in the list of signs for reflection, the card is its title alone, under its field
- * and reading time: the verse, its translation and the opening question are on the sign's own page
- * (the owner found the cards too long with them, 2026-11-18).
+ * `look="verse"`, in the list of signs for reflection, the card has no summary: its picture, field,
+ * reading time and title. The verse, its translation and the opening question are on the sign's own
+ * page (the owner found the cards too long with them, 2026-11-18). On a phone that picture is a small
+ * one beside the title, so that the card stays short (the owner's choice of two forms, the same day).
  */
 @Component({
   selector: 'app-ayah-card',
@@ -29,29 +30,27 @@ let nextId = 0;
       [routerLink]="['/signs', ayah().slug]"
       [queryParams]="fromJourney() ? { path: 'journey' } : undefined"
     >
-      @if (look() === 'art') {
-        <div class="art">
-          <img
-            [src]="artSmallSrc(ayah().art)"
-            [attr.srcset]="artSrcset(ayah().art)"
-            sizes="(max-width: 640px) 100vw, 420px"
-            alt=""
-            loading="lazy"
-            decoding="async"
-            width="640"
-            height="400"
-          />
-          @if (step(); as step) {
-            <span class="step">{{ language.number(step) }}</span>
-          }
-          @if (isRead()) {
-            <span class="read" [attr.title]="t().isRead">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
-              <span class="visually-hidden">{{ t().isRead }}</span>
-            </span>
-          }
-        </div>
-      }
+      <div class="art">
+        <img
+          [src]="artSmallSrc(ayah().art)"
+          [attr.srcset]="artSrcset(ayah().art)"
+          [attr.sizes]="sizes()"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width="640"
+          height="400"
+        />
+        @if (step(); as step) {
+          <span class="step">{{ language.number(step) }}</span>
+        }
+        @if (isRead()) {
+          <span class="read" [attr.title]="t().isRead">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+            <span class="visually-hidden">{{ t().isRead }}</span>
+          </span>
+        }
+      </div>
       <div class="body">
         <div class="meta">
           <span class="chips">
@@ -62,12 +61,7 @@ let nextId = 0;
               <span class="chip quiet-chip" [attr.title]="t().reflectionHint">{{ t().reflectionBadge }}</span>
             }
           </span>
-          <span class="time">
-            @if (look() === 'verse' && isRead()) {
-              <span class="read-mark" [attr.title]="t().isRead">✓<span class="visually-hidden">{{ t().isRead }}</span></span>
-            }
-            {{ t().minutes(minutes()) }}
-          </span>
+          <span class="time">{{ t().minutes(minutes()) }}</span>
         </div>
         <h3 [id]="titleId">{{ language.pick(ayah().title) }}</h3>
         @if (look() !== 'verse') {
@@ -201,27 +195,48 @@ let nextId = 0;
       line-height: 1.75;
     }
 
-    // Signs for reflection: no picture and no verse, only the field, the time and the title.
-    .verse-card {
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgb(var(--accent-rgb) / 7%), transparent 70%),
-        linear-gradient(180deg, var(--surface-raised), var(--surface));
-
-      .body {
-        gap: 0.5rem;
-        padding-block-start: 1.25rem;
-      }
-
-      h3 {
-        margin: 0.35rem 0 0;
-        font-size: 1.12rem;
-      }
+    // Signs for reflection: the picture and the title, without the summary.
+    .verse-card h3 {
+      font-size: 1.12rem;
     }
 
-    .read-mark {
-      margin-inline-end: 0.4rem;
-      color: var(--science);
-      font-weight: 700;
+    // On a phone that picture is a small one beside the title, as tall as the card whatever the
+    // title's length, so that the card stays as short as it was without a picture.
+    @media (max-width: 640px) {
+      .verse-card {
+        flex-direction: row;
+
+        .art {
+          flex: 0 0 clamp(5.5rem, 26vw, 7rem);
+          aspect-ratio: auto;
+
+          img {
+            position: absolute;
+            inset: 0;
+          }
+        }
+
+        .read {
+          inset-block-start: 0.45rem;
+          inset-inline: 0.45rem auto;
+          inline-size: 1.6rem;
+          block-size: 1.6rem;
+
+          svg {
+            inline-size: 0.9rem;
+          }
+        }
+
+        .body {
+          min-inline-size: 0;
+          padding: 1.05rem 1.1rem 1.15rem;
+        }
+
+        // A long field name beside the reading time: the time moves under it instead of being cut off.
+        .meta {
+          flex-wrap: wrap;
+        }
+      }
     }
   `,
 })
@@ -229,7 +244,7 @@ export class AyahCard {
   readonly ayah = input.required<Ayah>();
   /** Shows its number on the journey, and keeps the journey's order on its page. */
   readonly fromJourney = input(false);
-  /** `art`: led by its picture. `verse`: its title alone, for the signs for reflection. */
+  /** `art`: picture, title and summary. `verse`: picture and title, for the signs for reflection. */
   readonly look = input<'art' | 'verse'>('art');
 
   protected readonly language = inject(LanguageService);
@@ -241,6 +256,10 @@ export class AyahCard {
 
   protected readonly artSmallSrc = artSmallSrc;
   protected readonly artSrcset = artSrcset;
+  /** A reflection card's picture on a phone is the small one beside its title, 7rem at the widest. */
+  protected readonly sizes = computed(() =>
+    this.look() === 'verse' ? '(max-width: 640px) 112px, 420px' : '(max-width: 640px) 100vw, 420px',
+  );
   protected readonly category = computed(() => this.content.category(this.ayah().category));
   protected readonly isRead = computed(() => this.reading.countRead([this.ayah().slug]) > 0);
   protected readonly step = computed(() => (this.fromJourney() ? this.ayah().journey : undefined));

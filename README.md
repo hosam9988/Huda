@@ -74,7 +74,7 @@ that more components can join it later.
   - **Two lists:** «المعجزات» (Miracles, 47) and «علامات تُظهر عظمة الخالق» (Signs that show the
     Creator's greatness, 38). The second holds the signs for reflection: what they say is true and plain,
     but people already knew it when it was revealed, so they are not offered as i'jaz. They come
-    after the miracles, and their cards show the title alone (the verse is on the sign's page). On their own pages and as the sign
+    after the miracles, and their cards show the picture and the title, without the summary (the verse is on the sign's page); on a phone the picture is a small one beside the title, so that the card stays short. On their own pages and as the sign
     of the day they carry the «للتفكر» badge. Each list has its own field filter, with only the fields
     it has signs in, and its own search. A field's card sets both lists to that field (a list with no
     signs in it shows all its fields) and clears both searches. Each list shows its first twelve

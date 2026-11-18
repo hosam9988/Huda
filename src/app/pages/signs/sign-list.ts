@@ -214,12 +214,20 @@ export function resetList(list: ListState): void {
       gap: 1.25rem;
     }
 
-    // The signs for reflection show their title alone. Their cards stand in rows too, each row as tall
-    // as its tallest card, so that «اعرض المزيد» adds cards below without moving the ones shown.
+    // The signs for reflection show their picture and title, without the summary. Their cards stand
+    // in rows too, each row as tall as its tallest card, so that «اعرض المزيد» adds cards below without
+    // moving the ones shown.
     .verses {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
       gap: 1.25rem;
+    }
+
+    // On a phone each of them is a row of its own: a small picture beside the title (see ayah-card.ts).
+    @media (max-width: 640px) {
+      .verses {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     // Every card in a row as tall as the row: the list item stretches with its row, and as a grid it
